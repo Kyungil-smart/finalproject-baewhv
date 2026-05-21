@@ -6,6 +6,16 @@ public class NormalMonster : BaseMonster
     {
         Init();
     }
+    
+    private void OnEnable()
+    {
+        CurrentState.AddListener(ChangeState);
+    }
+
+    private void OnDisable()
+    {
+        CurrentState.RemoveListener(ChangeState);
+    }
 
     private void Init()
     {

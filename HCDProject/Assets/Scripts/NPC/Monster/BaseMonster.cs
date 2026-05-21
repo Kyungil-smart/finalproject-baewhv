@@ -6,10 +6,12 @@ public class BaseMonster : MonoBehaviour
     
     private protected StateMachine State;
 
+    [field:SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
+
     public MonsterIdleState IdleState { get; protected set; }
     public MonsterChaseState ChaseState { get; protected set; }
     
-    public void ChangeState(EStateType state)
+    private protected void ChangeState(EStateType state)
     {
         switch (state)
         {
