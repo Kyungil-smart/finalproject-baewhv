@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonMonoBehaviour<GameManager>
 {
-    public static GameManager Instance { get; private set; }
-    
     private int _wallHealth;
 
     public int WallHealth
@@ -24,15 +23,22 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            
-            Init();
-        }
-        else Destroy(gameObject);
+        base.Awake();
         
+        Init();
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.iKey.wasPressedThisFrame)
+        {
+            StageClear();
+        }
+
+        if (Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            TakeDamage(81);
+        }
     }
 
     private void Init()
