@@ -24,7 +24,8 @@ public class NormalMonster : BaseMonster
         State = new StateMachine();
         IdleState = new MonsterIdleState(this);
         ChaseState = new MonsterChaseState(this);
-        
-        ChangeState(EStateType.Idle);
+        NearAttackState = new MonsterNearAttackState(this);
+
+        State.ChangeState(IdleState);
     }
 }
