@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class NormalMonster : BaseMonster
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         Init();
     }
     
