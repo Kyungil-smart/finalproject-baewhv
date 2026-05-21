@@ -198,7 +198,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -444,10 +444,11 @@ MonoBehaviour:
     moveSpeed: 2.5
     attackDamage: 0
     attackDelay: 0
-    chaseRange: 0
-    attackRange: 0
+    chaseRange: 5
+    attackRange: 1
   <CurrentState>k__BackingField:
     _data: 0
+  player: {fileID: 0}
 --- !u!4 &792197467
 Transform:
   m_ObjectHideFlags: 0

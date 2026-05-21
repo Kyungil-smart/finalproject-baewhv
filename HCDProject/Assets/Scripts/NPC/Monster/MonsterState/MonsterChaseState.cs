@@ -28,9 +28,9 @@ public class MonsterChaseState : IState
         }
         else
         {
-            if (range < _controller.MonsterData.attackRange)
+            if (range <= _controller.MonsterData.attackRange)
             {
-                
+                _controller.CurrentState.Value = EStateType.NearAttack;
             }
             else
             {

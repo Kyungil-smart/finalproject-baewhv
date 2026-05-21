@@ -16,7 +16,7 @@ public class MonsterIdleState : IState
     
     public void Update()
     {
-        
+        _controller.CurrentState.Value = EStateType.Chase;
     }
     
     public void Exit()
