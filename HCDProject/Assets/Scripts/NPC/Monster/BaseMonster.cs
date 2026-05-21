@@ -89,7 +89,9 @@ public abstract class BaseMonster : MonoBehaviour
 
     protected void OnDrawGizmos()
     {
-        Gizmos.color = new Color(1f, 1f, 0f, 0.5f);
-        Gizmos.DrawSphere(transform.position, MonsterData.chaseRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, MonsterData.chaseRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, MonsterData.attackRange);
     }
 }
