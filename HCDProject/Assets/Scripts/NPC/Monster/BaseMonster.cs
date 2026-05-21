@@ -1,13 +1,4 @@
 using UnityEngine;
-using UnityEngine.XR;
-
-public enum EStateType
-{
-    Idle,
-    Chase,
-    Attack,
-    Die
-}
 
 public class BaseMonster : MonoBehaviour
 {
