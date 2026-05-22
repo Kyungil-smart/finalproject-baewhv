@@ -13515,10 +13515,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 45772027704017518, guid: 59083da077bc20c4a88ac10bdd8a3a5e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.16992188
-      objectReference: {fileID: 0}
     - target: {fileID: 1103199018003965907, guid: 59083da077bc20c4a88ac10bdd8a3a5e, type: 3}
       propertyPath: m_Name
       value: 3SortUICanvas
@@ -13666,10 +13662,6 @@ PrefabInstance:
     - target: {fileID: 6625626325135457515, guid: 59083da077bc20c4a88ac10bdd8a3a5e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7155632671101336690, guid: 59083da077bc20c4a88ac10bdd8a3a5e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.16992188
       objectReference: {fileID: 0}
     - target: {fileID: 7342187288748706594, guid: 59083da077bc20c4a88ac10bdd8a3a5e, type: 3}
       propertyPath: m_AnchorMax.x
