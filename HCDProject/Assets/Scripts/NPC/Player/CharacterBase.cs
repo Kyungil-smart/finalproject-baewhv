@@ -68,6 +68,7 @@ public abstract class CharacterBase : MonoBehaviour
         _stateMachine = new StateMachine();
         _spawnPlayerState = new SpawnPlayerState(this);
         _idlePlayerState = new IdlePlayerState(this);
+        
     }
 
     public void Init(CharacterBaseData data)
@@ -84,6 +85,7 @@ public abstract class CharacterBase : MonoBehaviour
             _critRate = data._critRate,
             _critDamage = data._critDamage
         };
+        _stateMachine.ChangeState(_spawnPlayerState);
     }
 
     public abstract void Skill();
