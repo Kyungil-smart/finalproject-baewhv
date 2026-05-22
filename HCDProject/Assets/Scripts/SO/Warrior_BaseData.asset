@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de8e1cfc2aeca54b817309757320fb9, type: 3}
   m_Name: Warrior_BaseData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterBaseData
-  _characterName: 
-  _hp: 0
-  _attackPower: 0
-  _defense: 0
-  _moveSpeed: 0
-  _attackSpeed: 0
-  _critRate: 0
-  _critDamage: 0
+  _characterName: Warrior
+  _hp: 150
+  _attackPower: 25
+  _defense: 15
+  _moveSpeed: 50
+  _attackSpeed: 0.75
+  _critRate: 0.05
+  _critDamage: 1.5
   _hpGrowth: 0
   _attackPowerGrowth: 0
   _defenseGrowth: 0
