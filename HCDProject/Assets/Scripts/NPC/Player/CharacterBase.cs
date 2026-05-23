@@ -102,6 +102,11 @@ public abstract class CharacterBase : MonoBehaviour
 
     public abstract void Skill();
 
+    public void DefaultAtk() // 일반공격
+    {
+
+    }
+
     public virtual void Move(Vector3 targetPosition)
     {
 
