@@ -2,10 +2,8 @@ using System;
 using Unity.Mathematics.Geometry;
 using UnityEngine;
 
-public abstract class BaseMonster : MonoBehaviour
+public class BaseMonster : BaseController
 {
-    [field:SerializeField] public CharacterStats Stats { get; set; }
-
     #region State
     private protected StateMachine State;
     [field:SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
@@ -14,11 +12,16 @@ public abstract class BaseMonster : MonoBehaviour
     public MonsterNearAttackState NearAttackState { get; protected set; }
     #endregion
 
-    public Transform player;
     public LayerMask LayerMask { get; private set; }
 
     protected Collider2D[] _colliders = new Collider2D[5];
     protected ContactFilter2D _filter;
+    
+    public override void SetCurrentTarget(ITargetable target)
+    {
+        _currentTarget = target;
+        CurrentState.Value = target != null ? EStateType.Chase : EStateType.Idle;
+    }
 
     protected virtual void Awake()
     {
@@ -30,6 +33,16 @@ public abstract class BaseMonster : MonoBehaviour
         _filter.useLayerMask = true;
         _filter.SetLayerMask(LayerMask);
         _filter.useTriggers = false;
+    }
+
+    public override void SetDamage()
+    {
+        
+    }
+
+    public override void SetHeal()
+    {
+        
     }
 
     protected virtual void Update()
