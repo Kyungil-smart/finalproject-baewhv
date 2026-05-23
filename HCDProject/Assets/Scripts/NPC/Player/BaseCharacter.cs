@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // 모든 직업군이 공통으로 가질 클래스
-public abstract class BaseCharacter : MonoBehaviour
+public abstract class BaseCharacter : BaseController, ITargetable
 {
     private StateMachine _stateMachine;
 
@@ -14,10 +15,11 @@ public abstract class BaseCharacter : MonoBehaviour
 
     private AttackPlayerState _attackPlayerState;
 
-    private Transform _currentTarget; // 탐지할 대상
+    private Transform _currentBackup; // 탐지할 대상
 
     private Vector3 _homePosition; // 지정된 위치
 
+    
 
     private List<Collider2D> _enemyList = new List<Collider2D>(10);
     private ContactFilter2D _layerFilter = new ContactFilter2D();
@@ -26,11 +28,28 @@ public abstract class BaseCharacter : MonoBehaviour
 
     private CharacterStats _currentStats;
 
+    public override void SetCurrentTarget(ITargetable target)
+    {
+        _currentTarget = target;
+            
+            if (target == null)
+            {
+                state.ChangeState(this.spawn);
+            }
+
+            else
+            {
+                state.ChangeState(this.chase);
+            }
+        
+    }
+
+
     public Transform currentTarget
     {
-        get => _currentTarget;
+        get => _currentBackup;
        
-        set => _currentTarget = value;
+        set => _currentBackup = value;
         
     }
 
@@ -100,6 +119,15 @@ public abstract class BaseCharacter : MonoBehaviour
         _stateMachine.ChangeState(_spawnPlayerState);
     }
 
+    public void SetDamage()
+    {
+
+    }
+
+    public void SetHeal()
+    {
+
+    }
     public abstract void Skill();
 
     public void DefaultAtk() // 일반공격
