@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class IdlePlayerState : IState
 {
-    private CharacterBase _owner;
+    private BaseCharacter _owner;
 
 
-    public IdlePlayerState(CharacterBase owner)
+    public IdlePlayerState(BaseCharacter owner)
     {
         _owner = owner;
         
@@ -24,11 +24,11 @@ public class IdlePlayerState : IState
 
     public void Update()
     {
-        Transform target = _owner.FindNearEnemy();
+        ITargetable target = _owner.FindTarget();
 
         if (target != null)
         {
-            _owner.currentTarget = target;
+            _owner.SetCurrentTarget(target);
             _owner.state.ChangeState(_owner.chase);
         }
     }

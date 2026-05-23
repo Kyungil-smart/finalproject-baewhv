@@ -2,11 +2,11 @@
 
 public class AttackPlayerState : IState
 {
-    private CharacterBase _owner;
+    private BaseCharacter _owner;
     
     float coolCount;
 
-    public AttackPlayerState(CharacterBase owner)
+    public AttackPlayerState(BaseCharacter owner)
     {
         _owner = owner;
     }
@@ -23,13 +23,14 @@ public class AttackPlayerState : IState
 
     public void Update()
     {
-        if (_owner.currentTarget == null)
+        if (_owner.GetTargetObject == null)
         {
             _owner.state.ChangeState(_owner.idle);
             return;
         }
 
-        float dist = Vector3.Distance(_owner.transform.position, _owner.currentTarget.position);
+        float dist = Vector3.Distance(_owner.transform.position,
+            _owner.GetCurrentTarget.GetTargetObject.transform.position);
 
         if (dist > _owner.stat._attackRange) // 공격 범위 벗어났으면
         {

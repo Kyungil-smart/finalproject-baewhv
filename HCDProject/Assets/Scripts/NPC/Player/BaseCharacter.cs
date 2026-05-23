@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // 모든 직업군이 공통으로 가질 클래스
-public abstract class CharacterBase : MonoBehaviour
+public class BaseCharacter : BaseController
 {
     private StateMachine _stateMachine;
 
@@ -14,27 +15,45 @@ public abstract class CharacterBase : MonoBehaviour
 
     private AttackPlayerState _attackPlayerState;
 
-    private Transform _currentTarget; // 탐지할 대상
+    private Transform _currentBackup; // 탐지할 대상
 
     private Vector3 _homePosition; // 지정된 위치
 
+    
 
     private List<Collider2D> _enemyList = new List<Collider2D>(10);
     private ContactFilter2D _layerFilter = new ContactFilter2D();
 
     [SerializeField] private CharacterBaseData _baseData;
 
-    private CharacterStat _currentStats;
+    private CharacterStats _currentStats;
 
-    public Transform currentTarget
+    public override void SetCurrentTarget(ITargetable target)
     {
-        get => _currentTarget;
-       
-        set => _currentTarget = value;
+        _currentTarget = target;
+            
+            if (target == null)
+            {
+                state.ChangeState(this.spawn);
+            }
+
+            else
+            {
+                state.ChangeState(this.chase);
+            }
         
     }
+    public override void SetDamage()
+    {
 
-    public CharacterStat stat
+    }
+
+    public override void SetHeal()
+    {
+
+    }
+
+    public CharacterStats stat
     {
         get => _currentStats;
     }
@@ -70,9 +89,11 @@ public abstract class CharacterBase : MonoBehaviour
     {
         get => _chasePlayerState;
     }
+    
 
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _stateMachine = new StateMachine();
         _spawnPlayerState = new SpawnPlayerState(this);
         _idlePlayerState = new IdlePlayerState(this);
@@ -86,7 +107,7 @@ public abstract class CharacterBase : MonoBehaviour
     {
         _baseData = data;
 
-        _currentStats = new CharacterStat
+        _currentStats = new CharacterStats
         {
             _maxHp = data._hp,
             _attackPower = data._attackPower,
@@ -100,8 +121,6 @@ public abstract class CharacterBase : MonoBehaviour
         _stateMachine.ChangeState(_spawnPlayerState);
     }
 
-    public abstract void Skill();
-
     public void DefaultAtk() // 일반공격
     {
 
@@ -112,7 +131,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     }
 
-    public virtual Transform FindNearEnemy()
+    public virtual ITargetable FindTarget()
     {
         int count = Physics2D.OverlapCircle(this.transform.position,
             5f,
@@ -122,7 +141,7 @@ public abstract class CharacterBase : MonoBehaviour
         if (count >= 1) // 탐지 수가 1명 이상인 경우.
         {
             float minDist = float.MaxValue;
-            Transform closet = null;
+            ITargetable closet = null;
             for (int i = 0; i < _enemyList.Count; i++) // 가장 가까운 적 탐색
             {
                 float dist = Vector3.Distance(this.transform.position,
@@ -131,7 +150,7 @@ public abstract class CharacterBase : MonoBehaviour
                 if (dist <= minDist)
                 {
                     minDist = dist;
-                    closet = _enemyList[i].transform;
+                    closet = _enemyList[i].GetComponent<ITargetable>();
                 }
             }
             return closet;
