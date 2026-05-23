@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public struct CharacterStat
+public struct CharacterStats
 {
     public int _maxHp;
 

@@ -2,10 +2,10 @@
 
 public class SpawnPlayerState : IState
 {
-    private CharacterBase _owner;
+    private BaseCharacter _owner;
 
 
-    public SpawnPlayerState(CharacterBase owner)
+    public SpawnPlayerState(BaseCharacter owner)
     {
         _owner = owner;
     }

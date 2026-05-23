@@ -2,11 +2,11 @@
 
 public class AttackPlayerState : IState
 {
-    private CharacterBase _owner;
+    private BaseCharacter _owner;
     
     float coolCount;
 
-    public AttackPlayerState(CharacterBase owner)
+    public AttackPlayerState(BaseCharacter owner)
     {
         _owner = owner;
     }

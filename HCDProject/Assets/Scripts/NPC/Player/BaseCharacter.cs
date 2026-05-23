@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // 모든 직업군이 공통으로 가질 클래스
-public abstract class CharacterBase : MonoBehaviour
+public abstract class BaseCharacter : MonoBehaviour
 {
     private StateMachine _stateMachine;
 
@@ -24,7 +24,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     [SerializeField] private CharacterBaseData _baseData;
 
-    private CharacterStat _currentStats;
+    private CharacterStats _currentStats;
 
     public Transform currentTarget
     {
@@ -34,7 +34,7 @@ public abstract class CharacterBase : MonoBehaviour
         
     }
 
-    public CharacterStat stat
+    public CharacterStats stat
     {
         get => _currentStats;
     }
@@ -86,7 +86,7 @@ public abstract class CharacterBase : MonoBehaviour
     {
         _baseData = data;
 
-        _currentStats = new CharacterStat
+        _currentStats = new CharacterStats
         {
             _maxHp = data._hp,
             _attackPower = data._attackPower,

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ChasePlayerState : IState
 {
-    private CharacterBase _owner;
+    private BaseCharacter _owner;
 
-    public ChasePlayerState(CharacterBase owner)
+    public ChasePlayerState(BaseCharacter owner)
     {
         _owner = owner;
     }

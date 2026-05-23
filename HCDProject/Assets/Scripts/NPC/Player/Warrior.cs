@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Warrior : CharacterBase
+public class Warrior : BaseCharacter
 {
 
     public void Awake()

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class IdlePlayerState : IState
 {
-    private CharacterBase _owner;
+    private BaseCharacter _owner;
 
 
-    public IdlePlayerState(CharacterBase owner)
+    public IdlePlayerState(BaseCharacter owner)
     {
         _owner = owner;
         
