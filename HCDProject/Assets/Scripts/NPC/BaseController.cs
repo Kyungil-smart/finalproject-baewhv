@@ -15,7 +15,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public GameObject GetTargetObject { get; set; }
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         GetTargetObject = gameObject;
     }
