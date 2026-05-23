@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 // 모든 직업군이 공통으로 가질 클래스
-public abstract class BaseCharacter : BaseController, ITargetable
+public class BaseCharacter : BaseController
 {
     private StateMachine _stateMachine;
 
@@ -43,14 +43,14 @@ public abstract class BaseCharacter : BaseController, ITargetable
             }
         
     }
-
-
-    public Transform currentTarget
+    public override void SetDamage()
     {
-        get => _currentBackup;
-       
-        set => _currentBackup = value;
-        
+
+    }
+
+    public override void SetHeal()
+    {
+
     }
 
     public CharacterStats stat
@@ -89,9 +89,11 @@ public abstract class BaseCharacter : BaseController, ITargetable
     {
         get => _chasePlayerState;
     }
+    
 
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _stateMachine = new StateMachine();
         _spawnPlayerState = new SpawnPlayerState(this);
         _idlePlayerState = new IdlePlayerState(this);
@@ -119,17 +121,6 @@ public abstract class BaseCharacter : BaseController, ITargetable
         _stateMachine.ChangeState(_spawnPlayerState);
     }
 
-    public void SetDamage()
-    {
-
-    }
-
-    public void SetHeal()
-    {
-
-    }
-    public abstract void Skill();
-
     public void DefaultAtk() // 일반공격
     {
 
@@ -140,7 +131,7 @@ public abstract class BaseCharacter : BaseController, ITargetable
 
     }
 
-    public virtual Transform FindNearEnemy()
+    public virtual ITargetable FindTarget()
     {
         int count = Physics2D.OverlapCircle(this.transform.position,
             5f,
@@ -150,7 +141,7 @@ public abstract class BaseCharacter : BaseController, ITargetable
         if (count >= 1) // 탐지 수가 1명 이상인 경우.
         {
             float minDist = float.MaxValue;
-            Transform closet = null;
+            ITargetable closet = null;
             for (int i = 0; i < _enemyList.Count; i++) // 가장 가까운 적 탐색
             {
                 float dist = Vector3.Distance(this.transform.position,
@@ -159,7 +150,7 @@ public abstract class BaseCharacter : BaseController, ITargetable
                 if (dist <= minDist)
                 {
                     minDist = dist;
-                    closet = _enemyList[i].transform;
+                    closet = _enemyList[i].GetComponent<ITargetable>();
                 }
             }
             return closet;
