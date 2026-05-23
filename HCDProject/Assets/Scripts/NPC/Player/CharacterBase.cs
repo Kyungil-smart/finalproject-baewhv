@@ -12,6 +12,8 @@ public abstract class CharacterBase : MonoBehaviour
 
     private ChasePlayerState _chasePlayerState;
 
+    private AttackPlayerState _attackPlayerState;
+
     private Transform _currentTarget; // 탐지할 대상
 
     private Vector3 _homePosition; // 지정된 위치
@@ -47,25 +49,26 @@ public abstract class CharacterBase : MonoBehaviour
     public StateMachine state
     {
         get => _stateMachine;
-        
+    }
+
+    public AttackPlayerState attack
+    {
+        get => _attackPlayerState;
     }
 
     public IdlePlayerState idle
     {
         get => _idlePlayerState;
-        
     }
 
     public SpawnPlayerState spawn
     {
         get => _spawnPlayerState;
-        
     }
 
     public ChasePlayerState chase
     {
         get => _chasePlayerState;
-        
     }
 
     public void Awake()
@@ -74,6 +77,7 @@ public abstract class CharacterBase : MonoBehaviour
         _spawnPlayerState = new SpawnPlayerState(this);
         _idlePlayerState = new IdlePlayerState(this);
         _chasePlayerState = new ChasePlayerState(this);
+        _attackPlayerState = new AttackPlayerState(this);
         _layerFilter.SetLayerMask(LayerMask.GetMask("Monster")); // 레이어 갖고옴
         _layerFilter.useLayerMask = true;
     }
@@ -90,7 +94,8 @@ public abstract class CharacterBase : MonoBehaviour
             _moveSpeed = data._moveSpeed,
             _attackSpeed = data._attackSpeed,
             _critRate = data._critRate,
-            _critDamage = data._critDamage
+            _critDamage = data._critDamage,
+            _attackRange = data._attackRange
         };
         _stateMachine.ChangeState(_spawnPlayerState);
     }

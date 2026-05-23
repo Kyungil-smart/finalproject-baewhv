@@ -16,4 +16,6 @@ public struct CharacterStat
     public float _critRate;
 
     public float _critDamage;
+
+    public float _attackRange;
 }
