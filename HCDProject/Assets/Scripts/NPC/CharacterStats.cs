@@ -18,4 +18,6 @@ public struct CharacterStats
     public float _critDamage;
 
     public float _attackRange;
+
+    public float _chaseRange;
 }

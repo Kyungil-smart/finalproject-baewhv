@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseMonster : MonoBehaviour
 {
-    [field:SerializeField] public MonsterData MonsterData { get; set; }
+    [field:SerializeField] public CharacterStats Stats { get; set; }
 
     #region State
     private protected StateMachine State;
@@ -90,8 +90,8 @@ public abstract class BaseMonster : MonoBehaviour
     protected void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, MonsterData.chaseRange);
+        Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, MonsterData.attackRange);
+        Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
     }
 }

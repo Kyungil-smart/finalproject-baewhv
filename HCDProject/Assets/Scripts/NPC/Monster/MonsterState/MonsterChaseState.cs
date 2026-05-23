@@ -13,7 +13,7 @@ public class MonsterChaseState : IState
         _agent = _controller.GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
-        _agent.speed = _controller.MonsterData.moveSpeed;
+        _agent.speed = _controller.Stats._moveSpeed;
     }
     
     public void Enter()
@@ -29,7 +29,7 @@ public class MonsterChaseState : IState
             _agent.Move(Vector3.down * (_agent.speed * Time.deltaTime));   
         }
 
-        if (_controller.player != null && _controller.DistanceToPlayer(_controller.player.transform) <= _controller.MonsterData.attackRange)
+        if (_controller.player != null && _controller.DistanceToPlayer(_controller.player.transform) <= _controller.Stats._attackRange)
         {
             _controller.CurrentState.Value = EStateType.NearAttack;
             return;
@@ -39,7 +39,7 @@ public class MonsterChaseState : IState
         if (_timer >= 0.2f)
         {
             _timer = 0f;
-            _controller.player = _controller.DetectPlayer(_controller.MonsterData.chaseRange);
+            _controller.player = _controller.DetectPlayer(_controller.Stats._chaseRange);
             if (_controller.player != null) _agent.SetDestination(_controller.player.transform.position);
         }
     }
