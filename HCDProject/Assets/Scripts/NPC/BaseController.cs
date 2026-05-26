@@ -18,6 +18,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     protected virtual void Awake()
     {
         GetTargetObject = gameObject;
+        Movement = GetComponent<CharacterMovement>();
     }
 
     public abstract void SetDamage();

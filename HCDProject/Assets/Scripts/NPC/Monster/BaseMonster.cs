@@ -23,18 +23,29 @@ public class BaseMonster : BaseController
         CurrentState.Value = target != null ? EStateType.Chase : EStateType.Idle;
     }
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         CurrentState = new();
         LayerMask = LayerMask.GetMask("Player");
-        
         _filter = new ContactFilter2D();
         
         _filter.useLayerMask = true;
         _filter.SetLayerMask(LayerMask);
         _filter.useTriggers = false;
     }
+    
+    protected void OnEnable()
+    {
+        CurrentState.AddListener(ChangeState);
+    }
 
+    protected void OnDisable()
+    {
+        CurrentState.RemoveListener(ChangeState);
+    }
+    
     public override void SetDamage()
     {
         
@@ -50,7 +61,7 @@ public class BaseMonster : BaseController
         State?.Update();
     }
     
-    private protected void ChangeState(EStateType state)
+    private void ChangeState(EStateType state)
     {
         switch (state)
         {
@@ -70,29 +81,29 @@ public class BaseMonster : BaseController
             */
         }
     }
-    
-    public Transform DetectPlayer(float range)
+
+    public void Detect(float range)
     {
         int count = Physics2D.OverlapCircle(transform.position,
             range,
             _filter,
             _colliders);
 
-        Transform target = null;
-        float minDistance = range;
+        GameObject target = null;
+        float minDistanceSqr = range * range;
         
         for (int i = 0; i < count; i++)
         {
-            float distance = DistanceToPlayer(_colliders[i].transform);
+            float distanceSqr = (transform.position - _colliders[i].transform.position).sqrMagnitude;
 
-            if (minDistance > distance)
+            if (minDistanceSqr > distanceSqr)
             {
-                minDistance = distance;
-                target = _colliders[i].transform;
+                minDistanceSqr = distanceSqr;
+                target = _colliders[i].gameObject;
             }
         }
-        
-        return target;
+
+        GetTargetObject = target;
     }
 
     public float DistanceToPlayer(Transform target)

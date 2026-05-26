@@ -1,10 +1,10 @@
-using Unity.Multiplayer.PlayMode;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class MonsterChaseState : IState
 {
     private BaseMonster _controller;
+    private float _timer;
 
     public MonsterChaseState(BaseMonster controller)
     {
@@ -13,37 +13,39 @@ public class MonsterChaseState : IState
     
     public void Enter()
     {
-        _controller.Movement.Agent.isStopped = false;
-        GameObject obj = _controller.GetCurrentTarget.GetTargetObject;
-        if (obj.GetComponent<BaseController>() != null)
-        {
-            _controller.Movement.Move(obj.transform.position);
-        }
-        else
-        {
-            // 아래로 보내는 로직
-            // _controller.Movement.Move(obj.transform.position);
-        }
+        _timer = 0f;
+        _controller.Detect(_controller.Stats._chaseRange);
     }
 
     public void Update()
     {
-        if (_controller.Movement.IsMove == false)
+        if (_controller.GetTargetObject == null)
+        {
+            _controller.Movement.DownMove();
+        }
+        else
         {
             if (Vector2.Distance(_controller.transform.position,
-                    _controller.GetCurrentTarget.GetTargetObject.transform.position) <= _controller.Stats._attackRange)
+                    _controller.GetTargetObject.transform.position) <= _controller.Stats._attackRange)
             {
                 _controller.CurrentState.Value = EStateType.NearAttack;
             }
             else
             {
-                _controller.Movement.Move(_controller.GetCurrentTarget.GetTargetObject.transform.position);
+                _controller.Movement.Move(_controller.GetTargetObject.transform.position);
             }
+        }
+        
+        _timer += Time.deltaTime;
+        if (_timer >= 0.2f)
+        {
+            _timer = 0f;
+            _controller.Detect(_controller.Stats._chaseRange);
         }
     }
 
     public void Exit()
     {
-        _controller.Movement.Agent.isStopped = true;
+        _controller.Movement.Stop();
     }
 }
