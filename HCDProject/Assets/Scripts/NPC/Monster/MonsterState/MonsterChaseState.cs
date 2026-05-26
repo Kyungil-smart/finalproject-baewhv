@@ -14,7 +14,7 @@ public class MonsterChaseState : IState
     public void Enter()
     {
         _timer = 0f;
-        _controller.Detect(_controller.Stats._chaseRange);
+        _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange));
     }
 
     public void Update()
@@ -40,7 +40,7 @@ public class MonsterChaseState : IState
         if (_timer >= 0.2f)
         {
             _timer = 0f;
-            _controller.Detect(_controller.Stats._chaseRange);
+            _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange));
         }
     }
 

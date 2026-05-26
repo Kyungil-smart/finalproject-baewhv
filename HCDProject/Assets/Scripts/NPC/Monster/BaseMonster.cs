@@ -11,9 +11,6 @@ public class BaseMonster : BaseController
     public MonsterChaseState ChaseState { get; protected set; }
     public MonsterNearAttackState NearAttackState { get; protected set; }
     #endregion
-
-    protected Collider2D[] _colliders = new Collider2D[5];
-    protected ContactFilter2D _filter;
     
     public override void SetCurrentTarget(ITargetable target)
     {
@@ -25,11 +22,6 @@ public class BaseMonster : BaseController
         base.Awake();
         
         CurrentState = new();
-        _filter = new ContactFilter2D();
-        
-        _filter.useLayerMask = true;
-        _filter.SetLayerMask(LayerMask.GetMask("Player"));
-        _filter.useTriggers = false;
     }
     
     protected void OnEnable()
@@ -76,30 +68,6 @@ public class BaseMonster : BaseController
                 break;
             */
         }
-    }
-
-    public void Detect(float range)
-    {
-        int count = Physics2D.OverlapCircle(transform.position,
-            range,
-            _filter,
-            _colliders);
-
-        GameObject target = null;
-        float minDistanceSqr = range * range;
-        
-        for (int i = 0; i < count; i++)
-        {
-            float distanceSqr = (transform.position - _colliders[i].transform.position).sqrMagnitude;
-
-            if (minDistanceSqr > distanceSqr)
-            {
-                minDistanceSqr = distanceSqr;
-                target = _colliders[i].gameObject;
-            }
-        }
-
-        GetTargetObject = target;
     }
 
     public float DistanceToPlayer(Transform target)
