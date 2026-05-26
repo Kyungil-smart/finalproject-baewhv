@@ -16,11 +16,15 @@ public class SheetToJson : EditorWindow
     
     private readonly Dictionary<string, string> _gSheets = new Dictionary<string, string>()
     {
-        {"48142780", "SET_ENUM"},
         {"1881742159", "MONSTER_TABLE"},
         {"1063876991", "LEVEL_REWARD"},
-        {"1686886035", "CHARACTER_TABLE"}
-        
+        {"1686886035", "CHARACTER_TABLE"},
+        {"1698007139", "STAGE_CLEAR_REWARD_TABLE"},
+        {"2033933741", "OBJECT_TABLE"},
+        {"858179508", "SKILL_TABLE"},
+        {"1428489825", "MAP_TABLE"},
+        {"2083529388", "LOCALIZING_TABLE"},
+        {"606265452", "STORY_LOCALIZING_TABLE"}
     };
 
     
@@ -73,6 +77,9 @@ public class SheetToJson : EditorWindow
                 try
                 {
                     string tsvData = client.DownloadString(loadUrl);
+                    
+                    TsvToC(sheetName, tsvData);
+                    
                     string jsonData = TsvToJson(tsvData);
 
                     File.WriteAllText(savePath, jsonData);
@@ -81,7 +88,7 @@ public class SheetToJson : EditorWindow
                     
                     loadSuccessCount++;
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     EditorUtility.DisplayDialog("실패", e.Message, "ok");
                 }
@@ -144,6 +151,67 @@ public class SheetToJson : EditorWindow
         entry.address = address;
         
         settings.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, entry, true);
+        #endif
+    }
+
+    private void TsvToC(string sheetName, string tsvData)
+    {
+        #if UNITY_EDITOR
+        string[] lines = tsvData.Split("\r\n");
+
+        string[] names = lines[0].Split('\t');
+        string[] types = lines[2].Split('\t');
+        
+        string cleanTableName = sheetName.ToLower().Replace("_table", "");
+        string rawClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName) + "RawData";
+        string tableClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName) + "Table";
+        
+        StringBuilder codeBuilder = new StringBuilder();
+        
+        codeBuilder.AppendLine("using System;");
+        codeBuilder.AppendLine("using System.Collections.Generic;");
+        codeBuilder.AppendLine();
+        
+        codeBuilder.AppendLine("// 자동으로 작성되는 코드입니다 데이터 코드 수정 시엔 여기가 아닌 sheet를 수정해 주세요 ");
+        
+        codeBuilder.AppendLine("[Serializable]");
+        codeBuilder.AppendLine($"public class {rawClassName}");
+        codeBuilder.AppendLine("{");
+
+        for (int i = 0; i < names.Length; i++)
+        {
+            string varName = names[i].Trim();
+            if (string.IsNullOrEmpty(varName)) continue;
+            
+            string varType = "string";
+            if (i < types.Length && !string.IsNullOrEmpty(types[i].Trim()))
+            {
+                varType = types[i].Trim().ToLower();
+            }
+            
+            if      (varType == "str")    varType = "string";
+            else if (varType == "int")    varType = "int";
+            else if (varType == "float")  varType = "float";
+            else if (varType == "bool")   varType = "bool";
+            else                          varType = "string";
+            
+            codeBuilder.AppendLine($"    public {varType} {varName};");
+        }
+        codeBuilder.AppendLine("}");
+        codeBuilder.AppendLine();
+        
+        codeBuilder.AppendLine("[Serializable]");
+        codeBuilder.AppendLine($"public class {tableClassName}");
+        codeBuilder.AppendLine("{");
+        codeBuilder.AppendLine($"    public List<{rawClassName}> data;"); 
+        codeBuilder.AppendLine("}");
+        
+        string folderPath = Path.Combine(Application.dataPath, "Scripts/Data");
+        
+        if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
+        
+        string talbeFilePath = Path.Combine(folderPath, $"{tableClassName}.cs");
+        File.WriteAllText(talbeFilePath, codeBuilder.ToString());
         #endif
     }
 }

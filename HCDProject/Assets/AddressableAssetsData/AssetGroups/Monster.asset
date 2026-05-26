@@ -10,33 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: Monster
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Default Local Group
-  m_GUID: 0174584177829b04ea56168d28a97eb3
+  m_GroupName: Monster
+  m_GUID: 437ace0b649d12c489fea02a574dd367
   m_SerializeEntries:
-  - m_GUID: 44fdb355f65fdfb45a57388b13354d0a
-    m_Address: MONSTER_TABLE
+  - m_GUID: 05d37832d23d1ee44824ac100fc2a90d
+    m_Address: m1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 64b13e550845bed49ac797083ce564f8
-    m_Address: CHARACTER_TABLE
+  - m_GUID: 86a943eb80ff06a4a92c0d7b06b2bf85
+    m_Address: m2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 84990d40b9490d34d82824adb2e2eda2
-    m_Address: SET_ENUM
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c9285aaa6f8df4744843440845a68de8
-    m_Address: MAP_TABLE
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ca36ad26a63501b4685423fd68a1657b
-    m_Address: LEVEL_REWARD
+  - m_GUID: 9f4e506c9a6c05c43a578214bd45efc4
+    m_Address: m3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -44,5 +34,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 659786fb8861e664a8a88334390f8666, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e04a36a6824f119439b059a2574e7161, type: 2}
-    - {fileID: 11400000, guid: 881b569a0f2155a46a5c1780e34aa9f4, type: 2}
+    - {fileID: 11400000, guid: 77d3af724f4f26644a2392aa36af9b0c, type: 2}
+    - {fileID: 11400000, guid: 140f53a090b3b86458355a1c6d9b3d07, type: 2}
