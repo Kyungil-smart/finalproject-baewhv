@@ -24,6 +24,9 @@ public class CharacterBaseData : ScriptableObject
     [Tooltip("이동속도(기획서타입 : INT")]
     public int _moveSpeed;
 
+    [Tooltip("사거리(기획서타입 : FLAOT")]
+    public float _attackRange;
+
     //=========================================
     //[2] 추가 능력치
     //=========================================
