@@ -12,15 +12,12 @@ public class BaseMonster : BaseController
     public MonsterNearAttackState NearAttackState { get; protected set; }
     #endregion
 
-    public LayerMask LayerMask { get; private set; }
-
     protected Collider2D[] _colliders = new Collider2D[5];
     protected ContactFilter2D _filter;
     
     public override void SetCurrentTarget(ITargetable target)
     {
         _currentTarget = target;
-        CurrentState.Value = target != null ? EStateType.Chase : EStateType.Idle;
     }
 
     protected override void Awake()
@@ -28,11 +25,10 @@ public class BaseMonster : BaseController
         base.Awake();
         
         CurrentState = new();
-        LayerMask = LayerMask.GetMask("Player");
         _filter = new ContactFilter2D();
         
         _filter.useLayerMask = true;
-        _filter.SetLayerMask(LayerMask);
+        _filter.SetLayerMask(LayerMask.GetMask("Player"));
         _filter.useTriggers = false;
     }
     
