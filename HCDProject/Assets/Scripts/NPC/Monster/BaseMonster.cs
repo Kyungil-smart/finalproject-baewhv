@@ -11,30 +11,29 @@ public class BaseMonster : BaseController
     public MonsterChaseState ChaseState { get; protected set; }
     public MonsterNearAttackState NearAttackState { get; protected set; }
     #endregion
-
-    public LayerMask LayerMask { get; private set; }
-
-    protected Collider2D[] _colliders = new Collider2D[5];
-    protected ContactFilter2D _filter;
     
     public override void SetCurrentTarget(ITargetable target)
     {
         _currentTarget = target;
-        CurrentState.Value = target != null ? EStateType.Chase : EStateType.Idle;
     }
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         CurrentState = new();
-        LayerMask = LayerMask.GetMask("Player");
-        
-        _filter = new ContactFilter2D();
-        
-        _filter.useLayerMask = true;
-        _filter.SetLayerMask(LayerMask);
-        _filter.useTriggers = false;
+    }
+    
+    protected void OnEnable()
+    {
+        CurrentState.AddListener(ChangeState);
     }
 
+    protected void OnDisable()
+    {
+        CurrentState.RemoveListener(ChangeState);
+    }
+    
     public override void SetDamage()
     {
         
@@ -50,7 +49,7 @@ public class BaseMonster : BaseController
         State?.Update();
     }
     
-    private protected void ChangeState(EStateType state)
+    private void ChangeState(EStateType state)
     {
         switch (state)
         {
@@ -69,30 +68,6 @@ public class BaseMonster : BaseController
                 break;
             */
         }
-    }
-    
-    public Transform DetectPlayer(float range)
-    {
-        int count = Physics2D.OverlapCircle(transform.position,
-            range,
-            _filter,
-            _colliders);
-
-        Transform target = null;
-        float minDistance = range;
-        
-        for (int i = 0; i < count; i++)
-        {
-            float distance = DistanceToPlayer(_colliders[i].transform);
-
-            if (minDistance > distance)
-            {
-                minDistance = distance;
-                target = _colliders[i].transform;
-            }
-        }
-        
-        return target;
     }
 
     public float DistanceToPlayer(Transform target)

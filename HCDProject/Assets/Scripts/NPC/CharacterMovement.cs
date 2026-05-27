@@ -3,32 +3,22 @@ using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private BaseMonster _controller;
+    private BaseController _controller;
     public NavMeshAgent Agent { get; private set; }
 
     private bool _isMove = true;
     public bool IsMove => _isMove;
+    
+    private Vector2 _currentTarget;
 
-    public CharacterMovement(BaseMonster controller)
+    private void Awake()
     {
-        _controller = controller;
-        
+        _controller = GetComponent<BaseController>();
         Agent = _controller.GetComponent<NavMeshAgent>();
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
         Agent.speed = _controller.Stats._moveSpeed;
-    }
-
-    private Vector2 _targetPos;
-
-    private void Update()
-    {
-        if (!_isMove) return;
-        
-        if (Agent.remainingDistance <= Agent.stoppingDistance)
-        {
-            _isMove = false;
-        }
+        Agent.stoppingDistance = 0.1f;
     }
 
     public void Stop()
@@ -38,8 +28,19 @@ public class CharacterMovement : MonoBehaviour
 
     public void Move(Vector2 target)
     {
-        _isMove = true;
+        if ((_currentTarget - target).sqrMagnitude < 0.01f) return;
+        
+        _currentTarget = target;
+        
         Agent.isStopped = false;
         Agent.SetDestination(target);
+    }
+
+    public void DownMove()
+    {
+        Agent.ResetPath();
+        
+        Agent.isStopped = false;
+        Agent.Move(Vector2.down * (_controller.Stats._moveSpeed * Time.deltaTime));
     }
 }
