@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.Mathematics.Geometry;
 using UnityEngine;
 
@@ -57,6 +58,41 @@ public class BaseMonster : BaseController
                 State.ChangeState(DieState);
                 break;
         }
+    }
+
+    public ITargetable FindTarget()
+    {
+        List<ITargetable> targets = Detect(Stats._chaseRange, ETargetType.Enemy);
+
+        ITargetable player = null;
+        ITargetable wall = null;
+        
+        float playerDis = float.MaxValue;
+        float wallDis = float.MaxValue;
+
+        foreach (ITargetable target in targets)
+        {
+            float dis = (transform.position - target.GetTargetObject.transform.position).sqrMagnitude;
+
+            if (target is BaseCharacter)
+            {
+                if (dis < playerDis)
+                {
+                    playerDis = dis;
+                    player = target;
+                }
+            }
+            else if (target is Rampart)
+            {
+                if (dis < wallDis)
+                {
+                    wallDis = dis;
+                    wall = target;
+                }
+            }
+        }
+
+        return player ?? wall;
     }
 
     public float DistanceToTarget(Transform target)

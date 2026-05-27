@@ -39,7 +39,7 @@ public class MonsterChaseState : IState
         if (_timer >= 0.2f)
         {
             _timer = 0f;
-            _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange, (int)ETargetType.Enemy));
+            _controller.SetCurrentTarget(_controller.FindTarget());
         }
     }
 
