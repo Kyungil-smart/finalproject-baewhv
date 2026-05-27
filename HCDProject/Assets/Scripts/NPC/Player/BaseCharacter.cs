@@ -19,10 +19,8 @@ public class BaseCharacter : BaseController
 
     private Vector3 _homePosition; // 지정된 위치
 
-    
+    [field: SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
 
-    private List<Collider2D> _enemyList = new List<Collider2D>(10);
-    private ContactFilter2D _layerFilter = new ContactFilter2D();
 
     [SerializeField] private CharacterBaseData _baseData;
 
@@ -90,8 +88,21 @@ public class BaseCharacter : BaseController
         _idlePlayerState = new IdlePlayerState(this);
         _chasePlayerState = new ChasePlayerState(this);
         _attackPlayerState = new AttackPlayerState(this);
-        _layerFilter.SetLayerMask(LayerMask.GetMask("Monster")); // 레이어 갖고옴
-        _layerFilter.useLayerMask = true;
+    }
+
+    private void Start()
+    {
+        // 테스트용: SO가 인스펙터에 할당돼 있으면 Init 호출
+        if (_baseData != null)
+        {
+            _homePosition = transform.position;
+            Init(_baseData);
+        }
+    }
+
+    protected virtual void Update()
+    {
+        _stateMachine?.Update();
     }
 
     public void Init(CharacterBaseData data)
@@ -112,41 +123,48 @@ public class BaseCharacter : BaseController
         _stateMachine.ChangeState(_spawnPlayerState);
     }
 
-    public void DefaultAtk() // 일반공격
+    public override int UseCritDamage(int baseDamage)
     {
+        float critValue = Random.value;
 
-    }
+        int finalCrit = Mathf.CeilToInt(baseDamage * Stats._critDamage);
 
-    public virtual void Move(Vector3 targetPosition)
-    {
-
-    }
-
-    public virtual ITargetable FindTarget()
-    {
-        int count = Physics2D.OverlapCircle(this.transform.position,
-            5f,
-            _layerFilter,
-            _enemyList);
-
-        if (count >= 1) // 탐지 수가 1명 이상인 경우.
+        if (Stats._critRate >= critValue)
         {
-            float minDist = float.MaxValue;
-            ITargetable closet = null;
-            for (int i = 0; i < _enemyList.Count; i++) // 가장 가까운 적 탐색
-            {
-                float dist = Vector3.Distance(this.transform.position,
-                    _enemyList[i].transform.position);
+            return finalCrit;
+        }
+        return baseDamage;
+    }
 
-                if (dist <= minDist)
+    public ITargetable FindTarget()
+    {
+        List<ITargetable> targets = Detect(Stats._chaseRange, ETargetType.Enemy);
+
+        ITargetable monster = null;
+
+        float monsterDis = float.MaxValue;
+
+        foreach (ITargetable target in targets)
+        {
+            float dis = (this.transform.position - target.GetTargetObject.transform.position).sqrMagnitude;
+
+            if (target is BaseMonster)
+            {
+                if (dis < monsterDis)
                 {
-                    minDist = dist;
-                    closet = _enemyList[i].GetComponent<ITargetable>();
+                    monsterDis = dis;
+                    monster = target;
                 }
             }
-            return closet;
         }
-        return null;
+        return monster;
+    }
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
     }
 
 }

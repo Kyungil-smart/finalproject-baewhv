@@ -12,6 +12,7 @@ public class SpawnPlayerState : IState
     public void Enter()
     {
         // Todo : 걷기 애니메이션(있다면)
+        _owner.Movement.Move(_owner.homePosition);
     }
 
     public void Exit()
@@ -21,11 +22,6 @@ public class SpawnPlayerState : IState
 
     public void Update()
     {
-        _owner.transform.position = Vector3.MoveTowards
-            (_owner.transform.position,
-            _owner.homePosition,
-            _owner.stat._moveSpeed * Time.deltaTime);
-        
         if (Vector3.Distance(_owner.transform.position, _owner.homePosition) <= 0.1f)
         {
             _owner.state.ChangeState(_owner.idle);
