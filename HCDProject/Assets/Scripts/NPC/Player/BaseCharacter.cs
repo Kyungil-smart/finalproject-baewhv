@@ -43,15 +43,6 @@ public class BaseCharacter : BaseController
             }
         
     }
-    public override void SetDamage()
-    {
-
-    }
-
-    public override void SetHeal()
-    {
-
-    }
 
     public CharacterStats stat
     {

@@ -14,7 +14,6 @@ public class MonsterChaseState : IState
     public void Enter()
     {
         _timer = 0f;
-        _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange));
     }
 
     public void Update()
@@ -25,14 +24,14 @@ public class MonsterChaseState : IState
         }
         else
         {
-            if (Vector2.Distance(_controller.transform.position,
-                    _controller.GetCurrentTarget.GetTargetObject.transform.position) <= _controller.Stats._attackRange)
+            if (_controller.DistanceToTarget(_controller.GetCurrentTarget.GetTargetObject.transform) > _controller.Stats._attackRange)
             {
-                _controller.CurrentState.Value = EStateType.NearAttack;
+                _controller.Movement.Move(_controller.GetCurrentTarget.GetTargetObject.transform.position);
             }
             else
             {
-                _controller.Movement.Move(_controller.GetCurrentTarget.GetTargetObject.transform.position);
+                _controller.CurrentState.Value = EStateType.Attack;
+                return;
             }
         }
         
@@ -40,7 +39,7 @@ public class MonsterChaseState : IState
         if (_timer >= 0.2f)
         {
             _timer = 0f;
-            _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange));
+            _controller.SetCurrentTarget(_controller.FindTarget());
         }
     }
 

@@ -1,26 +1,27 @@
 using UnityEngine;
 
-public class MonsterNearAttackState : IState
+public class MonsterDieState : IState
 {
     private BaseMonster _controller;
 
-    public MonsterNearAttackState(BaseMonster controller)
+    public MonsterDieState(BaseMonster controller)
     {
         _controller = controller;
     }
     
     public void Enter()
     {
-
+        
     }
 
     public void Update()
     {
         
     }
-    
+
     public void Exit()
     {
-
+        
     }
+
 }

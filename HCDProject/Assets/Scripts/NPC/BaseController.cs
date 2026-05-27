@@ -25,6 +25,8 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     protected List<Collider2D> Colliders = new List<Collider2D>(10);
     [SerializeField] protected ContactFilter2D EnemyFilter;
     [SerializeField] protected ContactFilter2D AllyFilter;
+    
+    private List<ITargetable> _targets = new List<ITargetable>();
 
     protected virtual void Awake()
     {
@@ -39,18 +41,22 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public void UseSkill(int index)
     {
-        ITargetable skillTarget = Detect(skills[index].skillRange, skills[index].TargetType);
-        if (skillTarget == null) return;
+        List<ITargetable> skillTargets = Detect(skills[index].skillRange, skills[index].TargetType);
+        
+        if (skillTargets == null) return;
 
-        if (skills[index].TargetType == ETargetType.Enemy)
+        foreach (ITargetable target in skillTargets)
         {
-            int finalDamage = UseCritDamage(skills[index].skillDamage);
-            skillTarget.SetDamage(finalDamage);
-        }
+            if (skills[index].TargetType == ETargetType.Enemy)
+            {
+                int finalDamage = UseCritDamage(skills[index].skillDamage);
+                target.SetDamage(finalDamage);
+            }
 
-        else
-        {
-           skillTarget.SetHeal(skills[index].skillDamage);
+            else
+            {
+                target.SetHeal(skills[index].skillDamage);
+            }
         }
     }
 
@@ -59,13 +65,25 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         return baseDamage;
     }
     
-    public ITargetable Detect(float range, ETargetType targetType)
+    public List<ITargetable> Detect(float range, ETargetType targetType)
     {
+        _targets.Clear();
+        
         int count = Physics2D.OverlapCircle(transform.position,
             range,
             targetType == 0 ? EnemyFilter : AllyFilter,
             Colliders);
-        
+
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out ITargetable target))
+            {
+                _targets.Add(target);
+            }
+        }
+
+        return _targets;
+        /*
         Collider2D target = null;
         float minDistanceSqr = range * range;
 
@@ -86,6 +104,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         }
 
         return null;
+        */
     }
 
     public void SetDamage(int damage)

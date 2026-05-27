@@ -11,7 +11,7 @@ public class MonsterIdleState : IState
     
     public void Enter()
     {
-        
+        _controller.SetCurrentTarget(_controller.FindTarget());
     }
     
     public void Update()
