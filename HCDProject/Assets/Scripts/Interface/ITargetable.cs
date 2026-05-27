@@ -8,6 +8,6 @@ public interface ITargetable
 {
     public GameObject GetTargetObject { get; set; }
     
-    public void SetDamage();
-    public void SetHeal();
+    public void SetDamage(int damage);
+    public void SetHeal(int heal);
 }
