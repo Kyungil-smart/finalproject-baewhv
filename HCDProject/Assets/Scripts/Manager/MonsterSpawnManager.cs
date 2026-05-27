@@ -8,8 +8,7 @@ public class MonsterSpawnManager : SingletonMonoBehaviour<MonsterSpawnManager>
     [SerializeField] private float _spawnDelay;
     [SerializeField] private List<GameObject> _monsterPrefabs = new List<GameObject>();
     
-    private int _monsterCount;
-    public int MonsterCount => _monsterCount;
+    public int MonsterCount { get; set; }
     
     private void Start()
     {
@@ -29,7 +28,7 @@ public class MonsterSpawnManager : SingletonMonoBehaviour<MonsterSpawnManager>
                 , RandomPosition()
                 , Quaternion.identity);
             
-            _monsterCount++;
+            MonsterCount++;
             
             yield return new WaitForSeconds(_spawnDelay);
         }
@@ -38,6 +37,7 @@ public class MonsterSpawnManager : SingletonMonoBehaviour<MonsterSpawnManager>
     public void DespawnMonster(int monsterID, GameObject monster)
     {
         PoolManager.Instance.ReturnPool(_monsterPrefabs[monsterID], monster);
+        MonsterCount--;
     }
 
     private Vector3 RandomPosition()
