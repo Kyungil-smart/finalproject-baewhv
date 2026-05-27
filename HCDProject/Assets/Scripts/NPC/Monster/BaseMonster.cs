@@ -33,11 +33,13 @@ public class BaseMonster : BaseController
     protected void OnEnable()
     {
         CurrentState.AddListener(ChangeState);
+        CurrentHp.AddListener(CheckDeath);
     }
 
     protected void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
+        CurrentHp.RemoveListener(CheckDeath);
     }
 
     protected virtual void Update()
@@ -122,5 +124,14 @@ public class BaseMonster : BaseController
         Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
+    }
+    
+    
+    private void CheckDeath(int value)
+    {
+        if (value <= 0)
+        {
+            // 사망처리
+        }
     }
 }
