@@ -14,7 +14,6 @@ public class MonsterChaseState : IState
     public void Enter()
     {
         _timer = 0f;
-        _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange));
     }
 
     public void Update()
@@ -28,7 +27,7 @@ public class MonsterChaseState : IState
             if (Vector2.Distance(_controller.transform.position,
                     _controller.GetCurrentTarget.GetTargetObject.transform.position) <= _controller.Stats._attackRange)
             {
-                _controller.CurrentState.Value = EStateType.NearAttack;
+                _controller.CurrentState.Value = EStateType.Attack;
             }
             else
             {

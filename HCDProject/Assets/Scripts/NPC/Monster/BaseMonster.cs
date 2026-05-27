@@ -9,7 +9,7 @@ public class BaseMonster : BaseController
     [field:SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
     public MonsterIdleState IdleState { get; protected set; }
     public MonsterChaseState ChaseState { get; protected set; }
-    public MonsterNearAttackState NearAttackState { get; protected set; }
+    public MonsterAttackState NearAttackState { get; protected set; }
     #endregion
     
     public override void SetCurrentTarget(ITargetable target)
@@ -59,7 +59,7 @@ public class BaseMonster : BaseController
             case EStateType.Chase:
                 State.ChangeState(ChaseState);
                 break;
-            case EStateType.NearAttack:
+            case EStateType.Attack:
                 State.ChangeState(NearAttackState);
                 break;
             /*

@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 426274984}
   - component: {fileID: 426274983}
   - component: {fileID: 426274986}
+  - component: {fileID: 426274987}
   - component: {fileID: 426274985}
   m_Layer: 7
   m_Name: Player
@@ -405,7 +406,7 @@ Transform:
   m_GameObject: {fileID: 426274982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.19, y: -5.76, z: 0}
+  m_LocalPosition: {x: 1.11, y: -2.71, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -484,6 +485,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &426274987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426274982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b26244f4d6f95642b2ef83c526a8b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseCharacter
+  _stats:
+    _maxHp: 0
+    _attackPower: 0
+    _defense: 0
+    _moveSpeed: 0
+    _attackSpeed: 0
+    _critRate: 0
+    _critDamage: 0
+    _attackRange: 0
+    _chaseRange: 0
+  skills: []
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _baseData: {fileID: 0}
 --- !u!1 &792197465
 GameObject:
   m_ObjectHideFlags: 0
