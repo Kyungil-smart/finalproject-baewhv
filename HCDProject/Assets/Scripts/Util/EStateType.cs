@@ -4,8 +4,7 @@ public enum EStateType
 {
     Idle = 0,
     Chase = 1,
-    NearAttack = 2,
-    FarAttack = 3,
-    Die = 4
+    Attack = 2,
+    Die = 3
 }
 
