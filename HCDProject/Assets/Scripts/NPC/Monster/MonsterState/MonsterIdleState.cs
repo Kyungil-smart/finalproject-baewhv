@@ -11,7 +11,7 @@ public class MonsterIdleState : IState
     
     public void Enter()
     {
-        _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange));
+        _controller.SetCurrentTarget(_controller.Detect(_controller.Stats._chaseRange, (int)ETargetType.Enemy));
     }
     
     public void Update()

@@ -9,7 +9,8 @@ public class BaseMonster : BaseController
     [field:SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
     public MonsterIdleState IdleState { get; protected set; }
     public MonsterChaseState ChaseState { get; protected set; }
-    public MonsterAttackState NearAttackState { get; protected set; }
+    public MonsterAttackState AttackState { get; protected set; }
+    public MonsterDieState DieState { get; protected set; }
     #endregion
     
     public override void SetCurrentTarget(ITargetable target)
@@ -33,16 +34,6 @@ public class BaseMonster : BaseController
     {
         CurrentState.RemoveListener(ChangeState);
     }
-    
-    public override void SetDamage()
-    {
-        
-    }
-
-    public override void SetHeal()
-    {
-        
-    }
 
     protected virtual void Update()
     {
@@ -60,17 +51,15 @@ public class BaseMonster : BaseController
                 State.ChangeState(ChaseState);
                 break;
             case EStateType.Attack:
-                State.ChangeState(NearAttackState);
+                State.ChangeState(AttackState);
                 break;
-            /*
             case EStateType.Die:
-                _state.ChangeState(DieState);
+                State.ChangeState(DieState);
                 break;
-            */
         }
     }
 
-    public float DistanceToPlayer(Transform target)
+    public float DistanceToTarget(Transform target)
     {
         return Vector2.Distance(transform.position, target.position);
     }
