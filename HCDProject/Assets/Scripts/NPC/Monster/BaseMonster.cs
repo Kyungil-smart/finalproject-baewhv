@@ -13,6 +13,8 @@ public class BaseMonster : BaseController
     public MonsterAttackState AttackState { get; protected set; }
     public MonsterDieState DieState { get; protected set; }
     #endregion
+
+    private float _timer;
     
     public override void SetCurrentTarget(ITargetable target)
     {
@@ -24,6 +26,8 @@ public class BaseMonster : BaseController
         base.Awake();
         
         CurrentState = new();
+
+        _timer = 0f;
     }
     
     protected void OnEnable()
@@ -39,6 +43,8 @@ public class BaseMonster : BaseController
     protected virtual void Update()
     {
         State?.Update();
+        
+        ResetTarget();
     }
     
     private void ChangeState(EStateType state)
@@ -93,6 +99,16 @@ public class BaseMonster : BaseController
         }
 
         return player ?? wall;
+    }
+
+    private void ResetTarget()
+    {
+        _timer += Time.deltaTime;
+
+        if (_timer <= 0.2f) return;
+        
+        _timer = 0f;
+        SetCurrentTarget(FindTarget());
     }
 
     public float DistanceToTarget(Transform target)
