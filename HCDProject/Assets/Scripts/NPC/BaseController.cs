@@ -22,6 +22,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     
     protected List<Collider2D> Colliders = new List<Collider2D>(10);
     protected ContactFilter2D Filter;
+    [SerializeField] private LayerMask _layerMask;
     
 
     protected virtual void Awake()
@@ -32,7 +33,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         Filter = new ContactFilter2D();
         
         Filter.useLayerMask = true;
-        Filter.SetLayerMask(LayerMask.GetMask("Player"));
+        Filter.SetLayerMask(_layerMask);
         Filter.useTriggers = false;
     }
 
@@ -51,24 +52,26 @@ public abstract class BaseController : MonoBehaviour, ITargetable
             range,
             Filter,
             Colliders);
-
-        if (count > 0)
-        {
-            GameObject target = null;
-            float minDistanceSqr = range * range;
         
-            for (int i = 0; i < count; i++)
-            {
-                float distanceSqr = (transform.position - Colliders[i].transform.position).sqrMagnitude;
+        Collider2D target = null;
+        float minDistanceSqr = range * range;
 
-                if (minDistanceSqr > distanceSqr)
-                {
-                    minDistanceSqr = distanceSqr;
-                    target = Colliders[i].gameObject;
-                }
+        for (int i = 0; i < count; i++)
+        {
+            float distanceSqr = (transform.position - Colliders[i].transform.position).sqrMagnitude;
+
+            if (minDistanceSqr > distanceSqr)
+            {
+                minDistanceSqr = distanceSqr;
+                target = Colliders[i];
             }
-            return target?.GetComponent<ITargetable>();
         }
+
+        if (target != null && target.TryGetComponent(out ITargetable targetable))
+        {
+            return targetable;
+        }
+
         return null;
     }
 

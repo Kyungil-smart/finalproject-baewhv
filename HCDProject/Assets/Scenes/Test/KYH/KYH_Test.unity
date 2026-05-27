@@ -525,6 +525,13 @@ MonoBehaviour:
     _critDamage: 0
     _attackRange: 1
     _chaseRange: 3
+  skills:
+  - skillDamage: 10
+    skillRange: 1
+    coolTime: 2
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
   <CurrentState>k__BackingField:
     _data: 0
 --- !u!4 &792197467

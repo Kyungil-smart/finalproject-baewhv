@@ -19,20 +19,20 @@ public class MonsterChaseState : IState
 
     public void Update()
     {
-        if (_controller.GetTargetObject == null)
+        if (_controller.GetCurrentTarget == null)
         {
             _controller.Movement.DownMove();
         }
         else
         {
             if (Vector2.Distance(_controller.transform.position,
-                    _controller.GetTargetObject.transform.position) <= _controller.Stats._attackRange)
+                    _controller.GetCurrentTarget.GetTargetObject.transform.position) <= _controller.Stats._attackRange)
             {
                 _controller.CurrentState.Value = EStateType.NearAttack;
             }
             else
             {
-                _controller.Movement.Move(_controller.GetTargetObject.transform.position);
+                _controller.Movement.Move(_controller.GetCurrentTarget.GetTargetObject.transform.position);
             }
         }
         
