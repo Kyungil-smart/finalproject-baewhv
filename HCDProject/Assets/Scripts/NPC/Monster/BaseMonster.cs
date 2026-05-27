@@ -13,6 +13,8 @@ public class BaseMonster : BaseController
     public MonsterAttackState AttackState { get; protected set; }
     public MonsterDieState DieState { get; protected set; }
     #endregion
+
+    private float _timer;
     
     public override void SetCurrentTarget(ITargetable target)
     {
@@ -24,21 +26,27 @@ public class BaseMonster : BaseController
         base.Awake();
         
         CurrentState = new();
+
+        _timer = 0f;
     }
     
     protected void OnEnable()
     {
         CurrentState.AddListener(ChangeState);
+        CurrentHp.AddListener(CheckDeath);
     }
 
     protected void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
+        CurrentHp.RemoveListener(CheckDeath);
     }
 
     protected virtual void Update()
     {
         State?.Update();
+        
+        ResetTarget();
     }
     
     private void ChangeState(EStateType state)
@@ -95,6 +103,16 @@ public class BaseMonster : BaseController
         return player ?? wall;
     }
 
+    private void ResetTarget()
+    {
+        _timer += Time.deltaTime;
+
+        if (_timer <= 0.2f) return;
+        
+        _timer = 0f;
+        SetCurrentTarget(FindTarget());
+    }
+
     public float DistanceToTarget(Transform target)
     {
         return Vector2.Distance(transform.position, target.position);
@@ -106,5 +124,14 @@ public class BaseMonster : BaseController
         Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
+    }
+    
+    
+    private void CheckDeath(int value)
+    {
+        if (value <= 0)
+        {
+            // 사망처리
+        }
     }
 }

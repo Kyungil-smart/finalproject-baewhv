@@ -6,7 +6,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     [SerializeField] private CharacterStats _stats;
     public CharacterStats Stats => _stats;
 
-    private ObserveValue<int> _currentHp;
+    protected ObserveValue<int> CurrentHp = new ObserveValue<int>();
 
     [SerializeField] List<Skill> skills = new List<Skill>();
 
@@ -32,6 +32,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     {
         GetTargetObject = gameObject;
         Movement = GetComponent<CharacterMovement>();
+        CurrentHp.Value = _stats._maxHp;
         
         EnemyFilter.useLayerMask = true;
         EnemyFilter.useTriggers = false;
@@ -52,7 +53,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
                 int finalDamage = UseCritDamage(skills[index].skillDamage);
                 target.SetDamage(finalDamage);
             }
-
             else
             {
                 target.SetHeal(skills[index].skillDamage);
@@ -83,48 +83,18 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         }
 
         return _targets;
-        /*
-        Collider2D target = null;
-        float minDistanceSqr = range * range;
-
-        for (int i = 0; i < count; i++)
-        {
-            float distanceSqr = (transform.position - Colliders[i].transform.position).sqrMagnitude;
-
-            if (minDistanceSqr > distanceSqr)
-            {
-                minDistanceSqr = distanceSqr;
-                target = Colliders[i];
-            }
-        }
-
-        if (target != null && target.TryGetComponent(out ITargetable targetable))
-        {
-            return targetable;
-        }
-
-        return null;
-        */
     }
 
     public void SetDamage(int damage)
     {
         int def = Mathf.Max(damage - _stats._defense, 0);
-        _currentHp.Value -= def;
-    }
-
-    public void CheckDeath(int value)
-    {
-        if (value <= 0)
-        {
-            // 사망처리
-        }
+        CurrentHp.Value -= def;
     }
 
     public void SetHeal(int heal)
     {
-        int overHp = Mathf.Min(_stats._maxHp, _currentHp.Value + heal);
+        int overHp = Mathf.Min(_stats._maxHp, CurrentHp.Value + heal);
 
-        _currentHp.Value = overHp;
+        CurrentHp.Value = overHp;
     }
 }
