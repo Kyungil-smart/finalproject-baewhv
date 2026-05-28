@@ -19,6 +19,36 @@ public class BaseCharacter : BaseController
 
     private Vector3 _homePosition; // 지정된 위치
 
+    private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
+
+    bool _isFirstCombat = true; // 전사 첫번째 전투
+
+    private EFindType _findType;
+
+    public int SkillCoolTime => skills[_skillTargetIndex].coolTime;
+    
+    public int CurrentSkillRange => skills[_skillTargetIndex].skillRange;
+    
+    public EFindType FindType
+    {
+        get => _findType;
+        set => _findType = value;
+    }
+
+    public int SkillTargetIndex
+    {
+        get => _skillTargetIndex;
+        set => _skillTargetIndex = value;
+    }
+
+    public void CompleteFirstCombat() // 전사 첫번째 전투
+    {
+        if (!_isFirstCombat) return;
+        _isFirstCombat = false;
+        _findType = EFindType.Nearest;
+        Debug.Log($"[전환] {gameObject.name} 첫 전투 완료 → FindType: {_findType}");
+    }
+
     [field: SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
 
 
@@ -29,56 +59,37 @@ public class BaseCharacter : BaseController
     public override void SetCurrentTarget(ITargetable target)
     {
         _currentTarget = target;
-            
-            if (target == null)
-            {
-                state.ChangeState(this.spawn);
-            }
 
-            else
-            {
-                state.ChangeState(this.chase);
-            }
-        
+        if (target == null)
+        {
+            state.ChangeState(this.spawn);
+        }
+
+        else
+        {
+            state.ChangeState(this.chase);
+        }
+
     }
 
-    public CharacterStats stat
-    {
-        get => _currentStats;
-    }
+    public CharacterStats stat => _currentStats;
 
     public Vector3 homePosition
     {
         get => _homePosition;
-        
+
         set => _homePosition = value;
     }
 
-    public StateMachine state
-    {
-        get => _stateMachine;
-    }
-
-    public AttackPlayerState attack
-    {
-        get => _attackPlayerState;
-    }
-
-    public IdlePlayerState idle
-    {
-        get => _idlePlayerState;
-    }
-
-    public SpawnPlayerState spawn
-    {
-        get => _spawnPlayerState;
-    }
-
-    public ChasePlayerState chase
-    {
-        get => _chasePlayerState;
-    }
+    public StateMachine state => _stateMachine;
     
+    public AttackPlayerState attack => _attackPlayerState;
+    
+    public IdlePlayerState idle => _idlePlayerState;
+
+    public SpawnPlayerState spawn => _spawnPlayerState;
+
+    public ChasePlayerState chase => _chasePlayerState;
 
     protected override void Awake()
     {
@@ -98,6 +109,16 @@ public class BaseCharacter : BaseController
             _homePosition = transform.position;
             Init(_baseData);
         }
+    }
+
+    protected void OnEnable()
+    {
+        CurrentHp.AddListener(CheckDeath);
+    }
+
+    protected void OnDisable()
+    {
+        CurrentHp.RemoveListener(CheckDeath);
     }
 
     protected virtual void Update()
@@ -120,6 +141,7 @@ public class BaseCharacter : BaseController
             _critDamage = data._critDamage,
             _attackRange = data._attackRange
         };
+        _findType = EFindType.Farthest;
         _stateMachine.ChangeState(_spawnPlayerState);
     }
 
@@ -136,28 +158,48 @@ public class BaseCharacter : BaseController
         return baseDamage;
     }
 
-    public ITargetable FindTarget()
+    public ITargetable FindTarget(int index)
     {
-        List<ITargetable> targets = Detect(Stats._chaseRange, ETargetType.Enemy);
+        List<ITargetable> targets = Detect(Stats._chaseRange, skills[index].TargetType);
+        Debug.Log($"[탐색] FindType: {_findType} | 탐지 수: {targets.Count}");
 
-        ITargetable monster = null;
+        ITargetable nearest = null;
 
-        float monsterDis = float.MaxValue;
+        float nearestDis = float.MaxValue;
+        float fartDis = float.MinValue;
 
         foreach (ITargetable target in targets)
         {
             float dis = (this.transform.position - target.GetTargetObject.transform.position).sqrMagnitude;
 
-            if (target is BaseMonster)
+            switch (FindType)
             {
-                if (dis < monsterDis)
-                {
-                    monsterDis = dis;
-                    monster = target;
-                }
+                case EFindType.Nearest:
+                    if (dis < nearestDis)
+                    {
+                        nearestDis = dis;
+                        nearest = target;
+                    }
+                    break;
+                case EFindType.Farthest:
+                    if (dis > fartDis)
+                    {
+                        fartDis = dis;
+                        nearest = target;
+                    }
+                    break;
             }
+
         }
-        return monster;
+        return nearest;
+    }
+
+    private void CheckDeath(int value)
+    {
+        if (value <= 0)
+        {
+            // 사망처리
+        }
     }
     protected void OnDrawGizmos()
     {

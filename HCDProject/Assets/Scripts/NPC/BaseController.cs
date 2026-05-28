@@ -8,7 +8,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     protected ObserveValue<int> CurrentHp = new ObserveValue<int>();
 
-    [SerializeField] List<Skill> skills = new List<Skill>();
+    [SerializeField] protected List<Skill> skills = new List<Skill>();
 
     protected ESkillType SkillIndex;
     
@@ -43,7 +43,9 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void UseSkill(int index)
     {
         List<ITargetable> skillTargets = Detect(skills[index].skillRange, skills[index].TargetType);
-        
+
+        Debug.Log($"[스킬] {gameObject.name} | 스킬{index}번 | 탐지된 타겟 수: {skillTargets.Count} | 데미지: {skills[index].skillDamage}");
+
         if (skillTargets == null) return;
 
         foreach (ITargetable target in skillTargets)
@@ -88,6 +90,9 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void SetDamage(int damage)
     {
         int def = Mathf.Max(damage - _stats._defense, 0);
+        
+        Debug.Log($"[피격] {gameObject.name} | 받은 데미지: {def} | HP: {CurrentHp.Value} → {CurrentHp.Value - def}");
+
         CurrentHp.Value -= def;
     }
 
