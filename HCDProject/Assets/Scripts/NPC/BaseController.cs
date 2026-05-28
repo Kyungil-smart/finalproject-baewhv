@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class BaseController : MonoBehaviour, ITargetable
 {
-    [SerializeField] private CharacterStats _stats;
+    [SerializeField] protected CharacterStats _stats;
     public CharacterStats Stats => _stats;
 
     protected ObserveValue<int> CurrentHp = new ObserveValue<int>();
