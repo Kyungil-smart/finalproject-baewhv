@@ -102,4 +102,12 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
         CurrentHp.Value = overHp;
     }
+    
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
+    }
 }

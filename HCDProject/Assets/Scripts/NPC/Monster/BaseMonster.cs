@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BaseMonster : BaseController
 {
+    [SerializeField] private int monsterID;
+    
     #region State
     private protected StateMachine State;
     [field:SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
@@ -117,21 +119,14 @@ public class BaseMonster : BaseController
     {
         return Vector2.Distance(transform.position, target.position);
     }
-
-    protected void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
-    }
-    
     
     private void CheckDeath(int value)
     {
+        if (monsterID == 0) return;
+        
         if (value <= 0)
         {
-            // 사망처리
+            MonsterSpawnManager.Instance.DespawnMonster(monsterID, gameObject);
         }
     }
 }
