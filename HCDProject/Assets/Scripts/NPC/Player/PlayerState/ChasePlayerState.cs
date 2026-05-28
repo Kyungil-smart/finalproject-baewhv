@@ -32,7 +32,7 @@ public class ChasePlayerState : IState
         float dist = Vector3.Distance(_owner.transform.position,
             _owner.GetCurrentTarget.GetTargetObject.transform.position);
 
-        if (dist <= _owner.Stats._attackRange)
+        if (dist <= _owner.CurrentSkillRange)
         {
             _owner.Movement.Stop();
             _owner.state.ChangeState(_owner.attack);
