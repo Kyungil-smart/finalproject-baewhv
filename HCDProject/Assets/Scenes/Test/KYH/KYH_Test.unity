@@ -451,6 +451,9 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  _reviveTime: 0
+  <CurrentState>k__BackingField:
+    _data: 0
   _baseData: {fileID: 11400000, guid: c7c627e3f46264345b01cac2856937db, type: 2}
 --- !u!195 &426274988
 NavMeshAgent:
@@ -890,6 +893,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2538936599541043751, guid: 0e89e7d3ed179c541b47fa35f0e80cb3, type: 3}
+      propertyPath: _eManager
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7497046026704439906, guid: 0e89e7d3ed179c541b47fa35f0e80cb3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -992,6 +999,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
+      propertyPath: _eManager
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
       propertyPath: _spawnDelay
       value: 1
       objectReference: {fileID: 0}
@@ -1000,7 +1011,19 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
+      propertyPath: _monsterPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
       propertyPath: '_monsterPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8581605575929063650, guid: 8f4531a37b97412418be218496b08e91, type: 3}
+    - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
+      propertyPath: '_monsterPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8581605575929063650, guid: 8f4531a37b97412418be218496b08e91, type: 3}
+    - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
+      propertyPath: '_monsterPrefabs.Array.data[2]'
       value: 
       objectReference: {fileID: 8581605575929063650, guid: 8f4531a37b97412418be218496b08e91, type: 3}
     m_RemovedComponents: []

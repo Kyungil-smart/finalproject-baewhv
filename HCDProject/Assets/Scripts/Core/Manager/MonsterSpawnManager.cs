@@ -13,13 +13,24 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     
     private int _currentWave;
     private bool _isWaving = false;
-    private bool _stageClear = false;
+    public ObserveValue<bool> stageClear = new ObserveValue<bool>();
     
-    public int MonsterCount { get; set; }
+    public ObserveValue<int> monsterCount = new ObserveValue<int>();
 
-    private void OnEnable()
+    protected override void Awake()
     {
+        base.Awake();
+        
+        monsterCount.AddListener(WaveEnd);
         _currentWave = 0;
+
+        MonsterID = 1;
+        SpawnCount = 5;
+    }
+
+    private void Start()
+    {
+        WaveStart();
     }
 
     public void WaveStart()
@@ -31,13 +42,15 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         SpawnMonster(MonsterID, SpawnCount);
     }
 
-    public void WaveEnd()
+    private void WaveEnd(int value)
     {
+        if (value > 0) return;
+        
         _isWaving = false;
 
         if (_currentWave >= 3)
         {
-            _stageClear = true;
+            stageClear.Value = true;
         }
     }
     
@@ -54,7 +67,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
                 , RandomPosition()
                 , Quaternion.identity);
             
-            MonsterCount++;
+            monsterCount.Value++;
             
             yield return new WaitForSeconds(_spawnDelay);
         }
@@ -63,7 +76,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     public void DespawnMonster(int monsterID, GameObject monster)
     {
         Service.Get<PoolManager>().ReturnPool(_monsterPrefabs[monsterID], monster);
-        MonsterCount--;
+        monsterCount.Value--;
     }
 
     private Vector3 RandomPosition()
