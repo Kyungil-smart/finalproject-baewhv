@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de8e1cfc2aeca54b817309757320fb9, type: 3}
+  m_Name: Warrior_BaseData
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterBaseData
+  _characterName: Warrior
+  _hp: 150
+  _attackPower: 25
+  _defense: 5
+  _moveSpeed: 50
+  _attackRange: 0
+  _chaseRange: 4
+  _attackSpeed: 0.75
+  _critRate: 0.05
+  _critDamage: 1.5
+  _hpGrowth: 0
+  _attackPowerGrowth: 0
+  _defenseGrowth: 0
+  _attackSpeedGrowth: 0
+  _critRateGrowth: 0
+  _critDamageGrowth: 0
