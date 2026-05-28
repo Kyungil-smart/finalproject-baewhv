@@ -8,7 +8,7 @@ public class SceneController : BaseManager<SceneController>
     
     private void Update()
     {
-        if (Keyboard.current.bKey.wasPressedThisFrame) ChangeScene();
+        if (Keyboard.current.bKey.wasPressedThisFrame) ChangeModeScene();
         if (Keyboard.current.nKey.wasPressedThisFrame) ChangeSceneStageSelect();
         if (Keyboard.current.mKey.wasPressedThisFrame) ChangeSceneInGame();
         if (Keyboard.current.iKey.wasPressedThisFrame) ChangeSceneTitle();
@@ -33,7 +33,7 @@ public class SceneController : BaseManager<SceneController>
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
     
-    public void ChangeScene()
+    public void ChangeModeScene()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }

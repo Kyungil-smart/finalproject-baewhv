@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1a52ceceb895d4da1d1704775c5e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawnManager
+  _spawnOffsetY: 0
+  _spawnDelay: 0
   _monsterPrefabs:
   - {fileID: 0}
