@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "MAP_ID": 1,
+      "CHAPTER": 1,
+      "STAGE": 1,
+      "_3_Sort_Count": 4,
+      "TOTAL_WAVE": 2,
+      "WAVE": 1,
+      "NEXT_WAVE_TIME": 5,
+      "TOTAL_WAVE_MONSTER": 2,
+      "WAVE_RESPAWN_TIME": 2,
+      "SPAWN_MONSTER_ID_01": "m1",
+      "SPAWN_MONSTER_COUNT_01": 3,
+      "SPAWN_MONSTER_ID_02": "m2",
+      "SPAWN_MONSTER_COUNT": 3,
+      "ENTRY": ""
+    },
+    {
+      "MAP_ID": 2,
+      "CHAPTER": 1,
+      "STAGE": 1,
+      "_3_Sort_Count": 5,
+      "TOTAL_WAVE": 2,
+      "WAVE": 2,
+      "NEXT_WAVE_TIME": 5,
+      "TOTAL_WAVE_MONSTER": 2,
+      "WAVE_RESPAWN_TIME": 2,
+      "SPAWN_MONSTER_ID_01": "m1",
+      "SPAWN_MONSTER_COUNT_01": 2,
+      "SPAWN_MONSTER_ID_02": "m3",
+      "SPAWN_MONSTER_COUNT": 2,
+      "ENTRY": ""
+    },
+    {
+      "MAP_ID": 3,
+      "CHAPTER": 1,
+      "STAGE": 2,
+      "_3_Sort_Count": 6,
+      "TOTAL_WAVE": 2,
+      "WAVE": 1,
+      "NEXT_WAVE_TIME": 4,
+      "TOTAL_WAVE_MONSTER": 2,
+      "WAVE_RESPAWN_TIME": 2,
+      "SPAWN_MONSTER_ID_01": "m2",
+      "SPAWN_MONSTER_COUNT_01": 1,
+      "SPAWN_MONSTER_ID_02": "m3",
+      "SPAWN_MONSTER_COUNT": 4,
+      "ENTRY": ""
+    }
+  ]
+}
