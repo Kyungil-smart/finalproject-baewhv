@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolManager : SingletonMonoBehaviour<PoolManager>
+public class PoolManager : BaseManager<PoolManager>
 {
     private Dictionary<GameObject, Queue<GameObject>> _pool = new Dictionary<GameObject, Queue<GameObject>>();
     

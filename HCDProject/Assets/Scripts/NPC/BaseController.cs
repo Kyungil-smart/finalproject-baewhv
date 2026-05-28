@@ -44,10 +44,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     {
         List<ITargetable> skillTargets = Detect(skills[index].skillRange, skills[index].TargetType);
 
-        Debug.Log($"[스킬] {gameObject.name} | 스킬{index}번 | 탐지된 타겟 수: {skillTargets.Count} | 데미지: {skills[index].skillDamage}");
-
-        if (skillTargets == null) return;
-
         foreach (ITargetable target in skillTargets)
         {
             if (skills[index].TargetType == ETargetType.Enemy)
@@ -90,8 +86,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void SetDamage(int damage)
     {
         int def = Mathf.Max(damage - _stats._defense, 0);
-        
-        Debug.Log($"[피격] {gameObject.name} | 받은 데미지: {def} | HP: {CurrentHp.Value} → {CurrentHp.Value - def}");
 
         CurrentHp.Value -= def;
     }

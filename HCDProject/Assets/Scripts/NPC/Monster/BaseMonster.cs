@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaseMonster : BaseController
 {
-    [SerializeField] private int monsterID;
+    [field:SerializeField] public int MonsterID { get; set; }
     
     #region State
     private protected StateMachine State;
@@ -122,11 +122,9 @@ public class BaseMonster : BaseController
     
     private void CheckDeath(int value)
     {
-        if (monsterID == 0) return;
-        
         if (value <= 0)
         {
-            MonsterSpawnManager.Instance.DespawnMonster(monsterID, gameObject);
+            CurrentState.Value = EStateType.Die;
         }
     }
 }
