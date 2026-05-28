@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseCharacter
   _stats:
-    _maxHp: 0
+    _maxHp: 20
     _attackPower: 0
     _defense: 0
     _moveSpeed: 3
@@ -561,7 +561,7 @@ MonoBehaviour:
     _chaseRange: 4
   skills:
   - skillDamage: 10
-    skillRange: 1
+    skillRange: 3
     coolTime: 2
     TargetType: 0
   EnemyFilter:
@@ -592,6 +592,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  _reviveTime: 3
   <CurrentState>k__BackingField:
     _data: 0
   _baseData: {fileID: 11400000, guid: c7c627e3f46264345b01cac2856937db, type: 2}
@@ -730,18 +731,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
   _stats:
-    _maxHp: 0
+    _maxHp: 40
     _attackPower: 0
     _defense: 0
     _moveSpeed: 3
     _attackSpeed: 0
     _critRate: 0
     _critDamage: 0
-    _attackRange: 1
+    _attackRange: 3
     _chaseRange: 4
   skills:
   - skillDamage: 10
-    skillRange: 1
+    skillRange: 3
     coolTime: 2
     TargetType: 0
   EnemyFilter:
@@ -772,6 +773,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  monsterID: 0
   <CurrentState>k__BackingField:
     _data: 0
 --- !u!195 &1377438772
@@ -1303,18 +1305,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
   _stats:
-    _maxHp: 0
+    _maxHp: 20
     _attackPower: 0
     _defense: 0
     _moveSpeed: 3
     _attackSpeed: 0
     _critRate: 0
     _critDamage: 0
-    _attackRange: 1
+    _attackRange: 3
     _chaseRange: 4
   skills:
   - skillDamage: 10
-    skillRange: 1
+    skillRange: 3
     coolTime: 2
     TargetType: 0
   EnemyFilter:
@@ -1345,6 +1347,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  monsterID: 0
   <CurrentState>k__BackingField:
     _data: 0
 --- !u!195 &1678274867

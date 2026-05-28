@@ -15,6 +15,8 @@ public class BaseCharacter : BaseController
 
     private AttackPlayerState _attackPlayerState;
 
+    private DiePlayerState _diePlayerState;
+
     private Transform _currentBackup; // 탐지할 대상
 
     private Vector3 _homePosition; // 지정된 위치
@@ -22,6 +24,12 @@ public class BaseCharacter : BaseController
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
     bool _isFirstCombat = true; // 전사 첫번째 전투
+
+    [SerializeField] private float _reviveTime; // 캐릭터 부활시간
+
+    private bool _isDead;
+
+    public float ReviveTime => _reviveTime;
 
     private EFindType _findType;
 
@@ -91,6 +99,8 @@ public class BaseCharacter : BaseController
 
     public ChasePlayerState chase => _chasePlayerState;
 
+    public DiePlayerState die => _diePlayerState;
+
     protected override void Awake()
     {
         base.Awake();
@@ -99,6 +109,7 @@ public class BaseCharacter : BaseController
         _idlePlayerState = new IdlePlayerState(this);
         _chasePlayerState = new ChasePlayerState(this);
         _attackPlayerState = new AttackPlayerState(this);
+        _diePlayerState = new DiePlayerState(this);
     }
 
     private void Start()
@@ -196,12 +207,23 @@ public class BaseCharacter : BaseController
 
     private void CheckDeath(int value)
     {
+        if (_isDead) return;
+
         if (value <= 0)
         {
-            // 사망처리
+            _isDead = true;
+            Debug.Log($"[사망] {gameObject.name} | HP: {value}");
+            this.state.ChangeState(this.die);
         }
     }
-    protected void OnDrawGizmos()
+
+    public void Revive()
+    {
+        _isDead = false;
+        CurrentHp.Value = Stats._maxHp;
+    }
+
+    protected void PlayerOnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);

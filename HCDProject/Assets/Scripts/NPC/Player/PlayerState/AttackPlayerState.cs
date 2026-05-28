@@ -33,7 +33,7 @@ public class AttackPlayerState : IState
         float dist = Vector3.Distance(_owner.transform.position,
             _owner.GetCurrentTarget.GetTargetObject.transform.position);
 
-        Debug.Log($"거리: {dist} | 스킬범위: {_owner.CurrentSkillRange}");
+        //Debug.Log($"거리: {dist} | 스킬범위: {_owner.CurrentSkillRange}");
 
         if (dist > _owner.CurrentSkillRange) // 공격 범위 벗어났으면
         {
