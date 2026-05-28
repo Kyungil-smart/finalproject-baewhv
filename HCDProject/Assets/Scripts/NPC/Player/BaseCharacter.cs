@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 // 모든 직업군이 공통으로 가질 클래스
@@ -16,8 +15,6 @@ public class BaseCharacter : BaseController
     private AttackPlayerState _attackPlayerState;
 
     private DiePlayerState _diePlayerState;
-
-    private Transform _currentBackup; // 탐지할 대상
 
     private Vector3 _homePosition; // 지정된 위치
 
@@ -62,8 +59,6 @@ public class BaseCharacter : BaseController
 
     [SerializeField] private CharacterBaseData _baseData;
 
-    private CharacterStats _currentStats;
-
     public override void SetCurrentTarget(ITargetable target)
     {
         _currentTarget = target;
@@ -79,8 +74,6 @@ public class BaseCharacter : BaseController
         }
 
     }
-
-    public CharacterStats stat => _currentStats;
 
     public Vector3 homePosition
     {
@@ -141,7 +134,7 @@ public class BaseCharacter : BaseController
     {
         _baseData = data;
 
-        _currentStats = new CharacterStats
+        _stats = new CharacterStats
         {
             _maxHp = data._hp,
             _attackPower = data._attackPower,
@@ -150,9 +143,12 @@ public class BaseCharacter : BaseController
             _attackSpeed = data._attackSpeed,
             _critRate = data._critRate,
             _critDamage = data._critDamage,
-            _attackRange = data._attackRange
+            _attackRange = data._attackRange,
+            _chaseRange = data._chaseRange
         };
         _findType = EFindType.Farthest;
+        CurrentHp.Value = _stats._maxHp;
+        Movement.Agent.speed = _stats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
     }
 
@@ -221,14 +217,8 @@ public class BaseCharacter : BaseController
     {
         _isDead = false;
         CurrentHp.Value = Stats._maxHp;
-    }
 
-    protected void PlayerOnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
+        _isFirstCombat = true;
+        _findType = EFindType.Farthest;
     }
-
 }
