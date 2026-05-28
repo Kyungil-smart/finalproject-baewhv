@@ -27,6 +27,8 @@ public class CharacterBaseData : ScriptableObject
     [Tooltip("사거리(기획서타입 : FLAOT")]
     public float _attackRange;
 
+    [Tooltip("추적범위")]
+    public int _chaseRange;
     //=========================================
     //[2] 추가 능력치
     //=========================================
