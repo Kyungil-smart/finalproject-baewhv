@@ -3,19 +3,11 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class DataManager : MonoBehaviour
+public class DataManager : BaseManager<DataManager>
 {
     // 추후 추가될 데이터 파일 ++
     public MapTable MapTable  {get; private set;}
     public MonsterTable MonsterTable {get; private set;}
-
-    private void Awake() => Service.Register<DataManager>(this);
-
-    private void OnDestroy()
-    {
-        Service.UnRegister<DataManager>();
-    }
-
 
     public void InitData(Action OnDataLoaded)
     {

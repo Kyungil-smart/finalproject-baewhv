@@ -4,29 +4,32 @@ using UnityEngine;
 
 public static class Service
 {
-    public static IDictionary<Type, object> Services { get => _services; }
-    private static Dictionary<Type, object> _services = new();
+    private static Dictionary<Type, object> _services = new Dictionary<Type, object>();
 
-    public static void Register<T>(T service)
+    public static bool Register<T>(T service, EManagerType managerType = EManagerType.none) where T : MonoBehaviour
     {
-        if (!_services.ContainsKey(typeof(T)))
-        {
-            _services[typeof(T)] = service;
-        }
+        if (_services.ContainsKey(typeof(T))) return false;
+
+        _services[typeof(T)] = service;
+
+        return true;
     }
     
-    public static void UnRegister<T>()
+    public static void UnRegister<T>(T service)  where T : MonoBehaviour
     {
-        _services.Remove(typeof(T));
+        if(_services.ContainsKey(typeof(T)) && (T)_services[typeof(T)] == service) _services.Remove(typeof(T));
     }
-
+    
     public static T Get<T>()
     {
-        return (T)_services[typeof(T)];
+        if (_services.TryGetValue(typeof(T), out object service)) return (T)service;
+        return default;
     }
 }
 
-public interface ISpawnable
+public enum EManagerType
 {
-    void Spawn(int chapter, int stage, int wave);
+    none,
+    dontDestroyOnLoad,
+    Session
 }

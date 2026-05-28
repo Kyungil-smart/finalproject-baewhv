@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour
+public class GameManager : BaseManager<GameManager>
 {
-    [SerializeField] public MonsterManager monsterManager;
-    
     private int _wallHealth;
     private bool isLoading = false;
 
@@ -27,7 +25,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Service.Register<GameManager>(this);
+        Service.Get<SceneController>()?.CreateSession();
+        
+        base.Awake();
+        
         Init();
     }
 
@@ -35,11 +36,9 @@ public class GameManager : MonoBehaviour
     {
         Service.Get<DataManager>()?.InitData(()=>{Debug.Log("초기 데이터 받기 성공");});
         
-        Service.Get<GameManager>()?.Spawn(1,1,1);
+        // Service.Get<GameManager>()?.Spawn(1,1,1);
     }
     
-    private void OnDestroy() => Service.UnRegister<GameManager>();
-
     private void Update()
     {
         if (Keyboard.current.numpad1Key.wasPressedThisFrame)
@@ -50,6 +49,11 @@ public class GameManager : MonoBehaviour
         if (Keyboard.current.numpad2Key.wasPressedThisFrame)
         {
             EnterStage(1, 2);
+        }
+
+        if (Keyboard.current.numpad3Key.wasPressedThisFrame)
+        {
+            Spawn(1, 1, 1);
         }
 
         if (Keyboard.current.numpad4Key.wasPressedThisFrame)
@@ -63,6 +67,8 @@ public class GameManager : MonoBehaviour
         WallHealth = 100; // 추후 json으로 데이터 연결 필요 
     }
 
+    
+    
     private void EnterStage(int chapter, int stage)
     {
         isLoading = true;
@@ -77,7 +83,7 @@ public class GameManager : MonoBehaviour
             if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
         }
         
-        monsterManager.StageMonster(new List<string>(ids), () =>
+        Service.Get<MonsterManager>()?.StageMonster(new List<string>(ids), () =>
         {
             isLoading = false;
 
@@ -99,13 +105,13 @@ public class GameManager : MonoBehaviour
         {
             string address = waveData.SPAWN_MONSTER_ID_01.Trim();
             GameObject prefab = Service.Get<MonsterManager>().GetMonsterPrefab(address);
-
+            
             for (int i = 0; i < waveData.SPAWN_MONSTER_COUNT_01; i++)
             {
                 GameObject obj = Instantiate(prefab, UnityEngine.Random.insideUnitSphere * 3f, Quaternion.identity);
                 
                 MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == waveData.SPAWN_MONSTER_ID_01.Trim());
-                obj.AddComponent<NormalMonster>().InitStatus(stat);
+                obj.AddComponent<MonsterStatus>().InitStatus(stat);
             }
         }
 
@@ -119,7 +125,7 @@ public class GameManager : MonoBehaviour
                 GameObject obj = Instantiate(prefab, UnityEngine.Random.insideUnitSphere * 3f, Quaternion.identity);
                 
                 MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == waveData.SPAWN_MONSTER_ID_02.Trim());
-                obj.AddComponent<NormalMonster>().InitStatus(stat);
+                obj.AddComponent<MonsterStatus>().InitStatus(stat);
             }
         }
     }

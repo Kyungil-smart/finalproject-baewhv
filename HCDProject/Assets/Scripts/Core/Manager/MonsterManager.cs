@@ -4,18 +4,10 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class MonsterManager : MonoBehaviour
+public class MonsterManager : BaseManager<MonsterManager>
 {
     private Dictionary<string, GameObject> _monsterPrefabs = new Dictionary<string, GameObject>();
     private Dictionary<string, AsyncOperationHandle<GameObject>> _monsterHandles = new Dictionary<string, AsyncOperationHandle<GameObject>>();
-
-    private void Awake()
-    {
-        Service.Register<MonsterManager>(this);
-    }
-
-
-    private void OnDestroy() => Service.UnRegister<MonsterManager>();
 
     public void StageMonster(List<string> currentStageMonsterIds, Action OnComplete)
     {

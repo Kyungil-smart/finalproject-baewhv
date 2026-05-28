@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8503473655544338}
   - component: {fileID: 5097936355518555076}
   - component: {fileID: 4673205916308618841}
+  - component: {fileID: -4252610802756996071}
+  - component: {fileID: -6518391832084758235}
   m_Layer: 0
   m_Name: m3
   m_TagString: Untagged
@@ -138,3 +140,59 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4252610802756996071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989597606507756820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec433bb2abf7fa478f4f2924c9d806d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
+  _stats:
+    _maxHp: 0
+    _attackPower: 0
+    _defense: 0
+    _moveSpeed: 0
+    _attackSpeed: 0
+    _critRate: 0
+    _critDamage: 0
+    _attackRange: 0
+    _chaseRange: 0
+  <CurrentState>k__BackingField:
+    _data: 0
+--- !u!114 &-6518391832084758235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989597606507756820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e0a0711b4fc7a429d928ced2dcc82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterStatus
+  <Stat>k__BackingField:
+    MONSTER_ID: 
+    MONSTER_NAME: 
+    HP: 0
+    ATK: 0
+    DEF: 0
+    ATK_SPEED: 0
+    MOVE_SPEED: 0
+    ATK_TYPE: 
+    ATK_IS: 0
+    ATK_SFX: 
+    HIT_SFX: 
+    ATK_FX: 
+    HIT_FX: 
+    ATTACK_MOTION: 
+    DEAD_MOTION: 
+    MOVE_MOTION: 
+    HIT_MOTION: 
+    MONSTER_IMG: 
+    EXP: 0
