@@ -105,7 +105,7 @@ public class BaseCharacter : BaseController
         _diePlayerState = new DiePlayerState(this);
     }
 
-    private void Start()
+    /*private void Start()
     {
         // 테스트용: SO가 인스펙터에 할당돼 있으면 Init 호출
         if (_baseData != null)
@@ -113,7 +113,7 @@ public class BaseCharacter : BaseController
             _homePosition = transform.position;
             Init(_baseData);
         }
-    }
+    }*/
 
     protected void OnEnable()
     {
