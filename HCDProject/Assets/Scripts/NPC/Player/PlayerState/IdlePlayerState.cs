@@ -25,6 +25,8 @@ public class IdlePlayerState : IState
 
     public void Update()
     {
+        if (_owner.GetCurrentTarget != null) return;
+
         ITargetable target = _owner.FindTarget(_owner.SkillTargetIndex);
 
         if (target != null)

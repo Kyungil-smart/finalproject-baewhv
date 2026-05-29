@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 // 모든 직업군이 공통으로 가질 클래스
 public class BaseCharacter : BaseController
@@ -16,16 +17,24 @@ public class BaseCharacter : BaseController
 
     private DiePlayerState _diePlayerState;
 
-    private Vector3 _homePosition; // 지정된 위치
+    [SerializeField]private Vector3 _homePosition; // 지정된 위치
 
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
     bool _isFirstCombat = true; // 전사 첫번째 전투
 
-    [SerializeField] private float _reviveTime; // 캐릭터 부활시간
+    bool _isSpawning = true;
 
     private bool _isDead;
 
+    [SerializeField] private float _reviveTime; // 캐릭터 부활시간
+
+    public bool IsSpawning
+    {
+        get => _isSpawning;
+        set => _isSpawning = value;
+    }
+    
     public float ReviveTime => _reviveTime;
 
     private EFindType _findType;
@@ -44,6 +53,12 @@ public class BaseCharacter : BaseController
     {
         get => _skillTargetIndex;
         set => _skillTargetIndex = value;
+    }
+
+    public void SetNavMeshActive(bool isActive)
+    {
+        this.Movement.Agent.isStopped = isActive;
+        this.Movement.Agent.enabled = isActive;
     }
 
     public void CompleteFirstCombat() // 전사 첫번째 전투
@@ -158,9 +173,9 @@ public class BaseCharacter : BaseController
 
     public ITargetable FindTarget(int index)
     {
-        List<ITargetable> targets = Detect(Stats._chaseRange, skills[index].TargetType);
-        Debug.Log($"[탐색] FindType: {_findType} | 탐지 수: {targets.Count}");
+        if (_isSpawning) return null;
 
+        List<ITargetable> targets = Detect(Stats._chaseRange, skills[index].TargetType);
         ITargetable nearest = null;
 
         if (FindType == EFindType.LowestHp)
@@ -226,6 +241,7 @@ public class BaseCharacter : BaseController
     public void Revive()
     {
         _isDead = false;
+        _isSpawning = true;
         CurrentHp.Value = Stats._maxHp;
 
         _isFirstCombat = _baseData._hasFirstCombat;
