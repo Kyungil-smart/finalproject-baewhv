@@ -82,6 +82,8 @@ public class ObjectRail : MonoBehaviour
         targetList.Add(dndScript);
 
         blockRect.anchoredPosition = CalculateRailPosition(targetParent, targetList.Count - 1);
+
+        CheckRailLayout(targetList);
     }
 
     public void RemoveBlockFromRail(DragAndDrop block)
@@ -106,9 +108,47 @@ public class ObjectRail : MonoBehaviour
 
         RealignAllBlocks();
         SpawnBlockOnRail();
+
+        CheckRailLayout(railABlocks);
+        CheckRailLayout(railBBlocks);
     }
 
-    private void RealignAllBlocks()
+    private void CheckRailLayout(List<DragAndDrop> targetList)
+    {
+        if (targetList.Count < 3) return;
+
+        for (int i = targetList.Count - 1; i >= 2; i--)
+        {
+            string name1 = GetCleanName(targetList[i].gameObject.name);
+            string name2 = GetCleanName(targetList[i - 1].gameObject.name);
+            string name3 = GetCleanName(targetList[i - 2].gameObject.name);
+
+            if (name1 == name2 && name2 == name3)
+            {
+                Destroy(targetList[i].gameObject);
+                Destroy(targetList[i - 1].gameObject);
+                Destroy(targetList[i - 2].gameObject);
+
+                targetList.RemoveAt(i);
+                targetList.RemoveAt(i - 1);
+                targetList.RemoveAt(i - 2);
+
+                RealignAllBlocks();
+                SpawnBlockOnRail();
+                SpawnBlockOnRail();
+                SpawnBlockOnRail();
+
+                return;
+            }
+        }
+    }
+
+    private string GetCleanName(string rawName)
+    {
+        return rawName.Replace("(Clone)", "").Trim();
+    }
+
+    public void RealignAllBlocks()
     {
         for (int i = 0; i < railABlocks.Count; i++)
         {
