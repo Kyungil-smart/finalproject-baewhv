@@ -3,13 +3,13 @@ using UnityEngine.EventSystems;
 
 public class SlotBase : MonoBehaviour, IDropHandler
 {
-    public Transform[] subSlots = new Transform[3];
+    public Transform[] SubSlots { get; set; } = new Transform[3];
 
     public virtual void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
-            DragAndDropItem draggedObject = eventData.pointerDrag.GetComponent<DragAndDropItem>();
+            DragAndDrop draggedObject = eventData.pointerDrag.GetComponent<DragAndDrop>();
 
             if (draggedObject != null)
             {
