@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,23 +10,32 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     [SerializeField] private List<GameObject> _monsterPrefabs = new List<GameObject>();
 
     public int MonsterID { get; set; }
-    public int SpawnCount { get; set; }
+    [field:SerializeField] public int SpawnCount { get; set; }
     
-    private int _currentWave;
     private bool _isWaving = false;
-    public ObserveValue<bool> stageClear = new ObserveValue<bool>();
-    
     public ObserveValue<int> monsterCount = new ObserveValue<int>();
+    public ObserveValue<int> currentWave = new ObserveValue<int>();
+    public ObserveValue<bool> stageClear = new ObserveValue<bool>();
 
     protected override void Awake()
     {
         base.Awake();
         
-        monsterCount.AddListener(WaveEnd);
-        _currentWave = 0;
+        currentWave.Value = 0;
 
+        // MonsterID, MonsterCount는 후에 데이터 테이블로 받을 예정
+        // 현재는 코드및 직렬화로 입력
         MonsterID = 1;
-        SpawnCount = 5;
+    }
+
+    private void OnEnable()
+    {
+        monsterCount.AddListener(WaveEnd);
+    }
+
+    private void OnDisable()
+    {
+        monsterCount.RemoveListener(WaveEnd);
     }
 
     private void Start()
@@ -35,7 +45,9 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 
     public void WaveStart()
     {
-        _currentWave++;
+        if (currentWave.Value >= 3) return;
+        
+        currentWave.Value++;
         
         _isWaving = true;
         
@@ -48,7 +60,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         
         _isWaving = false;
 
-        if (_currentWave >= 3)
+        if (currentWave.Value >= 3)
         {
             stageClear.Value = true;
         }
@@ -75,7 +87,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 
     public void DespawnMonster(int monsterID, GameObject monster)
     {
-        Service.Get<PoolManager>().ReturnPool(_monsterPrefabs[monsterID], monster);
+        Service.Get<PoolManager>().ReturnPool(_monsterPrefabs[monsterID - 1], monster);
         monsterCount.Value--;
     }
 
