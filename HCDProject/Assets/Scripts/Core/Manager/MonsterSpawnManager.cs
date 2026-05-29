@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 {
@@ -28,6 +29,14 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         MonsterID = 1;
     }
 
+    private void Update()
+    {
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            WaveStart();
+        }
+    }
+
     private void OnEnable()
     {
         monsterCount.AddListener(WaveEnd);
@@ -36,11 +45,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     private void OnDisable()
     {
         monsterCount.RemoveListener(WaveEnd);
-    }
-
-    private void Start()
-    {
-        WaveStart();
     }
 
     public void WaveStart()
