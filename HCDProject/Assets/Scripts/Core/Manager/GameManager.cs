@@ -1,42 +1,45 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameManager : BaseManager<GameManager>
 {
-    private int _wallHealth;
     private bool isLoading = false;
-
-    public int WallHealth
-    {
-        get => _wallHealth;
-        private set
-        {
-            _wallHealth = value;
-
-            if (_wallHealth <= 0)
-            {
-                _wallHealth = 0;
-                EndStage();
-            }
-        }
-    }
+    
+    // private int _wallHealth;
+    // public int WallHealth
+    // {
+    //     get => _wallHealth;
+    //     private set
+    //     {
+    //         _wallHealth = value;
+    //
+    //         if (_wallHealth <= 0)
+    //         {
+    //             _wallHealth = 0;
+    //             EndStage();
+    //         }
+    //     }
+    // }
+    
+    public GameState currentState = GameState.Ready;
+    private float sortTime = 10;
+    private int totalWave = 3;
+    private Rampart _wall;
+    private Coroutine _gameRoutine;
 
     private void Awake()
     {
         Service.Get<SceneController>()?.CreateSession();
         
         base.Awake();
-        
-        Init();
     }
 
     private void Start()
     {
         Service.Get<DataManager>()?.InitData(()=>{Debug.Log("초기 데이터 받기 성공");});
-        
-        // Service.Get<GameManager>()?.Spawn(1,1,1);
     }
     
     private void Update()
@@ -62,36 +65,92 @@ public class GameManager : BaseManager<GameManager>
         }
     }
 
-    private void Init()
+    private void OnDestroy()
     {
-        WallHealth = 100; // 추후 json으로 데이터 연결 필요 
+        if (_wall != null) _wall.OnWallDestroyed -= GameOver;
+        
+        base.OnDestroy();
     }
 
-    
-    
-    private void EnterStage(int chapter, int stage)
+    private IEnumerator GameRoutine()
     {
-        isLoading = true;
+        yield return YieldContainer.WaitForSeconds(2f);
+        Debug.Log("게임 시작");
         
-        List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
+        _wall = FindFirstObjectByType<Rampart>();
+        if ( _wall != null) _wall.OnWallDestroyed += GameOver;
         
-        HashSet<string> ids = new HashSet<string>();
-
-        foreach (var data in currentStage)
+        var currentWave = Service.Get<MonsterSpawnManager>();
+        if (currentWave == null) yield break;
+        
+        while (currentWave?.currentWave.Value < totalWave)
         {
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
-        }
-        
-        Service.Get<MonsterManager>()?.StageMonster(new List<string>(ids), () =>
-        {
-            isLoading = false;
+            currentState = GameState.Wave;
+            currentWave?.WaveStart();
 
-            foreach (var id in ids)
+            while (currentWave?.monsterCount.Value > 0)
             {
-                Debug.Log($"로딩 성공 : {id}");
+                if (currentState == GameState.GameOver)  yield break;
+                yield return null;
             }
-        });
+
+            if (currentWave.currentWave.Value >= totalWave) break;
+
+            currentState = GameState.Sort;
+
+            float time = sortTime;
+
+            while (time > 0)
+            {
+                if (currentState == GameState.GameOver)  yield break;
+                
+                time -= Time.deltaTime;
+                
+                yield return null;
+            }
+        }
+        currentState = GameState.Clear;
+        Debug.Log("스테이지 클리어");
+        // ui상의 클리어 표시
+    }
+
+    private void GameOver()
+    {
+        if (currentState == GameState.GameOver ||  currentState == GameState.Clear) return;
+        
+        currentState = GameState.GameOver;
+        StopCoroutine(GameRoutine());
+        Service.Get<MonsterSpawnManager>()?.StopAllCoroutines();
+        Debug.Log("스테이지 실패, 게임오버");
+        // ui상의 게임오버 표시
+    }
+    
+    public void EnterStage(int chapter, int stage)
+    {
+        // isLoading = true;
+        //
+        // List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
+        //
+        // HashSet<string> ids = new HashSet<string>();
+        //
+        // foreach (var data in currentStage)
+        // {
+        //     if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
+        //     if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
+        // }
+        //
+        // Service.Get<MonsterManager>()?.StageMonster(new List<string>(ids), () =>
+        // {
+        //     isLoading = false;
+        //
+        //     foreach (var id in ids)
+        //     {
+        //         Debug.Log($"로딩 성공 : {id}");
+        //     }
+        // });
+        
+        if (_gameRoutine != null) StopCoroutine(_gameRoutine);
+        _gameRoutine = StartCoroutine(GameRoutine());
     }
 
     public void Spawn(int chapter, int stage, int wave)
@@ -132,21 +191,15 @@ public class GameManager : BaseManager<GameManager>
 
     public void EndStage()
     {
-        if (_wallHealth <= 0)
-        { 
-            Debug.Log("성벽 삭제");
-            // 스테이지 종료(실패) ui 출력 요청
-            return;
-        }
-        
-        Debug.Log("스테이지 클리어");
-        // 스테이지 종료(성공) ui 출력 요청
-    }
-
-    // 외부에서 데미지 넣을 때 호출 할 메서드
-    public void TakeDamage(int damage)
-    {
-        WallHealth -= damage;
+        // if (_wallHealth <= 0)
+        // { 
+        //     Debug.Log("성벽 삭제");
+        //     // 스테이지 종료(실패) ui 출력 요청
+        //     return;
+        // }
+        //
+        // Debug.Log("스테이지 클리어");
+        // // 스테이지 종료(성공) ui 출력 요청
     }
     
     // 외부에서 몹이 모두 죽으면 호출 할 메서드
@@ -157,4 +210,13 @@ public class GameManager : BaseManager<GameManager>
             EndStage();
         }
     }
+}
+
+public enum GameState
+{
+    Ready,
+    Wave,
+    Sort,
+    Clear,
+    GameOver
 }
