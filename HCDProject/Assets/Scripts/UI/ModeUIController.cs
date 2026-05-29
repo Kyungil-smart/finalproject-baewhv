@@ -4,6 +4,6 @@ public class ModeUIController : MonoBehaviour
 {
     public void OnNextScene()
     {
-        Service.Get<SceneController>()?.ChangeSceneStageSelect();
+        Service.Get<SceneController>()?.ChangeScene(SceneType.StageSelect);
     }
 }
