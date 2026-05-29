@@ -57,7 +57,7 @@ public class SortManager : MonoBehaviour
 
             if (masterName != draggedName)
             {
-                return; 
+                return;
             }
         }
 
@@ -86,6 +86,8 @@ public class SortManager : MonoBehaviour
             if (slot.SubSlots[i] == null || slot.SubSlots[i].childCount == 0) return;
         }
 
+        string buffType = GetCleanName(slot.SubSlots[0].GetChild(0).gameObject.name);
+
         GameObject[] blocksDestroy = new GameObject[3];
         for (int i = 0; i < slot.SubSlots.Length; i++)
         {
@@ -96,14 +98,17 @@ public class SortManager : MonoBehaviour
         {
             Destroy(block);
         }
+
+        ApplyBuffToPlayer(buffType);
+    }
+
+    private void ApplyBuffToPlayer(string buffName)
+    {
+        Debug.Log($"{buffName} 타입의 버프 부여");
     }
 
     private string GetCleanName(string rawName)
     {
-        if (rawName.Contains("(Clone)"))
-        {
-            return rawName.Replace("(Clone)", "").Trim();
-        }
-        return rawName;
+        return rawName.Replace("(Clone)", "").Trim();
     }
 }
