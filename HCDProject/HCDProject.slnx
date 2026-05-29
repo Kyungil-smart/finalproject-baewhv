@@ -5,4 +5,5 @@
   <Project Path="NavMeshPlusEditor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="FangAutoTile.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

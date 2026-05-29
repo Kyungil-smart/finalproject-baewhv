@@ -29,6 +29,11 @@ public class CharacterBaseData : ScriptableObject
 
     [Tooltip("추적범위")]
     public int _chaseRange;
+
+    public EFindType _initFindType; // 직업 별 초기 탐색 타입
+
+    public bool _hasFirstCombat; // 첫 전투 탐색 전환이 있는 타입인지
+
     //=========================================
     //[2] 추가 능력치
     //=========================================

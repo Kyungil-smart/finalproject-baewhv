@@ -37,22 +37,29 @@ public class SortManager : MonoBehaviour
             {
                 CharacterSlot newSlot = canvasObjectj.AddComponent<CharacterSlot>();
 
-                newSlot.subSlots[0] = canvasObjectj.transform.Find("SlotA");
-                newSlot.subSlots[1] = canvasObjectj.transform.Find("SlotB");
-                newSlot.subSlots[2] = canvasObjectj.transform.Find("SlotC");
+                newSlot.SubSlots[0] = canvasObjectj.transform.Find("SlotA");
+                newSlot.SubSlots[1] = canvasObjectj.transform.Find("SlotB");
+                newSlot.SubSlots[2] = canvasObjectj.transform.Find("SlotC");
 
                 allSlots.Add(newSlot);
-            }
-            else
-            {
-
             }
         }
     }
 
-    public void ObjectDrop(SlotBase targetSlot, DragAndDropItem draggedobject)
+    public void ObjectDrop(SlotBase targetSlot, DragAndDrop draggedobject)
     {
-        Transform[] subSlots = targetSlot.subSlots;
+        Transform[] subSlots = targetSlot.SubSlots;
+
+        if (subSlots[0] != null && subSlots[0].childCount > 0)
+        {
+            string masterName = GetCleanName(subSlots[0].GetChild(0).gameObject.name);
+            string draggedName = GetCleanName(draggedobject.gameObject.name);
+
+            if (masterName != draggedName)
+            {
+                return; 
+            }
+        }
 
         for (int i = 0; i < subSlots.Length; i++)
         {
@@ -60,6 +67,11 @@ public class SortManager : MonoBehaviour
             {
                 draggedobject.transform.SetParent(subSlots[i]);
                 draggedobject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+                if (ObjectRail.Instance != null)
+                {
+                    ObjectRail.Instance.RemoveBlockFromRail(draggedobject);
+                }
 
                 CheckSlotState(targetSlot);
                 return;
@@ -69,27 +81,29 @@ public class SortManager : MonoBehaviour
 
     private void CheckSlotState(SlotBase slot)
     {
-        if (slot.subSlots[0] == null || slot.subSlots[0].childCount == 0) return;
-
-        string targetName = slot.subSlots[0].GetChild(0).gameObject.name;
-
-        for (int i = 1; i < slot.subSlots.Length; i++)
+        for (int i = 0; i < slot.SubSlots.Length; i++)
         {
-            if (slot.subSlots[i] == null || slot.subSlots[i].childCount == 0) return;
-
-            string currentName = slot.subSlots[i].GetChild(0).gameObject.name;
-            if (currentName != targetName) return;
+            if (slot.SubSlots[i] == null || slot.SubSlots[i].childCount == 0) return;
         }
 
         GameObject[] blocksDestroy = new GameObject[3];
-        for (int i = 0; i < slot.subSlots.Length; i++)
+        for (int i = 0; i < slot.SubSlots.Length; i++)
         {
-            blocksDestroy[i] = slot.subSlots[i].GetChild(0).gameObject;
+            blocksDestroy[i] = slot.SubSlots[i].GetChild(0).gameObject;
         }
 
         foreach (GameObject block in blocksDestroy)
         {
             Destroy(block);
         }
+    }
+
+    private string GetCleanName(string rawName)
+    {
+        if (rawName.Contains("(Clone)"))
+        {
+            return rawName.Replace("(Clone)", "").Trim();
+        }
+        return rawName;
     }
 }

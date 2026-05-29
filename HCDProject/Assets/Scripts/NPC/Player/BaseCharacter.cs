@@ -65,7 +65,7 @@ public class BaseCharacter : BaseController
 
         if (target == null)
         {
-            state.ChangeState(this.spawn);
+            state.ChangeState(this.idle);
         }
 
         else
@@ -105,16 +105,6 @@ public class BaseCharacter : BaseController
         _diePlayerState = new DiePlayerState(this);
     }
 
-    /*private void Start()
-    {
-        // 테스트용: SO가 인스펙터에 할당돼 있으면 Init 호출
-        if (_baseData != null)
-        {
-            _homePosition = transform.position;
-            Init(_baseData);
-        }
-    }*/
-
     protected void OnEnable()
     {
         CurrentHp.AddListener(CheckDeath);
@@ -146,7 +136,8 @@ public class BaseCharacter : BaseController
             _attackRange = data._attackRange,
             _chaseRange = data._chaseRange
         };
-        _findType = EFindType.Farthest;
+        _findType = data._initFindType; // SO에서 직업 별 공격타입 읽어옴
+        _isFirstCombat = _baseData._hasFirstCombat;
         CurrentHp.Value = _stats._maxHp;
         Movement.Agent.speed = _stats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
@@ -172,6 +163,24 @@ public class BaseCharacter : BaseController
 
         ITargetable nearest = null;
 
+        if (FindType == EFindType.LowestHp)
+        {
+            float lowestRatio = float.MaxValue;
+            foreach (ITargetable t in targets)
+            {
+                if (t is BaseCharacter ally)
+                {
+                    float ratio = (float)ally.CurrentHp.Value / ally.Stats._maxHp;
+                    if (ratio < lowestRatio)
+                    {
+                        lowestRatio = ratio;
+                        nearest = t;
+                    }
+                }
+            }
+            return nearest;
+        }
+
         float nearestDis = float.MaxValue;
         float fartDis = float.MinValue;
 
@@ -195,6 +204,7 @@ public class BaseCharacter : BaseController
                         nearest = target;
                     }
                     break;
+                    
             }
 
         }
@@ -218,7 +228,7 @@ public class BaseCharacter : BaseController
         _isDead = false;
         CurrentHp.Value = Stats._maxHp;
 
-        _isFirstCombat = true;
-        _findType = EFindType.Farthest;
+        _isFirstCombat = _baseData._hasFirstCombat;
+        _findType = _baseData._initFindType;
     }
 }
