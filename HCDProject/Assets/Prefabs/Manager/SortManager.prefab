@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5812056213441859547
+--- !u!1 &4195745782685624023
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7384175587839077908}
-  - component: {fileID: 7848772989906704418}
+  - component: {fileID: 4612770936014026433}
+  - component: {fileID: 7443035756153687285}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: SortManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7384175587839077908
+--- !u!4 &4612770936014026433
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5812056213441859547}
+  m_GameObject: {fileID: 4195745782685624023}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7848772989906704418
+--- !u!114 &7443035756153687285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5812056213441859547}
+  m_GameObject: {fileID: 4195745782685624023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb1a52ceceb895d4da1d1704775c5e56, type: 3}
+  m_Script: {fileID: 11500000, guid: 41ef6a81350d2e44eb26d6ccd1bdd07e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawnManager
-  _eManager: 0
-  _spawnOffsetY: 6.5
-  _spawnDelay: 0.5
-  _monsterPrefabs:
-  - {fileID: 8581605575929063650, guid: 8f4531a37b97412418be218496b08e91, type: 3}
-  <SpawnCount>k__BackingField: 20
-  monsterCount:
-    _data: 0
-  currentWave:
-    _data: 0
-  stageClear:
-    _data: 0
+  m_EditorClassIdentifier: Assembly-CSharp::SortManager
+  allSlots: []
