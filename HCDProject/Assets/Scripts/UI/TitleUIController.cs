@@ -59,6 +59,6 @@ public class TitleUIController : MonoBehaviour
 
     public void OnNextScene()
     {
-        Service.Get<SceneController>()?.ChangeModeScene();
+        Service.Get<SceneController>()?.ChangeScene(SceneType.ModeSelect);
     }
 }
