@@ -32,10 +32,14 @@ public class BaseMonster : BaseController
         _timer = 0f;
     }
     
-    protected void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
+        
         CurrentState.AddListener(ChangeState);
         CurrentHp.AddListener(CheckDeath);
+        
+        State.ChangeState(IdleState);
     }
 
     protected void OnDisable()
