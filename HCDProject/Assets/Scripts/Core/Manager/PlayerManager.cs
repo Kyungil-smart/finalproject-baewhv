@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -59,5 +60,22 @@ public class PlayerManager : BaseManager<PlayerManager>
             _characters[i] = chr;
             Debug.Log($"{i}번 플레이어 생성 완료");
         }
+    }
+
+    public void StartRevive(BaseCharacter character)
+    {
+        StartCoroutine(ReviveCoroutine(character));
+    }
+    
+    private IEnumerator ReviveCoroutine(BaseCharacter character)
+    {
+        yield return YieldContainer.WaitForSeconds(character.ReviveTime);
+
+        character.gameObject.SetActive(true);
+
+        // SpawnState로 전환 (Exit()에서 Revive() 호출됨)
+        character.state.ChangeState(character.spawn);
+
+        Debug.Log($"{character.gameObject.name} 부활 완료");
     }
 }
