@@ -17,7 +17,7 @@ public class SpawnPlayerState : IState
 
     public void Exit()
     {
-        _owner.transform.position = _owner.homePosition;
+        
     }
 
     public void Update()
