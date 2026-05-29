@@ -8,22 +8,6 @@ public class GameManager : BaseManager<GameManager>
 {
     private bool isLoading = false;
     
-    // private int _wallHealth;
-    // public int WallHealth
-    // {
-    //     get => _wallHealth;
-    //     private set
-    //     {
-    //         _wallHealth = value;
-    //
-    //         if (_wallHealth <= 0)
-    //         {
-    //             _wallHealth = 0;
-    //             EndStage();
-    //         }
-    //     }
-    // }
-    
     public GameState currentState = GameState.Ready;
     private float sortTime = 10;
     private int totalWave = 3;
@@ -65,20 +49,12 @@ public class GameManager : BaseManager<GameManager>
         }
     }
 
-    private void OnDestroy()
-    {
-        if (_wall != null) _wall.OnWallDestroyed -= GameOver;
-        
-        base.OnDestroy();
-    }
-
     private IEnumerator GameRoutine()
     {
-        yield return YieldContainer.WaitForSeconds(2f);
         Debug.Log("게임 시작");
         
-        _wall = FindFirstObjectByType<Rampart>();
-        if ( _wall != null) _wall.OnWallDestroyed += GameOver;
+        currentState = GameState.Sort;
+        yield return YieldContainer.WaitForSeconds(sortTime);
         
         var currentWave = Service.Get<MonsterSpawnManager>();
         if (currentWave == null) yield break;
@@ -114,7 +90,7 @@ public class GameManager : BaseManager<GameManager>
         // ui상의 클리어 표시
     }
 
-    private void GameOver()
+    public void EndStage()
     {
         if (currentState == GameState.GameOver ||  currentState == GameState.Clear) return;
         
@@ -186,28 +162,6 @@ public class GameManager : BaseManager<GameManager>
                 MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == waveData.SPAWN_MONSTER_ID_02.Trim());
                 obj.AddComponent<MonsterStatus>().InitStatus(stat);
             }
-        }
-    }
-
-    public void EndStage()
-    {
-        // if (_wallHealth <= 0)
-        // { 
-        //     Debug.Log("성벽 삭제");
-        //     // 스테이지 종료(실패) ui 출력 요청
-        //     return;
-        // }
-        //
-        // Debug.Log("스테이지 클리어");
-        // // 스테이지 종료(성공) ui 출력 요청
-    }
-    
-    // 외부에서 몹이 모두 죽으면 호출 할 메서드
-    public void StageClear()
-    { 
-        // if (MonsterManager.Instance.남은 몬스터 수 == 0)
-        {
-            EndStage();
         }
     }
 }
