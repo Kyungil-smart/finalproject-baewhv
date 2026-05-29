@@ -13,6 +13,7 @@ public class AttackPlayerState : IState
 
     public void Enter()
     {
+        Debug.Log("상태: Attack 진입");
         coolCount = 0;
     }
 
@@ -23,7 +24,7 @@ public class AttackPlayerState : IState
 
     public void Update()
     {
-        if (_owner.GetTargetObject == null)
+        if (_owner.GetCurrentTarget == null)
         {
             _owner.state.ChangeState(_owner.idle);
             return;
@@ -32,20 +33,24 @@ public class AttackPlayerState : IState
         float dist = Vector3.Distance(_owner.transform.position,
             _owner.GetCurrentTarget.GetTargetObject.transform.position);
 
-        if (dist > _owner.stat._attackRange) // 공격 범위 벗어났으면
+        //Debug.Log($"거리: {dist} | 스킬범위: {_owner.CurrentSkillRange}");
+
+        if (dist > _owner.CurrentSkillRange) // 공격 범위 벗어났으면
         {
             _owner.state.ChangeState(_owner.chase);
             return;
         }
 
-        if (coolCount <= _owner.stat._attackSpeed)
+        if (coolCount <= _owner.SkillCoolTime)
         {
             coolCount += Time.deltaTime;
         }
 
         else
         {
-            // 공격
+            Debug.Log($"[공격] {_owner.gameObject.name}이(가) 스킬 {_owner.SkillTargetIndex}번 발동");
+            _owner.UseSkill(_owner.SkillTargetIndex); // 공격
+            _owner.CompleteFirstCombat();
             coolCount = 0;
         }
     }

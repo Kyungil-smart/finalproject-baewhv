@@ -11,7 +11,7 @@ public class MonsterIdleState : IState
     
     public void Enter()
     {
-        
+
     }
     
     public void Update()

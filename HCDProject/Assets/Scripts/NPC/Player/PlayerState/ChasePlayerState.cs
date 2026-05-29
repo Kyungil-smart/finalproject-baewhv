@@ -12,12 +12,13 @@ public class ChasePlayerState : IState
 
     public void Enter()
     {
+        Debug.Log("상태: Chase 진입");
         _owner.Movement.Move(_owner.GetCurrentTarget.GetTargetObject.transform.position);
     }
 
     public void Exit()
     {
-        
+
     }
 
     public void Update()
@@ -28,18 +29,17 @@ public class ChasePlayerState : IState
             return;
         }
 
-        if (!_owner.Movement.IsMove)
+        float dist = Vector3.Distance(_owner.transform.position,
+            _owner.GetCurrentTarget.GetTargetObject.transform.position);
+
+        if (dist <= _owner.CurrentSkillRange)
         {
-            float dist = Vector3.Distance(_owner.transform.position,
-                _owner.GetCurrentTarget.GetTargetObject.transform.position);
-            if (dist <= _owner.stat._attackRange)
-            {
-                _owner.state.ChangeState(_owner.attack);
-            }
-            else
-            {
-                _owner.Movement.Move(_owner.GetCurrentTarget.GetTargetObject.transform.position);
-            }
+            _owner.Movement.Stop();
+            _owner.state.ChangeState(_owner.attack);
+        }
+        else
+        {
+            _owner.Movement.Move(_owner.GetCurrentTarget.GetTargetObject.transform.position);
         }
 
     }

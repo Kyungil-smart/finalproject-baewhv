@@ -15,6 +15,7 @@ public class IdlePlayerState : IState
     public void Enter()
     {
         // TODO : 대기 애니메이션(있다면)
+        Debug.Log("상태: Idle 진입");
     }
 
     public void Exit()
@@ -24,7 +25,7 @@ public class IdlePlayerState : IState
 
     public void Update()
     {
-        ITargetable target = _owner.FindTarget();
+        ITargetable target = _owner.FindTarget(_owner.SkillTargetIndex);
 
         if (target != null)
         {

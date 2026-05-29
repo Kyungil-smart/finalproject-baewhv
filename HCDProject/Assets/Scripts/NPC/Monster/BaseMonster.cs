@@ -1,16 +1,22 @@
 using System;
+using System.Collections.Generic;
 using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 public class BaseMonster : BaseController
 {
+    [field:SerializeField] public int MonsterID { get; set; }
+    
     #region State
     private protected StateMachine State;
     [field:SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
     public MonsterIdleState IdleState { get; protected set; }
     public MonsterChaseState ChaseState { get; protected set; }
-    public MonsterNearAttackState NearAttackState { get; protected set; }
+    public MonsterAttackState AttackState { get; protected set; }
+    public MonsterDieState DieState { get; protected set; }
     #endregion
+
+    private float _timer;
     
     public override void SetCurrentTarget(ITargetable target)
     {
@@ -22,31 +28,27 @@ public class BaseMonster : BaseController
         base.Awake();
         
         CurrentState = new();
+
+        _timer = 0f;
     }
     
     protected void OnEnable()
     {
         CurrentState.AddListener(ChangeState);
+        CurrentHp.AddListener(CheckDeath);
     }
 
     protected void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
-    }
-    
-    public override void SetDamage()
-    {
-        
-    }
-
-    public override void SetHeal()
-    {
-        
+        CurrentHp.RemoveListener(CheckDeath);
     }
 
     protected virtual void Update()
     {
         State?.Update();
+        
+        ResetTarget();
     }
     
     private void ChangeState(EStateType state)
@@ -59,27 +61,70 @@ public class BaseMonster : BaseController
             case EStateType.Chase:
                 State.ChangeState(ChaseState);
                 break;
-            case EStateType.NearAttack:
-                State.ChangeState(NearAttackState);
+            case EStateType.Attack:
+                State.ChangeState(AttackState);
                 break;
-            /*
             case EStateType.Die:
-                _state.ChangeState(DieState);
+                State.ChangeState(DieState);
                 break;
-            */
         }
     }
 
-    public float DistanceToPlayer(Transform target)
+    public ITargetable FindTarget()
+    {
+        List<ITargetable> targets = Detect(Stats._chaseRange, ETargetType.Enemy);
+
+        ITargetable player = null;
+        ITargetable wall = null;
+        
+        float playerDis = float.MaxValue;
+        float wallDis = float.MaxValue;
+
+        foreach (ITargetable target in targets)
+        {
+            float dis = (transform.position - target.GetTargetObject.transform.position).sqrMagnitude;
+
+            if (target is BaseCharacter)
+            {
+                if (dis < playerDis)
+                {
+                    playerDis = dis;
+                    player = target;
+                }
+            }
+            else if (target is Rampart)
+            {
+                if (dis < wallDis)
+                {
+                    wallDis = dis;
+                    wall = target;
+                }
+            }
+        }
+
+        return player ?? wall;
+    }
+
+    private void ResetTarget()
+    {
+        _timer += Time.deltaTime;
+
+        if (_timer <= 0.2f) return;
+        
+        _timer = 0f;
+        SetCurrentTarget(FindTarget());
+    }
+
+    public float DistanceToTarget(Transform target)
     {
         return Vector2.Distance(transform.position, target.position);
     }
-
-    protected void OnDrawGizmos()
+    
+    private void CheckDeath(int value)
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
+        if (value <= 0)
+        {
+            CurrentState.Value = EStateType.Die;
+        }
     }
 }
