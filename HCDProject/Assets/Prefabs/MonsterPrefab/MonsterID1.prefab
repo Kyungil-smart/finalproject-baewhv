@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
   _stats:
-    _maxHp: 30
+    _maxHp: 10
     _attackPower: 0
     _defense: 0
     _moveSpeed: 3
@@ -176,6 +176,7 @@ MonoBehaviour:
   - skillDamage: 0
     skillRange: 1
     coolTime: 2
+    targetCount: 0
     TargetType: 0
   EnemyFilter:
     useTriggers: 0
@@ -205,7 +206,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  monsterID: 1
+  <MonsterID>k__BackingField: 1
   <CurrentState>k__BackingField:
     _data: 0
 --- !u!114 &2424096368794968494
