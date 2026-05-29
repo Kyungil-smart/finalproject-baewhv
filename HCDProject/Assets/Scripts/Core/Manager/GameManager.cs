@@ -9,7 +9,7 @@ public class GameManager : BaseManager<GameManager>
     private bool isLoading = false;
     
     public GameState currentState = GameState.Ready;
-    private float sortTime = 10;
+    private float sortTime = 3;
     private int totalWave = 3;
     private Rampart _wall;
     private Coroutine _gameRoutine;
@@ -103,27 +103,27 @@ public class GameManager : BaseManager<GameManager>
     
     public void EnterStage(int chapter, int stage)
     {
-        // isLoading = true;
-        //
-        // List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
-        //
-        // HashSet<string> ids = new HashSet<string>();
-        //
-        // foreach (var data in currentStage)
-        // {
-        //     if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
-        //     if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
-        // }
-        //
-        // Service.Get<MonsterManager>()?.StageMonster(new List<string>(ids), () =>
-        // {
-        //     isLoading = false;
-        //
-        //     foreach (var id in ids)
-        //     {
-        //         Debug.Log($"로딩 성공 : {id}");
-        //     }
-        // });
+        isLoading = true;
+        
+        List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
+        
+        HashSet<string> ids = new HashSet<string>();
+        
+        foreach (var data in currentStage)
+        {
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
+        }
+        
+        Service.Get<MonsterManager>()?.StageMonster(new List<string>(ids), () =>
+        {
+            isLoading = false;
+        
+            foreach (var id in ids)
+            {
+                Debug.Log($"로딩 성공 : {id}");
+            }
+        });
         
         if (_gameRoutine != null) StopCoroutine(_gameRoutine);
         _gameRoutine = StartCoroutine(GameRoutine());
