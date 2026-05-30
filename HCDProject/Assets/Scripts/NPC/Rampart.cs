@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rampart : MonoBehaviour, ITargetable
 {
@@ -8,7 +8,12 @@ public class Rampart : MonoBehaviour, ITargetable
     {
         GetTargetObject = gameObject;
     }
-    
+
+    public bool IsAlive()
+    {
+        return true;
+    }
+
     public void SetDamage(int damage)
     {
         
