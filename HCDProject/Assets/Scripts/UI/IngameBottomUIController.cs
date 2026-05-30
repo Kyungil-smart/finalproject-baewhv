@@ -12,14 +12,18 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     
     [SerializeField] private CharacterSlot[] characterSlots;
     public CharacterSlot[] GetSlots => characterSlots;
-    
+
+    [SerializeField] private RectTransform upperRail;
+    public RectTransform GetUpperRail => upperRail;
+    [SerializeField] private RectTransform lowerRail;
+    public RectTransform GetLowerRail => lowerRail;
         
     
     public bool IsSortPhase = false;
 
     private void Start()
     {
-        
+        characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
     }
     public void OnEndSort()
     {
