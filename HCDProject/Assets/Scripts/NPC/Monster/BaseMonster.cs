@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BaseMonster : BaseController
 {
+    [field:SerializeField] public MonsterRawData Stat { get; private set;}
     [field:SerializeField] public int MonsterID { get; set; }
     
     #region State
@@ -17,6 +18,18 @@ public class BaseMonster : BaseController
     #endregion
 
     private float _timer;
+    
+    public void InitStatus(MonsterRawData data)
+    {
+        Stat = data;
+        gameObject.name = Stat.MONSTER_NAME;
+        
+
+        // 데이터를 받아와서 사용할 위치
+        // CurrentHp.Value = data.HP;
+        // Stat.ATK = data.ATK;
+        // Movement.Agent.speed = Stat.MOVE_SPEED;
+    }
     
     public override void SetCurrentTarget(ITargetable target)
     {

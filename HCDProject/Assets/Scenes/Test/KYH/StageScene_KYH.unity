@@ -641,7 +641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &698411827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,7 +1028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
       propertyPath: <SpawnCount>k__BackingField
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7848772989906704418, guid: eea77b22ebb23e440abf93a70150c74a, type: 3}
       propertyPath: '_monsterPrefabs.Array.data[0]'
@@ -1251,7 +1251,8 @@ GameObject:
   - component: {fileID: 1867765591}
   - component: {fileID: 1867765593}
   - component: {fileID: 1867765592}
-  m_Layer: 0
+  - component: {fileID: 1867765594}
+  m_Layer: 7
   m_Name: Castle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2219,6 +2220,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1867765594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867765587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ad01d93ca7cdc44921117e31ac51e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rampart
+  _maxHp: 0
+  currentHp:
+    _data: 0
 --- !u!1001 &1945076344
 PrefabInstance:
   m_ObjectHideFlags: 0
