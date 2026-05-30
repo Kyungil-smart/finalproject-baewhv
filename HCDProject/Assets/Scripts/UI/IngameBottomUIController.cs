@@ -10,8 +10,8 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private Slider wallHP;
     
     
-    [SerializeField] private SlotBase[] characterSlots;
-    public SlotBase[] GetSlots => characterSlots;
+    [SerializeField] private CharacterSlot[] characterSlots;
+    public CharacterSlot[] GetSlots => characterSlots;
     
         
     
