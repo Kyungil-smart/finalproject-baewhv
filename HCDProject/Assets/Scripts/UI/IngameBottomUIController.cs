@@ -13,10 +13,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private CharacterSlot[] characterSlots;
     public CharacterSlot[] GetSlots => characterSlots;
 
-    [SerializeField] private RectTransform upperRail;
-    public RectTransform GetUpperRail => upperRail;
-    [SerializeField] private RectTransform lowerRail;
-    public RectTransform GetLowerRail => lowerRail;
+    [SerializeField] private StoneRail upperRail;
+    public StoneRail GetUpperRail => upperRail;
+    [SerializeField] private StoneRail lowerRail;
+    public StoneRail GetLowerRail => lowerRail;
         
     
     public bool IsSortPhase = false;
