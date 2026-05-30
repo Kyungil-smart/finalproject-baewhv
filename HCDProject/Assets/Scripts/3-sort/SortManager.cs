@@ -5,7 +5,7 @@ public class SortManager : MonoBehaviour
 {
     public static SortManager Instance { get; private set; }
 
-    public List<SlotBase> allSlots = new List<SlotBase>();
+    public List<CharacterSlot> allSlots = new List<CharacterSlot>();
 
     private void Awake()
     {
@@ -46,7 +46,7 @@ public class SortManager : MonoBehaviour
         }
     }
 
-    public void ObjectDrop(SlotBase targetSlot, DragAndDrop draggedobject)
+    public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
     {
         Transform[] subSlots = targetSlot.SubSlots;
 
@@ -79,7 +79,7 @@ public class SortManager : MonoBehaviour
         }
     }
 
-    private void CheckSlotState(SlotBase slot)
+    private void CheckSlotState(CharacterSlot slot)
     {
         for (int i = 0; i < slot.SubSlots.Length; i++)
         {
@@ -102,7 +102,7 @@ public class SortManager : MonoBehaviour
         ApplyBuffToPlayer(slot, buffType);
     }
 
-    private void ApplyBuffToPlayer(SlotBase slot, string buffName)
+    private void ApplyBuffToPlayer(CharacterSlot slot, string buffName)
     {
         Debug.Log($"{slot.gameObject.name}에 {buffName} 타입의 버프 부여");
     }
