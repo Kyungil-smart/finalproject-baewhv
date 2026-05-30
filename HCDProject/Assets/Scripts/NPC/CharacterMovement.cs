@@ -17,7 +17,6 @@ public class CharacterMovement : MonoBehaviour
         Agent = _controller.GetComponent<NavMeshAgent>();
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
-        Agent.speed = _controller.Stats._moveSpeed;
         Agent.stoppingDistance = 0.1f;
     }
 
