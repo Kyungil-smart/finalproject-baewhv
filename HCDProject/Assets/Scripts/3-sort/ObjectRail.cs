@@ -96,7 +96,6 @@ public class ObjectRail : MonoBehaviour
             {
                 DragAndDrop movingBlock = railBBlocks[0];
                 railBBlocks.RemoveAt(0);
-
                 movingBlock.transform.SetParent(railARect);
                 railABlocks.Add(movingBlock);
             }
@@ -107,6 +106,7 @@ public class ObjectRail : MonoBehaviour
         }
 
         RealignAllBlocks();
+
         SpawnBlockOnRail();
 
         CheckRailLayout(railABlocks);
@@ -132,6 +132,20 @@ public class ObjectRail : MonoBehaviour
                 targetList.RemoveAt(i);
                 targetList.RemoveAt(i - 1);
                 targetList.RemoveAt(i - 2);
+
+                if (targetList == railABlocks)
+                {
+                    for (int k = 0; k < 3; k++)
+                    {
+                        if (railBBlocks.Count > 0)
+                        {
+                            DragAndDrop movingBlock = railBBlocks[0];
+                            railBBlocks.RemoveAt(0);
+                            movingBlock.transform.SetParent(railARect);
+                            railABlocks.Add(movingBlock);
+                        }
+                    }
+                }
 
                 RealignAllBlocks();
                 SpawnBlockOnRail();

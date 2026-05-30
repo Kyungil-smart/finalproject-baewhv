@@ -99,12 +99,12 @@ public class SortManager : MonoBehaviour
             Destroy(block);
         }
 
-        ApplyBuffToPlayer(buffType);
+        ApplyBuffToPlayer(slot, buffType);
     }
 
-    private void ApplyBuffToPlayer(string buffName)
+    private void ApplyBuffToPlayer(SlotBase slot, string buffName)
     {
-        Debug.Log($"{buffName} 타입의 버프 부여");
+        Debug.Log($"{slot.gameObject.name}에 {buffName} 타입의 버프 부여");
     }
 
     private string GetCleanName(string rawName)
