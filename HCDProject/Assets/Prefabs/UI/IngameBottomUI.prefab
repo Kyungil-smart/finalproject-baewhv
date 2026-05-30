@@ -346,6 +346,26 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3756485690105876099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103199018003965907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429b12b1e1784df4a86cf930b57b9523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IngameBottomUIController
+  sortPhaseUI: {fileID: 3075588155424068761}
+  battlePhaseUI: {fileID: 5116318400107604540}
+  characterSlots:
+  - {fileID: 3499412728837267250}
+  - {fileID: 2206252458004707774}
+  - {fileID: 3581241212648676361}
+  - {fileID: 3754473446214175356}
+  IsSortPhase: 0
 --- !u!1 &1482986996124251989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,6 +3047,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+--- !u!114 &3499412728837267250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 5350052910102315645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2aab7f9c48432e4ba0dfd275c85cbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!224 &5789670416693006227 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
@@ -3153,6 +3184,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+--- !u!114 &3581241212648676361 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 5412273936061366598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2aab7f9c48432e4ba0dfd275c85cbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!224 &5871141606201593000 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
@@ -3279,6 +3321,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+--- !u!114 &3754473446214175356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 5671663767794571059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2aab7f9c48432e4ba0dfd275c85cbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!224 &6112495693555555037 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
@@ -3625,6 +3678,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+--- !u!114 &2206252458004707774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 7219678651528324337}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2aab7f9c48432e4ba0dfd275c85cbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!224 &9103830024828725535 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
