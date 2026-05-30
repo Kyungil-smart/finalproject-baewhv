@@ -57,8 +57,17 @@ public class BaseCharacter : BaseController
 
     public void SetNavMeshActive(bool isActive)
     {
-        this.Movement.Agent.isStopped = isActive;
-        this.Movement.Agent.enabled = isActive;
+        if (isActive)
+        {
+            this.Movement.Agent.enabled = isActive;
+            this.Movement.Agent.isStopped = false;
+        }
+
+        else
+        {
+            this.Movement.Agent.isStopped = true;
+            this.Movement.Agent.enabled = isActive;
+        }
     }
 
     public void CompleteFirstCombat() // 전사 첫번째 전투

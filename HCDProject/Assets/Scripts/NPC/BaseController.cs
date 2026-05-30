@@ -8,6 +8,12 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     protected ObserveValue<int> CurrentHp = new ObserveValue<int>();
 
+
+    public bool IsAlive()
+    {
+        return CurrentHp.Value > 0;
+    }
+    
     [SerializeField] protected List<Skill> skills = new List<Skill>();
 
     protected ESkillType SkillIndex;
@@ -17,6 +23,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     protected ITargetable _currentTarget;
 
     public ITargetable GetCurrentTarget => _currentTarget;
+    
 
     public abstract void SetCurrentTarget(ITargetable target);
 
@@ -110,4 +117,5 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
     }
+
 }
