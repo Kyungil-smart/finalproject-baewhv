@@ -243,10 +243,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2394200516541208674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2aab7f9c48432e4ba0dfd275c85cbfe, type: 3}
+  m_Script: {fileID: 11500000, guid: c2a4f78f25f35834b91e257c8adbe4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotBase
-  _subslots: []
+  _subslots:
+  - {fileID: 829669138900700575}
+  - {fileID: 8831911930239298368}
+  - {fileID: 1039098238497996387}
 --- !u!1 &2618377550142098936
 GameObject:
   m_ObjectHideFlags: 0
