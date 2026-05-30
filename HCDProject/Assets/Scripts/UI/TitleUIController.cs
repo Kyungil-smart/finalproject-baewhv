@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class TitleUIController : MonoBehaviour
+public class TitleUIController : BaseUIController<TitleUIController>
 {
     [SerializeField] private Slider LoadingGauge;
     [SerializeField] private TextMeshProUGUI LoadingText;

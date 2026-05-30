@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StageSelectUIController : MonoBehaviour
+public class StageSelectUIController : BaseUIController<StageSelectUIController>
 {
     public void OnNextScene()
     {

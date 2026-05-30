@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ModeUIController : MonoBehaviour
+public class ModeUIController : BaseUIController<ModeUIController>
 {
     public void OnNextScene()
     {
