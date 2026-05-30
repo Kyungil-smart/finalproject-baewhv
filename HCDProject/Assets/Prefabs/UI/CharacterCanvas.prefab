@@ -250,6 +250,8 @@ MonoBehaviour:
   - {fileID: 829669138900700575}
   - {fileID: 8831911930239298368}
   - {fileID: 1039098238497996387}
+  hpBar: {fileID: 4733207158553698908}
+  skillBar: {fileID: 4621894849735067067}
 --- !u!1 &2618377550142098936
 GameObject:
   m_ObjectHideFlags: 0

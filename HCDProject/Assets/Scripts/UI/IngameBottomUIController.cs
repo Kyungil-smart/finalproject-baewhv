@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
@@ -17,6 +18,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public StoneRail GetUpperRail => upperRail;
     [SerializeField] private StoneRail lowerRail;
     public StoneRail GetLowerRail => lowerRail;
+
+    [SerializeField] private TextMeshProUGUI comboText;
+    [SerializeField] private TextMeshProUGUI leftSortCountText;
+    
         
     
     public bool IsSortPhase = false;
@@ -47,5 +52,15 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         sortPhaseUI.SetActive(false);
         battlePhaseUI.SetActive(true);
         
+    }
+
+    public void SetComboText(int value)
+    {
+        comboText.text = $"{value} Combo";
+    }
+
+    public void SetLeftSortCountText(int value)
+    {
+        comboText.text = $"남은 소트 횟수 : {value}";
     }
 }
