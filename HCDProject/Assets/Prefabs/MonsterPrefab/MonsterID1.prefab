@@ -148,7 +148,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 7
+  m_WalkableMask: 23
   m_ObstacleAvoidanceType: 2
 --- !u!114 &2456901426324293284
 MonoBehaviour:
@@ -206,6 +206,26 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  <Stat>k__BackingField:
+    MONSTER_ID: 
+    MONSTER_NAME: 
+    HP: 0
+    ATK: 0
+    DEF: 0
+    ATK_SPEED: 0
+    MOVE_SPEED: 0
+    ATK_TYPE: 
+    ATK_IS: 0
+    ATK_SFX: 
+    HIT_SFX: 
+    ATK_FX: 
+    HIT_FX: 
+    ATTACK_MOTION: 
+    DEAD_MOTION: 
+    MOVE_MOTION: 
+    HIT_MOTION: 
+    MONSTER_IMG: 
+    EXP: 0
   <MonsterID>k__BackingField: 1
   <CurrentState>k__BackingField:
     _data: 0
