@@ -10,6 +10,8 @@ public class SortState : IState
     public void Enter()
     {
         _sortManager = Service.Get<SortManager>();
+        
+        Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetSortPhase();
 
         if (_sortManager != null)
         {

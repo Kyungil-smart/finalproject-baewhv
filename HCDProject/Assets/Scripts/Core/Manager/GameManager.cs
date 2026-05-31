@@ -61,26 +61,6 @@ public class GameManager : BaseManager<GameManager>
     private void Update()
     {
         _state?.Update();
-        
-        if (Keyboard.current.numpad1Key.wasPressedThisFrame)
-        {
-            EnterStage(1, 1);
-        }
-
-        if (Keyboard.current.numpad2Key.wasPressedThisFrame)
-        {
-            EnterStage(1, 2);
-        }
-
-        if (Keyboard.current.numpad3Key.wasPressedThisFrame)
-        {
-            Spawn(1, 1, 1);
-        }
-
-        if (Keyboard.current.numpad4Key.wasPressedThisFrame)
-        {
-            Spawn(1, 2, 1);
-        }
     }
 
     private void ChangeState(GameState state)
@@ -104,58 +84,6 @@ public class GameManager : BaseManager<GameManager>
                 break;
         }
     }
-
-    // private IEnumerator GameRoutine()
-    // {
-    //     Debug.Log("게임 시작");
-    //     
-    //     currentState = GameState.Sort;
-    //     yield return YieldContainer.WaitForSeconds(sortTime);
-    //     
-    //     var currentWave = Service.Get<MonsterSpawnManager>();
-    //     if (currentWave == null) yield break;
-    //     
-    //     while (currentWave?.currentWave.Value < totalWave)
-    //     {
-    //         currentState = GameState.Wave;
-    //         currentWave?.WaveStart();
-    //
-    //         while (currentWave?.monsterCount.Value > 0)
-    //         {
-    //             if (currentState == GameState.GameOver)  yield break;
-    //             yield return null;
-    //         }
-    //
-    //         if (currentWave.currentWave.Value >= totalWave) break;
-    //
-    //         currentState = GameState.Sort;
-    //
-    //         float time = sortTime;
-    //
-    //         while (time > 0)
-    //         {
-    //             if (currentState == GameState.GameOver)  yield break;
-    //             
-    //             time -= Time.deltaTime;
-    //             
-    //             yield return null;
-    //         }
-    //     }
-    //     currentState = GameState.Clear;
-    //     Debug.Log("스테이지 클리어");
-    //     // ui상의 클리어 표시
-    // }
-
-    // public void EndStage()
-    // {
-    //     if (currentState == GameState.GameOver ||  currentState == GameState.Clear) return;
-    //     
-    //     currentState = GameState.GameOver;
-    //     StopCoroutine(GameRoutine());
-    //     Service.Get<MonsterSpawnManager>()?.StopAllCoroutines();
-    //     Debug.Log("스테이지 실패, 게임오버");
-    //     // ui상의 게임오버 표시
-    // }
     
     public void EnterStage(int chapter, int stage)
     {
@@ -180,9 +108,6 @@ public class GameManager : BaseManager<GameManager>
                 Debug.Log($"로딩 성공 : {id}");
             }
         });
-        
-        // if (_gameRoutine != null) StopCoroutine(_gameRoutine);
-        // _gameRoutine = StartCoroutine(GameRoutine());
     }
 
     public void Spawn(int chapter, int stage, int wave)

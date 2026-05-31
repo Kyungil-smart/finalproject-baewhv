@@ -14,6 +14,8 @@ public class WaveState : IState
         _spawnManager = Service.Get<MonsterSpawnManager>();
         _wall = Object.FindFirstObjectByType<Rampart>();
         
+        Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetBattlePhase();
+        
         if (_wall != null) _wall.currentHp.AddListener(WallHpChange);
 
         if (_spawnManager != null)
