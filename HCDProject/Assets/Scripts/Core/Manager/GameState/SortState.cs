@@ -15,8 +15,8 @@ public class SortState : IState
 
         if (_sortManager != null)
         {
-            _sortManager.isEndSort.Value = false;
-            _sortManager.isEndSort.AddListener(SortEnd);
+            // _sortManager.isEndSort.Value = false;
+            // _sortManager.isEndSort.AddListener(SortEnd);
         }
     }
 

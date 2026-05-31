@@ -110,6 +110,12 @@ public class GameManager : BaseManager<GameManager>
         });
     }
 
+    // 추후 삭제 요청 더미 매서드
+    public void EndStage()
+    {
+        
+    }
+
     public void Spawn(int chapter, int stage, int wave)
     {
         if (isLoading) return;
