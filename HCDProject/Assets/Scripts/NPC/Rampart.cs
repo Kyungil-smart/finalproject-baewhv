@@ -6,7 +6,9 @@ public class Rampart : MonoBehaviour, ITargetable
 {
     public GameObject GetTargetObject { get; set; }
 
-    [SerializeField] private int _maxHp;
+    
+    private int _maxHp;
+    public int MaxHp => _maxHp; 
     
     public ObserveValue<int> currentHp = new ObserveValue<int>();
     
@@ -26,10 +28,16 @@ public class Rampart : MonoBehaviour, ITargetable
         currentHp.RemoveListener(WallDestroy);
     }
 
+    public void SetHp(int hp)
+    {
+        currentHp.Value = hp;
+    }
+
     public bool IsAlive()
     {
         return true;
     }
+    
     
     public void SetDamage(int damage)
     {
