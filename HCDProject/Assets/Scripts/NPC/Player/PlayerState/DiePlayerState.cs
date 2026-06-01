@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class DiePlayerState : IState
 {
@@ -13,7 +14,10 @@ public class DiePlayerState : IState
 
     public void Enter()
     {
-        _owner.Movement.Stop();
+        if (_owner.Movement.Agent.isOnNavMesh)
+        {
+            _owner.Movement.Stop();
+        }
         _owner.gameObject.SetActive(false);
         Service.Get<PlayerManager>()?.StartRevive(_owner);
     }

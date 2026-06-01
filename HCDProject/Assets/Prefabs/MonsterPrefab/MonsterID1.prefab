@@ -173,10 +173,10 @@ MonoBehaviour:
     _attackRange: 1
     _chaseRange: 3
   skills:
-  - skillDamage: 0
+  - skillDamage: 50
     skillRange: 1
     coolTime: 2
-    targetCount: 0
+    targetCount: 1
     TargetType: 0
   EnemyFilter:
     useTriggers: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
     MONSTER_ID: 
     MONSTER_NAME: 
     HP: 0
-    ATK: 0
+    ATK: 200
     DEF: 0
     ATK_SPEED: 0
     MOVE_SPEED: 0

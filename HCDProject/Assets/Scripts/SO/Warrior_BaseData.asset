@@ -19,7 +19,7 @@ MonoBehaviour:
   _moveSpeed: 2
   _attackRange: 2
   _chaseRange: 4
-  _initFindType: 0
+  _initFindType: 1
   _hasFirstCombat: 1
   _attackSpeed: 0.75
   _critRate: 0.05

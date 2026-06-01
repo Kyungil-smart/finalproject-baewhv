@@ -18,6 +18,7 @@ public class BaseCharacter : BaseController
     private DiePlayerState _diePlayerState;
 
     [SerializeField]private Vector3 _homePosition; // 지정된 위치
+    [SerializeField] private Vector3 _spawnPosition; // 스폰 및 부활
 
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
@@ -97,6 +98,12 @@ public class BaseCharacter : BaseController
             state.ChangeState(this.chase);
         }
 
+    }
+
+    public Vector3 spawnPosition
+    {
+        get => _spawnPosition;
+        set => _spawnPosition = value;
     }
 
     public Vector3 homePosition
@@ -251,9 +258,12 @@ public class BaseCharacter : BaseController
     {
         _isDead = false;
         _isSpawning = true;
+        this.Movement.Agent.Warp(spawnPosition);
         CurrentHp.Value = Stats._maxHp;
 
         _isFirstCombat = _baseData._hasFirstCombat;
+        Debug.Log($"before: {_findType}");
         _findType = _baseData._initFindType;
+        Debug.Log($"after: {_findType}");
     }
 }
