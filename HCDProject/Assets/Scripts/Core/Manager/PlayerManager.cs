@@ -19,11 +19,14 @@ public class PlayerManager : BaseManager<PlayerManager>
 
     BaseCharacter[] _characters;
 
+    public ObserveValue<bool> isAllSpawn = new();
+
     public BaseCharacter[] Characters => _characters;
 
     protected override void Awake()
     {
         base.Awake();
+        isAllSpawn.Value = false;
         LoadCharcterPrefab();
     }
 
@@ -63,6 +66,18 @@ public class PlayerManager : BaseManager<PlayerManager>
         }
     }
 
+    public void IsAllSpawnPlayer()
+    {
+        foreach (BaseCharacter chr in _characters)
+        {
+            if (chr.IsSpawning)
+            {
+                return;
+            }
+        }
+        isAllSpawn.Value = true;
+    }
+
     public void StartRevive(BaseCharacter character)
     {
         StartCoroutine(ReviveCoroutine(character));
@@ -76,7 +91,6 @@ public class PlayerManager : BaseManager<PlayerManager>
 
         // SpawnState로 전환 (Exit()에서 Revive() 호출됨)
         character.state.ChangeState(character.spawn);
-
         Debug.Log($"{character.gameObject.name} 부활 완료");
     }
 }
