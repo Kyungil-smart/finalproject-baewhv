@@ -22,14 +22,14 @@ public class MonsterChaseState : IState
             return;
         }
 
-        if (_controller.DistanceToTarget(_controller.GetCurrentTarget.GetTargetObject.transform) <=
-            _controller.Stats._attackRange)
+        if (Vector2.Distance(_controller.transform.position, _controller.Target) <= _controller.Stats._attackRange)
         {
             _controller.CurrentState.Value = EStateType.Attack;
             return;
         }
+
+        _controller.Movement.Move(_controller.Target);
         
-        _controller.Movement.Move(_controller.GetCurrentTarget.GetTargetObject.transform.position);
     }
 
     public void Exit()
