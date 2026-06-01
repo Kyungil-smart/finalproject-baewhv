@@ -170,7 +170,7 @@ MonoBehaviour:
     _attackSpeed: 0
     _critRate: 0
     _critDamage: 0
-    _attackRange: 0.5
+    _attackRange: 1
     _chaseRange: 3
   skills:
   - skillDamage: 50

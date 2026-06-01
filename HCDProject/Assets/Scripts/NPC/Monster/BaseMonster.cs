@@ -20,6 +20,8 @@ public class BaseMonster : BaseController
     private float _timer;
     public Vector3 Target { get; set; }
     
+    protected BaseCharacter[] _characters;
+    
     public void InitStatus(MonsterRawData data)
     {
         Stat = data;
@@ -42,8 +44,13 @@ public class BaseMonster : BaseController
         base.Awake();
         
         CurrentState = new();
-
+        
         _timer = 0f;
+    }
+
+    protected void Start()
+    {
+        _characters = Service.Get<PlayerManager>().Characters;
     }
     
     protected override void OnEnable()
@@ -87,61 +94,41 @@ public class BaseMonster : BaseController
                 break;
         }
     }
-
-    public ITargetable FindTarget()
+    
+    private ITargetable FindTarget()
     {
-        List<ITargetable> targets = Detect(Stats._chaseRange, ETargetType.Enemy);
-
-        ITargetable player = null;
-        ITargetable wall = null;
+        ITargetable target = Service.Get<GameManager>()._wall;
         
-        float playerDis = float.MaxValue;
-        float wallDis = float.MaxValue;
-
-        foreach (ITargetable target in targets)
+        float minDistance = float.MaxValue;
+        
+        foreach (BaseCharacter player in _characters)
         {
-            float dis = (transform.position - target.GetTargetObject.transform.position).sqrMagnitude;
+            if (player._isDead) continue;
+            
+            float dis = (transform.position - player.transform.position).sqrMagnitude;
 
-            if (target is BaseCharacter)
+            if (dis < minDistance)
             {
-                if (dis < playerDis)
-                {
-                    playerDis = dis;
-                    player = target;
-                }
-            }
-            else if (target is Rampart)
-            {
-                if (dis < wallDis)
-                {
-                    wallDis = dis;
-                    wall = target;
-                }
+                minDistance = dis;
+                target = player;
             }
         }
 
-        return player ?? wall;
+        return target;
     }
+    
 
     private void ResetTarget()
     {
-        _timer += Time.deltaTime;
-
-        if (_timer <= 0.2f) return;
-        
-        _timer = 0f;
         SetCurrentTarget(FindTarget());
 
-        if (GetCurrentTarget != null)
+        if (GetCurrentTarget is BaseCharacter)
         {
-            if (GetCurrentTarget is BaseCharacter)
-            {
-                Target = GetCurrentTarget.GetTargetObject.transform.position;
-            }
-            else if (GetCurrentTarget is Rampart)
-            {
-                Target = new Vector3(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y, transform.position.z);
-            }
+            Target = GetCurrentTarget.GetTargetObject.transform.position;
+        }
+        else if (GetCurrentTarget is Rampart)
+        {
+            Target = new Vector3(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y, transform.position.z);
         }
     }
 

@@ -17,12 +17,6 @@ public class MonsterChaseState : IState
 
     public void Update()
     {
-        if (_controller.GetCurrentTarget == null)
-        {
-            _controller.Movement.DownMove();
-            return;
-        }
-
         if (Vector2.Distance(_controller.transform.position, _controller.Target) <= _controller.Stats._attackRange)
         {
             _controller.CurrentState.Value = EStateType.Attack;
