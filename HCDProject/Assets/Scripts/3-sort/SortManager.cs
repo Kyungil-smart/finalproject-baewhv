@@ -12,8 +12,9 @@ public class SortManager : BaseManager<SortManager>
     protected override void Awake()
     {
         base.Awake();
-
         isEndSort.Value = false;
+
+        RemainingSorts.Value = 6;
     }
 
     private void Start()
@@ -30,7 +31,6 @@ public class SortManager : BaseManager<SortManager>
     {
         CurrentCombo.Value += amount;
     }
-
 
     public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
     {
@@ -95,7 +95,6 @@ public class SortManager : BaseManager<SortManager>
         if (RemainingSorts.Value <= 0)
         {
             isEndSort.Value = true;
-
             FinishSortPhase();
         }
 
@@ -105,20 +104,18 @@ public class SortManager : BaseManager<SortManager>
     public void OnStartSort()
     {
         isEndSort.Value = false;
-        RemainingSorts.Value = 6; 
+        RemainingSorts.Value = 6;
 
         Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
+
+        Service.Get<RailManager>()?.InitializeRail();
     }
 
     public void CheckSortEnd()
     {
         if (RemainingSorts.Value > 0)
         {
-            GameObject warningPopup = GameObject.Find("SortWarningPopup");
-            if (warningPopup != null)
-            {
-                warningPopup.SetActive(true);
-            }
+            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnShowSortWarningPopup();
         }
         else
         {
