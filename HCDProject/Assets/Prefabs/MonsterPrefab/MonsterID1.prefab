@@ -173,7 +173,7 @@ MonoBehaviour:
     _attackRange: 1
     _chaseRange: 3
   skills:
-  - skillDamage: 50
+  - skillDamage: 10
     skillRange: 1
     coolTime: 2
     targetCount: 1
