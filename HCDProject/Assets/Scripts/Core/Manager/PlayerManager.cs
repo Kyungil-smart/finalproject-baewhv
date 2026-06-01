@@ -51,19 +51,24 @@ public class PlayerManager : BaseManager<PlayerManager>
     private void SpawnAllCharacters()
     {
         _characters = new BaseCharacter[_characterDatas.Length];
-
-        for (int i = 0; i < _characterDatas.Length; i++)
+        var slots = Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots;
+        if (slots != null)
         {
-            GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
+            for (int i = 0; i < _characterDatas.Length; i++)
+            {
+                GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
 
-            BaseCharacter chr = obj.GetComponent<BaseCharacter>();
+                BaseCharacter chr = obj.GetComponent<BaseCharacter>();
 
-            chr.homePosition = _homePoints[i].position;
-            chr.spawnPosition = _spawnPoints[i].position;
-            chr.Init(_characterDatas[i]);
-            _characters[i] = chr;
-            Debug.Log($"{i}번 플레이어 생성 완료");
+                chr.homePosition = _homePoints[i].position;
+                chr.spawnPosition = _spawnPoints[i].position;
+                chr.Init(_characterDatas[i]);
+                chr.BindHpUI(slots[i].SetHPBar);
+                _characters[i] = chr;
+                Debug.Log($"{i}번 플레이어 생성 완료");
+            }
         }
+        
     }
 
     public void IsAllSpawnPlayer()
