@@ -11,10 +11,9 @@ public class SortState : IState
     {
         _sortManager = Service.Get<SortManager>();
         
-        Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetSortPhase();
-
         if (_sortManager != null)
         {
+             _sortManager.OnStartSort();
              _sortManager.isEndSort.Value = false;
              _sortManager.isEndSort.AddListener(SortEnd);
         }
@@ -26,6 +25,7 @@ public class SortState : IState
 
     public void Exit()
     {
+        if (_sortManager != null) _sortManager.isEndSort.RemoveListener(SortEnd);
     }
 
     private void SortEnd(bool isEnd)
