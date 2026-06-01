@@ -21,7 +21,6 @@ public class GameManager : BaseManager<GameManager>
     
     private bool isLoading = false;
     
-    public GameState currentState = GameState.Ready;
     private float sortTime = 3;
     private int totalWave = 3;
     public Rampart _wall;
