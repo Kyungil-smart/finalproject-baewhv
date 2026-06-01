@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.InputSystem;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class GameManager : BaseManager<GameManager>
 {
@@ -22,7 +24,9 @@ public class GameManager : BaseManager<GameManager>
     public GameState currentState = GameState.Ready;
     private float sortTime = 3;
     private int totalWave = 3;
-    private Rampart _wall;
+    public Rampart _wall;
+    private string _wallAddress = "Rampart";
+    [SerializeField] private int _currentWallHp = -1;
     private Coroutine _gameRoutine;
     
     private void Awake()
@@ -39,6 +43,8 @@ public class GameManager : BaseManager<GameManager>
         WaveState = new(this);
         ClearState = new(this);
         GameOverState = new(this);
+
+        _currentWallHp = -1;
     }
 
     private void Start()
@@ -61,6 +67,9 @@ public class GameManager : BaseManager<GameManager>
     private void Update()
     {
         _state?.Update();
+        
+        if (Keyboard.current.oKey.wasPressedThisFrame)
+            Service.Get<GameManager>()?._wall.SetDamage(10);
     }
 
     private void ChangeState(GameState state)
@@ -88,6 +97,8 @@ public class GameManager : BaseManager<GameManager>
     public void EnterStage(int chapter, int stage)
     {
         isLoading = true;
+
+        SpawnWall();
         
         List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
         
@@ -110,10 +121,54 @@ public class GameManager : BaseManager<GameManager>
         });
     }
 
-    // 추후 삭제 요청 더미 매서드
+    private void SpawnWall()
+    {
+        Addressables.InstantiateAsync(_wallAddress).Completed += (handle) =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                GameObject wallObj = handle.Result;
+
+                if (wallObj.TryGetComponent(out Rampart wall))
+                {
+                    _wall = wall;
+
+                    if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
+                    else _currentWallHp = _wall.MaxHp;
+
+                    var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+
+                    if (wallHpUi != null)
+                    {
+                        wallHpUi.SetWallHP(_wall.currentHp.Value, _wall.MaxHp);
+                        _wall.currentHp.AddListener(wallHpUi.UpdateWallHP);
+                    }
+                }
+            }
+        };
+    }
+
+    public void ClearStage()
+    {
+        if (_wall != null)
+        {
+            _currentWallHp = _wall.currentHp.Value;
+            
+            var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+            if (wallHpUi != null)
+            {
+                _wall.currentHp.RemoveListener(wallHpUi.UpdateWallHP);
+            }
+            
+
+            Addressables.ReleaseInstance(_wall.gameObject);
+            _wall = null;
+        }
+    }
+
     public void EndStage()
     {
-        
+        CurrentState.Value = GameState.GameOver;
     }
 
     public void Spawn(int chapter, int stage, int wave)
