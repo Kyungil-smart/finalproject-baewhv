@@ -1,26 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
-public class SortManager : MonoBehaviour
+public class SortManager : BaseManager<SortManager>
 {
-    public static SortManager Instance { get; private set; }
-
     public CharacterSlot[] characterSlots;
 
-    [SerializeField] private int remainingSorts = 6; 
-    private int currentCombo = 0;
+    public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
+    public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
 
-    private void Awake()
+    public ObserveValue<bool> isEndSort = new();
+
+    protected override void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        base.Awake();
+
+        isEndSort.Value = false;
     }
 
     private void Start()
@@ -31,29 +24,23 @@ public class SortManager : MonoBehaviour
     private void AutoSetupUISlots()
     {
         characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
-
-        if (characterSlots != null)
-        {
-            Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetLeftSortCountText(remainingSorts);
-        }
     }
 
     public void AddCombo(int amount)
     {
-        currentCombo += amount;
-        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetComboText(currentCombo);
+        CurrentCombo.Value += amount;
     }
 
     /*
     public void ResetCombo()
     {
-        currentCombo = 0;
+        CurrentCombo.Value = 0;
     }
     */
 
     public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
     {
-        if (remainingSorts <= 0)
+        if (RemainingSorts.Value <= 0 || isEndSort.Value == true)
         {
             return;
         }
@@ -78,9 +65,9 @@ public class SortManager : MonoBehaviour
                 draggedobject.transform.SetParent(subSlots[i]);
                 draggedobject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
-                if (ObjectRail.Instance != null)
+                if (Service.Get<RailManager>() != null)
                 {
-                    ObjectRail.Instance.RemoveBlockFromRail(draggedobject);
+                    Service.Get<RailManager>().RemoveBlockFromRail(draggedobject);
                 }
 
                 CheckSlotState(targetSlot);
@@ -109,9 +96,12 @@ public class SortManager : MonoBehaviour
             Destroy(block);
         }
 
-        remainingSorts--;
-        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetLeftSortCountText(remainingSorts);
-        AddCombo(1);
+        RemainingSorts.Value--;
+
+        if (RemainingSorts.Value <= 0)
+        {
+            isEndSort.Value = true;
+        }
 
         ApplyBuffToPlayer(slot, buffType);
     }
