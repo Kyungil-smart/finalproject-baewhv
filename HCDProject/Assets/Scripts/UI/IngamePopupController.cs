@@ -32,7 +32,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     public IEnumerator ShowEndLogo(bool isClear)
     {
         if (isClear) ClearLogo.SetActive(true);
-        FailLogo.SetActive(true);
+        else FailLogo.SetActive(true);
         yield return YieldContainer.WaitForSeconds(2.0f);
         ClearLogo.SetActive(false);
         FailLogo.SetActive(false);
@@ -68,6 +68,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     public void OnEndSort()
     {
         SortWarningPopup.SetActive(false);
+        Service.Get<SortManager>()?.FinishSortPhase();
         //Service.Get<SceneController>()?
     }
     public void OnShowSortWarningPopup()
