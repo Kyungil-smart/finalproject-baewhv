@@ -14,7 +14,7 @@ public class ReadyState : IState
     {
         if (Service.Get<PlayerManager>() != null)
         {
-            // if (Service.Get<PlayerManager>().isAllSpawn.Value) _manager.CurrentState.Value = GameState.Sort;
+            if (Service.Get<PlayerManager>().isAllSpawn.Value) _manager.CurrentState.Value = GameState.Sort;
         }
     }
 
