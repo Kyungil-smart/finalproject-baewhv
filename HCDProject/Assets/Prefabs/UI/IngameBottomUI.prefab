@@ -392,6 +392,11 @@ MonoBehaviour:
   - {fileID: 2206252458004707774}
   - {fileID: 3581241212648676361}
   - {fileID: 3754473446214175356}
+  battleCharacterSlots:
+  - {fileID: 1614766673234600594}
+  - {fileID: 4478975015391618499}
+  - {fileID: 6086020819289758944}
+  - {fileID: 2314686019922371432}
   upperRail: {fileID: 1305813480184045919}
   lowerRail: {fileID: 6336049176418044}
   comboText: {fileID: 8056856658712351339}
@@ -2203,7 +2208,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1253578601997892722}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3756485690105876099}
+        m_TargetAssemblyTypeName: IngameBottomUIController, Assembly-CSharp
+        m_MethodName: OnEndSort
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5298273024247618429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,6 +3790,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
   m_PrefabInstance: {fileID: 3376219915609899439}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6086020819289758944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 3376219915609899439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a4f78f25f35834b91e257c8adbe4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!1001 &4938154776356894860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3890,6 +3918,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+--- !u!114 &4478975015391618499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 4938154776356894860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a4f78f25f35834b91e257c8adbe4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!224 &6837000572802184546 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
@@ -4461,6 +4500,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+--- !u!114 &2314686019922371432 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 6534783787281940007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a4f78f25f35834b91e257c8adbe4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!224 &4671932024402572233 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
@@ -4696,6 +4746,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+--- !u!114 &1614766673234600594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840387469643013455, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+  m_PrefabInstance: {fileID: 7838392192256933853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a4f78f25f35834b91e257c8adbe4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotBase
 --- !u!224 &8548305416802136627 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}

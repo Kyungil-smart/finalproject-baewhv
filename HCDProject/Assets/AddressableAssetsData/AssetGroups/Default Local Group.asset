@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 0174584177829b04ea56168d28a97eb3
   m_SerializeEntries:
+  - m_GUID: 0613d0075db3c4540bc7e29fc54a6557
+    m_Address: Rampart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 44fdb355f65fdfb45a57388b13354d0a
     m_Address: MONSTER_TABLE
     m_ReadOnly: 0

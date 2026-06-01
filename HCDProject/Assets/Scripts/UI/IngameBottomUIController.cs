@@ -12,7 +12,9 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     
     
     [SerializeField] private CharacterSlot[] characterSlots;
+    [SerializeField] private CharacterSlot[] battleCharacterSlots;
     public CharacterSlot[] GetSlots => characterSlots;
+    public CharacterSlot[] GetBattleSlots => characterSlots;
 
     [SerializeField] private StoneRail upperRail;
     public StoneRail GetUpperRail => upperRail;
@@ -32,8 +34,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     }
     public void OnEndSort()
     {
-        //아직 정렬 가능한 횟수가 남으면 팝업 출력.
-        Service.Get<GameManager>().currentState = GameState.Wave;
+        Service.Get<SortManager>()?.CheckSortEnd();
     }
 
     public void SetWallHP(float value)
