@@ -18,6 +18,7 @@ public class BaseMonster : BaseController
     #endregion
 
     private float _timer;
+    public Vector2 Target { get; set; }
     
     public void InitStatus(MonsterRawData data)
     {
@@ -130,6 +131,18 @@ public class BaseMonster : BaseController
         
         _timer = 0f;
         SetCurrentTarget(FindTarget());
+
+        if (GetCurrentTarget != null)
+        {
+            if (GetCurrentTarget is BaseCharacter)
+            {
+                Target = GetCurrentTarget.GetTargetObject.transform.position;
+            }
+            else if (GetCurrentTarget is Rampart)
+            {
+                Target = new Vector2(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y);
+            }
+        }
     }
 
     public float DistanceToTarget(Transform target)
