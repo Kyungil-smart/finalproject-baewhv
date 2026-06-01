@@ -24,7 +24,7 @@ public class GameManager : BaseManager<GameManager>
     private int totalWave = 3;
     private Rampart _wall;
     private Coroutine _gameRoutine;
-
+    
     private void Awake()
     {
         Service.Get<SceneController>()?.CreateSession();
