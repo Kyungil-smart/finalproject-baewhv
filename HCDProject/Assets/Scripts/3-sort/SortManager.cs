@@ -31,12 +31,6 @@ public class SortManager : BaseManager<SortManager>
         CurrentCombo.Value += amount;
     }
 
-    /*
-    public void ResetCombo()
-    {
-        CurrentCombo.Value = 0;
-    }
-    */
 
     public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
     {
@@ -101,9 +95,47 @@ public class SortManager : BaseManager<SortManager>
         if (RemainingSorts.Value <= 0)
         {
             isEndSort.Value = true;
+
+            FinishSortPhase();
         }
 
         ApplyBuffToPlayer(slot, buffType);
+    }
+
+    public void OnStartSort()
+    {
+        isEndSort.Value = false;
+        RemainingSorts.Value = 6; 
+
+        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
+    }
+
+    public void CheckSortEnd()
+    {
+        if (RemainingSorts.Value > 0)
+        {
+            GameObject warningPopup = GameObject.Find("SortWarningPopup");
+            if (warningPopup != null)
+            {
+                warningPopup.SetActive(true);
+            }
+        }
+        else
+        {
+            FinishSortPhase();
+        }
+    }
+
+    public void FinishSortPhase()
+    {
+        isEndSort.Value = true;
+
+        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetBattlePhase();
+
+        if (Service.Get<GameManager>() != null)
+        {
+            Service.Get<GameManager>().currentState = GameState.Wave;
+        }
     }
 
     private void ApplyBuffToPlayer(CharacterSlot slot, string buffName)
