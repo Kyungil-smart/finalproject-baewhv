@@ -133,15 +133,15 @@ public class GameManager : BaseManager<GameManager>
                 {
                     _wall = wall;
 
-                    if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
-                    else _currentWallHp = _wall.MaxHp;
+                    // if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
+                    // else _currentWallHp = _wall.MaxHp;
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
                     if (wallHpUi != null)
                     {
-                        wallHpUi.SetWallHP(_wall.currentHp.Value, _wall.MaxHp);
-                        _wall.currentHp.AddListener(wallHpUi.UpdateWallHP);
+                        // wallHpUi.SetWallHP(_wall.currentHp.Value, _wall.MaxHp);
+                        // _wall.currentHp.AddListener(wallHpUi.UpdateWallHP);
                     }
                 }
             }
@@ -157,7 +157,7 @@ public class GameManager : BaseManager<GameManager>
             var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
             if (wallHpUi != null)
             {
-                _wall.currentHp.RemoveListener(wallHpUi.UpdateWallHP);
+                // _wall.currentHp.RemoveListener(wallHpUi.UpdateWallHP);
             }
             
 
