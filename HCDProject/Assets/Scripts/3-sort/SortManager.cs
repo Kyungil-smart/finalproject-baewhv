@@ -13,8 +13,6 @@ public class SortManager : BaseManager<SortManager>
     {
         base.Awake();
         isEndSort.Value = false;
-
-        RemainingSorts.Value = 6;
     }
 
     private void Start()
@@ -94,7 +92,6 @@ public class SortManager : BaseManager<SortManager>
 
         if (RemainingSorts.Value <= 0)
         {
-            isEndSort.Value = true;
             FinishSortPhase();
         }
 
@@ -123,16 +120,17 @@ public class SortManager : BaseManager<SortManager>
         }
     }
 
+    public void OnUISortFinish()
+    {
+        if (!isEndSort.Value)
+        {
+            FinishSortPhase();
+        }
+    }
+
     public void FinishSortPhase()
     {
         isEndSort.Value = true;
-
-        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetBattlePhase();
-
-        if (Service.Get<GameManager>() != null)
-        {
-            Service.Get<GameManager>().currentState = GameState.Wave;
-        }
     }
 
     private void ApplyBuffToPlayer(CharacterSlot slot, string buffName)
