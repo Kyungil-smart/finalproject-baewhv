@@ -56,6 +56,7 @@ public class PlayerManager : BaseManager<PlayerManager>
             BaseCharacter chr = obj.GetComponent<BaseCharacter>();
 
             chr.homePosition = _homePoints[i].position;
+            chr.spawnPosition = _spawnPoints[i].position;
             chr.Init(_characterDatas[i]);
             _characters[i] = chr;
             Debug.Log($"{i}번 플레이어 생성 완료");
