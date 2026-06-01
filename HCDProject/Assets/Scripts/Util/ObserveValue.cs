@@ -8,7 +8,7 @@ using UnityEngine.Events;
 [System.Serializable]
 public class ObserveValue<T> where T : struct
 {
-    [SerializeField] private T _data = default;
+    [SerializeField] protected T _data = default;
 
     public T Value
     {
