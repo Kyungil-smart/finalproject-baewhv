@@ -61,6 +61,7 @@ public class GameManager : BaseManager<GameManager>
     private void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
+        _wall.currentHp.RemoveListener(WallHpChange);
     }
 
     private void Update()
@@ -90,6 +91,15 @@ public class GameManager : BaseManager<GameManager>
             case GameState.GameOver:
                 _state.ChangeState(GameOverState);
                 break;
+        }
+    }
+    
+    
+    private void WallHpChange(int hp)
+    {
+        if (hp <= 0 && CurrentState.Value != GameState.GameOver)
+        {
+            CurrentState.Value = GameState.GameOver;
         }
     }
     
@@ -134,6 +144,8 @@ public class GameManager : BaseManager<GameManager>
 
                     if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
                     else _currentWallHp = _wall.MaxHp;
+                    
+                    if (_wall.currentHp != null) _wall.currentHp.AddListener(WallHpChange);
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
@@ -152,6 +164,8 @@ public class GameManager : BaseManager<GameManager>
         if (_wall != null)
         {
             _currentWallHp = _wall.currentHp.Value;
+            
+            _wall.currentHp.RemoveListener(WallHpChange);
             
             var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
             if (wallHpUi != null)
