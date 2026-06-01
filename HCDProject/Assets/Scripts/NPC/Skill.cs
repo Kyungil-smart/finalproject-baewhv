@@ -9,6 +9,8 @@ public class Skill
 
     public int coolTime;
 
+    public int targetCount;
+
     public ETargetType TargetType;
 }
 

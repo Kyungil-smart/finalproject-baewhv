@@ -148,7 +148,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 23
   m_ObstacleAvoidanceType: 2
 --- !u!114 &2456901426324293284
 MonoBehaviour:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
   _stats:
-    _maxHp: 30
+    _maxHp: 10
     _attackPower: 0
     _defense: 0
     _moveSpeed: 3
@@ -173,9 +173,10 @@ MonoBehaviour:
     _attackRange: 1
     _chaseRange: 3
   skills:
-  - skillDamage: 0
+  - skillDamage: 10
     skillRange: 1
     coolTime: 2
+    targetCount: 1
     TargetType: 0
   EnemyFilter:
     useTriggers: 0
@@ -205,7 +206,27 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  monsterID: 1
+  <Stat>k__BackingField:
+    MONSTER_ID: 
+    MONSTER_NAME: 
+    HP: 0
+    ATK: 200
+    DEF: 0
+    ATK_SPEED: 0
+    MOVE_SPEED: 0
+    ATK_TYPE: 
+    ATK_IS: 0
+    ATK_SFX: 
+    HIT_SFX: 
+    ATK_FX: 
+    HIT_FX: 
+    ATTACK_MOTION: 
+    DEAD_MOTION: 
+    MOVE_MOTION: 
+    HIT_MOTION: 
+    MONSTER_IMG: 
+    EXP: 0
+  <MonsterID>k__BackingField: 1
   <CurrentState>k__BackingField:
     _data: 0
 --- !u!114 &2424096368794968494

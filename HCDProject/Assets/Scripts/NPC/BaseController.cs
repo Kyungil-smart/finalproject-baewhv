@@ -8,6 +8,12 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     protected ObserveValue<int> CurrentHp = new ObserveValue<int>();
 
+
+    public bool IsAlive()
+    {
+        return CurrentHp.Value > 0;
+    }
+    
     [SerializeField] protected List<Skill> skills = new List<Skill>();
 
     protected ESkillType SkillIndex;
@@ -17,6 +23,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     protected ITargetable _currentTarget;
 
     public ITargetable GetCurrentTarget => _currentTarget;
+    
 
     public abstract void SetCurrentTarget(ITargetable target);
 
@@ -32,7 +39,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     {
         GetTargetObject = gameObject;
         Movement = GetComponent<CharacterMovement>();
-        CurrentHp.Value = _stats._maxHp;
         
         EnemyFilter.useLayerMask = true;
         EnemyFilter.useTriggers = false;
@@ -40,20 +46,27 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         AllyFilter.useTriggers = false;
     }
 
+    protected virtual void OnEnable()
+    {
+        CurrentHp.Value = _stats._maxHp;
+    }
+
     public void UseSkill(int index)
     {
         List<ITargetable> skillTargets = Detect(skills[index].skillRange, skills[index].TargetType);
 
-        foreach (ITargetable target in skillTargets)
+        if (skillTargets.Count == 0) return;
+
+        for (int i = 0; i < skills[index].targetCount; i++)
         {
             if (skills[index].TargetType == ETargetType.Enemy)
             {
                 int finalDamage = UseCritDamage(skills[index].skillDamage);
-                target.SetDamage(finalDamage);
+                skillTargets[i].SetDamage(finalDamage);
             }
             else
             {
-                target.SetHeal(skills[index].skillDamage);
+                skillTargets[i].SetHeal(skills[index].skillDamage);
             }
         }
     }
@@ -86,7 +99,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void SetDamage(int damage)
     {
         int def = Mathf.Max(damage - _stats._defense, 0);
-
+        
         CurrentHp.Value -= def;
     }
 
@@ -104,4 +117,5 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
     }
+
 }

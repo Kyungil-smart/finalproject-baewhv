@@ -1,23 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
-public class SortManager : MonoBehaviour
+public class SortManager : BaseManager<SortManager>
 {
-    public static SortManager Instance { get; private set; }
+    public CharacterSlot[] characterSlots;
 
-    public List<SlotBase> allSlots = new List<SlotBase>();
+    public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
+    public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
 
-    private void Awake()
+    public ObserveValue<bool> isEndSort = new();
+
+    protected override void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        base.Awake();
+        isEndSort.Value = false;
     }
 
     private void Start()
@@ -27,32 +22,33 @@ public class SortManager : MonoBehaviour
 
     private void AutoSetupUISlots()
     {
-        string[] canvasNames = { "CharacterCanvasA", "CharacterCanvasB", "CharacterCanvasC", "CharacterCanvasD" };
-
-        foreach (string canvasName in canvasNames)
-        {
-            GameObject canvasObjectj = GameObject.Find(canvasName);
-
-            if (canvasObjectj != null)
-            {
-                CharacterSlot newSlot = canvasObjectj.AddComponent<CharacterSlot>();
-
-                newSlot.subSlots[0] = canvasObjectj.transform.Find("SlotA");
-                newSlot.subSlots[1] = canvasObjectj.transform.Find("SlotB");
-                newSlot.subSlots[2] = canvasObjectj.transform.Find("SlotC");
-
-                allSlots.Add(newSlot);
-            }
-            else
-            {
-
-            }
-        }
+        characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
     }
 
-    public void ObjectDrop(SlotBase targetSlot, DragAndDropItem draggedobject)
+    public void AddCombo(int amount)
     {
-        Transform[] subSlots = targetSlot.subSlots;
+        CurrentCombo.Value += amount;
+    }
+
+    public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
+    {
+        if (RemainingSorts.Value <= 0 || isEndSort.Value == true)
+        {
+            return;
+        }
+
+        Transform[] subSlots = targetSlot.SubSlots;
+
+        if (subSlots[0] != null && subSlots[0].childCount > 0)
+        {
+            string masterName = GetCleanName(subSlots[0].GetChild(0).gameObject.name);
+            string draggedName = GetCleanName(draggedobject.gameObject.name);
+
+            if (masterName != draggedName)
+            {
+                return;
+            }
+        }
 
         for (int i = 0; i < subSlots.Length; i++)
         {
@@ -61,35 +57,89 @@ public class SortManager : MonoBehaviour
                 draggedobject.transform.SetParent(subSlots[i]);
                 draggedobject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
+                if (Service.Get<RailManager>() != null)
+                {
+                    Service.Get<RailManager>().RemoveBlockFromRail(draggedobject);
+                }
+
                 CheckSlotState(targetSlot);
                 return;
             }
         }
     }
 
-    private void CheckSlotState(SlotBase slot)
+    private void CheckSlotState(CharacterSlot slot)
     {
-        if (slot.subSlots[0] == null || slot.subSlots[0].childCount == 0) return;
-
-        string targetName = slot.subSlots[0].GetChild(0).gameObject.name;
-
-        for (int i = 1; i < slot.subSlots.Length; i++)
+        for (int i = 0; i < slot.SubSlots.Length; i++)
         {
-            if (slot.subSlots[i] == null || slot.subSlots[i].childCount == 0) return;
-
-            string currentName = slot.subSlots[i].GetChild(0).gameObject.name;
-            if (currentName != targetName) return;
+            if (slot.SubSlots[i] == null || slot.SubSlots[i].childCount == 0) return;
         }
 
+        string buffType = GetCleanName(slot.SubSlots[0].GetChild(0).gameObject.name);
+
         GameObject[] blocksDestroy = new GameObject[3];
-        for (int i = 0; i < slot.subSlots.Length; i++)
+        for (int i = 0; i < slot.SubSlots.Length; i++)
         {
-            blocksDestroy[i] = slot.subSlots[i].GetChild(0).gameObject;
+            blocksDestroy[i] = slot.SubSlots[i].GetChild(0).gameObject;
         }
 
         foreach (GameObject block in blocksDestroy)
         {
             Destroy(block);
         }
+
+        RemainingSorts.Value--;
+
+        if (RemainingSorts.Value <= 0)
+        {
+            FinishSortPhase();
+        }
+
+        ApplyBuffToPlayer(slot, buffType);
+    }
+
+    public void OnStartSort()
+    {
+        isEndSort.Value = false;
+        RemainingSorts.Value = 6;
+
+        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
+
+        Service.Get<RailManager>()?.InitializeRail();
+    }
+
+    public void CheckSortEnd()
+    {
+        if (RemainingSorts.Value > 0)
+        {
+            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnShowSortWarningPopup();
+        }
+        else
+        {
+            FinishSortPhase();
+        }
+    }
+
+    public void OnUISortFinish()
+    {
+        if (!isEndSort.Value)
+        {
+            FinishSortPhase();
+        }
+    }
+
+    public void FinishSortPhase()
+    {
+        isEndSort.Value = true;
+    }
+
+    private void ApplyBuffToPlayer(CharacterSlot slot, string buffName)
+    {
+        Debug.Log($"{slot.gameObject.name}에 {buffName} 타입의 버프 부여");
+    }
+
+    private string GetCleanName(string rawName)
+    {
+        return rawName.Replace("(Clone)", "").Trim();
     }
 }

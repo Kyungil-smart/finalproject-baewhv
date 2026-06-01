@@ -16,7 +16,5 @@ public class NormalMonster : BaseMonster
         ChaseState = new MonsterChaseState(this);
         AttackState = new MonsterAttackState(this);
         DieState = new MonsterDieState(this);
-
-        State.ChangeState(IdleState);
     }
 }

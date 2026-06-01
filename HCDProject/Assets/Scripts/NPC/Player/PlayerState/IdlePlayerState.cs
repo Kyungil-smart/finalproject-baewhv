@@ -25,6 +25,15 @@ public class IdlePlayerState : IState
 
     public void Update()
     {
+        if (_owner.GetCurrentTarget == null)
+        {
+            float dist = Vector2.Distance(_owner.transform.position, _owner.homePosition);
+            if(dist > 0.2f)
+            {
+                _owner.Movement.Move(_owner.homePosition);
+            }
+        }
+
         ITargetable target = _owner.FindTarget(_owner.SkillTargetIndex);
 
         if (target != null)

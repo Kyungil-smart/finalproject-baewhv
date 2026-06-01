@@ -17,7 +17,6 @@ public class CharacterMovement : MonoBehaviour
         Agent = _controller.GetComponent<NavMeshAgent>();
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
-        Agent.speed = _controller.Stats._moveSpeed;
         Agent.stoppingDistance = 0.1f;
     }
 
@@ -34,13 +33,5 @@ public class CharacterMovement : MonoBehaviour
         
         Agent.isStopped = false;
         Agent.SetDestination(target);
-    }
-
-    public void DownMove()
-    {
-        Agent.ResetPath();
-        
-        Agent.isStopped = false;
-        Agent.Move(Vector2.down * (_controller.Stats._moveSpeed * Time.deltaTime));
     }
 }

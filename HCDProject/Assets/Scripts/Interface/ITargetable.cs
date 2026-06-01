@@ -7,7 +7,9 @@ using UnityEngine;
 public interface ITargetable
 {
     public GameObject GetTargetObject { get; set; }
-    
+
+    public bool IsAlive();
+
     public void SetDamage(int damage);
     public void SetHeal(int heal);
 }

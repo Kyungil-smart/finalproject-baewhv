@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Events;
 
 // 모든 직업군이 공통으로 가질 클래스
 public class BaseCharacter : BaseController
@@ -16,16 +18,27 @@ public class BaseCharacter : BaseController
 
     private DiePlayerState _diePlayerState;
 
-    private Vector3 _homePosition; // 지정된 위치
+    [SerializeField]private Vector3 _homePosition; // 지정된 위치
+    [SerializeField] private Vector3 _spawnPosition; // 스폰 및 부활
 
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
     bool _isFirstCombat = true; // 전사 첫번째 전투
 
+    bool _isSpawning = true;
+
+    public bool _isDead; // public으로 추후 제한자 바꾸기
+
+    private RatioIntValue _hpRatio;
+
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
 
-    private bool _isDead;
-
+    public bool IsSpawning
+    {
+        get => _isSpawning;
+        set => _isSpawning = value;
+    }
+    
     public float ReviveTime => _reviveTime;
 
     private EFindType _findType;
@@ -44,6 +57,21 @@ public class BaseCharacter : BaseController
     {
         get => _skillTargetIndex;
         set => _skillTargetIndex = value;
+    }
+
+    public void SetNavMeshActive(bool isActive)
+    {
+        if (isActive)
+        {
+            this.Movement.Agent.enabled = isActive;
+            this.Movement.Agent.isStopped = false;
+        }
+
+        else
+        {
+            this.Movement.Agent.isStopped = true;
+            this.Movement.Agent.enabled = isActive;
+        }
     }
 
     public void CompleteFirstCombat() // 전사 첫번째 전투
@@ -65,7 +93,7 @@ public class BaseCharacter : BaseController
 
         if (target == null)
         {
-            state.ChangeState(this.spawn);
+            state.ChangeState(this.idle);
         }
 
         else
@@ -75,13 +103,19 @@ public class BaseCharacter : BaseController
 
     }
 
+    public Vector3 spawnPosition
+    {
+        get => _spawnPosition;
+        set => _spawnPosition = value;
+    }
+
     public Vector3 homePosition
     {
         get => _homePosition;
 
         set => _homePosition = value;
     }
-
+    #region stateMachine
     public StateMachine state => _stateMachine;
     
     public AttackPlayerState attack => _attackPlayerState;
@@ -93,6 +127,7 @@ public class BaseCharacter : BaseController
     public ChasePlayerState chase => _chasePlayerState;
 
     public DiePlayerState die => _diePlayerState;
+    #endregion
 
     protected override void Awake()
     {
@@ -103,16 +138,6 @@ public class BaseCharacter : BaseController
         _chasePlayerState = new ChasePlayerState(this);
         _attackPlayerState = new AttackPlayerState(this);
         _diePlayerState = new DiePlayerState(this);
-    }
-
-    private void Start()
-    {
-        // 테스트용: SO가 인스펙터에 할당돼 있으면 Init 호출
-        if (_baseData != null)
-        {
-            _homePosition = transform.position;
-            Init(_baseData);
-        }
     }
 
     protected void OnEnable()
@@ -128,6 +153,14 @@ public class BaseCharacter : BaseController
     protected virtual void Update()
     {
         _stateMachine?.Update();
+    }
+
+    public void BindHpUI(UnityAction<float> action)
+    {
+        int maxValue = _stats._maxHp;
+        _hpRatio = new RatioIntValue(maxValue);
+        _hpRatio.AddRatioListener(action);
+        CurrentHp.AddListener(value => { _hpRatio.Value = value; });
     }
 
     public void Init(CharacterBaseData data)
@@ -146,7 +179,8 @@ public class BaseCharacter : BaseController
             _attackRange = data._attackRange,
             _chaseRange = data._chaseRange
         };
-        _findType = EFindType.Farthest;
+        _findType = data._initFindType; // SO에서 직업 별 공격타입 읽어옴
+        _isFirstCombat = _baseData._hasFirstCombat;
         CurrentHp.Value = _stats._maxHp;
         Movement.Agent.speed = _stats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
@@ -167,10 +201,28 @@ public class BaseCharacter : BaseController
 
     public ITargetable FindTarget(int index)
     {
-        List<ITargetable> targets = Detect(Stats._chaseRange, skills[index].TargetType);
-        Debug.Log($"[탐색] FindType: {_findType} | 탐지 수: {targets.Count}");
+        if (_isSpawning) return null;
 
+        List<ITargetable> targets = Detect(Stats._chaseRange, skills[index].TargetType);
         ITargetable nearest = null;
+
+        if (FindType == EFindType.LowestHp)
+        {
+            float lowestRatio = float.MaxValue;
+            foreach (ITargetable t in targets)
+            {
+                if (t is BaseCharacter ally)
+                {
+                    float ratio = (float)ally.CurrentHp.Value / ally.Stats._maxHp;
+                    if (ratio < lowestRatio)
+                    {
+                        lowestRatio = ratio;
+                        nearest = t;
+                    }
+                }
+            }
+            return nearest;
+        }
 
         float nearestDis = float.MaxValue;
         float fartDis = float.MinValue;
@@ -195,6 +247,7 @@ public class BaseCharacter : BaseController
                         nearest = target;
                     }
                     break;
+                    
             }
 
         }
@@ -216,9 +269,13 @@ public class BaseCharacter : BaseController
     public void Revive()
     {
         _isDead = false;
+        _isSpawning = true;
+        this.Movement.Agent.Warp(spawnPosition);
         CurrentHp.Value = Stats._maxHp;
 
-        _isFirstCombat = true;
-        _findType = EFindType.Farthest;
+        _isFirstCombat = _baseData._hasFirstCombat;
+        Debug.Log($"before: {_findType}");
+        _findType = _baseData._initFindType;
+        Debug.Log($"after: {_findType}");
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -5,37 +6,27 @@ using UnityEngine.SceneManagement;
 public class SceneController : BaseManager<SceneController>
 {
     private Scene _sessionScene;
-    
+    private SceneType _currentScene = SceneType.Title;
+
     private void Update()
     {
-        if (Keyboard.current.bKey.wasPressedThisFrame) ChangeModeScene();
-        if (Keyboard.current.nKey.wasPressedThisFrame) ChangeSceneStageSelect();
-        if (Keyboard.current.mKey.wasPressedThisFrame) ChangeSceneInGame();
-        if (Keyboard.current.iKey.wasPressedThisFrame) ChangeSceneTitle();
+        if (Keyboard.current.iKey.wasPressedThisFrame) ChangeScene(SceneType.Title);
     }
 
-
-
-    public void ChangeSceneStageSelect()
+    public void ChangeScene(SceneType scene)
     {
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
-    }
-
-    public void ChangeSceneInGame()
-    {
-        SceneManager.UnloadSceneAsync(2);
-        SceneManager.LoadScene(3, LoadSceneMode.Additive);
-    }
-
-    public void ChangeSceneTitle()
-    {
-        if(_sessionScene.isLoaded) SceneManager.UnloadSceneAsync(_sessionScene);
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
-    }
-    
-    public void ChangeModeScene()
-    {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        if (scene == SceneType.Title ||  scene == SceneType.ModeSelect || scene == SceneType.StageSelect)
+        {
+            SceneManager.LoadScene((int)scene, LoadSceneMode.Single);
+            _currentScene = scene;
+        }
+        else if (scene == SceneType.InGame)
+        {
+            if (_currentScene == SceneType.StageSelect) SceneManager.UnloadSceneAsync((int)SceneType.StageSelect);
+            
+            SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
+            _currentScene = scene;
+        }
     }
 
     public void MoveGameObjectToSessionScene(GameObject gObj)
@@ -50,4 +41,12 @@ public class SceneController : BaseManager<SceneController>
         
         _sessionScene = SceneManager.CreateScene("Session",new CreateSceneParameters());
     }
+}
+
+public enum SceneType
+{
+    Title = 0,
+    ModeSelect = 1,
+    StageSelect = 2,
+    InGame = 3
 }

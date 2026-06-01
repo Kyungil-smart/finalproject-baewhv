@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class MonsterChaseState : IState
 {
     private BaseMonster _controller;
+    private Vector3 _currentTarget;
 
     public MonsterChaseState(BaseMonster controller)
     {
@@ -16,20 +17,17 @@ public class MonsterChaseState : IState
 
     public void Update()
     {
-        if (_controller.GetCurrentTarget == null)
-        {
-            _controller.Movement.DownMove();
-            return;
-        }
-
-        if (_controller.DistanceToTarget(_controller.GetCurrentTarget.GetTargetObject.transform) <=
-            _controller.Stats._attackRange)
+        if (Vector2.Distance(_controller.transform.position, _controller.Target) <= _controller.Stats._attackRange)
         {
             _controller.CurrentState.Value = EStateType.Attack;
             return;
         }
-        
-        _controller.Movement.Move(_controller.GetCurrentTarget.GetTargetObject.transform.position);
+
+        if (_currentTarget != _controller.Target)
+        {
+            _currentTarget = _controller.Target;
+            _controller.Movement.Move(_controller.Target);
+        }
     }
 
     public void Exit()

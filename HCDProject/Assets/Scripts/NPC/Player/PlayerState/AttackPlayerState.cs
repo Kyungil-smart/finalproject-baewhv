@@ -24,17 +24,15 @@ public class AttackPlayerState : IState
 
     public void Update()
     {
-        if (_owner.GetCurrentTarget == null)
+        if (_owner.GetCurrentTarget == null || !_owner.GetCurrentTarget.IsAlive()) // 타겟이 없다면?
         {
+            _owner.SetCurrentTarget(null);
             _owner.state.ChangeState(_owner.idle);
             return;
         }
 
         float dist = Vector3.Distance(_owner.transform.position,
-            _owner.GetCurrentTarget.GetTargetObject.transform.position);
-
-        //Debug.Log($"거리: {dist} | 스킬범위: {_owner.CurrentSkillRange}");
-
+                _owner.GetCurrentTarget.GetTargetObject.transform.position);
         if (dist > _owner.CurrentSkillRange) // 공격 범위 벗어났으면
         {
             _owner.state.ChangeState(_owner.chase);

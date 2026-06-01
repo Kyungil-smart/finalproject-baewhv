@@ -1,18 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private PlayerInput playerInput;
     private CanvasGroup canvasGroup;
-
-    private InputAction pointAction;
     private RectTransform rectTransform;
     private Canvas canvas;
 
     private Transform originalParent;
     private Vector2 originalAnchoredPosition;
+    private float originalLocalZ;
 
     private void Awake()
     {
@@ -24,19 +22,13 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         {
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
-
-        playerInput = FindFirstObjectByType<PlayerInput>();
-
-        if (playerInput != null)
-        {
-            pointAction = playerInput.actions["Point"];
-        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         originalParent = transform.parent;
         originalAnchoredPosition = rectTransform.anchoredPosition;
+        originalLocalZ = transform.localPosition.z;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -51,18 +43,23 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHan
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (pointAction == null) return;
+        if (canvas == null) return;
 
-        Vector2 inputPosition = pointAction.ReadValue<Vector2>();
+        Vector2 mouseScreenPos = Vector2.zero;
+        if (Mouse.current != null)
+        {
+            mouseScreenPos = Mouse.current.position.ReadValue();
+        }
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             transform.parent as RectTransform,
-            inputPosition,
+            mouseScreenPos, 
             canvas.worldCamera,
             out Vector2 localPoint
         );
 
         rectTransform.anchoredPosition = localPoint;
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, originalLocalZ);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -75,6 +72,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         if (transform.parent == originalParent)
         {
             rectTransform.anchoredPosition = originalAnchoredPosition;
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, originalLocalZ);
         }
     }
 }
