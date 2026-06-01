@@ -7,9 +7,13 @@ public class SortManager : BaseManager<SortManager>
     public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
     public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
 
+    public ObserveValue<bool> isEndSort = new();
+
     protected override void Awake()
     {
         base.Awake();
+
+        isEndSort.Value = false;
     }
 
     private void Start()
@@ -36,7 +40,7 @@ public class SortManager : BaseManager<SortManager>
 
     public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
     {
-        if (RemainingSorts.Value <= 0)
+        if (RemainingSorts.Value <= 0 || isEndSort.Value == true)
         {
             return;
         }
@@ -93,6 +97,11 @@ public class SortManager : BaseManager<SortManager>
         }
 
         RemainingSorts.Value--;
+
+        if (RemainingSorts.Value <= 0)
+        {
+            isEndSort.Value = true;
+        }
 
         ApplyBuffToPlayer(slot, buffType);
     }
