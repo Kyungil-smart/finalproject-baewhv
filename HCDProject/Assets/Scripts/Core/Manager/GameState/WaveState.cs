@@ -14,7 +14,7 @@ public class WaveState : IState
         
         Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetBattlePhase();
         
-        // Service.Get<GameManager>()?._wall.currentHp.AddListener(WallHpChange);
+        Service.Get<GameManager>()?._wall.currentHp.AddListener(WallHpChange);
 
         if (_spawnManager != null)
         {
