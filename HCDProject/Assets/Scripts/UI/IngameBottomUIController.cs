@@ -24,7 +24,6 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     
         
     
-    public bool IsSortPhase = false;
 
     private void Start()
     {
