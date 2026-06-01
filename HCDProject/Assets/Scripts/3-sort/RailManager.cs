@@ -1,87 +1,81 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class ObjectRail : MonoBehaviour
+public class RailManager : BaseManager<RailManager>
 {
-    public static ObjectRail Instance { get; private set; }
-
-    private RectTransform railARect;
-    private RectTransform railBRect;
-
     [SerializeField] private GameObject[] blockPrefabs = new GameObject[4];
 
-    private const int maxColumns = 6;
-    private const int maxRows = 2;
+    private Transform[] railASlots = new Transform[6];
+    private Transform[] railBSlots = new Transform[6];
 
-    [SerializeField] private Vector2 blockSize = new Vector2(100f, 100f);
-    [SerializeField] private Vector2 blockSpacing = new Vector2(15f, 15f);
+    private const int maxColumns = 6;
 
     private List<DragAndDrop> railABlocks = new List<DragAndDrop>();
     private List<DragAndDrop> railBBlocks = new List<DragAndDrop>();
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null) { Instance = this; }
+        base.Awake();
 
-        GameObject railAObj = GameObject.Find("StoneRailA");
-        GameObject railBObj = GameObject.Find("StoneRailB");
+        GameObject railAObject = GameObject.Find("StoneRailA");
+        GameObject railBObject = GameObject.Find("StoneRailB");
 
-        if (railAObj != null) railARect = railAObj.GetComponent<RectTransform>();
-        if (railBObj != null) railBRect = railBObj.GetComponent<RectTransform>();
+        if (railAObject != null)
+        {
+            for (int i = 0; i < maxColumns; i++)
+            {
+                railASlots[i] = railAObject.transform.Find($"RailSlot{i}");
+            }
+        }
+
+        if (railBObject != null)
+        {
+            for (int i = 0; i < maxColumns; i++)
+            {
+                railBSlots[i] = railBObject.transform.Find($"RailSlot{i}");
+            }
+        }
     }
 
     private void Start()
     {
-        for (int i = 0; i < maxColumns * maxRows; i++)
+        for (int i = 0; i < maxColumns * 2; i++)
         {
             SpawnBlockOnRail();
         }
     }
 
-    private Vector2 CalculateRailPosition(RectTransform targetRect, int colIndex)
-    {
-        float totalCellWidth = blockSize.x + blockSpacing.x;
-        float totalGridWidth = (maxColumns * totalCellWidth) - blockSpacing.x;
-
-        float startX = (targetRect.rect.width - totalGridWidth) / 2f;
-        float posX = (targetRect.rect.width - startX - (blockSize.x / 2f)) - (colIndex * totalCellWidth);
-
-        posX -= targetRect.rect.width / 2f;
-        return new Vector2(posX, 0f);
-    }
-
     public void SpawnBlockOnRail()
     {
-        if (railABlocks.Count + railBBlocks.Count >= maxColumns * maxRows) return;
+        if (railABlocks.Count + railBBlocks.Count >= maxColumns * 2) return;
 
         int randomIndex = Random.Range(0, blockPrefabs.Length);
         GameObject selectedPrefab = blockPrefabs[randomIndex];
         if (selectedPrefab == null) return;
 
-        RectTransform targetParent = null;
+        Transform targetSlot = null;
         List<DragAndDrop> targetList = null;
 
         if (railABlocks.Count < maxColumns)
         {
-            targetParent = railARect;
+            targetSlot = railASlots[railABlocks.Count];
             targetList = railABlocks;
         }
         else if (railBBlocks.Count < maxColumns)
         {
-            targetParent = railBRect;
+            targetSlot = railBSlots[railBBlocks.Count];
             targetList = railBBlocks;
         }
 
-        if (targetParent == null) return;
+        if (targetSlot == null) return;
 
-        GameObject newBlock = Instantiate(selectedPrefab, targetParent);
+        GameObject newBlock = Instantiate(selectedPrefab, targetSlot);
+
         RectTransform blockRect = newBlock.GetComponent<RectTransform>() ?? newBlock.AddComponent<RectTransform>();
-        blockRect.sizeDelta = blockSize;
+        blockRect.anchoredPosition = Vector2.zero;
 
         DragAndDrop dndScript = newBlock.GetComponent<DragAndDrop>();
         targetList.Add(dndScript);
-
-        blockRect.anchoredPosition = CalculateRailPosition(targetParent, targetList.Count - 1);
 
         CheckRailLayout(targetList);
     }
@@ -96,7 +90,6 @@ public class ObjectRail : MonoBehaviour
             {
                 DragAndDrop movingBlock = railBBlocks[0];
                 railBBlocks.RemoveAt(0);
-                movingBlock.transform.SetParent(railARect);
                 railABlocks.Add(movingBlock);
             }
         }
@@ -133,10 +126,7 @@ public class ObjectRail : MonoBehaviour
                 targetList.RemoveAt(i - 1);
                 targetList.RemoveAt(i - 2);
 
-                if (SortManager.Instance != null)
-                {
-                    SortManager.Instance.AddCombo(1);
-                }
+                Service.Get<SortManager>()?.AddCombo(1);
 
                 if (targetList == railABlocks)
                 {
@@ -146,7 +136,6 @@ public class ObjectRail : MonoBehaviour
                         {
                             DragAndDrop movingBlock = railBBlocks[0];
                             railBBlocks.RemoveAt(0);
-                            movingBlock.transform.SetParent(railARect);
                             railABlocks.Add(movingBlock);
                         }
                     }
@@ -162,20 +151,22 @@ public class ObjectRail : MonoBehaviour
         }
     }
 
-    private string GetCleanName(string rawName)
-    {
-        return rawName.Replace("(Clone)", "").Trim();
-    }
-
     public void RealignAllBlocks()
     {
         for (int i = 0; i < railABlocks.Count; i++)
         {
-            railABlocks[i].GetComponent<RectTransform>().anchoredPosition = CalculateRailPosition(railARect, i);
+            railABlocks[i].transform.SetParent(railASlots[i]);
+            railABlocks[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
         for (int i = 0; i < railBBlocks.Count; i++)
         {
-            railBBlocks[i].GetComponent<RectTransform>().anchoredPosition = CalculateRailPosition(railBRect, i);
+            railBBlocks[i].transform.SetParent(railBSlots[i]);
+            railBBlocks[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
+    }
+
+    private string GetCleanName(string rawName)
+    {
+        return rawName.Replace("(Clone)", "").Trim();
     }
 }

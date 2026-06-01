@@ -12,9 +12,9 @@ public class ReadyState : IState
 
     public void Update()
     {
-        if (Service.Get<SortManager>() != null)
+        if (Service.Get<PlayerManager>() != null)
         {
-            // if (Service.Get<PlayerManager>().isAllSpawn.Value) _manager.CurrentState.Value = GameState.Sort;
+            if (Service.Get<PlayerManager>().isAllSpawn.Value) _manager.CurrentState.Value = GameState.Sort;
         }
     }
 

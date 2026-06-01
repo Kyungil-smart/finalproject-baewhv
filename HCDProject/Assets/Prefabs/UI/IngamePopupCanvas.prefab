@@ -2372,6 +2372,7 @@ MonoBehaviour:
   FailLogo: {fileID: 8980956750600853510}
   RewardPopup: {fileID: 6350667492768619484}
   ClearPopup: {fileID: 3611947178068323851}
+  SortWarningPopup: {fileID: 7343975981295184441}
 --- !u!1 &5675332280405155940
 GameObject:
   m_ObjectHideFlags: 0

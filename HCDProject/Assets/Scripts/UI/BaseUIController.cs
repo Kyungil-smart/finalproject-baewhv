@@ -7,7 +7,7 @@ public class BaseUIController<T> : MonoBehaviour where T : MonoBehaviour
         UIManager ui = Service.Get<UIManager>();
         if (ui)
         {
-            if (ui.Register(this as T))
+            if (!ui.Register(this as T))
             {
                 Destroy(gameObject);
             }

@@ -8,7 +8,7 @@ public class ClearState : IState
     
     public void Enter()
     {
-        Debug.Log("스테이지 클리어");
+        Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnGameClear();
     }
 
     public void Update()

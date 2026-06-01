@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 // 모든 직업군이 공통으로 가질 클래스
 public class BaseCharacter : BaseController
@@ -26,7 +27,9 @@ public class BaseCharacter : BaseController
 
     bool _isSpawning = true;
 
-    private bool _isDead;
+    public bool _isDead; // public으로 추후 제한자 바꾸기
+
+    private RatioIntValue _hpRatio;
 
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
 
@@ -112,7 +115,7 @@ public class BaseCharacter : BaseController
 
         set => _homePosition = value;
     }
-
+    #region stateMachine
     public StateMachine state => _stateMachine;
     
     public AttackPlayerState attack => _attackPlayerState;
@@ -124,6 +127,7 @@ public class BaseCharacter : BaseController
     public ChasePlayerState chase => _chasePlayerState;
 
     public DiePlayerState die => _diePlayerState;
+    #endregion
 
     protected override void Awake()
     {
@@ -149,6 +153,14 @@ public class BaseCharacter : BaseController
     protected virtual void Update()
     {
         _stateMachine?.Update();
+    }
+
+    public void BindHpUI(UnityAction<float> action)
+    {
+        int maxValue = _stats._maxHp;
+        _hpRatio = new RatioIntValue(maxValue);
+        _hpRatio.AddRatioListener(action);
+        CurrentHp.AddListener(value => { _hpRatio.Value = value; });
     }
 
     public void Init(CharacterBaseData data)
