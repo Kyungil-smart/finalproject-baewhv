@@ -18,7 +18,7 @@ public class BaseMonster : BaseController
     #endregion
 
     private float _timer;
-    public Vector2 Target { get; set; }
+    public Vector3 Target { get; set; }
     
     public void InitStatus(MonsterRawData data)
     {
@@ -140,7 +140,7 @@ public class BaseMonster : BaseController
             }
             else if (GetCurrentTarget is Rampart)
             {
-                Target = new Vector2(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y);
+                Target = new Vector3(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y, transform.position.z);
             }
         }
     }
