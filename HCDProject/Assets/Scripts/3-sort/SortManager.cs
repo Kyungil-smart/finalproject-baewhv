@@ -5,7 +5,10 @@ public class SortManager : MonoBehaviour
 {
     public static SortManager Instance { get; private set; }
 
-    public List<CharacterSlot> allSlots = new List<CharacterSlot>();
+    public CharacterSlot[] characterSlots;
+
+    [SerializeField] private int remainingSorts = 6; 
+    private int currentCombo = 0;
 
     private void Awake()
     {
@@ -27,27 +30,34 @@ public class SortManager : MonoBehaviour
 
     private void AutoSetupUISlots()
     {
-        string[] canvasNames = { "CharacterCanvasA", "CharacterCanvasB", "CharacterCanvasC", "CharacterCanvasD" };
+        characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
 
-        foreach (string canvasName in canvasNames)
+        if (characterSlots != null)
         {
-            GameObject canvasObjectj = GameObject.Find(canvasName);
-
-            if (canvasObjectj != null)
-            {
-                CharacterSlot newSlot = canvasObjectj.AddComponent<CharacterSlot>();
-
-                newSlot.SubSlots[0] = canvasObjectj.transform.Find("SlotA");
-                newSlot.SubSlots[1] = canvasObjectj.transform.Find("SlotB");
-                newSlot.SubSlots[2] = canvasObjectj.transform.Find("SlotC");
-
-                allSlots.Add(newSlot);
-            }
+            Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetLeftSortCountText(remainingSorts);
         }
     }
 
+    public void AddCombo(int amount)
+    {
+        currentCombo += amount;
+        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetComboText(currentCombo);
+    }
+
+    /*
+    public void ResetCombo()
+    {
+        currentCombo = 0;
+    }
+    */
+
     public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
     {
+        if (remainingSorts <= 0)
+        {
+            return;
+        }
+
         Transform[] subSlots = targetSlot.SubSlots;
 
         if (subSlots[0] != null && subSlots[0].childCount > 0)
@@ -98,6 +108,10 @@ public class SortManager : MonoBehaviour
         {
             Destroy(block);
         }
+
+        remainingSorts--;
+        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetLeftSortCountText(remainingSorts);
+        AddCombo(1);
 
         ApplyBuffToPlayer(slot, buffType);
     }
