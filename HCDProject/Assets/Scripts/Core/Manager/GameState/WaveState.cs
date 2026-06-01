@@ -13,8 +13,6 @@ public class WaveState : IState
         _spawnManager = Service.Get<MonsterSpawnManager>();
         
         Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetBattlePhase();
-        
-        Service.Get<GameManager>()?._wall.currentHp.AddListener(WallHpChange);
 
         if (_spawnManager != null)
         {
@@ -29,7 +27,6 @@ public class WaveState : IState
 
     public void Exit()
     {
-        Service.Get<GameManager>()?._wall.currentHp.RemoveListener(WallHpChange);
         if (_spawnManager != null) _spawnManager.monsterCount.RemoveListener(MonsterCountChange);
     }
 
@@ -43,13 +40,5 @@ public class WaveState : IState
             _manager.CurrentState.Value = GameState.Clear;
         }
         else _manager.CurrentState.Value = GameState.Sort;
-    }
-
-    private void WallHpChange(int hp)
-    {
-        if (hp <= 0)
-        {
-            _manager.CurrentState.Value = GameState.GameOver;
-        }
     }
 }
