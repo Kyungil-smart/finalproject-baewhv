@@ -9,6 +9,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     
     [SerializeField] private GameObject RewardPopup;
     [SerializeField] private GameObject ClearPopup;
+    [SerializeField] private GameObject SortWarningPopup;
      
 
     public void OnSetDangerBorder(float ratio)
@@ -62,5 +63,19 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     public void OnNextBattle()
     {
         Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+    }
+
+    public void OnEndSort()
+    {
+        SortWarningPopup.SetActive(false);
+        //Service.Get<SceneController>()?
+    }
+    public void OnShowSortWarningPopup()
+    {
+        SortWarningPopup.SetActive(true);
+    }
+    public void OnClose()
+    {
+        SortWarningPopup.SetActive(false);
     }
 }
