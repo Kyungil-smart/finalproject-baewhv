@@ -133,6 +133,11 @@ public class ObjectRail : MonoBehaviour
                 targetList.RemoveAt(i - 1);
                 targetList.RemoveAt(i - 2);
 
+                if (SortManager.Instance != null)
+                {
+                    SortManager.Instance.AddCombo(1);
+                }
+
                 if (targetList == railABlocks)
                 {
                     for (int k = 0; k < 3; k++)

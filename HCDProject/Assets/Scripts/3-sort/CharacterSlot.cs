@@ -13,7 +13,7 @@ public class CharacterSlot : MonoBehaviour, IDropHandler
     
     
 
-    public virtual void OnDrop(PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
