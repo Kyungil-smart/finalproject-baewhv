@@ -387,6 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IngameBottomUIController
   sortPhaseUI: {fileID: 3075588155424068761}
   battlePhaseUI: {fileID: 5116318400107604540}
+  wallHP: {fileID: 3993267198985509248}
   characterSlots:
   - {fileID: 3499412728837267250}
   - {fileID: 2206252458004707774}
