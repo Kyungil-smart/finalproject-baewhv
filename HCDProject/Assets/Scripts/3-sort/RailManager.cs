@@ -16,38 +16,67 @@ public class RailManager : BaseManager<RailManager>
     protected override void Awake()
     {
         base.Awake();
-
-        GameObject railAObject = GameObject.Find("StoneRailA");
-        GameObject railBObject = GameObject.Find("StoneRailB");
-
-        if (railAObject != null)
-        {
-            for (int i = 0; i < maxColumns; i++)
-            {
-                railASlots[i] = railAObject.transform.Find($"RailSlot{i}");
-            }
-        }
-
-        if (railBObject != null)
-        {
-            for (int i = 0; i < maxColumns; i++)
-            {
-                railBSlots[i] = railBObject.transform.Find($"RailSlot{i}");
-            }
-        }
     }
 
     private void Start()
     {
+        InitializeRail();
+    }
+
+    public void InitializeRail()
+    {
+        AutoSetupRailSlots();
+
+        foreach (var block in railABlocks) if (block != null) Destroy(block.gameObject);
+        foreach (var block in railBBlocks) if (block != null) Destroy(block.gameObject);
+        railABlocks.Clear();
+        railBBlocks.Clear();
+
         for (int i = 0; i < maxColumns * 2; i++)
         {
             SpawnBlockOnRail();
         }
     }
 
+    public void AutoSetupRailSlots()
+    {
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        if (bottomUI == null) return;
+
+        StoneRail upperRail = bottomUI.GetUpperRail;
+        StoneRail lowerRail = bottomUI.GetLowerRail;
+
+        if (upperRail != null)
+        {
+            for (int i = 0; i < maxColumns; i++)
+            {
+                if (i < upperRail.transform.childCount)
+                {
+                    railASlots[i] = upperRail.transform.GetChild(i);
+                }
+            }
+        }
+
+        if (lowerRail != null)
+        {
+            for (int i = 0; i < maxColumns; i++)
+            {
+                if (i < lowerRail.transform.childCount)
+                {
+                    railBSlots[i] = lowerRail.transform.GetChild(i);
+                }
+            }
+        }
+    }
+
     public void SpawnBlockOnRail()
     {
         if (railABlocks.Count + railBBlocks.Count >= maxColumns * 2) return;
+
+        if (railASlots[0] == null || railBSlots[0] == null)
+        {
+            AutoSetupRailSlots();
+        }
 
         int randomIndex = Random.Range(0, blockPrefabs.Length);
         GameObject selectedPrefab = blockPrefabs[randomIndex];
@@ -99,7 +128,6 @@ public class RailManager : BaseManager<RailManager>
         }
 
         RealignAllBlocks();
-
         SpawnBlockOnRail();
 
         CheckRailLayout(railABlocks);
@@ -155,11 +183,13 @@ public class RailManager : BaseManager<RailManager>
     {
         for (int i = 0; i < railABlocks.Count; i++)
         {
+            if (railASlots[i] == null) continue;
             railABlocks[i].transform.SetParent(railASlots[i]);
             railABlocks[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
         for (int i = 0; i < railBBlocks.Count; i++)
         {
+            if (railBSlots[i] == null) continue;
             railBBlocks[i].transform.SetParent(railBSlots[i]);
             railBBlocks[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }

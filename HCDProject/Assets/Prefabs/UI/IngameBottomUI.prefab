@@ -387,7 +387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IngameBottomUIController
   sortPhaseUI: {fileID: 3075588155424068761}
   battlePhaseUI: {fileID: 5116318400107604540}
-  wallHP: {fileID: 3993267198985509248}
   characterSlots:
   - {fileID: 3499412728837267250}
   - {fileID: 2206252458004707774}
@@ -397,7 +396,6 @@ MonoBehaviour:
   lowerRail: {fileID: 6336049176418044}
   comboText: {fileID: 8056856658712351339}
   leftSortCountText: {fileID: 6410468749507417276}
-  IsSortPhase: 0
 --- !u!1 &1388407571032111869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3904,6 +3902,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5470470277808322134}
     m_Modifications:
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3988,6 +3994,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterCanvasA
       objectReference: {fileID: 0}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945942176345388657, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -166.3777
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4017,6 +4035,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5470470277808322134}
     m_Modifications:
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4105,6 +4131,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8910769589375833339, guid: 09d4432368fa72649b103561c54a7173, type: 3}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945942176345388657, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -166.3777
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4134,6 +4172,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5470470277808322134}
     m_Modifications:
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4222,6 +4268,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1377161375233290943, guid: 15b0d7d6deb067f419d381415e8b7b5e, type: 3}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945942176345388657, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -166.3777
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4475,6 +4533,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5470470277808322134}
     m_Modifications:
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 230411330748623879, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1902276436222447086, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4563,6 +4629,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -8171465679548870797, guid: dc4a143d36dd5364fad06dd55c0d9cee, type: 3}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421786739599886989, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945942176345388657, guid: e16d0bcf551a905449a6eccbccdff9df, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -166.3777
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
