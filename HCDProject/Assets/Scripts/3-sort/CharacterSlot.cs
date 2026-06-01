@@ -21,10 +21,7 @@ public class CharacterSlot : MonoBehaviour, IDropHandler
 
             if (draggedObject != null)
             {
-                if (SortManager.Instance != null)
-                {
-                    SortManager.Instance.ObjectDrop(this, draggedObject);
-                }
+                Service.Get<SortManager>()?.ObjectDrop(this, draggedObject);
             }
         }
     }
