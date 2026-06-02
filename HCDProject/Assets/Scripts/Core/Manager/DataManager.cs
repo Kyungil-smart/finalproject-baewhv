@@ -22,6 +22,20 @@ public class DataManager : BaseManager<DataManager>
     public Static_ValueTable Static_ValueTable {get; private set;}
     public Story_ExpTable Story_ExpTable {get; private set;}
 
+    public RatioIntValue dataValue;
+
+    private void Awake()
+    {
+        base.Awake();
+        
+        dataValue = new RatioIntValue(14, 0);
+    }
+
+    private void Start()
+    {
+        InitData(()=>{Debug.Log("초기 데이터 받기 성공");});
+    }
+    
     public void InitData(Action OnDataLoaded)
     {
         (string key, Action<string> assignAction)[] loadList = new (string key, Action<string> assignAction)[]
@@ -43,9 +57,11 @@ public class DataManager : BaseManager<DataManager>
         };
         
         // 총 데이터 파일의 개수 
-        int maxLoadCount = 14;
+        int maxLoadCount = loadList.Length;
         // 로드 완료된 데이터 파일의 개수
         int currentLoadCount = 0;
+        
+        dataValue.MaxValue = maxLoadCount;
 
         foreach (var load in loadList)
         {
@@ -59,6 +75,8 @@ public class DataManager : BaseManager<DataManager>
                 Addressables.Release(handle);
                 currentLoadCount++;
 
+                dataValue.Value = currentLoadCount;
+                
                 if (currentLoadCount >= maxLoadCount) OnDataLoaded?.Invoke();
             };
         }
