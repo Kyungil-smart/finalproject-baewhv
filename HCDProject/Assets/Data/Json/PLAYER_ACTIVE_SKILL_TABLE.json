@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "SKILL_ID": 6500,
+      "SKILL_NAME": "",
+      "ATK_TYPE": "NEAR_R",
+      "SKILL_TYPE": "NEAR_R",
+      "SKILL_IS": 2,
+      "SKILL_RANGE": 2,
+      "SKILL_TIME": 35,
+      "SKILL_AT": "ENEMY",
+      "SKILL_DT": "ATTACK_BASE",
+      "SKILL_ABILLITY": "x2.5",
+      "SKILL_SFX": "",
+      "SKILL_FX": "",
+      "SKILL_HIT_SFX": "",
+      "SKILL_HIT_FX": "",
+      "SKILL_ICON": ""
+    },
+    {
+      "SKILL_ID": 6501,
+      "SKILL_NAME": "",
+      "ATK_TYPE": "BUFF_R",
+      "SKILL_TYPE": "BUFF_R",
+      "SKILL_IS": 7,
+      "SKILL_RANGE": 5,
+      "SKILL_TIME": 35,
+      "SKILL_AT": "SELF",
+      "SKILL_DT": "ATTACK_BASE",
+      "SKILL_ABILLITY": "",
+      "SKILL_SFX": "",
+      "SKILL_FX": "",
+      "SKILL_HIT_SFX": "",
+      "SKILL_HIT_FX": "",
+      "SKILL_ICON": ""
+    },
+    {
+      "SKILL_ID": 6502,
+      "SKILL_NAME": "",
+      "ATK_TYPE": "LONG_R",
+      "SKILL_TYPE": "LONG_R",
+      "SKILL_IS": 7,
+      "SKILL_RANGE": 5,
+      "SKILL_TIME": 45,
+      "SKILL_AT": "ENEMY",
+      "SKILL_DT": "ATTACK_BASE",
+      "SKILL_ABILLITY": "x4.5",
+      "SKILL_SFX": "",
+      "SKILL_FX": "",
+      "SKILL_HIT_SFX": "",
+      "SKILL_HIT_FX": "",
+      "SKILL_ICON": ""
+    },
+    {
+      "SKILL_ID": 6503,
+      "SKILL_NAME": "",
+      "ATK_TYPE": "HEAL_R",
+      "SKILL_TYPE": "HEAL_R",
+      "SKILL_IS": 10,
+      "SKILL_RANGE": 10,
+      "SKILL_TIME": 60,
+      "SKILL_AT": "ALLY",
+      "SKILL_DT": "ATTACK_BASE",
+      "SKILL_ABILLITY": "",
+      "SKILL_SFX": "",
+      "SKILL_FX": "",
+      "SKILL_HIT_SFX": "",
+      "SKILL_HIT_FX": "",
+      "SKILL_ICON": ""
+    }
+  ]
+}
