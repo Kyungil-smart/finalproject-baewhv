@@ -188,7 +188,7 @@ GameObject:
   m_Layer: 0
   m_Name: Warrior (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -390,7 +390,7 @@ GameObject:
   m_Layer: 0
   m_Name: Warrior (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8147485492158004622, guid: 59083da077bc20c4a88ac10bdd8a3a5e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 449.3496
+      objectReference: {fileID: 0}
     - target: {fileID: 8217292309733145854, guid: 59083da077bc20c4a88ac10bdd8a3a5e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -965,7 +969,7 @@ GameObject:
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1189,7 +1193,7 @@ GameObject:
   m_Layer: 0
   m_Name: Warrior (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25102,6 +25106,10 @@ PrefabInstance:
     - target: {fileID: 3456410844516984578, guid: 3127bf7a09ca34c48be92141fc3e294b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095374193242097070, guid: 3127bf7a09ca34c48be92141fc3e294b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 161.8252
       objectReference: {fileID: 0}
     - target: {fileID: 8672884816373595714, guid: 3127bf7a09ca34c48be92141fc3e294b, type: 3}
       propertyPath: m_Name

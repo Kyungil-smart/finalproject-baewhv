@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -210,7 +210,7 @@ public class GameManager : BaseManager<GameManager>
             string address = waveData.SPAWN_MONSTER_ID_02.Trim();
             GameObject prefab = Service.Get<MonsterManager>().GetMonsterPrefab(address);
 
-            for (int i = 0; i < waveData.SPAWN_MONSTER_COUNT; i++)
+            for (int i = 0; i < waveData.SPAWN_MONSTER_COUNT_02; i++)
             {
                 GameObject obj = Instantiate(prefab, UnityEngine.Random.insideUnitSphere * 3f, Quaternion.identity);
                 

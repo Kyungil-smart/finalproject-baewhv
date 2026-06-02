@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -32,6 +33,9 @@ public class BaseCharacter : BaseController
     private RatioIntValue _hpRatio;
 
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
+    
+    private PlayerStats _playerStats;
+
 
     public bool IsSpawning
     {
@@ -83,9 +87,6 @@ public class BaseCharacter : BaseController
     }
 
     [field: SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
-
-
-    [SerializeField] private CharacterBaseData _baseData;
 
     public override void SetCurrentTarget(ITargetable target)
     {
@@ -163,24 +164,36 @@ public class BaseCharacter : BaseController
         CurrentHp.AddListener(value => { _hpRatio.Value = value; });
     }
 
-    public void Init(CharacterBaseData data)
+    public void Init(CharacterRawData data, PlayerStats stat)
     {
-        _baseData = data;
+        _playerStats = stat;
 
         _stats = new CharacterStats
         {
-            _maxHp = data._hp,
-            _attackPower = data._attackPower,
-            _defense = data._defense,
-            _moveSpeed = data._moveSpeed,
-            _attackSpeed = data._attackSpeed,
-            _critRate = data._critRate,
-            _critDamage = data._critDamage,
-            _attackRange = data._attackRange,
-            _chaseRange = data._chaseRange
+            _maxHp = data.HP,
+            _attackPower = data.ATK,
+            _defense = data.DEF,
+            _moveSpeed = (int)data.MOVE_SPEED,
+            _attackSpeed = data.ATK_SPEED,
+            _critRate = data.CRI_RATE,
+            _critDamage = data.CRI_DMAGE
         };
-        _findType = data._initFindType; // SO에서 직업 별 공격타입 읽어옴
-        _isFirstCombat = _baseData._hasFirstCombat;
+
+        skills.Clear();
+        var skillTable = Service.Get<DataManager>().Player_Active_SkillTable.data;
+        var skillData = skillTable.Find(s => s.SKILL_ID == _playerStats._atkId); // 여기 공격ID 임시
+        if (skillData != null)
+        {
+            skills.Add(new Skill
+            {
+                skillDamage = (int)skillData.SKILL_ABILLITY,
+                skillRange = (int)skillData.SKILL_RANGE,
+                coolTime = (int)skillData.SKILL_TIME,
+                TargetType = Enum.Parse<ETargetType>(skillData.SKILL_AT, true)
+            });
+        }
+        _isFirstCombat = _playerStats._hasFirstCombat;
+        _findType = _playerStats._initFindType;
         CurrentHp.Value = _stats._maxHp;
         Movement.Agent.speed = _stats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
@@ -188,7 +201,7 @@ public class BaseCharacter : BaseController
 
     public override int UseCritDamage(int baseDamage)
     {
-        float critValue = Random.value;
+        float critValue = UnityEngine.Random.value;
 
         int finalCrit = Mathf.CeilToInt(baseDamage * Stats._critDamage);
 
@@ -203,7 +216,7 @@ public class BaseCharacter : BaseController
     {
         if (_isSpawning) return null;
 
-        List<ITargetable> targets = Detect(Stats._chaseRange, skills[index].TargetType);
+        List<ITargetable> targets = Detect(skills[index].skillRange, skills[index].TargetType);
         ITargetable nearest = null;
 
         if (FindType == EFindType.LowestHp)
@@ -273,9 +286,9 @@ public class BaseCharacter : BaseController
         this.Movement.Agent.Warp(spawnPosition);
         CurrentHp.Value = Stats._maxHp;
 
-        _isFirstCombat = _baseData._hasFirstCombat;
+        _isFirstCombat = _playerStats._hasFirstCombat;
         Debug.Log($"before: {_findType}");
-        _findType = _baseData._initFindType;
+        _findType = _playerStats._initFindType;
         Debug.Log($"after: {_findType}");
     }
 }

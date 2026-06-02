@@ -15,6 +15,7 @@ public class SpawnPlayerState : IState
         // Todo : 걷기 애니메이션(있다면)
         _owner.IsSpawning = true;
         _owner.Movement.Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+        _owner.SetNavMeshActive(true);
         _owner.Movement.Move(_owner.homePosition);
     }
 

@@ -25,7 +25,9 @@ public enum ESkillType
 public enum ETargetType
 {
     Enemy = 0,
-    Friendly = 1
+    Friendly = 1,
+    Self = 2,
+    Ally = 3
 }
 public enum EFindType
 {
