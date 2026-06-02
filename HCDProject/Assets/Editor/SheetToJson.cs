@@ -21,10 +21,15 @@ public class SheetToJson : EditorWindow
         {"1686886035", "CHARACTER_TABLE"},
         {"1698007139", "STAGE_CLEAR_REWARD_TABLE"},
         {"2033933741", "OBJECT_TABLE"},
-        {"858179508", "SKILL_TABLE"},
+        {"1826977585", "PLAYER_ACTIVE_SKILL_TABLE"},
+        {"858179508", "MONSTER_SKILL_TABLE"},
+        {"2077252783", "MONSTER_SKILL_EFFECT_GROUP_TABLE"},
         {"1428489825", "MAP_TABLE"},
+        {"1779569419", "PROJECTILE_TABLE"},
         {"2083529388", "LOCALIZING_TABLE"},
-        {"606265452", "STORY_LOCALIZING_TABLE"}
+        {"606265452", "STORY_LOCALIZING_TABLE"},
+        {"1174224199", "STATIC_VALUE_TABLE"},
+        {"899282129", "STORY_EXP_TABLE"}
     };
 
     
@@ -162,9 +167,9 @@ public class SheetToJson : EditorWindow
         string[] names = lines[0].Split('\t');
         string[] types = lines[2].Split('\t');
         
-        string cleanTableName = sheetName.ToLower().Replace("_table", "");
-        string rawClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName) + "RawData";
-        string tableClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName) + "Table";
+        string cleanTableName = sheetName.ToLower().Replace("_table", "").Replace("_", " ");
+        string rawClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName).Replace(" ", "") + "RawData";
+        string tableClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName).Replace(" ", "") + "Table";
         
         StringBuilder codeBuilder = new StringBuilder();
         

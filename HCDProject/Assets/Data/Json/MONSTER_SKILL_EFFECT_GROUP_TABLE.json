@@ -1,0 +1,445 @@
+{
+  "data": [
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-001",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "NONE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-002",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "NONE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-003",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "NONE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-004",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "NONE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-005",
+      "SKILL_AT": "ENEMY",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-006",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-007",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-008",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-009",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-010",
+      "SKILL_AT": "ENEMY",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-011",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-012",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-013",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-014",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-015",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "TURE_DAMAGE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-016",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-017",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-018",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-019",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-020",
+      "SKILL_AT": "ENEMY",
+      "SKLL_ABT_01": "TURE_DAMAGE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-021",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-022",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-023",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-024",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-025",
+      "SKILL_AT": "ENEMY",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-026",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-027",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-028",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-029",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-030",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "TURE_DAMAGE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-031",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-032",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-033",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-034",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-035",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "TURE_DAMAGE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-036",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-037",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-038",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-039",
+      "SKILL_AT": 0,
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-040",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-041",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-042",
+      "SKILL_AT": "SELF",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-043",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-044",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-045",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-046",
+      "SKILL_AT": "SELF",
+      "SKLL_ABT_01": "ATTACK_BASE",
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-047",
+      "SKILL_AT": "SELF",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-048",
+      "SKILL_AT": "SELF",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    },
+    {
+      "MSEG_ID": "",
+      "SKILL_ID": "S-049",
+      "SKILL_AT": "ALLY",
+      "SKLL_ABT_01": 0,
+      "SKILL_AB_01": "",
+      "SKLL_ABT_02": "",
+      "SKILL_AB_02": ""
+    }
+  ]
+}
