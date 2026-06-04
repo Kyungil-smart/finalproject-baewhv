@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: -6373521302906175477}
   - component: {fileID: 4703084543550873656}
   m_Layer: 8
-  m_Name: MonsterID1
+  m_Name: Monster1000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

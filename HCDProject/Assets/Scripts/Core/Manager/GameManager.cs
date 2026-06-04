@@ -58,7 +58,7 @@ public class GameManager : BaseManager<GameManager>
     private void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
-        _wall.currentHp.RemoveListener(WallHpChange);
+        _wall.CurrentHp.RemoveListener(WallHpChange);
     }
 
     private void Update()
@@ -155,9 +155,9 @@ public class GameManager : BaseManager<GameManager>
                     _wall = wall;
 
                     if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
-                    else _currentWallHp = _wall.MaxHp;
+                    else _currentWallHp = _wall.CurrentHp.Value;
                     
-                    if (_wall.currentHp != null) _wall.currentHp.AddListener(WallHpChange);
+                    if (_wall.CurrentHp != null) _wall.CurrentHp.AddListener(WallHpChange);
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
@@ -175,9 +175,9 @@ public class GameManager : BaseManager<GameManager>
     {
         if (_wall != null)
         {
-            _currentWallHp = _wall.currentHp.Value;
+            _currentWallHp = _wall.CurrentHp.Value;
             
-            _wall.currentHp.RemoveListener(WallHpChange);
+            _wall.CurrentHp.RemoveListener(WallHpChange);
             
             var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
             if (wallHpUi != null)
