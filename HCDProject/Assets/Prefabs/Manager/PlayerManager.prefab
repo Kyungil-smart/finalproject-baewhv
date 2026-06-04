@@ -47,10 +47,18 @@ MonoBehaviour:
   _eManager: 0
   _characterAddress: Player/PlayerPrefab
   _characterDatas:
-  - {fileID: 11400000, guid: c7c627e3f46264345b01cac2856937db, type: 2}
-  - {fileID: 11400000, guid: c7c627e3f46264345b01cac2856937db, type: 2}
-  - {fileID: 11400000, guid: c7c627e3f46264345b01cac2856937db, type: 2}
-  - {fileID: 11400000, guid: c7c627e3f46264345b01cac2856937db, type: 2}
+  - _hasFirstCombat: 1
+    _initFindType: 1
+    _atkId: 6500
+  - _hasFirstCombat: 0
+    _initFindType: 0
+    _atkId: 6501
+  - _hasFirstCombat: 0
+    _initFindType: 1
+    _atkId: 6502
+  - _hasFirstCombat: 0
+    _initFindType: 2
+    _atkId: 6503
   _spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -61,3 +69,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isAllSpawn:
+    _data: 0
