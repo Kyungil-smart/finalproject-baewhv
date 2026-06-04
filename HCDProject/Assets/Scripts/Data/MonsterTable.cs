@@ -14,7 +14,6 @@ public class MonsterRawData
     public float MOVE_SPEED;
     public string ATK_ID;
     public string SKILL_ID;
-    public float SKILL_TIME;
     public string MONSTER_IMG;
     public float EXP;
     public string MONSTER_HIT_SFX;

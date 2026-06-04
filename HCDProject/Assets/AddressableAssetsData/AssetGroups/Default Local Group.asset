@@ -20,11 +20,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2daf3942ae2560e42817814cc4587a7c
-    m_Address: MONSTER_SKILL_EFFECT_GROUP_TABLE
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 358d5ff2a8324254cb296af9524a1063
     m_Address: OBJECT_TABLE
     m_ReadOnly: 0
@@ -60,18 +55,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 84990d40b9490d34d82824adb2e2eda2
-    m_Address: SET_ENUM
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9f1666bda5e6334188f877d0ac42d16
     m_Address: MONSTER_SKILL_TABLE
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b839fcc12f412e7429a2246137dd4567
-    m_Address: PLAYER_ACTIVE_SKILL_TABLE
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -87,6 +72,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca36ad26a63501b4685423fd68a1657b
     m_Address: LEVEL_REWARD
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dbf4c08db5284284aa2ea44281d54dd2
+    m_Address: PLAYER_SKILL_TABLE
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
