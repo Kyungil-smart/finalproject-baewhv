@@ -35,11 +35,18 @@ public class IdlePlayerState : IState
         }
 
         ITargetable target = _owner.FindTarget(_owner.SkillTargetIndex);
-
         if (target != null)
         {
             _owner.SetCurrentTarget(target);
-            _owner.state.ChangeState(_owner.chase);
+
+            if (_owner.FindType == EFindType.LowestHp)
+            {
+                _owner.state.ChangeState(_owner.attack);
+            }
+            else
+            {
+                _owner.state.ChangeState(_owner.chase);
+            }
         }
     }
 }

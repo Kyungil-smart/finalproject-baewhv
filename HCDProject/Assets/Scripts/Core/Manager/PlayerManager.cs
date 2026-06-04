@@ -10,8 +10,8 @@ public class PlayerManager : BaseManager<PlayerManager>
     [SerializeField] string _characterAddress; // 프리팹 주소
 
     private GameObject _loadedPrefab;
-    
-    [SerializeField] CharacterBaseData[] _characterDatas;
+
+    [SerializeField] PlayerStats[] _characterDatas;
 
     [SerializeField] Transform[] _spawnPoints; // 스폰 및 부활
 
@@ -50,25 +50,28 @@ public class PlayerManager : BaseManager<PlayerManager>
 
     private void SpawnAllCharacters()
     {
-        _characters = new BaseCharacter[_characterDatas.Length];
+        var data = Service.Get<DataManager>().CharacterTable.data;
+        _characters = new BaseCharacter[data.Count];
         var slots = Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots;
-        if (slots != null)
+
+        for (int i = 0; i < data.Count; i++)
         {
-            for (int i = 0; i < _characterDatas.Length; i++)
+            GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
+
+            BaseCharacter chr = obj.GetComponent<BaseCharacter>();
+
+            chr.homePosition = _homePoints[i].position;
+            chr.spawnPosition = _spawnPoints[i].position;
+            chr.Init(data[i], _characterDatas[i]);
+            if (slots != null)
             {
-                GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
-
-                BaseCharacter chr = obj.GetComponent<BaseCharacter>();
-
-                chr.homePosition = _homePoints[i].position;
-                chr.spawnPosition = _spawnPoints[i].position;
-                chr.Init(_characterDatas[i]);
                 chr.BindHpUI(slots[i].SetHPBar);
-                _characters[i] = chr;
-                Debug.Log($"{i}번 플레이어 생성 완료");
             }
+            _characters[i] = chr;
+            Debug.Log($"{i}번 플레이어 생성 완료");
         }
-        
+
+
     }
 
     public void IsAllSpawnPlayer()
@@ -87,7 +90,7 @@ public class PlayerManager : BaseManager<PlayerManager>
     {
         StartCoroutine(ReviveCoroutine(character));
     }
-    
+
     private IEnumerator ReviveCoroutine(BaseCharacter character)
     {
         yield return YieldContainer.WaitForSeconds(character.ReviveTime);
