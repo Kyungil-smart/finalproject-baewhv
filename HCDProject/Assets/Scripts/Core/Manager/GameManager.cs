@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.InputSystem;
@@ -19,7 +20,7 @@ public class GameManager : BaseManager<GameManager>
     public GameOverState GameOverState { get; protected set; }
     #endregion
     
-    private bool isLoading = false;
+    public bool isLoading = false;
     
     private float sortTime = 3;
     private int totalWave = 3;
@@ -27,7 +28,8 @@ public class GameManager : BaseManager<GameManager>
     private string _wallAddress = "Rampart";
     [SerializeField] private int _currentWallHp = -1;
     private Coroutine _gameRoutine;
-    
+    private CharacterRawData _characterRawData;
+
     private void Awake()
     {
         Service.Get<SceneController>()?.CreateSession();
@@ -46,11 +48,6 @@ public class GameManager : BaseManager<GameManager>
         _currentWallHp = -1;
     }
 
-    private void Start()
-    {
-        Service.Get<DataManager>()?.InitData(()=>{Debug.Log("초기 데이터 받기 성공");});
-    }
-
     private void OnEnable()
     {
         CurrentState.AddListener(ChangeState);
@@ -67,9 +64,23 @@ public class GameManager : BaseManager<GameManager>
     private void Update()
     {
         _state?.Update();
-        
+
         if (Keyboard.current.oKey.wasPressedThisFrame)
-            Service.Get<GameManager>()?._wall.SetDamage(10);
+        {
+            var character = Service.Get<DataManager>()?.CharacterTable.data.Find(x => x.CHARACTER_ID == "3000");
+        
+            if (character != null) Debug.Log($"id : {character.CHARACTER_ID}, name : {character.CHARACTER_NAME} , atk : {character.ATK}");
+            
+            var stageMonster = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == 1 && x.STAGE == 1);
+
+            if (stageMonster != null)
+            {
+                foreach (var stage in stageMonster)
+                {
+                    Debug.Log($"stageMonster : {stage.SPAWN_MONSTER_ID_01}, {stage.SPAWN_MONSTER_ID_02}, {stage.SPAWN_MONSTER_COUNT_03}");
+                }
+            }
+        }
     }
 
     private void ChangeState(GameState state)
@@ -129,7 +140,8 @@ public class GameManager : BaseManager<GameManager>
             }
         });
     }
-
+    
+    
     private void SpawnWall()
     {
         Addressables.InstantiateAsync(_wallAddress).Completed += (handle) =>
@@ -182,42 +194,6 @@ public class GameManager : BaseManager<GameManager>
     public void EndStage()
     {
         CurrentState.Value = GameState.GameOver;
-    }
-
-    public void Spawn(int chapter, int stage, int wave)
-    {
-        if (isLoading) return;
-        
-        MapRawData waveData = Service.Get<DataManager>()?.MapTable.data.Find(x => x.CHAPTER == chapter  && x.STAGE == stage && x.WAVE == wave);
-        if (waveData == null) return;
-
-        if (!string.IsNullOrEmpty(waveData.SPAWN_MONSTER_ID_01))
-        {
-            string address = waveData.SPAWN_MONSTER_ID_01.Trim();
-            GameObject prefab = Service.Get<MonsterManager>().GetMonsterPrefab(address);
-            
-            for (int i = 0; i < waveData.SPAWN_MONSTER_COUNT_01; i++)
-            {
-                GameObject obj = Instantiate(prefab, UnityEngine.Random.insideUnitSphere * 3f, Quaternion.identity);
-                
-                MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == waveData.SPAWN_MONSTER_ID_01.Trim());
-                obj.AddComponent<MonsterStatus>().InitStatus(stat);
-            }
-        }
-
-        if (!string.IsNullOrEmpty(waveData.SPAWN_MONSTER_ID_02))
-        {
-            string address = waveData.SPAWN_MONSTER_ID_02.Trim();
-            GameObject prefab = Service.Get<MonsterManager>().GetMonsterPrefab(address);
-
-            for (int i = 0; i < waveData.SPAWN_MONSTER_COUNT_02; i++)
-            {
-                GameObject obj = Instantiate(prefab, UnityEngine.Random.insideUnitSphere * 3f, Quaternion.identity);
-                
-                MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == waveData.SPAWN_MONSTER_ID_02.Trim());
-                obj.AddComponent<MonsterStatus>().InitStatus(stat);
-            }
-        }
     }
 }
 

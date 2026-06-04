@@ -11,7 +11,6 @@ public class MapRawData
     public int SORT_COUNT;
     public int TOTAL_WAVE;
     public int WAVE;
-    public int NEXT_WAVE_TIME;
     public int TOTAL_WAVE_MONSTER;
     public int WAVE_RESPAWN_TIME;
     public string BGM;
