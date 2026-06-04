@@ -1,28 +1,32 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Random = System.Random;
 
 public class DataManager : BaseManager<DataManager>
 {
     // 추후 추가될 데이터 파일 ++
     public MapTable MapTable  {get; private set;}
     public MonsterTable MonsterTable {get; private set;}
-    public Level_RewardTable Level_RewardTable {get; private set;}
+    public LevelRewardTable LevelRewardTable {get; private set;}
     public CharacterTable CharacterTable {get; private set;}
-    public Stage_Clear_RewardTable Stage_Clear_RewardTable {get; private set;}
+    public StageClearRewardTable StageClearRewardTable {get; private set;}
     public ObjectTable ObjectTable {get; private set;}
-    public Player_Active_SkillTable Player_Active_SkillTable {get; private set;}
-    public Monster_SkillTable Monster_SkillTable {get; private set;}
-    public Monster_Skill_Effect_GroupTable Monster_Skill_Effect_GroupTable {get; private set;}
+    public PlayerActiveSkillTable PlayerActiveSkillTable {get; private set;}
+    public MonsterSkillTable MonsterSkillTable {get; private set;}
+    public MonsterSkillEffectGroupTable MonsterSkillEffectGroupTable {get; private set;}
     public ProjectileTable ProjectileTable {get; private set;}
     public LocalizingTable LocalizingTable {get; private set;}
-    public Story_LocalizingTable Story_LocalizingTable {get; private set;}
-    public Static_ValueTable Static_ValueTable {get; private set;}
-    public Story_ExpTable Story_ExpTable {get; private set;}
+    public StoryLocalizingTable StoryLocalizingTable {get; private set;}
+    public StaticValueTable StaticValueTable {get; private set;}
+    public StoryExpTable StoryExpTable {get; private set;}
 
     public RatioIntValue dataValue;
+    
+    private Dictionary<string, int> _rewardCounts = new Dictionary<string, int>();
 
     private void Awake()
     {
@@ -33,7 +37,11 @@ public class DataManager : BaseManager<DataManager>
 
     private void Start()
     {
-        InitData(()=>{Debug.Log("초기 데이터 받기 성공");});
+        InitData(() =>
+        {
+            Debug.Log("초기 데이터 받기 성공");
+            ResetRewardData();
+        });
     }
     
     public void InitData(Action OnDataLoaded)
@@ -42,18 +50,18 @@ public class DataManager : BaseManager<DataManager>
         {
             ("MAP_TABLE", json => MapTable = JsonUtility.FromJson<MapTable>(json)),
             ("MONSTER_TABLE", json => MonsterTable = JsonUtility.FromJson<MonsterTable>(json)),
-            ("LEVEL_REWARD", json => Level_RewardTable = JsonUtility.FromJson<Level_RewardTable>(json)),
+            ("LEVEL_REWARD", json => LevelRewardTable = JsonUtility.FromJson<LevelRewardTable>(json)),
             ("CHARACTER_TABLE", json => CharacterTable = JsonUtility.FromJson<CharacterTable>(json)),
-            ("STAGE_CLEAR_REWARD_TABLE", json => Stage_Clear_RewardTable = JsonUtility.FromJson<Stage_Clear_RewardTable>(json)),
+            ("STAGE_CLEAR_REWARD_TABLE", json => StageClearRewardTable = JsonUtility.FromJson<StageClearRewardTable>(json)),
             ("OBJECT_TABLE", json => ObjectTable = JsonUtility.FromJson<ObjectTable>(json)),
-            ("PLAYER_ACTIVE_SKILL_TABLE", json => Player_Active_SkillTable = JsonUtility.FromJson<Player_Active_SkillTable>(json)),
-            ("MONSTER_SKILL_TABLE", json => Monster_SkillTable = JsonUtility.FromJson<Monster_SkillTable>(json)),
-            ("MONSTER_SKILL_EFFECT_GROUP_TABLE", json => Monster_Skill_Effect_GroupTable = JsonUtility.FromJson<Monster_Skill_Effect_GroupTable>(json)),
+            ("PLAYER_ACTIVE_SKILL_TABLE", json => PlayerActiveSkillTable = JsonUtility.FromJson<PlayerActiveSkillTable>(json)),
+            ("MONSTER_SKILL_TABLE", json => MonsterSkillTable = JsonUtility.FromJson<MonsterSkillTable>(json)),
+            ("MONSTER_SKILL_EFFECT_GROUP_TABLE", json => MonsterSkillEffectGroupTable = JsonUtility.FromJson<MonsterSkillEffectGroupTable>(json)),
             ("PROJECTILE_TABLE", json => ProjectileTable = JsonUtility.FromJson<ProjectileTable>(json)),
             ("LOCALIZING_TABLE", json => LocalizingTable = JsonUtility.FromJson<LocalizingTable>(json)),
-            ("STORY_LOCALIZING_TABLE", json => Story_LocalizingTable = JsonUtility.FromJson<Story_LocalizingTable>(json)),
-            ("STATIC_VALUE_TABLE", json => Static_ValueTable = JsonUtility.FromJson<Static_ValueTable>(json)),
-            ("STORY_EXP_TABLE", json => Story_ExpTable = JsonUtility.FromJson<Story_ExpTable>(json)),
+            ("STORY_LOCALIZING_TABLE", json => StoryLocalizingTable = JsonUtility.FromJson<StoryLocalizingTable>(json)),
+            ("STATIC_VALUE_TABLE", json => StaticValueTable = JsonUtility.FromJson<StaticValueTable>(json)),
+            ("STORY_EXP_TABLE", json => StoryExpTable = JsonUtility.FromJson<StoryExpTable>(json)),
         };
         
         // 총 데이터 파일의 개수 
@@ -79,6 +87,52 @@ public class DataManager : BaseManager<DataManager>
                 
                 if (currentLoadCount >= maxLoadCount) OnDataLoaded?.Invoke();
             };
+        }
+    }
+
+    public void ResetRewardData()
+    {
+        _rewardCounts.Clear();
+        
+        foreach (var reward in StageClearRewardTable.data)
+        {
+            _rewardCounts[reward.CLEAR_REWARD_ID] = 0;
+        }
+    }
+
+    public List<StageClearRewardRawData> GetRandomRewards()
+    {
+        if (StageClearRewardTable == null || StageClearRewardTable.data == null) return new List<StageClearRewardRawData>();
+        
+        List<StageClearRewardRawData> rewardPool = StageClearRewardTable.data.Where(reward =>{
+            int currentCount = _rewardCounts.ContainsKey(reward.CLEAR_REWARD_ID) ? _rewardCounts[reward.CLEAR_REWARD_ID] : 0;
+            
+            return reward.MAX_CLEAR_REWARD_COUNT == 0 || currentCount < reward.MAX_CLEAR_REWARD_COUNT;
+        }).ToList();
+
+        Random randomIndex = new();
+        for (int i = rewardPool.Count - 1; i > 0; i--)
+        {
+            int j = randomIndex.Next(0, i + 1);
+            var temp = rewardPool[i];
+            rewardPool[i] = rewardPool[j];
+            rewardPool[j] = temp;
+        }
+        
+        return rewardPool.GetRange(0, 3);
+    }
+
+    public void SelectReward(string rewardId)
+    {
+        if (_rewardCounts.ContainsKey(rewardId))
+        {
+            _rewardCounts[rewardId]++;
+
+            var reward = StageClearRewardTable.data.Find(x => x.CLEAR_REWARD_ID == rewardId);
+            if (reward != null && reward.MAX_CLEAR_REWARD_COUNT <= _rewardCounts[rewardId])
+            {
+                // 더이상 뜨지 않는걸 확인 해 볼 수단 
+            }
         }
     }
 }
