@@ -87,7 +87,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     
     public void AddMonsterData(int chapter, int stage, int wave)
     {
-        // if (Service.Get<GameManager>()?.isLoading) return; 
+        if (Service.Get<GameManager>().isLoading) return; 
         
         MapRawData waveData = Service.Get<DataManager>()?.MapTable.data.Find(x => x.CHAPTER == chapter  && x.STAGE == stage && x.WAVE == wave);
         if (waveData == null) return;
