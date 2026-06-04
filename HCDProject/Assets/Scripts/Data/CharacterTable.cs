@@ -12,14 +12,14 @@ public class CharacterRawData
     public int DEF;
     public float ATK_SPEED;
     public float MOVE_SPEED;
+    public float CRI_RATE;
+    public float CRI_DMAGE;
+    public float DOUBLE_ATK_RATE;
     public string ATK_ID;
     public string SKILL_ID;
     public string CHARACTER_HIT_SFX;
     public string CHARACTER_HIT_FX;
     public string ATK_FX;
-    public float CRI_RATE;
-    public float CRI_DMAGE;
-    public float DOUBLE_ATK_RATE;
     public string CHARACTER_IMG;
 }
 

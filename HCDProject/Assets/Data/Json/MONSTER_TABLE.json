@@ -11,10 +11,10 @@
       "ATK_ID": 6000,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": 0,
-      "MONSTER_HIT_FX": 0,
       "MONSTER_IMG": "Monsters_01_0",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": 0,
+      "MONSTER_HIT_FX": 0
     },
     {
       "MONSTER_ID": 1001,
@@ -27,10 +27,10 @@
       "ATK_ID": 6001,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_01_5",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1002,
@@ -43,10 +43,10 @@
       "ATK_ID": 6002,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_01_3",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1003,
@@ -59,10 +59,10 @@
       "ATK_ID": 6003,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_01_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1004,
@@ -70,15 +70,15 @@
       "HP": 30,
       "ATK": 0,
       "DEF": 0,
-      "ATK_SPEED": 0.9,
+      "ATK_SPEED": 0,
       "MOVE_SPEED": 30,
-      "ATK_ID": 6004,
-      "SKILL_ID": 0,
+      "ATK_ID": 0,
+      "SKILL_ID": 6004,
       "SKILL_TIME": 20,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_01_4",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1005,
@@ -91,10 +91,10 @@
       "ATK_ID": 6005,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_01_6",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1006,
@@ -107,10 +107,10 @@
       "ATK_ID": 6006,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_01_5",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1007,
@@ -123,10 +123,10 @@
       "ATK_ID": 6007,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_05_0",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1008,
@@ -139,10 +139,10 @@
       "ATK_ID": 6008,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_05_1",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1009,
@@ -152,13 +152,13 @@
       "DEF": 0,
       "ATK_SPEED": 0,
       "MOVE_SPEED": 30,
-      "ATK_ID": 6009,
-      "SKILL_ID": 0,
+      "ATK_ID": 0,
+      "SKILL_ID": 6009,
       "SKILL_TIME": 19,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_6",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1010,
@@ -171,10 +171,10 @@
       "ATK_ID": 6010,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_2_1",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1011,
@@ -187,10 +187,10 @@
       "ATK_ID": 6011,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_1_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1012,
@@ -203,10 +203,10 @@
       "ATK_ID": 6012,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_3_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1013,
@@ -219,10 +219,10 @@
       "ATK_ID": 6013,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_1_3",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1014,
@@ -232,13 +232,13 @@
       "DEF": 0,
       "ATK_SPEED": 0,
       "MOVE_SPEED": 30,
-      "ATK_ID": 6014,
-      "SKILL_ID": 0,
+      "ATK_ID": 0,
+      "SKILL_ID": 6014,
       "SKILL_TIME": 20,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_2_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1015,
@@ -251,10 +251,10 @@
       "ATK_ID": 6015,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_6",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1016,
@@ -267,10 +267,10 @@
       "ATK_ID": 6016,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_3",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1017,
@@ -283,10 +283,10 @@
       "ATK_ID": 6017,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1018,
@@ -299,10 +299,10 @@
       "ATK_ID": 6018,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_7",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1019,
@@ -312,13 +312,13 @@
       "DEF": 0,
       "ATK_SPEED": 0,
       "MOVE_SPEED": 30,
-      "ATK_ID": 6019,
-      "SKILL_ID": 0,
+      "ATK_ID": 0,
+      "SKILL_ID": 6019,
       "SKILL_TIME": 35,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_0Monsters_02_1",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1020,
@@ -331,10 +331,10 @@
       "ATK_ID": 6020,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_03_1",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1021,
@@ -347,10 +347,10 @@
       "ATK_ID": 6021,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_03_0",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1022,
@@ -363,10 +363,10 @@
       "ATK_ID": 6022,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_03_3",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1023,
@@ -379,10 +379,10 @@
       "ATK_ID": 6023,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_03_5",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1024,
@@ -392,13 +392,13 @@
       "DEF": 0,
       "ATK_SPEED": 0,
       "MOVE_SPEED": 30,
-      "ATK_ID": 6024,
-      "SKILL_ID": 0,
+      "ATK_ID": 0,
+      "SKILL_ID": 6024,
       "SKILL_TIME": 32,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_1",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1025,
@@ -411,10 +411,10 @@
       "ATK_ID": 6025,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_5",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1026,
@@ -427,10 +427,10 @@
       "ATK_ID": 6026,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1027,
@@ -443,10 +443,10 @@
       "ATK_ID": 6027,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_0_1_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1028,
@@ -459,10 +459,10 @@
       "ATK_ID": 6028,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_6",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1029,
@@ -472,13 +472,13 @@
       "DEF": 0,
       "ATK_SPEED": 0,
       "MOVE_SPEED": 30,
-      "ATK_ID": 6029,
-      "SKILL_ID": 0,
+      "ATK_ID": 0,
+      "SKILL_ID": 6029,
       "SKILL_TIME": 18,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_4",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1030,
@@ -491,10 +491,10 @@
       "ATK_ID": 6030,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_5_2",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1031,
@@ -507,10 +507,10 @@
       "ATK_ID": 6031,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_05_5",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1032,
@@ -523,10 +523,10 @@
       "ATK_ID": 6032,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_4_1",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1033,
@@ -539,10 +539,10 @@
       "ATK_ID": 6033,
       "SKILL_ID": 0,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_1",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1034,
@@ -552,13 +552,13 @@
       "DEF": 0,
       "ATK_SPEED": 0,
       "MOVE_SPEED": 30,
-      "ATK_ID": 6034,
-      "SKILL_ID": 0,
+      "ATK_ID": 0,
+      "SKILL_ID": 6034,
       "SKILL_TIME": 20,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_0",
-      "EXP": 3
+      "EXP": 3,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1035,
@@ -569,12 +569,12 @@
       "ATK_SPEED": 0.75,
       "MOVE_SPEED": 50,
       "ATK_ID": 6035,
-      "SKILL_ID": 6035,
+      "SKILL_ID": 6049,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_1_1",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1036,
@@ -585,12 +585,12 @@
       "ATK_SPEED": 0.55,
       "MOVE_SPEED": 35,
       "ATK_ID": 6036,
-      "SKILL_ID": 6036,
+      "SKILL_ID": 6050,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_03_6",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1037,
@@ -601,12 +601,12 @@
       "ATK_SPEED": 0.75,
       "MOVE_SPEED": 55,
       "ATK_ID": 6037,
-      "SKILL_ID": 6037,
+      "SKILL_ID": 6051,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_05_3",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1038,
@@ -617,12 +617,12 @@
       "ATK_SPEED": 0.75,
       "MOVE_SPEED": 60,
       "ATK_ID": 6038,
-      "SKILL_ID": 6038,
+      "SKILL_ID": 6052,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_05_4",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1039,
@@ -633,12 +633,12 @@
       "ATK_SPEED": 0.85,
       "MOVE_SPEED": 55,
       "ATK_ID": 6039,
-      "SKILL_ID": 6039,
+      "SKILL_ID": 6053,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_3_1",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1040,
@@ -649,12 +649,12 @@
       "ATK_SPEED": 0.85,
       "MOVE_SPEED": 65,
       "ATK_ID": 6040,
-      "SKILL_ID": 6040,
+      "SKILL_ID": 6054,
       "SKILL_TIME": 10,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_3_3",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1041,
@@ -665,12 +665,12 @@
       "ATK_SPEED": 0.9,
       "MOVE_SPEED": 80,
       "ATK_ID": 6041,
-      "SKILL_ID": 6041,
+      "SKILL_ID": 6055,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_4",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1042,
@@ -681,12 +681,12 @@
       "ATK_SPEED": 0.5,
       "MOVE_SPEED": 65,
       "ATK_ID": 6042,
-      "SKILL_ID": 6042,
+      "SKILL_ID": 6056,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_02_0",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1043,
@@ -697,12 +697,12 @@
       "ATK_SPEED": 0.6,
       "MOVE_SPEED": 60,
       "ATK_ID": 6043,
-      "SKILL_ID": 6043,
+      "SKILL_ID": 6057,
       "SKILL_TIME": 15,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_0_1_1",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1044,
@@ -713,12 +713,12 @@
       "ATK_SPEED": 0.75,
       "MOVE_SPEED": 75,
       "ATK_ID": 6044,
-      "SKILL_ID": 6044,
+      "SKILL_ID": 6058,
       "SKILL_TIME": 45,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_0_1_3",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1045,
@@ -729,12 +729,12 @@
       "ATK_SPEED": 0.65,
       "MOVE_SPEED": 50,
       "ATK_ID": 6045,
-      "SKILL_ID": 6045,
+      "SKILL_ID": 6059,
       "SKILL_TIME": 15,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_2_3",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1046,
@@ -745,12 +745,12 @@
       "ATK_SPEED": 0.55,
       "MOVE_SPEED": 65,
       "ATK_ID": 6046,
-      "SKILL_ID": 6046,
+      "SKILL_ID": 6060,
       "SKILL_TIME": 0,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Monsters_04_3",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1047,
@@ -761,12 +761,12 @@
       "ATK_SPEED": 0.75,
       "MOVE_SPEED": 60,
       "ATK_ID": 6047,
-      "SKILL_ID": 6047,
+      "SKILL_ID": 6061,
       "SKILL_TIME": 20,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_5_1",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     },
     {
       "MONSTER_ID": 1048,
@@ -777,12 +777,12 @@
       "ATK_SPEED": 0.85,
       "MOVE_SPEED": 75,
       "ATK_ID": 6048,
-      "SKILL_ID": 6048,
+      "SKILL_ID": 6062,
       "SKILL_TIME": 50,
-      "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": "",
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_4_1",
-      "EXP": 0
+      "EXP": 0,
+      "MONSTER_HIT_SFX": "",
+      "MONSTER_HIT_FX": ""
     }
   ]
 }
