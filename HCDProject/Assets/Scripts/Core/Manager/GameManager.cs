@@ -72,7 +72,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
             {
-                Service.Get<DataManager>()?.SelectReward(randomRewards[1].CLEAR_REWARD_ID);
+                Service.Get<DataManager>()?.SelectStageReward(randomRewards[1].CLEAR_REWARD_ID);
                 Debug.Log($"{randomRewards[1].CLEAR_REWARD_ID}");
             }
     }
@@ -81,13 +81,13 @@ public class GameManager : BaseManager<GameManager>
 
     public void OpenRewardUi()
     {
-        randomRewards = Service.Get<DataManager>().GetRandomRewards();
+        randomRewards = Service.Get<DataManager>().GetStageRandomRewards();
         Debug.Log($"뽑힌 카드 {randomRewards.Count}개");
 
         for (int i = 0; i < randomRewards.Count; i++)
         {
             string rewardId = randomRewards[i].CLEAR_REWARD_ID;
-            int currentCount = Service.Get<DataManager>().CurrentRewardCount(rewardId);
+            int currentCount = Service.Get<DataManager>().CurrentStageRewardCount(rewardId);
             int maxCount = randomRewards[i].MAX_CLEAR_REWARD_COUNT;
             Debug.Log($"리워드 {i} : {rewardId}: {currentCount} / {maxCount}");
             

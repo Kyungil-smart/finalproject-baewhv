@@ -25,7 +25,8 @@ public class DataManager : BaseManager<DataManager>
 
     public RatioIntValue dataValue;
     
-    private Dictionary<string, int> _rewardCounts = new Dictionary<string, int>();
+    private Dictionary<string, int> _stageRewardCounts = new Dictionary<string, int>();
+    private Dictionary<string, int> _levelRewardCounts = new Dictionary<string, int>();
 
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class DataManager : BaseManager<DataManager>
         InitData(() =>
         {
             Debug.Log("초기 데이터 받기 성공");
-            ResetRewardData();
+            ResetStageRewardData();
         });
     }
     
@@ -88,22 +89,24 @@ public class DataManager : BaseManager<DataManager>
         }
     }
 
-    public void ResetRewardData()
+    #region 스테이지 랜덤 리워드
+    
+    public void ResetStageRewardData()
     {
-        _rewardCounts.Clear();
+        _stageRewardCounts.Clear();
         
         foreach (var reward in StageClearRewardTable.data)
         {
-            _rewardCounts[reward.CLEAR_REWARD_ID] = 0;
+            _stageRewardCounts[reward.CLEAR_REWARD_ID] = 0;
         }
     }
 
-    public List<StageClearRewardRawData> GetRandomRewards()
+    public List<StageClearRewardRawData> GetStageRandomRewards()
     {
         if (StageClearRewardTable == null || StageClearRewardTable.data == null) return new List<StageClearRewardRawData>();
         
         List<StageClearRewardRawData> rewardPool = StageClearRewardTable.data.Where(reward =>{
-            int currentCount = _rewardCounts.ContainsKey(reward.CLEAR_REWARD_ID) ? _rewardCounts[reward.CLEAR_REWARD_ID] : 0;
+            int currentCount = _stageRewardCounts.ContainsKey(reward.CLEAR_REWARD_ID) ? _stageRewardCounts[reward.CLEAR_REWARD_ID] : 0;
             
             return reward.MAX_CLEAR_REWARD_COUNT == 0 || currentCount < reward.MAX_CLEAR_REWARD_COUNT;
         }).ToList();
@@ -120,26 +123,74 @@ public class DataManager : BaseManager<DataManager>
         return rewardPool.GetRange(0, 3);
     }
 
-    public void SelectReward(string rewardId)
+    public void SelectStageReward(string rewardId)
     {
-        if (_rewardCounts.ContainsKey(rewardId))
+        if (_stageRewardCounts.ContainsKey(rewardId))
         {
-            _rewardCounts[rewardId]++;
+            _stageRewardCounts[rewardId]++;
 
             var reward = StageClearRewardTable.data.Find(x => x.CLEAR_REWARD_ID == rewardId);
-            if (reward != null && reward.MAX_CLEAR_REWARD_COUNT <= _rewardCounts[rewardId])
+            if (reward != null && reward.MAX_CLEAR_REWARD_COUNT <= _stageRewardCounts[rewardId])
             {
                 Debug.Log($"이제 {reward.CLEAR_REWARD_ID} 는 등장 안할거야!");
             }
         }
     }
     
-    public int CurrentRewardCount(string rewardId)
+    public int CurrentStageRewardCount(string rewardId)
     {
-        if (_rewardCounts.ContainsKey(rewardId))
+        if (_stageRewardCounts.ContainsKey(rewardId))
         {
-            return _rewardCounts[rewardId];
+            return _stageRewardCounts[rewardId];
         }
         return 0;
     }
+    
+    #endregion
+
+    #region 레벨 랜덤 리워드
+
+    public void ResetLevelRewardData()
+    {
+        _levelRewardCounts.Clear();
+
+        foreach (var reward in LevelRewardTable.data)
+        {
+            _levelRewardCounts[reward.LEVEL_ID] = 0;
+        }
+    }
+
+    public List<LevelRewardRawData> GetRandomLevelRewards()
+    {
+        if (LevelRewardTable == null || LevelRewardTable.data == null) return new List<LevelRewardRawData>();
+
+        List<LevelRewardRawData> rewardPool = new(LevelRewardTable.data);
+
+        for (int i = rewardPool.Count - 1; i > 0; i--)
+        {
+            int j = UnityEngine.Random.Range(0, i + 1);
+            var temp = rewardPool[i];
+            rewardPool[i] = rewardPool[j];
+            rewardPool[j] = temp;
+        }
+        
+        return rewardPool.GetRange(0, 3);
+    }
+
+    public void SelectLevelReward(string rewardId)
+    {
+        if (_levelRewardCounts.ContainsKey(rewardId))
+        {
+            _levelRewardCounts[rewardId]++;
+            
+            var reward = LevelRewardTable.data.Find(x => x.LEVEL_ID == rewardId);
+            if (reward != null)
+            {
+                // 선택된 id 기준 능력치 적용
+            }
+        }
+    }
+    
+
+    #endregion
 }
