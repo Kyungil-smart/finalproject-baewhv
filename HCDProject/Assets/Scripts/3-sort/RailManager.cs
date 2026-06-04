@@ -13,6 +13,9 @@ public class RailManager : BaseManager<RailManager>
     private List<DragAndDrop> railABlocks = new List<DragAndDrop>();
     private List<DragAndDrop> railBBlocks = new List<DragAndDrop>();
 
+    private List<GameObject> initialBlockBag = new List<GameObject>();
+    private const int amountPerPrefab = 3;
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,41 +35,43 @@ public class RailManager : BaseManager<RailManager>
         railABlocks.Clear();
         railBBlocks.Clear();
 
+        initialBlockBag.Clear();
+        for (int i = 0; i < blockPrefabs.Length; i++)
+        {
+            if (blockPrefabs[i] == null) continue;
+            for (int j = 0; j < amountPerPrefab; j++)
+            {
+                initialBlockBag.Add(blockPrefabs[i]);
+            }
+        }
+
+        for (int i = initialBlockBag.Count - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            GameObject temp = initialBlockBag[i];
+            initialBlockBag[i] = initialBlockBag[randomIndex];
+            initialBlockBag[randomIndex] = temp;
+        }
+
         for (int i = 0; i < maxColumns * 2; i++)
         {
-            SpawnBlockOnRail();
+            SpawnInitialBlock();
         }
     }
 
-    public void AutoSetupRailSlots()
+    private void SpawnInitialBlock()
     {
-        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
-        if (bottomUI == null) return;
+        if (initialBlockBag.Count == 0) return;
 
-        StoneRail upperRail = bottomUI.GetUpperRail;
-        StoneRail lowerRail = bottomUI.GetLowerRail;
+        GameObject selectedPrefab = initialBlockBag[0];
+        initialBlockBag.RemoveAt(0);
 
-        if (upperRail != null)
-        {
-            for (int i = 0; i < maxColumns; i++)
-            {
-                if (i < upperRail.transform.childCount)
-                {
-                    railASlots[i] = upperRail.transform.GetChild(i);
-                }
-            }
-        }
+        if (selectedPrefab == null) return;
 
-        if (lowerRail != null)
-        {
-            for (int i = 0; i < maxColumns; i++)
-            {
-                if (i < lowerRail.transform.childCount)
-                {
-                    railBSlots[i] = lowerRail.transform.GetChild(i);
-                }
-            }
-        }
+        Transform targetSlot = GetTargetSlotAndList(out List<DragAndDrop> targetList);
+        if (targetSlot == null) return;
+
+        CreateBlockInstance(selectedPrefab, targetSlot, targetList);
     }
 
     public void SpawnBlockOnRail()
@@ -78,28 +83,77 @@ public class RailManager : BaseManager<RailManager>
             AutoSetupRailSlots();
         }
 
-        int randomIndex = Random.Range(0, blockPrefabs.Length);
-        GameObject selectedPrefab = blockPrefabs[randomIndex];
+        int[] currentCounts = new int[blockPrefabs.Length];
+        foreach (var block in railABlocks)
+        {
+            if (block == null) continue;
+            int index = GetBlockIndexByName(block.gameObject.name);
+            if (index != -1) currentCounts[index]++;
+        }
+        foreach (var block in railBBlocks)
+        {
+            if (block == null) continue;
+            int index = GetBlockIndexByName(block.gameObject.name);
+            if (index != -1) currentCounts[index]++;
+        }
+
+        float[] weights = new float[blockPrefabs.Length];
+        float totalWeight = 0f;
+
+        for (int i = 0; i < blockPrefabs.Length; i++)
+        {
+            float baseProbability = 25f;
+            float formulaValue = (3f - currentCounts[i]) * 2.5f;
+
+            weights[i] = baseProbability + formulaValue;
+
+            if (weights[i] < 0f) weights[i] = 0f;
+
+            totalWeight += weights[i];
+        }
+
+        float randomValue = Random.Range(0f, totalWeight);
+        float currentWeightSum = 0f;
+        int selectedIndex = 0;
+
+        for (int i = 0; i < weights.Length; i++)
+        {
+            currentWeightSum += weights[i];
+            if (randomValue <= currentWeightSum)
+            {
+                selectedIndex = i;
+                break;
+            }
+        }
+
+        GameObject selectedPrefab = blockPrefabs[selectedIndex];
         if (selectedPrefab == null) return;
 
-        Transform targetSlot = null;
-        List<DragAndDrop> targetList = null;
+        Transform targetSlot = GetTargetSlotAndList(out List<DragAndDrop> targetList);
+        if (targetSlot == null) return;
 
+        CreateBlockInstance(selectedPrefab, targetSlot, targetList);
+    }
+
+    private Transform GetTargetSlotAndList(out List<DragAndDrop> targetList)
+    {
+        targetList = null;
         if (railABlocks.Count < maxColumns)
         {
-            targetSlot = railASlots[railABlocks.Count];
             targetList = railABlocks;
+            return railASlots[railABlocks.Count];
         }
         else if (railBBlocks.Count < maxColumns)
         {
-            targetSlot = railBSlots[railBBlocks.Count];
             targetList = railBBlocks;
+            return railBSlots[railBBlocks.Count];
         }
+        return null;
+    }
 
-        if (targetSlot == null) return;
-
-        GameObject newBlock = Instantiate(selectedPrefab, targetSlot);
-
+    private void CreateBlockInstance(GameObject prefab, Transform targetSlot, List<DragAndDrop> targetList)
+    {
+        GameObject newBlock = Instantiate(prefab, targetSlot);
         RectTransform blockRect = newBlock.GetComponent<RectTransform>() ?? newBlock.AddComponent<RectTransform>();
         blockRect.anchoredPosition = Vector2.zero;
 
@@ -114,7 +168,6 @@ public class RailManager : BaseManager<RailManager>
         if (railABlocks.Contains(block))
         {
             railABlocks.Remove(block);
-
             if (railBBlocks.Count > 0)
             {
                 DragAndDrop movingBlock = railBBlocks[0];
@@ -193,6 +246,41 @@ public class RailManager : BaseManager<RailManager>
             railBBlocks[i].transform.SetParent(railBSlots[i]);
             railBBlocks[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
+    }
+
+    public void AutoSetupRailSlots()
+    {
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        if (bottomUI == null) return;
+
+        StoneRail upperRail = bottomUI.GetUpperRail;
+        StoneRail lowerRail = bottomUI.GetLowerRail;
+
+        if (upperRail != null)
+        {
+            for (int i = 0; i < maxColumns; i++)
+            {
+                if (i < upperRail.transform.childCount) railASlots[i] = upperRail.transform.GetChild(i);
+            }
+        }
+
+        if (lowerRail != null)
+        {
+            for (int i = 0; i < maxColumns; i++)
+            {
+                if (i < lowerRail.transform.childCount) railBSlots[i] = lowerRail.transform.GetChild(i);
+            }
+        }
+    }
+
+    private int GetBlockIndexByName(string blockName)
+    {
+        string cleanName = GetCleanName(blockName);
+        for (int i = 0; i < blockPrefabs.Length; i++)
+        {
+            if (blockPrefabs[i] != null && blockPrefabs[i].name == cleanName) return i;
+        }
+        return -1;
     }
 
     private string GetCleanName(string rawName)
