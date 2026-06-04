@@ -28,14 +28,13 @@ public class BaseCharacter : BaseController
 
     bool _isSpawning = true;
 
-    public bool _isDead; // public으로 추후 제한자 바꾸기
+    public bool _isDead; 
 
     private RatioIntValue _hpRatio;
 
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
     
     private PlayerStats _playerStats;
-
 
     public bool IsSpawning
     {
@@ -47,9 +46,9 @@ public class BaseCharacter : BaseController
 
     private EFindType _findType;
 
-    public int SkillCoolTime => skills[_skillTargetIndex].coolTime;
+    public float SkillCoolTime => skills[_skillTargetIndex].SKILL_TIME;
     
-    public int CurrentSkillRange => skills[_skillTargetIndex].skillRange;
+    public float CurrentSkillRange => skills[_skillTargetIndex].SKILL_IS;
     
     public EFindType FindType
     {
@@ -91,17 +90,6 @@ public class BaseCharacter : BaseController
     public override void SetCurrentTarget(ITargetable target)
     {
         _currentTarget = target;
-
-        if (target == null)
-        {
-            state.ChangeState(this.idle);
-        }
-
-        else
-        {
-            state.ChangeState(this.chase);
-        }
-
     }
 
     public Vector3 spawnPosition
@@ -141,7 +129,7 @@ public class BaseCharacter : BaseController
         _diePlayerState = new DiePlayerState(this);
     }
 
-    protected void OnEnable()
+    protected new void OnEnable()
     {
         CurrentHp.AddListener(CheckDeath);
     }
@@ -180,23 +168,18 @@ public class BaseCharacter : BaseController
         };
 
         skills.Clear();
-        var skillTable = Service.Get<DataManager>().Player_Active_SkillTable.data;
-        var skillData = skillTable.Find(s => s.SKILL_ID == _playerStats._atkId); // 여기 공격ID 임시
-        if (skillData != null)
-        {
-            skills.Add(new Skill
-            {
-                skillDamage = (int)skillData.SKILL_ABILLITY,
-                skillRange = (int)skillData.SKILL_RANGE,
-                coolTime = (int)skillData.SKILL_TIME,
-                TargetType = Enum.Parse<ETargetType>(skillData.SKILL_AT, true)
-            });
-        }
+        var skillTable = Service.Get<DataManager>().PlayerActiveSkillTable.data;
+        var atkData = skillTable.Find(s => s.SKILL_ID == data.ATK_ID);
+        if (atkData != null) skills.Add(new Skill(atkData));
+
+        var skillData = skillTable.Find(s => s.SKILL_ID == data.SKILL_ID);
+        if (skillData != null) skills.Add(new Skill(skillData));
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
         CurrentHp.Value = _stats._maxHp;
         Movement.Agent.speed = _stats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
+        Debug.Log($"[캐릭터초기화] {gameObject.name} / FindType: {_findType}");
     }
 
     public override int UseCritDamage(int baseDamage)
@@ -212,11 +195,37 @@ public class BaseCharacter : BaseController
         return baseDamage;
     }
 
+    public override void UseSkill(int index)
+    {
+        // 현재 스킬의 n번째 스킬이 범위인지, 단일인지
+        float totalDamage = (_stats._attackPower * skills[index].SKILL_ABILLITY);
+        if (skills[index].SKILL_TYPE == ESkillType.SINGLE_TARGET)
+        {
+            if (skills[index].SKILL_AT == ETargetType.ALLY)
+            {
+                int healAmount = UseCritDamage((int)totalDamage);
+                Debug.Log($"[힐] {gameObject.name}({GetInstanceID()}) → " +
+                    $"{GetCurrentTarget.GetTargetObject.name}({GetCurrentTarget.GetTargetObject.GetInstanceID()}) / 힐량: {healAmount}");
+                GetCurrentTarget.SetHeal(healAmount);
+            }
+
+            else
+            {
+                GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
+            }
+        }
+        
+        if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE)
+        {
+            AttackRange(index, (int)totalDamage);
+        }
+    }
+
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-
-        List<ITargetable> targets = Detect(skills[index].skillRange, skills[index].TargetType);
+        //if (skills == null || skills.Count == 0) return null;
+        List<ITargetable> targets = Detect(skills[index].SKILL_IS, skills[index].SKILL_AT);
         ITargetable nearest = null;
 
         if (FindType == EFindType.LowestHp)
@@ -227,7 +236,7 @@ public class BaseCharacter : BaseController
                 if (t is BaseCharacter ally)
                 {
                     float ratio = (float)ally.CurrentHp.Value / ally.Stats._maxHp;
-                    if (ratio < lowestRatio)
+                    if (ratio < lowestRatio && ratio < 1.0f)
                     {
                         lowestRatio = ratio;
                         nearest = t;
@@ -283,6 +292,7 @@ public class BaseCharacter : BaseController
     {
         _isDead = false;
         _isSpawning = true;
+        Movement.Agent.enabled = true;
         this.Movement.Agent.Warp(spawnPosition);
         CurrentHp.Value = Stats._maxHp;
 
@@ -290,5 +300,13 @@ public class BaseCharacter : BaseController
         Debug.Log($"before: {_findType}");
         _findType = _playerStats._initFindType;
         Debug.Log($"after: {_findType}");
+    }
+
+    protected new void OnDrawGizmos()
+    {
+        if (skills == null || skills.Count == 0) return;
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, CurrentSkillRange);
     }
 }

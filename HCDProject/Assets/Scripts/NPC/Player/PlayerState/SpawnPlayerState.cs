@@ -16,6 +16,7 @@ public class SpawnPlayerState : IState
         _owner.IsSpawning = true;
         _owner.Movement.Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         _owner.SetNavMeshActive(true);
+        _owner.Movement.Move(_owner.spawnPosition);
         _owner.Movement.Move(_owner.homePosition);
     }
 
