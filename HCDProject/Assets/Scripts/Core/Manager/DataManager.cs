@@ -15,9 +15,8 @@ public class DataManager : BaseManager<DataManager>
     public CharacterTable CharacterTable {get; private set;}
     public StageClearRewardTable StageClearRewardTable {get; private set;}
     public ObjectTable ObjectTable {get; private set;}
-    public PlayerActiveSkillTable PlayerActiveSkillTable {get; private set;}
+    public PlayerSkillTable PlayerSkillTable {get; private set;}
     public MonsterSkillTable MonsterSkillTable {get; private set;}
-    public MonsterSkillEffectGroupTable MonsterSkillEffectGroupTable {get; private set;}
     public ProjectileTable ProjectileTable {get; private set;}
     public LocalizingTable LocalizingTable {get; private set;}
     public StoryLocalizingTable StoryLocalizingTable {get; private set;}
@@ -54,9 +53,8 @@ public class DataManager : BaseManager<DataManager>
             ("CHARACTER_TABLE", json => CharacterTable = JsonUtility.FromJson<CharacterTable>(json)),
             ("STAGE_CLEAR_REWARD_TABLE", json => StageClearRewardTable = JsonUtility.FromJson<StageClearRewardTable>(json)),
             ("OBJECT_TABLE", json => ObjectTable = JsonUtility.FromJson<ObjectTable>(json)),
-            ("PLAYER_ACTIVE_SKILL_TABLE", json => PlayerActiveSkillTable = JsonUtility.FromJson<PlayerActiveSkillTable>(json)),
+            ("PLAYER_SKILL_TABLE", json => PlayerSkillTable = JsonUtility.FromJson<PlayerSkillTable>(json)),
             ("MONSTER_SKILL_TABLE", json => MonsterSkillTable = JsonUtility.FromJson<MonsterSkillTable>(json)),
-            ("MONSTER_SKILL_EFFECT_GROUP_TABLE", json => MonsterSkillEffectGroupTable = JsonUtility.FromJson<MonsterSkillEffectGroupTable>(json)),
             ("PROJECTILE_TABLE", json => ProjectileTable = JsonUtility.FromJson<ProjectileTable>(json)),
             ("LOCALIZING_TABLE", json => LocalizingTable = JsonUtility.FromJson<LocalizingTable>(json)),
             ("STORY_LOCALIZING_TABLE", json => StoryLocalizingTable = JsonUtility.FromJson<StoryLocalizingTable>(json)),
@@ -110,10 +108,10 @@ public class DataManager : BaseManager<DataManager>
             return reward.MAX_CLEAR_REWARD_COUNT == 0 || currentCount < reward.MAX_CLEAR_REWARD_COUNT;
         }).ToList();
 
-        Random randomIndex = new();
+        
         for (int i = rewardPool.Count - 1; i > 0; i--)
         {
-            int j = randomIndex.Next(0, i + 1);
+            int j = UnityEngine.Random.Range(0, i + 1);
             var temp = rewardPool[i];
             rewardPool[i] = rewardPool[j];
             rewardPool[j] = temp;
@@ -131,8 +129,17 @@ public class DataManager : BaseManager<DataManager>
             var reward = StageClearRewardTable.data.Find(x => x.CLEAR_REWARD_ID == rewardId);
             if (reward != null && reward.MAX_CLEAR_REWARD_COUNT <= _rewardCounts[rewardId])
             {
-                // 더이상 뜨지 않는걸 확인 해 볼 수단 
+                Debug.Log($"이제 {reward.CLEAR_REWARD_ID} 는 등장 안할거야!");
             }
         }
+    }
+    
+    public int CurrentRewardCount(string rewardId)
+    {
+        if (_rewardCounts.ContainsKey(rewardId))
+        {
+            return _rewardCounts[rewardId];
+        }
+        return 0;
     }
 }

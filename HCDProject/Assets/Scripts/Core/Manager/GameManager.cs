@@ -65,24 +65,35 @@ public class GameManager : BaseManager<GameManager>
     {
         _state?.Update();
 
-        if (Keyboard.current.oKey.wasPressedThisFrame)
-        {
-            var character = Service.Get<DataManager>()?.CharacterTable.data.Find(x => x.CHARACTER_ID == "3000");
-        
-            if (character != null) Debug.Log($"id : {character.CHARACTER_ID}, name : {character.CHARACTER_NAME} , atk : {character.ATK}");
-            
-            var stageMonster = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == 1 && x.STAGE == 1);
-
-            if (stageMonster != null)
+            if (Keyboard.current.oKey.wasPressedThisFrame)
             {
-                foreach (var stage in stageMonster)
-                {
-                    Debug.Log($"stageMonster : {stage.SPAWN_MONSTER_ID_01}, {stage.SPAWN_MONSTER_ID_02}, {stage.SPAWN_MONSTER_COUNT_03}");
-                }
+                OpenRewardUi();
             }
-        }
+
+            if (Keyboard.current.pKey.wasPressedThisFrame)
+            {
+                Service.Get<DataManager>()?.SelectReward(randomRewards[1].CLEAR_REWARD_ID);
+                Debug.Log($"{randomRewards[1].CLEAR_REWARD_ID}");
+            }
     }
 
+    List<StageClearRewardRawData> randomRewards;
+
+    public void OpenRewardUi()
+    {
+        randomRewards = Service.Get<DataManager>().GetRandomRewards();
+        Debug.Log($"뽑힌 카드 {randomRewards.Count}개");
+
+        for (int i = 0; i < randomRewards.Count; i++)
+        {
+            string rewardId = randomRewards[i].CLEAR_REWARD_ID;
+            int currentCount = Service.Get<DataManager>().CurrentRewardCount(rewardId);
+            int maxCount = randomRewards[i].MAX_CLEAR_REWARD_COUNT;
+            Debug.Log($"리워드 {i} : {rewardId}: {currentCount} / {maxCount}");
+            
+        }
+    }
+    
     private void ChangeState(GameState state)
     {
         switch (state)
