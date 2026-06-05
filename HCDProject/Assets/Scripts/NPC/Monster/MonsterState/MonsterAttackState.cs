@@ -25,9 +25,9 @@ public class MonsterAttackState : IState
         
         _timer += Time.deltaTime;
 
-        if (_controller.skills[0].ATK_TYPE != EAtkType.NORMAL)
+        if (_controller.skills[0].ATK_TYPE == EAtkType.NORMAL)
         {
-            if (_timer >= _controller.skills[0].SKILL_TIME)
+            if (_timer >= _controller.Stat.ATK_SPEED)
             {
                 _timer = 0f;
                 _controller.UseSkill(0);
@@ -35,7 +35,7 @@ public class MonsterAttackState : IState
         }
         else
         {
-            if (_timer >= _controller.Stat.ATK_SPEED)
+            if (_timer >= _controller.skills[0].SKILL_TIME)
             {
                 _timer = 0f;
                 _controller.UseSkill(0);
