@@ -106,3 +106,7 @@ InitTestScene*.unity*
 # Ignore imported assets
 Assets/_Imports/**
 /.idea
+HCDProject/Assets/Resources/PerformanceTestRunInfo.json
+HCDProject/Assets/Resources/PerformanceTestRunInfo.json.meta
+HCDProject/Assets/Resources/PerformanceTestRunSettings.json
+HCDProject/Assets/Resources/PerformanceTestRunSettings.json.meta
