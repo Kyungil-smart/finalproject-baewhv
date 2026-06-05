@@ -17,17 +17,29 @@ public class MonsterAttackState : IState
 
     public void Update()
     {
-        if (Vector2.Distance(_controller.transform.position, _controller.Target) >= _controller.Stats._attackRange)
+        if (Vector2.Distance(_controller.transform.position, _controller.Target) > _controller.skills[0].SKILL_IS)
         {
             _controller.CurrentState.Value = EStateType.Chase;
             return;
         }
         
         _timer += Time.deltaTime;
-        if (_timer >= 2f)
+
+        if (_controller.skills[0].ATK_TYPE != EAtkType.NORMAL)
         {
-            _timer = 0f;
-            _controller.UseSkill((int)ESkillType.Normal);
+            if (_timer >= _controller.skills[0].SKILL_TIME)
+            {
+                _timer = 0f;
+                _controller.UseSkill(0);
+            }
+        }
+        else
+        {
+            if (_timer >= _controller.Stat.ATK_SPEED)
+            {
+                _timer = 0f;
+                _controller.UseSkill(0);
+            }
         }
     }
     

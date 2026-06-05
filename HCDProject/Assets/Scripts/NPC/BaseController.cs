@@ -15,7 +15,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         return CurrentHp.Value > 0;
     }
 
-    [SerializeField] protected List<Skill> skills = new List<Skill>();
+    public List<Skill> skills = new List<Skill>();
 
     protected ESkillSlot SkillIndex;
 
@@ -79,8 +79,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public List<ITargetable> Detect(float range, ETargetType targetType)
     {
-        _targets.Clear();
-
         int count = Physics2D.OverlapCircle(transform.position,
             range,
             targetType == 0 ? EnemyFilter : AllyFilter,
@@ -90,7 +88,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
-                _targets.Add(target);
+                _targets[i] = target;
             }
         }
 

@@ -16,7 +16,7 @@ public class BaseMonster : BaseController
     public MonsterAttackState AttackState { get; protected set; }
     public MonsterDieState DieState { get; protected set; }
     #endregion
-
+    
     private float _timer;
     public Vector3 Target { get; set; }
     
@@ -25,14 +25,27 @@ public class BaseMonster : BaseController
     public void InitStatus(MonsterRawData data)
     {
         Stat = data;
+        InitSkill(data);
         
+        // 몬스터의 기본 데이터 초기화
         // 데이터를 받아와서 사용할 위치
         MonsterID = int.Parse(Stat.MONSTER_ID) - 1000;
         gameObject.name = Stat.MONSTER_NAME;
-        CurrentHp.Value = data.HP;
+        CurrentHp.Value = Stat.HP;
         Movement.Agent.speed = Stat.MOVE_SPEED;
         
         // Stat.ATK = data.ATK;
+    }
+    
+    private void InitSkill(MonsterRawData data)
+    {
+        // 몬스터의 공격(스킬) 데이터 초기화
+        var skillDataTable = Service.Get<DataManager>().MonsterSkillTable.data;
+        MonsterSkillRawData atkData = skillDataTable.Find(x => x.SKILL_ID == data.ATK_ID);
+        if (atkData != null) skills.Add(new Skill(atkData));
+
+        MonsterSkillRawData skillData = skillDataTable.Find(x => x.SKILL_ID == data.SKILL_ID);
+        if (skillData != null) skills.Add(new Skill(skillData));
     }
     
     public override void SetCurrentTarget(ITargetable target)

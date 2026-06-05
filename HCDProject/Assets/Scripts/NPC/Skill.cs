@@ -6,6 +6,8 @@ public class Skill
 {
     public float SKILL_ABILLITY;
 
+    public string SKILL_ID;
+    public string SKILL_NAME;
     public float SKILL_IS;
     public float SKILL_RANGE_X;
     public float SKILL_RANGE_Y;
@@ -23,6 +25,13 @@ public class Skill
     public string SKILL_HIT_SFX;
     public string SKILL_HIT_FX;
     public string SKILL_ICON;
+    
+    // Monster Skill Data
+    public ESkillAbilityType SKILL_ABT_01;
+    public ESkillAbilityType SKILL_ABT_02;
+    public float SKILL_AB_01;
+    public float SKILL_AB_02;
+    public float SKILL_DURATION;
 
     public Skill(PlayerActiveSkillRawData data)
     {
@@ -35,6 +44,24 @@ public class Skill
         ATK_TYPE = Enum.Parse<EAtkType>(data.ATK_TYPE);
         SKILL_TYPE = Enum.Parse<ESkillType>(data.SKILL_TYPE);
         targetCount = 1;
+    }
+
+    public Skill(MonsterSkillRawData data)
+    {
+        SKILL_ID = data.SKILL_ID;
+        SKILL_NAME = data.SKILL_NAME;
+        SKILL_IS = data.SKILL_IS;
+        SKILL_RANGE_X = data.SKILL_RANGE_X;
+        SKILL_RANGE_Y = data.SKILL_RANGE_Y;
+        SKILL_TIME = data.SKILL_TIME;
+        SKILL_AT = Enum.Parse<ETargetType>(data.SKILL_AT);
+        ATK_TYPE = Enum.Parse<EAtkType>(data.ATK_TYPE);
+        SKILL_TYPE = Enum.Parse<ESkillType>(data.SKILL_TYPE);
+        SKILL_DURATION = data.SKILL_DURATION;
+        SKILL_ABT_01 = Enum.Parse<ESkillAbilityType>(data.SKLL_ABT_01);
+        SKILL_AB_01 = data.SKILL_AB_01;
+        SKILL_ABT_02 = Enum.Parse<ESkillAbilityType>(data.SKLL_ABT_02);
+        SKILL_AB_02 = data.SKILL_AB_02;
     }
 }
 
@@ -72,4 +99,11 @@ public enum EFindType
     Nearest = 0,  // 가장 가까운 대상
     Farthest = 1, // 가장 먼 대상
     LowestHp = 2  // 체력이 가장 낮은 대상 (힐러용)
+}
+
+public enum ESkillAbilityType
+{
+    NONE = 0,
+    HP = 1,
+    ATK = 2
 }
