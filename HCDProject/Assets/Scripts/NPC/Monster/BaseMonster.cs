@@ -7,6 +7,7 @@ public class BaseMonster : BaseController
 {
     [field:SerializeField] public MonsterRawData Stat { get; private set;}
     public int MonsterID { get; private set; }
+    public int PrefabIndex { get; set; }
     
     #region State
     private protected StateMachine State;
@@ -131,6 +132,59 @@ public class BaseMonster : BaseController
         return target;
     }
     
+    public override void UseSkill(int index)
+    {
+        if (GetCurrentTarget == null) return;
+
+        if (skills[index].ATK_TYPE == EAtkType.NORMAL)
+        {
+            GetCurrentTarget.SetDamage(Stat.ATK);
+        } 
+        else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
+        {
+            RangeDetect(index);
+            
+            if (Count <= 0) return;
+
+            for (int i = 0; i < Count; i++)
+            {
+                if (Colliders[i].TryGetComponent(out ITargetable target))
+                {
+                    target.SetHeal((int)skills[index].SKILL_AB_01);
+                }
+            }
+        }
+        else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK)
+        {
+            RangeDetect(index);
+            
+            if (Count <= 0) return;
+
+            for (int i = 0; i < Count; i++)
+            {
+                if (Colliders[i].TryGetComponent(out BaseMonster controller))
+                {
+                    controller.Stat.ATK += (int)skills[index].SKILL_AB_01;
+                }
+            }
+        }
+    }
+
+    public void RangeDetect(int index)
+    {
+        ContactFilter2D filter = new ContactFilter2D();
+
+        if (skills[index].SKILL_AT == ETargetType.ENEMY)
+        {
+            filter = EnemyFilter;
+        }
+        else if (skills[index].SKILL_AT == ETargetType.ALLY)
+        {
+            filter = AllyFilter;
+        }
+
+        Count = Physics2D.OverlapCircle(transform.position, skills[index].SKILL_IS, filter, Colliders);
+    }
 
     private void ResetTarget()
     {
