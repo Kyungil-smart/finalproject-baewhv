@@ -58,7 +58,6 @@ public class GameManager : BaseManager<GameManager>
     private void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
-        _wall.CurrentHp.RemoveListener(WallHpChange);
     }
 
     private void Update()
@@ -67,7 +66,8 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.oKey.wasPressedThisFrame)
             {
-                OpenRewardUi();
+                _wall.SetDamage(10);
+                // OpenRewardUi();
             }
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
@@ -167,16 +167,14 @@ public class GameManager : BaseManager<GameManager>
 
                     if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
                     else _currentWallHp = _wall.CurrentHp.Value;
-                    
-                    if (_wall.CurrentHp != null) _wall.CurrentHp.AddListener(WallHpChange);
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
-                    // if (wallHpUi != null)
-                    // {
-                    //     wallHpUi.SetWallHP(_wall.currentHp.Value, _wall.MaxHp);
-                    //     _wall.currentHp.AddListener(wallHpUi.UpdateWallHP);
-                    // }
+                    if (wallHpUi != null)
+                    {
+                        // wallHpUi.SetWallHp(_wall.CurrentHp.MaxValue, _wall.CurrentHp.Value);
+                        // _wall.CurrentHp.AddListener(wallHpUi.SetWallHP);
+                    }
                 }
             }
         };
@@ -188,15 +186,13 @@ public class GameManager : BaseManager<GameManager>
         {
             _currentWallHp = _wall.CurrentHp.Value;
             
-            _wall.CurrentHp.RemoveListener(WallHpChange);
-            
             var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+            
             if (wallHpUi != null)
             {
-                // _wall.currentHp.RemoveListener(wallHpUi.UpdateWallHP);
+                // _wall.CurrentHp.RemoveListener(wallHpUi.SetWallHP);
             }
             
-
             Addressables.ReleaseInstance(_wall.gameObject);
             _wall = null;
         }
