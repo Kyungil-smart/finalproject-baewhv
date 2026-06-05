@@ -7,7 +7,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     [SerializeField] protected CharacterStats _stats;
     public CharacterStats Stats => _stats;
 
-    protected ObserveValue<int> CurrentHp = new ObserveValue<int>();
+    protected RatioIntValue CurrentHp = new RatioIntValue(0);
 
 
     public bool IsAlive()

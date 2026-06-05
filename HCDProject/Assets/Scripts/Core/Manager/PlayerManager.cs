@@ -70,8 +70,6 @@ public class PlayerManager : BaseManager<PlayerManager>
             _characters[i] = chr;
             Debug.Log($"{i}번 플레이어 생성 완료");
         }
-
-
     }
 
     public void IsAllSpawnPlayer()

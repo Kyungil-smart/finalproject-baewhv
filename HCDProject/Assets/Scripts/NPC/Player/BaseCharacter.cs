@@ -28,9 +28,7 @@ public class BaseCharacter : BaseController
 
     bool _isSpawning = true;
 
-    public bool _isDead; 
-
-    private RatioIntValue _hpRatio;
+    public bool _isDead;
 
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
     
@@ -129,7 +127,7 @@ public class BaseCharacter : BaseController
         _diePlayerState = new DiePlayerState(this);
     }
 
-    protected new void OnEnable()
+    protected override void OnEnable()
     {
         CurrentHp.AddListener(CheckDeath);
     }
@@ -147,9 +145,9 @@ public class BaseCharacter : BaseController
     public void BindHpUI(UnityAction<float> action)
     {
         int maxValue = _stats._maxHp;
-        _hpRatio = new RatioIntValue(maxValue);
-        _hpRatio.AddRatioListener(action);
-        CurrentHp.AddListener(value => { _hpRatio.Value = value; });
+        CurrentHp = new RatioIntValue(maxValue);
+        CurrentHp.AddRatioListener(action);
+        CurrentHp.AddListener(CheckDeath);
     }
 
     public void Init(CharacterRawData data, PlayerStats stat)
