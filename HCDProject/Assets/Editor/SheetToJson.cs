@@ -21,9 +21,8 @@ public class SheetToJson : EditorWindow
         {"1686886035", "CHARACTER_TABLE"},
         {"1698007139", "STAGE_CLEAR_REWARD_TABLE"},
         {"2033933741", "OBJECT_TABLE"},
-        {"1826977585", "PLAYER_ACTIVE_SKILL_TABLE"},
+        {"1826977585", "PLAYER_SKILL_TABLE"},
         {"858179508", "MONSTER_SKILL_TABLE"},
-        {"2077252783", "MONSTER_SKILL_EFFECT_GROUP_TABLE"},
         {"1428489825", "MAP_TABLE"},
         {"1779569419", "PROJECTILE_TABLE"},
         {"2083529388", "LOCALIZING_TABLE"},
@@ -114,6 +113,9 @@ public class SheetToJson : EditorWindow
         for (int i = 3; i < lines.Length; i++)
         {
             string[] values = lines[i].Split('\t');
+            
+            if (values.Length  == 0 || string.IsNullOrWhiteSpace(values[0])) continue;
+            
             jsonBuilder.Append("    {\n");
 
             for (int j = 0; j < headers.Length; j++)

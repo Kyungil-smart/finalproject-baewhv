@@ -11,7 +11,8 @@ public class PlayerActiveSkillRawData
     public string SKILL_TYPE;
     public string SKILL_AT;
     public float SKILL_IS;
-    public float SKILL_RANGE;
+    public float SKILL_RANGE_X;
+    public float SKILL_RANGE_Y;
     public float SKILL_TIME;
     public string SKILL_DT;
     public float SKILL_ABILLITY;
