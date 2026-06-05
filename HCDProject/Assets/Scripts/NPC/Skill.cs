@@ -8,17 +8,22 @@ public class Skill
 
     public string SKILL_ID;
     public string SKILL_NAME;
+    public EAtkType ATK_TYPE;
+    public ESkillType SKILL_TYPE;
+    public ETargetType SKILL_AT;
     public float SKILL_IS;
     public float SKILL_RANGE_X;
     public float SKILL_RANGE_Y;
     public float SKILL_TIME;
-
-    public int targetCount;
-
-    public ETargetType SKILL_AT;
-
-    public EAtkType ATK_TYPE;
-    public ESkillType SKILL_TYPE;
+    
+    // Monster Skill Data
+    public float SKILL_DURATION;
+    public ESkillAbilityType SKILL_ABT_01;
+    public ESkillAbilityType SKILL_ABT_02;
+    public float SKILL_AB_01;
+    public float SKILL_AB_02;
+    
+    // 공통
     public string SKILL_DT; // 스킬 데미지 타입
     public string SKILL_SFX;
     public string SKILL_FX;
@@ -26,14 +31,10 @@ public class Skill
     public string SKILL_HIT_FX;
     public string SKILL_ICON;
     
-    // Monster Skill Data
-    public ESkillAbilityType SKILL_ABT_01;
-    public ESkillAbilityType SKILL_ABT_02;
-    public float SKILL_AB_01;
-    public float SKILL_AB_02;
-    public float SKILL_DURATION;
+    public int targetCount;
 
-    public Skill(PlayerActiveSkillRawData data)
+
+    public Skill(PlayerSkillRawData data)
     {
         SKILL_ABILLITY = data.SKILL_ABILLITY;
         SKILL_IS = data.SKILL_IS;
@@ -58,9 +59,9 @@ public class Skill
         ATK_TYPE = Enum.Parse<EAtkType>(data.ATK_TYPE);
         SKILL_TYPE = Enum.Parse<ESkillType>(data.SKILL_TYPE);
         SKILL_DURATION = data.SKILL_DURATION;
-        SKILL_ABT_01 = Enum.Parse<ESkillAbilityType>(data.SKLL_ABT_01);
+        SKILL_ABT_01 = Enum.Parse<ESkillAbilityType>(data.SKILL_ABT_01);
         SKILL_AB_01 = data.SKILL_AB_01;
-        SKILL_ABT_02 = Enum.Parse<ESkillAbilityType>(data.SKLL_ABT_02);
+        SKILL_ABT_02 = Enum.Parse<ESkillAbilityType>(data.SKILL_ABT_02);
         SKILL_AB_02 = data.SKILL_AB_02;
     }
 }
@@ -105,5 +106,17 @@ public enum ESkillAbilityType
 {
     NONE = 0,
     HP = 1,
-    ATK = 2
+    ATK = 2,
+    DAMAGE_TARGET_MAX_HP_P = 3,
+    ATK_MULT = 4,
+    NORMAL_ATK_IMMUNITY = 5,
+    IGNORE_DEF = 6,
+    ATK_SPEED_P = 7,
+    MOVE_SPEED_P = 8,
+    CC = 9,
+    TARGET_ATK_MULT = 10,
+    DAMAGE_REDUCTION_P = 11,
+    INVISIBILITY = 12,
+    DAMAGE_IMMUNITY = 13,
+    SKILL_CD = 14
 }
