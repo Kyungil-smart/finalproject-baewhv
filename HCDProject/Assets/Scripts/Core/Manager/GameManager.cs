@@ -20,6 +20,9 @@ public class GameManager : BaseManager<GameManager>
     public GameOverState GameOverState { get; protected set; }
     #endregion
     
+    public int _currentChapter = 1;
+    private int _currentStage = 1;
+    
     public bool isLoading = false;
     
     private float sortTime = 3;
@@ -114,6 +117,38 @@ public class GameManager : BaseManager<GameManager>
                 _state.ChangeState(GameOverState);
                 break;
         }
+    }
+
+    public List<StageData> GetStageDataList(int currentChapter)
+    {
+        var stageData = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == currentChapter).Select(x => x.STAGE).Distinct().OrderBy(stage => stage).ToList();
+        
+        int bossStageInChapter = 0;
+        if (stageData != null && stageData.Count > 0)
+        {
+            bossStageInChapter  = stageData.Max();
+        }
+
+        List<StageData> uiList = new();
+
+        if (stageData != null)
+        {
+            foreach (var stageIndex in stageData)
+            {
+                uiList.Add(new StageData {Stage = stageIndex , State = CurrentStageState(currentChapter, stageIndex, bossStageInChapter)});
+            }
+        }
+        return uiList;
+    }
+    
+    
+    private StageState CurrentStageState(int chapter, int stage, int bossStage)
+    {
+        if (chapter > _currentChapter || (chapter == _currentChapter && stage > _currentStage)) return StageState.Lock;
+        else if (chapter < _currentChapter || (chapter == _currentChapter && stage < _currentStage)) return StageState.Clear;
+        else if (stage == bossStage) return StageState.Boss;
+        
+        return StageState.Current;
     }
     
     
@@ -215,4 +250,10 @@ public enum GameState
     Sort,
     Clear,
     GameOver
+}
+
+public struct StageData
+{
+    public int Stage;
+    public StageState State;
 }
