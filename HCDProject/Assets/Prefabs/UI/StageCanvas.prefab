@@ -497,11 +497,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectScene
   _stageButtons:
-  - {fileID: 2042924572201127167}
-  - {fileID: 2179101226164676236}
-  - {fileID: 2655739654929465971}
-  - {fileID: 8377002027303520615}
   - {fileID: 3036664678044916351}
+  - {fileID: 8377002027303520615}
+  - {fileID: 2655739654929465971}
+  - {fileID: 4244703718322976165}
+  - {fileID: 2179101226164676236}
+  - {fileID: 358193834516103645}
+  - {fileID: 2042924572201127167}
+  - {fileID: 1423249929026298983}
   popupObject: {fileID: 1248729144002580758}
   popupText: {fileID: 6584302298904588137}
   continuePopup: {fileID: 607317464898335111}
