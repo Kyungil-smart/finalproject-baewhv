@@ -33,7 +33,6 @@ public class Skill
     
     public int targetCount;
 
-
     public Skill(PlayerSkillRawData data)
     {
         SKILL_ABILLITY = data.SKILL_ABILLITY;
