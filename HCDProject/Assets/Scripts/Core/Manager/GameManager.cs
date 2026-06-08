@@ -20,8 +20,11 @@ public class GameManager : BaseManager<GameManager>
     public GameOverState GameOverState { get; protected set; }
     #endregion
     
-    public int _currentChapter = 1;
+    private int _currentChapter = 1;
     private int _currentStage = 1;
+    
+    public int CurrentChapter {get => _currentChapter; private set => _currentChapter = value; }
+    public int CurrentStage {get => _currentStage; private set => _currentStage = value; }
     
     public bool isLoading = false;
     
@@ -160,35 +163,9 @@ public class GameManager : BaseManager<GameManager>
         }
     }
     
-    public void EnterStage(int chapter, int stage)
-    {
-        isLoading = true;
-
-        SpawnWall();
-        
-        List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
-        
-        HashSet<string> ids = new HashSet<string>();
-        
-        foreach (var data in currentStage)
-        {
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
-        }
-        
-        Service.Get<MonsterManager>()?.StageMonster(new List<string>(ids), () =>
-        {
-            isLoading = false;
-        
-            foreach (var id in ids)
-            {
-                Debug.Log($"로딩 성공 : {id}");
-            }
-        });
-    }
     
     
-    private void SpawnWall()
+    public void SpawnWall()
     {
         Addressables.InstantiateAsync(_wallAddress).Completed += (handle) =>
         {
@@ -207,11 +184,11 @@ public class GameManager : BaseManager<GameManager>
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
-                    // if (wallHpUi != null)
-                    // {
-                    //     wallHpUi.SetWallHP(_wall.currentHp.Value, _wall.MaxHp);
-                    //     _wall.currentHp.AddListener(wallHpUi.UpdateWallHP);
-                    // }
+                    if (wallHpUi != null)
+                    {
+                        wallHpUi.SetWallHP(_wall.currentHp.Value, _wall.MaxHp);
+                        _wall.currentHp.AddListener(wallHpUi.UpdateWallHP);
+                    }
                 }
             }
         };

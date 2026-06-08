@@ -18,7 +18,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
     private void Start()
     {
-        _currentChapter = Service.Get<GameManager>()._currentChapter;
+        _currentChapter = Service.Get<GameManager>().CurrentChapter;
         
         if (popupObject != null) popupObject.SetActive(false);
         
@@ -94,7 +94,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     private void EnterStage(int chapter, int stage)
     {
         Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
-        Service.Get<GameManager>()?.EnterStage(chapter, stage);
+        // Service.Get<GameManager>()?.EnterStage(chapter, stage);
     }
     
     // 추후 무한모드 제작시 이용 가능성 정도는 있음

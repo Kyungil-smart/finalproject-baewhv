@@ -10,7 +10,11 @@ public class Rampart : MonoBehaviour, ITargetable
     
     public void Awake()
     {
-        CurrentHp = new RatioIntValue(1000);
+        var rampartData = Service.Get<DataManager>()?.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "CASTLE_HP");
+        if (rampartData != null)
+        {
+            if (int.TryParse(rampartData.VARIABLE_VALUE, out int value)) CurrentHp = new RatioIntValue(value);
+        }
         GetTargetObject = gameObject;
     }
 
