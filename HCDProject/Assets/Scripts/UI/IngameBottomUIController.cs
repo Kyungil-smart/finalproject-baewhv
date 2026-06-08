@@ -26,7 +26,6 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     private readonly Vector2 battlePhaseSlotRect = new Vector2(-12, -56.0f);
     private readonly Vector2 sortPhaseSlotRect = new Vector2(-12, -166.4f);
     public CharacterSlot[] GetSlots => characterSlots;
-    public CharacterSlot[] GetBattleSlots => characterSlots;
 
     [SerializeField] private StoneRail upperRail;
     public StoneRail GetUpperRail => upperRail;

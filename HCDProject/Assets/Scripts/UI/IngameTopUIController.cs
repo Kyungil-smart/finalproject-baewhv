@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class InGameTopUIController : BaseUIController<InGameTopUIController>
+    public class IngameTopUIController : BaseUIController<IngameTopUIController>
     {
         [SerializeField] private TextMeshProUGUI waveText;
         [SerializeField] private Slider waveSlider;
