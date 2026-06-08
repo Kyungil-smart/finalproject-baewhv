@@ -5,7 +5,15 @@ using UnityEngine;
 public abstract class BaseController : MonoBehaviour, ITargetable
 {
     [SerializeField] protected CharacterStats _stats;
-    public CharacterStats Stats => _stats;
+
+    public CharacterStats Stats
+    {
+        get => _stats;
+        set
+        {
+            _stats = value;
+        }
+    }
 
     protected ObserveValue<int> CurrentHp = new ObserveValue<int>();
 
@@ -36,10 +44,13 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     private List<ITargetable> _targets = new List<ITargetable>();
 
+    protected int Count;
+
     protected virtual void Awake()
     {
         GetTargetObject = gameObject;
         Movement = GetComponent<CharacterMovement>();
+        Count = 0;
 
         EnemyFilter.useLayerMask = true;
         EnemyFilter.useTriggers = false;
@@ -52,25 +63,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         CurrentHp.Value = _stats._maxHp;
     }
 
-    public virtual void UseSkill(int index)
-    {
-        List<ITargetable> skillTargets = Detect(skills[index].SKILL_IS, skills[index].SKILL_AT);
-
-        if (skillTargets.Count == 0) return;
-
-        for (int i = 0; i < skills[index].targetCount; i++)
-        {
-            if (skills[index].SKILL_AT == ETargetType.ENEMY)
-            {
-                int finalDamage = UseCritDamage((int)skills[index].SKILL_ABILLITY); // TODO: 변경필요
-                skillTargets[i].SetDamage(finalDamage);
-            }
-            else
-            {
-                skillTargets[i].SetHeal((int)skills[index].SKILL_ABILLITY); // TODO : 변경필요
-            }
-        }
-    }
+    public abstract void UseSkill(int index);
 
     public virtual int UseCritDamage(int baseDamage) // 플레이어 크리티컬 적용
     {
@@ -79,6 +72,8 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public List<ITargetable> Detect(float range, ETargetType targetType)
     {
+        _targets.Clear();
+        
         int count = Physics2D.OverlapCircle(transform.position,
             range,
             targetType == 0 ? EnemyFilter : AllyFilter,
@@ -88,7 +83,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
-                _targets[i] = target;
+                _targets.Add(target);
             }
         }
 
