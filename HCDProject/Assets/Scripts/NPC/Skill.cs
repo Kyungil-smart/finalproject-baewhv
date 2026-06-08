@@ -24,7 +24,7 @@ public class Skill
     public string SKILL_HIT_FX;
     public string SKILL_ICON;
 
-    public Skill(PlayerSkillRawData data)
+    public Skill(PlayerActiveSkillRawData data)
     {
         SKILL_ABILLITY = data.SKILL_ABILLITY;
         SKILL_IS = data.SKILL_IS;
