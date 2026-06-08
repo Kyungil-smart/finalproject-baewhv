@@ -13,7 +13,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     private Dictionary<string, AsyncOperationHandle<GameObject>> _monsterHandles = new Dictionary<string, AsyncOperationHandle<GameObject>>();
     
     [SerializeField] private float _spawnOffsetY;
-    [SerializeField] private float _spawnDelay;
+    private float _spawnDelay;
     [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
     
     public int SpawnCount { get; set; }
@@ -33,12 +33,10 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 
     private void Start()
     {
-        /*
         StageMonster(new List<string>(Service.Get<GameManager>().ids), () =>
         {
             Service.Get<GameManager>().isLoading = false;
         });
-        */
     }
 
     private void Update()
@@ -55,9 +53,8 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         
         currentWave.Value++;
         
-        AddMonsterData(1, 1, currentWave.Value);
+        AddMonsterData(Service.Get<GameManager>().CurrentChapter, Service.Get<GameManager>().CurrentStage, currentWave.Value);
         
-
         if (_waveMonsterList.Count > 0 && _waveSpawnCountList.Count > 0)
         {
             StartCoroutine(SpawnMonster(_waveMonsterList, _waveSpawnCountList));   
@@ -129,8 +126,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     
     public void StageMonster(List<string> currentStageMonsterIds, Action onComplete)
     {
-        Debug.Log("StageMonster 작동");
-        
         List<string> release = new List<string>();
         
         foreach (var id in _stageMonsterPrefabs.Keys)
@@ -189,7 +184,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     {
         if (_stageMonsterPrefabs.TryGetValue(monsterAddress, out GameObject prefab)) return prefab;
         
-        Debug.Log($"GetMonsterPrefab 실패 -> {monsterAddress} 가 없어요 ㅠ");
         return null;
     }
 
