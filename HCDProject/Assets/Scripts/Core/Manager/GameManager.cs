@@ -200,15 +200,13 @@ public class GameManager : BaseManager<GameManager>
         {
             _currentWallHp = _wall.CurrentHp.Value;
             
-            _wall.CurrentHp.RemoveListener(WallHpChange);
-            
             var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+            
             if (wallHpUi != null)
             {
                 //_wall.CurrentHp.RemoveListener(wallHpUi.SetWallHP);
             }
             
-
             Addressables.ReleaseInstance(_wall.gameObject);
             _wall = null;
         }
