@@ -9,10 +9,19 @@ public class SortManager : BaseManager<SortManager>
 
     public ObserveValue<bool> isEndSort = new();
 
+    private ObserveValue<int> leftCount = new();
+
     protected override void Awake()
     {
         base.Awake();
         isEndSort.Value = false;
+
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        if (bottomUI != null)
+        {
+            leftCount.AddListener(bottomUI.SetLeftSortCountText);
+            CurrentCombo.AddListener(bottomUI.SetComboText);
+        }
     }
 
     private void Start()
@@ -92,6 +101,8 @@ public class SortManager : BaseManager<SortManager>
 
         RemainingSorts.Value--;
 
+        leftCount.Value = RemainingSorts.Value;
+
         if (RemainingSorts.Value <= 0)
         {
             FinishSortPhase();
@@ -104,6 +115,7 @@ public class SortManager : BaseManager<SortManager>
     {
         isEndSort.Value = false;
         RemainingSorts.Value = 6;
+        leftCount.Value = RemainingSorts.Value;
         CurrentCombo.Value = 0;
 
         Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
@@ -142,7 +154,7 @@ public class SortManager : BaseManager<SortManager>
 
         if (objectData == null)
         {
-            Debug.LogWarning($"OBJECT_TABLE에서 '{buffName}'을 찾지 못함");
+            Debug.Log($"{buffName}을 찾지 못함");
             return;
         }
 
