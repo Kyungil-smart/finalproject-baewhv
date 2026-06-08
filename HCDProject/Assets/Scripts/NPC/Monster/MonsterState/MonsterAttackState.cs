@@ -27,7 +27,7 @@ public class MonsterAttackState : IState
         if (_timer >= 2f)
         {
             _timer = 0f;
-            _controller.UseSkill((int)ESkillType.Normal);
+            _controller.UseSkill((int)ESkillType.ALL_TARGET);
         }
     }
     
