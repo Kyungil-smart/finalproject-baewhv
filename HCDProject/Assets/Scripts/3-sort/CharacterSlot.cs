@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -8,8 +9,11 @@ public class CharacterSlot : MonoBehaviour, IDropHandler
     public Transform[] SubSlots => _subslots;
 
     [SerializeField] private Slider hpBar;
+    [SerializeField] private TextMeshProUGUI hpText;
     [SerializeField] private Slider skillBar;
-    
+    [SerializeField] private TextMeshProUGUI skillText;
+    [SerializeField] private RectTransform borderRect;
+    public RectTransform GetBorderRect => borderRect;
     
     
 
@@ -33,6 +37,7 @@ public class CharacterSlot : MonoBehaviour, IDropHandler
     public void SetHPBar(float value)
     {
         hpBar.value = value;
+        hpText.text = $"{value:p0}";
     }    
     /// <summary>
     /// 스킬 구독
@@ -40,6 +45,7 @@ public class CharacterSlot : MonoBehaviour, IDropHandler
     /// <param name="value">0~1값만 들어와야 합니다. <br />(쿨타임 / 남은 시간)을 float형으로 계산하여 입력해주시기 바랍니다. </param>
     public void SetSkillBar(float value)
     {
-        hpBar.value = value;
+        skillBar.value = value;
+        skillText.text = $"{value:p0}";
     }
 }
