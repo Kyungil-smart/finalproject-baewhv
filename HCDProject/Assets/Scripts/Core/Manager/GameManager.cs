@@ -20,19 +20,32 @@ public class GameManager : BaseManager<GameManager>
     public GameOverState GameOverState { get; protected set; }
     #endregion
     
-    public bool isLoading = false;
+    private int _currentChapter = 1;
+    private int _currentStage = 1;
     
-    private float sortTime = 3;
-    private int totalWave = 3;
+    public int CurrentChapter {get => _currentChapter; private set => _currentChapter = value; }
+    public int CurrentStage { get => _currentStage; private set => _currentStage = value; }
+    
+    public bool isLoading = false;
+    private bool isReady = false;
+    
     public Rampart _wall;
     private string _wallAddress = "Rampart";
     [SerializeField] private int _currentWallHp = -1;
     private Coroutine _gameRoutine;
     private CharacterRawData _characterRawData;
 
+    public HashSet<string> ids = new HashSet<string>();
+    
     private void Awake()
     {
-        Service.Get<SceneController>()?.CreateSession();
+        if (Service.Get<GameManager>() != null && Service.Get<GameManager>() != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        isReady = true;
         
         base.Awake();
 
@@ -50,14 +63,17 @@ public class GameManager : BaseManager<GameManager>
 
     private void OnEnable()
     {
-        CurrentState.AddListener(ChangeState);
-
-        CurrentState.Value = GameState.Ready;
+        if (isReady)
+        {
+            CurrentState.AddListener(ChangeState);
+            CurrentState.Value = GameState.Ready;
+        }
     }
 
     private void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
+        if (_wall != null && _wall.CurrentHp != null) _wall.CurrentHp.RemoveListener(WallHpChange);
     }
 
     private void Update()
@@ -66,8 +82,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.oKey.wasPressedThisFrame)
             {
-                _wall.SetDamage(10);
-                // OpenRewardUi();
+                ClearStage();
             }
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
@@ -115,6 +130,38 @@ public class GameManager : BaseManager<GameManager>
                 break;
         }
     }
+
+    public List<StageData> GetStageDataList(int currentChapter)
+    {
+        var stageData = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == currentChapter).Select(x => x.STAGE).Distinct().OrderBy(stage => stage).ToList();
+        
+        int bossStageInChapter = 0;
+        if (stageData != null && stageData.Count > 0)
+        {
+            bossStageInChapter  = stageData.Max();
+        }
+
+        List<StageData> uiList = new();
+
+        if (stageData != null)
+        {
+            foreach (var stageIndex in stageData)
+            {
+                uiList.Add(new StageData {Stage = stageIndex , State = CurrentStageState(currentChapter, stageIndex, bossStageInChapter)});
+            }
+        }
+        return uiList;
+    }
+    
+    
+    private StageState CurrentStageState(int chapter, int stage, int bossStage)
+    {
+        if (chapter > _currentChapter || (chapter == _currentChapter && stage > _currentStage)) return StageState.Lock;
+        else if (chapter < _currentChapter || (chapter == _currentChapter && stage < _currentStage)) return StageState.Clear;
+        else if (stage == bossStage) return StageState.Boss;
+        
+        return StageState.Current;
+    }
     
     
     private void WallHpChange(int hp)
@@ -127,23 +174,32 @@ public class GameManager : BaseManager<GameManager>
     
     public void EnterStage(int chapter, int stage)
     {
+        _currentChapter = chapter;
+        _currentStage = stage;
+        
         isLoading = true;
+
+        CurrentState.Value = GameState.Ready;
 
         SpawnWall();
         
-        List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
+        List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
         
-        HashSet<string> ids = new HashSet<string>();
+        ids = new HashSet<string>();
         
         foreach (var data in currentStage)
         {
             if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
             if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_03)) ids.Add(data.SPAWN_MONSTER_ID_03.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_04)) ids.Add(data.SPAWN_MONSTER_ID_04.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_05)) ids.Add(data.SPAWN_MONSTER_ID_05.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_06)) ids.Add(data.SPAWN_MONSTER_ID_06.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_07)) ids.Add(data.SPAWN_MONSTER_ID_07.Trim());
         }
     }
     
-    
-    private void SpawnWall()
+    public void SpawnWall()
     {
         Addressables.InstantiateAsync(_wallAddress).Completed += (handle) =>
         {
@@ -156,14 +212,16 @@ public class GameManager : BaseManager<GameManager>
                     _wall = wall;
 
                     if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
-                    else _currentWallHp = _wall.CurrentHp.Value;
+                    else _currentWallHp = _wall.CurrentHp.MaxValue;
+                    
+                    if (_wall.CurrentHp != null) _wall.CurrentHp.AddListener(WallHpChange);
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
-                    if (wallHpUi != null)
+                    if (wallHpUi != null && _wall != null)
                     {
-                        // wallHpUi.SetWallHp(_wall.CurrentHp.MaxValue, _wall.CurrentHp.Value);
-                        // _wall.CurrentHp.AddListener(wallHpUi.SetWallHP);
+                        wallHpUi.SetWallHP(_wall.CurrentHp.Value);
+                        _wall.CurrentHp.AddRatioListener(wallHpUi.SetWallHP);
                     }
                 }
             }
@@ -172,6 +230,8 @@ public class GameManager : BaseManager<GameManager>
 
     public void ClearStage()
     {
+        NextStage();
+        
         if (_wall != null)
         {
             _currentWallHp = _wall.CurrentHp.Value;
@@ -180,11 +240,29 @@ public class GameManager : BaseManager<GameManager>
             
             if (wallHpUi != null)
             {
-                // _wall.CurrentHp.RemoveListener(wallHpUi.SetWallHP);
+                //_wall.CurrentHp.RemoveListener(wallHpUi.SetWallHP);
             }
             
             Addressables.ReleaseInstance(_wall.gameObject);
             _wall = null;
+        }
+        
+        CurrentState.Value = GameState.Clear;
+    }
+
+    private void NextStage()
+    {
+        var stageData = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == _currentChapter).Select(x => x.STAGE).Distinct().ToList();
+        if (stageData != null)
+        {
+            int maxStage = stageData.Max();
+
+            if (_currentStage >= maxStage)
+            {
+                _currentChapter++;
+                _currentStage = 1;
+            }
+            else _currentStage++;
         }
     }
 
@@ -201,4 +279,10 @@ public enum GameState
     Sort,
     Clear,
     GameOver
+}
+
+public struct StageData
+{
+    public int Stage;
+    public StageState State;
 }

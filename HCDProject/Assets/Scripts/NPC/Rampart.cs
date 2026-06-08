@@ -6,11 +6,19 @@ public class Rampart : MonoBehaviour, ITargetable
 {
     public GameObject GetTargetObject { get; set; }
     
-    public RatioIntValue CurrentHp { get; set; }
+    [field: SerializeField] public RatioIntValue CurrentHp { get; set; }
     
     public void Awake()
     {
-        CurrentHp = new RatioIntValue(1000);
+        var rampartData = Service.Get<DataManager>()?.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "CASTLE_HP");
+        if (rampartData != null)
+        {
+            if (int.TryParse(rampartData.VARIABLE_VALUE, out int value))
+            {
+                CurrentHp = new RatioIntValue(value);
+                CurrentHp.Value = CurrentHp.MaxValue;
+            }
+        }
         GetTargetObject = gameObject;
     }
 
@@ -35,7 +43,6 @@ public class Rampart : MonoBehaviour, ITargetable
         return true;
     }
     
-    
     public void SetDamage(int damage)
     {
         CurrentHp.Value -= damage;
@@ -43,7 +50,7 @@ public class Rampart : MonoBehaviour, ITargetable
 
     public void SetHeal(int heal)
     {
-        
+        CurrentHp.Value += heal;
     }
 
     private void WallDestroy(int value)
