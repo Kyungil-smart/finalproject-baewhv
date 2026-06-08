@@ -15,9 +15,9 @@ public class MonsterSkillRawData
     public float SKILL_RANGE_Y;
     public float SKILL_TIME;
     public float SKILL_DURATION;
-    public string SKLL_ABT_01;
+    public string SKILL_ABT_01;
     public float SKILL_AB_01;
-    public string SKLL_ABT_02;
+    public string SKILL_ABT_02;
     public float SKILL_AB_02;
     public string SKILL_SFX;
     public string SKILL_FX;
