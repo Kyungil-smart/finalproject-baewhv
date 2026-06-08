@@ -166,7 +166,7 @@ public class BaseCharacter : BaseController
         };
 
         skills.Clear();
-        var skillTable = Service.Get<DataManager>().PlayerActiveSkillTable.data;
+        var skillTable = Service.Get<DataManager>().PlayerSkillTable.data;
         var atkData = skillTable.Find(s => s.SKILL_ID == data.ATK_ID);
         if (atkData != null) skills.Add(new Skill(atkData));
 
