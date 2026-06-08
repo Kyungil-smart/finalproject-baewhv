@@ -35,7 +35,7 @@ public class GameManager : BaseManager<GameManager>
     private Coroutine _gameRoutine;
     private CharacterRawData _characterRawData;
 
-    HashSet<string> ids = new HashSet<string>();
+    public HashSet<string> ids = new HashSet<string>();
     
     private void Awake()
     {
