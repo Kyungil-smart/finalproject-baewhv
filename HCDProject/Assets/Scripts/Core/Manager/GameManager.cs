@@ -64,7 +64,7 @@ public class GameManager : BaseManager<GameManager>
     private void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
-        _wall.CurrentHp.RemoveListener(WallHpChange);
+        if (_wall != null && _wall.CurrentHp != null) _wall.CurrentHp.RemoveListener(WallHpChange);
     }
 
     private void Update()
@@ -73,7 +73,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.oKey.wasPressedThisFrame)
             {
-                OpenRewardUi();
+                _wall.SetDamage(10);
             }
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
@@ -178,16 +178,16 @@ public class GameManager : BaseManager<GameManager>
                     _wall = wall;
 
                     if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
-                    else _currentWallHp = _wall.CurrentHp.Value;
+                    else _currentWallHp = _wall.CurrentHp.MaxValue;
                     
                     if (_wall.CurrentHp != null) _wall.CurrentHp.AddListener(WallHpChange);
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
-                    if (wallHpUi != null)
+                    if (wallHpUi != null && _wall != null)
                     {
-                        wallHpUi.SetWallHP(_wall.currentHp.Value, _wall.MaxHp);
-                        _wall.currentHp.AddListener(wallHpUi.UpdateWallHP);
+                        wallHpUi.SetWallHP(_wall.CurrentHp.Value);
+                        _wall.CurrentHp.AddRatioListener(wallHpUi.SetWallHP);
                     }
                 }
             }
@@ -205,7 +205,7 @@ public class GameManager : BaseManager<GameManager>
             var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
             if (wallHpUi != null)
             {
-                // _wall.currentHp.RemoveListener(wallHpUi.UpdateWallHP);
+                //_wall.CurrentHp.RemoveListener(wallHpUi.SetWallHP);
             }
             
 
