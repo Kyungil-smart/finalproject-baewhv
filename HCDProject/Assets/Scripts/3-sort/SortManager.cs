@@ -9,10 +9,19 @@ public class SortManager : BaseManager<SortManager>
 
     public ObserveValue<bool> isEndSort = new();
 
+    private ObserveValue<int> leftCount = new();
+
     protected override void Awake()
     {
         base.Awake();
         isEndSort.Value = false;
+
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        if (bottomUI != null)
+        {
+            leftCount.AddListener(bottomUI.SetLeftSortCountText);
+            CurrentCombo.AddListener(bottomUI.SetComboText);
+        }
     }
 
     private void Start()
@@ -88,7 +97,11 @@ public class SortManager : BaseManager<SortManager>
             Destroy(block);
         }
 
+        AddCombo(1);
+
         RemainingSorts.Value--;
+
+        leftCount.Value = RemainingSorts.Value;
 
         if (RemainingSorts.Value <= 0)
         {
@@ -102,6 +115,8 @@ public class SortManager : BaseManager<SortManager>
     {
         isEndSort.Value = false;
         RemainingSorts.Value = 6;
+        leftCount.Value = RemainingSorts.Value;
+        CurrentCombo.Value = 0;
 
         Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
 
@@ -135,7 +150,23 @@ public class SortManager : BaseManager<SortManager>
 
     private void ApplyBuffToPlayer(CharacterSlot slot, string buffName)
     {
-        Debug.Log($"{slot.gameObject.name}에 {buffName} 타입의 버프 부여");
+        var objectData = Service.Get<DataManager>()?.ObjectTable.data.Find(x => x.OBJ_NAME == buffName);
+
+        if (objectData == null)
+        {
+            Debug.Log($"{buffName}을 찾지 못함");
+            return;
+        }
+
+        var objType = objectData.OBJ_TYPE;
+        var objAbility = objectData.OBJ_ABILITY;
+        var objWeight = objectData.OBJ_WEIGHT;
+
+        var comboCount = CurrentCombo.Value;
+
+        var calculatedBonus = objAbility + (objWeight * comboCount);
+
+        Debug.Log($"타입: {objType} | 계산식: {objAbility} + ({objWeight} * {comboCount}콤보) | 최종 적용치: {calculatedBonus}");
     }
 
     private string GetCleanName(string rawName)
