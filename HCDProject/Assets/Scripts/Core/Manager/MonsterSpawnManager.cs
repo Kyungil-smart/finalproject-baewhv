@@ -33,10 +33,12 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 
     private void Start()
     {
+        /*
         StageMonster(new List<string>(Service.Get<GameManager>().ids), () =>
         {
             Service.Get<GameManager>().isLoading = false;
         });
+        */
     }
 
     private void Update()
