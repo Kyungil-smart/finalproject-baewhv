@@ -3,27 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.InputSystem;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 {
+    private Dictionary<string, GameObject> _stageMonsterPrefabs = new Dictionary<string, GameObject>();
+    private Dictionary<string, AsyncOperationHandle<GameObject>> _monsterHandles = new Dictionary<string, AsyncOperationHandle<GameObject>>();
+    
     [SerializeField] private float _spawnOffsetY;
-    [SerializeField] private float _spawnDelay;
+    private float _spawnDelay;
     [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
     
-    [field:SerializeField] public int SpawnCount { get; set; }
+    public int SpawnCount { get; set; }
     
     public ObserveValue<int> monsterCount = new ObserveValue<int>();
     public ObserveValue<int> currentWave = new ObserveValue<int>();
     
-    [SerializeField] private List<string> _monsterList = new List<string>();
-    [SerializeField] private List<int> _spawnCountList = new List<int>();
+    [SerializeField] private List<string> _waveMonsterList = new List<string>();
+    [SerializeField] private List<int> _waveSpawnCountList = new List<int>();
 
     protected override void Awake()
     {
         base.Awake();
         
         currentWave.Value = 0;
+    }
+
+    private void Start()
+    {
+        StageMonster(new List<string>(Service.Get<GameManager>().ids), () =>
+        {
+            Service.Get<GameManager>().isLoading = false;
+        });
     }
 
     private void Update()
@@ -40,12 +53,11 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         
         currentWave.Value++;
         
-        AddMonsterData(1, 1, currentWave.Value);
+        AddMonsterData(Service.Get<GameManager>().CurrentChapter, Service.Get<GameManager>().CurrentStage, currentWave.Value);
         
-
-        if (_monsterList.Count > 0 && _spawnCountList.Count > 0)
+        if (_waveMonsterList.Count > 0 && _waveSpawnCountList.Count > 0)
         {
-            StartCoroutine(SpawnMonster(_monsterList, _spawnCountList));   
+            StartCoroutine(SpawnMonster(_waveMonsterList, _waveSpawnCountList));   
         }
     }
 
@@ -64,7 +76,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
             if (!string.IsNullOrEmpty(monsterList[i]))
             {
                 string address = monsterList[i].Trim();
-                prefabs[i] = Service.Get<MonsterManager>().GetMonsterPrefab(address);
+                prefabs.Add(GetMonsterPrefab(address));
                 MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == monsterList[i].Trim());
 
                 for (int j = 0; j < spawnCountList[i]; j++)
@@ -84,29 +96,95 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         }
     }
     
-    public void AddMonsterData(int chapter, int stage, int wave)
+    private void AddMonsterData(int chapter, int stage, int wave)
     {
-        if (Service.Get<GameManager>().isLoading) return; 
+        if (Service.Get<GameManager>().isLoading) return;
+        
+        _waveMonsterList.Clear();
+        _waveSpawnCountList.Clear();
         
         MapRawData waveData = Service.Get<DataManager>()?.MapTable.data.Find(x => x.CHAPTER == chapter  && x.STAGE == stage && x.WAVE == wave);
         if (waveData == null) return;
 
-        _monsterList.Add(waveData.SPAWN_MONSTER_ID_01);
-        _monsterList.Add(waveData.SPAWN_MONSTER_ID_02);
-        _monsterList.Add(waveData.SPAWN_MONSTER_ID_03);
-        _monsterList.Add(waveData.SPAWN_MONSTER_ID_04);
-        _monsterList.Add(waveData.SPAWN_MONSTER_ID_05);
-        _monsterList.Add(waveData.SPAWN_MONSTER_ID_06);
-        _monsterList.Add(waveData.SPAWN_MONSTER_ID_07);
-        _spawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_01);
-        _spawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_02);
-        _spawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_03);
-        _spawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_04);
-        _spawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_05);
-        _spawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_06);
-        _spawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_07);
+        _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_01);
+        _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_02);
+        _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_03);
+        _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_04);
+        _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_05);
+        _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_06);
+        _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_07);
+        _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_01);
+        _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_02);
+        _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_03);
+        _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_04);
+        _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_05);
+        _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_06);
+        _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_07);
         
         _spawnDelay = waveData.WAVE_RESPAWN_TIME;
+    }
+    
+    public void StageMonster(List<string> currentStageMonsterIds, Action onComplete)
+    {
+        List<string> release = new List<string>();
+        
+        foreach (var id in _stageMonsterPrefabs.Keys)
+        {
+            if (!currentStageMonsterIds.Contains(id)) release.Add(id);
+        }
+
+        foreach (var id in release)
+        {
+            if (_monsterHandles.TryGetValue(id, out var handle))
+            {
+                Addressables.Release(handle);
+                _monsterHandles.Remove(id);
+                _stageMonsterPrefabs.Remove(id);
+                Debug.Log($"release 성공 : {id}");
+            }
+        }
+
+        List<string> loadTarget = new List<string>();
+        
+        foreach (var id in currentStageMonsterIds)
+        {
+            if (!_stageMonsterPrefabs.ContainsKey(id)) loadTarget.Add(id);
+        }
+        
+        Debug.Log(loadTarget.Count);
+
+        if (loadTarget.Count == 0)
+        {
+            onComplete?.Invoke();
+            return;
+        }
+        
+        int maxLoadCount = loadTarget.Count;
+        int currentLoadCount = 0;
+        
+        foreach (var loadId in loadTarget)
+        {
+            Addressables.LoadAssetAsync<GameObject>(loadId).Completed += (handle) =>
+            {
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    _stageMonsterPrefabs[loadId] = handle.Result;
+                    _monsterHandles[loadId] = handle;
+                    Debug.Log($"load 성공 : {loadId}");
+                }
+                else Debug.Log($"load 실패 :  {loadId}");
+
+                currentLoadCount++;
+                if (currentLoadCount >= maxLoadCount) onComplete?.Invoke();
+            };
+        }
+    }
+
+    public GameObject GetMonsterPrefab(string monsterAddress)
+    {
+        if (_stageMonsterPrefabs.TryGetValue(monsterAddress, out GameObject prefab)) return prefab;
+        
+        return null;
     }
 
     private Vector3 RandomPosition()
