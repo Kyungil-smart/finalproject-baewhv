@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -34,10 +35,12 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     public void StageMap()
     {
         var stageData = Service.Get<GameManager>()?.GetStageDataList(_currentChapter);
-        
+       
         if (stageData == null) return;
+        
+        int loopCount = Mathf.Min(_stageButtons.Count, stageData.Count);
 
-        for (int i = 0; i < _stageButtons.Count; i++)
+        for (int i = 0; i < loopCount; i++)
         {
             var data = stageData[i];
             Button stageButton = _stageButtons[i];
@@ -46,7 +49,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
             if (stageText != null) stageText.text = $"{_currentChapter} - {data.Stage}";
             
-            stageButton.interactable = data.State == StageState.Current;
+            stageButton.interactable = data.State == StageState.Current || data.State == StageState.Boss;
 
             if (stageImage != null)
             {
@@ -93,8 +96,8 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
     private void EnterStage(int chapter, int stage)
     {
+        Service.Get<GameManager>()?.EnterStage(chapter, stage);
         Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
-        // Service.Get<GameManager>()?.EnterStage(chapter, stage);
     }
     
     // 추후 무한모드 제작시 이용 가능성 정도는 있음

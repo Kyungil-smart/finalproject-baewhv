@@ -24,21 +24,28 @@ public class GameManager : BaseManager<GameManager>
     private int _currentStage = 1;
     
     public int CurrentChapter {get => _currentChapter; private set => _currentChapter = value; }
-    public int CurrentStage {get => _currentStage; private set => _currentStage = value; }
+    public int CurrentStage { get => _currentStage; private set => _currentStage = value; }
     
     public bool isLoading = false;
+    private bool isReady = false;
     
-    private float sortTime = 3;
-    private int totalWave = 3;
     public Rampart _wall;
     private string _wallAddress = "Rampart";
     [SerializeField] private int _currentWallHp = -1;
     private Coroutine _gameRoutine;
     private CharacterRawData _characterRawData;
 
+    HashSet<string> ids = new HashSet<string>();
+    
     private void Awake()
     {
-        Service.Get<SceneController>()?.CreateSession();
+        if (Service.Get<GameManager>() != null && Service.Get<GameManager>() != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        isReady = true;
         
         base.Awake();
 
@@ -56,9 +63,11 @@ public class GameManager : BaseManager<GameManager>
 
     private void OnEnable()
     {
-        CurrentState.AddListener(ChangeState);
-
-        CurrentState.Value = GameState.Ready;
+        if (isReady)
+        {
+            CurrentState.AddListener(ChangeState);
+            CurrentState.Value = GameState.Ready;
+        }
     }
 
     private void OnDisable()
@@ -73,7 +82,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.oKey.wasPressedThisFrame)
             {
-                _wall.SetDamage(10);
+                ClearStage();
             }
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
@@ -163,7 +172,32 @@ public class GameManager : BaseManager<GameManager>
         }
     }
     
-    
+    public void EnterStage(int chapter, int stage)
+    {
+        _currentChapter = chapter;
+        _currentStage = stage;
+        
+        isLoading = true;
+
+        CurrentState.Value = GameState.Ready;
+
+        SpawnWall();
+        
+        List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+        
+        ids = new HashSet<string>();
+        
+        foreach (var data in currentStage)
+        {
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_03)) ids.Add(data.SPAWN_MONSTER_ID_03.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_04)) ids.Add(data.SPAWN_MONSTER_ID_04.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_05)) ids.Add(data.SPAWN_MONSTER_ID_05.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_06)) ids.Add(data.SPAWN_MONSTER_ID_06.Trim());
+            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_07)) ids.Add(data.SPAWN_MONSTER_ID_07.Trim());
+        }
+    }
     
     public void SpawnWall()
     {
@@ -196,6 +230,8 @@ public class GameManager : BaseManager<GameManager>
 
     public void ClearStage()
     {
+        NextStage();
+        
         if (_wall != null)
         {
             _currentWallHp = _wall.CurrentHp.Value;
@@ -209,6 +245,24 @@ public class GameManager : BaseManager<GameManager>
             
             Addressables.ReleaseInstance(_wall.gameObject);
             _wall = null;
+        }
+        
+        CurrentState.Value = GameState.Clear;
+    }
+
+    private void NextStage()
+    {
+        var stageData = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == _currentChapter).Select(x => x.STAGE).Distinct().ToList();
+        if (stageData != null)
+        {
+            int maxStage = stageData.Max();
+
+            if (_currentStage >= maxStage)
+            {
+                _currentChapter++;
+                _currentStage = 1;
+            }
+            else _currentStage++;
         }
     }
 

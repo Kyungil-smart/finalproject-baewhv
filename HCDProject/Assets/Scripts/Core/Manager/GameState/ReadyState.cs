@@ -20,6 +20,5 @@ public class ReadyState : IState
 
     public void Exit()
     {
-        _manager.SpawnWall();
     }
 }
