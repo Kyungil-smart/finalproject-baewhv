@@ -140,16 +140,6 @@ public class GameManager : BaseManager<GameManager>
             if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
             if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
         }
-        
-        Service.Get<MonsterManager>()?.StageMonster(new List<string>(ids), () =>
-        {
-            isLoading = false;
-        
-            foreach (var id in ids)
-            {
-                Debug.Log($"로딩 성공 : {id}");
-            }
-        });
     }
     
     
