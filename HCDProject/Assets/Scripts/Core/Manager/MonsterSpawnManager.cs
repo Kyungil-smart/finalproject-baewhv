@@ -13,7 +13,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     
     [field:SerializeField] public int SpawnCount { get; set; }
     
-    private bool _isWaving = false;
     public ObserveValue<int> monsterCount = new ObserveValue<int>();
     public ObserveValue<int> currentWave = new ObserveValue<int>();
     
@@ -43,7 +42,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         
         AddMonsterData(1, 1, currentWave.Value);
         
-        _isWaving = true;
 
         if (_monsterList.Count > 0 && _spawnCountList.Count > 0)
         {
