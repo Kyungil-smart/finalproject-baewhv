@@ -7,6 +7,7 @@ public class BaseMonster : BaseController
 {
     [field:SerializeField] public MonsterRawData Stat { get; private set;}
     public int MonsterID { get; private set; }
+    public int PrefabIndex { get; set; }
     
     #region State
     private protected StateMachine State;
@@ -16,7 +17,7 @@ public class BaseMonster : BaseController
     public MonsterAttackState AttackState { get; protected set; }
     public MonsterDieState DieState { get; protected set; }
     #endregion
-
+    
     private float _timer;
     public Vector3 Target { get; set; }
     
@@ -25,14 +26,27 @@ public class BaseMonster : BaseController
     public void InitStatus(MonsterRawData data)
     {
         Stat = data;
+        InitSkill(data);
         
+        // 몬스터의 기본 데이터 초기화
         // 데이터를 받아와서 사용할 위치
         MonsterID = int.Parse(Stat.MONSTER_ID) - 1000;
         gameObject.name = Stat.MONSTER_NAME;
-        CurrentHp.Value = data.HP;
+        CurrentHp.Value = Stat.HP;
         Movement.Agent.speed = Stat.MOVE_SPEED;
         
         // Stat.ATK = data.ATK;
+    }
+    
+    private void InitSkill(MonsterRawData data)
+    {
+        // 몬스터의 공격(스킬) 데이터 초기화
+        var skillDataTable = Service.Get<DataManager>().MonsterSkillTable.data;
+        MonsterSkillRawData atkData = skillDataTable.Find(x => x.SKILL_ID == data.ATK_ID);
+        if (atkData != null) skills.Add(new Skill(atkData));
+
+        MonsterSkillRawData skillData = skillDataTable.Find(x => x.SKILL_ID == data.SKILL_ID);
+        if (skillData != null) skills.Add(new Skill(skillData));
     }
     
     public override void SetCurrentTarget(ITargetable target)
@@ -118,6 +132,59 @@ public class BaseMonster : BaseController
         return target;
     }
     
+    public override void UseSkill(int index)
+    {
+        if (GetCurrentTarget == null) return;
+
+        if (skills[index].ATK_TYPE == EAtkType.NORMAL)
+        {
+            GetCurrentTarget.SetDamage(Stat.ATK);
+        } 
+        else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
+        {
+            RangeDetect(index);
+            
+            if (Count <= 0) return;
+
+            for (int i = 0; i < Count; i++)
+            {
+                if (Colliders[i].TryGetComponent(out ITargetable target))
+                {
+                    target.SetHeal((int)skills[index].SKILL_AB_01);
+                }
+            }
+        }
+        else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK)
+        {
+            RangeDetect(index);
+            
+            if (Count <= 0) return;
+
+            for (int i = 0; i < Count; i++)
+            {
+                if (Colliders[i].TryGetComponent(out BaseMonster controller))
+                {
+                    controller.Stat.ATK += (int)skills[index].SKILL_AB_01;
+                }
+            }
+        }
+    }
+
+    public void RangeDetect(int index)
+    {
+        ContactFilter2D filter = new ContactFilter2D();
+
+        if (skills[index].SKILL_AT == ETargetType.ENEMY)
+        {
+            filter = EnemyFilter;
+        }
+        else if (skills[index].SKILL_AT == ETargetType.ALLY)
+        {
+            filter = AllyFilter;
+        }
+
+        Count = Physics2D.OverlapCircle(transform.position, skills[index].SKILL_IS, filter, Colliders);
+    }
 
     private void ResetTarget()
     {

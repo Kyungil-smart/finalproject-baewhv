@@ -9,16 +9,15 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 {
     [SerializeField] private float _spawnOffsetY;
     [SerializeField] private float _spawnDelay;
-    [SerializeField] private List<GameObject> _monsterPrefabs = new List<GameObject>();
+    [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
     
     [field:SerializeField] public int SpawnCount { get; set; }
     
-    private bool _isWaving = false;
     public ObserveValue<int> monsterCount = new ObserveValue<int>();
     public ObserveValue<int> currentWave = new ObserveValue<int>();
     
-    private List<string> _monsterList = new List<string>();
-    private List<int> _spawnCountList = new List<int>();
+    [SerializeField] private List<string> _monsterList = new List<string>();
+    [SerializeField] private List<int> _spawnCountList = new List<int>();
 
     protected override void Awake()
     {
@@ -41,14 +40,8 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         
         currentWave.Value++;
         
-        // 임시로 Wave가 시작될 때 데이터를 불러와 리스트에 설정하도록 작성
-        // AddMonsterData(1, 1, currentWave.Value);
+        AddMonsterData(1, 1, currentWave.Value);
         
-        _isWaving = true;
-
-        _monsterList.Add("1000");
-        _spawnCountList.Add(5);
-        _spawnDelay = 1f;
 
         if (_monsterList.Count > 0 && _spawnCountList.Count > 0)
         {
@@ -56,26 +49,32 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         }
     }
 
-    public void DespawnMonster(int monsterID, GameObject monster)
+    public void DespawnMonster(int prefabIndex, GameObject monster)
     {
-        Service.Get<PoolManager>().ReturnPool(_monsterPrefabs[monsterID], monster);
+        Service.Get<PoolManager>().ReturnPool(prefabs[prefabIndex], monster);
         monsterCount.Value--;
     }
 
     private IEnumerator SpawnMonster(List<string> monsterList, List<int> spawnCountList)
     {
+        prefabs.Clear();
+        
         for (int i = 0; i < monsterList.Count; i++)
         {
             if (!string.IsNullOrEmpty(monsterList[i]))
             {
                 string address = monsterList[i].Trim();
-                // GameObject prefab = Service.Get<MonsterManager>().GetMonsterPrefab(address);
+                prefabs[i] = Service.Get<MonsterManager>().GetMonsterPrefab(address);
                 MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == monsterList[i].Trim());
 
                 for (int j = 0; j < spawnCountList[i]; j++)
                 {
-                    GameObject obj = Service.Get<PoolManager>().GetPool(_monsterPrefabs[i], RandomPosition(), Quaternion.identity);
-                    obj.GetComponent<BaseMonster>().InitStatus(stat);
+                    GameObject obj = Service.Get<PoolManager>().GetPool(prefabs[i], RandomPosition(), Quaternion.identity);
+                    if (obj.TryGetComponent(out BaseMonster monster))
+                    {
+                        monster.PrefabIndex = i;
+                        monster.InitStatus(stat);
+                    }
                     
                     monsterCount.Value++;
                     
@@ -87,7 +86,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     
     public void AddMonsterData(int chapter, int stage, int wave)
     {
-        // if (Service.Get<GameManager>()?.isLoading) return; 
+        if (Service.Get<GameManager>().isLoading) return; 
         
         MapRawData waveData = Service.Get<DataManager>()?.MapTable.data.Find(x => x.CHAPTER == chapter  && x.STAGE == stage && x.WAVE == wave);
         if (waveData == null) return;
