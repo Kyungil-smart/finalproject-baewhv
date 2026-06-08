@@ -20,8 +20,8 @@ public class RatioIntValue : ObserveValue<int>
 
     public RatioIntValue(int maxValue)
     {
-        _maxValue = maxValue;
         AddListener(OnChangeValue);
+        MaxValue = maxValue;
     }
 
     public RatioIntValue(int maxValue, int currentValue) : this(maxValue)
