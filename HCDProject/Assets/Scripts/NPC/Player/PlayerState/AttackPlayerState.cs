@@ -13,7 +13,9 @@ public class AttackPlayerState : IState
 
     public void Enter()
     {
-        Debug.Log("상태: Attack 진입");
+        Debug.Log($"[{_owner.gameObject.name}] Attack 진입 " +
+              $"/ FindType: {_owner.FindType} " +
+              $"/ 타겟: {_owner.GetCurrentTarget?.GetTargetObject.name}");
         coolCount = 0;
     }
 
