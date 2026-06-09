@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Vietnamese (vi)
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Locale
   m_Identifier:
-    m_Code: VN
+    m_Code: vi
   m_Metadata:
     m_Items: []
   m_LocaleName: Vietnamese (vi)
   m_CustomFormatCultureCode: 
   m_UseCustomFormatter: 0
-  m_SortOrder: 4
+  m_SortOrder: 3
   references:
     version: 2
     RefIds: []

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Korean (ko)
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Locale
   m_Identifier:
-    m_Code: KOR
+    m_Code: ko
   m_Metadata:
     m_Items: []
   m_LocaleName: Korean (ko)
   m_CustomFormatCultureCode: 
   m_UseCustomFormatter: 0
-  m_SortOrder: 2
+  m_SortOrder: 0
   references:
     version: 2
     RefIds: []

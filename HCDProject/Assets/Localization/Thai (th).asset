@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Thai (th)
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Locale
   m_Identifier:
-    m_Code: THA
+    m_Code: th
   m_Metadata:
     m_Items: []
   m_LocaleName: Thai (th)
   m_CustomFormatCultureCode: 
   m_UseCustomFormatter: 0
-  m_SortOrder: 3
+  m_SortOrder: 2
   references:
     version: 2
     RefIds: []

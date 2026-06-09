@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: English (en)
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Locale
   m_Identifier:
-    m_Code: ENG
+    m_Code: en
   m_Metadata:
     m_Items: []
   m_LocaleName: English (en)
   m_CustomFormatCultureCode: 
   m_UseCustomFormatter: 0
-  m_SortOrder: 0
+  m_SortOrder: 1
   references:
     version: 2
     RefIds: []

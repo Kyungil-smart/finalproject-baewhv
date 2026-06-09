@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
   m_SharedTableData: {fileID: 11400000, guid: 4ccbdbf1878cce04a8441eeb10934d6b, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: fbc670661b307ea4ab9db262ecdf8139, type: 2}
-  - {fileID: 11400000, guid: df010a5c7fe0ca04fbdd86d896b8a225, type: 2}
-  - {fileID: 11400000, guid: 95bf44dcde638fb45b6d72bf5c61aa48, type: 2}
-  - {fileID: 11400000, guid: c763e1c8c25d9a942842413e66dcd017, type: 2}
-  - {fileID: 11400000, guid: d38d95660bece1f4fbfb6a89d1589d9b, type: 2}
+  - {fileID: 11400000, guid: 4d1eec24ab605344b8cafed3fd13b40d, type: 2}
+  - {fileID: 11400000, guid: f50681f69c279844299504385de4ad56, type: 2}
+  - {fileID: 11400000, guid: fa3628012d7b4854cbcc2377e4c0231e, type: 2}
+  - {fileID: 11400000, guid: e4c1ffeb374f6434d9133a91e7c6018b, type: 2}
+  - {fileID: 11400000, guid: 8a257a0c1f91d2543bda4c9b22188370, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:
