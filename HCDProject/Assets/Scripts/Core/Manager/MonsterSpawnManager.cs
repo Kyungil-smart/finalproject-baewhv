@@ -16,8 +16,10 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     private float _spawnDelay;
     [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
     
+    // 생성 되어야할 총 몬스터 수
     public int SpawnCount { get; set; }
     
+    // 남은 몬스터 수
     public ObserveValue<int> monsterCount = new ObserveValue<int>();
     public ObserveValue<int> currentWave = new ObserveValue<int>();
     
@@ -39,14 +41,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         });
     }
 
-    private void Update()
-    {
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            WaveStart();    
-        }
-    }
-
     public void WaveStart()
     {
         if (currentWave.Value >= 3) return;
@@ -57,6 +51,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         
         if (_waveMonsterList.Count > 0 && _waveSpawnCountList.Count > 0)
         {
+            SpawnCountCheck();
             StartCoroutine(SpawnMonster(_waveMonsterList, _waveSpawnCountList));   
         }
     }
@@ -87,8 +82,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
                         monster.PrefabIndex = i;
                         monster.InitStatus(stat);
                     }
-                    
-                    monsterCount.Value++;
                     
                     yield return new WaitForSeconds(_spawnDelay);
                 }
@@ -185,6 +178,19 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         if (_stageMonsterPrefabs.TryGetValue(monsterAddress, out GameObject prefab)) return prefab;
         
         return null;
+    }
+
+    private void SpawnCountCheck()
+    {
+        SpawnCount = 0;
+
+        foreach (int count in _waveSpawnCountList)
+        {
+            if (count == 0) continue;
+            SpawnCount += count;
+        }
+
+        monsterCount.Value = SpawnCount;
     }
 
     private Vector3 RandomPosition()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.InputSystem;
 
 public partial class PlayerManager : BaseManager<PlayerManager>
 {
@@ -19,6 +20,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     BaseCharacter[] _characters;
 
+    Coroutine[] _coroutines;
+
     public ObserveValue<bool> isAllSpawn = new();
 
     public BaseCharacter[] Characters => _characters;
@@ -29,6 +32,29 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         base.Awake();
         isAllSpawn.Value = false;
         LoadCharcterPrefab();
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.digit1Key.wasPressedThisFrame)
+        {
+            _characters[0]?.TryUseActiveSkill();
+        }
+        if(Keyboard.current.digit2Key.wasPressedThisFrame)
+        {
+            _characters[1]?.TryUseActiveSkill();
+        }
+
+        if (Keyboard.current.digit3Key.wasPressedThisFrame)
+        {
+            _characters[2]?.TryDotFieldSkill();
+        }
+
+        if (Keyboard.current.digit4Key.wasPressedThisFrame)
+        {
+            _characters[3]?.TryUseActiveSkill();
+        }
+        
     }
 
     private void LoadCharcterPrefab()
@@ -53,6 +79,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     {
         var data = Service.Get<DataManager>().CharacterTable.data;
         _characters = new BaseCharacter[data.Count];
+        _coroutines = new Coroutine[data.Count];
         var slots = Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots;
 
         for (int i = 0; i < data.Count; i++)
@@ -87,7 +114,17 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     public void StartRevive(BaseCharacter character)
     {
-        StartCoroutine(ReviveCoroutine(character));
+        int index = Array.IndexOf(_characters, character);
+        _coroutines[index] = StartCoroutine(ReviveCoroutine(character));
+    }
+
+    public void ImmediateRevive(BaseCharacter character) // 플레이어 부활
+    {
+        int index = Array.IndexOf(_characters, character);
+        if (_coroutines[index] != null)
+        StopCoroutine(_coroutines[index]);
+        character.gameObject.SetActive(true);
+        character.state.ChangeState(character.spawn);
     }
 
     private IEnumerator ReviveCoroutine(BaseCharacter character)

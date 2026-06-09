@@ -53,6 +53,11 @@ public class Rampart : MonoBehaviour, ITargetable
         CurrentHp.Value += heal;
     }
 
+    public float GetRadius()
+    {
+        return 0f;
+    }
+
     private void WallDestroy(int value)
     {
         if (value <= 0)

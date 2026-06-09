@@ -44,12 +44,15 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     private List<ITargetable> _targets = new List<ITargetable>();
 
+    private CircleCollider2D _baseCollider;
+
     protected int Count;
 
     protected virtual void Awake()
     {
         GetTargetObject = gameObject;
         Movement = GetComponent<CharacterMovement>();
+        _baseCollider = GetComponent<CircleCollider2D>();
         Count = 0;
 
         EnemyFilter.useLayerMask = true;
@@ -130,6 +133,11 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         int overHp = Mathf.Min(_stats._maxHp, CurrentHp.Value + heal);
 
         CurrentHp.Value = overHp;
+    }
+    
+    public float GetRadius()
+    {
+        return _baseCollider.radius;
     }
 
     protected void OnDrawGizmos()
