@@ -14,29 +14,27 @@ public class RatioIntValue : ObserveValue<int>
         set
         {
             _maxValue = value;
-            OnRatioChange.Invoke(_data/(float)_maxValue);
+            OnRatioChange?.Invoke(_data/(float)_maxValue);
         }
     }
 
-    public RatioIntValue(int maxValue)
+    public RatioIntValue(int maxValue) : this(maxValue, maxValue) {}
+    public RatioIntValue(int maxValue, int currentValue)
     {
         AddListener(OnChangeValue);
         MaxValue = maxValue;
-    }
-
-    public RatioIntValue(int maxValue, int currentValue) : this(maxValue)
-    {
-        _data = currentValue;
+        Value = currentValue;
     }
 
     private void OnChangeValue(int value)
     {
-        OnRatioChange.Invoke(_data/(float)_maxValue);
+        OnRatioChange?.Invoke(value/(float)_maxValue);
     }
 
     public void AddRatioListener(UnityAction<float> action)
     {
         OnRatioChange.AddListener(action);
+        OnRatioChange?.Invoke(_data/(float)_maxValue);
     }
 }
 
@@ -52,28 +50,27 @@ public class RatioFloatValue : ObserveValue<float>
         set
         {
             _maxValue = value;
-            OnRatioChange.Invoke(_data/_maxValue);
+            OnRatioChange?.Invoke(_data/_maxValue);
         }
     }
 
-    public RatioFloatValue(float maxValue)
+    
+    public RatioFloatValue(float maxValue) : this(maxValue, maxValue) {}
+    public RatioFloatValue(float maxValue, float currentValue)
     {
-        _maxValue = maxValue;
         AddListener(OnChangeValue);
-    }
-
-    public RatioFloatValue(int maxValue, int currentValue) : this(maxValue)
-    {
-        _data = currentValue;
+        MaxValue = maxValue;
+        Value = currentValue;
     }
 
     private void OnChangeValue(float value)
     {
-        OnRatioChange.Invoke(_data/_maxValue);
+        OnRatioChange.Invoke(value/_maxValue);
     }
     
     public void AddRatioListener(UnityAction<float> action)
     {
         OnRatioChange.AddListener(action);
+        OnRatioChange?.Invoke(_data/_maxValue);
     }
 }
