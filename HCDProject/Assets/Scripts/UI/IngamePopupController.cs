@@ -7,7 +7,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     [SerializeField] private GameObject ClearLogo;
     [SerializeField] private GameObject FailLogo;
     
-    [SerializeField] private GameObject RewardPopup;
+    [SerializeField] private RewardUIController RewardPopup;
     [SerializeField] private GameObject ClearPopup;
     [SerializeField] private GameObject SortWarningPopup;
      
@@ -43,7 +43,11 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
 
     public void OnRewardPopup()
     {
-        RewardPopup.SetActive(true);
+        RewardPopup.SetRelicReward();
+    }
+    public void OnLevelUpPopup()
+    {
+        RewardPopup.SetLevelUpReward();
     }
 
     public void OnClearPopup()

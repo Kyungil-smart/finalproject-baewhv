@@ -1,16 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public partial class PlayerManager
 {
     private RatioIntValue exp;
     private ObserveValue<int> level = new ();
     private List<StoryExpRawData> LevelData;
+    private Dictionary<string, int> LevelUpRewards = new(); 
+    private List<LevelRewardRawData> currentRandomRewards;
 
     private void Start()
     {
         StartEXP();
+    }
+
+    private void FixedUpdate()
+    {
+        if (Keyboard.current.numpadPlusKey.wasPressedThisFrame)
+        {
+            GetExp(10);
+        }
     }
 
     private void StartEXP()
@@ -44,8 +55,43 @@ public partial class PlayerManager
     {
         if (exp.Value >= LevelData[level.Value - 1].TOTAL_EXP)
         {
-            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnRewardPopup();
+            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnLevelUpPopup();
         }
+    }
+    
+    public List<LevelRewardRawData> GetLevelUpRewards()
+    {
+        var rawRewards = Service.Get<DataManager>()?.GetRandomLevelRewards();
+
+        if (rawRewards != null)
+        {
+            currentRandomRewards = rawRewards;
+        }
+
+        return currentRandomRewards;
+    }
+
+    public void OnSelectLevelUpReward(int selectedIndex)
+    {
+        if (currentRandomRewards == null || selectedIndex >= currentRandomRewards.Count)
+        {
+            Debug.Log("데이터가 없습니다");
+            return;
+        }
+        
+        Service.Get<DataManager>()?.SelectLevelReward(currentRandomRewards[selectedIndex].LEVEL_ID);
+
+        string rewardId = currentRandomRewards[selectedIndex].LEVEL_ID;
+        if (LevelUpRewards.ContainsKey(rewardId))
+        {
+            LevelUpRewards[rewardId]++;
+        }
+        else
+        {
+            LevelUpRewards.Add(rewardId, 1);
+        }
+
+        currentRandomRewards = null;
     }
     
 }
