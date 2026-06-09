@@ -9,7 +9,7 @@ public class IdlePlayerState : IState
     public IdlePlayerState(BaseCharacter owner)
     {
         _owner = owner;
-        
+
     }
 
     public void Enter()
@@ -25,10 +25,10 @@ public class IdlePlayerState : IState
 
     public void Update()
     {
+        float homeDist = Vector2.Distance(_owner.transform.position, _owner.homePosition);
         if (_owner.GetCurrentTarget == null)
         {
-            float dist = Vector2.Distance(_owner.transform.position, _owner.homePosition);
-            if(dist > 0.2f)
+            if (homeDist > 0.2f)
             {
                 _owner.Movement.Move(_owner.homePosition);
             }
@@ -38,8 +38,10 @@ public class IdlePlayerState : IState
         if (target != null)
         {
             _owner.SetCurrentTarget(target);
-
-            if (_owner.FindType == EFindType.LowestHp)
+            float surfaceDist = Vector2.Distance(_owner.transform.position,
+                _owner.GetCurrentTarget.GetTargetObject.transform.position)
+                - _owner.GetRadius() - _owner.GetCurrentTarget.GetRadius();
+            if (_owner.FindType == EFindType.LowestHp || surfaceDist <= _owner.CurrentSkillRange)
             {
                 _owner.state.ChangeState(_owner.attack);
             }

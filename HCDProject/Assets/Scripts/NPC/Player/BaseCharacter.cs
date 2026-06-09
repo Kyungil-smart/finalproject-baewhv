@@ -369,8 +369,7 @@ public class BaseCharacter : BaseController
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        //if (skills == null || skills.Count == 0) return null;
-        List<ITargetable> targets = Detect(skills[index].SKILL_IS, skills[index].SKILL_AT);
+        List<ITargetable> targets = Detect(skills[index].SKILL_IS + GetRadius(), skills[index].SKILL_AT);
         ITargetable nearest = null;
 
         if (FindType == EFindType.LowestHp)
@@ -396,7 +395,8 @@ public class BaseCharacter : BaseController
 
         foreach (ITargetable target in targets)
         {
-            float dis = (this.transform.position - target.GetTargetObject.transform.position).sqrMagnitude;
+            float dis = (this.transform.position - target.GetTargetObject.transform.position).magnitude
+                - GetRadius() - target.GetRadius();
 
             switch (FindType)
             {
@@ -442,9 +442,7 @@ public class BaseCharacter : BaseController
         CurrentHp.Value = Stats._maxHp;
 
         _isFirstCombat = _playerStats._hasFirstCombat;
-        Debug.Log($"before: {_findType}");
         _findType = _playerStats._initFindType;
-        Debug.Log($"after: {_findType}");
     }
 
     protected new void OnDrawGizmos()
@@ -452,6 +450,6 @@ public class BaseCharacter : BaseController
         if (skills == null || skills.Count == 0) return;
 
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, CurrentSkillRange);
+        Gizmos.DrawWireSphere(transform.position, CurrentSkillRange + GetRadius());
     }
 }
