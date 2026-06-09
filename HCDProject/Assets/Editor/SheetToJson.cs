@@ -86,7 +86,7 @@ public class SheetToJson : EditorWindow
                     
                     string jsonData = TsvToJson(tsvData);
 
-                    File.WriteAllText(savePath, jsonData);
+                    File.WriteAllText(savePath, jsonData, Encoding.UTF8);
 
                     RegisterToAddressable(addressSavePath, sheetName);
                     
@@ -218,7 +218,7 @@ public class SheetToJson : EditorWindow
         if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
         
         string talbeFilePath = Path.Combine(folderPath, $"{tableClassName}.cs");
-        File.WriteAllText(talbeFilePath, codeBuilder.ToString());
+        File.WriteAllText(talbeFilePath, codeBuilder.ToString(), Encoding.UTF8);
         #endif
     }
 }
