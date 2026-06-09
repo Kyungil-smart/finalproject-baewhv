@@ -1256,7 +1256,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6979268650236809914}
         m_TargetAssemblyTypeName: IngamePopupController, Assembly-CSharp
-        m_MethodName: OnReturnToStageSelect
+        m_MethodName: OnNextBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
