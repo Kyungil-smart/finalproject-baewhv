@@ -202,11 +202,6 @@ public class BaseMonster : BaseController
         }
     }
 
-    public float DistanceToTarget(Transform target)
-    {
-        return Vector2.Distance(transform.position, target.position);
-    }
-    
     private void CheckDeath(int value)
     {
         if (value <= 0)
