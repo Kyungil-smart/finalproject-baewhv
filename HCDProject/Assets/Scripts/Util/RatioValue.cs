@@ -49,6 +49,12 @@ public class RatioIntValue : ObserveValue<int>
     {
         OnValuesChange.AddListener(action);
     }
+
+    public void SetValues(int curr, int max)
+    {
+        _maxValue = max;
+        Value = curr;
+    }
 }
 
 [Serializable]

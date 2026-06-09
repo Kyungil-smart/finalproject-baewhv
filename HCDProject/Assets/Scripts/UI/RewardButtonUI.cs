@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
+
 using UnityEngine.UI;
 
 public class RewardButtonUI : MonoBehaviour
@@ -15,12 +15,6 @@ public class RewardButtonUI : MonoBehaviour
     public int GetIndex { get; private set; }
     public bool IsSelected { get; set; }
     private UnityAction<int> buttonAction;
-    private Button rewardButton;
-
-    private void Awake()
-    {
-        rewardButton = GetComponent<Button>();
-    }
 
     public void SetReward(StageClearRewardRawData data, UnityAction<int> func, int _index)
     {

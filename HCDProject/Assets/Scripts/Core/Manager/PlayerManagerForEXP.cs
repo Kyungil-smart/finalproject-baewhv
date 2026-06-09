@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,9 +7,9 @@ using UnityEngine.InputSystem;
 public partial class PlayerManager
 {
     private RatioIntValue exp;
-    private ObserveValue<int> level = new ();
+    private ObserveValue<int> level = new();
     private List<StoryExpRawData> LevelData;
-    private Dictionary<string, int> LevelUpRewards = new(); 
+    private Dictionary<string, int> LevelUpRewards = new();
     private List<LevelRewardRawData> currentRandomRewards;
 
     private void Start()
@@ -20,7 +21,7 @@ public partial class PlayerManager
     {
         if (Keyboard.current.numpadPlusKey.wasPressedThisFrame)
         {
-            GetExp(10);
+            GetExp(1000);
         }
     }
 
@@ -28,7 +29,7 @@ public partial class PlayerManager
     {
         GetEXPData();
         level.Value = 1;
-        exp = new RatioIntValue((int)LevelData[level.Value-1].TOTAL_EXP, 0);
+        exp = new RatioIntValue((int)LevelData[level.Value - 1].TOTAL_EXP, 0);
         Debug.Log("here1");
         if (Service.Get<UIManager>() && Service.Get<UIManager>().GetUI<IngameBottomUIController>())
         {
@@ -37,6 +38,7 @@ public partial class PlayerManager
             Debug.Log("here2");
             exp.Invoke();
         }
+
         exp.AddListener(CheckLevelUp);
     }
 
@@ -53,12 +55,28 @@ public partial class PlayerManager
 
     private void CheckLevelUp(int value)
     {
-        if (exp.Value >= LevelData[level.Value - 1].TOTAL_EXP)
+        if (value >= LevelData[level.Value - 1].TOTAL_EXP)
         {
-            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnLevelUpPopup();
+            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnLevelUpPopup(CheckEXPNextFrame);
+            Debug.Log($"LevelUp! currentLevel = {level.Value}");
         }
     }
-    
+
+    private void CheckEXPNextFrame()
+    {
+        StartCoroutine(OnClosedLevelUpPopup());
+    }
+
+    private IEnumerator OnClosedLevelUpPopup()
+    {
+        yield return YieldContainer.WFFU;
+        int currentExp = exp.Value - (int)LevelData[level.Value - 1].TOTAL_EXP;
+        level.Value++;
+        exp.SetValues(currentExp, (int)LevelData[level.Value - 1].TOTAL_EXP);
+    }
+
+
+    //지원님 코드
     public List<LevelRewardRawData> GetLevelUpRewards()
     {
         var rawRewards = Service.Get<DataManager>()?.GetRandomLevelRewards();
@@ -78,7 +96,7 @@ public partial class PlayerManager
             Debug.Log("데이터가 없습니다");
             return;
         }
-        
+
         Service.Get<DataManager>()?.SelectLevelReward(currentRandomRewards[selectedIndex].LEVEL_ID);
 
         string rewardId = currentRandomRewards[selectedIndex].LEVEL_ID;
@@ -93,5 +111,4 @@ public partial class PlayerManager
 
         currentRandomRewards = null;
     }
-    
 }

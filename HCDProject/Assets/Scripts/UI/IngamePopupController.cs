@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class IngamePopupController : BaseUIController<IngamePopupController>
 {
@@ -41,13 +42,13 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
         else OnFailPopup();
     }
 
-    public void OnRewardPopup()
+    public void OnRewardPopup(UnityAction action = null)
     {
-        RewardPopup.SetRelicReward();
+        RewardPopup.SetRelicReward(action);
     }
-    public void OnLevelUpPopup()
+    public void OnLevelUpPopup(UnityAction action = null)
     {
-        RewardPopup.SetLevelUpReward();
+        RewardPopup.SetLevelUpReward(action);
     }
 
     public void OnClearPopup()
