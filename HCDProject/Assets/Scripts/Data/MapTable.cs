@@ -13,8 +13,6 @@ public class MapRawData
     public int WAVE;
     public int TOTAL_WAVE_MONSTER;
     public int WAVE_RESPAWN_TIME;
-    public string BGM;
-    public string BG_IMG;
     public string SPAWN_MONSTER_ID_01;
     public int SPAWN_MONSTER_COUNT_01;
     public string SPAWN_MONSTER_ID_02;
@@ -29,7 +27,8 @@ public class MapRawData
     public int SPAWN_MONSTER_COUNT_06;
     public string SPAWN_MONSTER_ID_07;
     public int SPAWN_MONSTER_COUNT_07;
-    public string ENTRY;
+    public string BGM;
+    public string BG_IMG;
 }
 
 [Serializable]

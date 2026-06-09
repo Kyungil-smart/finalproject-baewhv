@@ -531,122 +531,122 @@
     {
       "TEXT_ID": "SCR_001",
       "KOR": "고대 갑옷",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Ancient Armor",
+      "THA": "เกราะโบราณ",
+      "VN": "Áo Giáp Cổ Đại",
+      "IDN": "Baju Zirah Kuno"
     },
     {
       "TEXT_ID": "SCR_002",
       "KOR": "힐링 팩터",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Healing Factor",
+      "THA": "พลังฟื้นฟู",
+      "VN": "Yếu Tố Hồi Phục",
+      "IDN": "Faktor Penyembuhan"
     },
     {
       "TEXT_ID": "SCR_003",
       "KOR": "전술 교본 (전사)",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Tactical Manual (Warrior)",
+      "THA": "ตำรายุทธวิธี (นักรบ)",
+      "VN": "Sổ Tay Chiến Thuật (Chiến Binh)",
+      "IDN": "Buku Taktik (Prajurit)"
     },
     {
       "TEXT_ID": "SCR_004",
       "KOR": "마법 활",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Magic Bow",
+      "THA": "ธนูเวทมนตร์",
+      "VN": "Cung Ma Thuật",
+      "IDN": "Busur Sihir"
     },
     {
       "TEXT_ID": "SCR_005",
       "KOR": "화살비",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Rain of Arrows",
+      "THA": "ฝนธนู",
+      "VN": "Mưa Tên",
+      "IDN": "Hujan Panah"
     },
     {
       "TEXT_ID": "SCR_006",
       "KOR": "전술 교본 (궁수)",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Tactical Manual (Archer)",
+      "THA": "ตำรายุทธวิธี (นักธนู)",
+      "VN": "Sổ Tay Chiến Thuật (Cung Thủ)",
+      "IDN": "Buku Taktik (Pemanah)"
     },
     {
       "TEXT_ID": "SCR_007",
       "KOR": "확장 마법",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Area Expansion",
+      "THA": "เวทมนตร์ขยายขอบเขต",
+      "VN": "Ma Thuật Mở Rộng",
+      "IDN": "Sihir Perluasan"
     },
     {
       "TEXT_ID": "SCR_008",
       "KOR": "지진 마법",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Earthquake Magic",
+      "THA": "เวทมนตร์แผ่นดินไหว",
+      "VN": "Ma Thuật Động Đất",
+      "IDN": "Sihir Gempa"
     },
     {
       "TEXT_ID": "SCR_009",
       "KOR": "전술 교본 (마법사)",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Tactical Manual (Mage)",
+      "THA": "ตำรายุทธวิธี (นักเวท)",
+      "VN": "Sổ Tay Chiến Thuật (Pháp Sư)",
+      "IDN": "Buku Taktik (Penyihir)"
     },
     {
       "TEXT_ID": "SCR_010",
       "KOR": "치유 증폭기",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Healing Amplifier",
+      "THA": "เครื่องขยายพลังรักษา",
+      "VN": "Bộ Khuếch Đại Hồi Phục",
+      "IDN": "Penguat Penyembuhan"
     },
     {
       "TEXT_ID": "SCR_011",
       "KOR": "보호막 마법",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Barrier Magic",
+      "THA": "เวทมนตร์บาเรีย",
+      "VN": "Ma Thuật Lá Chắn",
+      "IDN": "Sihir Perisai"
     },
     {
       "TEXT_ID": "SCR_012",
       "KOR": "전술 교본 (힐러)",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Tactical Manual (Healer)",
+      "THA": "ตำรายุทธวิธี (ผู้รักษา)",
+      "VN": "Sổ Tay Chiến Thuật (Trị Liệu Sư)",
+      "IDN": "Buku Taktik (Penyembuh)"
     },
     {
       "TEXT_ID": "SCR_013",
       "KOR": "성벽 수리",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Wall Repair",
+      "THA": "ซ่อมกำแพง",
+      "VN": "Sửa Tường Thành",
+      "IDN": "Perbaikan Tembok"
     },
     {
       "TEXT_ID": "SCR_014",
       "KOR": "성벽 강화",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Wall Reinforcement",
+      "THA": "เสริมแกร่งกำแพง",
+      "VN": "Cường Hóa Tường Thành",
+      "IDN": "Penguatan Tembok"
     },
     {
       "TEXT_ID": "SCR_015",
       "KOR": "지휘관의 깃발",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "ENG": "Commander's Banner",
+      "THA": "ธงของผู้บัญชาการ",
+      "VN": "Cờ của Chỉ Huy",
+      "IDN": "Bendera Komandan"
     },
     {
       "TEXT_ID": "MS_001",
@@ -1043,7 +1043,7 @@
     {
       "TEXT_ID": "OBJ_001",
       "KOR": "오브젝트",
-      "ENG": "Sowrd",
+      "ENG": "Sword",
       "THA": "",
       "VN": "",
       "IDN": ""
