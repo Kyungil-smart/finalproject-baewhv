@@ -25,6 +25,8 @@ public class BaseMonster : BaseController
     
     public void InitStatus(MonsterRawData data)
     {
+        if (Stat == data) return;
+        
         Stat = data;
         InitSkill(data);
         
@@ -33,9 +35,9 @@ public class BaseMonster : BaseController
         MonsterID = int.Parse(Stat.MONSTER_ID) - 1000;
         gameObject.name = Stat.MONSTER_NAME;
         CurrentHp.Value = Stat.HP;
+        _stats._maxHp = Stat.HP;
+        _stats._defense = Stat.DEF;
         Movement.Agent.speed = Stat.MOVE_SPEED;
-        
-        // Stat.ATK = data.ATK;
     }
     
     private void InitSkill(MonsterRawData data)
