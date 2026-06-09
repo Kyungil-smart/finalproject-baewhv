@@ -1,7 +1,7 @@
-{
+﻿{
   "data": [
     {
-      "SKILL_ID": "6500",
+      "SKILL_ID": 6500,
       "SKILL_NAME": "PAST_001",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -19,7 +19,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6501",
+      "SKILL_ID": 6501,
       "SKILL_NAME": "PAST_002",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ATTACK_OF_SCOPE",
@@ -37,7 +37,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6502",
+      "SKILL_ID": 6502,
       "SKILL_NAME": "PAST_003",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -55,7 +55,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6503",
+      "SKILL_ID": 6503,
       "SKILL_NAME": "PAST_004",
       "ATK_TYPE": "BUFF",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -73,7 +73,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6504",
+      "SKILL_ID": 6504,
       "SKILL_NAME": "PAST_005",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -91,7 +91,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6505",
+      "SKILL_ID": 6505,
       "SKILL_NAME": "PAST_006",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ATTACK_OF_SCOPE",
@@ -109,7 +109,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6506",
+      "SKILL_ID": 6506,
       "SKILL_NAME": "PAST_007",
       "ATK_TYPE": "HEAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -127,7 +127,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6507",
+      "SKILL_ID": 6507,
       "SKILL_NAME": "PAST_008",
       "ATK_TYPE": "HEAL",
       "SKILL_TYPE": "ALL_TARGET",
@@ -145,7 +145,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6508",
+      "SKILL_ID": 6508,
       "SKILL_NAME": "PAST_009",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ATTACK_OF_SCOPE",
@@ -163,7 +163,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6509",
+      "SKILL_ID": 6509,
       "SKILL_NAME": "PAST_010",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
@@ -181,7 +181,7 @@
       "SKILL_ICON": ""
     },
     {
-      "SKILL_ID": "6510",
+      "SKILL_ID": 6510,
       "SKILL_NAME": "PAST_011",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "SINGLE_TARGET",
