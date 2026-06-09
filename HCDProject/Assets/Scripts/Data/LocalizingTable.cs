@@ -6,11 +6,11 @@ using System.Collections.Generic;
 public class LocalizingRawData
 {
     public string TEXT_ID;
-    public string KOR;
-    public string ENG;
-    public string THA;
-    public string VN;
-    public string IDN;
+    public string Korean;
+    public string English;
+    public string Thai;
+    public string Vietnamese;
+    public string Indonesian;
 }
 
 [Serializable]

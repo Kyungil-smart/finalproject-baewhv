@@ -3,8 +3,8 @@
     {
       "STORY_ID": "ST_0001",
       "NEXT_ID": "",
-      "CHAPTER": 0,
-      "STAGE": 0,
+      "CHAPTER": "",
+      "STAGE": "",
       "NUMBER": "",
       "CATEGORY": "",
       "BACKGROUND": "",
@@ -12,11 +12,7 @@
       "SFX": "",
       "PORTRAIT": "",
       "NAME": "",
-      "KOR": "",
-      "ENG": "",
-      "THA": "",
-      "VN": "",
-      "IDN": ""
+      "TEXT_ID": "TST_001"
     }
   ]
 }

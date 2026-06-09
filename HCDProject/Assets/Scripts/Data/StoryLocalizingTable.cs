@@ -16,11 +16,7 @@ public class StoryLocalizingRawData
     public string SFX;
     public string PORTRAIT;
     public string NAME;
-    public string KOR;
-    public string ENG;
-    public string THA;
-    public string VN;
-    public string IDN;
+    public string TEXT_ID;
 }
 
 [Serializable]

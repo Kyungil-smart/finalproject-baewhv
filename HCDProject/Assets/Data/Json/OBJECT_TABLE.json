@@ -1,7 +1,7 @@
 ﻿{
   "data": [
     {
-      "OBJECT_ID": "5000",
+      "OBJECT_ID": 5000,
       "OBJ_NAME": "OBJ_001",
       "OBJ_TYPE": "OBJ_ATK",
       "OBJ_ABILITY": 1.5,
@@ -9,7 +9,7 @@
       "OBJ_ICON": ""
     },
     {
-      "OBJECT_ID": "5001",
+      "OBJECT_ID": 5001,
       "OBJ_NAME": "OBJ_002",
       "OBJ_TYPE": "OBJ_DEF",
       "OBJ_ABILITY": 1.5,
@@ -17,7 +17,7 @@
       "OBJ_ICON": ""
     },
     {
-      "OBJECT_ID": "5002",
+      "OBJECT_ID": 5002,
       "OBJ_NAME": "OBJ_003",
       "OBJ_TYPE": "OBJ_AS",
       "OBJ_ABILITY": 0.7,
@@ -25,7 +25,7 @@
       "OBJ_ICON": ""
     },
     {
-      "OBJECT_ID": "5003",
+      "OBJECT_ID": 5003,
       "OBJ_NAME": "OBJ_004",
       "OBJ_TYPE": "OBJ_HP",
       "OBJ_ABILITY": 2,
