@@ -132,6 +132,12 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         CurrentHp.Value = overHp;
     }
 
+    //BaseCharacter 및 BaseMonster에서 구현하세요. 
+    public virtual float GetRadius()
+    {
+        return 0;
+    }
+
     protected void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
