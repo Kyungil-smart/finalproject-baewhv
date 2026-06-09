@@ -8,6 +8,8 @@ public class RatioIntValue : ObserveValue<int>
     [SerializeField] private int _maxValue;
 
     private UnityEvent<float> OnRatioChange = new ();
+    private UnityEvent<int> OnMaxValueChange = new ();
+    private UnityEvent<int, int> OnValuesChange = new ();
     public int MaxValue
     {
         get => _maxValue;
@@ -15,6 +17,8 @@ public class RatioIntValue : ObserveValue<int>
         {
             _maxValue = value;
             OnRatioChange?.Invoke(_data/(float)_maxValue);
+            OnMaxValueChange?.Invoke(value);
+            OnValuesChange?.Invoke(_data, value);
         }
     }
 
@@ -29,12 +33,21 @@ public class RatioIntValue : ObserveValue<int>
     private void OnChangeValue(int value)
     {
         OnRatioChange?.Invoke(value/(float)_maxValue);
+        OnValuesChange?.Invoke(_data, value);
     }
 
     public void AddRatioListener(UnityAction<float> action)
     {
         OnRatioChange.AddListener(action);
-        OnRatioChange?.Invoke(_data/(float)_maxValue);
+    }
+    public void AddMaxValueListener(UnityAction<int> action)
+    {
+        OnMaxValueChange.AddListener(action);
+    }
+
+    public void AddValuesListener(UnityAction<int, int> action)
+    {
+        OnValuesChange.AddListener(action);
     }
 }
 
@@ -44,6 +57,8 @@ public class RatioFloatValue : ObserveValue<float>
     [SerializeField] private float _maxValue;
 
     private UnityEvent<float> OnRatioChange = new ();
+    private UnityEvent<float> OnMaxValueChange = new ();
+    private UnityEvent<float, float> OnValuesChange = new ();
     public float MaxValue
     {
         get => _maxValue;
@@ -72,5 +87,15 @@ public class RatioFloatValue : ObserveValue<float>
     {
         OnRatioChange.AddListener(action);
         OnRatioChange?.Invoke(_data/_maxValue);
+    }
+    
+    public void AddMaxValueListener(UnityAction<float> action)
+    {
+        OnMaxValueChange.AddListener(action);
+    }
+
+    public void AddValuesListener(UnityAction<float, float> action)
+    {
+        OnValuesChange.AddListener(action);
     }
 }
