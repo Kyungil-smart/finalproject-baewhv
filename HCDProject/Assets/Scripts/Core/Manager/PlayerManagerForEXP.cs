@@ -26,6 +26,7 @@ public partial class PlayerManager
             Debug.Log("here2");
             exp.Invoke();
         }
+        exp.AddListener(CheckLevelUp);
     }
 
     private void GetEXPData()
@@ -38,4 +39,13 @@ public partial class PlayerManager
     {
         exp.Value += value;
     }
+
+    private void CheckLevelUp(int value)
+    {
+        if (exp.Value >= LevelData[level.Value - 1].TOTAL_EXP)
+        {
+            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnRewardPopup();
+        }
+    }
+    
 }
