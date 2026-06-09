@@ -2,7 +2,7 @@
 
 public class SortManager : BaseManager<SortManager>
 {
-    public CharacterSlot[] characterSlots;
+    public CharacterSlotUI[] characterSlots;
 
     public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
     public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
@@ -30,7 +30,7 @@ public class SortManager : BaseManager<SortManager>
         CurrentCombo.Value += amount;
     }
 
-    public void ObjectDrop(CharacterSlot targetSlot, DragAndDrop draggedobject)
+    public void ObjectDrop(CharacterSlotUI targetSlot, DragAndDrop draggedobject)
     {
         if (RemainingSorts.Value <= 0 || isEndSort.Value == true)
         {
@@ -68,7 +68,7 @@ public class SortManager : BaseManager<SortManager>
         }
     }
 
-    private void CheckSlotState(CharacterSlot slot)
+    private void CheckSlotState(CharacterSlotUI slot)
     {
         for (int i = 0; i < slot.SubSlots.Length; i++)
         {
@@ -133,7 +133,7 @@ public class SortManager : BaseManager<SortManager>
         isEndSort.Value = true;
     }
 
-    private void ApplyBuffToPlayer(CharacterSlot slot, string buffName)
+    private void ApplyBuffToPlayer(CharacterSlotUI slot, string buffName)
     {
         Debug.Log($"{slot.gameObject.name}에 {buffName} 타입의 버프 부여");
     }

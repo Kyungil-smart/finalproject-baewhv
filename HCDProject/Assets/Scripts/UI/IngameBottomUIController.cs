@@ -22,13 +22,13 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private RectTransform ComboView;
 
 
-    [SerializeField] private CharacterSlot[] characterSlots;
+    [SerializeField] private CharacterSlotUI[] characterSlots;
 
     private readonly Vector2 battlePhaseSlotRect = new Vector2(245, 361);
     private readonly Vector2 sortPhaseSlotRect = new Vector2(245, 990);
     private readonly Vector2 battlePhasePortraitRect = new Vector2(-12, -56.0f);
     private readonly Vector2 sortPhasePortraitRect = new Vector2(-12, -166.4f);
-    public CharacterSlot[] GetSlots => characterSlots;
+    public CharacterSlotUI[] GetSlots => characterSlots;
 
     [SerializeField] private StoneRail upperRail;
     public StoneRail GetUpperRail => upperRail;
@@ -67,7 +67,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         ComboView.DOAnchorPosY(206.0f, 0);
         charactersSlotUI.DOAnchorPosY(-692.5f, 0);
         charactersSlotUI.DOSizeDelta(battleModeCharactersSlot, 0);
-        foreach (CharacterSlot slot in characterSlots)
+        foreach (CharacterSlotUI slot in characterSlots)
         {
             ((RectTransform)slot.transform).DOSizeDelta(battlePhaseSlotRect, 0);
             slot.GetBorderRect.DOSizeDelta(battlePhasePortraitRect, 0);
@@ -81,7 +81,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         ComboView.DOAnchorPosY(419.0f, 0);
         charactersSlotUI.DOAnchorPosY(205.0f, 0);
         charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0);
-        foreach (CharacterSlot slot in characterSlots)
+        foreach (CharacterSlotUI slot in characterSlots)
         {
             ((RectTransform)slot.transform).DOSizeDelta(sortPhaseSlotRect, 0);
             slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0);
