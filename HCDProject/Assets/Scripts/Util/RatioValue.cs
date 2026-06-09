@@ -33,7 +33,7 @@ public class RatioIntValue : ObserveValue<int>
     private void OnChangeValue(int value)
     {
         OnRatioChange?.Invoke(value/(float)_maxValue);
-        OnValuesChange?.Invoke(_data, value);
+        OnValuesChange?.Invoke(value, _maxValue);
     }
 
     public void AddRatioListener(UnityAction<float> action)
