@@ -1,12 +1,12 @@
 {
   "data": [
     {
-      "SKILL_ID": 6000,
+      "SKILL_ID": "6000",
       "SKILL_NAME": "MS_001",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -23,12 +23,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6001,
+      "SKILL_ID": "6001",
       "SKILL_NAME": "MS_002",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -45,12 +45,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6002,
+      "SKILL_ID": "6002",
       "SKILL_NAME": "MS_003",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -67,12 +67,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6003,
+      "SKILL_ID": "6003",
       "SKILL_NAME": "MS_004",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -89,12 +89,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6004,
+      "SKILL_ID": "6004",
       "SKILL_NAME": "MS_005",
       "ATK_TYPE": "HEAL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ALLY",
-      "SKILL_IS": 7,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 20,
@@ -111,12 +111,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6005,
+      "SKILL_ID": "6005",
       "SKILL_NAME": "MS_006",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -133,12 +133,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6006,
+      "SKILL_ID": "6006",
       "SKILL_NAME": "MS_007",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -155,12 +155,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6007,
+      "SKILL_ID": "6007",
       "SKILL_NAME": "MS_008",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -177,12 +177,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6008,
+      "SKILL_ID": "6008",
       "SKILL_NAME": "MS_009",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -199,12 +199,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6009,
+      "SKILL_ID": "6009",
       "SKILL_NAME": "MS_010",
       "ATK_TYPE": "HEAL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ALLY",
-      "SKILL_IS": 7,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 19,
@@ -221,12 +221,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6010,
+      "SKILL_ID": "6010",
       "SKILL_NAME": "MS_011",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -243,12 +243,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6011,
+      "SKILL_ID": "6011",
       "SKILL_NAME": "MS_012",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -265,12 +265,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6012,
+      "SKILL_ID": "6012",
       "SKILL_NAME": "MS_013",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -287,12 +287,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6013,
+      "SKILL_ID": "6013",
       "SKILL_NAME": "MS_014",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -309,12 +309,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6014,
+      "SKILL_ID": "6014",
       "SKILL_NAME": "MS_015",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 7,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 20,
@@ -331,12 +331,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6015,
+      "SKILL_ID": "6015",
       "SKILL_NAME": "MS_016",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -353,12 +353,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6016,
+      "SKILL_ID": "6016",
       "SKILL_NAME": "MS_017",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -375,12 +375,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6017,
+      "SKILL_ID": "6017",
       "SKILL_NAME": "MS_018",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -397,12 +397,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6018,
+      "SKILL_ID": "6018",
       "SKILL_NAME": "MS_019",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -419,12 +419,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6019,
+      "SKILL_ID": "6019",
       "SKILL_NAME": "MS_020",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ALLY",
-      "SKILL_IS": 7,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 35,
@@ -441,12 +441,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6020,
+      "SKILL_ID": "6020",
       "SKILL_NAME": "MS_021",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -463,12 +463,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6021,
+      "SKILL_ID": "6021",
       "SKILL_NAME": "MS_022",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -485,12 +485,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6022,
+      "SKILL_ID": "6022",
       "SKILL_NAME": "MS_023",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -507,12 +507,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6023,
+      "SKILL_ID": "6023",
       "SKILL_NAME": "MS_024",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -529,12 +529,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6024,
+      "SKILL_ID": "6024",
       "SKILL_NAME": "MS_025",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ALLY",
-      "SKILL_IS": 7,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 32,
@@ -551,12 +551,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6025,
+      "SKILL_ID": "6025",
       "SKILL_NAME": "MS_026",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -573,12 +573,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6026,
+      "SKILL_ID": "6026",
       "SKILL_NAME": "MS_027",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -595,12 +595,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6027,
+      "SKILL_ID": "6027",
       "SKILL_NAME": "MS_028",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -617,12 +617,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6028,
+      "SKILL_ID": "6028",
       "SKILL_NAME": "MS_029",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -639,12 +639,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6029,
+      "SKILL_ID": "6029",
       "SKILL_NAME": "MS_030",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 7,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 18,
@@ -661,12 +661,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6030,
+      "SKILL_ID": "6030",
       "SKILL_NAME": "MS_031",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -683,12 +683,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6031,
+      "SKILL_ID": "6031",
       "SKILL_NAME": "MS_032",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -705,12 +705,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6032,
+      "SKILL_ID": "6032",
       "SKILL_NAME": "MS_033",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 2,
+      "SKILL_IS": 1.1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -727,12 +727,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6033,
+      "SKILL_ID": "6033",
       "SKILL_NAME": "MS_034",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -749,12 +749,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6034,
+      "SKILL_ID": "6034",
       "SKILL_NAME": "MS_035",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 7,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 20,
@@ -771,7 +771,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6035,
+      "SKILL_ID": "6035",
       "SKILL_NAME": "MS_036",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -793,7 +793,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6036,
+      "SKILL_ID": "6036",
       "SKILL_NAME": "MS_037",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -815,7 +815,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6037,
+      "SKILL_ID": "6037",
       "SKILL_NAME": "MS_038",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -837,7 +837,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6038,
+      "SKILL_ID": "6038",
       "SKILL_NAME": "MS_039",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -859,7 +859,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6039,
+      "SKILL_ID": "6039",
       "SKILL_NAME": "MS_040",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -881,7 +881,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6040,
+      "SKILL_ID": "6040",
       "SKILL_NAME": "MS_041",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -903,7 +903,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6041,
+      "SKILL_ID": "6041",
       "SKILL_NAME": "MS_042",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -925,7 +925,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6042,
+      "SKILL_ID": "6042",
       "SKILL_NAME": "MS_043",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -947,7 +947,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6043,
+      "SKILL_ID": "6043",
       "SKILL_NAME": "MS_044",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -969,7 +969,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6044,
+      "SKILL_ID": "6044",
       "SKILL_NAME": "MS_045",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -991,7 +991,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6045,
+      "SKILL_ID": "6045",
       "SKILL_NAME": "MS_046",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1013,7 +1013,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6046,
+      "SKILL_ID": "6046",
       "SKILL_NAME": "MS_047",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1035,7 +1035,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6047,
+      "SKILL_ID": "6047",
       "SKILL_NAME": "MS_048",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1057,7 +1057,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6048,
+      "SKILL_ID": "6048",
       "SKILL_NAME": "MS_049",
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1079,7 +1079,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6049,
+      "SKILL_ID": "6049",
       "SKILL_NAME": "MS_050",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1101,7 +1101,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6050,
+      "SKILL_ID": "6050",
       "SKILL_NAME": "MS_051",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1123,7 +1123,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6051,
+      "SKILL_ID": "6051",
       "SKILL_NAME": "MS_052",
       "ATK_TYPE": "BUFF",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1145,7 +1145,7 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6052,
+      "SKILL_ID": "6052",
       "SKILL_NAME": "MS_053",
       "ATK_TYPE": "BUFF",
       "SKILL_TYPE": "SINGLE_TARGET",
@@ -1167,12 +1167,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6053,
+      "SKILL_ID": "6053",
       "SKILL_NAME": "MS_054",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 10,
       "SKILL_RANGE_Y": 10,
       "SKILL_TIME": 15,
@@ -1189,12 +1189,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6054,
+      "SKILL_ID": "6054",
       "SKILL_NAME": "MS_055",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 10,
+      "SKILL_IS": 2.8,
       "SKILL_RANGE_X": 10,
       "SKILL_RANGE_Y": 10,
       "SKILL_TIME": 45,
@@ -1211,12 +1211,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6055,
+      "SKILL_ID": "6055",
       "SKILL_NAME": "MS_056",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "SELF",
-      "SKILL_IS": 5,
+      "SKILL_IS": 2,
       "SKILL_RANGE_X": 5,
       "SKILL_RANGE_Y": 5,
       "SKILL_TIME": 15,
@@ -1233,12 +1233,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6056,
+      "SKILL_ID": "6056",
       "SKILL_NAME": "MS_057",
       "ATK_TYPE": "BUFF",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "SELF",
-      "SKILL_IS": 0,
+      "SKILL_IS": 2,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,
@@ -1255,12 +1255,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6057,
+      "SKILL_ID": "6057",
       "SKILL_NAME": "MS_058",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "SELF",
-      "SKILL_IS": 0,
+      "SKILL_IS": 1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 20,
@@ -1277,12 +1277,12 @@
       "PROJECTILE_ID": "NONE"
     },
     {
-      "SKILL_ID": 6058,
+      "SKILL_ID": "6058",
       "SKILL_NAME": "MS_059",
       "ATK_TYPE": "SKILL",
       "SKILL_TYPE": "ALL_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 0,
+      "SKILL_IS": 1,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 50,
