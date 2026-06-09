@@ -3,8 +3,8 @@
     {
       "STORY_ID": "ST_0001",
       "NEXT_ID": "",
-      "CHAPTER": "",
-      "STAGE": "",
+      "CHAPTER": 0,
+      "STAGE": 0,
       "NUMBER": "",
       "CATEGORY": "",
       "BACKGROUND": "",

@@ -1,7 +1,7 @@
 ﻿{
   "data": [
     {
-      "LEVEL_ID": 2000,
+      "LEVEL_ID": "2000",
       "LEVEL_REWARD_NAME": "L_001",
       "LEVEL_REWARD_TYPE_01": "ATK",
       "LEVEL_REWARD_01": 8,
@@ -10,7 +10,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2001,
+      "LEVEL_ID": "2001",
       "LEVEL_REWARD_NAME": "L_002",
       "LEVEL_REWARD_TYPE_01": "ATK_SPEED",
       "LEVEL_REWARD_01": 0.07,
@@ -19,7 +19,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2002,
+      "LEVEL_ID": "2002",
       "LEVEL_REWARD_NAME": "L_003",
       "LEVEL_REWARD_TYPE_01": "CRITICAL_RATE",
       "LEVEL_REWARD_01": 0.02,
@@ -28,7 +28,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2003,
+      "LEVEL_ID": "2003",
       "LEVEL_REWARD_NAME": "L_004",
       "LEVEL_REWARD_TYPE_01": "CRITICAL_DAMAGE",
       "LEVEL_REWARD_01": 0.2,
@@ -37,7 +37,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2004,
+      "LEVEL_ID": "2004",
       "LEVEL_REWARD_NAME": "L_005",
       "LEVEL_REWARD_TYPE_01": "MAX_HP",
       "LEVEL_REWARD_01": 30,
@@ -46,7 +46,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2005,
+      "LEVEL_ID": "2005",
       "LEVEL_REWARD_NAME": "L_006",
       "LEVEL_REWARD_TYPE_01": "HP",
       "LEVEL_REWARD_01": 15,
@@ -55,7 +55,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2006,
+      "LEVEL_ID": "2006",
       "LEVEL_REWARD_NAME": "L_007",
       "LEVEL_REWARD_TYPE_01": "DEF",
       "LEVEL_REWARD_01": 2,
@@ -64,7 +64,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2007,
+      "LEVEL_ID": "2007",
       "LEVEL_REWARD_NAME": "L_008",
       "LEVEL_REWARD_TYPE_01": "MOVE_SPEED",
       "LEVEL_REWARD_01": 6,
@@ -73,7 +73,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2008,
+      "LEVEL_ID": "2008",
       "LEVEL_REWARD_NAME": "L_009",
       "LEVEL_REWARD_TYPE_01": "ATK",
       "LEVEL_REWARD_01": 14,
@@ -82,7 +82,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2009,
+      "LEVEL_ID": "2009",
       "LEVEL_REWARD_NAME": "L_010",
       "LEVEL_REWARD_TYPE_01": "ATK_SPEED",
       "LEVEL_REWARD_01": 0.03,
@@ -91,7 +91,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2010,
+      "LEVEL_ID": "2010",
       "LEVEL_REWARD_NAME": "L_011",
       "LEVEL_REWARD_TYPE_01": "MAX_HP",
       "LEVEL_REWARD_01": 20,
@@ -100,7 +100,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2011,
+      "LEVEL_ID": "2011",
       "LEVEL_REWARD_NAME": "L_012",
       "LEVEL_REWARD_TYPE_01": "ATK",
       "LEVEL_REWARD_01": 20,
@@ -109,7 +109,7 @@
       "LEVEL_REWARD_ICON": ""
     },
     {
-      "LEVEL_ID": 2012,
+      "LEVEL_ID": "2012",
       "LEVEL_REWARD_NAME": "L_013",
       "LEVEL_REWARD_TYPE_01": "DEF",
       "LEVEL_REWARD_01": 1,
