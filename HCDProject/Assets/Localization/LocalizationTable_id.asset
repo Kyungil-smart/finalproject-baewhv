@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LocalizationTable_id
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: id
+  m_SharedData: {fileID: 11400000, guid: 4ccbdbf1878cce04a8441eeb10934d6b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 51780677632
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160463
+    m_Localized: Bendera Komandan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160462
+    m_Localized: Penguatan Tembok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160461
+    m_Localized: Perbaikan Tembok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160460
+    m_Localized: Buku Taktik (Penyembuh)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160459
+    m_Localized: Sihir Perisai
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160458
+    m_Localized: Penguat Penyembuhan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160457
+    m_Localized: Buku Taktik (Penyihir)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160456
+    m_Localized: Sihir Gempa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160455
+    m_Localized: Sihir Perluasan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160454
+    m_Localized: Buku Taktik (Pemanah)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160453
+    m_Localized: Hujan Panah
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160452
+    m_Localized: Busur Sihir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160451
+    m_Localized: Buku Taktik (Prajurit)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160450
+    m_Localized: Faktor Penyembuhan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160449
+    m_Localized: Baju Zirah Kuno
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

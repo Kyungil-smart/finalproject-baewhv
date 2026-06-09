@@ -1,9 +1,9 @@
-{
+﻿{
   "data": [
     {
       "VARIABLE_NAME": "CASTLE_HP",
       "VARIABLE_TYPE": "FLOAT",
-      "VARIABLE_VALUE": "1000"
+      "VARIABLE_VALUE": 1000
     }
   ]
 }

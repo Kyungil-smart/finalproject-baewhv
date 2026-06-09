@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LocalizationTable_vi
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: vi
+  m_SharedData: {fileID: 11400000, guid: 4ccbdbf1878cce04a8441eeb10934d6b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 51780677632
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160463
+    m_Localized: "C\u1EDD c\u1EE7a Ch\u1EC9 Huy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160462
+    m_Localized: "C\u01B0\u1EDDng H\xF3a T\u01B0\u1EDDng Th\xE0nh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160461
+    m_Localized: "S\u1EEDa T\u01B0\u1EDDng Th\xE0nh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160460
+    m_Localized: "S\u1ED5 Tay Chi\u1EBFn Thu\u1EADt (Tr\u1ECB Li\u1EC7u S\u01B0)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160459
+    m_Localized: "Ma Thu\u1EADt L\xE1 Ch\u1EAFn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160458
+    m_Localized: "B\u1ED9 Khu\u1EBFch \u0110\u1EA1i H\u1ED3i Ph\u1EE5c"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160457
+    m_Localized: "S\u1ED5 Tay Chi\u1EBFn Thu\u1EADt (Ph\xE1p S\u01B0)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160456
+    m_Localized: "Ma Thu\u1EADt \u0110\u1ED9ng \u0110\u1EA5t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160455
+    m_Localized: "Ma Thu\u1EADt M\u1EDF R\u1ED9ng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160454
+    m_Localized: "S\u1ED5 Tay Chi\u1EBFn Thu\u1EADt (Cung Th\u1EE7)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160453
+    m_Localized: "M\u01B0a T\xEAn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160452
+    m_Localized: "Cung Ma Thu\u1EADt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160451
+    m_Localized: "S\u1ED5 Tay Chi\u1EBFn Thu\u1EADt (Chi\u1EBFn Binh)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160450
+    m_Localized: "Y\u1EBFu T\u1ED1 H\u1ED3i Ph\u1EE5c"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160449
+    m_Localized: "\xC1o Gi\xE1p C\u1ED5 \u0110\u1EA1i"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
