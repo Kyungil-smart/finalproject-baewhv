@@ -31,4 +31,9 @@ public class ObserveValue<T> where T : struct
     {
         OnValueChange.RemoveListener(action);
     }
+
+    public void Invoke()
+    {
+        OnValueChange?.Invoke(_data);
+    }
 }

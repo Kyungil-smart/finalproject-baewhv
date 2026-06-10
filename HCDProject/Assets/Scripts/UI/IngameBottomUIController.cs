@@ -12,6 +12,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private Slider wallHp;
     [SerializeField] private TextMeshProUGUI wallHpText;
     [SerializeField] private Slider expGauge;
+    [SerializeField] private TextMeshProUGUI expText;
     [SerializeField] private TextMeshProUGUI levelText;
 
     //DoTweenControlled
@@ -21,11 +22,13 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private RectTransform ComboView;
 
 
-    [SerializeField] private CharacterSlot[] characterSlots;
-    
-    private readonly Vector2 battlePhaseSlotRect = new Vector2(-12, -56.0f);
-    private readonly Vector2 sortPhaseSlotRect = new Vector2(-12, -166.4f);
-    public CharacterSlot[] GetSlots => characterSlots;
+    [SerializeField] private CharacterSlotUI[] characterSlots;
+
+    private readonly Vector2 battlePhaseSlotRect = new Vector2(245, 361);
+    private readonly Vector2 sortPhaseSlotRect = new Vector2(245, 990);
+    private readonly Vector2 battlePhasePortraitRect = new Vector2(-12, -56.0f);
+    private readonly Vector2 sortPhasePortraitRect = new Vector2(-12, -166.4f);
+    public CharacterSlotUI[] GetSlots => characterSlots;
 
     [SerializeField] private StoneRail upperRail;
     public StoneRail GetUpperRail => upperRail;
@@ -37,6 +40,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
     private void Start()
     {
+        comboText.gameObject.SetActive(false);
         characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
     }
 
@@ -63,9 +67,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         ComboView.DOAnchorPosY(206.0f, 0);
         charactersSlotUI.DOAnchorPosY(-692.5f, 0);
         charactersSlotUI.DOSizeDelta(battleModeCharactersSlot, 0);
-        foreach (CharacterSlot slot in characterSlots)
+        foreach (CharacterSlotUI slot in characterSlots)
         {
-            slot.GetBorderRect.DOSizeDelta(battlePhaseSlotRect, 0);
+            ((RectTransform)slot.transform).DOSizeDelta(battlePhaseSlotRect, 0);
+            slot.GetBorderRect.DOSizeDelta(battlePhasePortraitRect, 0);
         }
     }
 
@@ -76,19 +81,54 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         ComboView.DOAnchorPosY(419.0f, 0);
         charactersSlotUI.DOAnchorPosY(205.0f, 0);
         charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0);
-        foreach (CharacterSlot slot in characterSlots)
+        foreach (CharacterSlotUI slot in characterSlots)
         {
-            slot.GetBorderRect.DOSizeDelta(sortPhaseSlotRect, 0);
+            ((RectTransform)slot.transform).DOSizeDelta(sortPhaseSlotRect, 0);
+            slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0);
         }
     }
 
     public void SetComboText(int value)
     {
-        comboText.text = $"{value} Combo";
+        if (value == 0) comboText.gameObject.SetActive(false);
+        else
+        {
+            switch (value % 5)
+            {
+                case 1:
+                    comboText.text = $"<color=black>{value}</color> Combo!";
+                    break;
+                case 2:
+                    comboText.text = $"<color=yellow>{value}</color> Combo!";
+                    break;
+                case 3:
+                    comboText.text = $"<color=lightblue>{value}</color> Combo!";
+                    break;
+                case 4:
+                    comboText.text = $"<color=purple>{value}</color> Combo!";
+                    break;
+                default:
+                    comboText.text = $"<color=red>{value}</color> Combo!";
+                    break;
+            }
+        }
+
+        comboText.gameObject.SetActive(false);
     }
 
     public void SetLeftSortCountText(int value)
     {
         comboText.text = $"남은 소트 횟수 : {value}";
+    }
+
+    public void SetExp(int curr, int max)
+    {
+        expText.text = $"{(curr > max ? max : curr)} / {max}";
+        expGauge.value = Mathf.Clamp01((float)curr/max);    
+    }
+
+    public void SetLevelText(int value)
+    {
+        levelText.text = $"Lv : {value}";
     }
 }

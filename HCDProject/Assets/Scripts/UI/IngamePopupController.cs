@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class IngamePopupController : BaseUIController<IngamePopupController>
 {
@@ -7,7 +8,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     [SerializeField] private GameObject ClearLogo;
     [SerializeField] private GameObject FailLogo;
     
-    [SerializeField] private GameObject RewardPopup;
+    [SerializeField] private RewardUIController RewardPopup;
     [SerializeField] private GameObject ClearPopup;
     [SerializeField] private GameObject SortWarningPopup;
      
@@ -41,9 +42,13 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
         else OnFailPopup();
     }
 
-    public void OnRewardPopup()
+    public void OnRewardPopup(UnityAction action = null)
     {
-        RewardPopup.SetActive(true);
+        RewardPopup.SetRelicReward(action);
+    }
+    public void OnLevelUpPopup(UnityAction action = null)
+    {
+        RewardPopup.SetLevelUpReward(action);
     }
 
     public void OnClearPopup()
