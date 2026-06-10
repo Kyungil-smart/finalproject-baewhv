@@ -6,7 +6,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.InputSystem;
 
-public partial class PlayerManager : BaseManager<PlayerManager>
+public class PlayerManager : BaseManager<PlayerManager>
 {
     [SerializeField] string _characterAddress; // 프리팹 주소
 
@@ -25,7 +25,6 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     public ObserveValue<bool> isAllSpawn = new();
 
     public BaseCharacter[] Characters => _characters;
-    
 
     protected override void Awake()
     {
