@@ -25,6 +25,9 @@ public class GameManager : BaseManager<GameManager>
     
     public int CurrentChapter {get => _currentChapter; private set => _currentChapter = value; }
     public int CurrentStage { get => _currentStage; private set => _currentStage = value; }
+
+    private int currentSpeedIndex = 0;
+    private float[] timeScaleSpeeds = { 1f, 2f, 3f };
     
     public bool isLoading = false;
     private bool isReady = false;
@@ -32,9 +35,7 @@ public class GameManager : BaseManager<GameManager>
     public Rampart _wall;
     private string _wallAddress = "Rampart";
     [SerializeField] private int _currentWallHp = -1;
-    private Coroutine _gameRoutine;
-    private CharacterRawData _characterRawData;
-
+    
     public HashSet<string> ids = new HashSet<string>();
     
     private void Awake()
@@ -84,29 +85,6 @@ public class GameManager : BaseManager<GameManager>
             {
                 ClearStage();
             }
-
-            if (Keyboard.current.pKey.wasPressedThisFrame)
-            {
-                Service.Get<DataManager>()?.SelectStageReward(randomRewards[1].CLEAR_REWARD_ID);
-                Debug.Log($"{randomRewards[1].CLEAR_REWARD_ID}");
-            }
-    }
-
-    List<StageClearRewardRawData> randomRewards;
-
-    public void OpenRewardUi()
-    {
-        randomRewards = Service.Get<DataManager>().GetStageRandomRewards();
-        Debug.Log($"뽑힌 카드 {randomRewards.Count}개");
-
-        for (int i = 0; i < randomRewards.Count; i++)
-        {
-            string rewardId = randomRewards[i].CLEAR_REWARD_ID;
-            int currentCount = Service.Get<DataManager>().CurrentStageRewardCount(rewardId);
-            int maxCount = randomRewards[i].MAX_CLEAR_REWARD_COUNT;
-            Debug.Log($"리워드 {i} : {rewardId}: {currentCount} / {maxCount}");
-            
-        }
     }
     
     private void ChangeState(GameState state)
@@ -129,6 +107,19 @@ public class GameManager : BaseManager<GameManager>
                 _state.ChangeState(GameOverState);
                 break;
         }
+    }
+
+    public int ChangeSpeed()
+    {
+        currentSpeedIndex = (currentSpeedIndex + 1) % timeScaleSpeeds.Length;
+        
+        float gameSpeed = timeScaleSpeeds[currentSpeedIndex];
+        
+        Service.Get<TimeManager>().SetSpeed(gameSpeed);
+        
+        Debug.Log($"현재 타임스케일 {Time.timeScale}");
+
+        return (int)gameSpeed;
     }
 
     public List<StageData> GetStageDataList(int currentChapter)
