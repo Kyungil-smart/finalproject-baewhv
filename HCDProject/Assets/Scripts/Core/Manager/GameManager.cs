@@ -32,9 +32,7 @@ public class GameManager : BaseManager<GameManager>
     public Rampart _wall;
     private string _wallAddress = "Rampart";
     [SerializeField] private int _currentWallHp = -1;
-    private Coroutine _gameRoutine;
-    private CharacterRawData _characterRawData;
-
+    
     public HashSet<string> ids = new HashSet<string>();
     
     private void Awake()
