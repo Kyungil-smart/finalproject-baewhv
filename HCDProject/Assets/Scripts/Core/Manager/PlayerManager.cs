@@ -132,6 +132,50 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         _characters[index].Stats = stats;
     }
 
+    public void ApplyLevelReward(LevelRewardRawData reward)
+    {
+        ApplySingleStat(reward.LEVEL_REWARD_TYPE_01, reward.LEVEL_REWARD_01);
+        ApplySingleStat(reward.LEVEL_REWARD_TYPE_02, reward.LEVEL_REWARD_02);
+    }
+
+    public void ApplySingleStat(string rewardType, float bonus)
+    {
+        if (rewardType == "NONE") return;
+        foreach(BaseCharacter chr in _characters)
+        {
+            if (chr == null) continue;
+            var stats = chr.Stats;
+            switch(rewardType)
+            {
+                case "ATK":
+                    stats._attackPower += (int)bonus;
+                    break;
+                case "DEF":
+                    stats._defense += (int)bonus;
+                    break;
+                case "ATK_SPEED":
+                    stats._attackSpeed += bonus;
+                    break;
+                case "MAX_HP":
+                    stats._maxHp += (int)bonus;
+                    break;
+                case "HP":
+                    chr.SetHeal(Mathf.CeilToInt(bonus));
+                    break;
+                case "MOVE_SPEED":
+                    stats._moveSpeed += (int)bonus;
+                    break;
+                case "CRITICAL_RATE":
+                    stats._critRate += bonus;
+                    break;
+                case "CRITICAL_DAMAGE":
+                    stats._critDamage += bonus;
+                    break;
+            }
+            chr.Stats = stats;
+        }
+    }
+
     public void StartRevive(BaseCharacter character)
     {
         int index = Array.IndexOf(_characters, character);

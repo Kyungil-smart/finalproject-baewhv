@@ -377,6 +377,7 @@ public class BaseCharacter : BaseController
             float lowestRatio = float.MaxValue;
             foreach (ITargetable t in targets)
             {
+                if (!this.Movement.CanReach(t.GetTargetObject.transform.position)) continue;
                 if (t is BaseCharacter ally)
                 {
                     float ratio = (float)ally.CurrentHp.Value / ally.Stats._maxHp;
@@ -395,6 +396,7 @@ public class BaseCharacter : BaseController
 
         foreach (ITargetable target in targets)
         {
+            if (!this.Movement.CanReach(target.GetTargetObject.transform.position)) continue;
             float dis = (this.transform.position - target.GetTargetObject.transform.position).magnitude
                 - GetRadius() - target.GetRadius();
 
