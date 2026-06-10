@@ -96,7 +96,7 @@ public partial class PlayerManager
             Debug.Log("데이터가 없습니다");
             return;
         }
-
+        ApplyLevelReward(currentRandomRewards[selectedIndex]);
         Service.Get<DataManager>()?.SelectLevelReward(currentRandomRewards[selectedIndex].LEVEL_ID);
 
         string rewardId = currentRandomRewards[selectedIndex].LEVEL_ID;
