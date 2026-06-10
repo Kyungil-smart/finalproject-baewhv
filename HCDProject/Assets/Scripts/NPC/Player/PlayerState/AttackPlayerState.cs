@@ -34,7 +34,8 @@ public class AttackPlayerState : IState
         }
 
         float dist = Vector3.Distance(_owner.transform.position,
-                _owner.GetCurrentTarget.GetTargetObject.transform.position);
+                _owner.GetCurrentTarget.GetTargetObject.transform.position)
+                - _owner.GetRadius() - _owner.GetCurrentTarget.GetRadius();
         if (dist > _owner.CurrentSkillRange) // 공격 범위 벗어났으면
         {
             _owner.state.ChangeState(_owner.chase);

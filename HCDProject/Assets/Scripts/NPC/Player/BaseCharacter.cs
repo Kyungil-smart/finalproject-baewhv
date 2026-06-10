@@ -70,13 +70,13 @@ public class BaseCharacter : BaseController
 
     public void SetNavMeshActive(bool isActive)
     {
-        if (isActive)
+        if (isActive) // 활성화
         {
             this.Movement.Agent.enabled = isActive;
             this.Movement.Agent.isStopped = false;
         }
 
-        else
+        else // 비활성화
         {
             this.Movement.Agent.isStopped = true;
             this.Movement.Agent.enabled = isActive;
@@ -207,64 +207,70 @@ public class BaseCharacter : BaseController
     public override void UseSkill(int index)
     {
         // 현재 스킬의 n번째 스킬이 범위인지, 단일인지
-        float totalDamage = (_stats._attackPower * skills[index].SKILL_ABILLITY);
+        float totalDamage = CalculateDamage(index);
 
-        if (skills[index].ATK_TYPE == EAtkType.BUFF) { SetBuff(); return; } // 버프스킬
-
-        if (skills[index].SKILL_TYPE == ESkillType.SINGLE_TARGET) // 단일대상
+        switch (skills[index].SKILL_TYPE, skills[index].SKILL_AT) // 스킬타입과, 스킬대상 비교
         {
-            if (skills[index].SKILL_AT == ETargetType.ALLY)
-            {
-                int healAmount = UseCritDamage((int)totalDamage);
-                GetCurrentTarget.SetHeal(healAmount);
-            }
+            case (ESkillType.SINGLE_TARGET, ETargetType.SELF): // 궁수버프
+                SetBuff();
+                break;
 
-            else
-            {
-                if (_isBuffActive) // 버프상태라면?
+            case (ESkillType.SINGLE_TARGET, ETargetType.ALLY): // 아군 힐
+                GetCurrentTarget.SetHeal(UseCritDamage((int)totalDamage));
+                break;
+
+            case (ESkillType.SINGLE_TARGET, ETargetType.ENEMY): // 적에게 단일공격
+                if (_isBuffActive)
                 {
-                    for (int i = 0; i < 3; i++) // 3번 공격(궁수)
-                    {
+                    for (int i = 0; i < 3; i++) // 궁수가 버프를 받았다면 3번공격
                         GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                    }
                 }
-                else
+                else // 그외 단일공격
                 {
                     GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                } 
-            }
-        }
-        if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE) // 범위 공격
-        {
-            if (skills[index].ATK_TYPE == EAtkType.SKILL)
-            {
-                AttackRangeBox(index, (int)totalDamage);
-                // 마법사 범위공격
-            }
-        }
+                }
+                break;
 
-        if (skills[index].SKILL_TYPE == ESkillType.ALL_TARGET) // 전체 공격
-        {
-            if (skills[index].SKILL_AT == ETargetType.ALLY)
-            {
+            case (ESkillType.ATTACK_OF_SCOPE, ETargetType.ENEMY): // 적에게 범위스킬
+                AttackRangeBox(index, (int)totalDamage);
+                break;
+
+            case (ESkillType.ALL_TARGET, ETargetType.ALLY): // 아군에게 전체스킬
                 var characters = Service.Get<PlayerManager>()?.Characters;
                 if (characters == null) return;
                 foreach (BaseCharacter chr in characters)
                 {
-                    if (!chr._isDead) 
+                    if (!chr._isDead)
                     {
-                        float heal = chr.Stats._maxHp * 0.15f;
-                        chr.SetHeal((int)heal);
-                        Debug.Log($"[힐] {chr.gameObject.name} → {(int)heal} 회복");
+                        chr.SetHeal((int)totalDamage);
+                        Debug.Log($"[힐] {chr.gameObject.name} → {(int)totalDamage} 회복");
                     }
-
                     else
                     {
                         Service.Get<PlayerManager>()?.ImmediateRevive(chr);
                         Debug.Log($"[부활] {chr.gameObject.name} 즉시 부활!");
                     }
                 }
-            }
+                break;
+
+            case (ESkillType.ALL_TARGET, ETargetType.ENEMY): // TODO : 유물구현시
+                // 추후 구현 (유물 마법사)
+                break;
+        }
+    }
+    // 데미지 계산만 담당하는 별도 메서드
+    private float CalculateDamage(int index)
+    {
+        switch(skills[index].SKILL_DT)
+        {
+            case ESkillDamageType.ATTACK_BASE:
+                return _stats._attackPower * skills[index].SKILL_ABILLITY;
+            case ESkillDamageType.TRUE_DAMAGE:
+                return skills[index].SKILL_ABILLITY;
+            case ESkillDamageType.SKILL_DAMAGE_P:
+                return 0f; // 추후 구현예정
+            default:
+                return 0f;
         }
     }
 
@@ -303,9 +309,8 @@ public class BaseCharacter : BaseController
             if (GetCurrentTarget == null) return;
 
             Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
-            float damage = _stats._attackPower * skills[1].SKILL_ABILLITY;
 
-            StartCoroutine(DotFieldCoroutine(fieldCenter, (int)damage));
+            StartCoroutine(DotFieldCoroutine(fieldCenter,(int)CalculateDamage(1)));
             _activeSkillCoolCount = 0;
         }
     }
@@ -364,8 +369,7 @@ public class BaseCharacter : BaseController
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        //if (skills == null || skills.Count == 0) return null;
-        List<ITargetable> targets = Detect(skills[index].SKILL_IS, skills[index].SKILL_AT);
+        List<ITargetable> targets = Detect(skills[index].SKILL_IS + GetRadius(), skills[index].SKILL_AT);
         ITargetable nearest = null;
 
         if (FindType == EFindType.LowestHp)
@@ -391,7 +395,8 @@ public class BaseCharacter : BaseController
 
         foreach (ITargetable target in targets)
         {
-            float dis = (this.transform.position - target.GetTargetObject.transform.position).sqrMagnitude;
+            float dis = (this.transform.position - target.GetTargetObject.transform.position).magnitude
+                - GetRadius() - target.GetRadius();
 
             switch (FindType)
             {
@@ -437,9 +442,7 @@ public class BaseCharacter : BaseController
         CurrentHp.Value = Stats._maxHp;
 
         _isFirstCombat = _playerStats._hasFirstCombat;
-        Debug.Log($"before: {_findType}");
         _findType = _playerStats._initFindType;
-        Debug.Log($"after: {_findType}");
     }
 
     protected new void OnDrawGizmos()
@@ -447,6 +450,6 @@ public class BaseCharacter : BaseController
         if (skills == null || skills.Count == 0) return;
 
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, CurrentSkillRange);
+        Gizmos.DrawWireSphere(transform.position, CurrentSkillRange + GetRadius());
     }
 }

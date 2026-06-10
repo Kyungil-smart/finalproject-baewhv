@@ -6,7 +6,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.InputSystem;
 
-public class PlayerManager : BaseManager<PlayerManager>
+public partial class PlayerManager : BaseManager<PlayerManager>
 {
     [SerializeField] string _characterAddress; // 프리팹 주소
 
@@ -109,6 +109,27 @@ public class PlayerManager : BaseManager<PlayerManager>
             }
         }
         isAllSpawn.Value = true;
+    }
+
+    public void ApplyBuff(int index, string objType, float bonus)
+    {
+        var stats = _characters[index].Stats;
+        switch(objType)
+        {
+            case "OBJ_ATK":
+                stats._attackPower += (int)bonus;
+                break;
+            case "OBJ_DEF":
+                stats._defense += (int)bonus;
+                break;
+            case "OBJ_AS":
+                stats._attackSpeed += bonus;
+                break;
+            case "OBJ_HP":
+                stats._maxHp += (int)bonus;
+                break;
+        }
+        _characters[index].Stats = stats;
     }
 
     public void StartRevive(BaseCharacter character)

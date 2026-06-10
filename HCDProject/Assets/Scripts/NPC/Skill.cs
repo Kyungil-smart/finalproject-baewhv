@@ -24,7 +24,7 @@ public class Skill
     public float SKILL_AB_02;
     
     // 공통
-    public string SKILL_DT; // 스킬 데미지 타입
+    public ESkillDamageType SKILL_DT; // 스킬 데미지 타입
     public string SKILL_SFX;
     public string SKILL_FX;
     public string SKILL_HIT_SFX;
@@ -43,6 +43,7 @@ public class Skill
         SKILL_AT = Enum.Parse<ETargetType>(data.SKILL_AT);
         ATK_TYPE = Enum.Parse<EAtkType>(data.ATK_TYPE);
         SKILL_TYPE = Enum.Parse<ESkillType>(data.SKILL_TYPE);
+        SKILL_DT = Enum.Parse<ESkillDamageType>(data.SKILL_DT);
         targetCount = 1;
     }
 
@@ -63,6 +64,14 @@ public class Skill
         SKILL_ABT_02 = Enum.Parse<ESkillAbilityType>(data.SKILL_ABT_02);
         SKILL_AB_02 = data.SKILL_AB_02;
     }
+}
+
+public enum ESkillDamageType
+{
+    NONE = 0,
+    TRUE_DAMAGE = 1,
+    ATTACK_BASE = 2,
+    SKILL_DAMAGE_P = 3
 }
 
 public enum EAtkType
