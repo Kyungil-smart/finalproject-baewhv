@@ -18,7 +18,6 @@ public class BaseMonster : BaseController
     public MonsterDieState DieState { get; protected set; }
     #endregion
     
-    private float _timer;
     public Vector3 Target { get; set; }
     
     protected BaseCharacter[] _characters;
@@ -61,8 +60,6 @@ public class BaseMonster : BaseController
         base.Awake();
         
         CurrentState = new();
-        
-        _timer = 0f;
     }
 
     protected void Start()
