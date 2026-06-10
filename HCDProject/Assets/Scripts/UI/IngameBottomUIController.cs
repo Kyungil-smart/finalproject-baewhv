@@ -38,6 +38,8 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] private TextMeshProUGUI leftSortCountText;
 
+    [SerializeField] private TextMeshProUGUI gameSpeedText;
+
     private void Start()
     {
         comboText.gameObject.SetActive(false);
@@ -130,5 +132,9 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public void SetLevelText(int value)
     {
         levelText.text = $"Lv : {value}";
+    }
+    public void OnSpeedButtonClick()
+    {
+        gameSpeedText.text = $"X{Service.Get<GameManager>()?.ChangeSpeed()}";
     }
 }

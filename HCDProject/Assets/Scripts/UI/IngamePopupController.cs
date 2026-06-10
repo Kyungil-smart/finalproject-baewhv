@@ -38,7 +38,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
         ClearLogo.SetActive(false);
         FailLogo.SetActive(false);
 
-        if (isClear) OnRewardPopup();
+        if (isClear) OnRewardPopup(OnClearPopup);
         else OnFailPopup();
     }
 
