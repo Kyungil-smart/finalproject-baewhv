@@ -21,11 +21,11 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     
 
 
-    public void InitSlot(BaseCharacter character)
+    public void InitSlot(BaseCharacter character, Sprite image)
     {
         //캐릭터 초상화 설정
         _character = character;
-        //portraitImage = _character.
+        portraitImage.sprite = image;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -63,5 +63,10 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void OnUseSkill()
     {
         _character?.UseSkill(1);
+    }
+
+    public void ChangeMode(bool isSort)
+    {
+        SkillArea.SetActive(!isSort);
     }
 }
