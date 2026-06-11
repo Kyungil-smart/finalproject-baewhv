@@ -9,7 +9,7 @@ public struct CharacterStats
 
     public int _defense;
 
-    public int _moveSpeed;
+    public float _moveSpeed;
 
     public float _attackSpeed;
 
