@@ -66,7 +66,7 @@ public class RailManager : BaseManager<RailManager>
             SpawnInitialBlock();
         }
 
-        PlayerInputLock(false); 
+        PlayerInputLock(false);
     }
 
     private void SpawnInitialBlock()
@@ -168,6 +168,12 @@ public class RailManager : BaseManager<RailManager>
         DragAndDrop dndScript = newBlock.GetComponent<DragAndDrop>();
         targetList.Add(dndScript);
 
+        var sortManager = Service.Get<SortManager>();
+        if (sortManager != null && sortManager.RemainingSorts.Value <= 0)
+        {
+            dndScript.enabled = false;
+        }
+
         if (!isAnimating)
         {
             ComboAnimation(targetList);
@@ -202,27 +208,26 @@ public class RailManager : BaseManager<RailManager>
     {
         if (targetList.Count < 3) return;
 
-        for (int i = targetList.Count - 1; i >= 2; i--)
+        for (int i = 0; i <= targetList.Count - 3; i++)
         {
-            if (i >= targetList.Count || (i - 1) < 0 || (i - 2) < 0) continue;
-            if (targetList[i] == null || targetList[i - 1] == null || targetList[i - 2] == null) continue;
+            if (targetList[i] == null || targetList[i + 1] == null || targetList[i + 2] == null) continue;
 
             string name1 = GetCleanName(targetList[i].gameObject.name);
-            string name2 = GetCleanName(targetList[i - 1].gameObject.name);
-            string name3 = GetCleanName(targetList[i - 2].gameObject.name);
+            string name2 = GetCleanName(targetList[i + 1].gameObject.name);
+            string name3 = GetCleanName(targetList[i + 2].gameObject.name);
 
             if (name1 == name2 && name2 == name3)
             {
                 isAnimating = true;
-                PlayerInputLock(true); 
+                PlayerInputLock(true);
 
                 DragAndDrop b1 = targetList[i];
-                DragAndDrop b2 = targetList[i - 1];
-                DragAndDrop b3 = targetList[i - 2];
+                DragAndDrop b2 = targetList[i + 1];
+                DragAndDrop b3 = targetList[i + 2];
 
+                targetList.RemoveAt(i + 2);
+                targetList.RemoveAt(i + 1);
                 targetList.RemoveAt(i);
-                targetList.RemoveAt(i - 1);
-                targetList.RemoveAt(i - 2);
 
                 Service.Get<SortManager>()?.AddCombo(1);
 
@@ -261,7 +266,7 @@ public class RailManager : BaseManager<RailManager>
                     SpawnBlockOnRail();
 
                     isAnimating = false;
-                    BlockMove(); 
+                    BlockMove();
                 });
 
                 return;
@@ -272,7 +277,7 @@ public class RailManager : BaseManager<RailManager>
     public void BlockMove()
     {
         isAnimating = true;
-        PlayerInputLock(true); 
+        PlayerInputLock(true);
 
         Sequence moveSeq = DOTween.Sequence();
 
@@ -295,14 +300,23 @@ public class RailManager : BaseManager<RailManager>
         moveSeq.OnComplete(() =>
         {
             isAnimating = false;
-            PlayerInputLock(false); 
+
+            var sortManager = Service.Get<SortManager>();
+            if (sortManager != null && sortManager.RemainingSorts.Value <= 0)
+            {
+                PlayerInputLock(true);
+            }
+            else
+            {
+                PlayerInputLock(false);
+            }
 
             ComboAnimation(railABlocks);
             ComboAnimation(railBBlocks);
         });
     }
 
-    private void PlayerInputLock(bool isLock)
+    public void PlayerInputLock(bool isLock)
     {
         bool enableInteraction = !isLock;
 
