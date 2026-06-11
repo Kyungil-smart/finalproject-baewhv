@@ -11,6 +11,8 @@ public partial class PlayerManager
     private List<StoryExpRawData> LevelData;
     private Dictionary<string, int> LevelUpRewards = new();
     private List<LevelRewardRawData> currentRandomRewards;
+    private bool isOpenLevelUpPopup;
+    
 
     private void Start()
     {
@@ -53,8 +55,9 @@ public partial class PlayerManager
 
     private void CheckLevelUp(int value)
     {
-        if (value >= LevelData[level.Value - 1].TOTAL_EXP)
+        if (value >= LevelData[level.Value - 1].TOTAL_EXP && !isOpenLevelUpPopup)
         {
+            isOpenLevelUpPopup = true;
             Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnLevelUpPopup(CheckEXPNextFrame);
             Debug.Log($"LevelUp! currentLevel = {level.Value}");
         }
@@ -71,6 +74,7 @@ public partial class PlayerManager
         int currentExp = exp.Value - (int)LevelData[level.Value - 1].TOTAL_EXP;
         level.Value++;
         exp.SetValues(currentExp, (int)LevelData[level.Value - 1].TOTAL_EXP);
+        isOpenLevelUpPopup = false;
     }
 
 
