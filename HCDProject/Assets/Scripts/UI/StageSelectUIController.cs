@@ -13,6 +13,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     [SerializeField] private GameObject popupObject;
     [SerializeField] private RewardUIController rewardPopup;
     [SerializeField] private TMP_Text popupText;
+    [SerializeField] private TMP_Text popupTypeText;
     [SerializeField] private Button continuePopup;
     [SerializeField] private Text continueText;
     [SerializeField] private Button cancelPopup;
@@ -93,6 +94,8 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             if (popupObject != null)
             {
                 popupObject.SetActive(true);
+                
+                if (popupTypeText != null) popupTypeText.text = $"{type.ToString()}";
 
                 if (cancelPopup != null) cancelPopup.gameObject.SetActive(true);
 
@@ -116,6 +119,8 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         }
         else
         {
+            if (popupTypeText != null) popupTypeText.text = $"{type.ToString()}";
+            
             Service.Get<GameManager>()?.EnterStage(chapter, stage);
 
             if (rewardPopup != null)
