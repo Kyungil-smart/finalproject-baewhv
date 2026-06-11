@@ -302,14 +302,26 @@ public class BaseCharacter : BaseController
         Debug.Log($"[궁수 버프] 종료! 공속 복구: {originSpeed}");
     }
 
-    public void TryUseActiveSkill() // 액티브 스킬
+    public void TryUseActiveSkill() // 액티브 스킬 발동
     {
-        if (_activeSkillCoolCount >= ActiveSkillCoolTime)
+        if (_activeSkillCoolCount < ActiveSkillCoolTime) return;
+
+        if (skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
+
+        Debug.Log($"[액티브 스킬] {gameObject.name} 발동!");
+        switch (_playerStats._activeSkillBehavior)
         {
-            Debug.Log($"[액티브 스킬] {gameObject.name} 발동!");
-            UseSkill(1);
-            _activeSkillCoolCount = 0;
+            case EActiveSkillBehavior.DotField:
+                Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
+                StartCoroutine(DotFieldCoroutine(fieldCenter, (int)CalculateDamage(1)));
+                break;
+
+            case EActiveSkillBehavior.Instant:
+            default:
+                UseSkill(1);
+                break;
         }
+        _activeSkillCoolCount = 0;
     }
 
     public void TryDotFieldSkill() // 마법사 액티브호출

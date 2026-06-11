@@ -1,5 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class RailManager : BaseManager<RailManager>
 {
@@ -15,6 +20,9 @@ public class RailManager : BaseManager<RailManager>
 
     private List<GameObject> initialBlockBag = new List<GameObject>();
     private const int amountPerPrefab = 3;
+
+    private bool isAnimating = false;
+    public bool IsAnimating => isAnimating;
 
     protected override void Awake()
     {
@@ -57,6 +65,8 @@ public class RailManager : BaseManager<RailManager>
         {
             SpawnInitialBlock();
         }
+
+        PlayerInputLock(false);
     }
 
     private void SpawnInitialBlock()
@@ -106,9 +116,7 @@ public class RailManager : BaseManager<RailManager>
             float formulaValue = (3f - currentCounts[i]) * 2.5f;
 
             weights[i] = baseProbability + formulaValue;
-
             if (weights[i] < 0f) weights[i] = 0f;
-
             totalWeight += weights[i];
         }
 
@@ -160,11 +168,22 @@ public class RailManager : BaseManager<RailManager>
         DragAndDrop dndScript = newBlock.GetComponent<DragAndDrop>();
         targetList.Add(dndScript);
 
-        CheckRailLayout(targetList);
+        var sortManager = Service.Get<SortManager>();
+        if (sortManager != null && sortManager.RemainingSorts.Value <= 0)
+        {
+            dndScript.enabled = false;
+        }
+
+        if (!isAnimating)
+        {
+            ComboAnimation(targetList);
+        }
     }
 
     public void RemoveBlockFromRail(DragAndDrop block)
     {
+        if (isAnimating) return;
+
         if (railABlocks.Contains(block))
         {
             railABlocks.Remove(block);
@@ -180,32 +199,35 @@ public class RailManager : BaseManager<RailManager>
             railBBlocks.Remove(block);
         }
 
-        RealignAllBlocks();
         SpawnBlockOnRail();
 
-        CheckRailLayout(railABlocks);
-        CheckRailLayout(railBBlocks);
+        BlockMove();
     }
 
-    private void CheckRailLayout(List<DragAndDrop> targetList)
+    private void ComboAnimation(List<DragAndDrop> targetList)
     {
         if (targetList.Count < 3) return;
 
-        for (int i = targetList.Count - 1; i >= 2; i--)
+        for (int i = 0; i <= targetList.Count - 3; i++)
         {
+            if (targetList[i] == null || targetList[i + 1] == null || targetList[i + 2] == null) continue;
+
             string name1 = GetCleanName(targetList[i].gameObject.name);
-            string name2 = GetCleanName(targetList[i - 1].gameObject.name);
-            string name3 = GetCleanName(targetList[i - 2].gameObject.name);
+            string name2 = GetCleanName(targetList[i + 1].gameObject.name);
+            string name3 = GetCleanName(targetList[i + 2].gameObject.name);
 
             if (name1 == name2 && name2 == name3)
             {
-                Destroy(targetList[i].gameObject);
-                Destroy(targetList[i - 1].gameObject);
-                Destroy(targetList[i - 2].gameObject);
+                isAnimating = true;
+                PlayerInputLock(true);
 
+                DragAndDrop b1 = targetList[i];
+                DragAndDrop b2 = targetList[i + 1];
+                DragAndDrop b3 = targetList[i + 2];
+
+                targetList.RemoveAt(i + 2);
+                targetList.RemoveAt(i + 1);
                 targetList.RemoveAt(i);
-                targetList.RemoveAt(i - 1);
-                targetList.RemoveAt(i - 2);
 
                 Service.Get<SortManager>()?.AddCombo(1);
 
@@ -222,29 +244,89 @@ public class RailManager : BaseManager<RailManager>
                     }
                 }
 
-                RealignAllBlocks();
-                SpawnBlockOnRail();
-                SpawnBlockOnRail();
-                SpawnBlockOnRail();
+                Sequence comboSeq = DOTween.Sequence();
+
+                comboSeq.Join(b1.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack));
+                comboSeq.Join(b1.GetComponent<Image>().DOFade(0f, 0.2f));
+
+                comboSeq.Join(b2.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack));
+                comboSeq.Join(b2.GetComponent<Image>().DOFade(0f, 0.2f));
+
+                comboSeq.Join(b3.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack));
+                comboSeq.Join(b3.GetComponent<Image>().DOFade(0f, 0.2f));
+
+                comboSeq.OnComplete(() =>
+                {
+                    Destroy(b1.gameObject);
+                    Destroy(b2.gameObject);
+                    Destroy(b3.gameObject);
+
+                    SpawnBlockOnRail();
+                    SpawnBlockOnRail();
+                    SpawnBlockOnRail();
+
+                    isAnimating = false;
+                    BlockMove();
+                });
 
                 return;
             }
         }
     }
 
-    public void RealignAllBlocks()
+    public void BlockMove()
     {
+        isAnimating = true;
+        PlayerInputLock(true);
+
+        Sequence moveSeq = DOTween.Sequence();
+
         for (int i = 0; i < railABlocks.Count; i++)
         {
             if (railASlots[i] == null) continue;
             railABlocks[i].transform.SetParent(railASlots[i]);
-            railABlocks[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            RectTransform rt = railABlocks[i].GetComponent<RectTransform>();
+            moveSeq.Join(rt.DOAnchorPos(Vector2.zero, 0.2f).SetEase(Ease.OutQuad));
         }
+
         for (int i = 0; i < railBBlocks.Count; i++)
         {
             if (railBSlots[i] == null) continue;
             railBBlocks[i].transform.SetParent(railBSlots[i]);
-            railBBlocks[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            RectTransform rt = railBBlocks[i].GetComponent<RectTransform>();
+            moveSeq.Join(rt.DOAnchorPos(Vector2.zero, 0.2f).SetEase(Ease.OutQuad));
+        }
+
+        moveSeq.OnComplete(() =>
+        {
+            isAnimating = false;
+
+            var sortManager = Service.Get<SortManager>();
+            if (sortManager != null && sortManager.RemainingSorts.Value <= 0)
+            {
+                PlayerInputLock(true);
+            }
+            else
+            {
+                PlayerInputLock(false);
+            }
+
+            ComboAnimation(railABlocks);
+            ComboAnimation(railBBlocks);
+        });
+    }
+
+    public void PlayerInputLock(bool isLock)
+    {
+        bool enableInteraction = !isLock;
+
+        foreach (var block in railABlocks)
+        {
+            if (block != null) block.enabled = enableInteraction;
+        }
+        foreach (var block in railBBlocks)
+        {
+            if (block != null) block.enabled = enableInteraction;
         }
     }
 
