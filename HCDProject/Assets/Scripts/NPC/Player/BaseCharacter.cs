@@ -98,6 +98,11 @@ public class BaseCharacter : BaseController
         _currentTarget = target;
     }
 
+    public PlayerStats PlayerStat
+    {
+        get => _playerStats;
+        set => _playerStats = value;
+    }
     public Vector3 spawnPosition
     {
         get => _spawnPosition;
@@ -169,7 +174,7 @@ public class BaseCharacter : BaseController
             _maxHp = data.HP,
             _attackPower = data.ATK,
             _defense = data.DEF,
-            _moveSpeed = (int)data.MOVE_SPEED,
+            _moveSpeed = data.MOVE_SPEED,
             _attackSpeed = data.ATK_SPEED,
             _critRate = data.CRI_RATE,
             _critDamage = data.CRI_DMAGE
@@ -184,6 +189,7 @@ public class BaseCharacter : BaseController
         if (skillData != null) skills.Add(new Skill(skillData));
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
+        _playerStats._doubleAtkRate = data.DOUBLE_ATK_RATE;
         CurrentHp.Value = _stats._maxHp;
         Movement.Agent.speed = _stats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
@@ -228,6 +234,10 @@ public class BaseCharacter : BaseController
                 else // 그외 단일공격
                 {
                     GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
+                    if (UnityEngine.Random.value < _playerStats._doubleAtkRate) // 궁수유물적용시 연속공격
+                    {
+                        GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
+                    }
                 }
                 break;
 
