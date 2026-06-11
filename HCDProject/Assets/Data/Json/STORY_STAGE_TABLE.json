@@ -1,4 +1,74 @@
 ﻿{
   "data": [
+    {
+      "STAGE_ID": "CH01_NODE_001",
+      "NEXT_STAGE_ID": "CH01_NODE_002",
+      "CHAPTER": 1,
+      "STAGE": 1,
+      "STAGE_TYPE": "TUTORIAL",
+      "STAGE_NAME_ID": "SSN_001",
+      "TYPE_OF_ID": "7000",
+      "STORY_ID": "ST_0001"
+    },
+    {
+      "STAGE_ID": "CH01_NODE_002",
+      "NEXT_STAGE_ID": "CH01_NODE_003",
+      "CHAPTER": 1,
+      "STAGE": 2,
+      "STAGE_TYPE": "EVENT",
+      "STAGE_NAME_ID": "SSN_002",
+      "TYPE_OF_ID": "",
+      "STORY_ID": ""
+    },
+    {
+      "STAGE_ID": "CH01_NODE_003",
+      "NEXT_STAGE_ID": "CH01_NODE_004",
+      "CHAPTER": 1,
+      "STAGE": 3,
+      "STAGE_TYPE": "NORMAL_F",
+      "STAGE_NAME_ID": "SSN_003",
+      "TYPE_OF_ID": "7003",
+      "STORY_ID": ""
+    },
+    {
+      "STAGE_ID": "CH01_NODE_004",
+      "NEXT_STAGE_ID": "CH01_NODE_005",
+      "CHAPTER": 1,
+      "STAGE": 4,
+      "STAGE_TYPE": "NORMAL_F",
+      "STAGE_NAME_ID": "SSN_004",
+      "TYPE_OF_ID": "7006",
+      "STORY_ID": ""
+    },
+    {
+      "STAGE_ID": "CH01_NODE_005",
+      "NEXT_STAGE_ID": "CH01_NODE_006",
+      "CHAPTER": 1,
+      "STAGE": 5,
+      "STAGE_TYPE": "NORMAL_F",
+      "STAGE_NAME_ID": "SSN_005",
+      "TYPE_OF_ID": "7009",
+      "STORY_ID": ""
+    },
+    {
+      "STAGE_ID": "CH01_NODE_006",
+      "NEXT_STAGE_ID": "CH01_NODE_007",
+      "CHAPTER": 1,
+      "STAGE": 6,
+      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_NAME_ID": "SSN_006",
+      "TYPE_OF_ID": "",
+      "STORY_ID": ""
+    },
+    {
+      "STAGE_ID": "CH01_NODE_007",
+      "NEXT_STAGE_ID": "",
+      "CHAPTER": 1,
+      "STAGE": 7,
+      "STAGE_TYPE": "BOSS_F",
+      "STAGE_NAME_ID": "SSN_007",
+      "TYPE_OF_ID": "7012",
+      "STORY_ID": ""
+    }
   ]
 }

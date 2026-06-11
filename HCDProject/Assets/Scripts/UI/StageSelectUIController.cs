@@ -11,8 +11,11 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     [SerializeField] private List<Button> _stageButtons = new();
 
     [SerializeField] private GameObject popupObject;
+    [SerializeField] private RewardUIController rewardPopup;
     [SerializeField] private TMP_Text popupText;
+    [SerializeField] private TMP_Text popupTypeText;
     [SerializeField] private Button continuePopup;
+    [SerializeField] private Text continueText;
     [SerializeField] private Button cancelPopup;
 
     private int _currentChapter;
@@ -49,7 +52,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
             if (stageText != null) stageText.text = $"{_currentChapter} - {data.Stage}";
             
-            stageButton.interactable = data.State == StageState.Current || data.State == StageState.Boss;
+            stageButton.interactable = data.State == StageState.Current || data.State == StageState.OpenBoss || data.State == StageState.OpenSpecial;
 
             if (stageImage != null)
             {
@@ -64,40 +67,105 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
                     case StageState.Current:
                         stageImage.color = new Color(0.3f, 1f, 0.3f);
                         break;
-                    case StageState.Special:
+                    case StageState.LockSpecial:
                         stageImage.color = Color.yellow;
                         break;
-                    case StageState.Boss:
+                    case StageState.OpenSpecial:
+                        stageImage.color = Color.yellow;
+                        break;
+                    case StageState.LockBoss:
+                        stageImage.color = new Color(0.86f, 0.63f, 0.86f);
+                        break;
+                    case StageState.OpenBoss:
                         stageImage.color = new Color(0.86f, 0.63f, 0.86f);
                         break;
                 }
             }
             stageButton.onClick.RemoveAllListeners();
-            stageButton.onClick.AddListener(() => OnClickStageButton(_currentChapter, data.Stage));
+            stageButton.onClick.AddListener(() => OnClickStageButton(_currentChapter, data.Stage, data.type));
         }
     }
 
 
-    private void OnClickStageButton(int chapter, int stage)
+    private void OnClickStageButton(int chapter, int stage, StageType type)
     {
-        if (popupObject != null)
+        if (type == StageType.Normal || type == StageType.Boss)
         {
-            popupObject.SetActive(true);
-
-            if (popupText != null) popupText.text = $"{chapter} - {stage} start?";
-
-            if (continuePopup != null)
+            if (popupObject != null)
             {
-                continuePopup.onClick.RemoveAllListeners();
-                continuePopup.onClick.AddListener(() => EnterStage(chapter, stage));
+                popupObject.SetActive(true);
+                
+                if (popupTypeText != null) popupTypeText.text = $"{type.ToString()}";
+
+                if (cancelPopup != null) cancelPopup.gameObject.SetActive(true);
+
+                if (continuePopup != null)
+                {
+                    if (continueText != null) continueText.text = "start";
+                }
+                
+                if (popupText != null) popupText.text = $"{chapter} - {stage} start?";
+
+                if (continuePopup != null)
+                {
+                    continuePopup.onClick.RemoveAllListeners();
+                    continuePopup.onClick.AddListener(() =>
+                    {
+                        popupObject.SetActive(false);
+                        Service.Get<GameManager>()?.EnterStage(chapter, stage);
+                    });
+                }
+            }
+        }
+        else
+        {
+            if (popupTypeText != null) popupTypeText.text = $"{type.ToString()}";
+            
+            Service.Get<GameManager>()?.EnterStage(chapter, stage);
+
+            if (type == StageType.Event || type == StageType.Maintenance)
+            {
+                if (rewardPopup != null)
+                {
+                    rewardPopup.SetRelicReward(OnRewardSelect);
+                }
             }
         }
     }
 
-    private void EnterStage(int chapter, int stage)
+    public void OnRewardSelect()
     {
-        Service.Get<GameManager>()?.EnterStage(chapter, stage);
-        Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+        if (popupObject != null)
+        {
+            popupObject.SetActive(true)
+                ;
+            if (popupText != null) popupText.text = "유물 획득";
+
+            if (cancelPopup != null) cancelPopup.gameObject.SetActive(false);
+            
+            if (continuePopup != null)
+            {
+                if (continueText != null) continueText.text = "continue";
+                
+                continuePopup.onClick.RemoveAllListeners();
+                continuePopup.onClick.AddListener(() => 
+                {
+                    popupObject.SetActive(false);
+                    Service.Get<GameManager>()?.ClearStage();
+                    StageMap();
+                });
+            }
+        }
+    }
+
+    public void ShowReward(StageType type)
+    {
+        if (popupTypeText != null) popupTypeText.text = type == StageType.Event ? "EVENT" : "MAINTENANCE";
+
+        if (rewardPopup != null)
+        {
+            rewardPopup.SetRelicReward(OnRewardSelect);
+        }
     }
     
     // 추후 무한모드 제작시 이용 가능성 정도는 있음
@@ -235,6 +303,17 @@ public enum StageState
     Lock,
     Clear,
     Current,
-    Special,
+    LockSpecial,
+    OpenSpecial,
+    LockBoss,
+    OpenBoss
+}
+
+public enum StageType
+{
+    Tutorial,
+    Normal,
+    Event,
+    Maintenance,
     Boss
 }
