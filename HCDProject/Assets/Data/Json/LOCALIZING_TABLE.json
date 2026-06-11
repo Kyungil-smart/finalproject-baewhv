@@ -2,1179 +2,2219 @@
   "data": [
     {
       "TEXT_ID": "L_001",
-      "Korean(ko)": "레벨 리워드",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "레벨 리워드",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_012",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_013",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_001",
-      "Korean(ko)": "몬스터 이름",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "몬스터 이름",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_012",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_013",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_014",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_015",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_016",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_017",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_018",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_019",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_020",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_021",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_022",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_023",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_024",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_025",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_026",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_027",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_028",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_029",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_030",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_031",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_032",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_033",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_034",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_035",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_036",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_037",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_038",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_039",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_040",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_041",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_042",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_043",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_044",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_045",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_046",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_047",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_048",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_049",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "C_001",
-      "Korean(ko)": "세라",
-      "English(en)": "Serah",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "세라",
+      "English": "Serah",
+      "Thai": "เซราห์",
+      "Vietnamese": "Serah",
+      "Indonesian": "Serah"
     },
     {
       "TEXT_ID": "C_002",
-      "Korean(ko)": "노아",
-      "English(en)": "Noah",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "노아",
+      "English": "Noah",
+      "Thai": "โนอา",
+      "Vietnamese": "Noah",
+      "Indonesian": "Noah"
     },
     {
       "TEXT_ID": "C_003",
-      "Korean(ko)": "엘리스",
-      "English(en)": "Alice",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "엘리스",
+      "English": "Alice",
+      "Thai": "อลิซ",
+      "Vietnamese": "Alice",
+      "Indonesian": "Alice"
     },
     {
       "TEXT_ID": "C_004",
-      "Korean(ko)": "스파인",
-      "English(en)": "Spayin",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "스파인",
+      "English": "Spayin",
+      "Thai": "สไปน์",
+      "Vietnamese": "Spayin",
+      "Indonesian": "Spayin"
+    },
+    {
+      "TEXT_ID": "C_005",
+      "Korean": "지휘관",
+      "English": "Narration",
+      "Thai": "คำบรรยาย",
+      "Vietnamese": "Lời dẫn",
+      "Indonesian": "Narasi"
+    },
+    {
+      "TEXT_ID": "C_006",
+      "Korean": "나레이션",
+      "English": "Fortress Guard",
+      "Thai": "ทหารยามป้อมปราการ",
+      "Vietnamese": "Lính gác pháo đài",
+      "Indonesian": "Penjaga Benteng"
+    },
+    {
+      "TEXT_ID": "C_007",
+      "Korean": "요새 병사",
+      "English": "Demian",
+      "Thai": "เดเมียน",
+      "Vietnamese": "Demian",
+      "Indonesian": "Demian"
+    },
+    {
+      "TEXT_ID": "C_008",
+      "Korean": "데미안",
+      "English": "Commander",
+      "Thai": "ผู้บัญชาการ",
+      "Vietnamese": "Chỉ huy",
+      "Indonesian": "Komandan"
+    },
+    {
+      "TEXT_ID": "C_009",
+      "Korean": "시스템",
+      "English": "System",
+      "Thai": "ระบบ",
+      "Vietnamese": "Hệ thống",
+      "Indonesian": "Sistem"
     },
     {
       "TEXT_ID": "SCR_001",
-      "Korean(ko)": "고대 갑옷",
-      "English(en)": "Ancient Armor",
-      "Thai(th)": "เกราะโบราณ",
-      "Vietnamese(vi)": "Áo Giáp Cổ Đại",
-      "Indonesian(id)": "Baju Zirah Kuno"
+      "Korean": "고대 갑옷",
+      "English": "Ancient Armor",
+      "Thai": "เกราะโบราณ",
+      "Vietnamese": "Áo Giáp Cổ Đại",
+      "Indonesian": "Baju Zirah Kuno"
     },
     {
       "TEXT_ID": "SCR_002",
-      "Korean(ko)": "힐링 팩터",
-      "English(en)": "Healing Factor",
-      "Thai(th)": "พลังฟื้นฟู",
-      "Vietnamese(vi)": "Yếu Tố Hồi Phục",
-      "Indonesian(id)": "Faktor Penyembuhan"
+      "Korean": "힐링 팩터",
+      "English": "Healing Factor",
+      "Thai": "พลังฟื้นฟู",
+      "Vietnamese": "Yếu Tố Hồi Phục",
+      "Indonesian": "Faktor Penyembuhan"
     },
     {
       "TEXT_ID": "SCR_003",
-      "Korean(ko)": "전술 교본 (전사)",
-      "English(en)": "Tactical Manual (Warrior)",
-      "Thai(th)": "ตำรายุทธวิธี (นักรบ)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Chiến Binh)",
-      "Indonesian(id)": "Buku Taktik (Prajurit)"
+      "Korean": "전술 교본 (전사)",
+      "English": "Tactical Manual (Warrior)",
+      "Thai": "ตำรายุทธวิธี (นักรบ)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Chiến Binh)",
+      "Indonesian": "Buku Taktik (Prajurit)"
     },
     {
       "TEXT_ID": "SCR_004",
-      "Korean(ko)": "마법 활",
-      "English(en)": "Magic Bow",
-      "Thai(th)": "ธนูเวทมนตร์",
-      "Vietnamese(vi)": "Cung Ma Thuật",
-      "Indonesian(id)": "Busur Sihir"
+      "Korean": "마법 활",
+      "English": "Magic Bow",
+      "Thai": "ธนูเวทมนตร์",
+      "Vietnamese": "Cung Ma Thuật",
+      "Indonesian": "Busur Sihir"
     },
     {
       "TEXT_ID": "SCR_005",
-      "Korean(ko)": "화살비",
-      "English(en)": "Rain of Arrows",
-      "Thai(th)": "ฝนธนู",
-      "Vietnamese(vi)": "Mưa Tên",
-      "Indonesian(id)": "Hujan Panah"
+      "Korean": "화살비",
+      "English": "Rain of Arrows",
+      "Thai": "ฝนธนู",
+      "Vietnamese": "Mưa Tên",
+      "Indonesian": "Hujan Panah"
     },
     {
       "TEXT_ID": "SCR_006",
-      "Korean(ko)": "전술 교본 (궁수)",
-      "English(en)": "Tactical Manual (Archer)",
-      "Thai(th)": "ตำรายุทธวิธี (นักธนู)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Cung Thủ)",
-      "Indonesian(id)": "Buku Taktik (Pemanah)"
+      "Korean": "전술 교본 (궁수)",
+      "English": "Tactical Manual (Archer)",
+      "Thai": "ตำรายุทธวิธี (นักธนู)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Cung Thủ)",
+      "Indonesian": "Buku Taktik (Pemanah)"
     },
     {
       "TEXT_ID": "SCR_007",
-      "Korean(ko)": "확장 마법",
-      "English(en)": "Area Expansion",
-      "Thai(th)": "เวทมนตร์ขยายขอบเขต",
-      "Vietnamese(vi)": "Ma Thuật Mở Rộng",
-      "Indonesian(id)": "Sihir Perluasan"
+      "Korean": "확장 마법",
+      "English": "Area Expansion",
+      "Thai": "เวทมนตร์ขยายขอบเขต",
+      "Vietnamese": "Ma Thuật Mở Rộng",
+      "Indonesian": "Sihir Perluasan"
     },
     {
       "TEXT_ID": "SCR_008",
-      "Korean(ko)": "지진 마법",
-      "English(en)": "Earthquake Magic",
-      "Thai(th)": "เวทมนตร์แผ่นดินไหว",
-      "Vietnamese(vi)": "Ma Thuật Động Đất",
-      "Indonesian(id)": "Sihir Gempa"
+      "Korean": "지진 마법",
+      "English": "Earthquake Magic",
+      "Thai": "เวทมนตร์แผ่นดินไหว",
+      "Vietnamese": "Ma Thuật Động Đất",
+      "Indonesian": "Sihir Gempa"
     },
     {
       "TEXT_ID": "SCR_009",
-      "Korean(ko)": "전술 교본 (마법사)",
-      "English(en)": "Tactical Manual (Mage)",
-      "Thai(th)": "ตำรายุทธวิธี (นักเวท)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Pháp Sư)",
-      "Indonesian(id)": "Buku Taktik (Penyihir)"
+      "Korean": "전술 교본 (마법사)",
+      "English": "Tactical Manual (Mage)",
+      "Thai": "ตำรายุทธวิธี (นักเวท)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Pháp Sư)",
+      "Indonesian": "Buku Taktik (Penyihir)"
     },
     {
       "TEXT_ID": "SCR_010",
-      "Korean(ko)": "치유 증폭기",
-      "English(en)": "Healing Amplifier",
-      "Thai(th)": "เครื่องขยายพลังรักษา",
-      "Vietnamese(vi)": "Bộ Khuếch Đại Hồi Phục",
-      "Indonesian(id)": "Penguat Penyembuhan"
+      "Korean": "치유 증폭기",
+      "English": "Healing Amplifier",
+      "Thai": "เครื่องขยายพลังรักษา",
+      "Vietnamese": "Bộ Khuếch Đại Hồi Phục",
+      "Indonesian": "Penguat Penyembuhan"
     },
     {
       "TEXT_ID": "SCR_011",
-      "Korean(ko)": "보호막 마법",
-      "English(en)": "Barrier Magic",
-      "Thai(th)": "เวทมนตร์บาเรีย",
-      "Vietnamese(vi)": "Ma Thuật Lá Chắn",
-      "Indonesian(id)": "Sihir Perisai"
+      "Korean": "보호막 마법",
+      "English": "Barrier Magic",
+      "Thai": "เวทมนตร์บาเรีย",
+      "Vietnamese": "Ma Thuật Lá Chắn",
+      "Indonesian": "Sihir Perisai"
     },
     {
       "TEXT_ID": "SCR_012",
-      "Korean(ko)": "전술 교본 (힐러)",
-      "English(en)": "Tactical Manual (Healer)",
-      "Thai(th)": "ตำรายุทธวิธี (ผู้รักษา)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Trị Liệu Sư)",
-      "Indonesian(id)": "Buku Taktik (Penyembuh)"
+      "Korean": "전술 교본 (힐러)",
+      "English": "Tactical Manual (Healer)",
+      "Thai": "ตำรายุทธวิธี (ผู้รักษา)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Trị Liệu Sư)",
+      "Indonesian": "Buku Taktik (Penyembuh)"
     },
     {
       "TEXT_ID": "SCR_013",
-      "Korean(ko)": "성벽 수리",
-      "English(en)": "Wall Repair",
-      "Thai(th)": "ซ่อมกำแพง",
-      "Vietnamese(vi)": "Sửa Tường Thành",
-      "Indonesian(id)": "Perbaikan Tembok"
+      "Korean": "성벽 수리",
+      "English": "Wall Repair",
+      "Thai": "ซ่อมกำแพง",
+      "Vietnamese": "Sửa Tường Thành",
+      "Indonesian": "Perbaikan Tembok"
     },
     {
       "TEXT_ID": "SCR_014",
-      "Korean(ko)": "성벽 강화",
-      "English(en)": "Wall Reinforcement",
-      "Thai(th)": "เสริมแกร่งกำแพง",
-      "Vietnamese(vi)": "Cường Hóa Tường Thành",
-      "Indonesian(id)": "Penguatan Tembok"
+      "Korean": "성벽 강화",
+      "English": "Wall Reinforcement",
+      "Thai": "เสริมแกร่งกำแพง",
+      "Vietnamese": "Cường Hóa Tường Thành",
+      "Indonesian": "Penguatan Tembok"
     },
     {
       "TEXT_ID": "SCR_015",
-      "Korean(ko)": "지휘관의 깃발",
-      "English(en)": "Commander's Banner",
-      "Thai(th)": "ธงของผู้บัญชาการ",
-      "Vietnamese(vi)": "Cờ của Chỉ Huy",
-      "Indonesian(id)": "Bendera Komandan"
+      "Korean": "지휘관의 깃발",
+      "English": "Commander's Banner",
+      "Thai": "ธงของผู้บัญชาการ",
+      "Vietnamese": "Cờ của Chỉ Huy",
+      "Indonesian": "Bendera Komandan"
     },
     {
       "TEXT_ID": "MS_001",
-      "Korean(ko)": "몬스터 스킬 관련",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "몬스터 스킬 관련",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_012",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_013",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_014",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_015",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_016",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_017",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_018",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_019",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_020",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_021",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_022",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_023",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_024",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_025",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_026",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_027",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_028",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_029",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_030",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_031",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_032",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_033",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_034",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_035",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_036",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_037",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_038",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_039",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_040",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_041",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_042",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_043",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_044",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_045",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_046",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_047",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_048",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_049",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_001",
-      "Korean(ko)": "오브젝트",
-      "English(en)": "Sword",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "오브젝트",
+      "English": "Sword",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_002",
-      "Korean(ko)": "",
-      "English(en)": "Shield",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "Shield",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_003",
-      "Korean(ko)": "",
-      "English(en)": "Bow",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "Bow",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_004",
-      "Korean(ko)": "",
-      "English(en)": "Heart",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "Heart",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_001",
-      "Korean(ko)": "액티브 스킬",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "액티브 스킬",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "UI_001",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "TST_001",
-      "Korean(ko)": "어서오세요",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "(첫 배치지는 생각보다 조용했다.)",
+      "English": "(My first assignment was quieter than I expected.)",
+      "Thai": "(จุดประจำการแรกของฉันเงียบกว่าที่คิดไว้.)",
+      "Vietnamese": "(Nơi được phân công đầu tiên của tôi yên tĩnh hơn tôi nghĩ.)",
+      "Indonesian": "(Penugasan pertamaku ternyata lebih tenang dari yang kupikir.)"
+    },
+    {
+      "TEXT_ID": "TST_002",
+      "Korean": "여기가 시에스 방어 요새야? 몬스터가 거의 안 나온다더니, 진짜로 조용하네.",
+      "English": "Is this Cies Defense Fortress? They said monsters almost never appear here, and it really is quiet.",
+      "Thai": "ที่นี่คือป้อมป้องกันซีเอสเหรอ? ได้ยินว่ามอนสเตอร์แทบไม่ออกมาเลย เงียบจริงด้วย.",
+      "Vietnamese": "Đây là pháo đài phòng thủ Cies à? Nghe nói quái vật hầu như không xuất hiện, đúng là yên tĩnh thật.",
+      "Indonesian": "Ini Benteng Pertahanan Cies? Katanya monster hampir tidak pernah muncul, dan memang tenang sekali."
+    },
+    {
+      "TEXT_ID": "TST_003",
+      "Korean": "지휘관님과 수호대 여러분이십니까?",
+      "English": "Are you the Commander and the Guardians?",
+      "Thai": "ท่านคือผู้บัญชาการและเหล่าผู้พิทักษ์ใช่ไหมครับ?",
+      "Vietnamese": "Ngài là Chỉ huy và các Hộ vệ phải không ạ?",
+      "Indonesian": "Apakah Anda Komandan dan para Penjaga?"
+    },
+    {
+      "TEXT_ID": "TST_004",
+      "Korean": "시에스 방어 요새에 오신 것을 환영합니다.",
+      "English": "Welcome to Cies Defense Fortress.",
+      "Thai": "ยินดีต้อนรับสู่ป้อมป้องกันซีเอสครับ.",
+      "Vietnamese": "Chào mừng đến pháo đài phòng thủ Cies.",
+      "Indonesian": "Selamat datang di Benteng Pertahanan Cies."
+    },
+    {
+      "TEXT_ID": "TST_005",
+      "Korean": "환영해 줘서 고마워. 오자마자 일 이야기를 해서 미안한데, 안내를 부탁할게.",
+      "English": "Thanks for the welcome. Sorry to talk business right away, but please show us around.",
+      "Thai": "ขอบคุณที่ต้อนรับนะ. ขอโทษที่มาถึงก็พูดเรื่องงานเลย แต่ช่วยนำทางให้หน่อย.",
+      "Vietnamese": "Cảm ơn đã đón tiếp. Vừa đến đã nói chuyện công việc thì ngại quá, nhưng nhờ anh hướng dẫn giúp.",
+      "Indonesian": "Terima kasih atas sambutannya. Maaf baru datang sudah membahas tugas, tapi tolong pandu kami."
+    },
+    {
+      "TEXT_ID": "TST_006",
+      "Korean": "이쪽이 세라, 그리고 이쪽이 노아야.",
+      "English": "This is Serah, and this is Noah.",
+      "Thai": "ทางนี้คือเซราห์ และทางนี้คือโนอา.",
+      "Vietnamese": "Đây là Serah, còn đây là Noah.",
+      "Indonesian": "Ini Serah, dan ini Noah."
+    },
+    {
+      "TEXT_ID": "TST_007",
+      "Korean": "반가워. 전열을 맡고 있는 세라야. 관문 쪽 확인은 내가 먼저 볼게.",
+      "English": "Nice to meet you. I am Serah, in charge of the front line. I will check the gate area first.",
+      "Thai": "ยินดีที่ได้รู้จัก. ฉันเซราห์ รับหน้าที่แนวหน้า. ฉันจะตรวจดูฝั่งประตูก่อน.",
+      "Vietnamese": "Rất vui được gặp. Tôi là Serah, phụ trách tiền tuyến. Tôi sẽ kiểm tra khu cổng trước.",
+      "Indonesian": "Senang bertemu. Aku Serah, bertugas di garis depan. Aku akan memeriksa area gerbang dulu."
+    },
+    {
+      "TEXT_ID": "TST_008",
+      "Korean": "노아야. 멀리서 보이는 움직임은 내가 먼저 확인해 둘게.",
+      "English": "I am Noah. I will check any distant movement first.",
+      "Thai": "ฉันโนอา. ถ้ามีความเคลื่อนไหวไกล ๆ ฉันจะตรวจดูก่อน.",
+      "Vietnamese": "Tôi là Noah. Tôi sẽ kiểm tra trước mọi chuyển động ở xa.",
+      "Indonesian": "Aku Noah. Aku akan lebih dulu memeriksa pergerakan yang terlihat dari jauh."
+    },
+    {
+      "TEXT_ID": "TST_009",
+      "Korean": "그리고 이쪽이 엘리스, 스파인이야.",
+      "English": "And these are Alice and Spayin.",
+      "Thai": "แล้วทางนี้คืออลิซกับสไปน์.",
+      "Vietnamese": "Còn đây là Alice và Spayin.",
+      "Indonesian": "Dan ini Alice serta Spayin."
+    },
+    {
+      "TEXT_ID": "TST_010",
+      "Korean": "엘리스야. 신호석 확인과 마법 지원을 맡고 있어. 보기보다 꼼꼼한 편이니까 걱정하지 마.",
+      "English": "I am Alice. I handle signal stone checks and magic support. I am more thorough than I look, so do not worry.",
+      "Thai": "ฉันอลิซ. รับหน้าที่ตรวจศิลาสัญญาณกับสนับสนุนเวทมนตร์. ฉันละเอียดกว่าที่เห็นนะ ไม่ต้องห่วง.",
+      "Vietnamese": "Tôi là Alice. Tôi phụ trách kiểm tra đá tín hiệu và hỗ trợ ma pháp. Tôi kỹ tính hơn vẻ ngoài đấy, nên đừng lo.",
+      "Indonesian": "Aku Alice. Aku menangani pemeriksaan batu sinyal dan dukungan sihir. Aku lebih teliti dari kelihatannya, jadi jangan khawatir."
+    },
+    {
+      "TEXT_ID": "TST_011",
+      "Korean": "스파인이야. 회복을 맡고 있어. 아프면 바로 말해줘.",
+      "English": "I am Spayin. I handle healing. If you are hurt, tell me right away.",
+      "Thai": "ฉันสไปน์. รับหน้าที่รักษา. ถ้าเจ็บก็รีบบอกทันทีนะ.",
+      "Vietnamese": "Tôi là Spayin. Tôi phụ trách hồi phục. Nếu bị đau thì nói ngay nhé.",
+      "Indonesian": "Aku Spayin. Aku bertugas menyembuhkan. Kalau terluka, segera bilang."
+    },
+    {
+      "TEXT_ID": "TST_012",
+      "Korean": "저는 시에스 요새 수비대장인 데미안입니다.",
+      "English": "I am Demian, captain of the Cies Fortress Guard.",
+      "Thai": "ผมคือเดเมียน หัวหน้าทหารยามป้อมซีเอสครับ.",
+      "Vietnamese": "Tôi là Demian, đội trưởng lính gác pháo đài Cies.",
+      "Indonesian": "Saya Demian, kapten Penjaga Benteng Cies."
+    },
+    {
+      "TEXT_ID": "TST_013",
+      "Korean": "앞으로 잘 부탁해, 데미안. 도착 전에 확인할 업무는 전달받았어.",
+      "English": "We will be counting on you, Demian. We were briefed on what to check before arriving.",
+      "Thai": "ฝากตัวด้วยนะ เดเมียน. ก่อนมาถึง พวกเราได้รับเรื่องที่ต้องตรวจแล้ว.",
+      "Vietnamese": "Nhờ anh giúp đỡ, Demian. Trước khi đến, chúng tôi đã nhận được danh sách việc cần kiểm tra.",
+      "Indonesian": "Kami mengandalkanmu, Demian. Sebelum tiba, kami sudah menerima tugas yang perlu diperiksa."
+    },
+    {
+      "TEXT_ID": "TST_014",
+      "Korean": "세라는 관문 검문소를 확인해 줘. 노아는 망루에서 숲길을 봐줘.",
+      "English": "Serah, check the gate checkpoint. Noah, watch the forest road from the tower.",
+      "Thai": "เซราห์ ตรวจด่านหน้าประตูด้วย. โนอา ดูทางป่าจากหอคอยนะ.",
+      "Vietnamese": "Serah, hãy kiểm tra trạm gác cổng. Noah, quan sát đường rừng từ tháp canh nhé.",
+      "Indonesian": "Serah, periksa pos gerbang. Noah, awasi jalan hutan dari menara."
+    },
+    {
+      "TEXT_ID": "TST_015",
+      "Korean": "엘리스는 신호석을 확인해 주고, 스파인은 물자 보관소를 봐줄래?",
+      "English": "Alice, check the signal stones. Spayin, can you check the supply storage?",
+      "Thai": "อลิซ ตรวจศิลาสัญญาณให้หน่อย. สไปน์ ช่วยดูคลังเสบียงได้ไหม?",
+      "Vietnamese": "Alice, kiểm tra đá tín hiệu giúp tôi. Spayin, cậu xem kho vật tư được chứ?",
+      "Indonesian": "Alice, periksa batu sinyal. Spayin, bisa cek gudang persediaan?"
+    },
+    {
+      "TEXT_ID": "TST_016",
+      "Korean": "데미안, 네 사람에게 안내할 인원을 붙여줄 수 있을까?",
+      "English": "Demian, can you assign guides to the four of them?",
+      "Thai": "เดเมียน ช่วยจัดคนไปนำทางทั้งสี่คนได้ไหม?",
+      "Vietnamese": "Demian, anh có thể bố trí người dẫn đường cho bốn người họ không?",
+      "Indonesian": "Demian, bisa tugaskan orang untuk memandu mereka berempat?"
+    },
+    {
+      "TEXT_ID": "TST_017",
+      "Korean": "알겠습니다. 바로 안내 병력을 배치하겠습니다.",
+      "English": "Understood. I will assign guides at once.",
+      "Thai": "รับทราบครับ. จะจัดกำลังนำทางทันที.",
+      "Vietnamese": "Rõ. Tôi sẽ bố trí binh lính dẫn đường ngay.",
+      "Indonesian": "Dimengerti. Saya akan segera menugaskan pengawal pemandu."
+    },
+    {
+      "TEXT_ID": "TST_018",
+      "Korean": "좋아! 관문 검문소는 내가 볼게.",
+      "English": "Good! I will check the gate checkpoint.",
+      "Thai": "좋아! 내가 관문 검문소를 확인할게.",
+      "Vietnamese": "Tốt! Tôi sẽ kiểm tra trạm gác cổng.",
+      "Indonesian": "Baik! Aku akan memeriksa pos gerbang."
+    },
+    {
+      "TEXT_ID": "TST_019",
+      "Korean": "망루 쪽을 먼저 확인하고 올게.",
+      "English": "I will check the tower first.",
+      "Thai": "ฉันจะไปตรวจฝั่งหอคอยก่อน.",
+      "Vietnamese": "Tôi sẽ kiểm tra phía tháp canh trước.",
+      "Indonesian": "Aku akan memeriksa menara dulu."
+    },
+    {
+      "TEXT_ID": "TST_020",
+      "Korean": "신호석을 확인하고 나서, 세라 쪽을 도와줄게.",
+      "English": "I will check the signal stones, then help Serah.",
+      "Thai": "ฉันจะตรวจศิลาสัญญาณ แล้วไปช่วยเซราห์.",
+      "Vietnamese": "Tôi sẽ kiểm tra đá tín hiệu rồi hỗ trợ Serah.",
+      "Indonesian": "Aku akan memeriksa batu sinyal, lalu membantu Serah."
+    },
+    {
+      "TEXT_ID": "TST_021",
+      "Korean": "관문 안쪽 물자 보관소라면... 여기서 제일 멀지 않아?",
+      "English": "If it is the supply storage inside the gate... is that not the farthest place from here?",
+      "Thai": "ถ้าเป็นคลังเสบียงด้านในประตู... มันไกลที่สุดจากตรงนี้ไม่ใช่เหรอ?",
+      "Vietnamese": "Nếu là kho vật tư bên trong cổng... chẳng phải xa nhất từ đây sao?",
+      "Indonesian": "Kalau gudang persediaan di dalam gerbang... bukankah itu yang paling jauh dari sini?"
+    },
+    {
+      "TEXT_ID": "TST_022",
+      "Korean": "멀어도 지금 봐두면 나중에 헤매지는 않을 거야.",
+      "English": "Even if it is far, checking it now will keep us from getting lost later.",
+      "Thai": "ถึงจะไกล แต่ถ้าดูไว้ตอนนี้ ทีหลังก็ไม่ต้องหลงทาง.",
+      "Vietnamese": "Dù xa, kiểm tra bây giờ sẽ giúp sau này khỏi lạc đường.",
+      "Indonesian": "Walau jauh, kalau dicek sekarang nanti kita tidak akan tersesat."
+    },
+    {
+      "TEXT_ID": "TST_023",
+      "Korean": "세라, 혹시 나랑 역할 바꿀래...?",
+      "English": "Serah, want to switch roles with me...?",
+      "Thai": "เซราห์ อยากสลับหน้าที่กับฉันไหม...?",
+      "Vietnamese": "Serah, có muốn đổi vai với tôi không...?",
+      "Indonesian": "Serah, mau tukar tugas denganku...?"
+    },
+    {
+      "TEXT_ID": "TST_024",
+      "Korean": "미안. 검문소는 내가 보는 게 좋을 것 같아. 앞에서 막는 건 내 일이니까.",
+      "English": "Sorry. I think I should handle the checkpoint. Stopping things at the front is my job.",
+      "Thai": "ขอโทษนะ. ฉันว่าด่านตรวจให้ฉันดูน่าจะดีกว่า. การหยุดไว้ข้างหน้าเป็นงานของฉัน.",
+      "Vietnamese": "Xin lỗi. Tôi nghĩ mình nên phụ trách trạm gác. Chặn ở phía trước là việc của tôi.",
+      "Indonesian": "Maaf. Kurasa aku yang sebaiknya memeriksa pos. Menahan di depan itu tugasku."
+    },
+    {
+      "TEXT_ID": "TST_025",
+      "Korean": "너무 맞는 말이라 더 슬프네...",
+      "English": "That is so right it makes me even sadder...",
+      "Thai": "ถูกต้องเกินไปจนยิ่งเศร้าเลย...",
+      "Vietnamese": "Đúng quá nên càng buồn hơn...",
+      "Indonesian": "Terlalu benar, jadi makin sedih..."
+    },
+    {
+      "TEXT_ID": "TST_026",
+      "Korean": "(각자 위치를 확인하려던 순간, 요새 안쪽에서 경보 종이 크게 울렸다.)",
+      "English": "(Just as we were about to check our positions, the alarm bell rang loudly inside the fortress.)",
+      "Thai": "(ทันทีที่พวกเรากำลังจะแยกไปตรวจตำแหน่ง ระฆังเตือนภัยก็ดังลั่นจากในป้อม.)",
+      "Vietnamese": "(Ngay lúc chúng tôi chuẩn bị kiểm tra vị trí của mình, chuông báo động trong pháo đài vang lớn.)",
+      "Indonesian": "(Saat kami hendak memeriksa posisi masing-masing, lonceng peringatan di dalam benteng berbunyi keras.)"
+    },
+    {
+      "TEXT_ID": "TST_027",
+      "Korean": "보고드립니다! 몬스터 경보입니다! 숲 방향에서 다수의 몬스터를 확인했습니다! 관문 쪽으로 접근 중입니다!",
+      "English": "Report! Monster alarm! We have confirmed many monsters from the forest! They are approaching the gate!",
+      "Thai": "รายงานครับ! สัญญาณเตือนมอนสเตอร์! พบมอนสเตอร์จำนวนมากจากทางป่า! กำลังมุ่งหน้ามาที่ประตู!",
+      "Vietnamese": "Báo cáo! Báo động quái vật! Đã phát hiện nhiều quái vật từ hướng rừng! Chúng đang tiến về phía cổng!",
+      "Indonesian": "Lapor! Alarm monster! Banyak monster terdeteksi dari arah hutan! Mereka mendekati gerbang!"
+    },
+    {
+      "TEXT_ID": "TST_028",
+      "Korean": "세라... 조용하다면서?",
+      "English": "Serah... you said it was quiet.",
+      "Thai": "เซราห์... เธอบอกว่าเงียบไม่ใช่เหรอ?",
+      "Vietnamese": "Serah... cậu nói là yên tĩnh mà?",
+      "Indonesian": "Serah... tadi kau bilang tenang, kan?"
+    },
+    {
+      "TEXT_ID": "TST_029",
+      "Korean": "그랬었지!",
+      "English": "It was!",
+      "Thai": "ก็เคยเงียบไง!",
+      "Vietnamese": "Đã từng yên tĩnh mà!",
+      "Indonesian": "Memang tadinya tenang!"
+    },
+    {
+      "TEXT_ID": "TST_030",
+      "Korean": "일단 다시 조용하게 만들 방법부터 생각하자.",
+      "English": "First, let us think about how to make it quiet again.",
+      "Thai": "ก่อนอื่น คิดวิธีทำให้มันเงียบอีกครั้งกันเถอะ.",
+      "Vietnamese": "Trước hết, hãy nghĩ cách làm nơi này yên tĩnh lại đã.",
+      "Indonesian": "Pertama, pikirkan cara membuatnya tenang lagi."
+    },
+    {
+      "TEXT_ID": "TST_031",
+      "Korean": "노아는 망루에서 숲길을 계속 감시해 줘.",
+      "English": "Noah, keep watching the forest road from the tower.",
+      "Thai": "โนอา เฝ้าดูทางป่าจากหอคอยต่อไป.",
+      "Vietnamese": "Noah, tiếp tục theo dõi đường rừng từ tháp canh.",
+      "Indonesian": "Noah, terus awasi jalan hutan dari menara."
+    },
+    {
+      "TEXT_ID": "TST_032",
+      "Korean": "스파인은 물자 보관소에서 응급 처치 물품을 챙겨와 줘. 둘 다 준비되는 대로 관문으로 합류해.",
+      "English": "Spayin, bring first-aid supplies from the storage. Both of you, join us at the gate when ready.",
+      "Thai": "สไปน์ เอาของปฐมพยาบาลจากคลังเสบียงมา. ทั้งสองคนพร้อมแล้วให้มารวมที่ประตู.",
+      "Vietnamese": "Spayin, mang vật tư sơ cứu từ kho đến. Hai người chuẩn bị xong thì tập hợp ở cổng.",
+      "Indonesian": "Spayin, ambil perlengkapan P3K dari gudang. Kalian berdua, bergabung di gerbang saat siap."
+    },
+    {
+      "TEXT_ID": "TST_033",
+      "Korean": "응, 확인하고 바로 갈게.",
+      "English": "Okay. I will check and come right away.",
+      "Thai": "อืม จะตรวจแล้วรีบไปทันที.",
+      "Vietnamese": "Ừ, tôi sẽ kiểm tra rồi đến ngay.",
+      "Indonesian": "Ya, aku cek lalu segera ke sana."
+    },
+    {
+      "TEXT_ID": "TST_034",
+      "Korean": "윽... 힘들게 제일 먼 곳까지 왔는데 바로 돌아가야 하네.",
+      "English": "Ugh... I came all the way to the farthest place, and now I have to go right back.",
+      "Thai": "อึก... อุตส่าห์มาถึงที่ไกลที่สุดแล้ว ต้องกลับทันทีเลยเหรอ.",
+      "Vietnamese": "Ư... vất vả lắm mới đến chỗ xa nhất, giờ lại phải quay về ngay.",
+      "Indonesian": "Ugh... susah payah sampai tempat paling jauh, sekarang harus langsung kembali."
+    },
+    {
+      "TEXT_ID": "TST_035",
+      "Korean": "세라와 엘리스 두 사람은 관문 검문소에서 몬스터를 먼저 막아줘.",
+      "English": "Serah and Alice, the two of you stop the monsters at the gate checkpoint first.",
+      "Thai": "เซราห์กับอลิซ ทั้งสองคนช่วยหยุดมอนสเตอร์ที่ด่านประตูก่อน.",
+      "Vietnamese": "Serah và Alice, hai người chặn quái vật ở trạm gác cổng trước.",
+      "Indonesian": "Serah dan Alice, kalian berdua hentikan monster dulu di pos gerbang."
+    },
+    {
+      "TEXT_ID": "TST_036",
+      "Korean": "좋아! 여기는 내가 버틸게. 관문까지는 절대 못 지나가게 막을 거야!",
+      "English": "Good! I will hold here. I will not let them get through to the gate!",
+      "Thai": "좋아! 여긴 내가 버틸게. 절대 관문까지 지나가게 두지 않아!",
+      "Vietnamese": "Tốt! Tôi sẽ giữ chỗ này. Nhất định không cho chúng vượt qua tới cổng!",
+      "Indonesian": "Baik! Aku akan bertahan di sini. Aku tidak akan membiarkan mereka melewati gerbang!"
+    },
+    {
+      "TEXT_ID": "TST_037",
+      "Korean": "세라가 앞을 맡아줘. 나는 적이 몰리는 쪽을 볼게.",
+      "English": "Serah, take the front. I will handle the enemies that group up.",
+      "Thai": "เซราห์ ฝากแนวหน้าให้เธอ. ฉันจะจัดการพวกที่รวมกันเป็นกลุ่ม.",
+      "Vietnamese": "Serah, cậu lo phía trước. Tôi sẽ xử lý chỗ địch tụ lại.",
+      "Indonesian": "Serah, ambil bagian depan. Aku akan menangani musuh yang berkumpul."
+    },
+    {
+      "TEXT_ID": "TST_038",
+      "Korean": "알겠어. 신호가 오면 바로 나갈게!",
+      "English": "Got it. I will move out as soon as the signal comes!",
+      "Thai": "알겠어. สัญญาณมาเมื่อไหร่ ฉันจะออกไปทันที!",
+      "Vietnamese": "Hiểu rồi. Tín hiệu đến là tôi sẽ lao ra ngay!",
+      "Indonesian": "Mengerti. Begitu sinyal datang, aku langsung maju!"
+    },
+    {
+      "TEXT_ID": "TST_039",
+      "Korean": "몬스터 무리가 관문 앞까지 접근했습니다! 지휘관님, 신호석 준비를 부탁드립니다!",
+      "English": "The monster horde has reached the gate! Commander, please prepare the signal stones!",
+      "Thai": "ฝูงมอนสเตอร์เข้าใกล้หน้าประตูแล้วครับ! ท่านผู้บัญชาการ โปรดเตรียมศิลาสัญญาณ!",
+      "Vietnamese": "Bầy quái vật đã áp sát trước cổng! Chỉ huy, xin chuẩn bị đá tín hiệu!",
+      "Indonesian": "Gerombolan monster sudah mendekati gerbang! Komandan, tolong siapkan batu sinyal!"
+    },
+    {
+      "TEXT_ID": "TST_040",
+      "Korean": "세라와 엘리스한테 먼저 신호를 보낼게.",
+      "English": "I will send the signal to Serah and Alice first.",
+      "Thai": "ฉันจะส่งสัญญาณให้เซราห์กับอลิซก่อน.",
+      "Vietnamese": "Tôi sẽ gửi tín hiệu cho Serah và Alice trước.",
+      "Indonesian": "Aku akan mengirim sinyal ke Serah dan Alice dulu."
+    },
+    {
+      "TEXT_ID": "TST_041",
+      "Korean": "신호 연결 확인. 세라, 준비됐지?",
+      "English": "Signal link confirmed. Serah, are you ready?",
+      "Thai": "ยืนยันการเชื่อมสัญญาณ. เซราห์ พร้อมไหม?",
+      "Vietnamese": "Đã xác nhận kết nối tín hiệu. Serah, sẵn sàng chứ?",
+      "Indonesian": "Koneksi sinyal terkonfirmasi. Serah, siap?"
+    },
+    {
+      "TEXT_ID": "TST_042",
+      "Korean": "좋아, 간다!",
+      "English": "Good, here I go!",
+      "Thai": "좋아 ไปเลย!",
+      "Vietnamese": "Tốt, tôi đi đây!",
+      "Indonesian": "Baik, aku maju!"
+    },
+    {
+      "TEXT_ID": "TST_043",
+      "Korean": "[튜토리얼 팝업: 신호석 타이밍 액션 및 3-Sort 콤보 공격 학습]",
+      "English": "[Tutorial Popup: Learn signal stone timing actions and 3-Sort combo attacks]",
+      "Thai": "[หน้าต่างสอนเล่น: เรียนรู้การกดจังหวะศิลาสัญญาณและคอมโบโจมตี 3-Sort]",
+      "Vietnamese": "[Cửa sổ hướng dẫn: Học thao tác căn thời gian đá tín hiệu và đòn combo 3-Sort]",
+      "Indonesian": "[Popup Tutorial: Pelajari aksi timing batu sinyal dan serangan kombo 3-Sort]"
+    },
+    {
+      "TEXT_ID": "TST_044",
+      "Korean": "공격 신호석을 세라 슬롯으로 드래그해주세요.",
+      "English": "Please drag the attack signal stone to Serah's slot.",
+      "Thai": "กรุณาลากศิลาสัญญาณโจมตีไปยังสล็อตของเซราห์.",
+      "Vietnamese": "Hãy kéo đá tín hiệu tấn công vào ô của Serah.",
+      "Indonesian": "Silakan seret batu sinyal serangan ke slot Serah."
+    },
+    {
+      "TEXT_ID": "TST_045",
+      "Korean": "같은 신호석 3개를 정렬해 콤보를 완성해주세요.",
+      "English": "Please align three matching signal stones to complete a combo.",
+      "Thai": "กรุณาจัดศิลาสัญญาณชนิดเดียวกัน 3 อันให้ตรงกันเพื่อทำคอมโบให้สำเร็จ.",
+      "Vietnamese": "Hãy xếp 3 đá tín hiệu giống nhau để hoàn thành combo.",
+      "Indonesian": "Susun 3 batu sinyal yang sama untuk menyelesaikan kombo."
+    },
+    {
+      "TEXT_ID": "TST_046",
+      "Korean": "쏟아져 나오기 시작했어! 앞쪽은 내가 막을게!",
+      "English": "They are pouring out! I will hold the front!",
+      "Thai": "พวกมันทะลักออกมาแล้ว! ด้านหน้าฉันจะรับไว้เอง!",
+      "Vietnamese": "Chúng bắt đầu tràn ra rồi! Phía trước để tôi chặn!",
+      "Indonesian": "Mereka mulai menyerbu! Bagian depan akan kutahan!"
+    },
+    {
+      "TEXT_ID": "TST_047",
+      "Korean": "적들이 한곳에 몰리면 내가 처리할게.",
+      "English": "If the enemies group up, I will deal with them.",
+      "Thai": "ถ้าศัตรูรวมกัน ฉันจะจัดการเอง.",
+      "Vietnamese": "Nếu địch tụ lại một chỗ, tôi sẽ xử lý.",
+      "Indonesian": "Kalau musuh berkumpul, aku yang akan mengurusnya."
+    },
+    {
+      "TEXT_ID": "TST_048",
+      "Korean": "두 번째 무리가 보여. 이제 나도 합류할게. 멀리서 다가오는 적은 내가 볼게.",
+      "English": "I see the second wave. I will join now. I will watch the enemies coming from afar.",
+      "Thai": "เห็นระลอกที่สองแล้ว. ฉันจะเข้าร่วมแล้วนะ. ศัตรูที่มาจากไกล ๆ ฉันจะดูเอง.",
+      "Vietnamese": "Tôi thấy đợt thứ hai rồi. Giờ tôi sẽ tham gia. Kẻ địch từ xa để tôi theo dõi.",
+      "Indonesian": "Aku melihat gelombang kedua. Aku bergabung sekarang. Musuh yang datang dari jauh akan kuawasi."
+    },
+    {
+      "TEXT_ID": "TST_049",
+      "Korean": "물자 쪽 잠금은 확인했어. 붕대도 챙겼고.",
+      "English": "The supply side is locked. I brought bandages too.",
+      "Thai": "ฝั่งเสบียงล็อกเรียบร้อยแล้ว. ผ้าพันแผลก็เอามาแล้ว.",
+      "Vietnamese": "Khu vật tư đã khóa rồi. Tôi cũng mang băng vải theo.",
+      "Indonesian": "Bagian persediaan sudah terkunci. Perban juga kubawa."
+    },
+    {
+      "TEXT_ID": "TST_050",
+      "Korean": "그래도 바로 와줘서 다행이야.",
+      "English": "Still, I am glad you came right away.",
+      "Thai": "ยังไงก็ดีที่เธอมาทันทีนะ.",
+      "Vietnamese": "Dù sao cậu đến ngay là tốt rồi.",
+      "Indonesian": "Tetap saja, bagus kau langsung datang."
+    },
+    {
+      "TEXT_ID": "TST_051",
+      "Korean": "늦으면 더 바빠지니까...",
+      "English": "If I am late, I will only get busier...",
+      "Thai": "ถ้าช้าไป งานจะยิ่งยุ่งกว่าเดิม...",
+      "Vietnamese": "Nếu chậm thì tôi sẽ càng bận hơn...",
+      "Indonesian": "Kalau terlambat, aku malah makin sibuk..."
+    },
+    {
+      "TEXT_ID": "TST_052",
+      "Korean": "좋아! 이제 다 모였네!",
+      "English": "Good! Now everyone is here!",
+      "Thai": "좋아! 이제ครบทุกคนแล้ว!",
+      "Vietnamese": "Tốt! Giờ mọi người đã đủ rồi!",
+      "Indonesian": "Baik! Sekarang semua sudah berkumpul!"
+    },
+    {
+      "TEXT_ID": "TST_053",
+      "Korean": "이러면 다쳐도 바로 볼 수는 있겠지.",
+      "English": "Now I can at least check on you right away if you get hurt.",
+      "Thai": "แบบนี้ถ้ามีใครบาดเจ็บ ฉันก็ยังดูได้ทันที.",
+      "Vietnamese": "Vậy nếu ai bị thương, ít nhất tôi có thể xem ngay.",
+      "Indonesian": "Kalau begini, kalau ada yang terluka aku bisa langsung memeriksanya."
+    },
+    {
+      "TEXT_ID": "TST_054",
+      "Korean": "[튜토리얼 팝업: 적 처치 경험치 획득 및 레벨업 보상 선택]",
+      "English": "[Tutorial Popup: Gain EXP by defeating enemies and choose a level-up reward]",
+      "Thai": "[หน้าต่างสอนเล่น: ได้รับ EXP จากการกำจัดศัตรูและเลือกของรางวัลเลเวลอัป]",
+      "Vietnamese": "[Cửa sổ hướng dẫn: Nhận EXP khi đánh bại kẻ địch và chọn phần thưởng lên cấp]",
+      "Indonesian": "[Popup Tutorial: Dapatkan EXP dengan mengalahkan musuh dan pilih hadiah naik level]"
+    },
+    {
+      "TEXT_ID": "TST_055",
+      "Korean": "레벨업 보상 카드 중 하나를 선택해주세요.",
+      "English": "Please choose one level-up reward card.",
+      "Thai": "กรุณาเลือกการ์ดรางวัลเลเวลอัป 1 ใบ.",
+      "Vietnamese": "Hãy chọn một thẻ thưởng lên cấp.",
+      "Indonesian": "Pilih salah satu kartu hadiah naik level."
+    },
+    {
+      "TEXT_ID": "TST_056",
+      "Korean": "대형 몬스터/보스 등장",
+      "English": "Large monster/boss appears",
+      "Thai": "มอนสเตอร์ขนาดใหญ่/บอสปรากฏตัว",
+      "Vietnamese": "Quái vật lớn/Boss xuất hiện",
+      "Indonesian": "Monster besar/boss muncul"
+    },
+    {
+      "TEXT_ID": "TST_057",
+      "Korean": "큰 녀석이 보여. 이번 무리는 저 녀석을 중심으로 움직이고 있어!",
+      "English": "I see a big one. This wave is moving around that thing!",
+      "Thai": "เห็นตัวใหญ่แล้ว. ระลอกนี้เคลื่อนที่โดยมีมันเป็นศูนย์กลาง!",
+      "Vietnamese": "Tôi thấy một con lớn. Đợt này đang di chuyển xoay quanh nó!",
+      "Indonesian": "Aku melihat yang besar. Gelombang ini bergerak berpusat pada makhluk itu!"
+    },
+    {
+      "TEXT_ID": "TST_058",
+      "Korean": "그럼 저 큰 녀석부터 막으면 되겠네. 내가 앞에 설게!",
+      "English": "Then we just have to stop that big one first. I will stand at the front!",
+      "Thai": "งั้นก็หยุดตัวใหญ่นั่นก่อนก็พอ. ฉันจะยืนแนวหน้าเอง!",
+      "Vietnamese": "Vậy chỉ cần chặn con lớn đó trước. Tôi sẽ đứng phía trước!",
+      "Indonesian": "Kalau begitu, kita hentikan yang besar dulu. Aku akan berdiri di depan!"
+    },
+    {
+      "TEXT_ID": "TST_059",
+      "Korean": "세라, 잠깐만! 저 덩치는 일반 공격만으로는 시간이 오래 걸릴 거야.",
+      "English": "Serah, wait! That huge one will take too long with normal attacks.",
+      "Thai": "เซราห์ เดี๋ยวก่อน! ตัวใหญ่นั่นถ้าใช้การโจมตีปกติจะใช้เวลานานเกินไป.",
+      "Vietnamese": "Serah, khoan đã! Con to đó sẽ mất rất lâu nếu chỉ đánh thường.",
+      "Indonesian": "Serah, tunggu! Yang besar itu akan terlalu lama jika hanya diserang biasa."
+    },
+    {
+      "TEXT_ID": "TST_060",
+      "Korean": "지휘관, 세라에게 스킬 신호를 보내줘!",
+      "English": "Commander, send Serah the skill signal!",
+      "Thai": "ผู้บัญชาการ ส่งสัญญาณสกิลให้เซราห์!",
+      "Vietnamese": "Chỉ huy, gửi tín hiệu kỹ năng cho Serah!",
+      "Indonesian": "Komandan, kirim sinyal skill ke Serah!"
+    },
+    {
+      "TEXT_ID": "TST_061",
+      "Korean": "일반 신호가 아니라, 게이지를 전부 소모하는 필살기 신호야!",
+      "English": "Not a normal signal. It is an ultimate signal that spends the full gauge!",
+      "Thai": "ไม่ใช่สัญญาณธรรมดา. เป็นสัญญาณท่าไม้ตายที่ใช้เกจทั้งหมด!",
+      "Vietnamese": "Không phải tín hiệu thường. Đây là tín hiệu tuyệt kỹ dùng toàn bộ thanh năng lượng!",
+      "Indonesian": "Bukan sinyal biasa. Ini sinyal jurus pamungkas yang memakai seluruh gauge!"
+    },
+    {
+      "TEXT_ID": "TST_062",
+      "Korean": "[튜토리얼 팝업: 게이지 소모를 통한 필살기(궁극기) 발동]",
+      "English": "[Tutorial Popup: Use the gauge to activate a special skill/ultimate]",
+      "Thai": "[หน้าต่างสอนเล่น: ใช้เกจเพื่อเปิดใช้สกิลพิเศษ/ท่าไม้ตาย]",
+      "Vietnamese": "[Cửa sổ hướng dẫn: Dùng thanh năng lượng để kích hoạt kỹ năng đặc biệt/tuyệt kỹ]",
+      "Indonesian": "[Popup Tutorial: Gunakan gauge untuk mengaktifkan skill khusus/jurus pamungkas]"
+    },
+    {
+      "TEXT_ID": "TST_063",
+      "Korean": "필살기 게이지를 사용해 세라의 필살기를 발동해주세요.",
+      "English": "Please use the Ultimate Gauge to activate Serah's ultimate.",
+      "Thai": "กรุณาใช้เกจท่าไม้ตายเพื่อเปิดใช้ท่าไม้ตายของเซราห์.",
+      "Vietnamese": "Hãy dùng thanh tuyệt kỹ để kích hoạt tuyệt kỹ của Serah.",
+      "Indonesian": "Gunakan Gauge Pamungkas untuk mengaktifkan jurus pamungkas Serah."
+    },
+    {
+      "TEXT_ID": "TST_064",
+      "Korean": "신호 확인! 크게 한 방 먹일게!",
+      "English": "Signal confirmed! I will hit it with one big blow!",
+      "Thai": "ยืนยันสัญญาณ! จะอัดให้เต็มแรงสักที!",
+      "Vietnamese": "Đã nhận tín hiệu! Tôi sẽ tung một đòn thật mạnh!",
+      "Indonesian": "Sinyal diterima! Akan kuhajar dengan satu pukulan besar!"
+    },
+    {
+      "TEXT_ID": "TST_065",
+      "Korean": "(관문 앞의 몬스터 무리를 전부 물리쳤다.)",
+      "English": "(We defeated all the monsters in front of the gate.)",
+      "Thai": "(พวกเรากำจัดมอนสเตอร์หน้าประตูได้ทั้งหมดแล้ว.)",
+      "Vietnamese": "(Chúng tôi đã đánh bại toàn bộ quái vật trước cổng.)",
+      "Indonesian": "(Kami mengalahkan semua monster di depan gerbang.)"
+    },
+    {
+      "TEXT_ID": "TST_066",
+      "Korean": "다친 데는 없어? 무리하지 말고 바로 말해줘.",
+      "English": "Is anyone hurt? If something hurts, tell me right away.",
+      "Thai": "มีใครบาดเจ็บไหม? ถ้าเจ็บตรงไหนรีบบอกทันทีนะ.",
+      "Vietnamese": "Có ai bị thương không? Nếu đau chỗ nào thì nói ngay nhé.",
+      "Indonesian": "Ada yang terluka? Kalau ada yang sakit, segera bilang."
+    },
+    {
+      "TEXT_ID": "TST_067",
+      "Korean": "없어! 다친 데는 없어! 관문 앞 돌바닥은... 음, 괜찮겠지?",
+      "English": "No! I am not hurt! The stone ground by the gate is... well, probably fine?",
+      "Thai": "ไม่มี! ฉันไม่เจ็บตรงไหน! พื้นหินหน้าประตูน่ะ... อืม คงไม่เป็นไรหรอกมั้ง?",
+      "Vietnamese": "Không! Tôi không bị thương! Nền đá trước cổng thì... ừm, chắc là ổn nhỉ?",
+      "Indonesian": "Tidak! Aku tidak terluka! Lantai batu di depan gerbang... yah, mungkin baik-baik saja?"
+    },
+    {
+      "TEXT_ID": "TST_068",
+      "Korean": "괜찮겠지로 끝낼 이야기는 아닌데, 뭐 그래도 몬스터는 관문에 닿기 전에 끊어냈어.",
+      "English": "Probably fine is not really an answer, but at least we stopped the monsters before they reached the gate.",
+      "Thai": "จบด้วยคำว่าคงไม่เป็นไรไม่ได้หรอกนะ แต่ยังไงเราก็ตัดพวกมอนสเตอร์ก่อนถึงประตูได้.",
+      "Vietnamese": "Nói chắc là ổn thì chưa đủ đâu, nhưng dù sao ta đã chặn quái vật trước khi chúng chạm tới cổng.",
+      "Indonesian": "“Mungkin baik-baik saja” bukan jawaban, tapi setidaknya kita menghentikan monster sebelum mencapai gerbang."
+    },
+    {
+      "TEXT_ID": "TST_069",
+      "Korean": "돌바닥은 내가 확인해 둘게. 나중에 수리 일이 커지면 더 귀찮아지니까.",
+      "English": "I will check the stone ground. If repairs get bigger later, it will be more annoying.",
+      "Thai": "ฉันจะตรวจพื้นหินไว้ก่อน. ถ้างานซ่อมใหญ่ขึ้นทีหลังจะยุ่งกว่าเดิม.",
+      "Vietnamese": "Tôi sẽ kiểm tra nền đá. Nếu sau này việc sửa chữa lớn hơn thì phiền lắm.",
+      "Indonesian": "Aku akan memeriksa lantai batunya. Kalau perbaikan jadi besar nanti, akan lebih merepotkan."
+    },
+    {
+      "TEXT_ID": "TST_070",
+      "Korean": "그런데 좀 이상해. 아까 그 몬스터 무리, 전부 숲길에서 내려왔어.",
+      "English": "But something is strange. That monster group all came down from the forest road.",
+      "Thai": "แต่มันแปลกอยู่นะ. ฝูงมอนสเตอร์เมื่อกี้ทั้งหมดลงมาจากทางป่า.",
+      "Vietnamese": "Nhưng có gì đó lạ. Đám quái vật vừa rồi đều đi xuống từ đường rừng.",
+      "Indonesian": "Tapi ada yang aneh. Gerombolan monster tadi semuanya turun dari jalan hutan."
+    },
+    {
+      "TEXT_ID": "TST_071",
+      "Korean": "망루에서 봤을 때, 숲길 안쪽 움직임이 아직 남아 있었어.",
+      "English": "When I looked from the tower, there was still movement deeper in the forest road.",
+      "Thai": "ตอนมองจากหอคอย ยังเห็นความเคลื่อนไหวลึกเข้าไปในทางป่าอยู่.",
+      "Vietnamese": "Khi nhìn từ tháp canh, tôi vẫn thấy chuyển động sâu bên trong đường rừng.",
+      "Indonesian": "Saat kulihat dari menara, masih ada pergerakan lebih dalam di jalan hutan."
+    },
+    {
+      "TEXT_ID": "TST_072",
+      "Korean": "그럼 숲길 쪽을 다시 확인해야겠네.",
+      "English": "Then we need to check the forest road again.",
+      "Thai": "งั้นต้องตรวจทางป่าอีกครั้งแล้ว.",
+      "Vietnamese": "Vậy chúng ta phải kiểm tra lại đường rừng.",
+      "Indonesian": "Kalau begitu, kita harus memeriksa jalan hutan lagi."
+    },
+    {
+      "TEXT_ID": "TST_073",
+      "Korean": "시에스가 원래 이렇게 몬스터가 몰려드는 곳은 아니야.",
+      "English": "Cies is not normally a place where monsters swarm like this.",
+      "Thai": "ปกติซีเอสไม่ใช่ที่ที่มอนสเตอร์แห่มากันแบบนี้.",
+      "Vietnamese": "Bình thường Cies không phải nơi quái vật kéo đến đông như vậy.",
+      "Indonesian": "Biasanya Cies bukan tempat yang didatangi monster sebanyak ini."
+    },
+    {
+      "TEXT_ID": "TST_074",
+      "Korean": "조용한 근무지라더니, 그 소문이 완전히 틀렸네.",
+      "English": "They said it was a quiet post, but that rumor was completely wrong.",
+      "Thai": "บอกว่าเป็นจุดประจำการเงียบ ๆ แต่นั่นผิดหมดเลย.",
+      "Vietnamese": "Nghe nói đây là nơi trực yên tĩnh, nhưng tin đồn đó sai hoàn toàn rồi.",
+      "Indonesian": "Katanya ini pos yang tenang, tapi rumor itu benar-benar salah."
+    },
+    {
+      "TEXT_ID": "TST_075",
+      "Korean": "그 소문을 제일 먼저 말한 사람이 세라였지.",
+      "English": "The first person to say that rumor was Serah.",
+      "Thai": "คนแรกที่พูดข่าวลือนั้นคือเซราห์นะ.",
+      "Vietnamese": "Người đầu tiên nói tin đồn đó là Serah đấy.",
+      "Indonesian": "Orang pertama yang mengatakan rumor itu adalah Serah."
+    },
+    {
+      "TEXT_ID": "TST_076",
+      "Korean": "그럼 내가 직접 확인해서 정정하면 되겠네!",
+      "English": "Then I can check it myself and correct it!",
+      "Thai": "งั้นฉันจะตรวจเองแล้วแก้ข่าวให้ถูกต้อง!",
+      "Vietnamese": "Vậy tôi sẽ tự kiểm tra rồi đính chính lại!",
+      "Indonesian": "Kalau begitu, aku akan memeriksanya sendiri dan meluruskannya!"
+    },
+    {
+      "TEXT_ID": "TST_077",
+      "Korean": "잠깐만, 관문 앞에 뭔가 보여.",
+      "English": "Wait, I see something in front of the gate.",
+      "Thai": "เดี๋ยวก่อน ฉันเห็นอะไรบางอย่างหน้าประตู.",
+      "Vietnamese": "Khoan đã, tôi thấy có gì đó trước cổng.",
+      "Indonesian": "Tunggu, aku melihat sesuatu di depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_078",
+      "Korean": "몬스터들이 지나간 자리에 빛나는 게 남아 있어.",
+      "English": "Something shining was left where the monsters passed.",
+      "Thai": "มีบางอย่างส่องแสงอยู่ตรงรอยที่มอนสเตอร์ผ่านไป.",
+      "Vietnamese": "Có thứ gì đó phát sáng ở nơi quái vật vừa đi qua.",
+      "Indonesian": "Ada sesuatu yang bersinar di tempat monster lewat."
+    },
+    {
+      "TEXT_ID": "TST_079",
+      "Korean": "진짜네. 뭔가 빛나고 있어!",
+      "English": "You are right. Something is shining!",
+      "Thai": "จริงด้วย. มีอะไรบางอย่างส่องแสงอยู่!",
+      "Vietnamese": "Đúng thật. Có thứ gì đó đang phát sáng!",
+      "Indonesian": "Benar. Ada sesuatu yang bersinar!"
+    },
+    {
+      "TEXT_ID": "TST_080",
+      "Korean": "괜히 건드렸다가 일이 늘어나면 싫으니까...",
+      "English": "I do not want to touch it carelessly and make more work...",
+      "Thai": "ไม่อยากแตะสุ่มสี่สุ่มห้าแล้วเพิ่มงานหรอก...",
+      "Vietnamese": "Tôi không muốn chạm bừa rồi làm việc tăng thêm đâu...",
+      "Indonesian": "Aku tidak mau sembarangan menyentuhnya lalu menambah pekerjaan..."
+    },
+    {
+      "TEXT_ID": "TST_081",
+      "Korean": "엘리스, 확인 부탁해도 돼?",
+      "English": "Alice, can you check it for me?",
+      "Thai": "อลิซ ช่วยตรวจให้หน่อยได้ไหม?",
+      "Vietnamese": "Alice, cậu kiểm tra giúp được không?",
+      "Indonesian": "Alice, bisa tolong periksa?"
+    },
+    {
+      "TEXT_ID": "TST_082",
+      "Korean": "응. 확인해 봤는데 문제는 없어 보여.",
+      "English": "Yes. I checked it, and it does not seem dangerous.",
+      "Thai": "อืม. ตรวจดูแล้ว ดูเหมือนไม่มีปัญหา.",
+      "Vietnamese": "Ừ. Tôi đã kiểm tra, có vẻ không có vấn đề gì.",
+      "Indonesian": "Ya. Sudah kuperiksa, sepertinya tidak berbahaya."
+    },
+    {
+      "TEXT_ID": "TST_083",
+      "Korean": "신호석 반응이랑 비슷한데, 조금 달라.",
+      "English": "It feels similar to a signal stone reaction, but a little different.",
+      "Thai": "ปฏิกิริยาคล้ายศิลาสัญญาณ แต่ต่างออกไปเล็กน้อย.",
+      "Vietnamese": "Phản ứng hơi giống đá tín hiệu, nhưng có chút khác.",
+      "Indonesian": "Reaksinya mirip batu sinyal, tapi sedikit berbeda."
+    },
+    {
+      "TEXT_ID": "TST_084",
+      "Korean": "이건 유물이야.",
+      "English": "This is a relic.",
+      "Thai": "นี่คือวัตถุโบราณ.",
+      "Vietnamese": "Đây là di vật.",
+      "Indonesian": "Ini relik."
+    },
+    {
+      "TEXT_ID": "TST_085",
+      "Korean": "[튜토리얼 팝업: 유물 보상 선택]",
+      "English": "[Tutorial Popup: Choose a relic reward]",
+      "Thai": "[หน้าต่างสอนเล่น: เลือกรางวัลวัตถุโบราณ]",
+      "Vietnamese": "[Cửa sổ hướng dẫn: Chọn phần thưởng di vật]",
+      "Indonesian": "[Popup Tutorial: Pilih hadiah relik]"
+    },
+    {
+      "TEXT_ID": "TST_086",
+      "Korean": "유물 효과는 다음 스테이지에도 유지됩니다. 3개 중 1개를 선택해주세요.",
+      "English": "Relic effects carry over to the next stage. Please choose one of the three.",
+      "Thai": "เอฟเฟกต์วัตถุโบราณจะคงอยู่ในสเตจถัดไป. กรุณาเลือก 1 จาก 3 ชิ้น.",
+      "Vietnamese": "Hiệu ứng di vật sẽ được giữ sang màn tiếp theo. Hãy chọn 1 trong 3.",
+      "Indonesian": "Efek relik akan tetap berlaku ke stage berikutnya. Pilih 1 dari 3."
+    },
+    {
+      "TEXT_ID": "TST_087",
+      "Korean": "그럼 신중하게 골라야겠네.",
+      "English": "Then we should choose carefully.",
+      "Thai": "งั้นต้องเลือกให้รอบคอบแล้ว.",
+      "Vietnamese": "Vậy phải chọn cẩn thận rồi.",
+      "Indonesian": "Kalau begitu, kita harus memilih dengan hati-hati."
+    },
+    {
+      "TEXT_ID": "TST_088",
+      "Korean": "그럼 앞에서 더 오래 버틸 수 있는 세라와 관련된 게 좋겠네.",
+      "English": "Then something related to Serah, so she can hold the front longer, would be good.",
+      "Thai": "งั้นเลือกของที่เกี่ยวกับเซราห์ดีกว่า เพื่อให้เธอยืนแนวหน้าได้นานขึ้น.",
+      "Vietnamese": "Vậy thứ liên quan đến Serah, giúp cô ấy trụ phía trước lâu hơn, sẽ tốt đấy.",
+      "Indonesian": "Kalau begitu, yang berkaitan dengan Serah agar ia bisa bertahan lebih lama di depan akan bagus."
+    },
+    {
+      "TEXT_ID": "TST_089",
+      "Korean": "숲길은 시야가 좁아. 세라가 앞을 버텨주면 모두 움직이기 편할 거야.",
+      "English": "The forest road has poor visibility. If Serah holds the front, everyone can move more easily.",
+      "Thai": "ทางป่ามองเห็นได้แคบ. ถ้าเซราห์ยืนแนวหน้า ทุกคนจะขยับง่ายขึ้น.",
+      "Vietnamese": "Đường rừng có tầm nhìn hẹp. Nếu Serah giữ phía trước, mọi người sẽ dễ di chuyển hơn.",
+      "Indonesian": "Jalan hutan memiliki jarak pandang sempit. Jika Serah menahan bagian depan, semua orang bisa bergerak lebih mudah."
+    },
+    {
+      "TEXT_ID": "TST_090",
+      "Korean": "고대 갑옷을 획득했습니다. 이후 스테이지에도 효과가 유지됩니다.",
+      "English": "Ancient Armor acquired. Its effect will remain in later stages.",
+      "Thai": "ได้รับเกราะโบราณแล้ว. เอฟเฟกต์จะคงอยู่ในสเตจถัดไป.",
+      "Vietnamese": "Đã nhận Áo Giáp Cổ Đại. Hiệu ứng sẽ được giữ ở các màn sau.",
+      "Indonesian": "Ancient Armor diperoleh. Efeknya akan tetap berlaku di stage berikutnya."
+    },
+    {
+      "TEXT_ID": "TST_091",
+      "Korean": "선택됐어. 이 효과는 다음 전투에도 남아.",
+      "English": "Selected. This effect will remain in the next battle too.",
+      "Thai": "เลือกแล้ว. เอฟเฟกต์นี้จะคงอยู่ในการต่อสู้ครั้งถัดไปด้วย.",
+      "Vietnamese": "Đã chọn. Hiệu ứng này cũng sẽ còn trong trận tiếp theo.",
+      "Indonesian": "Terpilih. Efek ini juga akan tetap ada di pertempuran berikutnya."
+    },
+    {
+      "TEXT_ID": "TST_092",
+      "Korean": "숲길부터 확인해 보자. 노아, 몬스터가 지나간 흔적을 따라가 줘.",
+      "English": "Let us check the forest road first. Noah, follow the traces left by the monsters.",
+      "Thai": "มาตรวจทางป่าก่อนเถอะ. โนอา ตามร่องรอยที่มอนสเตอร์ทิ้งไว้.",
+      "Vietnamese": "Hãy kiểm tra đường rừng trước. Noah, lần theo dấu vết quái vật để lại.",
+      "Indonesian": "Mari kita periksa jalan hutan dulu. Noah, ikuti jejak yang ditinggalkan monster."
+    },
+    {
+      "TEXT_ID": "TST_093",
+      "Korean": "응. 지나간 흔적은 아직 남아 있어. 따라가 볼게.",
+      "English": "Okay. The traces are still there. I will follow them.",
+      "Thai": "อืม. ร่องรอยยังเหลืออยู่. ฉันจะตามไปดู.",
+      "Vietnamese": "Ừ. Dấu vết vẫn còn. Tôi sẽ lần theo.",
+      "Indonesian": "Ya. Jejaknya masih ada. Aku akan mengikutinya."
+    },
+    {
+      "TEXT_ID": "TST_094",
+      "Korean": "나는 신호석 상태를 다시 볼게. 다음 무리가 오기 전에 맞춰둬야 하니까.",
+      "English": "I will check the signal stone condition again. We need to tune them before the next group comes.",
+      "Thai": "ฉันจะตรวจสภาพศิลาสัญญาณอีกครั้ง. ต้องปรับให้พร้อมก่อนกลุ่มถัดไปมา.",
+      "Vietnamese": "Tôi sẽ kiểm tra lại trạng thái đá tín hiệu. Phải chỉnh lại trước khi đợt tiếp theo đến.",
+      "Indonesian": "Aku akan memeriksa kondisi batu sinyal lagi. Kita harus menyesuaikannya sebelum gerombolan berikutnya datang."
+    },
+    {
+      "TEXT_ID": "TST_095",
+      "Korean": "좋아! 원인을 찾고, 조용한 근무지도 되찾자!",
+      "English": "Good! Let us find the cause and get our quiet post back!",
+      "Thai": "좋아! 원인을 찾고 จุดประจำการเงียบ ๆ ของเรากลับคืนมาเถอะ!",
+      "Vietnamese": "Tốt! Hãy tìm nguyên nhân và lấy lại nơi trực yên tĩnh của chúng ta!",
+      "Indonesian": "Baik! Ayo cari penyebabnya dan rebut kembali pos tenang kita!"
+    },
+    {
+      "TEXT_ID": "TST_096",
+      "Korean": "그럼 지금 움직이자. 멀리까진 안 가도 되겠지...",
+      "English": "Then let us move now. We will not have to go too far, right...",
+      "Thai": "งั้นตอนนี้ขยับกันเถอะ. คงไม่ต้องไปไกลมากใช่ไหม...",
+      "Vietnamese": "Vậy đi ngay thôi. Chắc sẽ không phải đi xa lắm đâu nhỉ...",
+      "Indonesian": "Kalau begitu, bergerak sekarang. Kita tidak perlu pergi terlalu jauh, kan..."
+    },
+    {
+      "TEXT_ID": "TST_097",
+      "Korean": "안 가도 된다고 해줘...",
+      "English": "Please say we do not have to go...",
+      "Thai": "ช่วยบอกทีว่าไม่ต้องไปนะ...",
+      "Vietnamese": "Làm ơn nói là không phải đi đi...",
+      "Indonesian": "Tolong bilang kita tidak perlu pergi..."
+    },
+    {
+      "TEXT_ID": "TST_098",
+      "Korean": "(관문 앞의 소란은 끝났지만, 숲 쪽의 움직임은 아직 멈추지 않은 것 같았다.)",
+      "English": "(The commotion at the gate had ended, but the movement in the forest had not stopped yet.)",
+      "Thai": "(ความวุ่นวายหน้าประตูจบลงแล้ว แต่ความเคลื่อนไหวในป่ายังไม่หยุด.)",
+      "Vietnamese": "(Sự hỗn loạn trước cổng đã kết thúc, nhưng chuyển động trong rừng vẫn chưa dừng lại.)",
+      "Indonesian": "(Keributan di depan gerbang telah berakhir, tetapi pergerakan di hutan belum berhenti.)"
+    },
+    {
+      "TEXT_ID": "LRT_001",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_002",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_003",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_004",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_005",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_006",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_007",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_008",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_009",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_010",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_011",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_012",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_013",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_001",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_002",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_003",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_004",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_005",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_006",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_007",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_008",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_009",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_010",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_011",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_012",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_013",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_014",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_015",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     }
   ]
 }

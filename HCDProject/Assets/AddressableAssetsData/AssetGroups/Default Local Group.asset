@@ -15,6 +15,16 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 0174584177829b04ea56168d28a97eb3
   m_SerializeEntries:
+  - m_GUID: 0eb6176c83b42044e92d6a4008abacf0
+    m_Address: STORY_STAGE_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bc605f71cfab5942ba893843a02234d
+    m_Address: LEVEL_REWARD_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 358d5ff2a8324254cb296af9524a1063
     m_Address: OBJECT_TABLE
     m_ReadOnly: 0
@@ -47,6 +57,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 71849ff40a2b56c48a562f55ab3fdbb4
     m_Address: STATIC_VALUE_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ccc1408cea93f044954f5f35cb53e0e
+    m_Address: SKILL_TABLE
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

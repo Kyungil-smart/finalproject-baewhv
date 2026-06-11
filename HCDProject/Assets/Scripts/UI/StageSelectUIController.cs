@@ -11,8 +11,10 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     [SerializeField] private List<Button> _stageButtons = new();
 
     [SerializeField] private GameObject popupObject;
+    [SerializeField] private RewardUIController rewardPopup;
     [SerializeField] private TMP_Text popupText;
     [SerializeField] private Button continuePopup;
+    [SerializeField] private Text continueText;
     [SerializeField] private Button cancelPopup;
 
     private int _currentChapter;
@@ -49,7 +51,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
             if (stageText != null) stageText.text = $"{_currentChapter} - {data.Stage}";
             
-            stageButton.interactable = data.State == StageState.Current || data.State == StageState.Boss;
+            stageButton.interactable = data.State == StageState.Current || data.State == StageState.OpenBoss || data.State == StageState.OpenSpecial;
 
             if (stageImage != null)
             {
@@ -64,32 +66,86 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
                     case StageState.Current:
                         stageImage.color = new Color(0.3f, 1f, 0.3f);
                         break;
-                    case StageState.Special:
+                    case StageState.LockSpecial:
                         stageImage.color = Color.yellow;
                         break;
-                    case StageState.Boss:
+                    case StageState.OpenSpecial:
+                        stageImage.color = Color.yellow;
+                        break;
+                    case StageState.LockBoss:
+                        stageImage.color = new Color(0.86f, 0.63f, 0.86f);
+                        break;
+                    case StageState.OpenBoss:
                         stageImage.color = new Color(0.86f, 0.63f, 0.86f);
                         break;
                 }
             }
             stageButton.onClick.RemoveAllListeners();
-            stageButton.onClick.AddListener(() => OnClickStageButton(_currentChapter, data.Stage));
+            stageButton.onClick.AddListener(() => OnClickStageButton(_currentChapter, data.Stage, data.type));
         }
     }
 
 
-    private void OnClickStageButton(int chapter, int stage)
+    private void OnClickStageButton(int chapter, int stage, StageType type)
+    {
+        if (type == StageType.Normal || type == StageType.Boss)
+        {
+            if (popupObject != null)
+            {
+                popupObject.SetActive(true);
+
+                if (cancelPopup != null) cancelPopup.gameObject.SetActive(true);
+
+                if (continuePopup != null)
+                {
+                    if (continueText != null) continueText.text = "start";
+                }
+                
+                if (popupText != null) popupText.text = $"{chapter} - {stage} start?";
+
+                if (continuePopup != null)
+                {
+                    continuePopup.onClick.RemoveAllListeners();
+                    continuePopup.onClick.AddListener(() =>
+                    {
+                        popupObject.SetActive(false);
+                        EnterStage(chapter, stage);
+                    });
+                }
+            }
+        }
+        else
+        {
+            Service.Get<GameManager>()?.EnterStage(chapter, stage);
+
+            if (rewardPopup != null)
+            {
+                rewardPopup.SetRelicReward(OnRewardSelect);
+            }
+        }
+    }
+
+    public void OnRewardSelect()
     {
         if (popupObject != null)
         {
-            popupObject.SetActive(true);
+            popupObject.SetActive(true)
+                ;
+            if (popupText != null) popupText.text = "유물 획득";
 
-            if (popupText != null) popupText.text = $"{chapter} - {stage} start?";
-
+            if (cancelPopup != null) cancelPopup.gameObject.SetActive(false);
+            
             if (continuePopup != null)
             {
+                if (continueText != null) continueText.text = "continue";
+                
                 continuePopup.onClick.RemoveAllListeners();
-                continuePopup.onClick.AddListener(() => EnterStage(chapter, stage));
+                continuePopup.onClick.AddListener(() => 
+                {
+                    popupObject.SetActive(false);
+                    Service.Get<GameManager>()?.ClearStage();
+                    StageMap();
+                });
             }
         }
     }
@@ -235,6 +291,17 @@ public enum StageState
     Lock,
     Clear,
     Current,
-    Special,
+    LockSpecial,
+    OpenSpecial,
+    LockBoss,
+    OpenBoss
+}
+
+public enum StageType
+{
+    Tutorial,
+    Normal,
+    Event,
+    Maintenance,
     Boss
 }

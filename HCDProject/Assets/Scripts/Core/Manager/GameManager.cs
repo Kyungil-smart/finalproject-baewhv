@@ -118,40 +118,63 @@ public class GameManager : BaseManager<GameManager>
         Service.Get<TimeManager>().SetSpeed(gameSpeed);
         
         Debug.Log($"현재 타임스케일 {Time.timeScale}");
-
+        
         return (int)gameSpeed;
     }
 
     public List<StageData> GetStageDataList(int currentChapter)
     {
         var stageData = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == currentChapter).Select(x => x.STAGE).Distinct().OrderBy(stage => stage).ToList();
-        
-        int bossStageInChapter = 0;
-        if (stageData != null && stageData.Count > 0)
-        {
-            bossStageInChapter  = stageData.Max();
-        }
 
         List<StageData> uiList = new();
 
         if (stageData != null)
         {
-            foreach (var stageIndex in stageData)
+            for (int i = 1; i <= 8; i++)
             {
-                uiList.Add(new StageData {Stage = stageIndex , State = CurrentStageState(currentChapter, stageIndex, bossStageInChapter)});
+                StageType type = StageType.Normal;
+                
+                if (i == 2 || i == 5) type = StageType.Event;
+                else if (i == 7)      type = StageType.Maintenance;
+                else if (i == 8)      type = StageType.Boss;
+                else                  type = StageType.Normal;
+                
+                uiList.Add(new StageData {Stage = i , State = CurrentStageState(currentChapter, i, type), type = type});
             }
         }
         return uiList;
     }
     
-    
-    private StageState CurrentStageState(int chapter, int stage, int bossStage)
+    private StageState CurrentStageState(int chapter, int stage, StageType type)
     {
-        if (chapter > _currentChapter || (chapter == _currentChapter && stage > _currentStage)) return StageState.Lock;
-        else if (chapter < _currentChapter || (chapter == _currentChapter && stage < _currentStage)) return StageState.Clear;
-        else if (stage == bossStage) return StageState.Boss;
+        if (chapter < _currentChapter || (chapter == _currentChapter && stage < _currentStage)) return StageState.Clear;
+
+        if (chapter > _currentChapter || (chapter == _currentChapter && stage > _currentStage))
+        {
+            switch (type)
+            {
+                case StageType.Event:
+                    return StageState.LockSpecial;
+                case StageType.Maintenance:
+                    return StageState.LockSpecial;
+                case StageType.Boss:
+                    return StageState.LockBoss;
+                default:
+                    return StageState.Lock;
+            }
+        }
         
-        return StageState.Current;
+        switch (type)
+        {
+            case StageType.Event:
+                return StageState.OpenSpecial;
+            case StageType.Maintenance:
+                return StageState.OpenSpecial;
+            case StageType.Boss:
+                return StageState.OpenBoss;
+            default:
+                return StageState.Current;
+        }
     }
     
     
@@ -172,6 +195,19 @@ public class GameManager : BaseManager<GameManager>
 
         CurrentState.Value = GameState.Ready;
 
+        int battleStageIndex = 0;
+        if (stage == 1) battleStageIndex = 1;
+        if (stage == 3) battleStageIndex = 2;
+        if (stage == 4) battleStageIndex = 3;
+        if (stage == 6) battleStageIndex = 4;
+        if (stage == 8) battleStageIndex = 5;
+
+        if (battleStageIndex == 0)
+        {
+            ids.Clear();
+            return;
+        }
+        
         SpawnWall();
         
         List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
@@ -227,13 +263,6 @@ public class GameManager : BaseManager<GameManager>
         {
             _currentWallHp = _wall.CurrentHp.Value;
             
-            var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
-            
-            if (wallHpUi != null)
-            {
-                //_wall.CurrentHp.RemoveListener(wallHpUi.SetWallHP);
-            }
-            
             Addressables.ReleaseInstance(_wall.gameObject);
             _wall = null;
         }
@@ -248,12 +277,25 @@ public class GameManager : BaseManager<GameManager>
         {
             int maxStage = stageData.Max();
 
-            if (_currentStage >= maxStage)
+            if (_currentStage >= 8)
             {
                 _currentChapter++;
                 _currentStage = 1;
             }
             else _currentStage++;
+        }
+    }
+
+    public void NextBattle()
+    {
+        if (_currentStage == 2 || _currentStage == 5 ||  _currentStage == 7)
+        {
+            Service.Get<SceneController>()?.ChangeScene(SceneType.StageSelect);
+        }
+        else
+        {
+            CurrentState.Value = GameState.Ready;
+            Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
         }
     }
 
@@ -276,4 +318,5 @@ public struct StageData
 {
     public int Stage;
     public StageState State;
+    public StageType type;
 }
