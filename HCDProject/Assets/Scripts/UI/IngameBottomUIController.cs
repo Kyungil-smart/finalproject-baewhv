@@ -1,9 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class IngameBottomUIController : BaseUIController<IngameBottomUIController>
@@ -44,6 +44,8 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
     [SerializeField] private TextMeshProUGUI gameSpeedText;
 
+    public ObserveValue<bool> isSortMode = new();
+
     private void Start()
     {
         comboText.gameObject.SetActive(false);
@@ -77,7 +79,8 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
             slot.GetBorderRect.DOSizeDelta(battlePhasePortraitRect, 0);
             slot.ChangeMode(false);
         }
-        
+
+        isSortMode.Value = false;
     }
 
     public void SetSortPhase()
@@ -93,6 +96,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
             slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0);
             slot.ChangeMode(true);
         }
+        isSortMode.Value = true;
     }
 
     public void SetComboText(int value)
@@ -118,14 +122,14 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
                     comboText.text = $"<color=red>{value}</color> Combo!";
                     break;
             }
+            comboText.gameObject.SetActive(true);
         }
 
-        comboText.gameObject.SetActive(false);
     }
 
     public void SetLeftSortCountText(int value)
     {
-        comboText.text = $"남은 소트 횟수 : {value}";
+        leftSortCountText.text = $"남은 소트 횟수 : {value}";
     }
 
     public void SetExp(int curr, int max)
