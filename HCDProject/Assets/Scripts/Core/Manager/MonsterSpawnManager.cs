@@ -14,6 +14,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     
     [SerializeField] private float _spawnOffsetY;
     private float _spawnDelay;
+    private int _totalSpawnCycle;
     [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
     
     // 생성 되어야할 총 몬스터 수
@@ -65,28 +66,50 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     private IEnumerator SpawnMonster(List<string> monsterList, List<int> spawnCountList)
     {
         prefabs.Clear();
-        
-        for (int i = 0; i < monsterList.Count; i++)
-        {
-            if (!string.IsNullOrEmpty(monsterList[i]))
-            {
-                string address = monsterList[i].Trim();
-                prefabs.Add(GetMonsterPrefab(address));
-                MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == monsterList[i].Trim());
 
-                for (int j = 0; j < spawnCountList[i]; j++)
+        for (int k = 0; k < _totalSpawnCycle; k++)
+        {
+            for (int i = 0; i < monsterList.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(monsterList[i]))
                 {
-                    GameObject obj = Service.Get<PoolManager>().GetPool(prefabs[i], RandomPosition(), Quaternion.identity);
-                    if (obj.TryGetComponent(out BaseMonster monster))
+                    string address = monsterList[i].Trim();
+                    prefabs.Add(GetMonsterPrefab(address));
+                    MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == monsterList[i].Trim());
+
+                    for (int j = 0; j < spawnCountList[i]; j++)
                     {
-                        monster.PrefabIndex = i;
-                        monster.InitStatus(stat);
+                        if (int.Parse(address) < 1035)
+                        {
+                            GameObject obj = Service.Get<PoolManager>().GetPool(prefabs[i], RandomPosition(), Quaternion.identity);
+                            if (obj.TryGetComponent(out BaseMonster monster))
+                            {
+                                monster.PrefabIndex = i;
+                                monster.InitStatus(stat);
+                            }
+                        }
+                        else
+                        {
+                            if (k == _totalSpawnCycle - 1)
+                            {
+                                GameObject obj = Service.Get<PoolManager>().GetPool(prefabs[i], RandomPosition(), Quaternion.identity);
+                                if (obj.TryGetComponent(out BaseMonster monster))
+                                {
+                                    monster.PrefabIndex = i;
+                                    monster.InitStatus(stat);
+                                }
+                            }
+                        }
+
+                        yield return new WaitForSeconds(0.1f);
                     }
-                    
-                    yield return new WaitForSeconds(_spawnDelay);
                 }
             }
+        
+            yield return new WaitForSeconds(_spawnDelay);
         }
+        
+        
     }
     
     private void AddMonsterData(int chapter, int stage, int wave)
@@ -115,6 +138,7 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         _waveSpawnCountList.Add(waveData.SPAWN_MONSTER_COUNT_07);
         
         _spawnDelay = waveData.WAVE_RESPAWN_TIME;
+        _totalSpawnCycle = waveData.TOTAL_WAVE_MONSTER;
     }
     
     public void StageMonster(List<string> currentStageMonsterIds, Action onComplete)
@@ -184,11 +208,24 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     {
         SpawnCount = 0;
 
-        foreach (int count in _waveSpawnCountList)
+        int boss = 0;
+
+        for (int i = 0; i < _waveSpawnCountList.Count; i++)
         {
-            if (count == 0) continue;
-            SpawnCount += count;
+            if (int.TryParse(_waveMonsterList[i].Trim(), out int num))
+            {
+                if (num < 1035)
+                {
+                    SpawnCount += _waveSpawnCountList[i]; 
+                }
+                else
+                {
+                    boss += _waveSpawnCountList[i];
+                }
+            }
         }
+
+        SpawnCount = (SpawnCount * _totalSpawnCycle) + boss;
 
         monsterCount.Value = SpawnCount;
     }
@@ -198,8 +235,9 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         Vector3 pos = Vector3.zero;
 
         float randomX = UnityEngine.Random.Range(-2f, 2f);
+        float randomY = UnityEngine.Random.Range(_spawnOffsetY - 2f, _spawnOffsetY + 2f);
 
-        pos.y = _spawnOffsetY;
+        pos.y = randomY;
         pos.x = randomX;
         
         return pos;
