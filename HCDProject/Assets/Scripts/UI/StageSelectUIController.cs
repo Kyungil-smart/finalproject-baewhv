@@ -112,7 +112,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
                     continuePopup.onClick.AddListener(() =>
                     {
                         popupObject.SetActive(false);
-                        EnterStage(chapter, stage);
+                        Service.Get<GameManager>()?.EnterStage(chapter, stage);
                     });
                 }
             }
@@ -123,9 +123,12 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             
             Service.Get<GameManager>()?.EnterStage(chapter, stage);
 
-            if (rewardPopup != null)
+            if (type == StageType.Event || type == StageType.Maintenance)
             {
-                rewardPopup.SetRelicReward(OnRewardSelect);
+                if (rewardPopup != null)
+                {
+                    rewardPopup.SetRelicReward(OnRewardSelect);
+                }
             }
         }
     }
@@ -155,10 +158,14 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         }
     }
 
-    private void EnterStage(int chapter, int stage)
+    public void ShowReward(StageType type)
     {
-        Service.Get<GameManager>()?.EnterStage(chapter, stage);
-        Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+        if (popupTypeText != null) popupTypeText.text = type == StageType.Event ? "EVENT" : "MAINTENANCE";
+
+        if (rewardPopup != null)
+        {
+            rewardPopup.SetRelicReward(OnRewardSelect);
+        }
     }
     
     // 추후 무한모드 제작시 이용 가능성 정도는 있음
