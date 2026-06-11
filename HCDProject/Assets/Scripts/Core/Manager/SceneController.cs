@@ -39,22 +39,22 @@ public class SceneController : BaseManager<SceneController>
         {
             SceneManager.LoadScene((int)scene, LoadSceneMode.Single);
             _currentScene = scene;
+            return;
         }
-        else if (scene == SceneType.StageSelect)
+
+        UnLoadActiveScene();
+        
+        SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
+        _currentScene = scene;
+    }
+
+    private void UnLoadActiveScene()
+    {
+        if (_currentScene == SceneType.ModeSelect || _currentScene == SceneType.StageSelect || _currentScene == SceneType.InGame ||
+            _currentScene == SceneType.Tutorial || _currentScene == SceneType.Narrative)
         {
-            if (_currentScene == SceneType.InGame) SceneManager.UnloadSceneAsync((int)SceneType.InGame);
-            if (_currentScene == SceneType.ModeSelect) SceneManager.UnloadSceneAsync((int)SceneType.ModeSelect);
-            
-            SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
-            _currentScene = scene;
-        }
-        else if (scene == SceneType.InGame)
-        {
-            if (_currentScene == SceneType.StageSelect) SceneManager.UnloadSceneAsync((int)SceneType.StageSelect);
-            if (_currentScene == SceneType.InGame) SceneManager.UnloadSceneAsync((int)SceneType.InGame);
-            
-            SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
-            _currentScene = scene;
+            Scene targerScene = SceneManager.GetSceneByBuildIndex((int)_currentScene);
+            if (targerScene.isLoaded) SceneManager.UnloadSceneAsync((int)_currentScene);
         }
     }
 
@@ -77,5 +77,7 @@ public enum SceneType
     Title = 0,
     ModeSelect = 1,
     StageSelect = 2,
-    InGame = 3
+    InGame = 3,
+    Tutorial = 4,
+    Narrative = 5
 }

@@ -85,6 +85,11 @@ public class GameManager : BaseManager<GameManager>
             {
                 ClearStage();
             }
+
+            if (Keyboard.current.pKey.wasPressedThisFrame)
+            {
+                NarrativeEnd();
+            }
     }
     
     private void ChangeState(GameState state)
@@ -118,40 +123,90 @@ public class GameManager : BaseManager<GameManager>
         Service.Get<TimeManager>().SetSpeed(gameSpeed);
         
         Debug.Log($"현재 타임스케일 {Time.timeScale}");
-
+        
         return (int)gameSpeed;
     }
 
     public List<StageData> GetStageDataList(int currentChapter)
     {
-        var stageData = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == currentChapter).Select(x => x.STAGE).Distinct().OrderBy(stage => stage).ToList();
+        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.Where(x => x.CHAPTER == currentChapter).OrderBy(x => x.STAGE).ToList();
         
-        int bossStageInChapter = 0;
-        if (stageData != null && stageData.Count > 0)
-        {
-            bossStageInChapter  = stageData.Max();
-        }
-
         List<StageData> uiList = new();
 
-        if (stageData != null)
+        if (stageStoryData != null)
         {
-            foreach (var stageIndex in stageData)
+            foreach (var data in stageStoryData)
             {
-                uiList.Add(new StageData {Stage = stageIndex , State = CurrentStageState(currentChapter, stageIndex, bossStageInChapter)});
+                var type = CheckStageType(data);
+                
+                uiList.Add(new StageData
+                {
+                    Stage = data.STAGE,
+                    State = CurrentStageState(currentChapter, data.STAGE, type),
+                    type =  type
+                });
             }
         }
         return uiList;
     }
-    
-    
-    private StageState CurrentStageState(int chapter, int stage, int bossStage)
+
+    public void NarrativeEnd()
     {
-        if (chapter > _currentChapter || (chapter == _currentChapter && stage > _currentStage)) return StageState.Lock;
-        else if (chapter < _currentChapter || (chapter == _currentChapter && stage < _currentStage)) return StageState.Clear;
-        else if (stage == bossStage) return StageState.Boss;
+        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+
+        if (stageStoryData == null) return;
         
-        return StageState.Current;
+        var type = CheckStageType(stageStoryData);
+
+        if (type == StageType.Event || type == StageType.Maintenance)
+        {
+            Service.Get<SceneController>()?.ChangeScene(SceneType.StageSelect);
+            Service.Get<UIManager>()?.GetUI<StageSelectUIController>()?.ShowReward(type);
+        }
+        else NextStageScene(null, type);
+    }
+
+    private StageType CheckStageType(StoryStageRawData data)
+    {
+        string tableType = data.STAGE_TYPE.ToUpper();
+        if (tableType == "TUTORIAL") return StageType.Tutorial;
+        else if (tableType == "EVENT") return StageType.Event;
+        else if (tableType == "NORMAL_F") return StageType.Normal;
+        else if (tableType == "MAINTANANCE") return StageType.Maintenance;
+        else if (tableType == "BOSS_F") return StageType.Boss;
+        else return StageType.Normal;
+    }
+    
+    private StageState CurrentStageState(int chapter, int stage, StageType type)
+    {
+        if (chapter < _currentChapter || (chapter == _currentChapter && stage < _currentStage)) return StageState.Clear;
+
+        if (chapter > _currentChapter || (chapter == _currentChapter && stage > _currentStage))
+        {
+            switch (type)
+            {
+                case StageType.Event:
+                    return StageState.LockSpecial;
+                case StageType.Maintenance:
+                    return StageState.LockSpecial;
+                case StageType.Boss:
+                    return StageState.LockBoss;
+                default:
+                    return StageState.Lock;
+            }
+        }
+        
+        switch (type)
+        {
+            case StageType.Event:
+                return StageState.OpenSpecial;
+            case StageType.Maintenance:
+                return StageState.OpenSpecial;
+            case StageType.Boss:
+                return StageState.OpenBoss;
+            default:
+                return StageState.Current;
+        }
     }
     
     
@@ -171,22 +226,66 @@ public class GameManager : BaseManager<GameManager>
         isLoading = true;
 
         CurrentState.Value = GameState.Ready;
+        
+        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
 
+        if (stageStoryData == null) return;
+        
+        var type = CheckStageType(stageStoryData);
+
+        if (type != StageType.Normal && type != StageType.Boss)
+        {
+            ids.Clear();
+            NextStageScene(stageStoryData, type);
+            return;
+        }
+        
         SpawnWall();
         
         List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
         
         ids = new HashSet<string>();
-        
-        foreach (var data in currentStage)
+
+        if (currentStage != null)
         {
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_03)) ids.Add(data.SPAWN_MONSTER_ID_03.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_04)) ids.Add(data.SPAWN_MONSTER_ID_04.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_05)) ids.Add(data.SPAWN_MONSTER_ID_05.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_06)) ids.Add(data.SPAWN_MONSTER_ID_06.Trim());
-            if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_07)) ids.Add(data.SPAWN_MONSTER_ID_07.Trim());
+            foreach (var data in currentStage)
+            {
+                if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_01)) ids.Add(data.SPAWN_MONSTER_ID_01.Trim());
+                if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_02)) ids.Add(data.SPAWN_MONSTER_ID_02.Trim());
+                if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_03)) ids.Add(data.SPAWN_MONSTER_ID_03.Trim());
+                if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_04)) ids.Add(data.SPAWN_MONSTER_ID_04.Trim());
+                if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_05)) ids.Add(data.SPAWN_MONSTER_ID_05.Trim());
+                if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_06)) ids.Add(data.SPAWN_MONSTER_ID_06.Trim());
+                if (!string.IsNullOrEmpty(data.SPAWN_MONSTER_ID_07)) ids.Add(data.SPAWN_MONSTER_ID_07.Trim());
+            }
+        }
+        NextStageScene(stageStoryData, type);
+    }
+
+    private void NextStageScene(StoryStageRawData stageStoryData, StageType type)
+    {
+        if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
+        {
+            Service.Get<SceneController>()?.ChangeScene(SceneType.Narrative);
+        }
+        else
+        {
+            switch (type)
+            {
+                case StageType.Tutorial:
+                    Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
+                    break;
+                case StageType.Normal:
+                    Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                    break;
+                case StageType.Event:
+                    break;
+                case StageType.Maintenance:
+                    break;
+                case StageType.Boss:
+                    Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                    break;
+            }
         }
     }
     
@@ -223,30 +322,38 @@ public class GameManager : BaseManager<GameManager>
     {
         NextStage();
         
+        var nextStageData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+
+        bool isBattle = true;
+
+        if (nextStageData != null)
+        {
+            StageType nextStageType = CheckStageType(nextStageData);
+            if (nextStageType == StageType.Event || nextStageType == StageType.Maintenance)
+            {
+                isBattle = false;
+            }
+        }
+        
         if (_wall != null)
         {
             _currentWallHp = _wall.CurrentHp.Value;
             
-            var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
-            
-            if (wallHpUi != null)
-            {
-                //_wall.CurrentHp.RemoveListener(wallHpUi.SetWallHP);
-            }
-            
             Addressables.ReleaseInstance(_wall.gameObject);
             _wall = null;
         }
+
+        Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(isBattle);
         
         CurrentState.Value = GameState.Clear;
     }
 
     private void NextStage()
     {
-        var stageData = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == _currentChapter).Select(x => x.STAGE).Distinct().ToList();
-        if (stageData != null)
+        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.Where(x => x.CHAPTER == _currentChapter).ToList();
+        if (stageStoryData != null)
         {
-            int maxStage = stageData.Max();
+            int maxStage = stageStoryData.Max(x => x.STAGE);
 
             if (_currentStage >= maxStage)
             {
@@ -254,6 +361,18 @@ public class GameManager : BaseManager<GameManager>
                 _currentStage = 1;
             }
             else _currentStage++;
+        }
+    }
+
+    public void NextBattle()
+    {
+        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+
+        if (stageStoryData != null)
+        {
+            var type = CheckStageType(stageStoryData);
+            
+            NextStageScene(stageStoryData, type);
         }
     }
 
@@ -276,4 +395,5 @@ public struct StageData
 {
     public int Stage;
     public StageState State;
+    public StageType type;
 }

@@ -12,7 +12,7 @@
       "SFX": "",
       "PORTRAIT": "",
       "NAME": "",
-      "TEXT_ID": "검은 화면에서 천천히 페이드 인 / 장소: 시에스 방어 요새 관문 앞"
+      "TEXT_ID": ""
     },
     {
       "STORY_ID": "ST_0002",
@@ -25,8 +25,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "나레이션",
-      "TEXT_ID": "(첫 배치지는 생각보다 조용했다.)"
+      "NAME": "C_005",
+      "TEXT_ID": "TST_001"
     },
     {
       "STORY_ID": "ST_0003",
@@ -39,8 +39,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "여기가 시에스 방어 요새야? 몬스터가 거의 안 나온다더니, 진짜로 조용하네."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_002"
     },
     {
       "STORY_ID": "ST_0004",
@@ -53,8 +53,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "요새 병사",
-      "TEXT_ID": "지휘관님과 수호대 여러분이십니까?"
+      "NAME": "C_006",
+      "TEXT_ID": "TST_003"
     },
     {
       "STORY_ID": "ST_0005",
@@ -67,8 +67,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "요새 병사",
-      "TEXT_ID": "시에스 방어 요새에 오신 것을 환영합니다."
+      "NAME": "C_006",
+      "TEXT_ID": "TST_004"
     },
     {
       "STORY_ID": "ST_0006",
@@ -81,8 +81,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "환영해 줘서 고마워. 오자마자 일 이야기를 해서 미안한데, 안내를 부탁할게."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_005"
     },
     {
       "STORY_ID": "ST_0007",
@@ -95,8 +95,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "이쪽이 세라, 그리고 이쪽이 노아야."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_006"
     },
     {
       "STORY_ID": "ST_0008",
@@ -109,8 +109,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "반가워. 전열을 맡고 있는 세라야. 관문 쪽 확인은 내가 먼저 볼게."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_007"
     },
     {
       "STORY_ID": "ST_0009",
@@ -123,8 +123,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "노아야. 멀리서 보이는 움직임은 내가 먼저 확인해 둘게."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_008"
     },
     {
       "STORY_ID": "ST_0010",
@@ -137,8 +137,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "그리고 이쪽이 엘리스, 스파인이야."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_009"
     },
     {
       "STORY_ID": "ST_0011",
@@ -151,8 +151,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "엘리스야. 신호석 확인과 마법 지원을 맡고 있어. 보기보다 꼼꼼한 편이니까 걱정하지 마."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_010"
     },
     {
       "STORY_ID": "ST_0012",
@@ -165,8 +165,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "스파인이야. 회복을 맡고 있어. 아프면 바로 말해줘."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_011"
     },
     {
       "STORY_ID": "ST_0013",
@@ -179,8 +179,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "데미안",
-      "TEXT_ID": "저는 시에스 요새 수비대장인 데미안입니다."
+      "NAME": "C_007",
+      "TEXT_ID": "TST_012"
     },
     {
       "STORY_ID": "ST_0014",
@@ -193,8 +193,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "앞으로 잘 부탁해, 데미안. 도착 전에 확인할 업무는 전달받았어."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_013"
     },
     {
       "STORY_ID": "ST_0015",
@@ -207,8 +207,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "세라는 관문 검문소를 확인해 줘. 노아는 망루에서 숲길을 봐줘."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_014"
     },
     {
       "STORY_ID": "ST_0016",
@@ -221,8 +221,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "엘리스는 신호석을 확인해 주고, 스파인은 물자 보관소를 봐줄래?"
+      "NAME": "C_008",
+      "TEXT_ID": "TST_015"
     },
     {
       "STORY_ID": "ST_0017",
@@ -235,8 +235,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "데미안, 네 사람에게 안내할 인원을 붙여줄 수 있을까?"
+      "NAME": "C_008",
+      "TEXT_ID": "TST_016"
     },
     {
       "STORY_ID": "ST_0018",
@@ -249,8 +249,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "데미안",
-      "TEXT_ID": "알겠습니다. 바로 안내 병력을 배치하겠습니다."
+      "NAME": "C_007",
+      "TEXT_ID": "TST_017"
     },
     {
       "STORY_ID": "ST_0019",
@@ -263,8 +263,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "좋아! 관문 검문소는 내가 볼게."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_018"
     },
     {
       "STORY_ID": "ST_0020",
@@ -277,8 +277,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "망루 쪽을 먼저 확인하고 올게."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_019"
     },
     {
       "STORY_ID": "ST_0021",
@@ -291,8 +291,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "신호석을 확인하고 나서, 세라 쪽을 도와줄게."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_020"
     },
     {
       "STORY_ID": "ST_0022",
@@ -305,8 +305,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "관문 안쪽 물자 보관소라면... 여기서 제일 멀지 않아?"
+      "NAME": "C_004",
+      "TEXT_ID": "TST_021"
     },
     {
       "STORY_ID": "ST_0023",
@@ -319,8 +319,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "멀어도 지금 봐두면 나중에 헤매지는 않을 거야."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_022"
     },
     {
       "STORY_ID": "ST_0024",
@@ -333,8 +333,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "세라, 혹시 나랑 역할 바꿀래...?"
+      "NAME": "C_004",
+      "TEXT_ID": "TST_023"
     },
     {
       "STORY_ID": "ST_0025",
@@ -347,8 +347,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "미안. 검문소는 내가 보는 게 좋을 것 같아. 앞에서 막는 건 내 일이니까."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_024"
     },
     {
       "STORY_ID": "ST_0026",
@@ -361,8 +361,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "너무 맞는 말이라 더 슬프네..."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_025"
     },
     {
       "STORY_ID": "ST_0027",
@@ -373,10 +373,10 @@
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
-      "SFX": "",
+      "SFX": "경보 종이 울리는 소리 / 화면이 가볍게 흔들림",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_005",
+      "TEXT_ID": "TST_026"
     },
     {
       "STORY_ID": "ST_0028",
@@ -389,8 +389,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_006",
+      "TEXT_ID": "TST_027"
     },
     {
       "STORY_ID": "ST_0029",
@@ -401,10 +401,10 @@
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
-      "SFX": "경보 종이 울리는 소리 / 화면이 가볍게 흔들림",
+      "SFX": "",
       "PORTRAIT": "",
-      "NAME": "나레이션",
-      "TEXT_ID": "(각자 위치를 확인하려던 순간, 요새 안쪽에서 경보 종이 크게 울렸다.)"
+      "NAME": "C_004",
+      "TEXT_ID": "TST_028"
     },
     {
       "STORY_ID": "ST_0030",
@@ -417,8 +417,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "요새 병사",
-      "TEXT_ID": "보고드립니다! 몬스터 경보입니다! 숲 방향에서 다수의 몬스터를 확인했습니다! 관문 쪽으로 접근 중입니다!"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_029"
     },
     {
       "STORY_ID": "ST_0031",
@@ -431,8 +431,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "세라... 조용하다면서?"
+      "NAME": "C_003",
+      "TEXT_ID": "TST_030"
     },
     {
       "STORY_ID": "ST_0032",
@@ -445,8 +445,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "그랬었지!"
+      "NAME": "C_008",
+      "TEXT_ID": "TST_031"
     },
     {
       "STORY_ID": "ST_0033",
@@ -459,8 +459,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "일단 다시 조용하게 만들 방법부터 생각하자."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_032"
     },
     {
       "STORY_ID": "ST_0034",
@@ -473,8 +473,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "노아는 망루에서 숲길을 계속 감시해 줘."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_033"
     },
     {
       "STORY_ID": "ST_0035",
@@ -487,8 +487,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "스파인은 물자 보관소에서 응급 처치 물품을 챙겨와 줘. 둘 다 준비되는 대로 관문으로 합류해."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_034"
     },
     {
       "STORY_ID": "ST_0036",
@@ -501,8 +501,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "응, 확인하고 바로 갈게."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_035"
     },
     {
       "STORY_ID": "ST_0037",
@@ -515,8 +515,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "윽... 힘들게 제일 먼 곳까지 왔는데 바로 돌아가야 하네."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_036"
     },
     {
       "STORY_ID": "ST_0038",
@@ -529,8 +529,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "세라와 엘리스 두 사람은 관문 검문소에서 몬스터를 먼저 막아줘."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_037"
     },
     {
       "STORY_ID": "ST_0039",
@@ -543,8 +543,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "좋아! 여기는 내가 버틸게. 관문까지는 절대 못 지나가게 막을 거야!"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_038"
     },
     {
       "STORY_ID": "ST_0040",
@@ -555,10 +555,10 @@
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
-      "SFX": "",
+      "SFX": "몬스터 무리가 접근하는 소리 / 화면 흔들림",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "세라가 앞을 맡아줘. 나는 적이 몰리는 쪽을 볼게."
+      "NAME": "C_006",
+      "TEXT_ID": "TST_039"
     },
     {
       "STORY_ID": "ST_0041",
@@ -571,8 +571,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "알겠어. 신호가 오면 바로 나갈게!"
+      "NAME": "C_008",
+      "TEXT_ID": "TST_040"
     },
     {
       "STORY_ID": "ST_0042",
@@ -583,10 +583,10 @@
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
-      "SFX": "몬스터 무리가 접근하는 소리 / 화면 흔들림",
+      "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_003",
+      "TEXT_ID": "TST_041"
     },
     {
       "STORY_ID": "ST_0043",
@@ -599,8 +599,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "요새 병사",
-      "TEXT_ID": "몬스터 무리가 관문 앞까지 접근했습니다! 지휘관님, 신호석 준비를 부탁드립니다!"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_042"
     },
     {
       "STORY_ID": "ST_0044",
@@ -608,13 +608,13 @@
       "CHAPTER": 1,
       "STAGE": 1,
       "NUMBER": "44",
-      "CATEGORY": "NONE",
-      "BACKGROUND": "",
+      "CATEGORY": "FADEOUT",
+      "BACKGROUND": "튜토리얼 전투 화면",
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "세라와 엘리스한테 먼저 신호를 보낼게."
+      "NAME": "",
+      "TEXT_ID": ""
     },
     {
       "STORY_ID": "ST_0045",
@@ -627,8 +627,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "신호 연결 확인. 세라, 준비됐지?"
+      "NAME": "C_009",
+      "TEXT_ID": "TST_043"
     },
     {
       "STORY_ID": "ST_0046",
@@ -641,8 +641,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "좋아, 간다!"
+      "NAME": "C_009",
+      "TEXT_ID": "TST_044"
     },
     {
       "STORY_ID": "ST_0047",
@@ -650,13 +650,13 @@
       "CHAPTER": 1,
       "STAGE": 1,
       "NUMBER": "47",
-      "CATEGORY": "FADEOUT",
-      "BACKGROUND": "튜토리얼 전투 화면",
+      "CATEGORY": "NONE",
+      "BACKGROUND": "",
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": "짧게 검게 페이드 아웃된 뒤 튜토리얼 전투 화면으로 전환 / 시작 멤버: 세라, 엘리스"
+      "NAME": "C_009",
+      "TEXT_ID": "TST_045"
     },
     {
       "STORY_ID": "ST_0048",
@@ -669,8 +669,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "[튜토리얼 팝업: 신호석 타이밍 액션 및 3-Sort 콤보 공격 학습]"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_046"
     },
     {
       "STORY_ID": "ST_0049",
@@ -683,8 +683,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "공격 신호석을 세라 슬롯으로 드래그해주세요."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_047"
     },
     {
       "STORY_ID": "ST_0050",
@@ -697,8 +697,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "같은 신호석 3개를 정렬해 콤보를 완성해주세요."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_048"
     },
     {
       "STORY_ID": "ST_0051",
@@ -709,10 +709,10 @@
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
-      "SFX": "",
+      "SFX": "물자 상자를 닫는 소리",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "쏟아져 나오기 시작했어! 앞쪽은 내가 막을게!"
+      "NAME": "C_004",
+      "TEXT_ID": "TST_049"
     },
     {
       "STORY_ID": "ST_0052",
@@ -725,8 +725,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "적들이 한곳에 몰리면 내가 처리할게."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_050"
     },
     {
       "STORY_ID": "ST_0053",
@@ -739,8 +739,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": "노아가 망루에서 관문 검문소 쪽으로 합류한다."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_051"
     },
     {
       "STORY_ID": "ST_0054",
@@ -753,8 +753,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "두 번째 무리가 보여. 이제 나도 합류할게. 멀리서 다가오는 적은 내가 볼게."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_052"
     },
     {
       "STORY_ID": "ST_0055",
@@ -765,10 +765,10 @@
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
-      "SFX": "물자 상자를 닫는 소리",
+      "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_004",
+      "TEXT_ID": "TST_053"
     },
     {
       "STORY_ID": "ST_0056",
@@ -781,8 +781,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": "스파인이 붕대 묶음과 물자표를 챙겨 들고 관문 쪽으로 합류한다."
+      "NAME": "C_009",
+      "TEXT_ID": "TST_054"
     },
     {
       "STORY_ID": "ST_0057",
@@ -795,8 +795,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "물자 쪽 잠금은 확인했어. 붕대도 챙겼고."
+      "NAME": "C_009",
+      "TEXT_ID": "TST_055"
     },
     {
       "STORY_ID": "ST_0058",
@@ -809,8 +809,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": "2웨이브 시작 전 노아, 스파인 합류 / 영웅 전원 집결"
+      "NAME": "C_009",
+      "TEXT_ID": "TST_056"
     },
     {
       "STORY_ID": "ST_0059",
@@ -823,8 +823,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "그래도 바로 와줘서 다행이야."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_057"
     },
     {
       "STORY_ID": "ST_0060",
@@ -837,8 +837,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "늦으면 더 바빠지니까..."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_058"
     },
     {
       "STORY_ID": "ST_0061",
@@ -851,8 +851,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "좋아! 이제 다 모였네!"
+      "NAME": "C_003",
+      "TEXT_ID": "TST_059"
     },
     {
       "STORY_ID": "ST_0062",
@@ -865,8 +865,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "이러면 다쳐도 바로 볼 수는 있겠지."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_060"
     },
     {
       "STORY_ID": "ST_0063",
@@ -879,8 +879,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "[튜토리얼 팝업: 적 처치 경험치 획득 및 레벨업 보상 선택]"
+      "NAME": "C_003",
+      "TEXT_ID": "TST_061"
     },
     {
       "STORY_ID": "ST_0064",
@@ -893,8 +893,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "레벨업 보상 카드 중 하나를 선택해주세요."
+      "NAME": "C_009",
+      "TEXT_ID": "TST_062"
     },
     {
       "STORY_ID": "ST_0065",
@@ -907,8 +907,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "대형 몬스터/보스 등장"
+      "NAME": "C_009",
+      "TEXT_ID": "TST_063"
     },
     {
       "STORY_ID": "ST_0066",
@@ -921,8 +921,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "큰 녀석이 보여. 이번 무리는 저 녀석을 중심으로 움직이고 있어!"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_064"
     },
     {
       "STORY_ID": "ST_0067",
@@ -931,12 +931,12 @@
       "STAGE": 1,
       "NUMBER": "67",
       "CATEGORY": "NONE",
-      "BACKGROUND": "",
+      "BACKGROUND": "시에스 방어 요새 관문 앞",
       "BGM": "",
-      "SFX": "",
+      "SFX": "전투 소리가 잦아드는 소리 / 검은 화면으로 페이드 아웃 후 관문 앞으로 페이드 인",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "그럼 저 큰 녀석부터 막으면 되겠네. 내가 앞에 설게!"
+      "NAME": "C_005",
+      "TEXT_ID": "TST_065"
     },
     {
       "STORY_ID": "ST_0068",
@@ -949,8 +949,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "세라, 잠깐만! 저 덩치는 일반 공격만으로는 시간이 오래 걸릴 거야."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_066"
     },
     {
       "STORY_ID": "ST_0069",
@@ -963,8 +963,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "지휘관, 세라에게 스킬 신호를 보내줘!"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_067"
     },
     {
       "STORY_ID": "ST_0070",
@@ -977,8 +977,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "일반 신호가 아니라, 게이지를 전부 소모하는 필살기 신호야!"
+      "NAME": "C_003",
+      "TEXT_ID": "TST_068"
     },
     {
       "STORY_ID": "ST_0071",
@@ -991,8 +991,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "[튜토리얼 팝업: 게이지 소모를 통한 필살기(궁극기) 발동]"
+      "NAME": "C_004",
+      "TEXT_ID": "TST_069"
     },
     {
       "STORY_ID": "ST_0072",
@@ -1005,8 +1005,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "필살기 게이지를 사용해 세라의 필살기를 발동해주세요."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_070"
     },
     {
       "STORY_ID": "ST_0073",
@@ -1019,8 +1019,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "신호 확인! 크게 한 방 먹일게!"
+      "NAME": "C_002",
+      "TEXT_ID": "TST_071"
     },
     {
       "STORY_ID": "ST_0074",
@@ -1033,8 +1033,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": "세라의 궁극기가 적중하며 1스테이지 대형 보스를 단숨에 처치하는 화려한 전투 연출"
+      "NAME": "C_008",
+      "TEXT_ID": "TST_072"
     },
     {
       "STORY_ID": "ST_0075",
@@ -1047,8 +1047,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": "대형 보스가 쓰러지며 클리어 후 스토리로 전환"
+      "NAME": "C_003",
+      "TEXT_ID": "TST_073"
     },
     {
       "STORY_ID": "ST_0076",
@@ -1057,12 +1057,12 @@
       "STAGE": 1,
       "NUMBER": "76",
       "CATEGORY": "NONE",
-      "BACKGROUND": "시에스 방어 요새 관문 앞",
+      "BACKGROUND": "",
       "BGM": "",
-      "SFX": "전투 소리가 잦아드는 소리 / 검은 화면으로 페이드 아웃 후 관문 앞으로 페이드 인",
+      "SFX": "",
       "PORTRAIT": "",
-      "NAME": "나레이션",
-      "TEXT_ID": "(관문 앞의 몬스터 무리를 전부 물리쳤다.)"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_074"
     },
     {
       "STORY_ID": "ST_0077",
@@ -1075,8 +1075,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "다친 데는 없어? 무리하지 말고 바로 말해줘."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_075"
     },
     {
       "STORY_ID": "ST_0078",
@@ -1089,8 +1089,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "없어! 다친 데는 없어! 관문 앞 돌바닥은... 음, 괜찮겠지?"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_076"
     },
     {
       "STORY_ID": "ST_0079",
@@ -1103,8 +1103,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "괜찮겠지로 끝낼 이야기는 아닌데, 뭐 그래도 몬스터는 관문에 닿기 전에 끊어냈어."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_077"
     },
     {
       "STORY_ID": "ST_0080",
@@ -1117,8 +1117,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "돌바닥은 내가 확인해 둘게. 나중에 수리 일이 커지면 더 귀찮아지니까."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_078"
     },
     {
       "STORY_ID": "ST_0081",
@@ -1131,8 +1131,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "그런데 좀 이상해. 아까 그 몬스터 무리, 전부 숲길에서 내려왔어."
+      "NAME": "C_001",
+      "TEXT_ID": "TST_079"
     },
     {
       "STORY_ID": "ST_0082",
@@ -1145,8 +1145,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "망루에서 봤을 때, 숲길 안쪽 움직임이 아직 남아 있었어."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_080"
     },
     {
       "STORY_ID": "ST_0083",
@@ -1159,8 +1159,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "그럼 숲길 쪽을 다시 확인해야겠네."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_081"
     },
     {
       "STORY_ID": "ST_0084",
@@ -1173,8 +1173,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "시에스가 원래 이렇게 몬스터가 몰려드는 곳은 아니야."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_082"
     },
     {
       "STORY_ID": "ST_0085",
@@ -1187,8 +1187,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "조용한 근무지라더니, 그 소문이 완전히 틀렸네."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_083"
     },
     {
       "STORY_ID": "ST_0086",
@@ -1201,8 +1201,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "그 소문을 제일 먼저 말한 사람이 세라였지."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_084"
     },
     {
       "STORY_ID": "ST_0087",
@@ -1215,8 +1215,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "그럼 내가 직접 확인해서 정정하면 되겠네!"
+      "NAME": "C_009",
+      "TEXT_ID": "TST_085"
     },
     {
       "STORY_ID": "ST_0088",
@@ -1229,8 +1229,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": "카메라가 관문 근처 바닥으로 이동한다."
+      "NAME": "C_009",
+      "TEXT_ID": "TST_086"
     },
     {
       "STORY_ID": "ST_0089",
@@ -1243,8 +1243,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "잠깐만, 관문 앞에 뭔가 보여."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_087"
     },
     {
       "STORY_ID": "ST_0090",
@@ -1257,8 +1257,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "몬스터들이 지나간 자리에 빛나는 게 남아 있어."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_088"
     },
     {
       "STORY_ID": "ST_0091",
@@ -1271,8 +1271,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "진짜네. 뭔가 빛나고 있어!"
+      "NAME": "C_002",
+      "TEXT_ID": "TST_089"
     },
     {
       "STORY_ID": "ST_0092",
@@ -1285,8 +1285,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "괜히 건드렸다가 일이 늘어나면 싫으니까..."
+      "NAME": "C_009",
+      "TEXT_ID": "TST_090"
     },
     {
       "STORY_ID": "ST_0093",
@@ -1299,8 +1299,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "엘리스, 확인 부탁해도 돼?"
+      "NAME": "C_003",
+      "TEXT_ID": "TST_091"
     },
     {
       "STORY_ID": "ST_0094",
@@ -1313,8 +1313,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "응. 확인해 봤는데 문제는 없어 보여."
+      "NAME": "C_008",
+      "TEXT_ID": "TST_092"
     },
     {
       "STORY_ID": "ST_0095",
@@ -1327,8 +1327,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "신호석 반응이랑 비슷한데, 조금 달라."
+      "NAME": "C_002",
+      "TEXT_ID": "TST_093"
     },
     {
       "STORY_ID": "ST_0096",
@@ -1341,8 +1341,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "이건 유물이야."
+      "NAME": "C_003",
+      "TEXT_ID": "TST_094"
     },
     {
       "STORY_ID": "ST_0097",
@@ -1355,8 +1355,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "[튜토리얼 팝업: 유물 보상 선택]"
+      "NAME": "C_001",
+      "TEXT_ID": "TST_095"
     },
     {
       "STORY_ID": "ST_0098",
@@ -1369,8 +1369,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "유물 효과는 다음 스테이지에도 유지됩니다. 3개 중 1개를 선택해주세요."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_096"
     },
     {
       "STORY_ID": "ST_0099",
@@ -1381,10 +1381,10 @@
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
-      "SFX": "",
+      "SFX": "숲길 쪽에서 다시 들리는 몬스터 소리 / 화면이 가볍게 흔들림",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "그럼 신중하게 골라야겠네."
+      "NAME": "C_004",
+      "TEXT_ID": "TST_097"
     },
     {
       "STORY_ID": "ST_0100",
@@ -1397,8 +1397,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "그럼 앞에서 더 오래 버틸 수 있는 세라와 관련된 게 좋겠네."
+      "NAME": "C_005",
+      "TEXT_ID": "TST_098"
     },
     {
       "STORY_ID": "ST_0101",
@@ -1406,13 +1406,13 @@
       "CHAPTER": 1,
       "STAGE": 1,
       "NUMBER": "101",
-      "CATEGORY": "NONE",
+      "CATEGORY": "FADEOUT",
       "BACKGROUND": "",
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "숲길은 시야가 좁아. 세라가 앞을 버텨주면 모두 움직이기 편할 거야."
+      "NAME": "",
+      "TEXT_ID": ""
     },
     {
       "STORY_ID": "ST_0102",
@@ -1425,8 +1425,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "시스템",
-      "TEXT_ID": "고대 갑옷을 획득했습니다. 이후 스테이지에도 효과가 유지됩니다."
+      "NAME": "",
+      "TEXT_ID": "TST_102"
     },
     {
       "STORY_ID": "ST_0103",
@@ -1439,8 +1439,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "선택됐어. 이 효과는 다음 전투에도 남아."
+      "NAME": "",
+      "TEXT_ID": "TST_103"
     },
     {
       "STORY_ID": "ST_0104",
@@ -1453,8 +1453,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "지휘관",
-      "TEXT_ID": "숲길부터 확인해 보자. 노아, 몬스터가 지나간 흔적을 따라가 줘."
+      "NAME": "",
+      "TEXT_ID": "TST_104"
     },
     {
       "STORY_ID": "ST_0105",
@@ -1467,8 +1467,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "노아",
-      "TEXT_ID": "응. 지나간 흔적은 아직 남아 있어. 따라가 볼게."
+      "NAME": "",
+      "TEXT_ID": "TST_105"
     },
     {
       "STORY_ID": "ST_0106",
@@ -1481,8 +1481,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "엘리스",
-      "TEXT_ID": "나는 신호석 상태를 다시 볼게. 다음 무리가 오기 전에 맞춰둬야 하니까."
+      "NAME": "",
+      "TEXT_ID": "TST_106"
     },
     {
       "STORY_ID": "ST_0107",
@@ -1495,8 +1495,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "세라",
-      "TEXT_ID": "좋아! 원인을 찾고, 조용한 근무지도 되찾자!"
+      "NAME": "",
+      "TEXT_ID": "TST_107"
     },
     {
       "STORY_ID": "ST_0108",
@@ -1509,8 +1509,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "그럼 지금 움직이자. 멀리까진 안 가도 되겠지..."
+      "NAME": "",
+      "TEXT_ID": "TST_108"
     },
     {
       "STORY_ID": "ST_0109",
@@ -1524,7 +1524,7 @@
       "SFX": "숲길 쪽에서 다시 들리는 몬스터 소리 / 화면이 가볍게 흔들림",
       "PORTRAIT": "",
       "NAME": "",
-      "TEXT_ID": ""
+      "TEXT_ID": "TST_109"
     },
     {
       "STORY_ID": "ST_0110",
@@ -1537,8 +1537,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "스파인",
-      "TEXT_ID": "안 가도 된다고 해줘..."
+      "NAME": "",
+      "TEXT_ID": "TST_110"
     },
     {
       "STORY_ID": "ST_0111",
@@ -1551,8 +1551,8 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "나레이션",
-      "TEXT_ID": "(관문 앞의 소란은 끝났지만, 숲 쪽의 움직임은 아직 멈추지 않은 것 같았다.)"
+      "NAME": "",
+      "TEXT_ID": "TST_111"
     },
     {
       "STORY_ID": "ST_0112",
@@ -1566,7 +1566,7 @@
       "SFX": "",
       "PORTRAIT": "",
       "NAME": "",
-      "TEXT_ID": ""
+      "TEXT_ID": "TST_112"
     }
   ]
 }

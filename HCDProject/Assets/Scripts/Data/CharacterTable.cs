@@ -10,6 +10,7 @@ public class CharacterRawData
     public int HP;
     public int ATK;
     public int DEF;
+    public float ACCESS_AREA;
     public float ATK_SPEED;
     public float MOVE_SPEED;
     public float CRI_RATE;
