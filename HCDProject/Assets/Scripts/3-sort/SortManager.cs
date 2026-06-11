@@ -18,50 +18,25 @@ public class SortManager : BaseManager<SortManager>
 
     public ObserveValue<bool> isEndSort = new();
 
-    private ObserveValue<int> leftCount = new();
-
     private List<SortBuffData> BuffsBox = new List<SortBuffData>();
 
     protected override void Awake()
     {
         base.Awake();
         isEndSort.Value = false;
-
-        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
-        if (bottomUI != null)
-        {
-            leftCount.AddListener(bottomUI.SetLeftSortCountText);
-
-            CurrentCombo.AddListener(value =>
-            {
-                bottomUI.SetComboText(value);
-
-                if (value == 0)
-                {
-                    if (bottomUI.GetUpperRail != null)
-                    {
-                        bottomUI.SetSortPhase();
-                    }
-                }
-                else
-                {
-                    var comboTextProp = bottomUI.GetType().GetField("comboText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                    if (comboTextProp != null)
-                    {
-                        var comboTextMesh = comboTextProp.GetValue(bottomUI) as TMPro.TextMeshProUGUI;
-                        if (comboTextMesh != null)
-                        {
-                            comboTextMesh.gameObject.SetActive(true);
-                        }
-                    }
-                }
-            });
-        }
     }
 
     private void Start()
     {
         AutoSetupUISlots();
+
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        if (bottomUI != null)
+        {
+            RemainingSorts.AddListener(bottomUI.SetLeftSortCountText);
+
+            CurrentCombo.AddListener(bottomUI.SetComboText);
+        }
     }
 
     private void AutoSetupUISlots()
@@ -76,7 +51,7 @@ public class SortManager : BaseManager<SortManager>
 
     public void ObjectDrop(CharacterSlotUI targetSlot, DragAndDrop draggedobject)
     {
-        if (RemainingSorts.Value <= 0 || isEndSort.Value == true)
+        if (RemainingSorts.Value <= 0 || isEndSort.Value == true || targetSlot == null || draggedobject == null)
         {
             return;
         }
@@ -132,14 +107,16 @@ public class SortManager : BaseManager<SortManager>
             Destroy(block);
         }
 
-        RemainingSorts.Value--;
-        leftCount.Value = RemainingSorts.Value;
+        if (RemainingSorts.Value > 0)
+        {
+            RemainingSorts.Value--;
+        }
 
         ApplyBuffToPlayer(slot, buffType);
 
         if (RemainingSorts.Value <= 0)
         {
-            FinishSortPhase();
+            Service.Get<RailManager>()?.PlayerInputLock(true);
         }
     }
 
@@ -147,7 +124,6 @@ public class SortManager : BaseManager<SortManager>
     {
         isEndSort.Value = false;
         RemainingSorts.Value = 6;
-        leftCount.Value = RemainingSorts.Value;
         CurrentCombo.Value = 0;
 
         BuffsBox.Clear();
@@ -159,14 +135,7 @@ public class SortManager : BaseManager<SortManager>
 
     public void CheckSortEnd()
     {
-        if (RemainingSorts.Value > 0)
-        {
-            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnShowSortWarningPopup();
-        }
-        else
-        {
-            FinishSortPhase();
-        }
+        FinishSortPhase();
     }
 
     public void OnUISortFinish()
@@ -191,6 +160,11 @@ public class SortManager : BaseManager<SortManager>
                 playerManager.ApplyBuff(data.index, data.objType, data.finalBuffValue);
             }
             Debug.Log($"전송 완료");
+        }
+
+        if (Service.Get<GameManager>()?.CurrentState != null)
+        {
+            Service.Get<GameManager>().CurrentState.Value = GameState.Wave;
         }
     }
 
