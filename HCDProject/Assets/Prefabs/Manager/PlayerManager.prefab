@@ -49,16 +49,20 @@ MonoBehaviour:
   _characterDatas:
   - _hasFirstCombat: 1
     _initFindType: 1
-    _atkId: 6500
+    _doubleAtkRate: 0
+    _activeSkillBehavior: 0
   - _hasFirstCombat: 0
     _initFindType: 0
-    _atkId: 6501
+    _doubleAtkRate: 0
+    _activeSkillBehavior: 0
   - _hasFirstCombat: 0
     _initFindType: 1
-    _atkId: 6502
+    _doubleAtkRate: 0
+    _activeSkillBehavior: 1
   - _hasFirstCombat: 0
     _initFindType: 2
-    _atkId: 6503
+    _doubleAtkRate: 0
+    _activeSkillBehavior: 0
   _spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
