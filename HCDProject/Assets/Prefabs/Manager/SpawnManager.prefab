@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawnManager
   _eManager: 0
-  _spawnOffsetY: 6.5
-  _spawnDelay: 0.5
+  _spawnOffsetY: 7
   prefabs: []
   monsterCount:
     _data: 0
