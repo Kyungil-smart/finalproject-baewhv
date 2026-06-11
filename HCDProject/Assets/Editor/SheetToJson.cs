@@ -17,7 +17,7 @@ public class SheetToJson : EditorWindow
     private readonly Dictionary<string, string> _gSheets = new Dictionary<string, string>()
     {
         {"1881742159", "MONSTER_TABLE"},
-        {"1063876991", "LEVEL_REWARD"},
+        {"1063876991", "LEVEL_REWARD_TABLE"},
         {"1686886035", "CHARACTER_TABLE"},
         {"1698007139", "STAGE_CLEAR_REWARD_TABLE"},
         {"2033933741", "OBJECT_TABLE"},
@@ -28,7 +28,9 @@ public class SheetToJson : EditorWindow
         {"2083529388", "LOCALIZING_TABLE"},
         {"606265452", "STORY_LOCALIZING_TABLE"},
         {"1174224199", "STATIC_VALUE_TABLE"},
-        {"899282129", "STORY_EXP_TABLE"}
+        {"899282129", "STORY_EXP_TABLE"},
+        {"1690070445", "STORY_STAGE_TABLE"},
+        {"1914509138", "SKILL_TABLE"},
     };
 
     

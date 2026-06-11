@@ -50,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9618c5773724f384f996e6822e4ac47c
+    m_Address: Icon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9f1666bda5e6334188f877d0ac42d16
     m_Address: MONSTER_SKILL_TABLE
     m_ReadOnly: 0

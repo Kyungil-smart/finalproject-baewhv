@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
@@ -65,5 +65,12 @@ public class CharacterMovement : MonoBehaviour
     public void MoveFalse()
     {
         _anim.SetBool("Move", false);
+    }
+    
+    public bool CanReach(Vector2 target)
+    {
+        NavMeshPath path = new NavMeshPath();
+        NavMesh.CalculatePath(transform.position, target, Agent.areaMask, path);
+        return path.status == NavMeshPathStatus.PathComplete;
     }
 }

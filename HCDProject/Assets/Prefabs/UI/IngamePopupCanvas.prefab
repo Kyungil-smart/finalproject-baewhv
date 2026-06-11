@@ -4751,6 +4751,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8364330426491003250}
     m_Modifications:
+    - target: {fileID: 84201131847572818, guid: ff4f0754e91fcaa4598c64621681de7c, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1453419582120621340, guid: ff4f0754e91fcaa4598c64621681de7c, type: 3}
       propertyPath: m_Name
       value: ReqardItemA

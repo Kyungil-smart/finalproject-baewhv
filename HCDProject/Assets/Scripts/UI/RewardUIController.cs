@@ -17,7 +17,7 @@ public class RewardUIController : MonoBehaviour
 
     private void OnDisable()
     {
-        CloseCallback.Invoke();
+        CloseCallback?.Invoke();
         CloseCallback = null;
     }
 
@@ -61,6 +61,7 @@ public class RewardUIController : MonoBehaviour
 
     public void SetRelicReward(UnityAction action)
     {
+        gameObject.SetActive(true);
         titleText.text = "Stage Clear!";
         contentText.text = "강화 효과를 선택하세요.\n해당 효과는 <color=red>영구적</color>으로 적용됩니다.";
         CloseCallback = action;

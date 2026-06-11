@@ -17,11 +17,13 @@ public class DataManager : BaseManager<DataManager>
     public ObjectTable ObjectTable {get; private set;}
     public PlayerSkillTable PlayerSkillTable {get; private set;}
     public MonsterSkillTable MonsterSkillTable {get; private set;}
+    public SkillTable SkillTable {get; private set;}
     public ProjectileTable ProjectileTable {get; private set;}
     public LocalizingTable LocalizingTable {get; private set;}
     public StoryLocalizingTable StoryLocalizingTable {get; private set;}
     public StaticValueTable StaticValueTable {get; private set;}
     public StoryExpTable StoryExpTable {get; private set;}
+    public StoryStageTable StoryStageTable {get; private set;}
 
     public RatioIntValue dataValue;
     
@@ -50,10 +52,11 @@ public class DataManager : BaseManager<DataManager>
         {
             ("MAP_TABLE", json => MapTable = JsonUtility.FromJson<MapTable>(json)),
             ("MONSTER_TABLE", json => MonsterTable = JsonUtility.FromJson<MonsterTable>(json)),
-            ("LEVEL_REWARD", json => LevelRewardTable = JsonUtility.FromJson<LevelRewardTable>(json)),
+            ("LEVEL_REWARD_TABLE", json => LevelRewardTable = JsonUtility.FromJson<LevelRewardTable>(json)),
             ("CHARACTER_TABLE", json => CharacterTable = JsonUtility.FromJson<CharacterTable>(json)),
             ("STAGE_CLEAR_REWARD_TABLE", json => StageClearRewardTable = JsonUtility.FromJson<StageClearRewardTable>(json)),
             ("OBJECT_TABLE", json => ObjectTable = JsonUtility.FromJson<ObjectTable>(json)),
+            ("SKILL_TABLE", json => SkillTable = JsonUtility.FromJson<SkillTable>(json)),
             ("PLAYER_SKILL_TABLE", json => PlayerSkillTable = JsonUtility.FromJson<PlayerSkillTable>(json)),
             ("MONSTER_SKILL_TABLE", json => MonsterSkillTable = JsonUtility.FromJson<MonsterSkillTable>(json)),
             ("PROJECTILE_TABLE", json => ProjectileTable = JsonUtility.FromJson<ProjectileTable>(json)),
@@ -61,6 +64,7 @@ public class DataManager : BaseManager<DataManager>
             ("STORY_LOCALIZING_TABLE", json => StoryLocalizingTable = JsonUtility.FromJson<StoryLocalizingTable>(json)),
             ("STATIC_VALUE_TABLE", json => StaticValueTable = JsonUtility.FromJson<StaticValueTable>(json)),
             ("STORY_EXP_TABLE", json => StoryExpTable = JsonUtility.FromJson<StoryExpTable>(json)),
+            ("STORY_STAGE_TABLE", json => StoryStageTable = JsonUtility.FromJson<StoryStageTable>(json))
         };
         
         // 총 데이터 파일의 개수 

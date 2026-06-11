@@ -30,12 +30,10 @@ public partial class PlayerManager
         GetEXPData();
         level.Value = 1;
         exp = new RatioIntValue((int)LevelData[level.Value - 1].TOTAL_EXP, 0);
-        Debug.Log("here1");
         if (Service.Get<UIManager>() && Service.Get<UIManager>().GetUI<IngameBottomUIController>())
         {
             level.AddListener(Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetLevelText);
             exp.AddValuesListener(Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetExp);
-            Debug.Log("here2");
             exp.Invoke();
         }
 
@@ -96,7 +94,7 @@ public partial class PlayerManager
             Debug.Log("데이터가 없습니다");
             return;
         }
-
+        ApplyLevelReward(currentRandomRewards[selectedIndex]);
         Service.Get<DataManager>()?.SelectLevelReward(currentRandomRewards[selectedIndex].LEVEL_ID);
 
         string rewardId = currentRandomRewards[selectedIndex].LEVEL_ID;

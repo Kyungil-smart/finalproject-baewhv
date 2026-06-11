@@ -51,6 +51,7 @@ public class SceneController : BaseManager<SceneController>
         else if (scene == SceneType.InGame)
         {
             if (_currentScene == SceneType.StageSelect) SceneManager.UnloadSceneAsync((int)SceneType.StageSelect);
+            if (_currentScene == SceneType.InGame) SceneManager.UnloadSceneAsync((int)SceneType.InGame);
             
             SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
             _currentScene = scene;
