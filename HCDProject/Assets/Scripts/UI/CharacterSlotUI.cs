@@ -62,7 +62,7 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
 
     public void OnUseSkill()
     {
-        _character?.UseSkill(1);
+        _character?.TryUseActiveSkill();
     }
 
     public void ChangeMode(bool isSort)
