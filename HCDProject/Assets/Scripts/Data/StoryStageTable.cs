@@ -10,6 +10,7 @@ public class StoryStageRawData
     public int CHAPTER;
     public int STAGE;
     public string STAGE_TYPE;
+    public string STAGE_NAME_ID;
     public string TYPE_OF_ID;
     public string STORY_ID;
 }

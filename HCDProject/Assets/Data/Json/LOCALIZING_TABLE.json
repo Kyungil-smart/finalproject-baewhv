@@ -2,1179 +2,1403 @@
   "data": [
     {
       "TEXT_ID": "L_001",
-      "Korean(ko)": "레벨 리워드",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "레벨 리워드",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_012",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "L_013",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_001",
-      "Korean(ko)": "몬스터 이름",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "몬스터 이름",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_012",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_013",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_014",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_015",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_016",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_017",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_018",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_019",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_020",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_021",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_022",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_023",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_024",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_025",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_026",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_027",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_028",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_029",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_030",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_031",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_032",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_033",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_034",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_035",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_036",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_037",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_038",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_039",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_040",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_041",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_042",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_043",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_044",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_045",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_046",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_047",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_048",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "M_049",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "C_001",
-      "Korean(ko)": "세라",
-      "English(en)": "Serah",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "세라",
+      "English": "Serah",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "C_002",
-      "Korean(ko)": "노아",
-      "English(en)": "Noah",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "노아",
+      "English": "Noah",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "C_003",
-      "Korean(ko)": "엘리스",
-      "English(en)": "Alice",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "엘리스",
+      "English": "Alice",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "C_004",
-      "Korean(ko)": "스파인",
-      "English(en)": "Spayin",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "스파인",
+      "English": "Spayin",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "SCR_001",
-      "Korean(ko)": "고대 갑옷",
-      "English(en)": "Ancient Armor",
-      "Thai(th)": "เกราะโบราณ",
-      "Vietnamese(vi)": "Áo Giáp Cổ Đại",
-      "Indonesian(id)": "Baju Zirah Kuno"
+      "Korean": "고대 갑옷",
+      "English": "Ancient Armor",
+      "Thai": "เกราะโบราณ",
+      "Vietnamese": "Áo Giáp Cổ Đại",
+      "Indonesian": "Baju Zirah Kuno"
     },
     {
       "TEXT_ID": "SCR_002",
-      "Korean(ko)": "힐링 팩터",
-      "English(en)": "Healing Factor",
-      "Thai(th)": "พลังฟื้นฟู",
-      "Vietnamese(vi)": "Yếu Tố Hồi Phục",
-      "Indonesian(id)": "Faktor Penyembuhan"
+      "Korean": "힐링 팩터",
+      "English": "Healing Factor",
+      "Thai": "พลังฟื้นฟู",
+      "Vietnamese": "Yếu Tố Hồi Phục",
+      "Indonesian": "Faktor Penyembuhan"
     },
     {
       "TEXT_ID": "SCR_003",
-      "Korean(ko)": "전술 교본 (전사)",
-      "English(en)": "Tactical Manual (Warrior)",
-      "Thai(th)": "ตำรายุทธวิธี (นักรบ)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Chiến Binh)",
-      "Indonesian(id)": "Buku Taktik (Prajurit)"
+      "Korean": "전술 교본 (전사)",
+      "English": "Tactical Manual (Warrior)",
+      "Thai": "ตำรายุทธวิธี (นักรบ)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Chiến Binh)",
+      "Indonesian": "Buku Taktik (Prajurit)"
     },
     {
       "TEXT_ID": "SCR_004",
-      "Korean(ko)": "마법 활",
-      "English(en)": "Magic Bow",
-      "Thai(th)": "ธนูเวทมนตร์",
-      "Vietnamese(vi)": "Cung Ma Thuật",
-      "Indonesian(id)": "Busur Sihir"
+      "Korean": "마법 활",
+      "English": "Magic Bow",
+      "Thai": "ธนูเวทมนตร์",
+      "Vietnamese": "Cung Ma Thuật",
+      "Indonesian": "Busur Sihir"
     },
     {
       "TEXT_ID": "SCR_005",
-      "Korean(ko)": "화살비",
-      "English(en)": "Rain of Arrows",
-      "Thai(th)": "ฝนธนู",
-      "Vietnamese(vi)": "Mưa Tên",
-      "Indonesian(id)": "Hujan Panah"
+      "Korean": "화살비",
+      "English": "Rain of Arrows",
+      "Thai": "ฝนธนู",
+      "Vietnamese": "Mưa Tên",
+      "Indonesian": "Hujan Panah"
     },
     {
       "TEXT_ID": "SCR_006",
-      "Korean(ko)": "전술 교본 (궁수)",
-      "English(en)": "Tactical Manual (Archer)",
-      "Thai(th)": "ตำรายุทธวิธี (นักธนู)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Cung Thủ)",
-      "Indonesian(id)": "Buku Taktik (Pemanah)"
+      "Korean": "전술 교본 (궁수)",
+      "English": "Tactical Manual (Archer)",
+      "Thai": "ตำรายุทธวิธี (นักธนู)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Cung Thủ)",
+      "Indonesian": "Buku Taktik (Pemanah)"
     },
     {
       "TEXT_ID": "SCR_007",
-      "Korean(ko)": "확장 마법",
-      "English(en)": "Area Expansion",
-      "Thai(th)": "เวทมนตร์ขยายขอบเขต",
-      "Vietnamese(vi)": "Ma Thuật Mở Rộng",
-      "Indonesian(id)": "Sihir Perluasan"
+      "Korean": "확장 마법",
+      "English": "Area Expansion",
+      "Thai": "เวทมนตร์ขยายขอบเขต",
+      "Vietnamese": "Ma Thuật Mở Rộng",
+      "Indonesian": "Sihir Perluasan"
     },
     {
       "TEXT_ID": "SCR_008",
-      "Korean(ko)": "지진 마법",
-      "English(en)": "Earthquake Magic",
-      "Thai(th)": "เวทมนตร์แผ่นดินไหว",
-      "Vietnamese(vi)": "Ma Thuật Động Đất",
-      "Indonesian(id)": "Sihir Gempa"
+      "Korean": "지진 마법",
+      "English": "Earthquake Magic",
+      "Thai": "เวทมนตร์แผ่นดินไหว",
+      "Vietnamese": "Ma Thuật Động Đất",
+      "Indonesian": "Sihir Gempa"
     },
     {
       "TEXT_ID": "SCR_009",
-      "Korean(ko)": "전술 교본 (마법사)",
-      "English(en)": "Tactical Manual (Mage)",
-      "Thai(th)": "ตำรายุทธวิธี (นักเวท)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Pháp Sư)",
-      "Indonesian(id)": "Buku Taktik (Penyihir)"
+      "Korean": "전술 교본 (마법사)",
+      "English": "Tactical Manual (Mage)",
+      "Thai": "ตำรายุทธวิธี (นักเวท)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Pháp Sư)",
+      "Indonesian": "Buku Taktik (Penyihir)"
     },
     {
       "TEXT_ID": "SCR_010",
-      "Korean(ko)": "치유 증폭기",
-      "English(en)": "Healing Amplifier",
-      "Thai(th)": "เครื่องขยายพลังรักษา",
-      "Vietnamese(vi)": "Bộ Khuếch Đại Hồi Phục",
-      "Indonesian(id)": "Penguat Penyembuhan"
+      "Korean": "치유 증폭기",
+      "English": "Healing Amplifier",
+      "Thai": "เครื่องขยายพลังรักษา",
+      "Vietnamese": "Bộ Khuếch Đại Hồi Phục",
+      "Indonesian": "Penguat Penyembuhan"
     },
     {
       "TEXT_ID": "SCR_011",
-      "Korean(ko)": "보호막 마법",
-      "English(en)": "Barrier Magic",
-      "Thai(th)": "เวทมนตร์บาเรีย",
-      "Vietnamese(vi)": "Ma Thuật Lá Chắn",
-      "Indonesian(id)": "Sihir Perisai"
+      "Korean": "보호막 마법",
+      "English": "Barrier Magic",
+      "Thai": "เวทมนตร์บาเรีย",
+      "Vietnamese": "Ma Thuật Lá Chắn",
+      "Indonesian": "Sihir Perisai"
     },
     {
       "TEXT_ID": "SCR_012",
-      "Korean(ko)": "전술 교본 (힐러)",
-      "English(en)": "Tactical Manual (Healer)",
-      "Thai(th)": "ตำรายุทธวิธี (ผู้รักษา)",
-      "Vietnamese(vi)": "Sổ Tay Chiến Thuật (Trị Liệu Sư)",
-      "Indonesian(id)": "Buku Taktik (Penyembuh)"
+      "Korean": "전술 교본 (힐러)",
+      "English": "Tactical Manual (Healer)",
+      "Thai": "ตำรายุทธวิธี (ผู้รักษา)",
+      "Vietnamese": "Sổ Tay Chiến Thuật (Trị Liệu Sư)",
+      "Indonesian": "Buku Taktik (Penyembuh)"
     },
     {
       "TEXT_ID": "SCR_013",
-      "Korean(ko)": "성벽 수리",
-      "English(en)": "Wall Repair",
-      "Thai(th)": "ซ่อมกำแพง",
-      "Vietnamese(vi)": "Sửa Tường Thành",
-      "Indonesian(id)": "Perbaikan Tembok"
+      "Korean": "성벽 수리",
+      "English": "Wall Repair",
+      "Thai": "ซ่อมกำแพง",
+      "Vietnamese": "Sửa Tường Thành",
+      "Indonesian": "Perbaikan Tembok"
     },
     {
       "TEXT_ID": "SCR_014",
-      "Korean(ko)": "성벽 강화",
-      "English(en)": "Wall Reinforcement",
-      "Thai(th)": "เสริมแกร่งกำแพง",
-      "Vietnamese(vi)": "Cường Hóa Tường Thành",
-      "Indonesian(id)": "Penguatan Tembok"
+      "Korean": "성벽 강화",
+      "English": "Wall Reinforcement",
+      "Thai": "เสริมแกร่งกำแพง",
+      "Vietnamese": "Cường Hóa Tường Thành",
+      "Indonesian": "Penguatan Tembok"
     },
     {
       "TEXT_ID": "SCR_015",
-      "Korean(ko)": "지휘관의 깃발",
-      "English(en)": "Commander's Banner",
-      "Thai(th)": "ธงของผู้บัญชาการ",
-      "Vietnamese(vi)": "Cờ của Chỉ Huy",
-      "Indonesian(id)": "Bendera Komandan"
+      "Korean": "지휘관의 깃발",
+      "English": "Commander's Banner",
+      "Thai": "ธงของผู้บัญชาการ",
+      "Vietnamese": "Cờ của Chỉ Huy",
+      "Indonesian": "Bendera Komandan"
     },
     {
       "TEXT_ID": "MS_001",
-      "Korean(ko)": "몬스터 스킬 관련",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "몬스터 스킬 관련",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_012",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_013",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_014",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_015",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_016",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_017",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_018",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_019",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_020",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_021",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_022",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_023",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_024",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_025",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_026",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_027",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_028",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_029",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_030",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_031",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_032",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_033",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_034",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_035",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_036",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_037",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_038",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_039",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_040",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_041",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_042",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_043",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_044",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_045",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_046",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_047",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_048",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "MS_049",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_001",
-      "Korean(ko)": "오브젝트",
-      "English(en)": "Sword",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "오브젝트",
+      "English": "Sword",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_002",
-      "Korean(ko)": "",
-      "English(en)": "Shield",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "Shield",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_003",
-      "Korean(ko)": "",
-      "English(en)": "Bow",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "Bow",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_004",
-      "Korean(ko)": "",
-      "English(en)": "Heart",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "Heart",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_001",
-      "Korean(ko)": "액티브 스킬",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "액티브 스킬",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_002",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_003",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_004",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_005",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_006",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_007",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_008",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_009",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_010",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "PAST_011",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "UI_001",
-      "Korean(ko)": "",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     },
     {
       "TEXT_ID": "TST_001",
-      "Korean(ko)": "어서오세요",
-      "English(en)": "",
-      "Thai(th)": "",
-      "Vietnamese(vi)": "",
-      "Indonesian(id)": ""
+      "Korean": "스토리 로컬라이징 테이블의 텍스트",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_001",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_002",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_003",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_004",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_005",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_006",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_007",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_008",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_009",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_010",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_011",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_012",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "LRT_013",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_001",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_002",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_003",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_004",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_005",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_006",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_007",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_008",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_009",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_010",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_011",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_012",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_013",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_014",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRT_015",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     }
   ]
 }

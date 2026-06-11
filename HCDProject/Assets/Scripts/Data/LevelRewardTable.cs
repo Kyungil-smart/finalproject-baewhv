@@ -7,6 +7,7 @@ public class LevelRewardRawData
 {
     public string LEVEL_ID;
     public string LEVEL_REWARD_NAME;
+    public string LEVEL_REWARD_TEXT_ID;
     public string LEVEL_REWARD_TYPE_01;
     public float LEVEL_REWARD_01;
     public string LEVEL_REWARD_TYPE_02;

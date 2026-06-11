@@ -1,7 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class SortManager : BaseManager<SortManager>
 {
+    private struct SortBuffData
+    {
+        public int index;
+        public string objType;
+        public float finalBuffValue;
+    }
+
     public CharacterSlotUI[] characterSlots;
 
     public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
@@ -10,6 +19,8 @@ public class SortManager : BaseManager<SortManager>
     public ObserveValue<bool> isEndSort = new();
 
     private ObserveValue<int> leftCount = new();
+
+    private List<SortBuffData> BuffsBox = new List<SortBuffData>();
 
     protected override void Awake()
     {
@@ -20,7 +31,31 @@ public class SortManager : BaseManager<SortManager>
         if (bottomUI != null)
         {
             leftCount.AddListener(bottomUI.SetLeftSortCountText);
-            CurrentCombo.AddListener(bottomUI.SetComboText);
+
+            CurrentCombo.AddListener(value =>
+            {
+                bottomUI.SetComboText(value);
+
+                if (value == 0)
+                {
+                    if (bottomUI.GetUpperRail != null)
+                    {
+                        bottomUI.SetSortPhase();
+                    }
+                }
+                else
+                {
+                    var comboTextProp = bottomUI.GetType().GetField("comboText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    if (comboTextProp != null)
+                    {
+                        var comboTextMesh = comboTextProp.GetValue(bottomUI) as TMPro.TextMeshProUGUI;
+                        if (comboTextMesh != null)
+                        {
+                            comboTextMesh.gameObject.SetActive(true);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -46,12 +81,12 @@ public class SortManager : BaseManager<SortManager>
             return;
         }
 
-        Transform[] subSlots = targetSlot.SubSlots;
+        var subSlots = targetSlot.SubSlots;
 
         if (subSlots[0] != null && subSlots[0].childCount > 0)
         {
-            string masterName = GetCleanName(subSlots[0].GetChild(0).gameObject.name);
-            string draggedName = GetCleanName(draggedobject.gameObject.name);
+            var masterName = GetCleanName(subSlots[0].GetChild(0).gameObject.name);
+            var draggedName = GetCleanName(draggedobject.gameObject.name);
 
             if (masterName != draggedName)
             {
@@ -59,7 +94,7 @@ public class SortManager : BaseManager<SortManager>
             }
         }
 
-        for (int i = 0; i < subSlots.Length; i++)
+        for (var i = 0; i < subSlots.Length; i++)
         {
             if (subSlots[i] != null && subSlots[i].childCount == 0)
             {
@@ -79,36 +114,33 @@ public class SortManager : BaseManager<SortManager>
 
     private void CheckSlotState(CharacterSlotUI slot)
     {
-        for (int i = 0; i < slot.SubSlots.Length; i++)
+        for (var i = 0; i < slot.SubSlots.Length; i++)
         {
             if (slot.SubSlots[i] == null || slot.SubSlots[i].childCount == 0) return;
         }
 
-        string buffType = GetCleanName(slot.SubSlots[0].GetChild(0).gameObject.name);
+        var buffType = GetCleanName(slot.SubSlots[0].GetChild(0).gameObject.name);
 
-        GameObject[] blocksDestroy = new GameObject[3];
-        for (int i = 0; i < slot.SubSlots.Length; i++)
+        var blocksDestroy = new GameObject[3];
+        for (var i = 0; i < slot.SubSlots.Length; i++)
         {
             blocksDestroy[i] = slot.SubSlots[i].GetChild(0).gameObject;
         }
 
-        foreach (GameObject block in blocksDestroy)
+        foreach (var block in blocksDestroy)
         {
             Destroy(block);
         }
 
-        AddCombo(1);
-
         RemainingSorts.Value--;
-
         leftCount.Value = RemainingSorts.Value;
+
+        ApplyBuffToPlayer(slot, buffType);
 
         if (RemainingSorts.Value <= 0)
         {
             FinishSortPhase();
         }
-
-        ApplyBuffToPlayer(slot, buffType);
     }
 
     public void OnStartSort()
@@ -117,6 +149,8 @@ public class SortManager : BaseManager<SortManager>
         RemainingSorts.Value = 6;
         leftCount.Value = RemainingSorts.Value;
         CurrentCombo.Value = 0;
+
+        BuffsBox.Clear();
 
         Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
 
@@ -146,11 +180,24 @@ public class SortManager : BaseManager<SortManager>
     public void FinishSortPhase()
     {
         isEndSort.Value = true;
+        Debug.Log($"[FinishSort] BuffsBox 총 {BuffsBox.Count}개 적용 시작");
+
+        var playerManager = Service.Get<PlayerManager>();
+        if (playerManager != null && BuffsBox.Count > 0)
+        {
+            foreach (var data in BuffsBox)
+            {
+                Debug.Log($"[적용] index:{data.index} | {data.objType} | {data.finalBuffValue}");
+                playerManager.ApplyBuff(data.index, data.objType, data.finalBuffValue);
+            }
+            Debug.Log($"전송 완료");
+        }
     }
 
-    private void ApplyBuffToPlayer(CharacterSlotUI slot, string buffName)
+    public void ApplyBuffToPlayer(CharacterSlotUI slot, string buffName)
     {
-        var objectData = Service.Get<DataManager>()?.ObjectTable.data.Find(x => x.OBJ_NAME == buffName);
+        Debug.Log($"buffName 확인: {buffName}");
+        var objectData = Service.Get<DataManager>()?.ObjectTable.data.Find(x => x.OBJ_TYPE == buffName);
 
         if (objectData == null)
         {
@@ -163,10 +210,18 @@ public class SortManager : BaseManager<SortManager>
         var objWeight = objectData.OBJ_WEIGHT;
 
         var comboCount = CurrentCombo.Value;
+        var finalBuffValue = objAbility + (objWeight * comboCount);
 
-        var calculatedBonus = objAbility + (objWeight * comboCount);
+        Debug.Log($"타입: {objType} | 계산식: {objAbility} + ({objWeight} * {comboCount}콤보) | 최종 적용치: {finalBuffValue}");
 
-        Debug.Log($"타입: {objType} | 계산식: {objAbility} + ({objWeight} * {comboCount}콤보) | 최종 적용치: {calculatedBonus}");
+        var index = Array.IndexOf(characterSlots, slot);
+
+        BuffsBox.Add(new SortBuffData
+        {
+            index = index,
+            objType = objType,
+            finalBuffValue = finalBuffValue
+        });
     }
 
     private string GetCleanName(string rawName)

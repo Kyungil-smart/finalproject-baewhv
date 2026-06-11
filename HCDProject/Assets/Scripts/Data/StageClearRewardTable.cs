@@ -7,6 +7,7 @@ public class StageClearRewardRawData
 {
     public string CLEAR_REWARD_ID;
     public string CLEAR_REWARD_NAME;
+    public string CLEAR_REWARD_TEXT_ID;
     public int MAX_CLEAR_REWARD_COUNT;
     public string CLEAR_REWARD_TARGET;
     public string CLEAR_REWARD_TYPE_01;
