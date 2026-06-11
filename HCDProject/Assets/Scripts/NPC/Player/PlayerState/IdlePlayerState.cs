@@ -9,7 +9,6 @@ public class IdlePlayerState : IState
     public IdlePlayerState(BaseCharacter owner)
     {
         _owner = owner;
-
     }
 
     public void Enter()
@@ -31,6 +30,10 @@ public class IdlePlayerState : IState
             if (homeDist > 0.2f)
             {
                 _owner.Movement.Move(_owner.homePosition);
+            }
+            else
+            {
+                _owner.Movement.MoveFalse();
             }
         }
 
