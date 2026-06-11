@@ -70,11 +70,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ca36ad26a63501b4685423fd68a1657b
-    m_Address: LEVEL_REWARD
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dbf4c08db5284284aa2ea44281d54dd2
     m_Address: PLAYER_SKILL_TABLE
     m_ReadOnly: 0
