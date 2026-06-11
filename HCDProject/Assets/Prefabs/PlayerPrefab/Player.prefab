@@ -60,11 +60,28 @@ MonoBehaviour:
     _attackRange: 1
     _chaseRange: 4
   skills:
-  - skillDamage: 10
-    skillRange: 5
-    coolTime: 2
+  - SKILL_ABILLITY: 0
+    SKILL_ID: 
+    SKILL_NAME: 
+    ATK_TYPE: 0
+    SKILL_TYPE: 0
+    SKILL_AT: 0
+    SKILL_IS: 0
+    SKILL_RANGE_X: 0
+    SKILL_RANGE_Y: 0
+    SKILL_TIME: 0
+    SKILL_DURATION: 0
+    SKILL_ABT_01: 0
+    SKILL_ABT_02: 0
+    SKILL_AB_01: 0
+    SKILL_AB_02: 0
+    SKILL_DT: 0
+    SKILL_SFX: 
+    SKILL_FX: 
+    SKILL_HIT_SFX: 
+    SKILL_HIT_FX: 
+    SKILL_ICON: 
     targetCount: 1
-    TargetType: 0
   EnemyFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -206,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2473130802803087935}
   - component: {fileID: 7814288930582355997}
+  - component: {fileID: 7143347215561796839}
   m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
@@ -277,8 +295,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.16789784, g: 0.20612353, b: 0.7264151, a: 1}
+  m_Sprite: {fileID: 650662126, guid: 0d4df1c6fde90d245b0b660afd28c4e6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -287,3 +305,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &7143347215561796839
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146874695588745659}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b9933e358a617846af92cad9ef05034, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
