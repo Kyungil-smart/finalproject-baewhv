@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -22,13 +24,15 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private RectTransform ComboView;
 
 
-    [SerializeField] private CharacterSlotUI[] characterSlots;
+    [SerializeField] private GameObject characterSlotPrefab;
+    [SerializeField] private RectTransform characterSlot;
+    private List<CharacterSlotUI> characterSlots = new();
 
     private readonly Vector2 battlePhaseSlotRect = new Vector2(245, 361);
     private readonly Vector2 sortPhaseSlotRect = new Vector2(245, 990);
     private readonly Vector2 battlePhasePortraitRect = new Vector2(-12, -56.0f);
     private readonly Vector2 sortPhasePortraitRect = new Vector2(-12, -166.4f);
-    public CharacterSlotUI[] GetSlots => characterSlots;
+    public CharacterSlotUI[] GetSlots => characterSlots.ToArray();
 
     [SerializeField] private StoneRail upperRail;
     public StoneRail GetUpperRail => upperRail;
@@ -43,14 +47,12 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     private void Start()
     {
         comboText.gameObject.SetActive(false);
-        characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
     }
 
     public void OnEndSort()
     {
         Service.Get<SortManager>()?.CheckSortEnd();
     }
-
 
     /// <summary>
     /// 0~1값 소수만 사용합니다.
@@ -73,7 +75,9 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         {
             ((RectTransform)slot.transform).DOSizeDelta(battlePhaseSlotRect, 0);
             slot.GetBorderRect.DOSizeDelta(battlePhasePortraitRect, 0);
+            slot.ChangeMode(false);
         }
+        
     }
 
     public void SetSortPhase()
@@ -87,6 +91,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         {
             ((RectTransform)slot.transform).DOSizeDelta(sortPhaseSlotRect, 0);
             slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0);
+            slot.ChangeMode(true);
         }
     }
 
@@ -126,15 +131,43 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public void SetExp(int curr, int max)
     {
         expText.text = $"{(curr > max ? max : curr)} / {max}";
-        expGauge.value = Mathf.Clamp01((float)curr/max);    
+        expGauge.value = Mathf.Clamp01((float)curr / max);
     }
 
     public void SetLevelText(int value)
     {
         levelText.text = $"Lv : {value}";
     }
+
     public void OnSpeedButtonClick()
     {
         gameSpeedText.text = $"X{Service.Get<GameManager>()?.ChangeSpeed()}";
+    }
+
+    public CharacterSlotUI AddCharacter(CharacterRawData data, BaseCharacter character, int order = -1)
+    {
+        var slot = Instantiate(characterSlotPrefab, characterSlot).GetComponent<CharacterSlotUI>();
+        if(order != -1)
+            slot.transform.SetSiblingIndex(order);
+        string address;
+        switch (data.CHARACTER_ID) //TODO : HardCoding
+        {
+            case "3000":
+                address = "Player/Serah[Serah_BattlePortrait]";
+                break;
+            case "3001":
+                address = "Player/Noah[Noah_BattlePortrait]";
+                break;
+            case "3002":
+                address = "Player/Alice[Alice_BattlePortrait]";
+                break;
+            default:
+                address = "Player/Spayin[Spayin_BattlePortrait]";
+                break;
+        }
+        Sprite sp = Addressables.LoadAssetAsync<Sprite>(address).WaitForCompletion();
+        slot.InitSlot(character, sp);
+        characterSlots.Add(slot);
+        return slot;
     }
 }
