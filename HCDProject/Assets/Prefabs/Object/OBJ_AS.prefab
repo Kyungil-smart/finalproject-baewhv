@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07d9284fee5f0547a1025ade46e6807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIGlow
-  glowImage: {fileID: 0}
+  glowImage: {fileID: 6184699087184351817}
 --- !u!1 &6124480999121698714
 GameObject:
   m_ObjectHideFlags: 0
