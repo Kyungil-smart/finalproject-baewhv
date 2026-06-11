@@ -1,8 +1,8 @@
 ﻿{
   "data": [
     {
-      "STAGE_ID": "STG_001",
-      "NEXT_STAGE_ID": "STG_002",
+      "STAGE_ID": "CH01_NODE_001",
+      "NEXT_STAGE_ID": "CH01_NODE_002",
       "CHAPTER": 1,
       "STAGE": 1,
       "STAGE_TYPE": "TUTORIAL",
@@ -11,8 +11,8 @@
       "STORY_ID": "ST_0001"
     },
     {
-      "STAGE_ID": "STG_002",
-      "NEXT_STAGE_ID": "STG_003",
+      "STAGE_ID": "CH01_NODE_002",
+      "NEXT_STAGE_ID": "CH01_NODE_003",
       "CHAPTER": 1,
       "STAGE": 2,
       "STAGE_TYPE": "EVENT",
@@ -21,8 +21,8 @@
       "STORY_ID": ""
     },
     {
-      "STAGE_ID": "STG_003",
-      "NEXT_STAGE_ID": "STG_004",
+      "STAGE_ID": "CH01_NODE_003",
+      "NEXT_STAGE_ID": "CH01_NODE_004",
       "CHAPTER": 1,
       "STAGE": 3,
       "STAGE_TYPE": "NORMAL_F",
@@ -31,8 +31,8 @@
       "STORY_ID": ""
     },
     {
-      "STAGE_ID": "STG_004",
-      "NEXT_STAGE_ID": "STG_005",
+      "STAGE_ID": "CH01_NODE_004",
+      "NEXT_STAGE_ID": "CH01_NODE_005",
       "CHAPTER": 1,
       "STAGE": 4,
       "STAGE_TYPE": "NORMAL_F",
@@ -41,8 +41,8 @@
       "STORY_ID": ""
     },
     {
-      "STAGE_ID": "STG_005",
-      "NEXT_STAGE_ID": "STG_006",
+      "STAGE_ID": "CH01_NODE_005",
+      "NEXT_STAGE_ID": "CH01_NODE_006",
       "CHAPTER": 1,
       "STAGE": 5,
       "STAGE_TYPE": "NORMAL_F",
@@ -51,8 +51,8 @@
       "STORY_ID": ""
     },
     {
-      "STAGE_ID": "STG_006",
-      "NEXT_STAGE_ID": "STG_007",
+      "STAGE_ID": "CH01_NODE_006",
+      "NEXT_STAGE_ID": "CH01_NODE_007",
       "CHAPTER": 1,
       "STAGE": 6,
       "STAGE_TYPE": "MAINTANANCE",
@@ -61,7 +61,7 @@
       "STORY_ID": ""
     },
     {
-      "STAGE_ID": "STG_007",
+      "STAGE_ID": "CH01_NODE_007",
       "NEXT_STAGE_ID": "",
       "CHAPTER": 1,
       "STAGE": 7,
