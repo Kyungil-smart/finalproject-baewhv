@@ -95,6 +95,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         {
             _characters[i].BindHpUI(_slot[i].SetHPBar);
         }
+        Service.Get<SortManager>()?.AutoSetupUISlots();
     }
 
     public void IsAllSpawnPlayer()
