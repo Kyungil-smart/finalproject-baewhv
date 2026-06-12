@@ -134,6 +134,25 @@ public class SortManager : BaseManager<SortManager>
         isEndSort.Value = false;
         CurrentCombo.Value = 0;
 
+        if (characterSlots != null)
+        {
+            foreach (var slot in characterSlots)
+            {
+                if (slot == null || slot.SubSlots == null) continue;
+
+                foreach (var subSlot in slot.SubSlots)
+                {
+                    if (subSlot != null && subSlot.childCount > 0)
+                    {
+                        for (int i = subSlot.childCount - 1; i >= 0; i--)
+                        {
+                            Destroy(subSlot.GetChild(i).gameObject);
+                        }
+                    }
+                }
+            }
+        }
+
         var gameManager = Service.Get<GameManager>();
         var spawnManager = Service.Get<MonsterSpawnManager>();
         var dataManager = Service.Get<DataManager>();
