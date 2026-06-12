@@ -9,7 +9,7 @@ public class StoryLocalizingRawData
     public string NEXT_ID;
     public int CHAPTER;
     public int STAGE;
-    public string NUMBER;
+    public string STAGE_DIALOGUE_EVENT_TYPE;
     public string CATEGORY;
     public string BACKGROUND;
     public string BGM;

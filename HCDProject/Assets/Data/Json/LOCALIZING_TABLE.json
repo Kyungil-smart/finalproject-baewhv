@@ -1212,15 +1212,15 @@
       "TEXT_ID": "TST_001",
       "Korean": "(첫 배치지는 생각보다 조용했다.)",
       "English": "(My first assignment was quieter than I expected.)",
-      "Thai": "(จุดประจำการแรกของฉันเงียบกว่าที่คิดไว้.)",
+      "Thai": "(จุดประจำการแรกเงียบกว่าที่คิดไว้)",
       "Vietnamese": "(Nơi được phân công đầu tiên của tôi yên tĩnh hơn tôi nghĩ.)",
-      "Indonesian": "(Penugasan pertamaku ternyata lebih tenang dari yang kupikir.)"
+      "Indonesian": "(Tempat penugasan pertamaku ternyata lebih tenang dari yang kupikir.)"
     },
     {
       "TEXT_ID": "TST_002",
       "Korean": "여기가 시에스 방어 요새야? 몬스터가 거의 안 나온다더니, 진짜로 조용하네.",
-      "English": "Is this Cies Defense Fortress? They said monsters almost never appear here, and it really is quiet.",
-      "Thai": "ที่นี่คือป้อมป้องกันซีเอสเหรอ? ได้ยินว่ามอนสเตอร์แทบไม่ออกมาเลย เงียบจริงด้วย.",
+      "English": "Is this the Cies Defense Fortress? They said monsters barely show up here, and it really is quiet.",
+      "Thai": "ที่นี่คือป้อมป้องกันซีเอสเหรอ? ได้ยินว่าแทบไม่มีมอนสเตอร์ออกมาเลย เงียบจริง ๆ ด้วย",
       "Vietnamese": "Đây là pháo đài phòng thủ Cies à? Nghe nói quái vật hầu như không xuất hiện, đúng là yên tĩnh thật.",
       "Indonesian": "Ini Benteng Pertahanan Cies? Katanya monster hampir tidak pernah muncul, dan memang tenang sekali."
     },
@@ -1228,105 +1228,105 @@
       "TEXT_ID": "TST_003",
       "Korean": "지휘관님과 수호대 여러분이십니까?",
       "English": "Are you the Commander and the Guardians?",
-      "Thai": "ท่านคือผู้บัญชาการและเหล่าผู้พิทักษ์ใช่ไหมครับ?",
-      "Vietnamese": "Ngài là Chỉ huy và các Hộ vệ phải không ạ?",
-      "Indonesian": "Apakah Anda Komandan dan para Penjaga?"
+      "Thai": "ท่านคือผู้บัญชาการกับทุกท่านจากหน่วยพิทักษ์ใช่ไหมครับ?",
+      "Vietnamese": "Ngài là Chỉ huy và mọi người trong Đội Hộ vệ phải không ạ?",
+      "Indonesian": "Apakah Anda Komandan dan para anggota Penjaga?"
     },
     {
       "TEXT_ID": "TST_004",
       "Korean": "시에스 방어 요새에 오신 것을 환영합니다.",
       "English": "Welcome to Cies Defense Fortress.",
-      "Thai": "ยินดีต้อนรับสู่ป้อมป้องกันซีเอสครับ.",
-      "Vietnamese": "Chào mừng đến pháo đài phòng thủ Cies.",
+      "Thai": "ยินดีต้อนรับสู่ป้อมป้องกันซีเอสครับ",
+      "Vietnamese": "Chào mừng đến với pháo đài phòng thủ Cies.",
       "Indonesian": "Selamat datang di Benteng Pertahanan Cies."
     },
     {
       "TEXT_ID": "TST_005",
       "Korean": "환영해 줘서 고마워. 오자마자 일 이야기를 해서 미안한데, 안내를 부탁할게.",
-      "English": "Thanks for the welcome. Sorry to talk business right away, but please show us around.",
-      "Thai": "ขอบคุณที่ต้อนรับนะ. ขอโทษที่มาถึงก็พูดเรื่องงานเลย แต่ช่วยนำทางให้หน่อย.",
-      "Vietnamese": "Cảm ơn đã đón tiếp. Vừa đến đã nói chuyện công việc thì ngại quá, nhưng nhờ anh hướng dẫn giúp.",
-      "Indonesian": "Terima kasih atas sambutannya. Maaf baru datang sudah membahas tugas, tapi tolong pandu kami."
+      "English": "Thanks for the welcome. Sorry to bring up work right away, but could you guide us?",
+      "Thai": "ขอบคุณที่มาต้อนรับนะ ขอโทษที่มาถึงก็พูดเรื่องงานเลย แต่ช่วยนำทางให้หน่อยได้ไหม?",
+      "Vietnamese": "Cảm ơn đã ra đón. Vừa tới đã nói chuyện công việc thì hơi ngại, nhưng nhờ anh hướng dẫn giúp.",
+      "Indonesian": "Terima kasih atas sambutannya. Maaf baru tiba sudah membahas tugas, tapi tolong pandu kami."
     },
     {
       "TEXT_ID": "TST_006",
       "Korean": "이쪽이 세라, 그리고 이쪽이 노아야.",
       "English": "This is Serah, and this is Noah.",
-      "Thai": "ทางนี้คือเซราห์ และทางนี้คือโนอา.",
+      "Thai": "คนนี้คือเซราห์ แล้วคนนี้คือโนอา",
       "Vietnamese": "Đây là Serah, còn đây là Noah.",
       "Indonesian": "Ini Serah, dan ini Noah."
     },
     {
       "TEXT_ID": "TST_007",
       "Korean": "반가워. 전열을 맡고 있는 세라야. 관문 쪽 확인은 내가 먼저 볼게.",
-      "English": "Nice to meet you. I am Serah, in charge of the front line. I will check the gate area first.",
-      "Thai": "ยินดีที่ได้รู้จัก. ฉันเซราห์ รับหน้าที่แนวหน้า. ฉันจะตรวจดูฝั่งประตูก่อน.",
-      "Vietnamese": "Rất vui được gặp. Tôi là Serah, phụ trách tiền tuyến. Tôi sẽ kiểm tra khu cổng trước.",
-      "Indonesian": "Senang bertemu. Aku Serah, bertugas di garis depan. Aku akan memeriksa area gerbang dulu."
+      "English": "Nice to meet you. I am Serah, the front-line guard. I will check the gate area first.",
+      "Thai": "ยินดีที่ได้รู้จัก ฉันชื่อเซราห์ รับหน้าที่แนวหน้า ฉันจะไปดูฝั่งประตูก่อน",
+      "Vietnamese": "Rất vui được gặp. Tôi là Serah, phụ trách tuyến trước. Phần kiểm tra phía cổng cứ để tôi xem trước.",
+      "Indonesian": "Senang bertemu. Aku Serah, bertugas di garis depan. Aku akan memeriksa area gerbang lebih dulu."
     },
     {
       "TEXT_ID": "TST_008",
       "Korean": "노아야. 멀리서 보이는 움직임은 내가 먼저 확인해 둘게.",
-      "English": "I am Noah. I will check any distant movement first.",
-      "Thai": "ฉันโนอา. ถ้ามีความเคลื่อนไหวไกล ๆ ฉันจะตรวจดูก่อน.",
-      "Vietnamese": "Tôi là Noah. Tôi sẽ kiểm tra trước mọi chuyển động ở xa.",
-      "Indonesian": "Aku Noah. Aku akan lebih dulu memeriksa pergerakan yang terlihat dari jauh."
+      "English": "I am Noah. I will keep an eye on movement from a distance.",
+      "Thai": "ฉันโนอา ถ้ามีการเคลื่อนไหวจากระยะไกล ฉันจะคอยดูให้ก่อน",
+      "Vietnamese": "Tôi là Noah. Tôi sẽ kiểm tra trước những chuyển động nhìn thấy từ xa.",
+      "Indonesian": "Aku Noah. Aku akan mengawasi pergerakan yang terlihat dari jauh lebih dulu."
     },
     {
       "TEXT_ID": "TST_009",
       "Korean": "그리고 이쪽이 엘리스, 스파인이야.",
-      "English": "And these are Alice and Spayin.",
-      "Thai": "แล้วทางนี้คืออลิซกับสไปน์.",
-      "Vietnamese": "Còn đây là Alice và Spayin.",
-      "Indonesian": "Dan ini Alice serta Spayin."
+      "English": "And this is Alice, and this is Spayne.",
+      "Thai": "แล้วคนนี้คืออลิซ กับสไปน์",
+      "Vietnamese": "Còn đây là Alice và Spayne.",
+      "Indonesian": "Dan ini Alice serta Spayne."
     },
     {
       "TEXT_ID": "TST_010",
       "Korean": "엘리스야. 신호석 확인과 마법 지원을 맡고 있어. 보기보다 꼼꼼한 편이니까 걱정하지 마.",
-      "English": "I am Alice. I handle signal stone checks and magic support. I am more thorough than I look, so do not worry.",
-      "Thai": "ฉันอลิซ. รับหน้าที่ตรวจศิลาสัญญาณกับสนับสนุนเวทมนตร์. ฉันละเอียดกว่าที่เห็นนะ ไม่ต้องห่วง.",
+      "English": "I am Alice. I handle signal stone checks and magical support. I am more thorough than I look, so do not worry.",
+      "Thai": "ฉันชื่ออลิซ รับหน้าที่ตรวจศิลาสัญญาณกับสนับสนุนด้วยเวทมนตร์ เห็นแบบนี้แต่ฉันค่อนข้างละเอียดนะ ไม่ต้องห่วง",
       "Vietnamese": "Tôi là Alice. Tôi phụ trách kiểm tra đá tín hiệu và hỗ trợ ma pháp. Tôi kỹ tính hơn vẻ ngoài đấy, nên đừng lo.",
       "Indonesian": "Aku Alice. Aku menangani pemeriksaan batu sinyal dan dukungan sihir. Aku lebih teliti dari kelihatannya, jadi jangan khawatir."
     },
     {
       "TEXT_ID": "TST_011",
       "Korean": "스파인이야. 회복을 맡고 있어. 아프면 바로 말해줘.",
-      "English": "I am Spayin. I handle healing. If you are hurt, tell me right away.",
-      "Thai": "ฉันสไปน์. รับหน้าที่รักษา. ถ้าเจ็บก็รีบบอกทันทีนะ.",
-      "Vietnamese": "Tôi là Spayin. Tôi phụ trách hồi phục. Nếu bị đau thì nói ngay nhé.",
-      "Indonesian": "Aku Spayin. Aku bertugas menyembuhkan. Kalau terluka, segera bilang."
+      "English": "I am Spayne. I handle healing. If you are hurt, tell me right away.",
+      "Thai": "ฉันสไปน์ รับหน้าที่รักษา ถ้าเจ็บตรงไหนก็บอกทันทีนะ",
+      "Vietnamese": "Tôi là Spayne. Tôi phụ trách hồi phục. Nếu bị đau thì nói ngay nhé.",
+      "Indonesian": "Aku Spayne. Aku bertugas memulihkan. Kalau sakit, segera bilang."
     },
     {
       "TEXT_ID": "TST_012",
       "Korean": "저는 시에스 요새 수비대장인 데미안입니다.",
       "English": "I am Demian, captain of the Cies Fortress Guard.",
-      "Thai": "ผมคือเดเมียน หัวหน้าทหารยามป้อมซีเอสครับ.",
-      "Vietnamese": "Tôi là Demian, đội trưởng lính gác pháo đài Cies.",
-      "Indonesian": "Saya Demian, kapten Penjaga Benteng Cies."
+      "Thai": "ผมคือเดเมียน หัวหน้ากองป้องกันป้อมซีเอสครับ",
+      "Vietnamese": "Tôi là Demian, đội trưởng đội phòng vệ pháo đài Cies.",
+      "Indonesian": "Saya Demian, kapten pertahanan Benteng Cies."
     },
     {
       "TEXT_ID": "TST_013",
       "Korean": "앞으로 잘 부탁해, 데미안. 도착 전에 확인할 업무는 전달받았어.",
-      "English": "We will be counting on you, Demian. We were briefed on what to check before arriving.",
-      "Thai": "ฝากตัวด้วยนะ เดเมียน. ก่อนมาถึง พวกเราได้รับเรื่องที่ต้องตรวจแล้ว.",
-      "Vietnamese": "Nhờ anh giúp đỡ, Demian. Trước khi đến, chúng tôi đã nhận được danh sách việc cần kiểm tra.",
+      "English": "We will be counting on you, Demian. We received the tasks to check before we arrived.",
+      "Thai": "ฝากตัวด้วยนะ เดเมียน ก่อนมาถึง พวกเราได้รับงานที่ต้องตรวจสอบแล้ว",
+      "Vietnamese": "Nhờ anh giúp đỡ, Demian. Chúng tôi đã nhận được các việc cần kiểm tra trước khi đến đây.",
       "Indonesian": "Kami mengandalkanmu, Demian. Sebelum tiba, kami sudah menerima tugas yang perlu diperiksa."
     },
     {
       "TEXT_ID": "TST_014",
       "Korean": "세라는 관문 검문소를 확인해 줘. 노아는 망루에서 숲길을 봐줘.",
-      "English": "Serah, check the gate checkpoint. Noah, watch the forest road from the tower.",
-      "Thai": "เซราห์ ตรวจด่านหน้าประตูด้วย. โนอา ดูทางป่าจากหอคอยนะ.",
-      "Vietnamese": "Serah, hãy kiểm tra trạm gác cổng. Noah, quan sát đường rừng từ tháp canh nhé.",
-      "Indonesian": "Serah, periksa pos gerbang. Noah, awasi jalan hutan dari menara."
+      "English": "Serah, check the gate checkpoint. Noah, watch the forest road from the watchtower.",
+      "Thai": "เซราห์ ช่วยตรวจจุดตรวจประตูที โนอา ช่วยดูทางป่าจากหอเฝ้าระวัง",
+      "Vietnamese": "Serah, kiểm tra trạm gác cổng giúp tôi. Noah, quan sát đường rừng từ tháp canh nhé.",
+      "Indonesian": "Serah, tolong periksa pos pemeriksaan gerbang. Noah, awasi jalan hutan dari menara pengawas."
     },
     {
       "TEXT_ID": "TST_015",
       "Korean": "엘리스는 신호석을 확인해 주고, 스파인은 물자 보관소를 봐줄래?",
-      "English": "Alice, check the signal stones. Spayin, can you check the supply storage?",
-      "Thai": "อลิซ ตรวจศิลาสัญญาณให้หน่อย. สไปน์ ช่วยดูคลังเสบียงได้ไหม?",
-      "Vietnamese": "Alice, kiểm tra đá tín hiệu giúp tôi. Spayin, cậu xem kho vật tư được chứ?",
-      "Indonesian": "Alice, periksa batu sinyal. Spayin, bisa cek gudang persediaan?"
+      "English": "Alice, check the signal stones. Spayne, can you check the supply storage?",
+      "Thai": "อลิซช่วยตรวจศิลาสัญญาณ ส่วนสไปน์ช่วยดูคลังเสบียงได้ไหม?",
+      "Vietnamese": "Alice, kiểm tra đá tín hiệu giúp tôi. Spayne, cậu xem kho vật tư được chứ?",
+      "Indonesian": "Alice, tolong periksa batu sinyal. Spayne, bisa lihat gudang persediaan?"
     },
     {
       "TEXT_ID": "TST_016",
@@ -1334,77 +1334,77 @@
       "English": "Demian, can you assign guides to the four of them?",
       "Thai": "เดเมียน ช่วยจัดคนไปนำทางทั้งสี่คนได้ไหม?",
       "Vietnamese": "Demian, anh có thể bố trí người dẫn đường cho bốn người họ không?",
-      "Indonesian": "Demian, bisa tugaskan orang untuk memandu mereka berempat?"
+      "Indonesian": "Demian, bisa tempatkan orang untuk memandu mereka berempat?"
     },
     {
       "TEXT_ID": "TST_017",
       "Korean": "알겠습니다. 바로 안내 병력을 배치하겠습니다.",
       "English": "Understood. I will assign guides at once.",
-      "Thai": "รับทราบครับ. จะจัดกำลังนำทางทันที.",
+      "Thai": "รับทราบครับ ผมจะจัดกำลังนำทางให้ทันทีครับ",
       "Vietnamese": "Rõ. Tôi sẽ bố trí binh lính dẫn đường ngay.",
-      "Indonesian": "Dimengerti. Saya akan segera menugaskan pengawal pemandu."
+      "Indonesian": "Dimengerti. Saya akan segera menempatkan pasukan pemandu."
     },
     {
       "TEXT_ID": "TST_018",
       "Korean": "좋아! 관문 검문소는 내가 볼게.",
-      "English": "Good! I will check the gate checkpoint.",
-      "Thai": "좋아! 내가 관문 검문소를 확인할게.",
-      "Vietnamese": "Tốt! Tôi sẽ kiểm tra trạm gác cổng.",
-      "Indonesian": "Baik! Aku akan memeriksa pos gerbang."
+      "English": "All right! I will check the gate checkpoint.",
+      "Thai": "เอาล่ะ! จุดตรวจประตู ฉันจะไปดูเอง",
+      "Vietnamese": "Được! Trạm gác cổng cứ để tôi xem.",
+      "Indonesian": "Baik! Pos pemeriksaan gerbang biar aku yang lihat."
     },
     {
       "TEXT_ID": "TST_019",
       "Korean": "망루 쪽을 먼저 확인하고 올게.",
       "English": "I will check the tower first.",
-      "Thai": "ฉันจะไปตรวจฝั่งหอคอยก่อน.",
-      "Vietnamese": "Tôi sẽ kiểm tra phía tháp canh trước.",
-      "Indonesian": "Aku akan memeriksa menara dulu."
+      "Thai": "ฉันจะไปตรวจฝั่งหอเฝ้าระวังก่อนแล้วกลับมา",
+      "Vietnamese": "Tôi sẽ kiểm tra phía tháp canh trước rồi quay lại.",
+      "Indonesian": "Aku akan memeriksa sisi menara pengawas dulu."
     },
     {
       "TEXT_ID": "TST_020",
       "Korean": "신호석을 확인하고 나서, 세라 쪽을 도와줄게.",
       "English": "I will check the signal stones, then help Serah.",
-      "Thai": "ฉันจะตรวจศิลาสัญญาณ แล้วไปช่วยเซราห์.",
-      "Vietnamese": "Tôi sẽ kiểm tra đá tín hiệu rồi hỗ trợ Serah.",
-      "Indonesian": "Aku akan memeriksa batu sinyal, lalu membantu Serah."
+      "Thai": "ฉันจะตรวจศิลาสัญญาณก่อน แล้วค่อยไปช่วยฝั่งเซราห์",
+      "Vietnamese": "Tôi sẽ kiểm tra đá tín hiệu rồi qua hỗ trợ Serah.",
+      "Indonesian": "Setelah memeriksa batu sinyal, aku akan membantu sisi Serah."
     },
     {
       "TEXT_ID": "TST_021",
       "Korean": "관문 안쪽 물자 보관소라면... 여기서 제일 멀지 않아?",
       "English": "If it is the supply storage inside the gate... is that not the farthest place from here?",
-      "Thai": "ถ้าเป็นคลังเสบียงด้านในประตู... มันไกลที่สุดจากตรงนี้ไม่ใช่เหรอ?",
+      "Thai": "ถ้าเป็นคลังเสบียงด้านในประตู... มันไม่ได้ไกลที่สุดจากตรงนี้เหรอ?",
       "Vietnamese": "Nếu là kho vật tư bên trong cổng... chẳng phải xa nhất từ đây sao?",
       "Indonesian": "Kalau gudang persediaan di dalam gerbang... bukankah itu yang paling jauh dari sini?"
     },
     {
       "TEXT_ID": "TST_022",
       "Korean": "멀어도 지금 봐두면 나중에 헤매지는 않을 거야.",
-      "English": "Even if it is far, checking it now will keep us from getting lost later.",
-      "Thai": "ถึงจะไกล แต่ถ้าดูไว้ตอนนี้ ทีหลังก็ไม่ต้องหลงทาง.",
-      "Vietnamese": "Dù xa, kiểm tra bây giờ sẽ giúp sau này khỏi lạc đường.",
+      "English": "Even if it is far, checking it now should keep us from getting lost later.",
+      "Thai": "ถึงจะไกล แต่ถ้าดูไว้ตอนนี้ ทีหลังก็ไม่น่าหลงทางนะ",
+      "Vietnamese": "Dù xa, nếu kiểm tra từ bây giờ thì sau này sẽ đỡ lạc đường.",
       "Indonesian": "Walau jauh, kalau dicek sekarang nanti kita tidak akan tersesat."
     },
     {
       "TEXT_ID": "TST_023",
       "Korean": "세라, 혹시 나랑 역할 바꿀래...?",
-      "English": "Serah, want to switch roles with me...?",
-      "Thai": "เซราห์ อยากสลับหน้าที่กับฉันไหม...?",
-      "Vietnamese": "Serah, có muốn đổi vai với tôi không...?",
+      "English": "Serah, do you want to switch jobs with me...?",
+      "Thai": "เซราห์... อยากสลับหน้าที่กับฉันไหม?",
+      "Vietnamese": "Serah, hay là đổi nhiệm vụ với tôi không...?",
       "Indonesian": "Serah, mau tukar tugas denganku...?"
     },
     {
       "TEXT_ID": "TST_024",
       "Korean": "미안. 검문소는 내가 보는 게 좋을 것 같아. 앞에서 막는 건 내 일이니까.",
-      "English": "Sorry. I think I should handle the checkpoint. Stopping things at the front is my job.",
-      "Thai": "ขอโทษนะ. ฉันว่าด่านตรวจให้ฉันดูน่าจะดีกว่า. การหยุดไว้ข้างหน้าเป็นงานของฉัน.",
-      "Vietnamese": "Xin lỗi. Tôi nghĩ mình nên phụ trách trạm gác. Chặn ở phía trước là việc của tôi.",
-      "Indonesian": "Maaf. Kurasa aku yang sebaiknya memeriksa pos. Menahan di depan itu tugasku."
+      "English": "Sorry. I think I should check the checkpoint. Holding the front is my job.",
+      "Thai": "ขอโทษนะ ฉันว่าจุดตรวจให้ฉันดูจะดีกว่า เพราะการกันไว้ด้านหน้าคืองานของฉัน",
+      "Vietnamese": "Xin lỗi. Tôi nghĩ mình nên xem trạm gác. Chặn ở phía trước là việc của tôi mà.",
+      "Indonesian": "Maaf. Kurasa pos pemeriksaan sebaiknya aku yang lihat. Menahan dari depan itu tugasku."
     },
     {
       "TEXT_ID": "TST_025",
       "Korean": "너무 맞는 말이라 더 슬프네...",
-      "English": "That is so right it makes me even sadder...",
-      "Thai": "ถูกต้องเกินไปจนยิ่งเศร้าเลย...",
+      "English": "That is so true it just makes me sadder...",
+      "Thai": "มันถูกเกินไปจนยิ่งเศร้าเลย...",
       "Vietnamese": "Đúng quá nên càng buồn hơn...",
       "Indonesian": "Terlalu benar, jadi makin sedih..."
     },
@@ -1412,63 +1412,63 @@
       "TEXT_ID": "TST_026",
       "Korean": "(각자 위치를 확인하려던 순간, 요새 안쪽에서 경보 종이 크게 울렸다.)",
       "English": "(Just as we were about to check our positions, the alarm bell rang loudly inside the fortress.)",
-      "Thai": "(ทันทีที่พวกเรากำลังจะแยกไปตรวจตำแหน่ง ระฆังเตือนภัยก็ดังลั่นจากในป้อม.)",
-      "Vietnamese": "(Ngay lúc chúng tôi chuẩn bị kiểm tra vị trí của mình, chuông báo động trong pháo đài vang lớn.)",
-      "Indonesian": "(Saat kami hendak memeriksa posisi masing-masing, lonceng peringatan di dalam benteng berbunyi keras.)"
+      "Thai": "(ในจังหวะที่พวกเรากำลังจะแยกย้ายไปตรวจตำแหน่ง เสียงระฆังเตือนภัยก็ดังขึ้นจากในป้อม)",
+      "Vietnamese": "(Ngay lúc chúng tôi chuẩn bị kiểm tra từng vị trí, chuông báo động vang lớn từ bên trong pháo đài.)",
+      "Indonesian": "(Saat kami hendak memeriksa posisi masing-masing, lonceng peringatan berbunyi keras dari dalam benteng.)"
     },
     {
       "TEXT_ID": "TST_027",
       "Korean": "보고드립니다! 몬스터 경보입니다! 숲 방향에서 다수의 몬스터를 확인했습니다! 관문 쪽으로 접근 중입니다!",
-      "English": "Report! Monster alarm! We have confirmed many monsters from the forest! They are approaching the gate!",
-      "Thai": "รายงานครับ! สัญญาณเตือนมอนสเตอร์! พบมอนสเตอร์จำนวนมากจากทางป่า! กำลังมุ่งหน้ามาที่ประตู!",
+      "English": "Reporting! Monster alarm! We have confirmed multiple monsters from the forest! They are approaching the gate!",
+      "Thai": "รายงานครับ! สัญญาณเตือนมอนสเตอร์! พบมอนสเตอร์จำนวนมากจากทิศทางป่า! กำลังเข้าใกล้ฝั่งประตูครับ!",
       "Vietnamese": "Báo cáo! Báo động quái vật! Đã phát hiện nhiều quái vật từ hướng rừng! Chúng đang tiến về phía cổng!",
-      "Indonesian": "Lapor! Alarm monster! Banyak monster terdeteksi dari arah hutan! Mereka mendekati gerbang!"
+      "Indonesian": "Lapor! Alarm monster! Banyak monster terdeteksi dari arah hutan! Mereka sedang mendekati gerbang!"
     },
     {
       "TEXT_ID": "TST_028",
       "Korean": "세라... 조용하다면서?",
       "English": "Serah... you said it was quiet.",
-      "Thai": "เซราห์... เธอบอกว่าเงียบไม่ใช่เหรอ?",
-      "Vietnamese": "Serah... cậu nói là yên tĩnh mà?",
+      "Thai": "เซราห์... ไหนบอกว่าเงียบไง?",
+      "Vietnamese": "Serah... cậu bảo là yên tĩnh mà?",
       "Indonesian": "Serah... tadi kau bilang tenang, kan?"
     },
     {
       "TEXT_ID": "TST_029",
       "Korean": "그랬었지!",
-      "English": "It was!",
-      "Thai": "ก็เคยเงียบไง!",
-      "Vietnamese": "Đã từng yên tĩnh mà!",
+      "English": "It was quiet!",
+      "Thai": "เมื่อกี้มันเงียบจริง ๆ นะ!",
+      "Vietnamese": "Lúc nãy đúng là yên tĩnh mà!",
       "Indonesian": "Memang tadinya tenang!"
     },
     {
       "TEXT_ID": "TST_030",
       "Korean": "일단 다시 조용하게 만들 방법부터 생각하자.",
-      "English": "First, let us think about how to make it quiet again.",
-      "Thai": "ก่อนอื่น คิดวิธีทำให้มันเงียบอีกครั้งกันเถอะ.",
+      "English": "First, let us figure out how to make it quiet again.",
+      "Thai": "ก่อนอื่น คิดวิธีทำให้มันกลับมาเงียบอีกครั้งกันเถอะ",
       "Vietnamese": "Trước hết, hãy nghĩ cách làm nơi này yên tĩnh lại đã.",
-      "Indonesian": "Pertama, pikirkan cara membuatnya tenang lagi."
+      "Indonesian": "Pertama, kita pikirkan cara membuatnya tenang lagi."
     },
     {
       "TEXT_ID": "TST_031",
       "Korean": "노아는 망루에서 숲길을 계속 감시해 줘.",
       "English": "Noah, keep watching the forest road from the tower.",
-      "Thai": "โนอา เฝ้าดูทางป่าจากหอคอยต่อไป.",
+      "Thai": "โนอา เฝ้าดูทางป่าจากหอเฝ้าระวังต่อไปนะ",
       "Vietnamese": "Noah, tiếp tục theo dõi đường rừng từ tháp canh.",
-      "Indonesian": "Noah, terus awasi jalan hutan dari menara."
+      "Indonesian": "Noah, terus awasi jalan hutan dari menara pengawas."
     },
     {
       "TEXT_ID": "TST_032",
       "Korean": "스파인은 물자 보관소에서 응급 처치 물품을 챙겨와 줘. 둘 다 준비되는 대로 관문으로 합류해.",
-      "English": "Spayin, bring first-aid supplies from the storage. Both of you, join us at the gate when ready.",
-      "Thai": "สไปน์ เอาของปฐมพยาบาลจากคลังเสบียงมา. ทั้งสองคนพร้อมแล้วให้มารวมที่ประตู.",
-      "Vietnamese": "Spayin, mang vật tư sơ cứu từ kho đến. Hai người chuẩn bị xong thì tập hợp ở cổng.",
-      "Indonesian": "Spayin, ambil perlengkapan P3K dari gudang. Kalian berdua, bergabung di gerbang saat siap."
+      "English": "Spayne, bring first-aid supplies from the storage. Both of you, join us at the gate as soon as you are ready.",
+      "Thai": "สไปน์ ไปหยิบอุปกรณ์ปฐมพยาบาลจากคลังเสบียงมา ทั้งสองคนพร้อมแล้วให้มารวมที่ประตู",
+      "Vietnamese": "Spayne, mang vật tư sơ cứu từ kho đến. Hai người chuẩn bị xong thì tập hợp ở cổng.",
+      "Indonesian": "Spayne, ambil perlengkapan P3K dari gudang persediaan. Kalian berdua, bergabung di gerbang begitu siap."
     },
     {
       "TEXT_ID": "TST_033",
       "Korean": "응, 확인하고 바로 갈게.",
       "English": "Okay. I will check and come right away.",
-      "Thai": "อืม จะตรวจแล้วรีบไปทันที.",
+      "Thai": "อืม ฉันจะตรวจแล้วรีบไปทันที",
       "Vietnamese": "Ừ, tôi sẽ kiểm tra rồi đến ngay.",
       "Indonesian": "Ya, aku cek lalu segera ke sana."
     },
@@ -1476,55 +1476,55 @@
       "TEXT_ID": "TST_034",
       "Korean": "윽... 힘들게 제일 먼 곳까지 왔는데 바로 돌아가야 하네.",
       "English": "Ugh... I came all the way to the farthest place, and now I have to go right back.",
-      "Thai": "อึก... อุตส่าห์มาถึงที่ไกลที่สุดแล้ว ต้องกลับทันทีเลยเหรอ.",
+      "Thai": "อึก... อุตส่าห์เดินมาถึงที่ไกลที่สุดแล้ว ต้องกลับทันทีเลยเหรอ",
       "Vietnamese": "Ư... vất vả lắm mới đến chỗ xa nhất, giờ lại phải quay về ngay.",
       "Indonesian": "Ugh... susah payah sampai tempat paling jauh, sekarang harus langsung kembali."
     },
     {
       "TEXT_ID": "TST_035",
       "Korean": "세라와 엘리스 두 사람은 관문 검문소에서 몬스터를 먼저 막아줘.",
-      "English": "Serah and Alice, the two of you stop the monsters at the gate checkpoint first.",
-      "Thai": "เซราห์กับอลิซ ทั้งสองคนช่วยหยุดมอนสเตอร์ที่ด่านประตูก่อน.",
-      "Vietnamese": "Serah và Alice, hai người chặn quái vật ở trạm gác cổng trước.",
-      "Indonesian": "Serah dan Alice, kalian berdua hentikan monster dulu di pos gerbang."
+      "English": "Serah and Alice, stop the monsters at the gate checkpoint first.",
+      "Thai": "เซราห์กับอลิซ สองคนช่วยสกัดมอนสเตอร์ที่จุดตรวจประตูก่อน",
+      "Vietnamese": "Serah và Alice, hai người hãy chặn quái vật ở trạm gác cổng trước.",
+      "Indonesian": "Serah dan Alice, kalian berdua tahan monster dulu di pos pemeriksaan gerbang."
     },
     {
       "TEXT_ID": "TST_036",
       "Korean": "좋아! 여기는 내가 버틸게. 관문까지는 절대 못 지나가게 막을 거야!",
-      "English": "Good! I will hold here. I will not let them get through to the gate!",
-      "Thai": "좋아! 여긴 내가 버틸게. 절대 관문까지 지나가게 두지 않아!",
-      "Vietnamese": "Tốt! Tôi sẽ giữ chỗ này. Nhất định không cho chúng vượt qua tới cổng!",
-      "Indonesian": "Baik! Aku akan bertahan di sini. Aku tidak akan membiarkan mereka melewati gerbang!"
+      "English": "All right! I will hold here. I will not let them get through to the gate!",
+      "Thai": "เอาล่ะ! ตรงนี้ฉันจะยืนรับเอง จะไม่ปล่อยให้ผ่านไปถึงประตูเด็ดขาด!",
+      "Vietnamese": "Được! Chỗ này cứ để tôi giữ. Tôi sẽ không để chúng vượt qua tới cổng đâu!",
+      "Indonesian": "Oke! Di sini biar aku yang tahan. Aku tidak akan membiarkan mereka sampai ke gerbang!"
     },
     {
       "TEXT_ID": "TST_037",
       "Korean": "세라가 앞을 맡아줘. 나는 적이 몰리는 쪽을 볼게.",
-      "English": "Serah, take the front. I will handle the enemies that group up.",
-      "Thai": "เซราห์ ฝากแนวหน้าให้เธอ. ฉันจะจัดการพวกที่รวมกันเป็นกลุ่ม.",
-      "Vietnamese": "Serah, cậu lo phía trước. Tôi sẽ xử lý chỗ địch tụ lại.",
-      "Indonesian": "Serah, ambil bagian depan. Aku akan menangani musuh yang berkumpul."
+      "English": "Serah, take the front. I will watch the side where enemies gather.",
+      "Thai": "เซราห์ ฝากด้านหน้าให้เธอ ฉันจะดูฝั่งที่ศัตรูรวมตัวกัน",
+      "Vietnamese": "Serah, nhờ cậu lo phía trước. Tôi sẽ xem phía địch tụ lại.",
+      "Indonesian": "Serah, ambil bagian depan. Aku akan melihat sisi tempat musuh berkumpul."
     },
     {
       "TEXT_ID": "TST_038",
       "Korean": "알겠어. 신호가 오면 바로 나갈게!",
       "English": "Got it. I will move out as soon as the signal comes!",
-      "Thai": "알겠어. สัญญาณมาเมื่อไหร่ ฉันจะออกไปทันที!",
-      "Vietnamese": "Hiểu rồi. Tín hiệu đến là tôi sẽ lao ra ngay!",
+      "Thai": "เข้าใจแล้ว ถ้าสัญญาณมา ฉันจะออกไปทันที!",
+      "Vietnamese": "Hiểu rồi. Có tín hiệu là tôi sẽ ra ngay!",
       "Indonesian": "Mengerti. Begitu sinyal datang, aku langsung maju!"
     },
     {
       "TEXT_ID": "TST_039",
       "Korean": "몬스터 무리가 관문 앞까지 접근했습니다! 지휘관님, 신호석 준비를 부탁드립니다!",
-      "English": "The monster horde has reached the gate! Commander, please prepare the signal stones!",
-      "Thai": "ฝูงมอนสเตอร์เข้าใกล้หน้าประตูแล้วครับ! ท่านผู้บัญชาการ โปรดเตรียมศิลาสัญญาณ!",
-      "Vietnamese": "Bầy quái vật đã áp sát trước cổng! Chỉ huy, xin chuẩn bị đá tín hiệu!",
-      "Indonesian": "Gerombolan monster sudah mendekati gerbang! Komandan, tolong siapkan batu sinyal!"
+      "English": "The monster horde is approaching the gate! Commander, please prepare the signal stones!",
+      "Thai": "ฝูงมอนสเตอร์เข้าใกล้หน้าประตูแล้วครับ! ท่านผู้บัญชาการ กรุณาเตรียมศิลาสัญญาณด้วยครับ!",
+      "Vietnamese": "Bầy quái vật đã áp sát trước cổng! Thưa Chỉ huy, xin hãy chuẩn bị đá tín hiệu!",
+      "Indonesian": "Gerombolan monster sudah mendekati depan gerbang! Komandan, mohon siapkan batu sinyal!"
     },
     {
       "TEXT_ID": "TST_040",
       "Korean": "세라와 엘리스한테 먼저 신호를 보낼게.",
       "English": "I will send the signal to Serah and Alice first.",
-      "Thai": "ฉันจะส่งสัญญาณให้เซราห์กับอลิซก่อน.",
+      "Thai": "ฉันจะส่งสัญญาณให้เซราห์กับอลิซก่อน",
       "Vietnamese": "Tôi sẽ gửi tín hiệu cho Serah và Alice trước.",
       "Indonesian": "Aku akan mengirim sinyal ke Serah dan Alice dulu."
     },
@@ -1532,121 +1532,121 @@
       "TEXT_ID": "TST_041",
       "Korean": "신호 연결 확인. 세라, 준비됐지?",
       "English": "Signal link confirmed. Serah, are you ready?",
-      "Thai": "ยืนยันการเชื่อมสัญญาณ. เซราห์ พร้อมไหม?",
-      "Vietnamese": "Đã xác nhận kết nối tín hiệu. Serah, sẵn sàng chứ?",
+      "Thai": "ยืนยันการเชื่อมต่อสัญญาณ เซราห์ พร้อมนะ?",
+      "Vietnamese": "Xác nhận kết nối tín hiệu. Serah, sẵn sàng chứ?",
       "Indonesian": "Koneksi sinyal terkonfirmasi. Serah, siap?"
     },
     {
       "TEXT_ID": "TST_042",
       "Korean": "좋아, 간다!",
-      "English": "Good, here I go!",
-      "Thai": "좋아 ไปเลย!",
-      "Vietnamese": "Tốt, tôi đi đây!",
-      "Indonesian": "Baik, aku maju!"
+      "English": "All right, here I go!",
+      "Thai": "เอาล่ะ ไปเลย!",
+      "Vietnamese": "Được, lên thôi!",
+      "Indonesian": "Oke, maju!"
     },
     {
       "TEXT_ID": "TST_043",
       "Korean": "[튜토리얼 팝업: 신호석 타이밍 액션 및 3-Sort 콤보 공격 학습]",
       "English": "[Tutorial Popup: Learn signal stone timing actions and 3-Sort combo attacks]",
-      "Thai": "[หน้าต่างสอนเล่น: เรียนรู้การกดจังหวะศิลาสัญญาณและคอมโบโจมตี 3-Sort]",
-      "Vietnamese": "[Cửa sổ hướng dẫn: Học thao tác căn thời gian đá tín hiệu và đòn combo 3-Sort]",
-      "Indonesian": "[Popup Tutorial: Pelajari aksi timing batu sinyal dan serangan kombo 3-Sort]"
+      "Thai": "[ป๊อปอัปสอนเล่น: เรียนรู้แอ็กชันจับจังหวะศิลาสัญญาณและการโจมตีคอมโบ 3-Sort]",
+      "Vietnamese": "[Cửa sổ hướng dẫn: Học thao tác căn thời điểm đá tín hiệu và tấn công combo 3-Sort]",
+      "Indonesian": "[Pop-up Tutorial: Pelajari aksi timing batu sinyal dan serangan kombo 3-Sort]"
     },
     {
       "TEXT_ID": "TST_044",
       "Korean": "공격 신호석을 세라 슬롯으로 드래그해주세요.",
       "English": "Please drag the attack signal stone to Serah's slot.",
-      "Thai": "กรุณาลากศิลาสัญญาณโจมตีไปยังสล็อตของเซราห์.",
-      "Vietnamese": "Hãy kéo đá tín hiệu tấn công vào ô của Serah.",
+      "Thai": "กรุณาลากศิลาสัญญาณโจมตีไปยังช่องของเซราห์",
+      "Vietnamese": "Vui lòng kéo đá tín hiệu tấn công vào ô của Serah.",
       "Indonesian": "Silakan seret batu sinyal serangan ke slot Serah."
     },
     {
       "TEXT_ID": "TST_045",
       "Korean": "같은 신호석 3개를 정렬해 콤보를 완성해주세요.",
-      "English": "Please align three matching signal stones to complete a combo.",
-      "Thai": "กรุณาจัดศิลาสัญญาณชนิดเดียวกัน 3 อันให้ตรงกันเพื่อทำคอมโบให้สำเร็จ.",
-      "Vietnamese": "Hãy xếp 3 đá tín hiệu giống nhau để hoàn thành combo.",
-      "Indonesian": "Susun 3 batu sinyal yang sama untuk menyelesaikan kombo."
+      "English": "Please line up three matching signal stones to complete a combo.",
+      "Thai": "กรุณาจัดเรียงศิลาสัญญาณชนิดเดียวกัน 3 อันเพื่อทำคอมโบให้สำเร็จ",
+      "Vietnamese": "Vui lòng xếp 3 đá tín hiệu cùng loại để hoàn thành combo.",
+      "Indonesian": "Silakan susun 3 batu sinyal yang sama untuk menyelesaikan kombo."
     },
     {
       "TEXT_ID": "TST_046",
       "Korean": "쏟아져 나오기 시작했어! 앞쪽은 내가 막을게!",
-      "English": "They are pouring out! I will hold the front!",
-      "Thai": "พวกมันทะลักออกมาแล้ว! ด้านหน้าฉันจะรับไว้เอง!",
+      "English": "They are starting to pour out! I will hold the front!",
+      "Thai": "เริ่มทะลักออกมาแล้ว! ด้านหน้าฉันจะกันไว้เอง!",
       "Vietnamese": "Chúng bắt đầu tràn ra rồi! Phía trước để tôi chặn!",
       "Indonesian": "Mereka mulai menyerbu! Bagian depan akan kutahan!"
     },
     {
       "TEXT_ID": "TST_047",
       "Korean": "적들이 한곳에 몰리면 내가 처리할게.",
-      "English": "If the enemies group up, I will deal with them.",
-      "Thai": "ถ้าศัตรูรวมกัน ฉันจะจัดการเอง.",
-      "Vietnamese": "Nếu địch tụ lại một chỗ, tôi sẽ xử lý.",
-      "Indonesian": "Kalau musuh berkumpul, aku yang akan mengurusnya."
+      "English": "If enemies group together, I will handle them.",
+      "Thai": "ถ้าศัตรูรวมกันเป็นกลุ่ม ฉันจะจัดการเอง",
+      "Vietnamese": "Nếu kẻ địch tụ lại một chỗ, tôi sẽ xử lý.",
+      "Indonesian": "Kalau musuh berkumpul di satu tempat, aku yang akan mengurusnya."
     },
     {
       "TEXT_ID": "TST_048",
       "Korean": "두 번째 무리가 보여. 이제 나도 합류할게. 멀리서 다가오는 적은 내가 볼게.",
       "English": "I see the second wave. I will join now. I will watch the enemies coming from afar.",
-      "Thai": "เห็นระลอกที่สองแล้ว. ฉันจะเข้าร่วมแล้วนะ. ศัตรูที่มาจากไกล ๆ ฉันจะดูเอง.",
-      "Vietnamese": "Tôi thấy đợt thứ hai rồi. Giờ tôi sẽ tham gia. Kẻ địch từ xa để tôi theo dõi.",
+      "Thai": "เห็นกลุ่มที่สองแล้ว ตอนนี้ฉันจะเข้าร่วมด้วย ศัตรูที่เข้ามาจากไกล ๆ ฉันจะคอยดูให้",
+      "Vietnamese": "Tôi thấy nhóm thứ hai rồi. Giờ tôi cũng sẽ tham gia. Kẻ địch tiến đến từ xa cứ để tôi theo dõi.",
       "Indonesian": "Aku melihat gelombang kedua. Aku bergabung sekarang. Musuh yang datang dari jauh akan kuawasi."
     },
     {
       "TEXT_ID": "TST_049",
       "Korean": "물자 쪽 잠금은 확인했어. 붕대도 챙겼고.",
-      "English": "The supply side is locked. I brought bandages too.",
-      "Thai": "ฝั่งเสบียงล็อกเรียบร้อยแล้ว. ผ้าพันแผลก็เอามาแล้ว.",
-      "Vietnamese": "Khu vật tư đã khóa rồi. Tôi cũng mang băng vải theo.",
-      "Indonesian": "Bagian persediaan sudah terkunci. Perban juga kubawa."
+      "English": "The supply storage is locked. I brought bandages too.",
+      "Thai": "ตรวจล็อกฝั่งเสบียงแล้ว ผ้าพันแผลก็เอามาด้วย",
+      "Vietnamese": "Tôi đã kiểm tra khóa bên kho vật tư. Băng vải cũng mang theo rồi.",
+      "Indonesian": "Kunci di area persediaan sudah kuperiksa. Perban juga kubawa."
     },
     {
       "TEXT_ID": "TST_050",
       "Korean": "그래도 바로 와줘서 다행이야.",
       "English": "Still, I am glad you came right away.",
-      "Thai": "ยังไงก็ดีที่เธอมาทันทีนะ.",
+      "Thai": "ยังไงก็โล่งใจที่เธอมาได้ทันทีนะ",
       "Vietnamese": "Dù sao cậu đến ngay là tốt rồi.",
       "Indonesian": "Tetap saja, bagus kau langsung datang."
     },
     {
       "TEXT_ID": "TST_051",
       "Korean": "늦으면 더 바빠지니까...",
-      "English": "If I am late, I will only get busier...",
-      "Thai": "ถ้าช้าไป งานจะยิ่งยุ่งกว่าเดิม...",
-      "Vietnamese": "Nếu chậm thì tôi sẽ càng bận hơn...",
+      "English": "If I am late, I will just get busier...",
+      "Thai": "ถ้ามาช้า งานก็จะยิ่งยุ่งขึ้น...",
+      "Vietnamese": "Nếu đến muộn thì tôi lại càng bận hơn...",
       "Indonesian": "Kalau terlambat, aku malah makin sibuk..."
     },
     {
       "TEXT_ID": "TST_052",
       "Korean": "좋아! 이제 다 모였네!",
-      "English": "Good! Now everyone is here!",
-      "Thai": "좋아! 이제ครบทุกคนแล้ว!",
-      "Vietnamese": "Tốt! Giờ mọi người đã đủ rồi!",
-      "Indonesian": "Baik! Sekarang semua sudah berkumpul!"
+      "English": "All right! Now everyone is here!",
+      "Thai": "เอาล่ะ! ตอนนี้มากันครบแล้ว!",
+      "Vietnamese": "Được! Giờ mọi người đã tụ họp đủ rồi!",
+      "Indonesian": "Oke! Sekarang semua sudah berkumpul!"
     },
     {
       "TEXT_ID": "TST_053",
       "Korean": "이러면 다쳐도 바로 볼 수는 있겠지.",
       "English": "Now I can at least check on you right away if you get hurt.",
-      "Thai": "แบบนี้ถ้ามีใครบาดเจ็บ ฉันก็ยังดูได้ทันที.",
-      "Vietnamese": "Vậy nếu ai bị thương, ít nhất tôi có thể xem ngay.",
-      "Indonesian": "Kalau begini, kalau ada yang terluka aku bisa langsung memeriksanya."
+      "Thai": "แบบนี้ถ้าเจ็บ ฉันก็ยังดูให้ได้ทันทีล่ะนะ",
+      "Vietnamese": "Vậy nếu có ai bị thương, ít nhất tôi cũng xem ngay được.",
+      "Indonesian": "Kalau begini, setidaknya aku bisa langsung memeriksa kalau ada yang terluka."
     },
     {
       "TEXT_ID": "TST_054",
       "Korean": "[튜토리얼 팝업: 적 처치 경험치 획득 및 레벨업 보상 선택]",
       "English": "[Tutorial Popup: Gain EXP by defeating enemies and choose a level-up reward]",
-      "Thai": "[หน้าต่างสอนเล่น: ได้รับ EXP จากการกำจัดศัตรูและเลือกของรางวัลเลเวลอัป]",
+      "Thai": "[ป๊อปอัปสอนเล่น: ได้รับค่าประสบการณ์จากการกำจัดศัตรูและเลือกการ์ดรางวัลเลเวลอัป]",
       "Vietnamese": "[Cửa sổ hướng dẫn: Nhận EXP khi đánh bại kẻ địch và chọn phần thưởng lên cấp]",
-      "Indonesian": "[Popup Tutorial: Dapatkan EXP dengan mengalahkan musuh dan pilih hadiah naik level]"
+      "Indonesian": "[Pop-up Tutorial: Dapatkan EXP dengan mengalahkan musuh dan pilih hadiah naik level]"
     },
     {
       "TEXT_ID": "TST_055",
       "Korean": "레벨업 보상 카드 중 하나를 선택해주세요.",
       "English": "Please choose one level-up reward card.",
-      "Thai": "กรุณาเลือกการ์ดรางวัลเลเวลอัป 1 ใบ.",
-      "Vietnamese": "Hãy chọn một thẻ thưởng lên cấp.",
-      "Indonesian": "Pilih salah satu kartu hadiah naik level."
+      "Thai": "กรุณาเลือกการ์ดรางวัลเลเวลอัป 1 ใบ",
+      "Vietnamese": "Vui lòng chọn một thẻ thưởng lên cấp.",
+      "Indonesian": "Silakan pilih salah satu kartu hadiah naik level."
     },
     {
       "TEXT_ID": "TST_056",
@@ -1654,141 +1654,141 @@
       "English": "Large monster/boss appears",
       "Thai": "มอนสเตอร์ขนาดใหญ่/บอสปรากฏตัว",
       "Vietnamese": "Quái vật lớn/Boss xuất hiện",
-      "Indonesian": "Monster besar/boss muncul"
+      "Indonesian": "Monster besar/Boss muncul"
     },
     {
       "TEXT_ID": "TST_057",
       "Korean": "큰 녀석이 보여. 이번 무리는 저 녀석을 중심으로 움직이고 있어!",
-      "English": "I see a big one. This wave is moving around that thing!",
-      "Thai": "เห็นตัวใหญ่แล้ว. ระลอกนี้เคลื่อนที่โดยมีมันเป็นศูนย์กลาง!",
-      "Vietnamese": "Tôi thấy một con lớn. Đợt này đang di chuyển xoay quanh nó!",
-      "Indonesian": "Aku melihat yang besar. Gelombang ini bergerak berpusat pada makhluk itu!"
+      "English": "I see a big one. This wave is moving around that one!",
+      "Thai": "เห็นตัวใหญ่แล้ว กลุ่มนี้กำลังเคลื่อนไหวโดยมีเจ้าตัวนั้นเป็นศูนย์กลาง!",
+      "Vietnamese": "Tôi thấy một con lớn. Nhóm này đang di chuyển quanh nó!",
+      "Indonesian": "Aku melihat yang besar. Gelombang ini bergerak dengan dia sebagai pusatnya!"
     },
     {
       "TEXT_ID": "TST_058",
       "Korean": "그럼 저 큰 녀석부터 막으면 되겠네. 내가 앞에 설게!",
-      "English": "Then we just have to stop that big one first. I will stand at the front!",
-      "Thai": "งั้นก็หยุดตัวใหญ่นั่นก่อนก็พอ. ฉันจะยืนแนวหน้าเอง!",
-      "Vietnamese": "Vậy chỉ cần chặn con lớn đó trước. Tôi sẽ đứng phía trước!",
-      "Indonesian": "Kalau begitu, kita hentikan yang besar dulu. Aku akan berdiri di depan!"
+      "English": "Then we just have to stop that big one first. I will take the front!",
+      "Thai": "งั้นก็หยุดเจ้าตัวใหญ่นั่นก่อนก็พอสินะ ฉันจะยืนด้านหน้าเอง!",
+      "Vietnamese": "Vậy chỉ cần chặn con lớn đó trước là được. Tôi sẽ đứng phía trước!",
+      "Indonesian": "Kalau begitu, kita hentikan yang besar itu dulu. Aku akan berdiri di depan!"
     },
     {
       "TEXT_ID": "TST_059",
       "Korean": "세라, 잠깐만! 저 덩치는 일반 공격만으로는 시간이 오래 걸릴 거야.",
       "English": "Serah, wait! That huge one will take too long with normal attacks.",
-      "Thai": "เซราห์ เดี๋ยวก่อน! ตัวใหญ่นั่นถ้าใช้การโจมตีปกติจะใช้เวลานานเกินไป.",
-      "Vietnamese": "Serah, khoan đã! Con to đó sẽ mất rất lâu nếu chỉ đánh thường.",
-      "Indonesian": "Serah, tunggu! Yang besar itu akan terlalu lama jika hanya diserang biasa."
+      "Thai": "เซราห์ เดี๋ยวก่อน! เจ้าตัวใหญ่นั่น ถ้าใช้แค่การโจมตีปกติคงใช้เวลานาน",
+      "Vietnamese": "Serah, khoan đã! Con to đó sẽ mất rất lâu nếu chỉ dùng đòn đánh thường.",
+      "Indonesian": "Serah, tunggu! Yang besar itu akan memakan waktu lama kalau hanya diserang biasa."
     },
     {
       "TEXT_ID": "TST_060",
       "Korean": "지휘관, 세라에게 스킬 신호를 보내줘!",
       "English": "Commander, send Serah the skill signal!",
-      "Thai": "ผู้บัญชาการ ส่งสัญญาณสกิลให้เซราห์!",
+      "Thai": "ผู้บัญชาการ ส่งสัญญาณสกิลให้เซราห์ด้วย!",
       "Vietnamese": "Chỉ huy, gửi tín hiệu kỹ năng cho Serah!",
       "Indonesian": "Komandan, kirim sinyal skill ke Serah!"
     },
     {
       "TEXT_ID": "TST_061",
       "Korean": "일반 신호가 아니라, 게이지를 전부 소모하는 필살기 신호야!",
-      "English": "Not a normal signal. It is an ultimate signal that spends the full gauge!",
-      "Thai": "ไม่ใช่สัญญาณธรรมดา. เป็นสัญญาณท่าไม้ตายที่ใช้เกจทั้งหมด!",
-      "Vietnamese": "Không phải tín hiệu thường. Đây là tín hiệu tuyệt kỹ dùng toàn bộ thanh năng lượng!",
-      "Indonesian": "Bukan sinyal biasa. Ini sinyal jurus pamungkas yang memakai seluruh gauge!"
+      "English": "Not a normal signal. It is an ultimate signal that uses the entire gauge!",
+      "Thai": "ไม่ใช่สัญญาณปกติ แต่เป็นสัญญาณท่าไม้ตายที่ใช้เกจทั้งหมด!",
+      "Vietnamese": "Không phải tín hiệu thường. Đây là tín hiệu tuyệt kỹ dùng toàn bộ thanh tuyệt kỹ!",
+      "Indonesian": "Bukan sinyal biasa. Ini sinyal jurus pamungkas yang menghabiskan seluruh Gauge Jurus Pamungkas!"
     },
     {
       "TEXT_ID": "TST_062",
       "Korean": "[튜토리얼 팝업: 게이지 소모를 통한 필살기(궁극기) 발동]",
-      "English": "[Tutorial Popup: Use the gauge to activate a special skill/ultimate]",
-      "Thai": "[หน้าต่างสอนเล่น: ใช้เกจเพื่อเปิดใช้สกิลพิเศษ/ท่าไม้ตาย]",
-      "Vietnamese": "[Cửa sổ hướng dẫn: Dùng thanh năng lượng để kích hoạt kỹ năng đặc biệt/tuyệt kỹ]",
-      "Indonesian": "[Popup Tutorial: Gunakan gauge untuk mengaktifkan skill khusus/jurus pamungkas]"
+      "English": "[Tutorial Popup: Use the gauge to activate an ultimate skill]",
+      "Thai": "[ป๊อปอัปสอนเล่น: ใช้เกจเพื่อเปิดใช้งานท่าไม้ตาย]",
+      "Vietnamese": "[Cửa sổ hướng dẫn: Kích hoạt tuyệt kỹ bằng cách tiêu hao thanh tuyệt kỹ]",
+      "Indonesian": "[Pop-up Tutorial: Aktifkan jurus pamungkas dengan menggunakan Gauge Jurus Pamungkas]"
     },
     {
       "TEXT_ID": "TST_063",
       "Korean": "필살기 게이지를 사용해 세라의 필살기를 발동해주세요.",
-      "English": "Please use the Ultimate Gauge to activate Serah's ultimate.",
-      "Thai": "กรุณาใช้เกจท่าไม้ตายเพื่อเปิดใช้ท่าไม้ตายของเซราห์.",
-      "Vietnamese": "Hãy dùng thanh tuyệt kỹ để kích hoạt tuyệt kỹ của Serah.",
-      "Indonesian": "Gunakan Gauge Pamungkas untuk mengaktifkan jurus pamungkas Serah."
+      "English": "Please use the Ultimate Gauge to activate Serah's ultimate skill.",
+      "Thai": "กรุณาใช้เกจท่าไม้ตายเพื่อเปิดใช้งานท่าไม้ตายของเซราห์",
+      "Vietnamese": "Vui lòng dùng thanh tuyệt kỹ để kích hoạt tuyệt kỹ của Serah.",
+      "Indonesian": "Silakan gunakan Gauge Jurus Pamungkas untuk mengaktifkan jurus pamungkas Serah."
     },
     {
       "TEXT_ID": "TST_064",
       "Korean": "신호 확인! 크게 한 방 먹일게!",
       "English": "Signal confirmed! I will hit it with one big blow!",
-      "Thai": "ยืนยันสัญญาณ! จะอัดให้เต็มแรงสักที!",
-      "Vietnamese": "Đã nhận tín hiệu! Tôi sẽ tung một đòn thật mạnh!",
-      "Indonesian": "Sinyal diterima! Akan kuhajar dengan satu pukulan besar!"
+      "Thai": "ยืนยันสัญญาณ! จะซัดให้หนัก ๆ ทีเดียวเลย!",
+      "Vietnamese": "Xác nhận tín hiệu! Tôi sẽ tung một đòn thật mạnh!",
+      "Indonesian": "Sinyal diterima! Akan kuberi satu hantaman besar!"
     },
     {
       "TEXT_ID": "TST_065",
       "Korean": "(관문 앞의 몬스터 무리를 전부 물리쳤다.)",
       "English": "(We defeated all the monsters in front of the gate.)",
-      "Thai": "(พวกเรากำจัดมอนสเตอร์หน้าประตูได้ทั้งหมดแล้ว.)",
-      "Vietnamese": "(Chúng tôi đã đánh bại toàn bộ quái vật trước cổng.)",
+      "Thai": "(พวกเรากำจัดมอนสเตอร์ทั้งหมดหน้าประตูได้แล้ว)",
+      "Vietnamese": "(Chúng tôi đã đánh bại toàn bộ lũ quái vật trước cổng.)",
       "Indonesian": "(Kami mengalahkan semua monster di depan gerbang.)"
     },
     {
       "TEXT_ID": "TST_066",
       "Korean": "다친 데는 없어? 무리하지 말고 바로 말해줘.",
-      "English": "Is anyone hurt? If something hurts, tell me right away.",
-      "Thai": "มีใครบาดเจ็บไหม? ถ้าเจ็บตรงไหนรีบบอกทันทีนะ.",
-      "Vietnamese": "Có ai bị thương không? Nếu đau chỗ nào thì nói ngay nhé.",
-      "Indonesian": "Ada yang terluka? Kalau ada yang sakit, segera bilang."
+      "English": "Is anyone hurt? Do not push yourself. Tell me right away.",
+      "Thai": "มีใครบาดเจ็บไหม? อย่าฝืน ถ้าเจ็บตรงไหนให้บอกทันที",
+      "Vietnamese": "Có ai bị thương không? Đừng cố quá, đau ở đâu thì nói ngay nhé.",
+      "Indonesian": "Ada yang terluka? Jangan memaksakan diri, segera bilang kalau sakit."
     },
     {
       "TEXT_ID": "TST_067",
       "Korean": "없어! 다친 데는 없어! 관문 앞 돌바닥은... 음, 괜찮겠지?",
-      "English": "No! I am not hurt! The stone ground by the gate is... well, probably fine?",
-      "Thai": "ไม่มี! ฉันไม่เจ็บตรงไหน! พื้นหินหน้าประตูน่ะ... อืม คงไม่เป็นไรหรอกมั้ง?",
-      "Vietnamese": "Không! Tôi không bị thương! Nền đá trước cổng thì... ừm, chắc là ổn nhỉ?",
-      "Indonesian": "Tidak! Aku tidak terluka! Lantai batu di depan gerbang... yah, mungkin baik-baik saja?"
+      "English": "No! I am not hurt! The stone pavement by the gate is... well, probably fine?",
+      "Thai": "ไม่มี! ฉันไม่บาดเจ็บ! พื้นหินหน้าประตู... อืม คงไม่เป็นไรมั้ง?",
+      "Vietnamese": "Không! Tôi không bị thương! Còn nền đá trước cổng thì... ừm, chắc là ổn nhỉ?",
+      "Indonesian": "Tidak! Aku tidak terluka! Lantai batu di depan gerbang... hmm, mungkin baik-baik saja?"
     },
     {
       "TEXT_ID": "TST_068",
       "Korean": "괜찮겠지로 끝낼 이야기는 아닌데, 뭐 그래도 몬스터는 관문에 닿기 전에 끊어냈어.",
-      "English": "Probably fine is not really an answer, but at least we stopped the monsters before they reached the gate.",
-      "Thai": "จบด้วยคำว่าคงไม่เป็นไรไม่ได้หรอกนะ แต่ยังไงเราก็ตัดพวกมอนสเตอร์ก่อนถึงประตูได้.",
-      "Vietnamese": "Nói chắc là ổn thì chưa đủ đâu, nhưng dù sao ta đã chặn quái vật trước khi chúng chạm tới cổng.",
-      "Indonesian": "“Mungkin baik-baik saja” bukan jawaban, tapi setidaknya kita menghentikan monster sebelum mencapai gerbang."
+      "English": "Probably fine is not how we should end that, but at least we stopped the monsters before they reached the gate.",
+      "Thai": "คงไม่เป็นไรไม่ใช่คำตอบที่ควรจบเรื่องนะ แต่ยังไงก็หยุดมอนสเตอร์ได้ก่อนถึงประตู",
+      "Vietnamese": "Không thể kết thúc bằng câu chắc là ổn được, nhưng dù sao cũng đã chặn được quái vật trước khi chúng chạm tới cổng.",
+      "Indonesian": "“Mungkin baik-baik saja” bukan cara untuk mengakhiri ini, tapi setidaknya kita menghentikan monster sebelum mencapai gerbang."
     },
     {
       "TEXT_ID": "TST_069",
       "Korean": "돌바닥은 내가 확인해 둘게. 나중에 수리 일이 커지면 더 귀찮아지니까.",
-      "English": "I will check the stone ground. If repairs get bigger later, it will be more annoying.",
-      "Thai": "ฉันจะตรวจพื้นหินไว้ก่อน. ถ้างานซ่อมใหญ่ขึ้นทีหลังจะยุ่งกว่าเดิม.",
-      "Vietnamese": "Tôi sẽ kiểm tra nền đá. Nếu sau này việc sửa chữa lớn hơn thì phiền lắm.",
-      "Indonesian": "Aku akan memeriksa lantai batunya. Kalau perbaikan jadi besar nanti, akan lebih merepotkan."
+      "English": "I will check the stone pavement. If repairs get worse later, it will be more annoying.",
+      "Thai": "พื้นหินฉันจะตรวจไว้ให้ ถ้าซ่อมใหญ่ขึ้นทีหลังจะยิ่งน่ารำคาญ",
+      "Vietnamese": "Nền đá để tôi kiểm tra cho. Nếu sau này việc sửa chữa lớn hơn thì càng phiền.",
+      "Indonesian": "Lantai batunya akan kuperiksa. Kalau perbaikan jadi lebih besar nanti, itu akan lebih merepotkan."
     },
     {
       "TEXT_ID": "TST_070",
       "Korean": "그런데 좀 이상해. 아까 그 몬스터 무리, 전부 숲길에서 내려왔어.",
-      "English": "But something is strange. That monster group all came down from the forest road.",
-      "Thai": "แต่มันแปลกอยู่นะ. ฝูงมอนสเตอร์เมื่อกี้ทั้งหมดลงมาจากทางป่า.",
+      "English": "But something is strange. That monster horde all came down from the forest road.",
+      "Thai": "แต่มันแปลกอยู่นะ ฝูงมอนสเตอร์เมื่อกี้ทั้งหมดลงมาจากทางป่า",
       "Vietnamese": "Nhưng có gì đó lạ. Đám quái vật vừa rồi đều đi xuống từ đường rừng.",
       "Indonesian": "Tapi ada yang aneh. Gerombolan monster tadi semuanya turun dari jalan hutan."
     },
     {
       "TEXT_ID": "TST_071",
       "Korean": "망루에서 봤을 때, 숲길 안쪽 움직임이 아직 남아 있었어.",
-      "English": "When I looked from the tower, there was still movement deeper in the forest road.",
-      "Thai": "ตอนมองจากหอคอย ยังเห็นความเคลื่อนไหวลึกเข้าไปในทางป่าอยู่.",
+      "English": "When I looked from the watchtower, there was still movement deeper along the forest road.",
+      "Thai": "ตอนมองจากหอเฝ้าระวัง ยังมีการเคลื่อนไหวอยู่ลึกเข้าไปในทางป่า",
       "Vietnamese": "Khi nhìn từ tháp canh, tôi vẫn thấy chuyển động sâu bên trong đường rừng.",
-      "Indonesian": "Saat kulihat dari menara, masih ada pergerakan lebih dalam di jalan hutan."
+      "Indonesian": "Saat kulihat dari menara pengawas, masih ada pergerakan lebih dalam di jalan hutan."
     },
     {
       "TEXT_ID": "TST_072",
       "Korean": "그럼 숲길 쪽을 다시 확인해야겠네.",
       "English": "Then we need to check the forest road again.",
-      "Thai": "งั้นต้องตรวจทางป่าอีกครั้งแล้ว.",
-      "Vietnamese": "Vậy chúng ta phải kiểm tra lại đường rừng.",
-      "Indonesian": "Kalau begitu, kita harus memeriksa jalan hutan lagi."
+      "Thai": "งั้นต้องกลับไปตรวจฝั่งทางป่าสินะ",
+      "Vietnamese": "Vậy phải kiểm tra lại phía đường rừng rồi.",
+      "Indonesian": "Kalau begitu, kita harus memeriksa sisi jalan hutan lagi."
     },
     {
       "TEXT_ID": "TST_073",
       "Korean": "시에스가 원래 이렇게 몬스터가 몰려드는 곳은 아니야.",
       "English": "Cies is not normally a place where monsters swarm like this.",
-      "Thai": "ปกติซีเอสไม่ใช่ที่ที่มอนสเตอร์แห่มากันแบบนี้.",
+      "Thai": "ปกติซีเอสไม่ใช่ที่ที่มอนสเตอร์จะทะลักเข้ามาแบบนี้",
       "Vietnamese": "Bình thường Cies không phải nơi quái vật kéo đến đông như vậy.",
       "Indonesian": "Biasanya Cies bukan tempat yang didatangi monster sebanyak ini."
     },
@@ -1796,31 +1796,31 @@
       "TEXT_ID": "TST_074",
       "Korean": "조용한 근무지라더니, 그 소문이 완전히 틀렸네.",
       "English": "They said it was a quiet post, but that rumor was completely wrong.",
-      "Thai": "บอกว่าเป็นจุดประจำการเงียบ ๆ แต่นั่นผิดหมดเลย.",
-      "Vietnamese": "Nghe nói đây là nơi trực yên tĩnh, nhưng tin đồn đó sai hoàn toàn rồi.",
+      "Thai": "ได้ยินว่าเป็นจุดประจำการที่เงียบสงบ แต่ข่าวลือนั้นผิดเต็ม ๆ เลย",
+      "Vietnamese": "Nghe nói đây là điểm trực yên tĩnh, nhưng tin đồn đó sai hoàn toàn rồi.",
       "Indonesian": "Katanya ini pos yang tenang, tapi rumor itu benar-benar salah."
     },
     {
       "TEXT_ID": "TST_075",
       "Korean": "그 소문을 제일 먼저 말한 사람이 세라였지.",
       "English": "The first person to say that rumor was Serah.",
-      "Thai": "คนแรกที่พูดข่าวลือนั้นคือเซราห์นะ.",
+      "Thai": "คนที่พูดข่าวลือนั้นคนแรกก็คือเซราห์นี่นา",
       "Vietnamese": "Người đầu tiên nói tin đồn đó là Serah đấy.",
       "Indonesian": "Orang pertama yang mengatakan rumor itu adalah Serah."
     },
     {
       "TEXT_ID": "TST_076",
       "Korean": "그럼 내가 직접 확인해서 정정하면 되겠네!",
-      "English": "Then I can check it myself and correct it!",
-      "Thai": "งั้นฉันจะตรวจเองแล้วแก้ข่าวให้ถูกต้อง!",
-      "Vietnamese": "Vậy tôi sẽ tự kiểm tra rồi đính chính lại!",
-      "Indonesian": "Kalau begitu, aku akan memeriksanya sendiri dan meluruskannya!"
+      "English": "Then I just have to check it myself and correct it!",
+      "Thai": "งั้นฉันไปตรวจเองแล้วแก้ข่าวก็ได้!",
+      "Vietnamese": "Vậy tôi chỉ cần tự mình kiểm tra rồi sửa lại là được!",
+      "Indonesian": "Kalau begitu, aku tinggal memeriksanya sendiri dan meluruskannya!"
     },
     {
       "TEXT_ID": "TST_077",
       "Korean": "잠깐만, 관문 앞에 뭔가 보여.",
       "English": "Wait, I see something in front of the gate.",
-      "Thai": "เดี๋ยวก่อน ฉันเห็นอะไรบางอย่างหน้าประตู.",
+      "Thai": "เดี๋ยวก่อน หน้าประตูมีอะไรบางอย่างให้เห็น",
       "Vietnamese": "Khoan đã, tôi thấy có gì đó trước cổng.",
       "Indonesian": "Tunggu, aku melihat sesuatu di depan gerbang."
     },
@@ -1828,24 +1828,24 @@
       "TEXT_ID": "TST_078",
       "Korean": "몬스터들이 지나간 자리에 빛나는 게 남아 있어.",
       "English": "Something shining was left where the monsters passed.",
-      "Thai": "มีบางอย่างส่องแสงอยู่ตรงรอยที่มอนสเตอร์ผ่านไป.",
-      "Vietnamese": "Có thứ gì đó phát sáng ở nơi quái vật vừa đi qua.",
-      "Indonesian": "Ada sesuatu yang bersinar di tempat monster lewat."
+      "Thai": "ตรงที่มอนสเตอร์ผ่านไป มีอะไรบางอย่างส่องแสงเหลืออยู่",
+      "Vietnamese": "Ở chỗ lũ quái vật đi qua có thứ gì đó phát sáng còn sót lại.",
+      "Indonesian": "Ada sesuatu yang bersinar tertinggal di tempat monster lewat."
     },
     {
       "TEXT_ID": "TST_079",
       "Korean": "진짜네. 뭔가 빛나고 있어!",
       "English": "You are right. Something is shining!",
-      "Thai": "จริงด้วย. มีอะไรบางอย่างส่องแสงอยู่!",
-      "Vietnamese": "Đúng thật. Có thứ gì đó đang phát sáng!",
+      "Thai": "จริงด้วย มีอะไรบางอย่างกำลังส่องแสงอยู่!",
+      "Vietnamese": "Đúng thật. Có gì đó đang phát sáng!",
       "Indonesian": "Benar. Ada sesuatu yang bersinar!"
     },
     {
       "TEXT_ID": "TST_080",
       "Korean": "괜히 건드렸다가 일이 늘어나면 싫으니까...",
       "English": "I do not want to touch it carelessly and make more work...",
-      "Thai": "ไม่อยากแตะสุ่มสี่สุ่มห้าแล้วเพิ่มงานหรอก...",
-      "Vietnamese": "Tôi không muốn chạm bừa rồi làm việc tăng thêm đâu...",
+      "Thai": "ไม่อยากแตะมั่ว ๆ แล้วทำให้งานเพิ่มเลย...",
+      "Vietnamese": "Tôi không muốn lỡ chạm vào rồi làm việc tăng thêm đâu...",
       "Indonesian": "Aku tidak mau sembarangan menyentuhnya lalu menambah pekerjaan..."
     },
     {
@@ -1860,15 +1860,15 @@
       "TEXT_ID": "TST_082",
       "Korean": "응. 확인해 봤는데 문제는 없어 보여.",
       "English": "Yes. I checked it, and it does not seem dangerous.",
-      "Thai": "อืม. ตรวจดูแล้ว ดูเหมือนไม่มีปัญหา.",
-      "Vietnamese": "Ừ. Tôi đã kiểm tra, có vẻ không có vấn đề gì.",
-      "Indonesian": "Ya. Sudah kuperiksa, sepertinya tidak berbahaya."
+      "Thai": "อืม ฉันตรวจดูแล้ว ไม่น่ามีปัญหา",
+      "Vietnamese": "Ừ. Tôi kiểm tra rồi, có vẻ không có vấn đề gì.",
+      "Indonesian": "Ya. Sudah kuperiksa, sepertinya tidak ada masalah."
     },
     {
       "TEXT_ID": "TST_083",
       "Korean": "신호석 반응이랑 비슷한데, 조금 달라.",
-      "English": "It feels similar to a signal stone reaction, but a little different.",
-      "Thai": "ปฏิกิริยาคล้ายศิลาสัญญาณ แต่ต่างออกไปเล็กน้อย.",
+      "English": "The reaction is similar to a signal stone's, but a little different.",
+      "Thai": "คล้ายปฏิกิริยาของศิลาสัญญาณ แต่ต่างกันนิดหน่อย",
       "Vietnamese": "Phản ứng hơi giống đá tín hiệu, nhưng có chút khác.",
       "Indonesian": "Reaksinya mirip batu sinyal, tapi sedikit berbeda."
     },
@@ -1876,7 +1876,7 @@
       "TEXT_ID": "TST_084",
       "Korean": "이건 유물이야.",
       "English": "This is a relic.",
-      "Thai": "นี่คือวัตถุโบราณ.",
+      "Thai": "นี่คือวัตถุโบราณ",
       "Vietnamese": "Đây là di vật.",
       "Indonesian": "Ini relik."
     },
@@ -1884,39 +1884,39 @@
       "TEXT_ID": "TST_085",
       "Korean": "[튜토리얼 팝업: 유물 보상 선택]",
       "English": "[Tutorial Popup: Choose a relic reward]",
-      "Thai": "[หน้าต่างสอนเล่น: เลือกรางวัลวัตถุโบราณ]",
-      "Vietnamese": "[Cửa sổ hướng dẫn: Chọn phần thưởng di vật]",
-      "Indonesian": "[Popup Tutorial: Pilih hadiah relik]"
+      "Thai": "[ป๊อปอัปสอนเล่น: เลือกรางวัลวัตถุโบราณ]",
+      "Vietnamese": "[Cửa sổ hướng dẫn: Chọn phần thưởng Di vật]",
+      "Indonesian": "[Pop-up Tutorial: Pilih hadiah Relik]"
     },
     {
       "TEXT_ID": "TST_086",
       "Korean": "유물 효과는 다음 스테이지에도 유지됩니다. 3개 중 1개를 선택해주세요.",
       "English": "Relic effects carry over to the next stage. Please choose one of the three.",
-      "Thai": "เอฟเฟกต์วัตถุโบราณจะคงอยู่ในสเตจถัดไป. กรุณาเลือก 1 จาก 3 ชิ้น.",
-      "Vietnamese": "Hiệu ứng di vật sẽ được giữ sang màn tiếp theo. Hãy chọn 1 trong 3.",
-      "Indonesian": "Efek relik akan tetap berlaku ke stage berikutnya. Pilih 1 dari 3."
+      "Thai": "ผลของวัตถุโบราณจะคงอยู่ถึงด่านถัดไป กรุณาเลือก 1 อย่างจาก 3 อย่าง",
+      "Vietnamese": "Hiệu ứng Di vật sẽ được giữ sang màn tiếp theo. Vui lòng chọn 1 trong 3.",
+      "Indonesian": "Efek Relik akan tetap berlaku ke stage berikutnya. Silakan pilih 1 dari 3."
     },
     {
       "TEXT_ID": "TST_087",
       "Korean": "그럼 신중하게 골라야겠네.",
       "English": "Then we should choose carefully.",
-      "Thai": "งั้นต้องเลือกให้รอบคอบแล้ว.",
+      "Thai": "งั้นต้องเลือกให้รอบคอบสินะ",
       "Vietnamese": "Vậy phải chọn cẩn thận rồi.",
       "Indonesian": "Kalau begitu, kita harus memilih dengan hati-hati."
     },
     {
       "TEXT_ID": "TST_088",
       "Korean": "그럼 앞에서 더 오래 버틸 수 있는 세라와 관련된 게 좋겠네.",
-      "English": "Then something related to Serah, so she can hold the front longer, would be good.",
-      "Thai": "งั้นเลือกของที่เกี่ยวกับเซราห์ดีกว่า เพื่อให้เธอยืนแนวหน้าได้นานขึ้น.",
-      "Vietnamese": "Vậy thứ liên quan đến Serah, giúp cô ấy trụ phía trước lâu hơn, sẽ tốt đấy.",
+      "English": "Then something related to Serah would be good, so she can hold the front longer.",
+      "Thai": "งั้นเลือกของที่เกี่ยวกับเซราห์ เพื่อให้เธอยืนด้านหน้าได้นานขึ้นน่าจะดี",
+      "Vietnamese": "Vậy thứ liên quan đến Serah, giúp cô ấy trụ phía trước lâu hơn, sẽ hợp đấy.",
       "Indonesian": "Kalau begitu, yang berkaitan dengan Serah agar ia bisa bertahan lebih lama di depan akan bagus."
     },
     {
       "TEXT_ID": "TST_089",
       "Korean": "숲길은 시야가 좁아. 세라가 앞을 버텨주면 모두 움직이기 편할 거야.",
       "English": "The forest road has poor visibility. If Serah holds the front, everyone can move more easily.",
-      "Thai": "ทางป่ามองเห็นได้แคบ. ถ้าเซราห์ยืนแนวหน้า ทุกคนจะขยับง่ายขึ้น.",
+      "Thai": "ทางป่ามองเห็นได้แคบ ถ้าเซราห์ยืนรับด้านหน้า ทุกคนจะขยับได้ง่ายขึ้น",
       "Vietnamese": "Đường rừng có tầm nhìn hẹp. Nếu Serah giữ phía trước, mọi người sẽ dễ di chuyển hơn.",
       "Indonesian": "Jalan hutan memiliki jarak pandang sempit. Jika Serah menahan bagian depan, semua orang bisa bergerak lebih mudah."
     },
@@ -1924,15 +1924,15 @@
       "TEXT_ID": "TST_090",
       "Korean": "고대 갑옷을 획득했습니다. 이후 스테이지에도 효과가 유지됩니다.",
       "English": "Ancient Armor acquired. Its effect will remain in later stages.",
-      "Thai": "ได้รับเกราะโบราณแล้ว. เอฟเฟกต์จะคงอยู่ในสเตจถัดไป.",
-      "Vietnamese": "Đã nhận Áo Giáp Cổ Đại. Hiệu ứng sẽ được giữ ở các màn sau.",
-      "Indonesian": "Ancient Armor diperoleh. Efeknya akan tetap berlaku di stage berikutnya."
+      "Thai": "ได้รับเกราะโบราณแล้ว ผลของมันจะคงอยู่ในด่านต่อ ๆ ไป",
+      "Vietnamese": "Đã nhận Giáp Cổ Đại. Hiệu ứng sẽ được giữ ở các màn sau.",
+      "Indonesian": "Armor Kuno diperoleh. Efeknya akan tetap berlaku di stage berikutnya."
     },
     {
       "TEXT_ID": "TST_091",
       "Korean": "선택됐어. 이 효과는 다음 전투에도 남아.",
       "English": "Selected. This effect will remain in the next battle too.",
-      "Thai": "เลือกแล้ว. เอฟเฟกต์นี้จะคงอยู่ในการต่อสู้ครั้งถัดไปด้วย.",
+      "Thai": "เลือกแล้ว ผลนี้จะยังคงอยู่ในการต่อสู้ครั้งถัดไปด้วย",
       "Vietnamese": "Đã chọn. Hiệu ứng này cũng sẽ còn trong trận tiếp theo.",
       "Indonesian": "Terpilih. Efek ini juga akan tetap ada di pertempuran berikutnya."
     },
@@ -1940,7 +1940,7 @@
       "TEXT_ID": "TST_092",
       "Korean": "숲길부터 확인해 보자. 노아, 몬스터가 지나간 흔적을 따라가 줘.",
       "English": "Let us check the forest road first. Noah, follow the traces left by the monsters.",
-      "Thai": "มาตรวจทางป่าก่อนเถอะ. โนอา ตามร่องรอยที่มอนสเตอร์ทิ้งไว้.",
+      "Thai": "เริ่มจากตรวจทางป่ากันก่อน โนอา ช่วยตามร่องรอยที่มอนสเตอร์ทิ้งไว้",
       "Vietnamese": "Hãy kiểm tra đường rừng trước. Noah, lần theo dấu vết quái vật để lại.",
       "Indonesian": "Mari kita periksa jalan hutan dulu. Noah, ikuti jejak yang ditinggalkan monster."
     },
@@ -1948,49 +1948,1201 @@
       "TEXT_ID": "TST_093",
       "Korean": "응. 지나간 흔적은 아직 남아 있어. 따라가 볼게.",
       "English": "Okay. The traces are still there. I will follow them.",
-      "Thai": "อืม. ร่องรอยยังเหลืออยู่. ฉันจะตามไปดู.",
-      "Vietnamese": "Ừ. Dấu vết vẫn còn. Tôi sẽ lần theo.",
-      "Indonesian": "Ya. Jejaknya masih ada. Aku akan mengikutinya."
+      "Thai": "อืม ร่องรอยที่ผ่านไปยังเหลืออยู่ ฉันจะลองตามไปดู",
+      "Vietnamese": "Ừ. Dấu vết chúng đi qua vẫn còn. Tôi sẽ lần theo.",
+      "Indonesian": "Ya. Jejak yang mereka tinggalkan masih ada. Aku akan mengikutinya."
     },
     {
       "TEXT_ID": "TST_094",
       "Korean": "나는 신호석 상태를 다시 볼게. 다음 무리가 오기 전에 맞춰둬야 하니까.",
-      "English": "I will check the signal stone condition again. We need to tune them before the next group comes.",
-      "Thai": "ฉันจะตรวจสภาพศิลาสัญญาณอีกครั้ง. ต้องปรับให้พร้อมก่อนกลุ่มถัดไปมา.",
-      "Vietnamese": "Tôi sẽ kiểm tra lại trạng thái đá tín hiệu. Phải chỉnh lại trước khi đợt tiếp theo đến.",
+      "English": "I will check the signal stones again. We need to tune them before the next group comes.",
+      "Thai": "ฉันจะตรวจสภาพศิลาสัญญาณอีกครั้ง ต้องปรับให้พร้อมก่อนกลุ่มถัดไปจะมา",
+      "Vietnamese": "Tôi sẽ kiểm tra lại trạng thái đá tín hiệu. Phải chỉnh lại trước khi nhóm tiếp theo đến.",
       "Indonesian": "Aku akan memeriksa kondisi batu sinyal lagi. Kita harus menyesuaikannya sebelum gerombolan berikutnya datang."
     },
     {
       "TEXT_ID": "TST_095",
       "Korean": "좋아! 원인을 찾고, 조용한 근무지도 되찾자!",
-      "English": "Good! Let us find the cause and get our quiet post back!",
-      "Thai": "좋아! 원인을 찾고 จุดประจำการเงียบ ๆ ของเรากลับคืนมาเถอะ!",
-      "Vietnamese": "Tốt! Hãy tìm nguyên nhân và lấy lại nơi trực yên tĩnh của chúng ta!",
-      "Indonesian": "Baik! Ayo cari penyebabnya dan rebut kembali pos tenang kita!"
+      "English": "All right! Let us find the cause and get our quiet post back!",
+      "Thai": "เอาล่ะ! ไปหาสาเหตุ แล้วเอาจุดประจำการที่เงียบสงบของเรากลับคืนมากัน!",
+      "Vietnamese": "Được! Hãy tìm nguyên nhân và lấy lại nơi trực yên tĩnh của chúng ta!",
+      "Indonesian": "Oke! Ayo cari penyebabnya dan dapatkan kembali tempat tugas kita yang tenang!"
     },
     {
       "TEXT_ID": "TST_096",
       "Korean": "그럼 지금 움직이자. 멀리까진 안 가도 되겠지...",
       "English": "Then let us move now. We will not have to go too far, right...",
-      "Thai": "งั้นตอนนี้ขยับกันเถอะ. คงไม่ต้องไปไกลมากใช่ไหม...",
-      "Vietnamese": "Vậy đi ngay thôi. Chắc sẽ không phải đi xa lắm đâu nhỉ...",
+      "Thai": "งั้นตอนนี้ขยับกันเถอะ คงไม่ต้องไปไกลมากหรอก... ใช่ไหม",
+      "Vietnamese": "Vậy giờ di chuyển thôi. Chắc không phải đi xa lắm đâu nhỉ...",
       "Indonesian": "Kalau begitu, bergerak sekarang. Kita tidak perlu pergi terlalu jauh, kan..."
     },
     {
       "TEXT_ID": "TST_097",
       "Korean": "안 가도 된다고 해줘...",
-      "English": "Please say we do not have to go...",
-      "Thai": "ช่วยบอกทีว่าไม่ต้องไปนะ...",
-      "Vietnamese": "Làm ơn nói là không phải đi đi...",
-      "Indonesian": "Tolong bilang kita tidak perlu pergi..."
+      "English": "Please tell me we do not have to go far...",
+      "Thai": "ช่วยบอกทีว่าไม่ต้องไปไกล...",
+      "Vietnamese": "Làm ơn nói là không phải đi xa đi...",
+      "Indonesian": "Tolong bilang kita tidak perlu pergi jauh..."
     },
     {
       "TEXT_ID": "TST_098",
       "Korean": "(관문 앞의 소란은 끝났지만, 숲 쪽의 움직임은 아직 멈추지 않은 것 같았다.)",
-      "English": "(The commotion at the gate had ended, but the movement in the forest had not stopped yet.)",
-      "Thai": "(ความวุ่นวายหน้าประตูจบลงแล้ว แต่ความเคลื่อนไหวในป่ายังไม่หยุด.)",
-      "Vietnamese": "(Sự hỗn loạn trước cổng đã kết thúc, nhưng chuyển động trong rừng vẫn chưa dừng lại.)",
-      "Indonesian": "(Keributan di depan gerbang telah berakhir, tetapi pergerakan di hutan belum berhenti.)"
+      "English": "(The commotion at the gate had ended, but it seemed the movement in the forest had not stopped yet.)",
+      "Thai": "(ความวุ่นวายหน้าประตูจบลงแล้ว แต่ดูเหมือนการเคลื่อนไหวในป่ายังไม่หยุด)",
+      "Vietnamese": "(Sự hỗn loạn trước cổng đã kết thúc, nhưng có vẻ chuyển động trong rừng vẫn chưa dừng lại.)",
+      "Indonesian": "(Keributan di depan gerbang telah berakhir, tetapi sepertinya pergerakan di hutan masih belum berhenti.)"
+    },
+    {
+      "TEXT_ID": "TST_099",
+      "Korean": "여기서부터 확인하자. 관문에서 너무 멀어지진 않을 거야.",
+      "English": "Let's start checking from here. We won't go too far from the gate.",
+      "Thai": "เริ่มตรวจจากตรงนี้กันเถอะ เราจะไม่ออกห่างจากประตูมากเกินไป",
+      "Vietnamese": "Hãy bắt đầu kiểm tra từ đây. Chúng ta sẽ không đi quá xa khỏi cổng.",
+      "Indonesian": "Kita mulai pemeriksaan dari sini. Kita tidak akan terlalu jauh dari gerbang."
+    },
+    {
+      "TEXT_ID": "TST_100",
+      "Korean": "응. 이쪽에 발자국이 남아 있어.",
+      "English": "Yeah. There are footprints here.",
+      "Thai": "อืม มีรอยเท้าเหลืออยู่ตรงนี้",
+      "Vietnamese": "Ừ. Ở đây còn dấu chân.",
+      "Indonesian": "Ya. Ada jejak kaki tertinggal di sini."
+    },
+    {
+      "TEXT_ID": "TST_101",
+      "Korean": "조금 더 보면 방향을 알 수 있을 것 같아.",
+      "English": "If we look a little more, I think we can tell which way they go.",
+      "Thai": "ถ้าดูต่ออีกหน่อย น่าจะรู้ได้ว่ามุ่งไปทางไหน",
+      "Vietnamese": "Nếu nhìn kỹ thêm một chút, chắc sẽ biết chúng đi theo hướng nào.",
+      "Indonesian": "Kalau kita lihat sedikit lagi, sepertinya kita bisa tahu arahnya."
+    },
+    {
+      "TEXT_ID": "TST_102",
+      "Korean": "알겠어. 그럼 천천히 확인하자.",
+      "English": "Got it. Then let's check carefully.",
+      "Thai": "เข้าใจแล้ว งั้นค่อย ๆ ตรวจดูกันเถอะ",
+      "Vietnamese": "Hiểu rồi. Vậy cứ kiểm tra từ từ nhé.",
+      "Indonesian": "Mengerti. Kalau begitu, kita periksa pelan-pelan."
+    },
+    {
+      "TEXT_ID": "TST_103",
+      "Korean": "좋아. 흔적부터 보자.",
+      "English": "All right. Let's start with the traces.",
+      "Thai": "ดี เริ่มจากร่องรอยก่อน",
+      "Vietnamese": "Được. Bắt đầu từ dấu vết trước.",
+      "Indonesian": "Baik. Mulai dari jejaknya dulu."
+    },
+    {
+      "TEXT_ID": "TST_104",
+      "Korean": "어디서 관문 쪽으로 내려왔는지 확인하면 되겠네.",
+      "English": "We can figure out where they came down toward the gate.",
+      "Thai": "เราจะได้รู้ว่าพวกมันลงมาจากตรงไหนไปทางประตู",
+      "Vietnamese": "Chúng ta có thể biết chúng từ đâu đi xuống phía cổng.",
+      "Indonesian": "Kita bisa memastikan dari mana mereka turun menuju gerbang."
+    },
+    {
+      "TEXT_ID": "TST_105",
+      "Korean": "돌아갈 길은 표시해 둘게.",
+      "English": "I'll mark the way back.",
+      "Thai": "ฉันจะทำเครื่องหมายทางกลับไว้ให้",
+      "Vietnamese": "Tôi sẽ đánh dấu đường quay lại.",
+      "Indonesian": "Aku akan menandai jalan kembali."
+    },
+    {
+      "TEXT_ID": "TST_106",
+      "Korean": "여기서 길 잃으면 쉬는 시간도 같이 사라지니까...",
+      "English": "If we get lost here, our break time disappears too...",
+      "Thai": "ถ้าหลงทางตรงนี้ เวลาพักก็จะหายไปด้วย...",
+      "Vietnamese": "Nếu lạc đường ở đây thì cả thời gian nghỉ cũng biến mất...",
+      "Indonesian": "Kalau tersesat di sini, waktu istirahat juga ikut hilang..."
+    },
+    {
+      "TEXT_ID": "TST_107",
+      "Korean": "그건 확실히 큰일이네!",
+      "English": "That would definitely be a big problem!",
+      "Thai": "นั่นเป็นเรื่องใหญ่แน่นอน!",
+      "Vietnamese": "Chuyện đó đúng là nghiêm trọng đấy!",
+      "Indonesian": "Itu jelas masalah besar!"
+    },
+    {
+      "TEXT_ID": "TST_108",
+      "Korean": "돌아가는 길을 잃는 게 더 큰일이야.",
+      "English": "Getting lost on the way back is the bigger problem.",
+      "Thai": "หลงทางกลับต่างหากที่เป็นเรื่องใหญ่กว่า",
+      "Vietnamese": "Lạc mất đường quay lại mới là chuyện nghiêm trọng hơn.",
+      "Indonesian": "Yang lebih gawat itu kehilangan jalan kembali."
+    },
+    {
+      "TEXT_ID": "TST_109",
+      "Korean": "둘 다 중요하잖아...",
+      "English": "Both are important...",
+      "Thai": "ทั้งสองอย่างก็สำคัญนี่นา...",
+      "Vietnamese": "Cả hai đều quan trọng mà...",
+      "Indonesian": "Dua-duanya penting..."
+    },
+    {
+      "TEXT_ID": "TST_110",
+      "Korean": "숲길이라 그런가, 공기가 축축하네.",
+      "English": "Maybe because this is a forest road, the air feels damp.",
+      "Thai": "เพราะเป็นทางป่าหรือเปล่านะ อากาศเลยชื้นจัง",
+      "Vietnamese": "Chắc vì là đường rừng nên không khí ẩm thật.",
+      "Indonesian": "Mungkin karena ini jalan hutan, udaranya lembap."
+    },
+    {
+      "TEXT_ID": "TST_111",
+      "Korean": "흙길은 푹신하고, 햇빛도 잘 가려졌고...",
+      "English": "The dirt path is soft, and the sunlight is blocked...",
+      "Thai": "ทางดินก็นุ่ม แดดก็ถูกบังไว้อย่างดี...",
+      "Vietnamese": "Đường đất thì mềm, ánh nắng cũng bị che khá kỹ...",
+      "Indonesian": "Jalan tanahnya empuk, dan sinar matahari juga terhalang..."
+    },
+    {
+      "TEXT_ID": "TST_112",
+      "Korean": "다음 말이 졸리다는 이야기면, 조금만 참아줘.",
+      "English": "If your next words are about being sleepy, please hold them in for a bit.",
+      "Thai": "ถ้าจะต่อด้วยเรื่องง่วง ก็ช่วยอดทนอีกหน่อยนะ",
+      "Vietnamese": "Nếu câu tiếp theo là buồn ngủ thì chịu khó nhịn một chút nhé.",
+      "Indonesian": "Kalau setelah ini kau mau bilang mengantuk, tahan dulu sebentar."
+    },
+    {
+      "TEXT_ID": "TST_113",
+      "Korean": "아직 안 했는데...",
+      "English": "I hadn't said that yet...",
+      "Thai": "ฉันยังไม่ได้พูดเลย...",
+      "Vietnamese": "Tôi còn chưa nói mà...",
+      "Indonesian": "Aku belum bilang begitu..."
+    },
+    {
+      "TEXT_ID": "TST_114",
+      "Korean": "응. 그리고 방금 \"아직\"이라고 했잖아.",
+      "English": "Right. And you just said \"yet.\"",
+      "Thai": "อืม แล้วเมื่อกี้เธอก็พูดว่า “ยัง” แล้วไง",
+      "Vietnamese": "Ừ. Và cậu vừa nói “chưa” rồi đấy.",
+      "Indonesian": "Ya. Dan barusan kau bilang “belum.”"
+    },
+    {
+      "TEXT_ID": "TST_115",
+      "Korean": "잠깐만. 길가 풀숲이 한 방향으로 눌려 있어.",
+      "English": "Wait. The grass by the road is pressed down in one direction.",
+      "Thai": "เดี๋ยวก่อน พงหญ้าริมทางถูกกดไปทางเดียวกัน",
+      "Vietnamese": "Chờ chút. Bụi cỏ ven đường bị ép về cùng một hướng.",
+      "Indonesian": "Tunggu. Rumput di tepi jalan tertekan ke satu arah."
+    },
+    {
+      "TEXT_ID": "TST_116",
+      "Korean": "어느 쪽으로 이어져 있어?",
+      "English": "Which way does it lead?",
+      "Thai": "ร่องรอยต่อไปทางไหน?",
+      "Vietnamese": "Nó kéo dài về phía nào?",
+      "Indonesian": "Jejaknya berlanjut ke arah mana?"
+    },
+    {
+      "TEXT_ID": "TST_117",
+      "Korean": "몬스터 흔적이 숲 안쪽에서 관문 쪽으로 이어져 있어.",
+      "English": "The monster traces lead from deeper in the forest toward the gate.",
+      "Thai": "ร่องรอยของมอนสเตอร์ต่อจากด้านในป่ามาทางประตู",
+      "Vietnamese": "Dấu vết quái vật nối từ sâu trong rừng về phía cổng.",
+      "Indonesian": "Jejak monster berlanjut dari dalam hutan menuju gerbang."
+    },
+    {
+      "TEXT_ID": "TST_118",
+      "Korean": "수가 꽤 많았던 것 같아. 발자국이 여기저기 겹쳐 있어.",
+      "English": "There seem to have been quite a few of them. The footprints overlap all over.",
+      "Thai": "น่าจะมีจำนวนไม่น้อยเลย รอยเท้าทับซ้อนกันเต็มไปหมด",
+      "Vietnamese": "Có vẻ số lượng khá nhiều. Dấu chân chồng lên nhau khắp nơi.",
+      "Indonesian": "Sepertinya jumlahnya cukup banyak. Jejak kaki saling bertumpuk di mana-mana."
+    },
+    {
+      "TEXT_ID": "TST_119",
+      "Korean": "읏...!",
+      "English": "Ngh...!",
+      "Thai": "อึก...!",
+      "Vietnamese": "Ư...!",
+      "Indonesian": "Hah...!"
+    },
+    {
+      "TEXT_ID": "TST_120",
+      "Korean": "노아?",
+      "English": "Noah?",
+      "Thai": "โนอา?",
+      "Vietnamese": "Noah?",
+      "Indonesian": "Noah?"
+    },
+    {
+      "TEXT_ID": "TST_121",
+      "Korean": "미안. 그냥 조금 놀랐어.",
+      "English": "Sorry. I was just a little startled.",
+      "Thai": "ขอโทษ แค่ตกใจนิดหน่อย",
+      "Vietnamese": "Xin lỗi. Tôi chỉ hơi giật mình thôi.",
+      "Indonesian": "Maaf. Aku hanya sedikit terkejut."
+    },
+    {
+      "TEXT_ID": "TST_122",
+      "Korean": "방금 소리도 발자국이 이어진 쪽에서 났어.",
+      "English": "That sound came from the direction the footprints lead.",
+      "Thai": "เสียงเมื่อกี้ก็มาจากทางที่รอยเท้าพวกนั้นทอดไป",
+      "Vietnamese": "Âm thanh vừa rồi cũng phát ra từ hướng dấu chân kéo dài tới.",
+      "Indonesian": "Suara barusan juga datang dari arah yang sama dengan jejak kaki itu."
+    },
+    {
+      "TEXT_ID": "TST_123",
+      "Korean": "알겠어. 그쪽에서 뭐가 나오면 내가 막을게.",
+      "English": "Got it. If something comes from there, I'll stop it.",
+      "Thai": "เข้าใจแล้ว ถ้ามีอะไรออกมาจากทางนั้น ฉันจะกันไว้เอง",
+      "Vietnamese": "Hiểu rồi. Nếu có gì xuất hiện từ hướng đó, tôi sẽ chặn lại.",
+      "Indonesian": "Mengerti. Kalau ada sesuatu keluar dari arah itu, aku akan menahannya."
+    },
+    {
+      "TEXT_ID": "TST_124",
+      "Korean": "세라, 너무 앞서가진 마.",
+      "English": "Serah, don't go too far ahead.",
+      "Thai": "เซราห์ อย่าออกไปข้างหน้ามากเกินไป",
+      "Vietnamese": "Serah, đừng tiến lên quá xa.",
+      "Indonesian": "Serah, jangan terlalu maju."
+    },
+    {
+      "TEXT_ID": "TST_125",
+      "Korean": "노아가 확인할 수 있는 거리에서 움직여.",
+      "English": "Move where Noah can still keep track.",
+      "Thai": "ขยับในระยะที่โนอายังยืนยันตำแหน่งได้",
+      "Vietnamese": "Hãy di chuyển trong khoảng Noah còn có thể quan sát được.",
+      "Indonesian": "Bergeraklah dalam jarak yang masih bisa Noah awasi."
+    },
+    {
+      "TEXT_ID": "TST_126",
+      "Korean": "알겠어. 너무 멀리 가진 않을게.",
+      "English": "Got it. I won't go too far.",
+      "Thai": "เข้าใจแล้ว ฉันจะไม่ออกไปไกลเกินไป",
+      "Vietnamese": "Hiểu rồi. Tôi sẽ không đi quá xa.",
+      "Indonesian": "Mengerti. Aku tidak akan pergi terlalu jauh."
+    },
+    {
+      "TEXT_ID": "TST_127",
+      "Korean": "응... 역시, 관문을 노리고 움직인 흔적은 아닌 것 같아.",
+      "English": "Yeah... as I thought, these traces don't look like they were aiming for the gate.",
+      "Thai": "อืม... อย่างที่คิด ร่องรอยนี้ไม่เหมือนว่าพวกมันตั้งใจโจมตีประตู",
+      "Vietnamese": "Ừ... đúng như tôi nghĩ, đây không giống dấu vết nhắm thẳng vào cổng.",
+      "Indonesian": "Ya... seperti dugaanku, jejak ini bukan tanda mereka bergerak untuk menyerang gerbang."
+    },
+    {
+      "TEXT_ID": "TST_128",
+      "Korean": "미끄러진 자국이 많아. 멈춰 선 자국은 거의 없어.",
+      "English": "There are a lot of skid marks. Almost no signs that they stopped.",
+      "Thai": "มีรอยลื่นอยู่เยอะ แทบไม่มีร่องรอยว่าพวกมันหยุดเลย",
+      "Vietnamese": "Có nhiều vết trượt. Gần như không có dấu vết chúng dừng lại.",
+      "Indonesian": "Ada banyak bekas tergelincir. Hampir tidak ada tanda mereka berhenti."
+    },
+    {
+      "TEXT_ID": "TST_129",
+      "Korean": "몬스터들이 숲 안쪽에서 도망쳐 내려온 것 같아.",
+      "English": "It looks like the monsters came fleeing down from deeper in the forest.",
+      "Thai": "ดูเหมือนมอนสเตอร์จะหนีลงมาจากด้านในป่า",
+      "Vietnamese": "Có vẻ lũ quái vật đã chạy trốn từ sâu trong rừng xuống đây.",
+      "Indonesian": "Sepertinya para monster melarikan diri turun dari dalam hutan."
+    },
+    {
+      "TEXT_ID": "TST_130",
+      "Korean": "그럼 숲 안쪽에서 뭔가 쫓아오고 있다는 뜻이야?",
+      "English": "Then does that mean something deeper in the forest is chasing them?",
+      "Thai": "งั้นมีอะไรไล่พวกมันมาจากในป่าเหรอ?",
+      "Vietnamese": "Vậy nghĩa là có thứ gì đó đang đuổi theo từ trong rừng sao?",
+      "Indonesian": "Berarti ada sesuatu yang mengejar mereka dari dalam hutan?"
+    },
+    {
+      "TEXT_ID": "TST_131",
+      "Korean": "아직은 몰라. 하지만 스스로 방향을 고른 움직임은 아니야.",
+      "English": "I don't know yet. But they didn't choose this direction on their own.",
+      "Thai": "ยังไม่รู้ แต่ดูไม่เหมือนพวกมันเลือกทางเอง",
+      "Vietnamese": "Tôi chưa biết. Nhưng đây không phải chuyển động do chúng tự chọn hướng.",
+      "Indonesian": "Aku belum tahu. Tapi kelihatannya bukan arah yang mereka pilih sendiri."
+    },
+    {
+      "TEXT_ID": "TST_132",
+      "Korean": "관문을 노린 움직임은 아니네.",
+      "English": "So they weren't aiming for the gate.",
+      "Thai": "งั้นก็ไม่ได้มุ่งมาที่ประตูสินะ",
+      "Vietnamese": "Vậy không phải chúng nhắm vào cổng.",
+      "Indonesian": "Jadi mereka tidak mengincar gerbang."
+    },
+    {
+      "TEXT_ID": "TST_133",
+      "Korean": "뭔가를 피해 내려온 쪽에 더 가까워 보여.",
+      "English": "It looks more like they were running away from something.",
+      "Thai": "ดูเหมือนหนีลงมาเพื่อหลบอะไรบางอย่างมากกว่า",
+      "Vietnamese": "Có vẻ giống chúng đang chạy trốn thứ gì đó hơn.",
+      "Indonesian": "Kelihatannya lebih seperti mereka turun untuk menghindari sesuatu."
+    },
+    {
+      "TEXT_ID": "TST_134",
+      "Korean": "지휘관, 숲 안쪽에서 몬스터 발소리가 가까워지고 있어.",
+      "English": "Commander, I hear monster footsteps getting closer from deeper in the forest.",
+      "Thai": "ผู้บัญชาการ เสียงฝีเท้าของมอนสเตอร์จากในป่าใกล้เข้ามาแล้ว",
+      "Vietnamese": "Chỉ huy, tiếng bước chân quái vật từ sâu trong rừng đang đến gần.",
+      "Indonesian": "Komandan, suara langkah monster dari dalam hutan semakin dekat."
+    },
+    {
+      "TEXT_ID": "TST_135",
+      "Korean": "우리가 본 흔적이랑 같은 방향이야.",
+      "English": "It's the same direction as the traces we saw.",
+      "Thai": "ทิศทางเดียวกับร่องรอยที่เราดูเมื่อกี้",
+      "Vietnamese": "Cùng hướng với dấu vết chúng ta đã thấy.",
+      "Indonesian": "Arahnya sama dengan jejak yang baru kita lihat."
+    },
+    {
+      "TEXT_ID": "TST_136",
+      "Korean": "지금 물러나면 관문 앞까지 내려올지도 몰라.",
+      "English": "If we fall back now, they may come all the way to the gate.",
+      "Thai": "ถ้าถอยตอนนี้ พวกมันอาจลงไปถึงหน้าประตู",
+      "Vietnamese": "Nếu bây giờ rút lui, chúng có thể xuống tận trước cổng.",
+      "Indonesian": "Kalau kita mundur sekarang, mereka mungkin turun sampai ke depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_137",
+      "Korean": "그럼 여기서 막자.",
+      "English": "Then we'll stop them here.",
+      "Thai": "ถ้างั้น เราจะหยุดพวกมันตรงนี้",
+      "Vietnamese": "Vậy chặn chúng ở đây.",
+      "Indonesian": "Kalau begitu, kita tahan mereka di sini."
+    },
+    {
+      "TEXT_ID": "TST_138",
+      "Korean": "확인했어! 앞은 내가 맡을게.",
+      "English": "Confirmed! I'll take the front.",
+      "Thai": "เข้าใจแล้ว! ข้างหน้าให้ฉันจัดการเอง",
+      "Vietnamese": "Đã rõ! Phía trước cứ để tôi lo.",
+      "Indonesian": "Mengerti! Bagian depan akan kujaga."
+    },
+    {
+      "TEXT_ID": "TST_139",
+      "Korean": "좋아. 몰리는 쪽은 내가 정리할게.",
+      "English": "All right. I'll clear out the side where they gather.",
+      "Thai": "ดี ทางที่พวกมันรวมตัวกัน ฉันจะจัดการเอง",
+      "Vietnamese": "Được. Phía tụ lại cứ để tôi xử lý.",
+      "Indonesian": "Baik. Yang bergerombol akan kutangani."
+    },
+    {
+      "TEXT_ID": "TST_140",
+      "Korean": "으... 이런 길에서 싸우는 건 별로인데.",
+      "English": "Ugh... fighting on a road like this isn't exactly ideal.",
+      "Thai": "อืม... สู้บนทางแบบนี้ไม่ค่อยสะดวกเลย",
+      "Vietnamese": "Ư... chiến đấu trên con đường thế này không thích lắm.",
+      "Indonesian": "Ugh... bertarung di jalan seperti ini kurang nyaman."
+    },
+    {
+      "TEXT_ID": "TST_141",
+      "Korean": "관문 앞까지 밀리는 것보단 낫겠지...",
+      "English": "Still, it's better than letting them push all the way to the gate...",
+      "Thai": "แต่ก็ยังดีกว่าถูกดันกลับไปถึงหน้าประตู...",
+      "Vietnamese": "Nhưng vẫn tốt hơn là để chúng đẩy tới trước cổng...",
+      "Indonesian": "Tapi masih lebih baik daripada terdorong sampai depan gerbang..."
+    },
+    {
+      "TEXT_ID": "TST_142",
+      "Korean": "다들 괜찮아?",
+      "English": "Is everyone okay?",
+      "Thai": "ทุกคนไม่เป็นไรใช่ไหม?",
+      "Vietnamese": "Mọi người ổn chứ?",
+      "Indonesian": "Semua baik-baik saja?"
+    },
+    {
+      "TEXT_ID": "TST_143",
+      "Korean": "아픈 곳 있으면 바로 말해줘.",
+      "English": "If anything hurts, tell me right away.",
+      "Thai": "ถ้าเจ็บตรงไหน รีบบอกทันทีนะ",
+      "Vietnamese": "Nếu đau ở đâu thì nói ngay nhé.",
+      "Indonesian": "Kalau ada yang sakit, langsung bilang."
+    },
+    {
+      "TEXT_ID": "TST_144",
+      "Korean": "말 안 하고 버티면 더 아파지고...",
+      "English": "If you stay quiet and endure it, it will hurt more...",
+      "Thai": "ถ้าไม่พูดแล้วฝืนไว้ พวกเธอก็จะเจ็บกว่าเดิม...",
+      "Vietnamese": "Nếu im lặng chịu đựng thì sẽ càng đau hơn...",
+      "Indonesian": "Kalau diam saja dan menahannya, nanti makin sakit..."
+    },
+    {
+      "TEXT_ID": "TST_145",
+      "Korean": "나도 일이 늘어나니까...",
+      "English": "And that means more work for me...",
+      "Thai": "แล้วงานของฉันก็จะเพิ่มด้วย...",
+      "Vietnamese": "Và việc của tôi cũng sẽ tăng lên...",
+      "Indonesian": "Dan pekerjaanku juga bertambah..."
+    },
+    {
+      "TEXT_ID": "TST_146",
+      "Korean": "난 괜찮아! 다친 데는 없어!",
+      "English": "I'm fine! I'm not hurt!",
+      "Thai": "ฉันไม่เป็นไร! ไม่มีตรงไหนบาดเจ็บ!",
+      "Vietnamese": "Tôi ổn! Không bị thương ở đâu cả!",
+      "Indonesian": "Aku baik-baik saja! Aku tidak terluka!"
+    },
+    {
+      "TEXT_ID": "TST_147",
+      "Korean": "노아, 또 움직임 보이면 바로 알려줘.",
+      "English": "Noah, if you see more movement, tell me right away.",
+      "Thai": "โนอา ถ้าเห็นการเคลื่อนไหวอีก รีบบอกทันทีนะ",
+      "Vietnamese": "Noah, nếu thấy chuyển động nữa thì báo ngay nhé.",
+      "Indonesian": "Noah, kalau kau melihat pergerakan lagi, segera beri tahu."
+    },
+    {
+      "TEXT_ID": "TST_148",
+      "Korean": "이번에도 내가 앞에서 막을게.",
+      "English": "I'll stop them at the front again.",
+      "Thai": "ครั้งนี้ฉันก็จะหยุดพวกมันไว้ข้างหน้าเอง",
+      "Vietnamese": "Lần này tôi cũng sẽ chặn ở phía trước.",
+      "Indonesian": "Kali ini juga aku akan menahan mereka dari depan."
+    },
+    {
+      "TEXT_ID": "TST_149",
+      "Korean": "응. 나도 놓치지 않을게.",
+      "English": "Okay. I won't miss it either.",
+      "Thai": "อืม ฉันจะไม่พลาดเหมือนกัน",
+      "Vietnamese": "Ừ. Tôi cũng sẽ không bỏ sót đâu.",
+      "Indonesian": "Ya. Aku juga tidak akan melewatkannya."
+    },
+    {
+      "TEXT_ID": "TST_150",
+      "Korean": "나도 괜찮아. 스파인은?",
+      "English": "I'm fine too. Spayne?",
+      "Thai": "ฉันก็ไม่เป็นไร สไปน์ล่ะ?",
+      "Vietnamese": "Tôi cũng ổn. Spayne thì sao?",
+      "Indonesian": "Aku juga baik-baik saja. Spayne?"
+    },
+    {
+      "TEXT_ID": "TST_151",
+      "Korean": "응, 나도. 숲길이 좀 불편했을 뿐이야...",
+      "English": "Yeah, me too. The forest road was just a little uncomfortable...",
+      "Thai": "อืม ฉันก็เหมือนกัน แค่ทางป่ามันเดินลำบากนิดหน่อย...",
+      "Vietnamese": "Ừ, tôi cũng vậy. Chỉ là đường rừng hơi khó chịu một chút...",
+      "Indonesian": "Ya, aku juga. Jalan hutannya cuma agak tidak nyaman..."
+    },
+    {
+      "TEXT_ID": "TST_152",
+      "Korean": "다행이야. 이야기는 돌아가서 하자.",
+      "English": "That's a relief. Let's talk after we get back.",
+      "Thai": "ดีแล้ว รายละเอียดค่อยคุยกันหลังกลับไป",
+      "Vietnamese": "May quá. Chuyện chi tiết để về rồi nói.",
+      "Indonesian": "Syukurlah. Kita bicarakan detailnya setelah kembali."
+    },
+    {
+      "TEXT_ID": "TST_153",
+      "Korean": "지금은 안전하게 빠져나가는 게 먼저야.",
+      "English": "Getting out safely comes first right now.",
+      "Thai": "ตอนนี้ต้องออกไปอย่างปลอดภัยก่อน",
+      "Vietnamese": "Bây giờ ra khỏi đây an toàn là ưu tiên trước.",
+      "Indonesian": "Sekarang yang utama adalah keluar dengan aman."
+    },
+    {
+      "TEXT_ID": "TST_154",
+      "Korean": "다들 괜찮아서 다행이야.",
+      "English": "I'm glad everyone is okay.",
+      "Thai": "ดีแล้วที่ทุกคนไม่เป็นไร",
+      "Vietnamese": "Thật may là mọi người đều ổn.",
+      "Indonesian": "Syukurlah semua baik-baik saja."
+    },
+    {
+      "TEXT_ID": "TST_155",
+      "Korean": "지금은 더 들어가지 말자.",
+      "English": "Let's not go any deeper for now.",
+      "Thai": "ตอนนี้อย่าเพิ่งเข้าไปลึกกว่านี้",
+      "Vietnamese": "Bây giờ đừng đi sâu hơn nữa.",
+      "Indonesian": "Untuk sekarang, jangan masuk lebih dalam."
+    },
+    {
+      "TEXT_ID": "TST_156",
+      "Korean": "일단 관문 쪽으로 돌아가서 정리하자.",
+      "English": "First, let's head back toward the gate and sort things out.",
+      "Thai": "ก่อนอื่นกลับไปทางประตู แล้วค่อยจัดข้อมูลให้เรียบร้อย",
+      "Vietnamese": "Trước hết hãy quay về phía cổng rồi sắp xếp lại thông tin.",
+      "Indonesian": "Kita kembali ke gerbang dulu, lalu rapikan informasi."
+    },
+    {
+      "TEXT_ID": "TST_157",
+      "Korean": "응. 그게 좋겠어.",
+      "English": "Yeah. That sounds good.",
+      "Thai": "อืม แบบนั้นดีกว่า",
+      "Vietnamese": "Ừ. Như vậy tốt hơn.",
+      "Indonesian": "Ya. Itu lebih baik."
+    },
+    {
+      "TEXT_ID": "TST_158",
+      "Korean": "알겠어. 스파인, 돌아가는 길 표시는 아직 보여?",
+      "English": "Got it. Spayne, can you still see the marks for the way back?",
+      "Thai": "เข้าใจแล้ว สไปน์ เครื่องหมายทางกลับยังเห็นอยู่ไหม?",
+      "Vietnamese": "Hiểu rồi. Spayne, cậu còn thấy dấu đường quay lại không?",
+      "Indonesian": "Mengerti. Spayne, tanda jalan kembali masih terlihat?"
+    },
+    {
+      "TEXT_ID": "TST_159",
+      "Korean": "응. 표시해 둔 천도 보이고, 우리가 지나온 발자국도 남아 있어.",
+      "English": "Yeah. I can see the cloth I marked, and our footprints are still there too.",
+      "Thai": "อืม ผ้าที่ทำเครื่องหมายไว้ยังเห็นอยู่ แล้วรอยเท้าของเราก็ยังเหลืออยู่",
+      "Vietnamese": "Ừ. Tôi thấy mảnh vải đã đánh dấu, và dấu chân chúng ta đi qua vẫn còn.",
+      "Indonesian": "Ya. Kain yang kutandai terlihat, dan jejak kaki kita juga masih ada."
+    },
+    {
+      "TEXT_ID": "TST_160",
+      "Korean": "잠깐만. 관문 앞 숲길 옆으로 꺾인 몬스터 발자국이 섞여 있어.",
+      "English": "Wait. Monster footprints that turn off from the forest path in front of the gate are mixed in here.",
+      "Thai": "เดี๋ยวก่อน มีรอยเท้ามอนสเตอร์ที่แยกออกจากทางป่าหน้าประตูปนอยู่",
+      "Vietnamese": "Chờ chút. Có dấu chân quái vật rẽ ra từ con đường rừng trước cổng lẫn vào đây.",
+      "Indonesian": "Tunggu. Ada jejak kaki monster yang berbelok dari jalan hutan di depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_161",
+      "Korean": "으... 돌아가는 길만 보려고 했는데.",
+      "English": "Ugh... I was only trying to check the way back.",
+      "Thai": "อืม... ฉันแค่จะดูทางกลับเท่านั้นเอง",
+      "Vietnamese": "Ư... tôi chỉ định xem đường quay lại thôi mà.",
+      "Indonesian": "Ugh... aku hanya mau melihat jalan kembali."
+    },
+    {
+      "TEXT_ID": "TST_162",
+      "Korean": "그래도 덕분에 관문 앞 숲길에서 벗어난 흔적을 찾았어.",
+      "English": "Still, thanks to that, we found traces that leave the forest path in front of the gate.",
+      "Thai": "แต่เพราะแบบนั้น เราเลยเจอร่องรอยที่แยกออกจากทางป่าหน้าประตู",
+      "Vietnamese": "Nhưng nhờ vậy, chúng ta tìm được dấu vết rời khỏi con đường rừng trước cổng.",
+      "Indonesian": "Tapi berkat itu, kita menemukan jejak yang keluar dari jalan hutan di depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_163",
+      "Korean": "어디로 이어져 있어?",
+      "English": "Where do they lead?",
+      "Thai": "มุ่งไปทางไหน?",
+      "Vietnamese": "Nó dẫn tới đâu?",
+      "Indonesian": "Ke mana arahnya?"
+    },
+    {
+      "TEXT_ID": "TST_164",
+      "Korean": "관문 남쪽으로 빠지는 진입로 쪽이야.",
+      "English": "Toward the entrance road leading south of the gate.",
+      "Thai": "ไปทางทางเข้าที่แยกไปทางใต้ของประตู",
+      "Vietnamese": "Về phía lối vào rẽ xuống phía nam cổng.",
+      "Indonesian": "Ke arah jalan masuk yang menuju selatan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_165",
+      "Korean": "지금 숲길에서 본 흔적이랑 비슷해.",
+      "English": "They look similar to the traces we saw on the forest road.",
+      "Thai": "คล้ายกับร่องรอยที่เราเห็นบนทางป่าเมื่อกี้",
+      "Vietnamese": "Nó giống dấu vết chúng ta vừa thấy trên đường rừng.",
+      "Indonesian": "Mirip dengan jejak yang kita lihat di jalan hutan tadi."
+    },
+    {
+      "TEXT_ID": "TST_166",
+      "Korean": "그쪽도 몬스터가 지나갔다는 거네.",
+      "English": "So monsters passed through that way too.",
+      "Thai": "แปลว่ามอนสเตอร์ผ่านไปทางนั้นด้วย",
+      "Vietnamese": "Vậy là quái vật cũng đã đi qua hướng đó.",
+      "Indonesian": "Berarti monster juga lewat ke arah itu."
+    },
+    {
+      "TEXT_ID": "TST_167",
+      "Korean": "남쪽 진입로라...",
+      "English": "The southern entrance road...",
+      "Thai": "ทางเข้าด้านใต้เหรอ...",
+      "Vietnamese": "Lối vào phía nam à...",
+      "Indonesian": "Jalan masuk selatan..."
+    },
+    {
+      "TEXT_ID": "TST_168",
+      "Korean": "좋아. 먼저 관문으로 돌아가자.",
+      "English": "All right. Let's return to the gate first.",
+      "Thai": "ดี ก่อนอื่นกลับไปที่ประตูกันเถอะ",
+      "Vietnamese": "Được. Trước hết hãy quay lại cổng.",
+      "Indonesian": "Baik. Pertama, kita kembali ke gerbang."
+    },
+    {
+      "TEXT_ID": "TST_169",
+      "Korean": "재정비가 끝나면 그쪽을 확인하자.",
+      "English": "Once we're done reorganizing, we'll check that way.",
+      "Thai": "พอเตรียมตัวกันใหม่เสร็จแล้ว ค่อยตรวจทางนั้น",
+      "Vietnamese": "Khi chuẩn bị lại xong, chúng ta sẽ kiểm tra hướng đó.",
+      "Indonesian": "Setelah selesai bersiap ulang, kita periksa arah itu."
+    },
+    {
+      "TEXT_ID": "TST_170",
+      "Korean": "여기가 남쪽 진입로야?",
+      "English": "Is this the southern entrance road?",
+      "Thai": "นี่คือทางเข้าด้านใต้ใช่ไหม",
+      "Vietnamese": "Đây là lối vào phía nam à?",
+      "Indonesian": "Ini jalan masuk selatan?"
+    },
+    {
+      "TEXT_ID": "TST_171",
+      "Korean": "위치는 맞아.",
+      "English": "The location is right.",
+      "Thai": "ตำแหน่งถูกต้องแล้ว",
+      "Vietnamese": "Đúng vị trí rồi.",
+      "Indonesian": "Lokasinya benar."
+    },
+    {
+      "TEXT_ID": "TST_172",
+      "Korean": "길이 좁네. 큰 병력이 다니던 길은 아니겠어.",
+      "English": "The road is narrow. It does not look like a route for a large force.",
+      "Thai": "ทางแคบนะ ไม่น่าใช่ทางที่กองกำลังใหญ่ใช้ผ่าน",
+      "Vietnamese": "Đường hẹp thật. Không giống lối để đội quân lớn đi qua.",
+      "Indonesian": "Jalannya sempit. Sepertinya bukan jalan untuk pasukan besar."
+    },
+    {
+      "TEXT_ID": "TST_173",
+      "Korean": "그런데 발자국은 여기까지 이어져 있어.",
+      "English": "But the footprints continue this far.",
+      "Thai": "แต่รอยเท้ายังต่อมาถึงตรงนี้",
+      "Vietnamese": "Nhưng dấu chân kéo dài tới tận đây.",
+      "Indonesian": "Tapi jejak kakinya berlanjut sampai sini."
+    },
+    {
+      "TEXT_ID": "TST_174",
+      "Korean": "관문 앞 숲길에서 꺾였던 몬스터 발자국이 맞아.",
+      "English": "These are the monster footprints that branched off from the forest path in front of the gate.",
+      "Thai": "นี่คือรอยเท้ามอนสเตอร์ที่แยกมาจากทางป่าหน้าประตู",
+      "Vietnamese": "Đúng là dấu chân quái vật rẽ ra từ con đường rừng trước cổng.",
+      "Indonesian": "Ini jejak kaki monster yang berbelok dari jalan hutan di depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_175",
+      "Korean": "발자국 깊이랑 방향도 숲길에서 본 것과 비슷해.",
+      "English": "The depth and direction of the footprints are similar to what we saw on the forest path.",
+      "Thai": "ความลึกกับทิศทางของรอยเท้าก็คล้ายกับที่เห็นบนทางป่า",
+      "Vietnamese": "Độ lún và hướng dấu chân cũng giống những gì ta thấy trên đường rừng.",
+      "Indonesian": "Kedalaman dan arah jejaknya juga mirip dengan yang kita lihat di jalan hutan."
+    },
+    {
+      "TEXT_ID": "TST_176",
+      "Korean": "좁은 길이면 내가 앞에서 막기 좋겠네.",
+      "English": "If the road is narrow, it should be easier for me to stop them up front.",
+      "Thai": "ถ้าทางแคบ ฉันก็น่าจะกันไว้ด้านหน้าได้ง่ายขึ้น",
+      "Vietnamese": "Nếu đường hẹp, tôi sẽ dễ chặn chúng ở phía trước hơn.",
+      "Indonesian": "Kalau jalannya sempit, aku lebih mudah menahan mereka di depan."
+    },
+    {
+      "TEXT_ID": "TST_177",
+      "Korean": "좋은 점만 있는 건 아니야.",
+      "English": "That is not the only thing to consider.",
+      "Thai": "มันไม่ได้มีแต่ข้อดีหรอก",
+      "Vietnamese": "Không phải chỉ có điểm tốt đâu.",
+      "Indonesian": "Itu bukan berarti semuanya menguntungkan."
+    },
+    {
+      "TEXT_ID": "TST_178",
+      "Korean": "시야가 늦게 열리면 반응도 늦어져.",
+      "English": "If our view opens up late, our reaction will be late too.",
+      "Thai": "ถ้ามองเห็นช้า การตอบสนองก็จะช้าตามไปด้วย",
+      "Vietnamese": "Nếu tầm nhìn mở ra chậm, phản ứng cũng sẽ chậm theo.",
+      "Indonesian": "Kalau pandangan terbuka terlambat, reaksi kita juga terlambat."
+    },
+    {
+      "TEXT_ID": "TST_179",
+      "Korean": "보기만 해도 발밑이 불편해 보이는데...",
+      "English": "Just looking at the ground makes it look hard to walk on...",
+      "Thai": "แค่เห็นพื้นก็รู้สึกเดินลำบากแล้ว...",
+      "Vietnamese": "Nhìn mặt đất thôi cũng thấy khó đi rồi...",
+      "Indonesian": "Dari melihat tanahnya saja, kelihatannya sulit dilewati..."
+    },
+    {
+      "TEXT_ID": "TST_180",
+      "Korean": "다친 사람 옮기기도 쉽지 않겠네.",
+      "English": "It will not be easy to move injured people here.",
+      "Thai": "ถ้าต้องย้ายคนเจ็บ ก็คงไม่ง่าย",
+      "Vietnamese": "Chuyển người bị thương ở đây chắc cũng không dễ.",
+      "Indonesian": "Membawa orang terluka di sini juga tidak akan mudah."
+    },
+    {
+      "TEXT_ID": "TST_181",
+      "Korean": "그럼 더더욱 안 다치게 막아야겠네!",
+      "English": "Then I just have to stop them before anyone gets hurt!",
+      "Thai": "งั้นยิ่งต้องกันไว้ก่อนที่จะมีใครบาดเจ็บ!",
+      "Vietnamese": "Vậy càng phải chặn chúng trước khi có ai bị thương!",
+      "Indonesian": "Kalau begitu, kita harus menghentikan mereka sebelum ada yang terluka!"
+    },
+    {
+      "TEXT_ID": "TST_182",
+      "Korean": "맞는 말인데, 너무 앞으로 나가진 마.",
+      "English": "That is true, but do not move too far ahead.",
+      "Thai": "พูดถูกก็จริง แต่อย่าออกไปข้างหน้ามากเกินไป",
+      "Vietnamese": "Nói thì đúng, nhưng đừng tiến quá xa.",
+      "Indonesian": "Itu benar, tapi jangan maju terlalu jauh."
+    },
+    {
+      "TEXT_ID": "TST_183",
+      "Korean": "알겠어. 보이는 곳까지만 맡을게.",
+      "English": "Got it. I will take only the area I can see.",
+      "Thai": "เข้าใจแล้ว ฉันจะรับผิดชอบแค่ตรงที่มองเห็น",
+      "Vietnamese": "Tôi hiểu. Tôi sẽ giữ phần mình nhìn thấy.",
+      "Indonesian": "Mengerti. Aku akan menjaga area yang bisa kulihat saja."
+    },
+    {
+      "TEXT_ID": "TST_184",
+      "Korean": "이 길도 관문 방어벽 쪽으로 이어지겠지?",
+      "English": "This road should lead toward the gate wall too, right?",
+      "Thai": "ทางนี้ก็น่าจะต่อไปทางกำแพงประตูใช่ไหม",
+      "Vietnamese": "Con đường này cũng dẫn về phía tường cổng đúng không?",
+      "Indonesian": "Jalan ini juga mengarah ke dinding gerbang, kan?"
+    },
+    {
+      "TEXT_ID": "TST_185",
+      "Korean": "응. 이 방향이면 관문 앞쪽으로 이어질 거야.",
+      "English": "Yes. If it follows this direction, it should lead toward the front of the gate.",
+      "Thai": "อืม ถ้าไปตามทิศนี้ก็น่าจะต่อไปด้านหน้าประตู",
+      "Vietnamese": "Ừ. Theo hướng này thì nó sẽ dẫn tới phía trước cổng.",
+      "Indonesian": "Ya. Dengan arah ini, seharusnya menuju bagian depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_186",
+      "Korean": "이 길 안쪽으로 깊이 들어가진 말자.",
+      "English": "Let us not go too deep into this road.",
+      "Thai": "อย่าเข้าไปลึกในทางนี้มากนัก",
+      "Vietnamese": "Đừng đi quá sâu vào con đường này.",
+      "Indonesian": "Jangan masuk terlalu dalam ke jalan ini."
+    },
+    {
+      "TEXT_ID": "TST_187",
+      "Korean": "입구를 확인하고, 위험하면 이 자리에서 막자.",
+      "English": "We will check the entrance. If it is dangerous, we will stop them here.",
+      "Thai": "ตรวจแค่ปากทางก่อน ถ้าอันตรายก็กันไว้ตรงนี้",
+      "Vietnamese": "Kiểm tra lối vào trước. Nếu nguy hiểm, ta chặn chúng ở đây.",
+      "Indonesian": "Kita periksa pintu masuknya. Kalau berbahaya, kita hentikan mereka di sini."
+    },
+    {
+      "TEXT_ID": "TST_188",
+      "Korean": "몬스터 발자국이 더 선명해졌어.",
+      "English": "The monster footprints are clearer now.",
+      "Thai": "รอยเท้ามอนสเตอร์ชัดขึ้นแล้ว",
+      "Vietnamese": "Dấu chân quái vật rõ hơn rồi.",
+      "Indonesian": "Jejak kaki monsternya makin jelas."
+    },
+    {
+      "TEXT_ID": "TST_189",
+      "Korean": "관문 앞 숲길에서 봤던 것보다 더 깊게 눌려 있어.",
+      "English": "They are pressed deeper than the ones we saw on the forest path in front of the gate.",
+      "Thai": "กดลึกกว่าที่เห็นบนทางป่าหน้าประตู",
+      "Vietnamese": "Chúng lún sâu hơn dấu chân ở con đường rừng trước cổng.",
+      "Indonesian": "Jejaknya lebih dalam daripada yang kita lihat di jalan hutan depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_190",
+      "Korean": "여기서는 속도를 줄이지 못한 것 같아.",
+      "English": "It looks like they could not slow down here.",
+      "Thai": "ดูเหมือนตรงนี้พวกมันจะลดความเร็วไม่ได้",
+      "Vietnamese": "Có vẻ ở đây chúng không kịp giảm tốc.",
+      "Indonesian": "Sepertinya mereka tidak sempat melambat di sini."
+    },
+    {
+      "TEXT_ID": "TST_191",
+      "Korean": "그렇게 밀려 내려오면, 앞에서 멈춰 세우는 수밖에 없겠네.",
+      "English": "If they came rushing down like that, we have no choice but to stop them from the front.",
+      "Thai": "ถ้าถูกไล่ลงมาแบบนั้น ก็คงต้องหยุดไว้จากด้านหน้า",
+      "Vietnamese": "Nếu chúng bị dồn xuống như vậy, ta chỉ còn cách chặn từ phía trước.",
+      "Indonesian": "Kalau mereka terdorong turun seperti itu, kita harus menghentikan mereka dari depan."
+    },
+    {
+      "TEXT_ID": "TST_192",
+      "Korean": "응. 발자국이 겹친 자리가 많아.",
+      "English": "Yes. There are a lot of overlapping footprints.",
+      "Thai": "อืม มีรอยเท้าซ้อนกันเยอะ",
+      "Vietnamese": "Ừ. Có rất nhiều dấu chân chồng lên nhau.",
+      "Indonesian": "Ya. Banyak jejak kaki yang saling tumpang tindih."
+    },
+    {
+      "TEXT_ID": "TST_193",
+      "Korean": "한 방향으로 정리된 게 아니라, 옆으로 비틀린 흔적도 있어.",
+      "English": "They are not lined up in one direction. Some are twisted off to the side.",
+      "Thai": "ไม่ได้เรียงไปทางเดียวกัน มีรอยที่บิดออกด้านข้างด้วย",
+      "Vietnamese": "Không phải chúng xếp theo một hướng. Có cả dấu vết lệch sang bên.",
+      "Indonesian": "Mereka tidak tersusun ke satu arah. Ada juga jejak yang menyimpang ke samping."
+    },
+    {
+      "TEXT_ID": "TST_194",
+      "Korean": "공격하려고 줄 맞춰 내려온 흔적은 아니네.",
+      "English": "These do not look like traces of monsters marching down to attack.",
+      "Thai": "ไม่เหมือนร่องรอยของพวกที่จัดแถวลงมาโจมตี",
+      "Vietnamese": "Không giống dấu vết của đội hình tiến xuống để tấn công.",
+      "Indonesian": "Ini bukan jejak monster yang berbaris turun untuk menyerang."
+    },
+    {
+      "TEXT_ID": "TST_195",
+      "Korean": "그러니까 관문 앞 숲길만의 문제가 아니라, 이쪽 길까지 이어진 거네.",
+      "English": "So this is not just happening on the forest path in front of the gate. It reaches this road too.",
+      "Thai": "งั้นก็ไม่ใช่แค่ทางป่าหน้าประตูแล้ว มันลามมาถึงทางนี้ด้วย",
+      "Vietnamese": "Vậy không chỉ con đường rừng trước cổng. Chuyện này còn kéo tới cả lối này.",
+      "Indonesian": "Jadi masalahnya bukan hanya di jalan hutan depan gerbang. Jejaknya sampai ke jalan ini juga."
+    },
+    {
+      "TEXT_ID": "TST_196",
+      "Korean": "이런 길에서 밀리면 넘어지는 쪽도, 막는 쪽도 귀찮아지겠는데...",
+      "English": "If we get pushed back on a road like this, falling down and stopping them both sound like trouble...",
+      "Thai": "ถ้าถูกดันถอยในทางแบบนี้ ทั้งฝ่ายที่ล้มกับฝ่ายที่กันไว้ก็คงวุ่นวายหมด...",
+      "Vietnamese": "Nếu bị đẩy lùi trên con đường kiểu này, cả người ngã lẫn người chặn đều sẽ phiền phức...",
+      "Indonesian": "Kalau kita terdorong mundur di jalan seperti ini, yang jatuh maupun yang menahan akan sama-sama repot..."
+    },
+    {
+      "TEXT_ID": "TST_197",
+      "Korean": "그럼 넘어지기 전에 멈추게 하면 되잖아?",
+      "English": "Then we just stop them before they fall, right?",
+      "Thai": "งั้นก็หยุดพวกมันก่อนจะล้มก็ได้นี่?",
+      "Vietnamese": "Vậy thì chặn chúng trước khi ngã là được mà?",
+      "Indonesian": "Kalau begitu, hentikan mereka sebelum jatuh, kan?"
+    },
+    {
+      "TEXT_ID": "TST_198",
+      "Korean": "쉽다는 듯이 말해서 더 무섭네...",
+      "English": "It is scarier when you say it like it is that easy...",
+      "Thai": "พูดเหมือนง่ายแบบนั้นแล้วน่ากลัวกว่าเดิมอีก...",
+      "Vietnamese": "Cậu nói như thể dễ lắm, nên nghe còn đáng sợ hơn...",
+      "Indonesian": "Kamu mengatakannya seolah itu mudah, jadi malah lebih menakutkan..."
+    },
+    {
+      "TEXT_ID": "TST_199",
+      "Korean": "잠깐만. 풀숲 안쪽에서 움직임이 있어.",
+      "English": "Wait. There is movement inside the bushes.",
+      "Thai": "เดี๋ยวก่อน มีความเคลื่อนไหวในพุ่มไม้ข้างใน",
+      "Vietnamese": "Chờ đã. Có chuyển động bên trong bụi cây.",
+      "Indonesian": "Tunggu. Ada gerakan di dalam semak."
+    },
+    {
+      "TEXT_ID": "TST_200",
+      "Korean": "발자국이 이어진 쪽에서 움직임이 있어.",
+      "English": "There is movement where the footprints continue.",
+      "Thai": "มีความเคลื่อนไหวตรงทางที่รอยเท้าต่อไป",
+      "Vietnamese": "Có chuyển động ở phía dấu chân kéo dài tới.",
+      "Indonesian": "Ada gerakan di arah jejak kaki itu berlanjut."
+    },
+    {
+      "TEXT_ID": "TST_201",
+      "Korean": "어느 쪽에서 오고 있어?",
+      "English": "Which direction are they coming from?",
+      "Thai": "มาจากทางไหน",
+      "Vietnamese": "Chúng đến từ hướng nào?",
+      "Indonesian": "Mereka datang dari arah mana?"
+    },
+    {
+      "TEXT_ID": "TST_202",
+      "Korean": "남쪽 진입로 안쪽이야.",
+      "English": "From deeper inside the southern entrance road.",
+      "Thai": "ข้างในทางเข้าด้านใต้",
+      "Vietnamese": "Từ sâu trong lối vào phía nam.",
+      "Indonesian": "Dari dalam jalan masuk selatan."
+    },
+    {
+      "TEXT_ID": "TST_203",
+      "Korean": "우리가 본 발자국이 이어진 쪽과 같아.",
+      "English": "It is the same direction as the footprints we saw.",
+      "Thai": "เป็นทิศเดียวกับรอยเท้าที่เราเห็น",
+      "Vietnamese": "Cùng hướng với dấu chân chúng ta đã thấy.",
+      "Indonesian": "Arahnya sama dengan jejak kaki yang kita lihat."
+    },
+    {
+      "TEXT_ID": "TST_204",
+      "Korean": "일이 더 커질 것 같은데...",
+      "English": "Looks like this is going to get bigger...",
+      "Thai": "เหมือนเรื่องจะใหญ่ขึ้นแล้ว...",
+      "Vietnamese": "Có vẻ chuyện sẽ lớn hơn rồi...",
+      "Indonesian": "Sepertinya masalahnya akan makin besar..."
+    },
+    {
+      "TEXT_ID": "TST_205",
+      "Korean": "밀리면 바로 관문 쪽으로 이어져.",
+      "English": "If we get pushed back, it leads straight to the gate.",
+      "Thai": "ถ้าถูกดันถอย ก็จะต่อถึงประตูทันที",
+      "Vietnamese": "Nếu bị đẩy lùi, đường này sẽ nối thẳng tới cổng.",
+      "Indonesian": "Kalau kita terdorong mundur, jalan ini langsung menuju gerbang."
+    },
+    {
+      "TEXT_ID": "TST_206",
+      "Korean": "그럼 여기서 막아야겠네.",
+      "English": "Then we will stop them here.",
+      "Thai": "งั้นก็หยุดไว้ตรงนี้",
+      "Vietnamese": "Vậy chặn chúng ở đây.",
+      "Indonesian": "Kalau begitu, kita hentikan mereka di sini."
+    },
+    {
+      "TEXT_ID": "TST_207",
+      "Korean": "지휘관, 이제 나올 것 같아.",
+      "English": "Commander, I think they are about to come out.",
+      "Thai": "ผู้บัญชาการ ดูเหมือนพวกมันจะออกมาแล้ว",
+      "Vietnamese": "Chỉ huy, có vẻ chúng sắp ra rồi.",
+      "Indonesian": "Komandan, sepertinya mereka akan keluar."
+    },
+    {
+      "TEXT_ID": "TST_208",
+      "Korean": "길이 좁아서 한꺼번에 많이 내려오진 못할 것 같아.",
+      "English": "The road is narrow, so I do not think many can come down at once.",
+      "Thai": "ทางแคบ เลยไม่น่าจะลงมาพร้อมกันได้มาก",
+      "Vietnamese": "Đường hẹp nên chắc chúng không thể xuống quá nhiều cùng lúc.",
+      "Indonesian": "Jalannya sempit, jadi sepertinya tidak banyak yang bisa turun sekaligus."
+    },
+    {
+      "TEXT_ID": "TST_209",
+      "Korean": "세라가 앞에서 막아주면, 내 마법도 맞출 수 있어.",
+      "English": "If Serah stops them up front, I can land my magic too.",
+      "Thai": "ถ้าเซราห์กันไว้ด้านหน้า เวทของฉันก็จะเล็งได้",
+      "Vietnamese": "Nếu Serah chặn phía trước, tôi cũng có thể nhắm phép chính xác.",
+      "Indonesian": "Kalau Serah menahan mereka di depan, aku juga bisa mengenai mereka dengan sihirku."
+    },
+    {
+      "TEXT_ID": "TST_210",
+      "Korean": "좋아. 이 자리에서 막자.",
+      "English": "Good. We will stop them here.",
+      "Thai": "ดี กันไว้ตรงนี้",
+      "Vietnamese": "Tốt. Ta chặn chúng ở đây.",
+      "Indonesian": "Bagus. Kita hentikan mereka di sini."
+    },
+    {
+      "TEXT_ID": "TST_211",
+      "Korean": "확인했어. 내가 앞에서 멈춰 세울게.",
+      "English": "Understood. I will stop them from the front.",
+      "Thai": "รับทราบ ฉันจะหยุดไว้จากด้านหน้า",
+      "Vietnamese": "Rõ. Tôi sẽ chặn chúng từ phía trước.",
+      "Indonesian": "Mengerti. Aku akan menghentikan mereka dari depan."
+    },
+    {
+      "TEXT_ID": "TST_212",
+      "Korean": "뒤는 믿고 맡길게.",
+      "English": "I will trust you with the rest.",
+      "Thai": "ด้านหลังฝากไว้ด้วยนะ",
+      "Vietnamese": "Phía sau tôi tin mọi người lo được.",
+      "Indonesian": "Aku percaya kalian menjaga belakangku."
+    },
+    {
+      "TEXT_ID": "TST_213",
+      "Korean": "알겠어. 대신 내가 볼 수 있는 곳에서 버텨줘.",
+      "English": "Okay. Just hold where I can see you.",
+      "Thai": "เข้าใจแล้ว แค่อยู่ในจุดที่ฉันมองเห็นก็พอ",
+      "Vietnamese": "Được. Nhưng hãy trụ ở nơi tôi nhìn thấy được.",
+      "Indonesian": "Baik. Tapi bertahanlah di tempat yang bisa kulihat."
+    },
+    {
+      "TEXT_ID": "TST_214",
+      "Korean": "물론이지. 너무 깊이 들어가진 않을게.",
+      "English": "Of course. I will not go too deep.",
+      "Thai": "แน่นอน ฉันจะไม่เข้าไปลึกเกินไป",
+      "Vietnamese": "Tất nhiên. Tôi sẽ không vào quá sâu.",
+      "Indonesian": "Tentu. Aku tidak akan masuk terlalu dalam."
+    },
+    {
+      "TEXT_ID": "TST_215",
+      "Korean": "덜 다치는 방향으로 부탁할게...",
+      "English": "Please choose the way where everyone gets hurt less...",
+      "Thai": "ขอทางที่บาดเจ็บกันน้อยที่สุดนะ...",
+      "Vietnamese": "Làm ơn chọn cách ít bị thương hơn nhé...",
+      "Indonesian": "Tolong pilih cara yang membuat kita tidak terlalu terluka..."
+    },
+    {
+      "TEXT_ID": "TST_216",
+      "Korean": "여기서 넘어지면 일으키는 것도 힘들어 보여.",
+      "English": "If someone falls here, getting them up looks hard too.",
+      "Thai": "ถ้าล้มตรงนี้ จะพยุงขึ้นมาก็ดูลำบาก",
+      "Vietnamese": "Nếu ngã ở đây thì dựng dậy cũng có vẻ vất vả.",
+      "Indonesian": "Kalau ada yang jatuh di sini, membangunkannya juga terlihat sulit."
+    },
+    {
+      "TEXT_ID": "TST_217",
+      "Korean": "내가 여기서 움직임을 계속 볼게.",
+      "English": "I will keep watching their movement from here.",
+      "Thai": "ฉันจะคอยดูความเคลื่อนไหวจากตรงนี้",
+      "Vietnamese": "Tôi sẽ tiếp tục quan sát chuyển động từ đây.",
+      "Indonesian": "Aku akan terus mengawasi gerakan mereka dari sini."
+    },
+    {
+      "TEXT_ID": "TST_218",
+      "Korean": "세라, 너무 깊이 들어가면 바로 말해줄게.",
+      "English": "Serah, if you go too deep, I will tell you right away.",
+      "Thai": "เซราห์ ถ้าเข้าไปลึกเกินไป ฉันจะบอกทันที",
+      "Vietnamese": "Serah, nếu cậu vào quá sâu, tôi sẽ nói ngay.",
+      "Indonesian": "Serah, kalau kamu masuk terlalu dalam, aku akan langsung bilang."
+    },
+    {
+      "TEXT_ID": "TST_219",
+      "Korean": "알겠어. 노아가 말해주면 바로 맞출게.",
+      "English": "Got it. If Noah says it, I will adjust right away.",
+      "Thai": "เข้าใจแล้ว ถ้าโนอาบอก ฉันจะปรับตามทันที",
+      "Vietnamese": "Hiểu rồi. Noah nói thì tôi sẽ điều chỉnh ngay.",
+      "Indonesian": "Mengerti. Kalau Noah bilang, aku akan langsung menyesuaikan."
+    },
+    {
+      "TEXT_ID": "TST_220",
+      "Korean": "다들 괜찮아?",
+      "English": "Is everyone okay?",
+      "Thai": "ทุกคนไม่เป็นไรนะ",
+      "Vietnamese": "Mọi người ổn chứ?",
+      "Indonesian": "Semuanya baik-baik saja?"
+    },
+    {
+      "TEXT_ID": "TST_221",
+      "Korean": "다친 데는 없어?",
+      "English": "Is anyone hurt?",
+      "Thai": "มีใครบาดเจ็บไหม",
+      "Vietnamese": "Có ai bị thương không?",
+      "Indonesian": "Ada yang terluka?"
+    },
+    {
+      "TEXT_ID": "TST_222",
+      "Korean": "난 괜찮아! 다친 데는 없어!",
+      "English": "I am okay! I am not hurt!",
+      "Thai": "ฉันไม่เป็นไร! ไม่มีตรงไหนบาดเจ็บ!",
+      "Vietnamese": "Tôi ổn! Không bị thương chỗ nào!",
+      "Indonesian": "Aku baik-baik saja! Tidak ada yang terluka!"
+    },
+    {
+      "TEXT_ID": "TST_223",
+      "Korean": "좁은 길도 생각보다 나쁘진 않았어.",
+      "English": "The narrow road was not as bad as I thought.",
+      "Thai": "ทางแคบก็ไม่ได้แย่อย่างที่คิด",
+      "Vietnamese": "Đường hẹp cũng không tệ như tôi nghĩ.",
+      "Indonesian": "Jalan sempit ini tidak seburuk yang kupikir."
+    },
+    {
+      "TEXT_ID": "TST_224",
+      "Korean": "나도 괜찮아.",
+      "English": "I am okay too.",
+      "Thai": "ฉันก็ไม่เป็นไร",
+      "Vietnamese": "Tôi cũng ổn.",
+      "Indonesian": "Aku juga baik-baik saja."
+    },
+    {
+      "TEXT_ID": "TST_225",
+      "Korean": "방금 꽤 아슬아슬했던 건 알고 있지?",
+      "English": "You know that was pretty close, right?",
+      "Thai": "เมื่อกี้ค่อนข้างเฉียดฉิว รู้ตัวใช่ไหม",
+      "Vietnamese": "Cậu biết vừa rồi khá sát nút đấy chứ?",
+      "Indonesian": "Kamu tahu tadi cukup nyaris, kan?"
+    },
+    {
+      "TEXT_ID": "TST_226",
+      "Korean": "아슬아슬해도 막긴 했잖아?",
+      "English": "It was close, but I still stopped them, did I not?",
+      "Thai": "ถึงจะเฉียดฉิว แต่ก็กันไว้ได้ใช่ไหม",
+      "Vietnamese": "Dù sát nút nhưng tôi vẫn chặn được mà?",
+      "Indonesian": "Memang nyaris, tapi aku tetap menghentikan mereka, kan?"
+    },
+    {
+      "TEXT_ID": "TST_227",
+      "Korean": "맞긴 한데... 다음엔 좀 더 조심해줘.",
+      "English": "True... but next time, be a little more careful.",
+      "Thai": "ก็ใช่... แต่ครั้งหน้าระวังกว่านี้หน่อย",
+      "Vietnamese": "Đúng là vậy... nhưng lần sau cẩn thận hơn nhé.",
+      "Indonesian": "Memang benar... tapi lain kali lebih hati-hati."
+    },
+    {
+      "TEXT_ID": "TST_228",
+      "Korean": "응, 나도... 길이 불편했을 뿐이야.",
+      "English": "Yeah, me too... The road was just uncomfortable.",
+      "Thai": "อืม ฉันก็เหมือนกัน... แค่ทางมันเดินลำบาก",
+      "Vietnamese": "Ừ, tôi cũng vậy... Chỉ là đường khó chịu thôi.",
+      "Indonesian": "Ya, aku juga... Jalannya saja yang tidak nyaman."
+    },
+    {
+      "TEXT_ID": "TST_229",
+      "Korean": "이런 곳은 오래 있고 싶지 않네.",
+      "English": "I do not want to stay in a place like this for long.",
+      "Thai": "ไม่อยากอยู่นานในที่แบบนี้เลย",
+      "Vietnamese": "Tôi không muốn ở lâu trong chỗ như thế này.",
+      "Indonesian": "Aku tidak ingin lama-lama di tempat seperti ini."
+    },
+    {
+      "TEXT_ID": "TST_230",
+      "Korean": "몬스터 발자국을 다시 볼게.",
+      "English": "I will check the monster footprints again.",
+      "Thai": "ฉันจะดูรอยเท้ามอนสเตอร์อีกครั้ง",
+      "Vietnamese": "Tôi sẽ xem lại dấu chân quái vật.",
+      "Indonesian": "Aku akan memeriksa jejak kaki monster lagi."
+    },
+    {
+      "TEXT_ID": "TST_231",
+      "Korean": "응. 관문 방어벽 쪽과 이어지는지 확인해줘.",
+      "English": "Yes. Check whether they connect toward the gate wall.",
+      "Thai": "อืม ตรวจดูว่ามันต่อไปทางกำแพงประตูไหม",
+      "Vietnamese": "Ừ. Kiểm tra xem chúng có nối tới phía tường cổng không.",
+      "Indonesian": "Ya. Periksa apakah jejaknya terhubung ke arah dinding gerbang."
+    },
+    {
+      "TEXT_ID": "TST_232",
+      "Korean": "이어져 있어.",
+      "English": "They do.",
+      "Thai": "ต่ออยู่",
+      "Vietnamese": "Có nối.",
+      "Indonesian": "Terhubung."
+    },
+    {
+      "TEXT_ID": "TST_233",
+      "Korean": "관문 앞 숲길에서 봤던 흔적과 남쪽 진입로의 흔적이 같은 방향으로 꺾여.",
+      "English": "The traces from the forest path in front of the gate and the southern entrance road turn in the same direction.",
+      "Thai": "ร่องรอยจากทางป่าหน้าประตู กับร่องรอยจากทางเข้าด้านใต้หักไปทางเดียวกัน",
+      "Vietnamese": "Dấu vết từ con đường rừng trước cổng và lối vào phía nam đều rẽ theo cùng một hướng.",
+      "Indonesian": "Jejak dari jalan hutan depan gerbang dan jalan masuk selatan berbelok ke arah yang sama."
+    },
+    {
+      "TEXT_ID": "TST_234",
+      "Korean": "그럼 두 길 모두 관문 앞에서 합쳐지는 거네.",
+      "English": "Then both roads meet in front of the gate.",
+      "Thai": "งั้นทั้งสองทางก็มาบรรจบกันที่หน้าประตู",
+      "Vietnamese": "Vậy cả hai con đường đều hợp lại trước cổng.",
+      "Indonesian": "Berarti kedua jalan itu bertemu di depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_235",
+      "Korean": "그리고 안쪽 움직임이 아직 남아 있어.",
+      "English": "And there is still movement deeper inside.",
+      "Thai": "แล้วข้างในยังมีความเคลื่อนไหวเหลืออยู่",
+      "Vietnamese": "Và bên trong vẫn còn chuyển động.",
+      "Indonesian": "Dan masih ada gerakan di bagian dalam."
+    },
+    {
+      "TEXT_ID": "TST_236",
+      "Korean": "관문 쪽으로 더 이어질 수도 있어.",
+      "English": "It may continue toward the gate.",
+      "Thai": "อาจจะต่อไปทางประตูอีก",
+      "Vietnamese": "Có thể chúng còn kéo tới phía cổng.",
+      "Indonesian": "Mungkin masih berlanjut ke arah gerbang."
+    },
+    {
+      "TEXT_ID": "TST_237",
+      "Korean": "그럼 다음엔 노아가 보는 방향을 먼저 확인할게.",
+      "English": "Then next time, I will check the direction Noah is watching first.",
+      "Thai": "งั้นครั้งหน้า ฉันจะดูทิศที่โนอามองก่อน",
+      "Vietnamese": "Vậy lần sau tôi sẽ kiểm tra hướng Noah đang nhìn trước.",
+      "Indonesian": "Kalau begitu, lain kali aku akan memeriksa arah yang dilihat Noah dulu."
+    },
+    {
+      "TEXT_ID": "TST_238",
+      "Korean": "응. 내가 놓치지 않게 볼게.",
+      "English": "Yeah. I will make sure I do not miss it.",
+      "Thai": "อืม ฉันจะดูไม่ให้พลาด",
+      "Vietnamese": "Ừ. Tôi sẽ chú ý để không bỏ sót.",
+      "Indonesian": "Ya. Aku akan memastikan tidak melewatkannya."
+    },
+    {
+      "TEXT_ID": "TST_239",
+      "Korean": "점점 손발이 맞아가는 건 좋은데...",
+      "English": "It is good that we are getting more in sync...",
+      "Thai": "ดีที่เริ่มประสานงานกันได้ดีขึ้น...",
+      "Vietnamese": "Chuyện phối hợp ăn ý hơn là tốt...",
+      "Indonesian": "Bagus kalau kerja sama kita makin selaras..."
+    },
+    {
+      "TEXT_ID": "TST_240",
+      "Korean": "왜 갈수록 할 일이 늘어나는 기분이지...",
+      "English": "So why does it feel like we have more work every time...",
+      "Thai": "แต่ทำไมยิ่งทำ ยิ่งรู้สึกว่างานเพิ่มขึ้นนะ...",
+      "Vietnamese": "Nhưng sao càng lúc tôi càng có cảm giác việc nhiều thêm vậy...",
+      "Indonesian": "Tapi kenapa rasanya pekerjaan kita malah makin bertambah..."
+    },
+    {
+      "TEXT_ID": "TST_241",
+      "Korean": "남쪽 진입로의 몬스터 흔적은 충분히 확인했어.",
+      "English": "We have checked the monster traces on the southern entrance road enough.",
+      "Thai": "เราตรวจร่องรอยมอนสเตอร์ที่ทางเข้าด้านใต้พอแล้ว",
+      "Vietnamese": "Ta đã kiểm tra đủ dấu vết quái vật ở lối vào phía nam rồi.",
+      "Indonesian": "Kita sudah cukup memeriksa jejak monster di jalan masuk selatan."
+    },
+    {
+      "TEXT_ID": "TST_242",
+      "Korean": "다음은 관문 방어벽 앞 상태를 확인하자.",
+      "English": "Next, let us check the area in front of the gate wall.",
+      "Thai": "ต่อไปตรวจสภาพหน้ากำแพงประตูกัน",
+      "Vietnamese": "Tiếp theo, hãy kiểm tra khu vực trước tường cổng.",
+      "Indonesian": "Selanjutnya, periksa area di depan dinding gerbang."
     },
     {
       "TEXT_ID": "LRT_001",
