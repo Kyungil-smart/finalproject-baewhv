@@ -22,7 +22,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     private readonly Vector2 battleModeCharactersSlot = new Vector2(1057, 405);
     private readonly Vector2 sortModeCharactersSlot = new Vector2(1057, 1034);
     [SerializeField] private RectTransform ComboView;
-
+    public GameObject GetComboView => ComboView.gameObject;
+    [SerializeField] private StartBattleButtonUI StartBattleButton;
+    public GameObject GetStartButton => StartBattleButton.gameObject;
+    
 
     [SerializeField] private GameObject characterSlotPrefab;
     [SerializeField] private RectTransform characterSlot;
@@ -97,6 +100,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
             slot.ChangeMode(true);
         }
         isSortMode.Value = true;
+        StartBattleButton.SetSortStart();
     }
 
     public void SetComboText(int value)
@@ -130,6 +134,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public void SetLeftSortCountText(int value)
     {
         leftSortCountText.text = $"남은 소트 횟수 : {value}";
+        if (value == 0)
+        {
+            StartBattleButton.SetSortDone();
+        }
     }
 
     public void SetExp(int curr, int max)

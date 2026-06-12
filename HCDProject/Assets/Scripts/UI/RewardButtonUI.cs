@@ -3,14 +3,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
-
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class RewardButtonUI : MonoBehaviour
 {
     [SerializeField] private Image icon;
-    [SerializeField] private TextMeshProUGUI RewardName;
-    [SerializeField] private TextMeshProUGUI RewardDesc;
+    [SerializeField] private LocalizeStringEvent RewardName;
+    [SerializeField] private LocalizeStringEvent RewardDesc;
     [SerializeField] private Sprite defaultImage;
     public int GetIndex { get; private set; }
     public bool IsSelected { get; set; }
@@ -22,9 +23,7 @@ public class RewardButtonUI : MonoBehaviour
         icon.sprite = Addressables.LoadAssetAsync<Sprite>(data.CLEAR_REWARD_ICON).WaitForCompletion();
         if (!icon.sprite)
             icon.sprite = defaultImage;
-        //todo dictionary로 해야하지 않을까?
-        RewardName.text = Service.Get<DataManager>()?.LocalizingTable.data
-            .Find(x => x.TEXT_ID == data.CLEAR_REWARD_NAME).Korean;
+        RewardName.SetEntry(data.CLEAR_REWARD_NAME);
         buttonAction = func;
         GetIndex = _index;
         IsSelected = false;
@@ -35,8 +34,7 @@ public class RewardButtonUI : MonoBehaviour
         icon.sprite = Addressables.LoadAssetAsync<Sprite>(data.LEVEL_REWARD_ICON).WaitForCompletion();
         if (!icon.sprite)
             icon.sprite = defaultImage;
-        RewardName.text = Service.Get<DataManager>()?.LocalizingTable.data
-            .Find(x => x.TEXT_ID == data.LEVEL_REWARD_NAME).Korean;
+        RewardName.SetEntry(data.LEVEL_REWARD_NAME);
         buttonAction = func;
         GetIndex = _index;
         IsSelected = false;
