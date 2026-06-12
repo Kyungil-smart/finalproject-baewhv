@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NarrativeManager : MonoBehaviour
+public class NarrativeManager : BaseManager<NarrativeManager>
 {
     private NarrativeUIController ui;
     private List<StoryLocalizingRawData> data;
@@ -13,19 +13,26 @@ public class NarrativeManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(TempSkip());
+        //StartCoroutine(TempSkip());
         if (Service.Get<GameManager>() is GameManager gm)
         {
             currentStage = gm.CurrentStage;
             currentChapter = gm.CurrentChapter;
         }
         data = Service.Get<DataManager>().StoryLocalizingTable.data.FindAll(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
+        ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
         Debug.Log($"{data.Count}");
+        ui.SetNarrative(data[currentIndex]);
     }
 
-    private IEnumerator TempSkip()
+    public void EndNarrative()
     {
-        yield return YieldContainer.WaitForSeconds(3.0f);
         Service.Get<GameManager>()?.NarrativeEnd();
+    }
+
+    public StoryLocalizingRawData GetNextNarrative()
+    {
+        if (currentIndex >= data.Count) return null;
+        return data[++currentIndex];
     }
 }

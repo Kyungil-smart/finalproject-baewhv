@@ -32,6 +32,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     public ObserveValue<bool> isAllSpawn = new();
 
+    public bool IsPrefabLoaded => _loadedPrefab != null;
+
     public BaseCharacter[] Characters => _characters;
 
     protected override void Awake()
@@ -51,7 +53,12 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             {
                 _loadedPrefab = handle.Result;
                 Debug.Log("플레이어 프리팹 로드 성공");
+
                 SpawnAllCharacters();
+                /*if (!Service.Get<TutorialManager>())
+                {
+                    
+                }*/
             }
 
             else
@@ -66,6 +73,39 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         if (_prefabHandle.IsValid()) // 유효할 때만
         Addressables.Release(_prefabHandle);
         base.OnDestroy();
+    }
+
+    public void SpawnSingleCharacter(int index)
+    {
+        var data = Service.Get<DataManager>().CharacterTable.data;
+        if (_loadedPrefab == null)
+        {
+            Debug.LogWarning("프리팹 아직 로드 안됨");
+            return;
+        }
+
+        if (_characters == null)
+        {
+            _characters = new BaseCharacter[data.Count];
+            _coroutines = new Coroutine[data.Count];
+            _healCoroutines = new Coroutine[data.Count];
+            _slot = new CharacterSlotUI[data.Count];
+        }
+        GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[index].position, Quaternion.identity);
+        BaseCharacter chr = obj.GetComponent<BaseCharacter>();
+        chr.homePosition = _homePoints[index].position;
+        chr.spawnPosition = _spawnPoints[index].position;
+        chr.Init(data[index], _characterDatas[index]);
+        _characters[index] = chr;
+        _slot[index] = Service.Get<UIManager>()
+            .GetUI<IngameBottomUIController>().AddCharacter(data[index], chr, index);
+
+        _characters[index].BindHpUI(_slot[index].SetHPBar);
+        if (index == data.Count - 1)
+        {
+            ApplyRelicStats();
+            Service.Get<SortManager>()?.AutoSetupUISlots();
+        }
     }
     
     private void SpawnAllCharacters()
@@ -95,6 +135,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         {
             _characters[i].BindHpUI(_slot[i].SetHPBar);
         }
+        Service.Get<SortManager>()?.AutoSetupUISlots();
     }
 
     public void IsAllSpawnPlayer()

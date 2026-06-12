@@ -17,6 +17,8 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     [SerializeField] private Button continuePopup;
     [SerializeField] private Text continueText;
     [SerializeField] private Button cancelPopup;
+    [SerializeField] private Button settingButton;
+    [SerializeField] private GameObject settingPopup;
 
     private int _currentChapter;
 
@@ -30,6 +32,12 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         {
             cancelPopup.onClick.RemoveAllListeners();
             cancelPopup.onClick.AddListener(() => { popupObject.SetActive(false); });
+        }
+        
+        if (settingButton != null)
+        {
+            settingButton.onClick.RemoveAllListeners();
+            settingButton.onClick.AddListener(() => { settingPopup.SetActive(true); });
         }
 
         StageMap();

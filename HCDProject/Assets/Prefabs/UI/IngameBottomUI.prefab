@@ -2203,7 +2203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartBattleButtonUI
   buttonImage: {fileID: 1253578601997892722}
   defaultColor: {r: 0.99215686, g: 0.24313726, b: 0.7411765, a: 1}
-  sortDoneColor: {r: 0, g: 1, b: 0.2081244, a: 0}
+  sortDoneColor: {r: 0, g: 1, b: 0.2081244, a: 1}
 --- !u!1 &5298273024247618429
 GameObject:
   m_ObjectHideFlags: 0

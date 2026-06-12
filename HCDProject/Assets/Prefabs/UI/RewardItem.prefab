@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:4ccbdbf1878cce04a8441eeb10934d6b
     m_TableEntryReference:
       m_KeyId: 0
       m_Key: 
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:4ccbdbf1878cce04a8441eeb10934d6b
     m_TableEntryReference:
       m_KeyId: 0
       m_Key: 

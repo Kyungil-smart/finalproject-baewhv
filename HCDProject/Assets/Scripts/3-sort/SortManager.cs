@@ -39,9 +39,10 @@ public class SortManager : BaseManager<SortManager>
         }
     }
 
-    private void AutoSetupUISlots()
+    public void AutoSetupUISlots()
     {
         characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
+        Debug.Log($"AutoSetupUISlots 실행 시점 | 슬롯 수: {characterSlots?.Length}");
     }
 
     public void AddCombo(int amount)
@@ -51,7 +52,15 @@ public class SortManager : BaseManager<SortManager>
 
     public void ObjectDrop(CharacterSlotUI targetSlot, DragAndDrop draggedobject)
     {
-        if (RemainingSorts.Value <= 0 || isEndSort.Value == true || targetSlot == null || draggedobject == null)
+
+        if (targetSlot == null || draggedobject == null) return;
+
+        if (isEndSort.Value)
+        {
+            return;
+        }
+
+        if (RemainingSorts.Value <= 0)
         {
             return;
         }
@@ -123,13 +132,51 @@ public class SortManager : BaseManager<SortManager>
     public void OnStartSort()
     {
         isEndSort.Value = false;
-        RemainingSorts.Value = 6;
         CurrentCombo.Value = 0;
+
+        if (characterSlots != null)
+        {
+            foreach (var slot in characterSlots)
+            {
+                if (slot == null || slot.SubSlots == null) continue;
+
+                foreach (var subSlot in slot.SubSlots)
+                {
+                    if (subSlot != null && subSlot.childCount > 0)
+                    {
+                        for (int i = subSlot.childCount - 1; i >= 0; i--)
+                        {
+                            Destroy(subSlot.GetChild(i).gameObject);
+                        }
+                    }
+                }
+            }
+        }
+
+        var gameManager = Service.Get<GameManager>();
+        var spawnManager = Service.Get<MonsterSpawnManager>();
+        var dataManager = Service.Get<DataManager>();
+
+        if (gameManager != null && spawnManager != null && dataManager != null)
+        {
+            int CC = gameManager.CurrentChapter;
+            int CS = gameManager.CurrentStage;
+
+            int CW = spawnManager.currentWave.Value;
+            if (CW <= 0) CW = 1;
+
+            var mapData = dataManager.MapTable.data.Find(x => x.CHAPTER == CC && x.STAGE == CS && x.WAVE == CW);
+
+            if (mapData != null)
+            {
+                RemainingSorts.Value = mapData.SORT_COUNT;
+                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 횟수: {mapData.SORT_COUNT}회");
+            }
+        }
 
         BuffsBox.Clear();
 
         Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
-
         Service.Get<RailManager>()?.InitializeRail();
     }
 
@@ -160,11 +207,6 @@ public class SortManager : BaseManager<SortManager>
                 playerManager.ApplyBuff(data.index, data.objType, data.finalBuffValue);
             }
             Debug.Log($"전송 완료");
-        }
-
-        if (Service.Get<GameManager>()?.CurrentState != null)
-        {
-            Service.Get<GameManager>().CurrentState.Value = GameState.Wave;
         }
     }
 

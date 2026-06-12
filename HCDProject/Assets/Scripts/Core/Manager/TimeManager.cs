@@ -2,34 +2,33 @@ using UnityEngine;
 
 public class TimeManager : BaseManager<TimeManager>
 {
-    private float saveTimeScale;
-    private bool isSettingOpen = false;
+    private float saveTimeScale = 1;
+    private int pauseCount = 0;
     
     public void SetSpeed(float speed)
     {
         Time.timeScale = speed;
     }
 
-    public void OnSetting()
+    public void SaveTimeScale()
     {
-        isSettingOpen = !isSettingOpen;
-
-        if (isSettingOpen)
+        if (pauseCount == 0)
         {
             saveTimeScale = Time.timeScale;
-
             Time.timeScale = 0;
-            Debug.Log($"현제 상태 {Time.timeScale}");
         }
-        else 
-        {
-            Time.timeScale = saveTimeScale;
-            Debug.Log($"현제 상태 {Time.timeScale}");
-        }
+        pauseCount++;
     }
     
-    public void OffSetting()
+    public void LoadTimeScale()
     {
-        Time.timeScale = saveTimeScale;
+        if (pauseCount < 0) return;
+        
+        pauseCount--;
+
+        if (pauseCount == 0)
+        {
+            Time.timeScale = saveTimeScale;
+        }
     }
 }
