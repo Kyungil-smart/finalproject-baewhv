@@ -82,6 +82,468 @@ MonoBehaviour:
     m_Localized: Baju Zirah Kuno
     m_Metadata:
       m_Items: []
+  - m_Id: 2040774160445
+    m_Localized: Serah
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160446
+    m_Localized: Noah
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160447
+    m_Localized: Alice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160448
+    m_Localized: Spayin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262176796672
+    m_Localized: Narasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128320
+    m_Localized: Penjaga Benteng
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128321
+    m_Localized: Demian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128322
+    m_Localized: Komandan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128323
+    m_Localized: Sistem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322624
+    m_Localized: (Penugasan pertamaku ternyata lebih tenang dari yang kupikir.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322625
+    m_Localized: Ini Benteng Pertahanan Cies? Katanya monster hampir tidak pernah
+      muncul, dan memang tenang sekali.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322626
+    m_Localized: Apakah Anda Komandan dan para Penjaga?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322627
+    m_Localized: Selamat datang di Benteng Pertahanan Cies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322628
+    m_Localized: Terima kasih atas sambutannya. Maaf baru datang sudah membahas tugas,
+      tapi tolong pandu kami.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322629
+    m_Localized: Ini Serah, dan ini Noah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322630
+    m_Localized: Senang bertemu. Aku Serah, bertugas di garis depan. Aku akan memeriksa
+      area gerbang dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322631
+    m_Localized: Aku Noah. Aku akan lebih dulu memeriksa pergerakan yang terlihat
+      dari jauh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322632
+    m_Localized: Dan ini Alice serta Spayin.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322633
+    m_Localized: Aku Alice. Aku menangani pemeriksaan batu sinyal dan dukungan sihir.
+      Aku lebih teliti dari kelihatannya, jadi jangan khawatir.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322634
+    m_Localized: Aku Spayin. Aku bertugas menyembuhkan. Kalau terluka, segera bilang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322635
+    m_Localized: Saya Demian, kapten Penjaga Benteng Cies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322636
+    m_Localized: Kami mengandalkanmu, Demian. Sebelum tiba, kami sudah menerima tugas
+      yang perlu diperiksa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322637
+    m_Localized: Serah, periksa pos gerbang. Noah, awasi jalan hutan dari menara.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322638
+    m_Localized: Alice, periksa batu sinyal. Spayin, bisa cek gudang persediaan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322639
+    m_Localized: Demian, bisa tugaskan orang untuk memandu mereka berempat?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322640
+    m_Localized: Dimengerti. Saya akan segera menugaskan pengawal pemandu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322641
+    m_Localized: Baik! Aku akan memeriksa pos gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322642
+    m_Localized: Aku akan memeriksa menara dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322643
+    m_Localized: Aku akan memeriksa batu sinyal, lalu membantu Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322644
+    m_Localized: Kalau gudang persediaan di dalam gerbang... bukankah itu yang paling
+      jauh dari sini?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322645
+    m_Localized: Walau jauh, kalau dicek sekarang nanti kita tidak akan tersesat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322646
+    m_Localized: Serah, mau tukar tugas denganku...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322647
+    m_Localized: Maaf. Kurasa aku yang sebaiknya memeriksa pos. Menahan di depan
+      itu tugasku.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322648
+    m_Localized: Terlalu benar, jadi makin sedih...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322649
+    m_Localized: (Saat kami hendak memeriksa posisi masing-masing, lonceng peringatan
+      di dalam benteng berbunyi keras.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322650
+    m_Localized: Lapor! Alarm monster! Banyak monster terdeteksi dari arah hutan!
+      Mereka mendekati gerbang!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322651
+    m_Localized: Serah... tadi kau bilang tenang, kan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322652
+    m_Localized: Memang tadinya tenang!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322653
+    m_Localized: Pertama, pikirkan cara membuatnya tenang lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322654
+    m_Localized: Noah, terus awasi jalan hutan dari menara.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322655
+    m_Localized: Spayin, ambil perlengkapan P3K dari gudang. Kalian berdua, bergabung
+      di gerbang saat siap.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322656
+    m_Localized: Ya, aku cek lalu segera ke sana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322657
+    m_Localized: Ugh... susah payah sampai tempat paling jauh, sekarang harus langsung
+      kembali.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322658
+    m_Localized: Serah dan Alice, kalian berdua hentikan monster dulu di pos gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322659
+    m_Localized: Baik! Aku akan bertahan di sini. Aku tidak akan membiarkan mereka
+      melewati gerbang!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322660
+    m_Localized: Serah, ambil bagian depan. Aku akan menangani musuh yang berkumpul.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322661
+    m_Localized: Mengerti. Begitu sinyal datang, aku langsung maju!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322662
+    m_Localized: Gerombolan monster sudah mendekati gerbang! Komandan, tolong siapkan
+      batu sinyal!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322663
+    m_Localized: Aku akan mengirim sinyal ke Serah dan Alice dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322664
+    m_Localized: Koneksi sinyal terkonfirmasi. Serah, siap?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322665
+    m_Localized: Baik, aku maju!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322666
+    m_Localized: '[Popup Tutorial: Pelajari aksi timing batu sinyal dan serangan
+      kombo 3-Sort]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322667
+    m_Localized: Silakan seret batu sinyal serangan ke slot Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322668
+    m_Localized: Susun 3 batu sinyal yang sama untuk menyelesaikan kombo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322669
+    m_Localized: Mereka mulai menyerbu! Bagian depan akan kutahan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322670
+    m_Localized: Kalau musuh berkumpul, aku yang akan mengurusnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322671
+    m_Localized: Aku melihat gelombang kedua. Aku bergabung sekarang. Musuh yang
+      datang dari jauh akan kuawasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322672
+    m_Localized: Bagian persediaan sudah terkunci. Perban juga kubawa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322673
+    m_Localized: Tetap saja, bagus kau langsung datang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322674
+    m_Localized: Kalau terlambat, aku malah makin sibuk...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322675
+    m_Localized: Baik! Sekarang semua sudah berkumpul!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322676
+    m_Localized: Kalau begini, kalau ada yang terluka aku bisa langsung memeriksanya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322677
+    m_Localized: '[Popup Tutorial: Dapatkan EXP dengan mengalahkan musuh dan pilih
+      hadiah naik level]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322678
+    m_Localized: Pilih salah satu kartu hadiah naik level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322679
+    m_Localized: Monster besar/boss muncul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322680
+    m_Localized: Aku melihat yang besar. Gelombang ini bergerak berpusat pada makhluk
+      itu!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322681
+    m_Localized: Kalau begitu, kita hentikan yang besar dulu. Aku akan berdiri di
+      depan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322682
+    m_Localized: Serah, tunggu! Yang besar itu akan terlalu lama jika hanya diserang
+      biasa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322683
+    m_Localized: Komandan, kirim sinyal skill ke Serah!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322684
+    m_Localized: Bukan sinyal biasa. Ini sinyal jurus pamungkas yang memakai seluruh
+      gauge!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322685
+    m_Localized: '[Popup Tutorial: Gunakan gauge untuk mengaktifkan skill khusus/jurus
+      pamungkas]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322686
+    m_Localized: Gunakan Gauge Pamungkas untuk mengaktifkan jurus pamungkas Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322687
+    m_Localized: Sinyal diterima! Akan kuhajar dengan satu pukulan besar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322688
+    m_Localized: (Kami mengalahkan semua monster di depan gerbang.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322689
+    m_Localized: Ada yang terluka? Kalau ada yang sakit, segera bilang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322690
+    m_Localized: Tidak! Aku tidak terluka! Lantai batu di depan gerbang... yah, mungkin
+      baik-baik saja?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322691
+    m_Localized: "\u201CMungkin baik-baik saja\u201D bukan jawaban, tapi setidaknya
+      kita menghentikan monster sebelum mencapai gerbang."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322692
+    m_Localized: Aku akan memeriksa lantai batunya. Kalau perbaikan jadi besar nanti,
+      akan lebih merepotkan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322693
+    m_Localized: Tapi ada yang aneh. Gerombolan monster tadi semuanya turun dari
+      jalan hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322694
+    m_Localized: Saat kulihat dari menara, masih ada pergerakan lebih dalam di jalan
+      hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711232
+    m_Localized: Kalau begitu, kita harus memeriksa jalan hutan lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711233
+    m_Localized: Biasanya Cies bukan tempat yang didatangi monster sebanyak ini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711234
+    m_Localized: Katanya ini pos yang tenang, tapi rumor itu benar-benar salah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711235
+    m_Localized: Orang pertama yang mengatakan rumor itu adalah Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711236
+    m_Localized: Kalau begitu, aku akan memeriksanya sendiri dan meluruskannya!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711237
+    m_Localized: Tunggu, aku melihat sesuatu di depan gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711238
+    m_Localized: Ada sesuatu yang bersinar di tempat monster lewat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711239
+    m_Localized: Benar. Ada sesuatu yang bersinar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711240
+    m_Localized: Aku tidak mau sembarangan menyentuhnya lalu menambah pekerjaan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711241
+    m_Localized: Alice, bisa tolong periksa?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711242
+    m_Localized: Ya. Sudah kuperiksa, sepertinya tidak berbahaya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711243
+    m_Localized: Reaksinya mirip batu sinyal, tapi sedikit berbeda.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711244
+    m_Localized: Ini relik.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711245
+    m_Localized: '[Popup Tutorial: Pilih hadiah relik]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711246
+    m_Localized: Efek relik akan tetap berlaku ke stage berikutnya. Pilih 1 dari
+      3.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711247
+    m_Localized: Kalau begitu, kita harus memilih dengan hati-hati.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711248
+    m_Localized: Kalau begitu, yang berkaitan dengan Serah agar ia bisa bertahan
+      lebih lama di depan akan bagus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711249
+    m_Localized: Jalan hutan memiliki jarak pandang sempit. Jika Serah menahan bagian
+      depan, semua orang bisa bergerak lebih mudah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711250
+    m_Localized: Ancient Armor diperoleh. Efeknya akan tetap berlaku di stage berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711251
+    m_Localized: Terpilih. Efek ini juga akan tetap ada di pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711252
+    m_Localized: Mari kita periksa jalan hutan dulu. Noah, ikuti jejak yang ditinggalkan
+      monster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711253
+    m_Localized: Ya. Jejaknya masih ada. Aku akan mengikutinya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711254
+    m_Localized: Aku akan memeriksa kondisi batu sinyal lagi. Kita harus menyesuaikannya
+      sebelum gerombolan berikutnya datang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711255
+    m_Localized: Baik! Ayo cari penyebabnya dan rebut kembali pos tenang kita!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711256
+    m_Localized: Kalau begitu, bergerak sekarang. Kita tidak perlu pergi terlalu
+      jauh, kan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711257
+    m_Localized: Tolong bilang kita tidak perlu pergi...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711258
+    m_Localized: (Keributan di depan gerbang telah berakhir, tetapi pergerakan di
+      hutan belum berhenti.)
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
