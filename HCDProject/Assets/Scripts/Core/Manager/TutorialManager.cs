@@ -202,20 +202,21 @@ public class TutorialManager : BaseManager<TutorialManager>
         DeleteAllGlow();
         background.DOFade(0f, 1);
     }
-
+    
+    //wave1
     private void Tutorial6()
     {
         //5 대사 출력 연속
         TouchActions = null;
         touchShield.SetActive(true);
         touchField.SetActive(true);
-        ShowMessage(scripts.GetData[3].title, scripts.GetData[3].desc);
+        ShowMessage(scripts.GetData[3].title, scripts.GetData[3].desc, false);
         TouchActions = Tutorial7;
     }
     private void Tutorial7()
     {
         TouchActions = null;
-        ShowMessage(scripts.GetData[4].title, scripts.GetData[4].desc);
+        ShowMessage(scripts.GetData[4].title, scripts.GetData[4].desc, false);
         TouchActions = Tutorial8;
     }
     private void Tutorial8()
@@ -234,13 +235,13 @@ public class TutorialManager : BaseManager<TutorialManager>
         TouchActions = null;
         touchShield.SetActive(true);
         touchField.SetActive(true);
-        ShowMessage(scripts.GetData[5].title, scripts.GetData[5].desc);
+        ShowMessage(scripts.GetData[5].title, scripts.GetData[5].desc, false);
         TouchActions = Tutorial10;
     }
     private void Tutorial10()
     {
         TouchActions = null;
-        ShowMessage(scripts.GetData[6].title, scripts.GetData[6].desc);
+        ShowMessage(scripts.GetData[6].title, scripts.GetData[6].desc, false);
         TouchActions = Tutorial11;
     }
     private void Tutorial11()
