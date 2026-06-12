@@ -26,6 +26,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     Coroutine[] _healCoroutines; // 힐링팩터 코루틴
 
+    private AsyncOperationHandle<GameObject> _prefabHandle;
+
     CharacterSlotUI[] _slot;
 
     public ObserveValue<bool> isAllSpawn = new();
@@ -41,7 +43,9 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     private void LoadCharcterPrefab()
     {
-        Addressables.LoadAssetAsync<GameObject>(_characterAddress).Completed += (handle) =>
+        _prefabHandle = Addressables.LoadAssetAsync<GameObject>(_characterAddress);
+
+        _prefabHandle.Completed += (handle) =>
         {
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
@@ -57,6 +61,13 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         };
     }
 
+    private void OnDestroy()
+    {
+        if (_prefabHandle.IsValid()) // 유효할 때만
+        Addressables.Release(_prefabHandle);
+        base.OnDestroy();
+    }
+    
     private void SpawnAllCharacters()
     {
         var data = Service.Get<DataManager>().CharacterTable.data;
@@ -67,17 +78,16 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         for (int i = 0; i < data.Count; i++)
         {
             GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
-
+            
             BaseCharacter chr = obj.GetComponent<BaseCharacter>();
-
+            
             chr.homePosition = _homePoints[i].position;
             chr.spawnPosition = _spawnPoints[i].position;
             chr.Init(data[i], _characterDatas[i]);
+            
             _characters[i] = chr;
-            Debug.Log($"{i}번 플레이어 생성 완료");
-            _slot[i] = Service.Get<UIManager>().
-                GetUI<IngameBottomUIController>()
-                .AddCharacter(data[i], chr, i);
+            _slot[i] = Service.Get<UIManager>() // 생성 시 캐릭터의 UI 슬롯을 요청함
+            .GetUI<IngameBottomUIController>().AddCharacter(data[i], chr, i);
         }
         ApplyRelicStats();
 
