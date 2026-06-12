@@ -12,4 +12,5 @@ public interface ITargetable
 
     public void SetDamage(int damage);
     public void SetHeal(int heal);
+    public float GetRadius();
 }

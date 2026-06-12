@@ -17,14 +17,20 @@ public class SheetToJson : EditorWindow
     private readonly Dictionary<string, string> _gSheets = new Dictionary<string, string>()
     {
         {"1881742159", "MONSTER_TABLE"},
-        {"1063876991", "LEVEL_REWARD"},
+        {"1063876991", "LEVEL_REWARD_TABLE"},
         {"1686886035", "CHARACTER_TABLE"},
         {"1698007139", "STAGE_CLEAR_REWARD_TABLE"},
         {"2033933741", "OBJECT_TABLE"},
-        {"858179508", "SKILL_TABLE"},
+        {"1826977585", "PLAYER_SKILL_TABLE"},
+        {"858179508", "MONSTER_SKILL_TABLE"},
         {"1428489825", "MAP_TABLE"},
+        {"1779569419", "PROJECTILE_TABLE"},
         {"2083529388", "LOCALIZING_TABLE"},
-        {"606265452", "STORY_LOCALIZING_TABLE"}
+        {"606265452", "STORY_LOCALIZING_TABLE"},
+        {"1174224199", "STATIC_VALUE_TABLE"},
+        {"899282129", "STORY_EXP_TABLE"},
+        {"1690070445", "STORY_STAGE_TABLE"},
+        {"1914509138", "SKILL_TABLE"},
     };
 
     
@@ -58,9 +64,13 @@ public class SheetToJson : EditorWindow
         }
         
         string addressAssetPath = "Assets/Data/Json";
-        string assetPath = Path.Combine(Application.dataPath, "Data/Json");
+        string jsonFolderPath = Path.Combine(Application.dataPath, "Data/Json");
+        string csFolderPath = Path.Combine(Application.dataPath, "Scripts/Data");
+
+        ClearData(jsonFolderPath, csFolderPath);
         
-        if (!Directory.Exists(assetPath)) Directory.CreateDirectory(assetPath);
+        if (!Directory.Exists(jsonFolderPath)) Directory.CreateDirectory(jsonFolderPath);
+        if (!Directory.Exists(csFolderPath)) Directory.CreateDirectory(csFolderPath);
         
         int loadSuccessCount = 0; 
         
@@ -72,17 +82,17 @@ public class SheetToJson : EditorWindow
                 string sheetName = sheet.Value;
                 string loadUrl = $"https://docs.google.com/spreadsheets/d/{sheetId}/export?format=tsv&gid={gid}";
                 string addressSavePath = $"{addressAssetPath}/{sheetName}.json";
-                string savePath = Path.Combine(assetPath, $"{sheetName}.json");
+                string savePath = Path.Combine(jsonFolderPath, $"{sheetName}.json");
                 
                 try
                 {
                     string tsvData = client.DownloadString(loadUrl);
                     
-                    TsvToC(sheetName, tsvData);
+                    TsvToC(sheetName, tsvData, csFolderPath);
                     
                     string jsonData = TsvToJson(tsvData);
 
-                    File.WriteAllText(savePath, jsonData);
+                    File.WriteAllText(savePath, jsonData, Encoding.UTF8);
 
                     RegisterToAddressable(addressSavePath, sheetName);
                     
@@ -102,6 +112,7 @@ public class SheetToJson : EditorWindow
     {
         string[] lines = tsvData.Split("\r\n");
         string[] headers = lines[0].Split('\t');
+        string[] types = lines[2].Split('\t');
         
         StringBuilder jsonBuilder = new StringBuilder();
         jsonBuilder.Append("{\n  \"data\": [\n");
@@ -109,6 +120,9 @@ public class SheetToJson : EditorWindow
         for (int i = 3; i < lines.Length; i++)
         {
             string[] values = lines[i].Split('\t');
+            
+            if (values.Length  == 0 || string.IsNullOrWhiteSpace(values[0])) continue;
+            
             jsonBuilder.Append("    {\n");
 
             for (int j = 0; j < headers.Length; j++)
@@ -119,11 +133,16 @@ public class SheetToJson : EditorWindow
                 string value = values[j].Trim();
                 
                 if (string.IsNullOrEmpty(key)) continue;
-                
-                bool isNum = int.TryParse(value, out _) || float.TryParse(value, out _);
-                
-                if (isNum) jsonBuilder.Append($"      \"{key}\": {value}");
-                else       jsonBuilder.Append($"      \"{key}\": \"{value}\"");
+
+                string dataType = j < types.Length ? types[j].Trim().ToLower() : "string";
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    if (dataType == "int" || dataType == "float") value = "0";
+                    else                                          value = "";
+                }
+                if (dataType == "int" || dataType == "float") jsonBuilder.Append($"      \"{key}\": {value}");
+                else                                          jsonBuilder.Append($"      \"{key}\": \"{value}\"");
                 
                 if (j < headers.Length - 1 && j < values.Length - 1) jsonBuilder.Append(",\n");
                 else                                                 jsonBuilder.Append("\n");
@@ -154,7 +173,7 @@ public class SheetToJson : EditorWindow
         #endif
     }
 
-    private void TsvToC(string sheetName, string tsvData)
+    private void TsvToC(string sheetName, string tsvData, string folderPath)
     {
         #if UNITY_EDITOR
         string[] lines = tsvData.Split("\r\n");
@@ -162,9 +181,9 @@ public class SheetToJson : EditorWindow
         string[] names = lines[0].Split('\t');
         string[] types = lines[2].Split('\t');
         
-        string cleanTableName = sheetName.ToLower().Replace("_table", "");
-        string rawClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName) + "RawData";
-        string tableClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName) + "Table";
+        string cleanTableName = sheetName.ToLower().Replace("_table", "").Replace("_", " ");
+        string rawClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName).Replace(" ", "") + "RawData";
+        string tableClassName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanTableName).Replace(" ", "") + "Table";
         
         StringBuilder codeBuilder = new StringBuilder();
         
@@ -206,12 +225,22 @@ public class SheetToJson : EditorWindow
         codeBuilder.AppendLine($"    public List<{rawClassName}> data;"); 
         codeBuilder.AppendLine("}");
         
-        string folderPath = Path.Combine(Application.dataPath, "Scripts/Data");
-        
-        if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
-        
         string talbeFilePath = Path.Combine(folderPath, $"{tableClassName}.cs");
-        File.WriteAllText(talbeFilePath, codeBuilder.ToString());
+        File.WriteAllText(talbeFilePath, codeBuilder.ToString(), Encoding.UTF8);
         #endif
+    }
+
+    private void ClearData(string json, string cs)
+    {
+        if (Directory.Exists(json))
+        {
+            string[] files = Directory.GetFiles(json, "*.json");
+            foreach (var file in files) File.Delete(file);
+        }
+        if (Directory.Exists(cs))
+        {
+            string[] files = Directory.GetFiles(cs, "*.cs");
+            foreach (var file in files) File.Delete(file);
+        }
     }
 }

@@ -16,7 +16,8 @@ public class MonsterDieState : IState
 
     public void Update()
     {
-        Service.Get<MonsterSpawnManager>().DespawnMonster(_controller.MonsterID, _controller.gameObject);
+        Service.Get<PlayerManager>()?.GetExp((int)_controller.Stat.EXP);
+        Service.Get<MonsterSpawnManager>().DespawnMonster(_controller.PrefabIndex, _controller.gameObject);
     }
 
     public void Exit()

@@ -9,6 +9,7 @@ public class TitleUIController : BaseUIController<TitleUIController>
     [SerializeField] private Slider LoadingGauge;
     [SerializeField] private TextMeshProUGUI LoadingText;
     [SerializeField] private Button NextButton;
+    [SerializeField] private TextMeshProUGUI VersionText;
 
     private ObserveValue<bool> _isLoaded = new ();
     private ObserveValue<float> _loadingValue = new ();
@@ -22,6 +23,7 @@ public class TitleUIController : BaseUIController<TitleUIController>
         _isLoaded.AddListener(SetNextButton);
         if(NextButton.gameObject.activeSelf)
             NextButton.gameObject.SetActive(false);
+        SetVersionText();
     }
 
     private void Update()
@@ -60,5 +62,10 @@ public class TitleUIController : BaseUIController<TitleUIController>
     public void OnNextScene()
     {
         Service.Get<SceneController>()?.ChangeScene(SceneType.ModeSelect);
+    }
+
+    private void SetVersionText()
+    {
+        VersionText.text = $"Version : {Application.version}";
     }
 }

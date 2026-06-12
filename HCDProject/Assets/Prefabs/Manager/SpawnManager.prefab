@@ -45,14 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawnManager
   _eManager: 0
-  _spawnOffsetY: 6.5
-  _spawnDelay: 0.5
-  _monsterPrefabs:
-  - {fileID: 8581605575929063650, guid: 8f4531a37b97412418be218496b08e91, type: 3}
-  <SpawnCount>k__BackingField: 20
+  _spawnOffsetY: 7
+  prefabs: []
   monsterCount:
     _data: 0
   currentWave:
     _data: 0
-  stageClear:
-    _data: 0
+  _waveMonsterList: []
+  _waveSpawnCountList: 

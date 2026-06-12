@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class IngamePopupController : BaseUIController<IngamePopupController>
 {
@@ -7,11 +8,12 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     [SerializeField] private GameObject ClearLogo;
     [SerializeField] private GameObject FailLogo;
     
-    [SerializeField] private GameObject RewardPopup;
-    [SerializeField] private GameObject ClearPopup;
+    [SerializeField] private RewardUIController RewardPopup;
+    public RewardUIController GetRewardPopup => RewardPopup;
+    [SerializeField] private ClearPopupUI ClearPopup;
     [SerializeField] private GameObject SortWarningPopup;
-     
 
+    
     public void OnSetDangerBorder(float ratio)
     {
         if (ratio < 0.2f)
@@ -37,23 +39,28 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
         ClearLogo.SetActive(false);
         FailLogo.SetActive(false);
 
-        if (isClear) OnRewardPopup();
+        if (isClear) OnRewardPopup(OnClearPopup);
         else OnFailPopup();
     }
 
-    public void OnRewardPopup()
+    public void OnRewardPopup(UnityAction action = null)
     {
-        RewardPopup.SetActive(true);
+        RewardPopup.SetRelicReward(action);
+    }
+    public void OnLevelUpPopup(UnityAction action = null)
+    {
+        RewardPopup.SetLevelUpReward(action);
     }
 
     public void OnClearPopup()
     {
-        ClearPopup.SetActive(true);
+        ClearPopup.gameObject.SetActive(true);
+        ClearPopup.SetNextButton(showNextButton);
         //TODO : reward Popup은 보상과 연결할 것.
     }
     public void OnFailPopup()
     {
-        ClearPopup.SetActive(true);
+        ClearPopup.gameObject.SetActive(true);
     }
 
     public void OnReturnToStageSelect()
@@ -62,7 +69,13 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     }
     public void OnNextBattle()
     {
-        Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+        Service.Get<GameManager>()?.NextBattle();
+    }
+
+    private bool showNextButton; 
+    public void OnNextButton(bool value)
+    {
+        showNextButton = value;
     }
 
     public void OnEndSort()

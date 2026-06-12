@@ -15,8 +15,18 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 0174584177829b04ea56168d28a97eb3
   m_SerializeEntries:
-  - m_GUID: 0613d0075db3c4540bc7e29fc54a6557
-    m_Address: Rampart
+  - m_GUID: 0eb6176c83b42044e92d6a4008abacf0
+    m_Address: STORY_STAGE_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bc605f71cfab5942ba893843a02234d
+    m_Address: LEVEL_REWARD_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 358d5ff2a8324254cb296af9524a1063
+    m_Address: OBJECT_TABLE
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -30,8 +40,38 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 84990d40b9490d34d82824adb2e2eda2
-    m_Address: SET_ENUM
+  - m_GUID: 64b79cb9d12316049a3ffa1e14bbf826
+    m_Address: PROJECTILE_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 662835aa844c27048a117b63e0e5f082
+    m_Address: STORY_EXP_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 690863d550bb7cb439bc4dff028e6576
+    m_Address: STORY_LOCALIZING_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71849ff40a2b56c48a562f55ab3fdbb4
+    m_Address: STATIC_VALUE_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ccc1408cea93f044954f5f35cb53e0e
+    m_Address: SKILL_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9f1666bda5e6334188f877d0ac42d16
+    m_Address: MONSTER_SKILL_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c440d8d8f1b2a444faa14e845693850a
+    m_Address: STAGE_CLEAR_REWARD_TABLE
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -40,8 +80,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ca36ad26a63501b4685423fd68a1657b
-    m_Address: LEVEL_REWARD
+  - m_GUID: dbf4c08db5284284aa2ea44281d54dd2
+    m_Address: PLAYER_SKILL_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff483a7c037e1be419c6828111753801
+    m_Address: LOCALIZING_TABLE
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

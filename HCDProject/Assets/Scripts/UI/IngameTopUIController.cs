@@ -1,0 +1,68 @@
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
+namespace UI
+{
+    public class IngameTopUIController : BaseUIController<IngameTopUIController>
+    {
+        [SerializeField] private TextMeshProUGUI waveText;
+        [SerializeField] private Slider waveSlider;
+        [SerializeField] private TextMeshProUGUI monsterCountText;
+
+        private void Start()
+        {
+            StartCoroutine(WaitRoution());
+            
+            var spawnManager = Service.Get<MonsterSpawnManager>();
+        
+            if (spawnManager != null)
+            {
+                Debug.Log("Spawn Ui");
+                spawnManager.currentWave.AddListener(ChangeWave);
+                spawnManager.monsterCount.AddListener(ChangeMonsterCount);
+            
+                ChangeWave(spawnManager.currentWave.Value);
+                ChangeMonsterCount(spawnManager.monsterCount.Value);
+            }
+        }
+
+        private IEnumerator WaitRoution()
+        {
+            yield return YieldContainer.WaitForSeconds(0.5f);
+        }
+
+        private void OnDisable()
+        {
+            var spawnManager = Service.Get<MonsterSpawnManager>();
+
+            if (spawnManager != null)
+            {
+                spawnManager.currentWave.RemoveListener(ChangeWave);
+                spawnManager.currentWave.RemoveListener(ChangeMonsterCount);
+            }
+        }
+
+        private void ChangeWave(int wave)
+        {
+            if (waveText != null) waveText.text = $"Wave {wave} / 3";
+
+            if (waveSlider != null)
+            {
+                float progress = (float)wave / 3;
+                waveSlider.value = Mathf.Clamp01(progress);
+            }
+        }
+
+        private void ChangeMonsterCount(int count)
+        {
+            if (monsterCountText == null) return;
+
+            var spawnManager = Service.Get<MonsterSpawnManager>();
+            int maxSpawn = spawnManager != null ? spawnManager.SpawnCount : 0;
+            monsterCountText.text = $": {count} / {maxSpawn}";
+        }
+    }
+}
