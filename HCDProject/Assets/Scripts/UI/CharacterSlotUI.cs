@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterSlotUI : MonoBehaviour, IDropHandler
 {
-    [SerializeField] private Transform[] _subslots; 
+    [SerializeField] private Transform[] _subslots;
     public Transform[] SubSlots => _subslots;
 
     [SerializeField] private Slider hpBar;
@@ -15,10 +15,11 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     [SerializeField] private RectTransform borderRect;
     [SerializeField] private GameObject SkillArea;
     [SerializeField] private Image portraitImage;
+    [SerializeField] private Image DeathCountImage;
+    [SerializeField] private TextMeshProUGUI deathTimerText;
     public RectTransform GetBorderRect => borderRect;
 
     private BaseCharacter _character;
-    
 
 
     public void InitSlot(BaseCharacter character, Sprite image)
@@ -49,7 +50,8 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     {
         hpBar.value = Mathf.Clamp01(value);
         hpText.text = $"{value:p0}";
-    }    
+    }
+
     /// <summary>
     /// 스킬 구독
     /// </summary>
@@ -68,5 +70,21 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void ChangeMode(bool isSort)
     {
         SkillArea.SetActive(!isSort);
+    }
+
+    /// <summary>
+    /// 1이 사망 직후, 0이 부활 임박입니다.
+    /// </summary>
+    /// <param name="value"></param>
+    public void SetDeathCount(float current, float max)
+    {
+        DeathCountImage.fillAmount = Mathf.Clamp01(current / max);
+        deathTimerText.text = $"{current:F1} s";
+    }
+
+    public void SetAlive(bool isAlive)
+    {
+        deathTimerText.gameObject.SetActive(!isAlive);
+        hpText.gameObject.SetActive(isAlive);
     }
 }
