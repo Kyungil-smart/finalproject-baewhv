@@ -24,8 +24,12 @@ public class Rampart : MonoBehaviour, ITargetable
 
     private void OnEnable()
     {
+        if (CurrentHp == null) return;
+        
         CurrentHp.AddListener(WallDestroy);
-        CurrentHp.AddRatioListener(Service.Get<UIManager>().GetUI<IngamePopupController>().OnSetDangerBorder);
+
+        var popup = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
+        if (popup != null) CurrentHp.AddRatioListener(popup.OnSetDangerBorder);
     }
 
     private void OnDisable()
