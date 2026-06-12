@@ -93,7 +93,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.uKey.wasPressedThisFrame)
             {
-                Debug.Log($"현재 타임스케일 {Time.timeScale}");
+                _wall.SetDamage(10);
             }
     }
     
@@ -245,8 +245,6 @@ public class GameManager : BaseManager<GameManager>
             return;
         }
         
-        SpawnWall();
-        
         List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
         
         ids = new HashSet<string>();
@@ -279,9 +277,11 @@ public class GameManager : BaseManager<GameManager>
             {
                 case StageType.Tutorial:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
+                    SpawnWall();
                     break;
                 case StageType.Normal:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                    SpawnWall();
                     break;
                 case StageType.Event:
                     break;
@@ -289,6 +289,7 @@ public class GameManager : BaseManager<GameManager>
                     break;
                 case StageType.Boss:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                    SpawnWall();
                     break;
             }
         }
