@@ -53,11 +53,12 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             {
                 _loadedPrefab = handle.Result;
                 Debug.Log("플레이어 프리팹 로드 성공");
-                
-                if (!Service.Get<TutorialManager>())
+
+                SpawnAllCharacters();
+                /*if (!Service.Get<TutorialManager>())
                 {
-                    SpawnAllCharacters();
-                }
+                    
+                }*/
             }
 
             else
