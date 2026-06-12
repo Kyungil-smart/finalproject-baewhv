@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 // 모든 직업군이 공통으로 가질 클래스
 public class BaseCharacter : BaseController
@@ -24,6 +25,7 @@ public class BaseCharacter : BaseController
 
     [SerializeField] private Vector3 _homePosition; // 지정된 위치
     [SerializeField] private Vector3 _spawnPosition; // 스폰 및 부활
+    [SerializeField] private Slider _hpBar; // 캐릭터 개별 HP바
 
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
@@ -156,12 +158,18 @@ public class BaseCharacter : BaseController
         _activeSkillCoolCount += Time.deltaTime;
     }
 
-    public void BindHpUI(UnityAction<float> action)
+    public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바
     {
         int maxValue = _stats._maxHp;
         CurrentHp = new RatioIntValue(maxValue);
         CurrentHp.AddRatioListener(action);
         CurrentHp.AddListener(CheckDeath);
+        CurrentHp.AddRatioListener(bar =>
+        {
+            if (_hpBar == null) return;
+            _hpBar.value = bar;
+        });
+        CurrentHp.Invoke();
     }
 
     #region Init()

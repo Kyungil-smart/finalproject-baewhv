@@ -39,9 +39,10 @@ public class SortManager : BaseManager<SortManager>
         }
     }
 
-    private void AutoSetupUISlots()
+    public void AutoSetupUISlots()
     {
         characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
+        Debug.Log($"AutoSetupUISlots 실행 시점 | 슬롯 수: {characterSlots?.Length}");
     }
 
     public void AddCombo(int amount)
