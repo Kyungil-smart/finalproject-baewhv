@@ -123,8 +123,26 @@ public class SortManager : BaseManager<SortManager>
     public void OnStartSort()
     {
         isEndSort.Value = false;
-        RemainingSorts.Value = 6;
         CurrentCombo.Value = 0;
+
+        var gameManager = Service.Get<GameManager>();
+        var spawnManager = Service.Get<MonsterSpawnManager>();
+        var dataManager = Service.Get<DataManager>();
+
+        if (gameManager != null && spawnManager != null && dataManager != null)
+        {
+            int CC = gameManager.CurrentChapter;
+            int CS = gameManager.CurrentStage;
+            int CW = spawnManager.currentWave.Value;
+
+            var mapData = dataManager.MapTable.data.Find(x => x.CHAPTER == CC && x.STAGE == CS && x.WAVE == CW);
+
+            if (mapData != null)
+            {
+                RemainingSorts.Value = mapData.SORT_COUNT;
+                Debug.Log($"{CC}-{CS} [{CW}웨이브], 횟수 {mapData.SORT_COUNT}회");
+            }
+        }
 
         BuffsBox.Clear();
 
