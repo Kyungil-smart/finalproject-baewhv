@@ -16,6 +16,7 @@ public class RailManager : BaseManager<RailManager>
     private const int maxColumns = 6;
 
     private List<DragAndDrop> railABlocks = new List<DragAndDrop>();
+    public List<DragAndDrop> GetRailA => railABlocks;
     private List<DragAndDrop> railBBlocks = new List<DragAndDrop>();
 
     private List<GameObject> initialBlockBag = new List<GameObject>();

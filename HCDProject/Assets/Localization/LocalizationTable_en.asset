@@ -114,6 +114,450 @@ MonoBehaviour:
     m_Localized: Serah
     m_Metadata:
       m_Items: []
+  - m_Id: 863262176796672
+    m_Localized: Narration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128320
+    m_Localized: Fortress Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128321
+    m_Localized: Demian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128322
+    m_Localized: Commander
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262227128323
+    m_Localized: System
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322624
+    m_Localized: (My first assignment was quieter than I expected.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322625
+    m_Localized: Is this Cies Defense Fortress? They said monsters almost never appear
+      here, and it really is quiet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322626
+    m_Localized: Are you the Commander and the Guardians?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322627
+    m_Localized: Welcome to Cies Defense Fortress.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322628
+    m_Localized: Thanks for the welcome. Sorry to talk business right away, but please
+      show us around.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322629
+    m_Localized: This is Serah, and this is Noah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322630
+    m_Localized: Nice to meet you. I am Serah, in charge of the front line. I will
+      check the gate area first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322631
+    m_Localized: I am Noah. I will check any distant movement first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322632
+    m_Localized: And these are Alice and Spayin.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322633
+    m_Localized: I am Alice. I handle signal stone checks and magic support. I am
+      more thorough than I look, so do not worry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322634
+    m_Localized: I am Spayin. I handle healing. If you are hurt, tell me right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322635
+    m_Localized: I am Demian, captain of the Cies Fortress Guard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322636
+    m_Localized: We will be counting on you, Demian. We were briefed on what to check
+      before arriving.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322637
+    m_Localized: Serah, check the gate checkpoint. Noah, watch the forest road from
+      the tower.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322638
+    m_Localized: Alice, check the signal stones. Spayin, can you check the supply
+      storage?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322639
+    m_Localized: Demian, can you assign guides to the four of them?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322640
+    m_Localized: Understood. I will assign guides at once.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322641
+    m_Localized: Good! I will check the gate checkpoint.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322642
+    m_Localized: I will check the tower first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322643
+    m_Localized: I will check the signal stones, then help Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322644
+    m_Localized: If it is the supply storage inside the gate... is that not the farthest
+      place from here?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322645
+    m_Localized: Even if it is far, checking it now will keep us from getting lost
+      later.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322646
+    m_Localized: Serah, want to switch roles with me...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322647
+    m_Localized: Sorry. I think I should handle the checkpoint. Stopping things at
+      the front is my job.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322648
+    m_Localized: That is so right it makes me even sadder...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322649
+    m_Localized: (Just as we were about to check our positions, the alarm bell rang
+      loudly inside the fortress.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322650
+    m_Localized: Report! Monster alarm! We have confirmed many monsters from the
+      forest! They are approaching the gate!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322651
+    m_Localized: Serah... you said it was quiet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322652
+    m_Localized: It was!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322653
+    m_Localized: First, let us think about how to make it quiet again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322654
+    m_Localized: Noah, keep watching the forest road from the tower.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322655
+    m_Localized: Spayin, bring first-aid supplies from the storage. Both of you,
+      join us at the gate when ready.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322656
+    m_Localized: Okay. I will check and come right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322657
+    m_Localized: Ugh... I came all the way to the farthest place, and now I have
+      to go right back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322658
+    m_Localized: Serah and Alice, the two of you stop the monsters at the gate checkpoint
+      first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322659
+    m_Localized: Good! I will hold here. I will not let them get through to the gate!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322660
+    m_Localized: Serah, take the front. I will handle the enemies that group up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322661
+    m_Localized: Got it. I will move out as soon as the signal comes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322662
+    m_Localized: The monster horde has reached the gate! Commander, please prepare
+      the signal stones!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322663
+    m_Localized: I will send the signal to Serah and Alice first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322664
+    m_Localized: Signal link confirmed. Serah, are you ready?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322665
+    m_Localized: Good, here I go!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322666
+    m_Localized: '[Tutorial Popup: Learn signal stone timing actions and 3-Sort combo
+      attacks]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322667
+    m_Localized: Please drag the attack signal stone to Serah's slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322668
+    m_Localized: Please align three matching signal stones to complete a combo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322669
+    m_Localized: They are pouring out! I will hold the front!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322670
+    m_Localized: If the enemies group up, I will deal with them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322671
+    m_Localized: I see the second wave. I will join now. I will watch the enemies
+      coming from afar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322672
+    m_Localized: The supply side is locked. I brought bandages too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322673
+    m_Localized: Still, I am glad you came right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322674
+    m_Localized: If I am late, I will only get busier...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322675
+    m_Localized: Good! Now everyone is here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322676
+    m_Localized: Now I can at least check on you right away if you get hurt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322677
+    m_Localized: '[Tutorial Popup: Gain EXP by defeating enemies and choose a level-up
+      reward]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322678
+    m_Localized: Please choose one level-up reward card.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322679
+    m_Localized: Large monster/boss appears
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322680
+    m_Localized: I see a big one. This wave is moving around that thing!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322681
+    m_Localized: Then we just have to stop that big one first. I will stand at the
+      front!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322682
+    m_Localized: Serah, wait! That huge one will take too long with normal attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322683
+    m_Localized: Commander, send Serah the skill signal!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322684
+    m_Localized: Not a normal signal. It is an ultimate signal that spends the full
+      gauge!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322685
+    m_Localized: '[Tutorial Popup: Use the gauge to activate a special skill/ultimate]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322686
+    m_Localized: Please use the Ultimate Gauge to activate Serah's ultimate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322687
+    m_Localized: Signal confirmed! I will hit it with one big blow!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322688
+    m_Localized: (We defeated all the monsters in front of the gate.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322689
+    m_Localized: Is anyone hurt? If something hurts, tell me right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322690
+    m_Localized: No! I am not hurt! The stone ground by the gate is... well, probably
+      fine?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322691
+    m_Localized: Probably fine is not really an answer, but at least we stopped the
+      monsters before they reached the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322692
+    m_Localized: I will check the stone ground. If repairs get bigger later, it will
+      be more annoying.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322693
+    m_Localized: But something is strange. That monster group all came down from
+      the forest road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262231322694
+    m_Localized: When I looked from the tower, there was still movement deeper in
+      the forest road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711232
+    m_Localized: Then we need to check the forest road again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711233
+    m_Localized: Cies is not normally a place where monsters swarm like this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711234
+    m_Localized: They said it was a quiet post, but that rumor was completely wrong.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711235
+    m_Localized: The first person to say that rumor was Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711236
+    m_Localized: Then I can check it myself and correct it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711237
+    m_Localized: Wait, I see something in front of the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711238
+    m_Localized: Something shining was left where the monsters passed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711239
+    m_Localized: You are right. Something is shining!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711240
+    m_Localized: I do not want to touch it carelessly and make more work...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711241
+    m_Localized: Alice, can you check it for me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711242
+    m_Localized: Yes. I checked it, and it does not seem dangerous.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711243
+    m_Localized: It feels similar to a signal stone reaction, but a little different.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711244
+    m_Localized: This is a relic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711245
+    m_Localized: '[Tutorial Popup: Choose a relic reward]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711246
+    m_Localized: Relic effects carry over to the next stage. Please choose one of
+      the three.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711247
+    m_Localized: Then we should choose carefully.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711248
+    m_Localized: Then something related to Serah, so she can hold the front longer,
+      would be good.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711249
+    m_Localized: The forest road has poor visibility. If Serah holds the front, everyone
+      can move more easily.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711250
+    m_Localized: Ancient Armor acquired. Its effect will remain in later stages.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711251
+    m_Localized: Selected. This effect will remain in the next battle too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711252
+    m_Localized: Let us check the forest road first. Noah, follow the traces left
+      by the monsters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711253
+    m_Localized: Okay. The traces are still there. I will follow them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711254
+    m_Localized: I will check the signal stone condition again. We need to tune them
+      before the next group comes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711255
+    m_Localized: Good! Let us find the cause and get our quiet post back!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711256
+    m_Localized: Then let us move now. We will not have to go too far, right...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711257
+    m_Localized: Please say we do not have to go...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711258
+    m_Localized: (The commotion at the gate had ended, but the movement in the forest
+      had not stopped yet.)
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
