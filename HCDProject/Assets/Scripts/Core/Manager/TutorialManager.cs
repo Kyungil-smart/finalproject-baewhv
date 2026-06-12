@@ -27,18 +27,23 @@ public class TutorialManager : BaseManager<TutorialManager>
     private int sortRemain = -1;
 
     private bool IsSkillTutorial;
+    private GameState currentState;
 
     private void Start()
     {
+        
         Service.Get<GameManager>()?.CurrentState.AddListener(OnChangeGameStateType);
         Service.Get<MonsterSpawnManager>()?.currentWave.AddListener(OnChangeWave);
         Service.Get<SortManager>()?.RemainingSorts.AddListener(OnRemainingSort);
         Service.Get<UIManager>().GetUI<IngamePopupController>().GetRewardPopup.AddListener(OpenLevelUpPopup);
+        Service.Get<UIManager>().GetUI<IngamePopupController>().GetClearPopup.AddListener(OpenResultPopup);
+        
         background = touchShield.GetComponent<Image>();
     }
 
     private void OnChangeGameStateType(GameState state)
     {
+        currentState = state; 
         if (state == GameState.Sort)
         {
             if (currentWave == 0)
@@ -66,19 +71,15 @@ public class TutorialManager : BaseManager<TutorialManager>
             }
             if (currentWave == 3)
             {
-                Tutorial9();
+                Tutorial12();
                 Debug.Log($"2bjm {state} / {currentWave}");
             }
         }
-        
-        
+        else if (state == GameState.Clear)
+        {
+            Tutorial17();
+        }
     }
-
-
-    private void OnSortCount(int count)
-    {
-    }
-
     private void OnRemainingSort(int value)
     {
         if (currentWave != 0) return;
@@ -93,7 +94,7 @@ public class TutorialManager : BaseManager<TutorialManager>
         currentWave = value;
     }
 
-    private GameObject CopyNGlow(GameObject raw)
+    private void CopyNGlow(GameObject raw)
     {
         GameObject clone = Instantiate(raw, uiStorage, false);
         RectTransform rawRt = (RectTransform)raw.transform;
@@ -103,7 +104,6 @@ public class TutorialManager : BaseManager<TutorialManager>
         rt.localScale = rawRt.localScale;
         clone.GetComponent<UIGlow>()?.StartGlow();
         GlowUIList.Add(clone);
-        return clone;
     }
 
     private void DeleteAllGlow()
@@ -268,7 +268,7 @@ public class TutorialManager : BaseManager<TutorialManager>
         HideMessage();
     }
     
-    //wave2
+    //wave3
     private void Tutorial12()
     {
         //5 대사 출력 연속
@@ -300,6 +300,7 @@ public class TutorialManager : BaseManager<TutorialManager>
         ShowMessage(scripts.GetData[10].title, scripts.GetData[10].desc);
         CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots[0].gameObject);
         TouchActions = Tutorial16;
+        background.DOFade(0.75f, 1);
         HideMessage();
     }
     private void Tutorial16()
@@ -311,18 +312,140 @@ public class TutorialManager : BaseManager<TutorialManager>
         touchField.SetActive(false);
         IsSkillTutorial = true;
         //playerUseSkill
+        background.DOFade(0, 1);
         DeleteAllGlow();
+        HideMessage();
+    }
+    
+    //stageclear
+    private void Tutorial17()
+    {
+        //5 대사 출력 연속
+        TouchActions = null;
+        touchField.SetActive(true);
+        Service.Get<TimeManager>().SaveTimeScale();
+        ShowMessage(scripts.GetData[11].title, scripts.GetData[11].desc, false);
+        TouchActions = Tutorial18;
+    }
+    private void Tutorial18()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[12].title, scripts.GetData[12].desc, false);
+        TouchActions = Tutorial19;
+    }
+    private void Tutorial19()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[13].title, scripts.GetData[13].desc, false);
+        TouchActions = Tutorial20;
+    }
+    private void Tutorial20()
+    {
+        //대사 종료
+        TouchActions = null;
+        touchField.SetActive(false);
+        Service.Get<TimeManager>().LoadTimeScale();
+        HideMessage();
+    }
+    
+    //reward
+    private void Tutorial21()
+    {
+        //5 대사 출력 연속
+        TouchActions = null;
+        touchField.SetActive(true);
+        Service.Get<TimeManager>().SaveTimeScale();
+        ShowMessage(scripts.GetData[14].title, scripts.GetData[14].desc, false);
+        TouchActions = Tutorial22;
+    }
+    private void Tutorial22()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[15].title, scripts.GetData[15].desc, false);
+        TouchActions = Tutorial23;
+    }
+    private void Tutorial23()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[16].title, scripts.GetData[16].desc, false);
+        TouchActions = Tutorial24;
+    }
+    private void Tutorial24()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[17].title, scripts.GetData[17].desc, false);
+        TouchActions = Tutorial25;
+    }
+    private void Tutorial25()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[18].title, scripts.GetData[18].desc, false);
+        TouchActions = Tutorial26;
+    }
+    private void Tutorial26()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[19].title, scripts.GetData[19].desc, false);
+        TouchActions = Tutorial27;
+    }
+
+    private void Tutorial27()
+    {
+        //대사 종료
+        TouchActions = null;
+        touchField.SetActive(false);
+        Service.Get<TimeManager>().LoadTimeScale();
+        HideMessage();
+    }
+    
+    //stageclear
+    private void Tutorial28()
+    {
+        //5 대사 출력 연속
+        TouchActions = null;
+        touchField.SetActive(true);
+        ShowMessage(scripts.GetData[11].title, scripts.GetData[11].desc, false);
+        TouchActions = Tutorial29;
+    }
+    private void Tutorial29()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[12].title, scripts.GetData[12].desc, false);
+        TouchActions = Tutorial30;
+    }
+
+    private void Tutorial30()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[13].title, scripts.GetData[13].desc, false);
+        TouchActions = Tutorial31;
+    }
+    private void Tutorial31()
+    {
+        //대사 종료
+        TouchActions = null;
+        touchField.SetActive(false);
         HideMessage();
     }
 
     private void OpenLevelUpPopup(bool isActive)
     {
+        if (currentState == GameState.Clear)
+        {
+            Tutorial21();
+        }
         if (IsSkillTutorial)
         {
             touchShield.SetActive(false);
-            Service.Get<UIManager>().GetUI<IngamePopupController>().GetRewardPopup.RemoveListener(OpenLevelUpPopup);
+            //Service.Get<UIManager>().GetUI<IngamePopupController>().GetRewardPopup.RemoveListener(OpenLevelUpPopup);
             return;
         }
         touchShield.SetActive(!isActive);
+    }
+
+    private void OpenResultPopup(bool isActive)
+    {
+        if (isActive)
+            Tutorial28();
     }
 }

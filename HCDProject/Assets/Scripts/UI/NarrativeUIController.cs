@@ -38,5 +38,12 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         else
             SetNarrative(Service.Get<NarrativeManager>().GetNextNarrative());
     }
+
+    public void OnSkipButton()
+    {
+        if (isEnd) return;
+        Service.Get<NarrativeManager>().EndNarrative();
+        isEnd = true;
+    }
     
 }

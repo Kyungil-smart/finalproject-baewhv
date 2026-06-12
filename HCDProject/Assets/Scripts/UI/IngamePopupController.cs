@@ -11,6 +11,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     [SerializeField] private RewardUIController RewardPopup;
     public RewardUIController GetRewardPopup => RewardPopup;
     [SerializeField] private ClearPopupUI ClearPopup;
+    public ClearPopupUI GetClearPopup => ClearPopup;
     [SerializeField] private GameObject SortWarningPopup;
 
     
