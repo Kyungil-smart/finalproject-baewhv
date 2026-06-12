@@ -36,7 +36,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     {
         if (isClear) ClearLogo.SetActive(true);
         else FailLogo.SetActive(true);
-        yield return YieldContainer.WaitForSeconds(2.0f);
+        yield return new WaitForSecondsRealtime(2.0f);
         ClearLogo.SetActive(false);
         FailLogo.SetActive(false);
 
