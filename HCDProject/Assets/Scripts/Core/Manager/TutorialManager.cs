@@ -64,6 +64,11 @@ public class TutorialManager : BaseManager<TutorialManager>
                 Tutorial9();
                 Debug.Log($"2bjm {state} / {currentWave}");
             }
+            if (currentWave == 3)
+            {
+                Tutorial9();
+                Debug.Log($"2bjm {state} / {currentWave}");
+            }
         }
         
         
@@ -260,6 +265,53 @@ public class TutorialManager : BaseManager<TutorialManager>
         //대사 종료
         TouchActions = null;
         touchField.SetActive(false);
+        HideMessage();
+    }
+    
+    //wave2
+    private void Tutorial12()
+    {
+        //5 대사 출력 연속
+        TouchActions = null;
+        touchShield.SetActive(true);
+        touchField.SetActive(true);
+        ShowMessage(scripts.GetData[7].title, scripts.GetData[7].desc, false);
+        TouchActions = Tutorial13;
+    }
+    private void Tutorial13()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[8].title, scripts.GetData[8].desc, false);
+        TouchActions = Tutorial14;
+    }
+    private void Tutorial14()
+    {
+        TouchActions = null;
+        ShowMessage(scripts.GetData[9].title, scripts.GetData[9].desc, false);
+        TouchActions = Tutorial15;
+    }
+    private void Tutorial15()
+    {
+        //대사 종료
+        TouchActions = null;
+        touchShield.SetActive(true);
+        touchField.SetActive(true);
+        Service.Get<TimeManager>().OnSetting();
+        ShowMessage(scripts.GetData[10].title, scripts.GetData[10].desc);
+        CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots[0].gameObject);
+        TouchActions = Tutorial16;
+        HideMessage();
+    }
+    private void Tutorial16()
+    {
+        //대사 종료
+        TouchActions = null;
+        Service.Get<TimeManager>().OnSetting();
+        touchShield.SetActive(false);
+        touchField.SetActive(false);
+        IsSkillTutorial = true;
+        //playerUseSkill
+        DeleteAllGlow();
         HideMessage();
     }
 
