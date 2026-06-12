@@ -26,11 +26,14 @@ public class TutorialManager : BaseManager<TutorialManager>
 
     private int sortRemain = -1;
 
+    private bool IsSkillTutorial;
+
     private void Start()
     {
         Service.Get<GameManager>()?.CurrentState.AddListener(OnChangeGameStateType);
         Service.Get<MonsterSpawnManager>()?.currentWave.AddListener(OnChangeWave);
         Service.Get<SortManager>()?.RemainingSorts.AddListener(OnRemainingSort);
+        Service.Get<UIManager>().GetUI<IngamePopupController>().GetRewardPopup.AddListener(OpenLevelUpPopup);
         background = touchShield.GetComponent<Image>();
     }
 
@@ -43,16 +46,23 @@ public class TutorialManager : BaseManager<TutorialManager>
                 Tutorial0();
                 sortRemain = Service.Get<SortManager>().RemainingSorts.Value;
             }
+            else
+            {
+                touchShield.SetActive(false);
+            }
         }
         else if (state == GameState.Wave)
         {
+            Debug.Log($"bjm {state} / {currentWave}");
             if (currentWave == 1)
             {
                 Tutorial6();
+                Debug.Log($"1bjm {state} / {currentWave}");
             }
             if (currentWave == 2)
             {
                 Tutorial9();
+                Debug.Log($"2bjm {state} / {currentWave}");
             }
         }
         
@@ -66,6 +76,7 @@ public class TutorialManager : BaseManager<TutorialManager>
 
     private void OnRemainingSort(int value)
     {
+        if (currentWave != 0) return;
         if (Service.Get<SortManager>()?.RemainingSorts.Value == sortRemain - 1) // TODO : 0이될때? 혹은 감소할 때?
         {
             Tutorial3();
@@ -250,5 +261,16 @@ public class TutorialManager : BaseManager<TutorialManager>
         TouchActions = null;
         touchField.SetActive(false);
         HideMessage();
+    }
+
+    private void OpenLevelUpPopup(bool isActive)
+    {
+        if (IsSkillTutorial)
+        {
+            touchShield.SetActive(false);
+            Service.Get<UIManager>().GetUI<IngamePopupController>().GetRewardPopup.RemoveListener(OpenLevelUpPopup);
+            return;
+        }
+        touchShield.SetActive(!isActive);
     }
 }
