@@ -180,11 +180,6 @@ public class SortManager : BaseManager<SortManager>
             }
             Debug.Log($"전송 완료");
         }
-
-        if (Service.Get<GameManager>()?.CurrentState != null)
-        {
-            Service.Get<GameManager>().CurrentState.Value = GameState.Wave;
-        }
     }
 
     public void ApplyBuffToPlayer(CharacterSlotUI slot, string buffName)
