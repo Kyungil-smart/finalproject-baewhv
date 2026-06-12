@@ -25,7 +25,7 @@ public class BaseCharacter : BaseController
 
     [SerializeField] private Vector3 _homePosition; // 지정된 위치
     [SerializeField] private Vector3 _spawnPosition; // 스폰 및 부활
-    [SerializeField] private Slider _hpBar; // 캐릭터 개별 HP바
+    [SerializeField] private HPBarUI _hpBar; // 캐릭터 개별 HP바
 
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
@@ -164,11 +164,8 @@ public class BaseCharacter : BaseController
         CurrentHp = new RatioIntValue(maxValue);
         CurrentHp.AddRatioListener(action);
         CurrentHp.AddListener(CheckDeath);
-        CurrentHp.AddRatioListener(bar =>
-        {
-            if (_hpBar == null) return;
-            _hpBar.value = bar;
-        });
+        if (_hpBar != null)
+            CurrentHp.AddRatioListener(_hpBar.SetHPBar);
         CurrentHp.Invoke();
     }
 
