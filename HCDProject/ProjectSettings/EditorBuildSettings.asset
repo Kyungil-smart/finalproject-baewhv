@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 42a87a98fbfb5db449463c9af98f1c97
+  - enabled: 1
+    path: Assets/Scenes/NarrativeScene.unity
+    guid: b562bf9b3e5a1ba46a7e0b5cec2b92dd
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: e3d3f30c898fe59428a6987024df67c1, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
