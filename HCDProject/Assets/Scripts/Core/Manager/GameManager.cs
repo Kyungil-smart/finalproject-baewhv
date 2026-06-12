@@ -90,6 +90,11 @@ public class GameManager : BaseManager<GameManager>
             {
                 NarrativeEnd();
             }
+
+            if (Keyboard.current.uKey.wasPressedThisFrame)
+            {
+                Debug.Log($"현재 타임스케일 {Time.timeScale}");
+            }
     }
     
     private void ChangeState(GameState state)
@@ -233,7 +238,7 @@ public class GameManager : BaseManager<GameManager>
         
         var type = CheckStageType(stageStoryData);
 
-        if (type != StageType.Normal && type != StageType.Boss)
+        if (type != StageType.Normal && type != StageType.Boss && type != StageType.Tutorial)
         {
             ids.Clear();
             NextStageScene(stageStoryData, type);
