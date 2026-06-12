@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TimeManager : BaseManager<TimeManager>
 {
-    private float saveTimeScale;
+    private float saveTimeScale = 1;
     
     public void SetSpeed(float speed)
     {
@@ -11,6 +11,8 @@ public class TimeManager : BaseManager<TimeManager>
 
     public void SaveTimeScale()
     {
+        if (Time.timeScale == 0) return;
+        
         saveTimeScale = Time.timeScale;
 
         Time.timeScale = 0;
