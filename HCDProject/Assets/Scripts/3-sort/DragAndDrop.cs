@@ -45,15 +45,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         if (canvas == null) return;
 
-        Vector2 mouseScreenPos = Vector2.zero;
-        if (Mouse.current != null)
-        {
-            mouseScreenPos = Mouse.current.position.ReadValue();
-        }
+        Vector2 pointerScreenPos = eventData.position;
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             transform.parent as RectTransform,
-            mouseScreenPos, 
+            pointerScreenPos,
             canvas.worldCamera,
             out Vector2 localPoint
         );
