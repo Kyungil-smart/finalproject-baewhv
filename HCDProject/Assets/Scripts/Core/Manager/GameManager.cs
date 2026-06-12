@@ -93,7 +93,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.uKey.wasPressedThisFrame)
             {
-                _wall.SetDamage(10);
+                Debug.Log(Time.timeScale);
             }
     }
     
@@ -267,6 +267,9 @@ public class GameManager : BaseManager<GameManager>
 
     private void NextStageScene(StoryStageRawData stageStoryData, StageType type)
     {
+        isLoading = true;
+        CurrentState.Value = GameState.Ready;
+        
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
             Service.Get<SceneController>()?.ChangeScene(SceneType.Narrative);
@@ -277,10 +280,12 @@ public class GameManager : BaseManager<GameManager>
             {
                 case StageType.Tutorial:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
+                    Time.timeScale = 1;
                     SpawnWall();
                     break;
                 case StageType.Normal:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                    Time.timeScale = 1;
                     SpawnWall();
                     break;
                 case StageType.Event:
@@ -289,6 +294,7 @@ public class GameManager : BaseManager<GameManager>
                     break;
                 case StageType.Boss:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                    Time.timeScale = 1;
                     SpawnWall();
                     break;
             }
