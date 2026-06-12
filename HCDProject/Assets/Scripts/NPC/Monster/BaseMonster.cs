@@ -42,6 +42,8 @@ public class BaseMonster : BaseController
     
     private void InitSkill(MonsterRawData data)
     {
+        skills.Clear();
+        
         // 몬스터의 공격(스킬) 데이터 초기화
         var skillDataTable = Service.Get<DataManager>().MonsterSkillTable.data;
         MonsterSkillRawData atkData = skillDataTable.Find(x => x.SKILL_ID == data.ATK_ID);
