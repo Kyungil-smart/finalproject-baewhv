@@ -126,5 +126,6 @@ public enum ESkillAbilityType
     DAMAGE_REDUCTION_P = 11,
     INVISIBILITY = 12,
     DAMAGE_IMMUNITY = 13,
-    SKILL_CD = 14
+    SKILL_CD = 14,
+    ATTACK_BASE = 15
 }
