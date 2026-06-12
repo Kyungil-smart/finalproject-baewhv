@@ -139,8 +139,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322625
-    m_Localized: Is this Cies Defense Fortress? They said monsters almost never appear
-      here, and it really is quiet.
+    m_Localized: Is this the Cies Defense Fortress? They said monsters barely show
+      up here, and it really is quiet.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322626
@@ -152,8 +152,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322628
-    m_Localized: Thanks for the welcome. Sorry to talk business right away, but please
-      show us around.
+    m_Localized: Thanks for the welcome. Sorry to bring up work right away, but could
+      you guide us?
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322629
@@ -161,25 +161,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322630
-    m_Localized: Nice to meet you. I am Serah, in charge of the front line. I will
-      check the gate area first.
+    m_Localized: Nice to meet you. I am Serah, the front-line guard. I will check
+      the gate area first.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322631
-    m_Localized: I am Noah. I will check any distant movement first.
+    m_Localized: I am Noah. I will keep an eye on movement from a distance.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322632
-    m_Localized: And these are Alice and Spayin.
+    m_Localized: And this is Alice, and this is Spayne.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322633
-    m_Localized: I am Alice. I handle signal stone checks and magic support. I am
-      more thorough than I look, so do not worry.
+    m_Localized: I am Alice. I handle signal stone checks and magical support. I
+      am more thorough than I look, so do not worry.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322634
-    m_Localized: I am Spayin. I handle healing. If you are hurt, tell me right away.
+    m_Localized: I am Spayne. I handle healing. If you are hurt, tell me right away.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322635
@@ -187,17 +187,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322636
-    m_Localized: We will be counting on you, Demian. We were briefed on what to check
-      before arriving.
+    m_Localized: We will be counting on you, Demian. We received the tasks to check
+      before we arrived.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322637
     m_Localized: Serah, check the gate checkpoint. Noah, watch the forest road from
-      the tower.
+      the watchtower.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322638
-    m_Localized: Alice, check the signal stones. Spayin, can you check the supply
+    m_Localized: Alice, check the signal stones. Spayne, can you check the supply
       storage?
     m_Metadata:
       m_Items: []
@@ -210,7 +210,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322641
-    m_Localized: Good! I will check the gate checkpoint.
+    m_Localized: All right! I will check the gate checkpoint.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322642
@@ -227,21 +227,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322645
-    m_Localized: Even if it is far, checking it now will keep us from getting lost
+    m_Localized: Even if it is far, checking it now should keep us from getting lost
       later.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322646
-    m_Localized: Serah, want to switch roles with me...?
+    m_Localized: Serah, do you want to switch jobs with me...?
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322647
-    m_Localized: Sorry. I think I should handle the checkpoint. Stopping things at
-      the front is my job.
+    m_Localized: Sorry. I think I should check the checkpoint. Holding the front
+      is my job.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322648
-    m_Localized: That is so right it makes me even sadder...
+    m_Localized: That is so true it just makes me sadder...
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322649
@@ -250,8 +250,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322650
-    m_Localized: Report! Monster alarm! We have confirmed many monsters from the
-      forest! They are approaching the gate!
+    m_Localized: Reporting! Monster alarm! We have confirmed multiple monsters from
+      the forest! They are approaching the gate!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322651
@@ -259,11 +259,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322652
-    m_Localized: It was!
+    m_Localized: It was quiet!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322653
-    m_Localized: First, let us think about how to make it quiet again.
+    m_Localized: First, let us figure out how to make it quiet again.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322654
@@ -271,8 +271,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322655
-    m_Localized: Spayin, bring first-aid supplies from the storage. Both of you,
-      join us at the gate when ready.
+    m_Localized: Spayne, bring first-aid supplies from the storage. Both of you,
+      join us at the gate as soon as you are ready.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322656
@@ -285,16 +285,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322658
-    m_Localized: Serah and Alice, the two of you stop the monsters at the gate checkpoint
-      first.
+    m_Localized: Serah and Alice, stop the monsters at the gate checkpoint first.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322659
-    m_Localized: Good! I will hold here. I will not let them get through to the gate!
+    m_Localized: All right! I will hold here. I will not let them get through to
+      the gate!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322660
-    m_Localized: Serah, take the front. I will handle the enemies that group up.
+    m_Localized: Serah, take the front. I will watch the side where enemies gather.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322661
@@ -302,7 +302,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322662
-    m_Localized: The monster horde has reached the gate! Commander, please prepare
+    m_Localized: The monster horde is approaching the gate! Commander, please prepare
       the signal stones!
     m_Metadata:
       m_Items: []
@@ -315,7 +315,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322665
-    m_Localized: Good, here I go!
+    m_Localized: All right, here I go!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322666
@@ -328,15 +328,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322668
-    m_Localized: Please align three matching signal stones to complete a combo.
+    m_Localized: Please line up three matching signal stones to complete a combo.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322669
-    m_Localized: They are pouring out! I will hold the front!
+    m_Localized: They are starting to pour out! I will hold the front!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322670
-    m_Localized: If the enemies group up, I will deal with them.
+    m_Localized: If enemies group together, I will handle them.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322671
@@ -345,7 +345,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322672
-    m_Localized: The supply side is locked. I brought bandages too.
+    m_Localized: The supply storage is locked. I brought bandages too.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322673
@@ -353,11 +353,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322674
-    m_Localized: If I am late, I will only get busier...
+    m_Localized: If I am late, I will just get busier...
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322675
-    m_Localized: Good! Now everyone is here!
+    m_Localized: All right! Now everyone is here!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322676
@@ -378,12 +378,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322680
-    m_Localized: I see a big one. This wave is moving around that thing!
+    m_Localized: I see a big one. This wave is moving around that one!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322681
-    m_Localized: Then we just have to stop that big one first. I will stand at the
-      front!
+    m_Localized: Then we just have to stop that big one first. I will take the front!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322682
@@ -395,16 +394,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322684
-    m_Localized: Not a normal signal. It is an ultimate signal that spends the full
+    m_Localized: Not a normal signal. It is an ultimate signal that uses the entire
       gauge!
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322685
-    m_Localized: '[Tutorial Popup: Use the gauge to activate a special skill/ultimate]'
+    m_Localized: '[Tutorial Popup: Use the gauge to activate an ultimate skill]'
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322686
-    m_Localized: Please use the Ultimate Gauge to activate Serah's ultimate.
+    m_Localized: Please use the Ultimate Gauge to activate Serah's ultimate skill.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322687
@@ -416,32 +415,32 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322689
-    m_Localized: Is anyone hurt? If something hurts, tell me right away.
+    m_Localized: Is anyone hurt? Do not push yourself. Tell me right away.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322690
-    m_Localized: No! I am not hurt! The stone ground by the gate is... well, probably
+    m_Localized: No! I am not hurt! The stone pavement by the gate is... well, probably
       fine?
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322691
-    m_Localized: Probably fine is not really an answer, but at least we stopped the
-      monsters before they reached the gate.
+    m_Localized: Probably fine is not how we should end that, but at least we stopped
+      the monsters before they reached the gate.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322692
-    m_Localized: I will check the stone ground. If repairs get bigger later, it will
-      be more annoying.
+    m_Localized: I will check the stone pavement. If repairs get worse later, it
+      will be more annoying.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322693
-    m_Localized: But something is strange. That monster group all came down from
+    m_Localized: But something is strange. That monster horde all came down from
       the forest road.
     m_Metadata:
       m_Items: []
   - m_Id: 863262231322694
-    m_Localized: When I looked from the tower, there was still movement deeper in
-      the forest road.
+    m_Localized: When I looked from the watchtower, there was still movement deeper
+      along the forest road.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711232
@@ -461,7 +460,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711236
-    m_Localized: Then I can check it myself and correct it!
+    m_Localized: Then I just have to check it myself and correct it!
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711237
@@ -489,7 +488,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711243
-    m_Localized: It feels similar to a signal stone reaction, but a little different.
+    m_Localized: The reaction is similar to a signal stone's, but a little different.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711244
@@ -510,8 +509,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711248
-    m_Localized: Then something related to Serah, so she can hold the front longer,
-      would be good.
+    m_Localized: Then something related to Serah would be good, so she can hold the
+      front longer.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711249
@@ -537,12 +536,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711254
-    m_Localized: I will check the signal stone condition again. We need to tune them
-      before the next group comes.
+    m_Localized: I will check the signal stones again. We need to tune them before
+      the next group comes.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711255
-    m_Localized: Good! Let us find the cause and get our quiet post back!
+    m_Localized: All right! Let us find the cause and get our quiet post back!
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711256
@@ -550,12 +549,609 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711257
-    m_Localized: Please say we do not have to go...
+    m_Localized: Please tell me we do not have to go far...
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711258
-    m_Localized: (The commotion at the gate had ended, but the movement in the forest
-      had not stopped yet.)
+    m_Localized: (The commotion at the gate had ended, but it seemed the movement
+      in the forest had not stopped yet.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299390316544
+    m_Localized: Let's start checking from here. We won't go too far from the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065280
+    m_Localized: Yeah. There are footprints here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065281
+    m_Localized: If we look a little more, I think we can tell which way they go.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065282
+    m_Localized: Got it. Then let's check carefully.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065283
+    m_Localized: All right. Let's start with the traces.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065284
+    m_Localized: We can figure out where they came down toward the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065285
+    m_Localized: I'll mark the way back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065286
+    m_Localized: If we get lost here, our break time disappears too...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065287
+    m_Localized: That would definitely be a big problem!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065288
+    m_Localized: Getting lost on the way back is the bigger problem.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065289
+    m_Localized: Both are important...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065290
+    m_Localized: Maybe because this is a forest road, the air feels damp.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065291
+    m_Localized: The dirt path is soft, and the sunlight is blocked...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065292
+    m_Localized: If your next words are about being sleepy, please hold them in for
+      a bit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065293
+    m_Localized: I hadn't said that yet...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065294
+    m_Localized: Right. And you just said "yet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065295
+    m_Localized: Wait. The grass by the road is pressed down in one direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065296
+    m_Localized: Which way does it lead?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065297
+    m_Localized: The monster traces lead from deeper in the forest toward the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065298
+    m_Localized: There seem to have been quite a few of them. The footprints overlap
+      all over.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065299
+    m_Localized: Ngh...!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065300
+    m_Localized: Noah?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065301
+    m_Localized: Sorry. I was just a little startled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065302
+    m_Localized: That sound came from the direction the footprints lead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065303
+    m_Localized: Got it. If something comes from there, I'll stop it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065304
+    m_Localized: Serah, don't go too far ahead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065305
+    m_Localized: Move where Noah can still keep track.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065306
+    m_Localized: Got it. I won't go too far.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065307
+    m_Localized: Yeah... as I thought, these traces don't look like they were aiming
+      for the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065308
+    m_Localized: There are a lot of skid marks. Almost no signs that they stopped.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065309
+    m_Localized: It looks like the monsters came fleeing down from deeper in the
+      forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065310
+    m_Localized: Then does that mean something deeper in the forest is chasing them?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065311
+    m_Localized: I don't know yet. But they didn't choose this direction on their
+      own.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065312
+    m_Localized: So they weren't aiming for the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065313
+    m_Localized: It looks more like they were running away from something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065314
+    m_Localized: Commander, I hear monster footsteps getting closer from deeper in
+      the forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065315
+    m_Localized: It's the same direction as the traces we saw.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065316
+    m_Localized: If we fall back now, they may come all the way to the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065317
+    m_Localized: Then we'll stop them here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065318
+    m_Localized: Confirmed! I'll take the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065319
+    m_Localized: All right. I'll clear out the side where they gather.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065320
+    m_Localized: Ugh... fighting on a road like this isn't exactly ideal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065321
+    m_Localized: Still, it's better than letting them push all the way to the gate...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065322
+    m_Localized: Is everyone okay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065323
+    m_Localized: If anything hurts, tell me right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065324
+    m_Localized: If you stay quiet and endure it, it will hurt more...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065325
+    m_Localized: And that means more work for me...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065326
+    m_Localized: I'm fine! I'm not hurt!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065327
+    m_Localized: Noah, if you see more movement, tell me right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065328
+    m_Localized: I'll stop them at the front again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065329
+    m_Localized: Okay. I won't miss it either.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065330
+    m_Localized: I'm fine too. Spayne?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065331
+    m_Localized: Yeah, me too. The forest road was just a little uncomfortable...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065332
+    m_Localized: That's a relief. Let's talk after we get back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065333
+    m_Localized: Getting out safely comes first right now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065334
+    m_Localized: I'm glad everyone is okay.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065335
+    m_Localized: Let's not go any deeper for now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299428065336
+    m_Localized: First, let's head back toward the gate and sort things out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453888
+    m_Localized: Yeah. That sounds good.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453889
+    m_Localized: Got it. Spayne, can you still see the marks for the way back?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453890
+    m_Localized: Yeah. I can see the cloth I marked, and our footprints are still
+      there too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453891
+    m_Localized: Wait. Monster footprints that turn off from the forest path in front
+      of the gate are mixed in here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453892
+    m_Localized: Ugh... I was only trying to check the way back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453893
+    m_Localized: Still, thanks to that, we found traces that leave the forest path
+      in front of the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453894
+    m_Localized: Where do they lead?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453895
+    m_Localized: Toward the entrance road leading south of the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453896
+    m_Localized: They look similar to the traces we saw on the forest road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453897
+    m_Localized: So monsters passed through that way too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453898
+    m_Localized: The southern entrance road...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453899
+    m_Localized: All right. Let's return to the gate first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453900
+    m_Localized: Once we're done reorganizing, we'll check that way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453901
+    m_Localized: Is this the southern entrance road?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453902
+    m_Localized: The location is right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453903
+    m_Localized: The road is narrow. It does not look like a route for a large force.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453904
+    m_Localized: But the footprints continue this far.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453905
+    m_Localized: These are the monster footprints that branched off from the forest
+      path in front of the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453906
+    m_Localized: The depth and direction of the footprints are similar to what we
+      saw on the forest path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453907
+    m_Localized: If the road is narrow, it should be easier for me to stop them up
+      front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453908
+    m_Localized: That is not the only thing to consider.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453909
+    m_Localized: If our view opens up late, our reaction will be late too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453910
+    m_Localized: Just looking at the ground makes it look hard to walk on...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453911
+    m_Localized: It will not be easy to move injured people here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453912
+    m_Localized: Then I just have to stop them before anyone gets hurt!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453913
+    m_Localized: That is true, but do not move too far ahead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453914
+    m_Localized: Got it. I will take only the area I can see.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453915
+    m_Localized: This road should lead toward the gate wall too, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453916
+    m_Localized: Yes. If it follows this direction, it should lead toward the front
+      of the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453917
+    m_Localized: Let us not go too deep into this road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453918
+    m_Localized: We will check the entrance. If it is dangerous, we will stop them
+      here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453919
+    m_Localized: The monster footprints are clearer now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453920
+    m_Localized: They are pressed deeper than the ones we saw on the forest path
+      in front of the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453921
+    m_Localized: It looks like they could not slow down here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453922
+    m_Localized: If they came rushing down like that, we have no choice but to stop
+      them from the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453923
+    m_Localized: Yes. There are a lot of overlapping footprints.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453924
+    m_Localized: They are not lined up in one direction. Some are twisted off to
+      the side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453925
+    m_Localized: These do not look like traces of monsters marching down to attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453926
+    m_Localized: So this is not just happening on the forest path in front of the
+      gate. It reaches this road too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453927
+    m_Localized: If we get pushed back on a road like this, falling down and stopping
+      them both sound like trouble...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453928
+    m_Localized: Then we just stop them before they fall, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453929
+    m_Localized: It is scarier when you say it like it is that easy...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453930
+    m_Localized: Wait. There is movement inside the bushes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453931
+    m_Localized: There is movement where the footprints continue.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453932
+    m_Localized: Which direction are they coming from?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453933
+    m_Localized: From deeper inside the southern entrance road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299436453934
+    m_Localized: It is the same direction as the footprints we saw.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648192
+    m_Localized: Looks like this is going to get bigger...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648193
+    m_Localized: If we get pushed back, it leads straight to the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648194
+    m_Localized: Then we will stop them here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648195
+    m_Localized: Commander, I think they are about to come out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648196
+    m_Localized: The road is narrow, so I do not think many can come down at once.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648197
+    m_Localized: If Serah stops them up front, I can land my magic too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648198
+    m_Localized: Good. We will stop them here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648199
+    m_Localized: Understood. I will stop them from the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648200
+    m_Localized: I will trust you with the rest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648201
+    m_Localized: Okay. Just hold where I can see you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648202
+    m_Localized: Of course. I will not go too deep.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648203
+    m_Localized: Please choose the way where everyone gets hurt less...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648204
+    m_Localized: If someone falls here, getting them up looks hard too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648205
+    m_Localized: I will keep watching their movement from here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648206
+    m_Localized: Serah, if you go too deep, I will tell you right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648207
+    m_Localized: Got it. If Noah says it, I will adjust right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648208
+    m_Localized: Is everyone okay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648209
+    m_Localized: Is anyone hurt?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648210
+    m_Localized: I am okay! I am not hurt!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648211
+    m_Localized: The narrow road was not as bad as I thought.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648212
+    m_Localized: I am okay too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648213
+    m_Localized: You know that was pretty close, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648214
+    m_Localized: It was close, but I still stopped them, did I not?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648215
+    m_Localized: True... but next time, be a little more careful.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648216
+    m_Localized: Yeah, me too... The road was just uncomfortable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648217
+    m_Localized: I do not want to stay in a place like this for long.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648218
+    m_Localized: I will check the monster footprints again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648219
+    m_Localized: Yes. Check whether they connect toward the gate wall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648220
+    m_Localized: They do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648221
+    m_Localized: The traces from the forest path in front of the gate and the southern
+      entrance road turn in the same direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648222
+    m_Localized: Then both roads meet in front of the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648223
+    m_Localized: And there is still movement deeper inside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648224
+    m_Localized: It may continue toward the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648225
+    m_Localized: Then next time, I will check the direction Noah is watching first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648226
+    m_Localized: Yeah. I will make sure I do not miss it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648227
+    m_Localized: It is good that we are getting more in sync...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648228
+    m_Localized: So why does it feel like we have more work every time...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648229
+    m_Localized: We have checked the monster traces on the southern entrance road
+      enough.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1035299440648230
+    m_Localized: Next, let us check the area in front of the gate wall.
     m_Metadata:
       m_Items: []
   references:
