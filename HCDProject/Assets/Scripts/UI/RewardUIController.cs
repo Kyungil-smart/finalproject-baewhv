@@ -23,7 +23,7 @@ public class RewardUIController : MonoBehaviour
         isOpenRewardPopup.Value = false;
         CloseCallback?.Invoke();
         CloseCallback = null;
-        Service.Get<TimeManager>().OnSetting();
+        Service.Get<TimeManager>().LoadTimeScale();
     }
 
     public void OnButtonSelected(int index)
@@ -56,7 +56,7 @@ public class RewardUIController : MonoBehaviour
         isOpenRewardPopup.Value = true;
         titleText.text = title;
         contentText.text = content;
-        Service.Get<TimeManager>().OnSetting();
+        Service.Get<TimeManager>().SaveTimeScale();
     }
     
 

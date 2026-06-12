@@ -296,7 +296,7 @@ public class TutorialManager : BaseManager<TutorialManager>
         TouchActions = null;
         touchShield.SetActive(true);
         touchField.SetActive(true);
-        Service.Get<TimeManager>().OnSetting();
+        Service.Get<TimeManager>().SaveTimeScale();
         ShowMessage(scripts.GetData[10].title, scripts.GetData[10].desc);
         CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots[0].gameObject);
         TouchActions = Tutorial16;
@@ -306,7 +306,7 @@ public class TutorialManager : BaseManager<TutorialManager>
     {
         //대사 종료
         TouchActions = null;
-        Service.Get<TimeManager>().OnSetting();
+        Service.Get<TimeManager>().LoadTimeScale();
         touchShield.SetActive(false);
         touchField.SetActive(false);
         IsSkillTutorial = true;
