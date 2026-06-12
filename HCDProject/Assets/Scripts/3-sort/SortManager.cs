@@ -52,7 +52,15 @@ public class SortManager : BaseManager<SortManager>
 
     public void ObjectDrop(CharacterSlotUI targetSlot, DragAndDrop draggedobject)
     {
-        if (RemainingSorts.Value <= 0 || isEndSort.Value == true || targetSlot == null || draggedobject == null)
+
+        if (targetSlot == null || draggedobject == null) return;
+
+        if (isEndSort.Value)
+        {
+            return;
+        }
+
+        if (RemainingSorts.Value <= 0)
         {
             return;
         }
@@ -134,21 +142,22 @@ public class SortManager : BaseManager<SortManager>
         {
             int CC = gameManager.CurrentChapter;
             int CS = gameManager.CurrentStage;
+
             int CW = spawnManager.currentWave.Value;
+            if (CW <= 0) CW = 1;
 
             var mapData = dataManager.MapTable.data.Find(x => x.CHAPTER == CC && x.STAGE == CS && x.WAVE == CW);
 
             if (mapData != null)
             {
                 RemainingSorts.Value = mapData.SORT_COUNT;
-                Debug.Log($"{CC}-{CS} [{CW}웨이브], 횟수 {mapData.SORT_COUNT}회");
+                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 횟수: {mapData.SORT_COUNT}회");
             }
         }
 
         BuffsBox.Clear();
 
         Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
-
         Service.Get<RailManager>()?.InitializeRail();
     }
 
