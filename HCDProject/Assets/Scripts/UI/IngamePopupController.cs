@@ -9,10 +9,11 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     [SerializeField] private GameObject FailLogo;
     
     [SerializeField] private RewardUIController RewardPopup;
+    public RewardUIController GetRewardPopup => RewardPopup;
     [SerializeField] private ClearPopupUI ClearPopup;
     [SerializeField] private GameObject SortWarningPopup;
-     
 
+    
     public void OnSetDangerBorder(float ratio)
     {
         if (ratio < 0.2f)
