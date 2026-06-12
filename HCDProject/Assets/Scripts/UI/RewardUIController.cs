@@ -23,7 +23,7 @@ public class RewardUIController : MonoBehaviour
         isOpenRewardPopup.Value = false;
         CloseCallback?.Invoke();
         CloseCallback = null;
-        Service.Get<TimeManager>().OffSetting();
+        Service.Get<TimeManager>().OnSetting();
     }
 
     public void OnButtonSelected(int index)
