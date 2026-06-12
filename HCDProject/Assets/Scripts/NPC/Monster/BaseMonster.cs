@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics.Geometry;
 using UnityEngine;
@@ -169,6 +170,79 @@ public class BaseMonster : BaseController
         }
     }
 
+    public void ReSkill(int index)
+    {
+        if (GetCurrentTarget == null) return;
+
+        if (skills[index].SKILL_AT == ETargetType.ENEMY)
+        {
+            if (skills[index].SKILL_TYPE == ESkillType.SINGLE_TARGET)
+            {
+                if (skills[index].ATK_TYPE == EAtkType.NORMAL)
+                {
+                    // 기본 공격
+                    int damage = Stat.ATK * (int)skills[index].SKILL_AB_01;
+                    GetCurrentTarget.SetDamage(damage);
+                }
+                else if (skills[index].ATK_TYPE == EAtkType.SKILL)
+                {
+                    if (skills[index].SKILL_ABT_01 == ESkillAbilityType.DAMAGE_TARGET_MAX_HP_P)
+                    {
+                        // 모든 플레이어 체력 감소 스킬
+                    }
+                    else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_MULT)
+                    {
+                        // 투사체 발사 (경로상 모든 플레이어 데미지)
+                    }
+                }
+            }
+            else if (skills[index].SKILL_TYPE == ESkillType.ALL_TARGET)
+            {
+                if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
+                {
+                    // 플레이어 체력 감소
+                    RangeDetect(index);
+            
+                    if (Count <= 0) return;
+
+                    for (int i = 0; i < Count; i++)
+                    {
+                        if (Colliders[i].TryGetComponent(out BaseCharacter target))
+                        {
+                            target.SetDamage((int)skills[index].SKILL_AB_01);
+                        }
+                    }
+                }
+                
+                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
+                {
+                    // 플레이어 이동속도, 공격속도 감소
+                    RangeDetect(index);
+
+                    if (Count <= 0) return;
+
+                    for (int i = 0; i < Count; i++)
+                    {
+                        if (Colliders[i].TryGetComponent(out BaseCharacter target))
+                        {
+                            var stat = target.Stats;
+                            stat._moveSpeed *= 0.5f;
+                            stat._attackSpeed *= 0.5f;
+                        }
+                    }
+                }
+            }
+        }
+        else if (skills[index].SKILL_AT == ETargetType.ALLY)
+        {
+            
+        }
+        else if (skills[index].SKILL_AT == ETargetType.SELF)
+        {
+            
+        }
+    }
+
     public void RangeDetect(int index)
     {
         ContactFilter2D filter = new ContactFilter2D();
@@ -197,6 +271,30 @@ public class BaseMonster : BaseController
         {
             Target = new Vector3(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y, transform.position.z);
         }
+    }
+
+    private IEnumerator SkillDurate(int index, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out BaseCharacter target))
+            {
+                if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
+                {
+                    var stat = target.Stats;
+                    stat._moveSpeed *= 0.5f;
+                    stat._attackSpeed *= 0.5f;
+                }
+                
+                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
+                {
+                    
+                }
+
+            }
+        }
+            
+        yield return new WaitForSeconds(skills[index].SKILL_DURATION);
     }
 
     private void CheckDeath(int value)
