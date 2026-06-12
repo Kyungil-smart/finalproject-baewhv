@@ -267,6 +267,9 @@ public class GameManager : BaseManager<GameManager>
 
     private void NextStageScene(StoryStageRawData stageStoryData, StageType type)
     {
+        isLoading = true;
+        CurrentState.Value = GameState.Ready;
+        
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
             Service.Get<SceneController>()?.ChangeScene(SceneType.Narrative);
