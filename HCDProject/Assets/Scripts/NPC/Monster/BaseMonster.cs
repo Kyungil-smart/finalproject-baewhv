@@ -19,7 +19,10 @@ public class BaseMonster : BaseController
     public MonsterDieState DieState { get; protected set; }
     #endregion
     
-    public Vector3 Target { get; set; }
+    [field:SerializeField] public Vector3 Target { get; set; }
+
+    [SerializeField] private HPBarUI hpBarCanvas;
+    private bool _isActive;
     
     protected BaseCharacter[] _characters;
     
@@ -34,7 +37,8 @@ public class BaseMonster : BaseController
         // 데이터를 받아와서 사용할 위치
         MonsterID = int.Parse(Stat.MONSTER_ID) - 1000;
         gameObject.name = Stat.MONSTER_NAME;
-        CurrentHp.Value = Stat.HP;
+        CurrentHp.MaxValue = Stat.HP;
+        CurrentHp.Value = CurrentHp.MaxValue;
         _stats._maxHp = Stat.HP;
         _stats._defense = Stat.DEF;
         Movement.Agent.speed = Stat.MOVE_SPEED;
@@ -73,9 +77,20 @@ public class BaseMonster : BaseController
     protected override void OnEnable()
     {
         base.OnEnable();
+
+        _isActive = false;
+
+        if (CurrentHp.MaxValue != 0 && CurrentHp.Value <= 0)
+        {
+            CurrentHp.Value = CurrentHp.MaxValue;
+        }
         
         CurrentState.AddListener(ChangeState);
         CurrentHp.AddListener(CheckDeath);
+        CurrentHp.AddListener(OnAttacked);
+        
+        CurrentHp.AddRatioListener(hpBarCanvas.SetHPBar);
+        hpBarCanvas.gameObject.SetActive(_isActive);
         
         State.ChangeState(IdleState);
     }
@@ -84,6 +99,7 @@ public class BaseMonster : BaseController
     {
         CurrentState.RemoveListener(ChangeState);
         CurrentHp.RemoveListener(CheckDeath);
+        CurrentHp.RemoveListener(OnAttacked);
     }
 
     protected virtual void Update()
@@ -271,7 +287,7 @@ public class BaseMonster : BaseController
         }
         else if (GetCurrentTarget is Rampart)
         {
-            Target = new Vector3(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y, transform.position.z);
+            Target = new Vector2(transform.position.x, GetCurrentTarget.GetTargetObject.transform.position.y);
         }
     }
 
@@ -304,6 +320,19 @@ public class BaseMonster : BaseController
         if (value <= 0)
         {
             CurrentState.Value = EStateType.Die;
+        }
+    }
+
+    private void OnAttacked(int value)
+    {
+        if (value < _stats._maxHp)
+        {
+            if (!_isActive)
+            {
+                _isActive = true;
+                hpBarCanvas.gameObject.SetActive(_isActive);
+                CurrentHp.Value = CurrentHp.Value;
+            }
         }
     }
 }
