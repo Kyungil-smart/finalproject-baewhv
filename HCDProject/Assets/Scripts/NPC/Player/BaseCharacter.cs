@@ -37,6 +37,8 @@ public class BaseCharacter : BaseController
 
     public bool _isDead;
 
+    private ObserveValue<bool> IsAlive; // 부활 ui 연동
+
     private float _activeSkillCoolCount; // 액티브스킬쿨타임
 
     private RatioFloatValue _activeSkillCoolValue; // 액티브 스킬게이지 비율
@@ -163,7 +165,7 @@ public class BaseCharacter : BaseController
         _activeSkillCoolValue.Value = result;
     }
 
-    public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바
+    public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바 UI 구독
     {
         int maxValue = _stats._maxHp;
         CurrentHp = new RatioIntValue(maxValue);
@@ -174,11 +176,18 @@ public class BaseCharacter : BaseController
         CurrentHp.Invoke();
     }
 
-    public void BindSkillUI(UnityAction<float> action) // 스킬 게이지 UI 연동
+    public void BindSkillUI(UnityAction<float> action) // 스킬 게이지 UI 구독
     {
         float maxValue = skills[1].SKILL_TIME;
         _activeSkillCoolValue = new RatioFloatValue(maxValue, _activeSkillCoolCount);
         _activeSkillCoolValue.AddRatioListener(action);
+    }
+
+    public void BindDeathUI(UnityAction<bool> action) // 사망판정 UI 구독
+    {
+        IsAlive = new ObserveValue<bool>();
+        IsAlive.AddListener(action);
+        IsAlive.Value = true;
     }
 
     #region Init()
@@ -470,6 +479,7 @@ public class BaseCharacter : BaseController
         if (value <= 0)
         {
             _isDead = true;
+            if (IsAlive != null) IsAlive.Value = false;
             Debug.Log($"[사망] {gameObject.name} | HP: {value}");
             this.state.ChangeState(this.die);
         }
@@ -478,6 +488,7 @@ public class BaseCharacter : BaseController
     public void Revive()
     {
         _isDead = false;
+        if (IsAlive != null) IsAlive.Value = true;
         _isSpawning = true;
         Movement.Agent.enabled = true;
         this.Movement.Agent.Warp(spawnPosition);
