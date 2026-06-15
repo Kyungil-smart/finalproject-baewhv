@@ -101,6 +101,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             .GetUI<IngameBottomUIController>().AddCharacter(data[index], chr, index);
 
         _characters[index].BindHpUI(_slot[index].SetHPBar);
+        _characters[index].BindSkillUI(_slot[index].SetSkillBar);
         if (index == data.Count - 1)
         {
             ApplyRelicStats();
@@ -110,6 +111,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     
     private void SpawnAllCharacters()
     {
+        /*isAllSpawn.Value = false;*/
         var data = Service.Get<DataManager>().CharacterTable.data;
         _characters = new BaseCharacter[data.Count];
         _coroutines = new Coroutine[data.Count];
@@ -134,6 +136,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         for (int i = 0; i < _characters.Length; i++)
         {
             _characters[i].BindHpUI(_slot[i].SetHPBar);
+            _characters[i].BindSkillUI(_slot[i].SetSkillBar);
         }
         Service.Get<SortManager>()?.AutoSetupUISlots();
     }

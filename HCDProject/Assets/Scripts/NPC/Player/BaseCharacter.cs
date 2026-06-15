@@ -37,7 +37,9 @@ public class BaseCharacter : BaseController
 
     public bool _isDead;
 
-    private float _activeSkillCoolCount = 999f; // 액티브스킬쿨타임(임시로 999초)
+    private float _activeSkillCoolCount; // 액티브스킬쿨타임
+
+    private RatioFloatValue _activeSkillCoolValue; // 액티브 스킬게이지 비율
 
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
 
@@ -156,6 +158,9 @@ public class BaseCharacter : BaseController
     {
         _stateMachine?.Update();
         _activeSkillCoolCount += Time.deltaTime;
+        float result = Mathf.Clamp(_activeSkillCoolCount, 0, ActiveSkillCoolTime);
+        if (_activeSkillCoolValue == null) return;
+        _activeSkillCoolValue.Value = result;
     }
 
     public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바
@@ -169,10 +174,19 @@ public class BaseCharacter : BaseController
         CurrentHp.Invoke();
     }
 
+    public void BindSkillUI(UnityAction<float> action) // 스킬 게이지 UI 연동
+    {
+        float maxValue = skills[1].SKILL_TIME;
+        _activeSkillCoolValue = new RatioFloatValue(maxValue, _activeSkillCoolCount);
+        _activeSkillCoolValue.AddRatioListener(action);
+    }
+
     #region Init()
     public void Init(CharacterRawData data, PlayerStats stat)
     {
         _playerStats = stat;
+
+        gameObject.name = data.CHARACTER_NAME; // 플레이어 디버그용
 
         _stats = new CharacterStats
         {
@@ -398,7 +412,6 @@ public class BaseCharacter : BaseController
         if (_isSpawning) return null;
         List<ITargetable> targets = Detect(skills[index].SKILL_IS + GetRadius(), skills[index].SKILL_AT);
         ITargetable nearest = null;
-
         if (FindType == EFindType.LowestHp)
         {
             float lowestRatio = float.MaxValue;
