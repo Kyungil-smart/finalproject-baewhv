@@ -88,7 +88,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
             {
-                NarrativeEnd();
+                // Service.Get<MonsterSpawnManager>()?.DebugWaveStart(1,1,1);
             }
 
             if (Keyboard.current.uKey.wasPressedThisFrame)
@@ -246,6 +246,21 @@ public class GameManager : BaseManager<GameManager>
         }
         
         List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+
+        if (currentStage == null)
+        {
+            _currentChapter = 1;
+            _currentStage = 1;
+            
+            currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+            
+            if  (currentStage == null) return;
+        }
+        else
+        {
+            _currentChapter = chapter;
+            _currentStage = stage;
+        }
         
         ids = new HashSet<string>();
 
