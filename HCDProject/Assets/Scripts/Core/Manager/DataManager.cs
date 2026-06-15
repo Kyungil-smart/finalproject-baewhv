@@ -35,10 +35,7 @@ public class DataManager : BaseManager<DataManager>
         base.Awake();
         
         dataValue = new RatioIntValue(14, 0);
-    }
-
-    private void Start()
-    {
+        
         InitData(() =>
         {
             Debug.Log("초기 데이터 받기 성공");
