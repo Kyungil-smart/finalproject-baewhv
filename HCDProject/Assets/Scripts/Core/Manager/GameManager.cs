@@ -345,6 +345,21 @@ public class GameManager : BaseManager<GameManager>
         };
     }
 
+    public void RepairRampart()
+    {
+        var repairData = Service.Get<DataManager>()?.StageClearRewardTable.data.Find(x => x.CLEAR_REWARD_ID == "4012");
+
+        if (repairData != null)
+        {
+            float value = repairData.CLEAR_REWARD_F_01;
+
+            if (_currentWallHp != -1)
+            {
+                _currentWallHp += (int)value;
+            }
+        }
+    }
+
     public void ClearStage()
     {
         NextStage();
