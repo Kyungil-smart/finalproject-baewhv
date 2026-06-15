@@ -88,7 +88,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
             {
-                Service.Get<MonsterSpawnManager>()?.DebugWaveStart(1,1,1);
+                // Service.Get<MonsterSpawnManager>()?.DebugWaveStart(1,1,1);
             }
 
             if (Keyboard.current.uKey.wasPressedThisFrame)
