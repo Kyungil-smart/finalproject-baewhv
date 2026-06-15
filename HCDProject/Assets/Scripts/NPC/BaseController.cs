@@ -15,7 +15,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         }
     }
 
-    protected RatioIntValue CurrentHp = new RatioIntValue(0);
+    [SerializeField] protected RatioIntValue CurrentHp = new RatioIntValue(0);
 
 
     public bool IsAlive()
@@ -124,8 +124,13 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void SetDamage(int damage)
     {
         int def = Mathf.Max(damage - _stats._defense, 0);
-
+        
         CurrentHp.Value -= def;
+
+        if (CurrentHp.Value < 0)
+        {
+            CurrentHp.Value = 0;
+        }
     }
 
     public void SetHeal(int heal)

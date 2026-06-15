@@ -38,8 +38,6 @@ public class CharacterMovement : MonoBehaviour
 
     public void Move(Vector2 target)
     {
-        if ((_currentTarget - target).sqrMagnitude < 0.01f) return;
-        
         _currentTarget = target;
         
         Agent.isStopped = false;
