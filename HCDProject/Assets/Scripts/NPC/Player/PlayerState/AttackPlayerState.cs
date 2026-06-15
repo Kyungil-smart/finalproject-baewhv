@@ -49,7 +49,9 @@ public class AttackPlayerState : IState
 
         else
         {
-            Debug.Log($"[공격] {_owner.gameObject.name}이(가) 스킬 {_owner.SkillTargetIndex}번 발동");
+            Debug.Log($"[공격] {_owner.gameObject.name}이(가) " +
+          $"{_owner.skills[_owner.SkillTargetIndex].SKILL_TYPE} / " +
+          $"{_owner.skills[_owner.SkillTargetIndex].SKILL_AT} 발동");
             _owner.UseSkill(_owner.SkillTargetIndex); // 공격
             _owner.CompleteFirstCombat();
             coolCount = 0;
