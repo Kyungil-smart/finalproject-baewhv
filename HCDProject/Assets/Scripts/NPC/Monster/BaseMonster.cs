@@ -335,4 +335,9 @@ public class BaseMonster : BaseController
             }
         }
     }
+
+    public void DebugFunc()
+    {
+        Debug.Log("발생");
+    }
 }
