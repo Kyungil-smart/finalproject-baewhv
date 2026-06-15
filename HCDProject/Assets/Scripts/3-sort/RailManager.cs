@@ -32,6 +32,14 @@ public class RailManager : BaseManager<RailManager>
 
     private void Start()
     {
+        if (Service.Get<TutorialManager>() != null)
+        {
+            Debug.Log("튜토리얼");
+            AutoSetupRailSlots();
+            PlayerInputLock(false);
+            return;
+        }
+
         InitializeRail();
     }
 
@@ -68,6 +76,34 @@ public class RailManager : BaseManager<RailManager>
         }
 
         PlayerInputLock(false);
+    }
+
+    public void TutorialBlocks(List<int> blockSequence)
+    {
+        AutoSetupRailSlots();
+
+        foreach (var block in railABlocks) if (block != null) Destroy(block.gameObject);
+        foreach (var block in railBBlocks) if (block != null) Destroy(block.gameObject);
+        railABlocks.Clear();
+        railBBlocks.Clear();
+        initialBlockBag.Clear();
+
+        if (blockSequence == null || blockSequence.Count == 0) return;
+
+        for (int i = 0; i < blockSequence.Count; i++)
+        {
+            int prefabIndex = blockSequence[i];
+            if (prefabIndex >= 0 && prefabIndex < blockPrefabs.Length)
+            {
+                initialBlockBag.Add(blockPrefabs[prefabIndex]);
+            }
+        }
+
+        int spawnCount = Mathf.Min(initialBlockBag.Count, maxColumns * 2);
+        for (int i = 0; i < spawnCount; i++)
+        {
+            SpawnInitialBlock();
+        }
     }
 
     private void SpawnInitialBlock()
