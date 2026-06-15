@@ -6,8 +6,25 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Random = UnityEngine.Random;
 
-public class RailManager : BaseManager<RailManager>
+public class SortManager : BaseManager<SortManager>
 {
+    private struct SortBuffData
+    {
+        public int index;
+        public string objType;
+        public float finalBuffValue;
+    }
+
+    public CharacterSlotUI[] characterSlots;
+
+    public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
+    public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
+
+    public ObserveValue<bool> isEndSort = new();
+
+    private List<SortBuffData> BuffsBox = new List<SortBuffData>();
+
+    
     [SerializeField] private GameObject[] blockPrefabs = new GameObject[4];
 
     private Transform[] railASlots = new Transform[6];
@@ -28,13 +45,240 @@ public class RailManager : BaseManager<RailManager>
     protected override void Awake()
     {
         base.Awake();
+        isEndSort.Value = false;
     }
 
     private void Start()
     {
+        AutoSetupUISlots();
+        AutoSetupRailSlots();
+
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        if (bottomUI != null)
+        {
+            RemainingSorts.AddListener(bottomUI.SetLeftSortCountText);
+            CurrentCombo.AddListener(bottomUI.SetComboText);
+        }
+
+        if (Service.Get<TutorialManager>() != null)
+        {
+            Debug.Log("튜토리얼");
+            PlayerInputLock(false);
+            return;
+        }
+
         InitializeRail();
     }
 
+    #region [Sort]
+    // UI 슬롯 연결
+    public void AutoSetupUISlots()
+    {
+        characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
+        Debug.Log($"AutoSetupUISlots 실행 시점 | 슬롯 수: {characterSlots?.Length}");
+    }
+
+    // 콤보 증가
+    public void AddCombo(int amount)
+    {
+        CurrentCombo.Value += amount;
+    }
+
+    // 블록 드랍 -> 슬롯 안착
+    public void ObjectDrop(CharacterSlotUI targetSlot, DragAndDrop draggedobject)
+    {
+        if (targetSlot == null || draggedobject == null) return;
+
+        if (isEndSort.Value)
+        {
+            return;
+        }
+
+        if (RemainingSorts.Value <= 0)
+        {
+            return;
+        }
+
+        var subSlots = targetSlot.SubSlots;
+
+        if (subSlots[0] != null && subSlots[0].childCount > 0)
+        {
+            var masterName = GetCleanName(subSlots[0].GetChild(0).gameObject.name);
+            var draggedName = GetCleanName(draggedobject.gameObject.name);
+
+            if (masterName != draggedName)
+            {
+                return;
+            }
+        }
+
+        for (var i = 0; i < subSlots.Length; i++)
+        {
+            if (subSlots[i] != null && subSlots[i].childCount == 0)
+            {
+                draggedobject.transform.SetParent(subSlots[i]);
+                draggedobject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+                RemoveBlockFromRail(draggedobject);
+
+                CheckSlotState(targetSlot);
+                return;
+            }
+        }
+    }
+
+    // 슬롯 3개 다 찼는지 확인, 버프 계산
+    private void CheckSlotState(CharacterSlotUI slot)
+    {
+        for (var i = 0; i < slot.SubSlots.Length; i++)
+        {
+            if (slot.SubSlots[i] == null || slot.SubSlots[i].childCount == 0) return;
+        }
+
+        var buffType = GetCleanName(slot.SubSlots[0].GetChild(0).gameObject.name);
+
+        var blocksDestroy = new GameObject[3];
+        for (var i = 0; i < slot.SubSlots.Length; i++)
+        {
+            blocksDestroy[i] = slot.SubSlots[i].GetChild(0).gameObject;
+        }
+
+        foreach (var block in blocksDestroy)
+        {
+            Destroy(block);
+        }
+
+        if (RemainingSorts.Value > 0)
+        {
+            RemainingSorts.Value--;
+        }
+
+        ApplyBuffToPlayer(slot, buffType);
+
+        if (RemainingSorts.Value <= 0)
+        {
+            PlayerInputLock(true);
+        }
+    }
+
+    // 정렬 시작
+    public void OnStartSort()
+    {
+        isEndSort.Value = false;
+        CurrentCombo.Value = 0;
+
+        if (characterSlots != null)
+        {
+            foreach (var slot in characterSlots)
+            {
+                if (slot == null || slot.SubSlots == null) continue;
+
+                foreach (var subSlot in slot.SubSlots)
+                {
+                    if (subSlot != null && subSlot.childCount > 0)
+                    {
+                        for (int i = subSlot.childCount - 1; i >= 0; i--)
+                        {
+                            Destroy(subSlot.GetChild(i).gameObject);
+                        }
+                    }
+                }
+            }
+        }
+
+        var gameManager = Service.Get<GameManager>();
+        var spawnManager = Service.Get<MonsterSpawnManager>();
+        var dataManager = Service.Get<DataManager>();
+
+        if (gameManager != null && spawnManager != null && dataManager != null)
+        {
+            int CC = gameManager.CurrentChapter;
+            int CS = gameManager.CurrentStage;
+
+            int CW = spawnManager.currentWave.Value;
+            if (CW <= 0) CW = 1;
+
+            var mapData = dataManager.MapTable.data.Find(x => x.CHAPTER == CC && x.STAGE == CS && x.WAVE == CW);
+
+            if (mapData != null)
+            {
+                RemainingSorts.Value = mapData.SORT_COUNT;
+                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 횟수: {mapData.SORT_COUNT}회");
+            }
+        }
+
+        BuffsBox.Clear();
+
+        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
+
+        InitializeRail();
+    }
+
+    public void CheckSortEnd()
+    {
+        FinishSortPhase();
+    }
+
+    public void OnUISortFinish()
+    {
+        if (!isEndSort.Value)
+        {
+            FinishSortPhase();
+        }
+    }
+
+    // 정렬 완료, 버프 적용
+    public void FinishSortPhase()
+    {
+        isEndSort.Value = true;
+        Debug.Log($"[FinishSort] BuffsBox 총 {BuffsBox.Count}개 적용 시작");
+
+        var playerManager = Service.Get<PlayerManager>();
+        if (playerManager != null && BuffsBox.Count > 0)
+        {
+            foreach (var data in BuffsBox)
+            {
+                Debug.Log($"[적용] index:{data.index} | {data.objType} | {data.finalBuffValue}");
+                playerManager.ApplyBuff(data.index, data.objType, data.finalBuffValue);
+            }
+            Debug.Log($"전송 완료");
+        }
+    }
+
+    // 데이블 기반 버프 수치 계산
+    public void ApplyBuffToPlayer(CharacterSlotUI slot, string buffName)
+    {
+        Debug.Log($"buffName 확인: {buffName}");
+        var objectData = Service.Get<DataManager>()?.ObjectTable.data.Find(x => x.OBJ_TYPE == buffName);
+
+        if (objectData == null)
+        {
+            Debug.Log($"{buffName}을 찾지 못함");
+            return;
+        }
+
+        var objType = objectData.OBJ_TYPE;
+        var objAbility = objectData.OBJ_ABILITY;
+        var objWeight = objectData.OBJ_WEIGHT;
+
+        var comboCount = CurrentCombo.Value;
+        var finalBuffValue = objAbility + (objWeight * comboCount);
+
+        Debug.Log($"타입: {objType} | 계산식: {objAbility} + ({objWeight} * {comboCount}콤보) | 최종 적용치: {finalBuffValue}");
+
+        var index = Array.IndexOf(characterSlots, slot);
+
+        BuffsBox.Add(new SortBuffData
+        {
+            index = index,
+            objType = objType,
+            finalBuffValue = finalBuffValue
+        });
+    }
+    #endregion
+
+    #region [Rail]
+    // 레일 초기화 및 블록 배치
     public void InitializeRail()
     {
         AutoSetupRailSlots();
@@ -70,6 +314,34 @@ public class RailManager : BaseManager<RailManager>
         PlayerInputLock(false);
     }
 
+    public void TutorialBlocks(List<int> blockSequence)
+    {
+        AutoSetupRailSlots();
+
+        foreach (var block in railABlocks) if (block != null) Destroy(block.gameObject);
+        foreach (var block in railBBlocks) if (block != null) Destroy(block.gameObject);
+        railABlocks.Clear();
+        railBBlocks.Clear();
+        initialBlockBag.Clear();
+
+        if (blockSequence == null || blockSequence.Count == 0) return;
+
+        for (int i = 0; i < blockSequence.Count; i++)
+        {
+            int prefabIndex = blockSequence[i];
+            if (prefabIndex >= 0 && prefabIndex < blockPrefabs.Length)
+            {
+                initialBlockBag.Add(blockPrefabs[prefabIndex]);
+            }
+        }
+
+        int spawnCount = Mathf.Min(initialBlockBag.Count, maxColumns * 2);
+        for (int i = 0; i < spawnCount; i++)
+        {
+            SpawnInitialBlock();
+        }
+    }
+
     private void SpawnInitialBlock()
     {
         if (initialBlockBag.Count == 0) return;
@@ -85,6 +357,7 @@ public class RailManager : BaseManager<RailManager>
         CreateBlockInstance(selectedPrefab, targetSlot, targetList);
     }
 
+    // 블록 생성 및 가중치 관리
     public void SpawnBlockOnRail()
     {
         if (railABlocks.Count + railBBlocks.Count >= maxColumns * 2) return;
@@ -169,8 +442,7 @@ public class RailManager : BaseManager<RailManager>
         DragAndDrop dndScript = newBlock.GetComponent<DragAndDrop>();
         targetList.Add(dndScript);
 
-        var sortManager = Service.Get<SortManager>();
-        if (sortManager != null && sortManager.RemainingSorts.Value <= 0)
+        if (RemainingSorts.Value <= 0)
         {
             dndScript.enabled = false;
         }
@@ -181,6 +453,7 @@ public class RailManager : BaseManager<RailManager>
         }
     }
 
+    // 블록 제거 및 슬롯 이동
     public void RemoveBlockFromRail(DragAndDrop block)
     {
         if (isAnimating) return;
@@ -201,10 +474,10 @@ public class RailManager : BaseManager<RailManager>
         }
 
         SpawnBlockOnRail();
-
         BlockMove();
     }
 
+    // 3개 블록 매칭 시 코보 애니메이션 실행
     private void ComboAnimation(List<DragAndDrop> targetList)
     {
         if (targetList.Count < 3) return;
@@ -230,7 +503,7 @@ public class RailManager : BaseManager<RailManager>
                 targetList.RemoveAt(i + 1);
                 targetList.RemoveAt(i);
 
-                Service.Get<SortManager>()?.AddCombo(1);
+                AddCombo(1);
 
                 if (targetList == railABlocks)
                 {
@@ -275,6 +548,7 @@ public class RailManager : BaseManager<RailManager>
         }
     }
 
+    // 블록이 레일 따라 이동하는 애니메이션
     public void BlockMove()
     {
         isAnimating = true;
@@ -302,8 +576,7 @@ public class RailManager : BaseManager<RailManager>
         {
             isAnimating = false;
 
-            var sortManager = Service.Get<SortManager>();
-            if (sortManager != null && sortManager.RemainingSorts.Value <= 0)
+            if (RemainingSorts.Value <= 0)
             {
                 PlayerInputLock(true);
             }
@@ -317,6 +590,7 @@ public class RailManager : BaseManager<RailManager>
         });
     }
 
+    // 사용자 조작 제한
     public void PlayerInputLock(bool isLock)
     {
         bool enableInteraction = !isLock;
@@ -331,6 +605,7 @@ public class RailManager : BaseManager<RailManager>
         }
     }
 
+    // 레일 슬롯의 UI 할당 
     public void AutoSetupRailSlots()
     {
         var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
@@ -365,6 +640,7 @@ public class RailManager : BaseManager<RailManager>
         }
         return -1;
     }
+    #endregion
 
     private string GetCleanName(string rawName)
     {
