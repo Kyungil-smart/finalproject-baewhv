@@ -45,9 +45,17 @@ public class BaseCharacter : BaseController
 
     private RatioFloatValue _activeSkillCoolValue; // 액티브 스킬게이지 비율
 
+    private float _attackTimer; // 누적 카운트
+
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
 
     private PlayerStats _playerStats;
+
+    public float AttackTimer // 누적 카운트 프로퍼티
+    {
+        get => _attackTimer;
+        set => _attackTimer = value;
+    }
 
     public bool IsSpawning
     {
