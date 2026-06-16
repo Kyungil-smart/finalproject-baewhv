@@ -343,10 +343,10 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     private IEnumerator ReviveCoroutine(BaseCharacter character, int index) // 플레이어 부활호출
     {
-        float elapsed = 0f;
-        while (elapsed < character.ReviveTime)
+        float elapsed = character.ReviveTime;
+        while (elapsed >= 0)
         {
-            elapsed += Time.deltaTime;
+            elapsed -= Time.deltaTime;
             _slot[index].SetDeathCount(elapsed, character.ReviveTime); // 부활 쿨타임 UI 연동
             yield return null;
         }
