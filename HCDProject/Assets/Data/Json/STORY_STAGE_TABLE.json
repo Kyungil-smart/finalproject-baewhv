@@ -17,8 +17,8 @@
       "STAGE": 2,
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_002",
-      "TYPE_OF_ID": "",
-      "STORY_ID": ""
+      "TYPE_OF_ID": "EV-002",
+      "STORY_ID": "ST_0254"
     },
     {
       "STAGE_ID": "CH01_NODE_003",
@@ -28,7 +28,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_003",
       "TYPE_OF_ID": "7003",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0102"
     },
     {
       "STAGE_ID": "CH01_NODE_004",
@@ -38,7 +38,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_004",
       "TYPE_OF_ID": "7006",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0177"
     },
     {
       "STAGE_ID": "CH01_NODE_005",
@@ -48,7 +48,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_005",
       "TYPE_OF_ID": "7009",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0293"
     },
     {
       "STAGE_ID": "CH01_NODE_006",
@@ -57,8 +57,8 @@
       "STAGE": 6,
       "STAGE_TYPE": "MAINTANANCE",
       "STAGE_NAME_ID": "SSN_006",
-      "TYPE_OF_ID": "",
-      "STORY_ID": ""
+      "TYPE_OF_ID": "EV-006",
+      "STORY_ID": "ST_0354"
     },
     {
       "STAGE_ID": "CH01_NODE_007",
@@ -68,7 +68,7 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_007",
       "TYPE_OF_ID": "7012",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0397"
     }
   ]
 }
