@@ -6,33 +6,37 @@ using UnityEngine;
 
 public class BaseMonster : BaseController
 {
-    [field:SerializeField] public MonsterRawData Stat { get; private set;}
+    [field: SerializeField] public MonsterRawData Stat { get; private set; }
     public int MonsterID { get; private set; }
     public int PrefabIndex { get; set; }
-    
+
     #region State
+
     private protected StateMachine State;
-    [field:SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
+    [field: SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
     public MonsterIdleState IdleState { get; protected set; }
     public MonsterChaseState ChaseState { get; protected set; }
     public MonsterAttackState AttackState { get; protected set; }
     public MonsterDieState DieState { get; protected set; }
+
     #endregion
-    
-    [field:SerializeField] public Vector3 Target { get; set; }
+
+    [field: SerializeField] public Vector3 Target { get; set; }
 
     [SerializeField] private HPBarUI hpBarCanvas;
     private bool _isActive;
-    
+
+    private float _durateTimer;
+
     protected BaseCharacter[] _characters;
-    
+
     public void InitStatus(MonsterRawData data)
     {
         if (Stat == data) return;
-        
+
         Stat = data;
         InitSkill(data);
-        
+
         // 몬스터의 기본 데이터 초기화
         // 데이터를 받아와서 사용할 위치
         MonsterID = int.Parse(Stat.MONSTER_ID) - 1000;
@@ -43,11 +47,11 @@ public class BaseMonster : BaseController
         _stats._defense = Stat.DEF;
         Movement.Agent.speed = Stat.MOVE_SPEED;
     }
-    
+
     private void InitSkill(MonsterRawData data)
     {
         skills.Clear();
-        
+
         // 몬스터의 공격(스킬) 데이터 초기화
         var skillDataTable = Service.Get<DataManager>().MonsterSkillTable.data;
         MonsterSkillRawData atkData = skillDataTable.Find(x => x.SKILL_ID == data.ATK_ID);
@@ -56,7 +60,7 @@ public class BaseMonster : BaseController
         MonsterSkillRawData skillData = skillDataTable.Find(x => x.SKILL_ID == data.SKILL_ID);
         if (skillData != null) skills.Add(new Skill(skillData));
     }
-    
+
     public override void SetCurrentTarget(ITargetable target)
     {
         _currentTarget = target;
@@ -65,7 +69,7 @@ public class BaseMonster : BaseController
     protected override void Awake()
     {
         base.Awake();
-        
+
         CurrentState = new();
     }
 
@@ -73,7 +77,7 @@ public class BaseMonster : BaseController
     {
         _characters = Service.Get<PlayerManager>().Characters;
     }
-    
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -84,31 +88,31 @@ public class BaseMonster : BaseController
         {
             CurrentHp.Value = CurrentHp.MaxValue;
         }
-        
+
         CurrentState.AddListener(ChangeState);
-        CurrentHp.AddListener(CheckDeath);
+        CurrentHp.AddListener(OnCheckDeath);
         CurrentHp.AddListener(OnAttacked);
-        
+
         CurrentHp.AddRatioListener(hpBarCanvas.SetHPBar);
         hpBarCanvas.gameObject.SetActive(_isActive);
-        
+
         State.ChangeState(IdleState);
     }
 
     protected void OnDisable()
     {
         CurrentState.RemoveListener(ChangeState);
-        CurrentHp.RemoveListener(CheckDeath);
+        CurrentHp.RemoveListener(OnCheckDeath);
         CurrentHp.RemoveListener(OnAttacked);
     }
 
     protected virtual void Update()
     {
         State?.Update();
-        
+
         ResetTarget();
     }
-    
+
     private void ChangeState(EStateType state)
     {
         switch (state)
@@ -127,17 +131,17 @@ public class BaseMonster : BaseController
                 break;
         }
     }
-    
+
     private ITargetable FindTarget()
     {
         ITargetable target = Service.Get<GameManager>()._wall;
-        
+
         float minDistance = float.MaxValue;
-        
+
         foreach (BaseCharacter player in _characters)
         {
             if (player._isDead) continue;
-            
+
             float dis = (transform.position - player.transform.position).sqrMagnitude;
 
             if (dis < minDistance)
@@ -149,7 +153,7 @@ public class BaseMonster : BaseController
 
         return target;
     }
-    
+
     public override void UseSkill(int index)
     {
         if (GetCurrentTarget == null) return;
@@ -157,11 +161,11 @@ public class BaseMonster : BaseController
         if (skills[index].ATK_TYPE == EAtkType.NORMAL)
         {
             GetCurrentTarget.SetDamage(Stat.ATK);
-        } 
+        }
         else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
         {
             RangeDetect(index);
-            
+
             if (Count <= 0) return;
 
             for (int i = 0; i < Count; i++)
@@ -175,7 +179,7 @@ public class BaseMonster : BaseController
         else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK)
         {
             RangeDetect(index);
-            
+
             if (Count <= 0) return;
 
             for (int i = 0; i < Count; i++)
@@ -206,11 +210,16 @@ public class BaseMonster : BaseController
                 {
                     if (skills[index].SKILL_ABT_01 == ESkillAbilityType.DAMAGE_TARGET_MAX_HP_P)
                     {
-                        // 모든 플레이어 체력 감소 스킬
+                        // 체력 퍼센트 감소 스킬 (3챕터 중간보스 스킬)
+
+                        BaseController target = GetCurrentTarget.GetTargetObject.GetComponent<BaseController>();
+                        int percentDamage = target.Stats._maxHp * ((int)skills[index].SKILL_AB_01 / 100);
+                        
+                        StartCoroutine(DotAttack(index, percentDamage));
                     }
                     else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_MULT)
                     {
-                        // 투사체 발사 (경로상 모든 플레이어 데미지)
+                        // 투사체 발사 - 경로상 모든 플레이어 데미지 (3챕터 메인보스 스킬)
                     }
                 }
             }
@@ -220,7 +229,7 @@ public class BaseMonster : BaseController
                 {
                     // 플레이어 체력 감소
                     RangeDetect(index);
-            
+
                     if (Count <= 0) return;
 
                     for (int i = 0; i < Count; i++)
@@ -231,37 +240,73 @@ public class BaseMonster : BaseController
                         }
                     }
                 }
-                
-                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
+
+                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P ||
+                         skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
                 {
-                    // 플레이어 이동속도, 공격속도 감소
+                    // 플레이어 이동속도, 공격속도 감소 or 플레이어 CC
                     RangeDetect(index);
 
                     if (Count <= 0) return;
 
-                    for (int i = 0; i < Count; i++)
-                    {
-                        if (Colliders[i].TryGetComponent(out BaseCharacter target))
-                        {
-                            var stat = target.Stats;
-                            stat._moveSpeed *= 0.5f;
-                            stat._attackSpeed *= 0.5f;
-                        }
-                    }
+                    StartCoroutine(SkillDurate(index, Count));
+                }
+
+                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.SKILL_CD)
+                {
+                    // 플레이어 스킬의 쿨타임 증가
+                    RangeDetect(index);
+
+                    if (Count <= 0) return;
+
+                    SkillCoolDown(index, Count);
                 }
             }
         }
         else if (skills[index].SKILL_AT == ETargetType.ALLY)
         {
-            
+            if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
+            {
+                // 몬스터의 체력 회복
+                RangeDetect(index);
+
+                if (Count <= 0) return;
+
+                for (int i = 0; i < Count; i++)
+                {
+                    if (Colliders[i].TryGetComponent(out ITargetable target))
+                    {
+                        target.SetHeal((int)skills[index].SKILL_AB_01);
+                    }
+                }
+            }
+
+            else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK)
+            {
+                // 몬스터 공격력 증가
+                RangeDetect(index);
+
+                if (Count <= 0) return;
+
+                for (int i = 0; i < Count; i++)
+                {
+                    if (Colliders[i].TryGetComponent(out BaseMonster controller))
+                    {
+                        controller.Stat.ATK += (int)skills[index].SKILL_AB_01;
+                    }
+                }
+            }
         }
         else if (skills[index].SKILL_AT == ETargetType.SELF)
         {
-            
+            if (skills[index].SKILL_ABT_01 == ESkillAbilityType.NORMAL_ATK_IMMUNITY)
+            {
+                
+            }
         }
     }
 
-    public void RangeDetect(int index)
+    private void RangeDetect(int index)
     {
         ContactFilter2D filter = new ContactFilter2D();
 
@@ -276,7 +321,82 @@ public class BaseMonster : BaseController
 
         Count = Physics2D.OverlapCircle(transform.position, skills[index].SKILL_IS, filter, Colliders);
     }
+    
+    private IEnumerator DotAttack(int index, int damage)
+    {
+        _durateTimer = 0f;
+        
+        while (_durateTimer < skills[index].SKILL_DURATION)
+        {
+            GetCurrentTarget.SetDamage(damage);
+            
+            yield return new WaitForSeconds(1f);
+        }
+    }
 
+    private IEnumerator SkillDurate(int index, int count)
+    {
+        float originMoveSpeed = 0f;
+        float originAttackSpeed = 0f;
+        
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out BaseCharacter target))
+            {
+                if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
+                {
+                    var stat = target.Stats;
+                    
+                    originMoveSpeed = stat._moveSpeed;
+                    originAttackSpeed = stat._attackSpeed;
+                    
+                    stat._moveSpeed = stat._moveSpeed + (stat._moveSpeed * (skills[index].SKILL_AB_01 / 100));
+                    stat._attackSpeed = stat._attackSpeed + (stat._attackSpeed * (skills[index].SKILL_AB_02 / 100));
+                }
+                
+                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
+                {
+                    // 모든 플레이어 CC 이동정지 및 공격 정지 상태
+                }
+            }
+        }
+            
+        yield return new WaitForSeconds(skills[index].SKILL_DURATION);
+        
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out BaseCharacter target))
+            {
+                if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
+                {
+                    var stat = target.Stats;
+                    stat._moveSpeed = originMoveSpeed;
+                    stat._attackSpeed = originAttackSpeed;
+                }
+                
+                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
+                {
+                    // 모든 플레이어 CC 이동정지 및 공격 정지 상태
+                }
+            }
+        }
+    }
+
+    private void SkillCoolDown(int index, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out BaseCharacter target))
+            {
+                target.AttackTimer -= skills[index].SKILL_AB_01;
+                if (target.AttackTimer < 0)
+                {
+                    target.AttackTimer = 0f;
+                }
+            }
+        }
+    }
+    
     private void ResetTarget()
     {
         SetCurrentTarget(FindTarget());
@@ -291,31 +411,7 @@ public class BaseMonster : BaseController
         }
     }
 
-    private IEnumerator SkillDurate(int index, int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            if (Colliders[i].TryGetComponent(out BaseCharacter target))
-            {
-                if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
-                {
-                    var stat = target.Stats;
-                    stat._moveSpeed *= 0.5f;
-                    stat._attackSpeed *= 0.5f;
-                }
-                
-                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
-                {
-                    
-                }
-
-            }
-        }
-            
-        yield return new WaitForSeconds(skills[index].SKILL_DURATION);
-    }
-
-    private void CheckDeath(int value)
+    private void OnCheckDeath(int value)
     {
         if (value <= 0)
         {
@@ -334,10 +430,5 @@ public class BaseMonster : BaseController
                 CurrentHp.Value = CurrentHp.Value;
             }
         }
-    }
-
-    public void DebugFunc()
-    {
-        Debug.Log("발생");
     }
 }
