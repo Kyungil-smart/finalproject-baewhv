@@ -92,9 +92,12 @@ public class BaseMonster : BaseController
         CurrentState.AddListener(ChangeState);
         CurrentHp.AddListener(OnCheckDeath);
         CurrentHp.AddListener(OnAttacked);
-
-        CurrentHp.AddRatioListener(hpBarCanvas.SetHPBar);
-        hpBarCanvas.gameObject.SetActive(_isActive);
+        
+        if (hpBarCanvas != null)
+        {
+            hpBarCanvas.gameObject.SetActive(_isActive);
+            CurrentHp.AddRatioListener(hpBarCanvas.SetHPBar);
+        }
 
         State.ChangeState(IdleState);
     }
