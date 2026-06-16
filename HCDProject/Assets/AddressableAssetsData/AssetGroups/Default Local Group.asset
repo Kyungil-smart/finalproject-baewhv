@@ -85,6 +85,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f13a9401f66a5cc4a93ba0baba5f2fa6
+    m_Address: TUTORIAL_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ff483a7c037e1be419c6828111753801
     m_Address: LOCALIZING_TABLE
     m_ReadOnly: 0
