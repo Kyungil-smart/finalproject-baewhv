@@ -48,6 +48,7 @@ public class TutorialManager : BaseManager<TutorialManager>
         {
             if (currentWave == 0)
             {
+                Service.Get<SortManager>().TutorialBlocks(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3,0,1,2,3 });
                 Tutorial0();
                 sortRemain = Service.Get<SortManager>().RemainingSorts.Value;
             }
@@ -169,8 +170,8 @@ public class TutorialManager : BaseManager<TutorialManager>
         touchField.SetActive(true);
         ShowMessage(scripts.GetData[1].title, "TST_044");
         CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots[0].gameObject);
-        CopyNGlow(Service.Get<RailManager>().GetRailA[1].gameObject);
-        ShowArrow(GlowUIList[1].transform.position, GlowUIList[0].transform.position);
+        //CopyNGlow(Service.Get<RailManager>().GetRailA[1].gameObject);
+//        ShowArrow(GlowUIList[1].transform.position, GlowUIList[0].transform.position);
         TouchActions = Tutorial2;
     }
 
