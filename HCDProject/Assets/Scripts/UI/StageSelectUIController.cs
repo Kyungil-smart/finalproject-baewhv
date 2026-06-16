@@ -154,6 +154,8 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         {
             popupObject.SetActive(true);
             if (popupText != null) popupText.text = "성벽 체력 회복";
+            
+            if (cancelPopup != null) cancelPopup.gameObject.SetActive(false);
 
             if (continuePopup != null)
             {
