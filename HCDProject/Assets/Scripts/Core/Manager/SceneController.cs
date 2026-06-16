@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,9 @@ public class SceneController : BaseManager<SceneController>
     private Scene _sessionScene;
     private SceneType _currentScene = SceneType.Title;
 
+    public event Action<float> OnLoading;
+    public event Action OnLoadingComplete;
+    
     private void Awake()
     {
         base.Awake();
@@ -34,18 +38,46 @@ public class SceneController : BaseManager<SceneController>
     public void ChangeScene(SceneType scene)
     {
         if (scene == SceneType.StageSelect) CreateSession();
-        
-        if (scene == SceneType.Title ||  scene == SceneType.ModeSelect)
-        {
-            SceneManager.LoadScene((int)scene, LoadSceneMode.Single);
-            _currentScene = scene;
-            return;
-        }
 
         UnLoadActiveScene();
         
-        SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
+        LoadSceneMode sceneMode = (scene == SceneType.Title || scene == SceneType.ModeSelect) ? LoadSceneMode.Single : LoadSceneMode.Additive;
+
+        StartCoroutine(LoadSceneRoutine(scene, sceneMode));
+    }
+
+    private IEnumerator LoadSceneRoutine(SceneType scene, LoadSceneMode mode)
+    {
+        OnLoading?.Invoke(0f);
+        
+        AsyncOperation async = SceneManager.LoadSceneAsync((int)scene, mode);
+
+        if (async != null) async.allowSceneActivation = false;
+        
+        float loadTime = 0f;
+        float needTime = 5f;
         _currentScene = scene;
+
+        while (async.progress < 0.9f)/*|| loadTime < needTime*/
+        {
+            yield return null;
+
+            loadTime += Time.unscaledDeltaTime;
+            
+            float time = loadTime / needTime;
+            float progress = Mathf.Clamp01(time);
+            
+            OnLoading?.Invoke(progress);
+        }
+        OnLoading?.Invoke(1f);
+
+        yield return YieldContainer.WaitForSeconds(0.5f);
+        
+        if (async != null)  async.allowSceneActivation = true;
+
+        while (!async.isDone) yield return null;
+        
+        OnLoadingComplete?.Invoke();
     }
 
     private void UnLoadActiveScene()
