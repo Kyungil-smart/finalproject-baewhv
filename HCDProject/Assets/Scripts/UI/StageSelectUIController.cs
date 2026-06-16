@@ -142,7 +142,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             {
                 if (rewardPopup != null)
                 {
-                    rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
+                    // rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
                 }
             }
         }
@@ -213,7 +213,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         if (rewardPopup != null)
         {
             if (type == StageType.Event) rewardPopup.SetRelicReward(OnRewardSelect);
-            else if (type == StageType.Maintenance) rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
+            // else if (type == StageType.Maintenance) rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
         }
     }
     
