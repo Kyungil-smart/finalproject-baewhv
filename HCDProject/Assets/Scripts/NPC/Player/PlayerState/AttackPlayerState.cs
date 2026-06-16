@@ -3,8 +3,6 @@
 public class AttackPlayerState : IState
 {
     private BaseCharacter _owner;
-    
-    float coolCount;
 
     public AttackPlayerState(BaseCharacter owner)
     {
@@ -16,7 +14,7 @@ public class AttackPlayerState : IState
         Debug.Log($"[{_owner.gameObject.name}] Attack 진입 " +
               $"/ FindType: {_owner.FindType} " +
               $"/ 타겟: {_owner.GetCurrentTarget?.GetTargetObject.name}");
-        coolCount = 0;
+        _owner.AttackTimer = 0;
     }
 
     public void Exit()
@@ -42,9 +40,9 @@ public class AttackPlayerState : IState
             return;
         }
 
-        if (coolCount <= _owner.SkillCoolTime)
+        if (_owner.AttackTimer <= _owner.SkillCoolTime)
         {
-            coolCount += Time.deltaTime;
+            _owner.AttackTimer += Time.deltaTime;
         }
 
         else
@@ -54,7 +52,7 @@ public class AttackPlayerState : IState
           $"{_owner.skills[_owner.SkillTargetIndex].SKILL_AT} 발동");
             _owner.UseSkill(_owner.SkillTargetIndex); // 공격
             _owner.CompleteFirstCombat();
-            coolCount = 0;
+            _owner.AttackTimer = 0;
         }
     }
 }
