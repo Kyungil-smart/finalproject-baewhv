@@ -99,7 +99,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160448
-    m_Localized: Spayin
+    m_Localized: Spayne
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160447
@@ -1152,6 +1152,842 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1035299440648230
     m_Localized: Next, let us check the area in front of the gate wall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901911920640
+    m_Localized: Commander, Guardians.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669376
+    m_Localized: I will organize the defense records from the gate front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669377
+    m_Localized: Thanks, Demian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669378
+    m_Localized: Before we head to the forest path, let us check our condition first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669379
+    m_Localized: Yeah. It does not look like anyone is badly hurt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669380
+    m_Localized: No one being badly hurt is a good thing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669381
+    m_Localized: It also means I have less work to do...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669382
+    m_Localized: That started like a nice comment and ended up being about you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669383
+    m_Localized: Still, everyone is safe, so that is what matters!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669384
+    m_Localized: We can stop the next one with this momentum too!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669385
+    m_Localized: Before we rely on momentum, let us check the signal stones.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669386
+    m_Localized: I looked at the first battle records.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669387
+    m_Localized: The signal the Commander sent is still holding steady.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669388
+    m_Localized: Can we carry that into the next battle?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669389
+    m_Localized: We can.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669390
+    m_Localized: If we tune it now, one person's combat style will become more stable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669391
+    m_Localized: If we can prepare before heading to the forest path, that would
+      help.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669392
+    m_Localized: Then strengthening whoever can hold the front longer sounds good!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669393
+    m_Localized: If it means fewer people get hurt, I am in favor too...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669394
+    m_Localized: Commander, choose the tuning direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669395
+    m_Localized: '[Event Enhancement: Choose one from Serah HP increase / Noah attack
+      increase / Spayne healing increase]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669396
+    m_Localized: '[Display that the selected enhancement will remain active in later
+      battles]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669397
+    m_Localized: Tuned.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669398
+    m_Localized: This enhancement will remain active from the next battle onward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669399
+    m_Localized: Good! Then I can stand in front with more confidence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669400
+    m_Localized: I will keep a closer watch on the forest path movement too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669401
+    m_Localized: Then let us check it quickly and come back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669402
+    m_Localized: If we take too long, our rest time disappears too...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669403
+    m_Localized: There is still movement near the forest path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669404
+    m_Localized: Please be careful if you go far from the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669405
+    m_Localized: Got it. We will not go too far from the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669406
+    m_Localized: Everyone ready?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669407
+    m_Localized: Yeah! If the road gets narrow, I will take the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669408
+    m_Localized: I will look for traces.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057984
+    m_Localized: We need to confirm whether the monsters targeted the gate or fled
+      down here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057985
+    m_Localized: I will mark the way back too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057986
+    m_Localized: If we get lost, we will have to camp out... and I do not want that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057987
+    m_Localized: Guardians, are you unharmed?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057988
+    m_Localized: Yeah. We checked the southern entrance too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057989
+    m_Localized: The forest path in front of the gate, and the southern entrance
+      too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057990
+    m_Localized: The footprints all end up leading this way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057991
+    m_Localized: So they ended up converging here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057992
+    m_Localized: Yes. We can see the same traces in front of the wall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057993
+    m_Localized: The footprints from both roads overlap around here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057994
+    m_Localized: Did the first group we stopped at the gate come from the same direction?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057995
+    m_Localized: Yeah. I think that is the right way to read it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057996
+    m_Localized: There are more sliding marks than signs that they tried to stop.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057997
+    m_Localized: So they were not aiming for the gate. They kept getting driven down
+      here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057998
+    m_Localized: Then if we get pushed back here, the gate is right behind us...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057999
+    m_Localized: We will be lucky if repairs are all we need.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058000
+    m_Localized: Then we just have to hold our ground.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058001
+    m_Localized: I will handle the front of the gate!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058002
+    m_Localized: The way you make that sound easy makes it scarier...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058003
+    m_Localized: Still, she is not wrong. This time, the gate is right behind us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058004
+    m_Localized: If you move too far forward, we cannot support you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058005
+    m_Localized: Got it. I will hold them where you can see me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058006
+    m_Localized: The movement deeper in the forest is getting closer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058007
+    m_Localized: They are coming down from both the forest path in front of the gate
+      and the southern entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058008
+    m_Localized: I will pull the soldiers back behind the wall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058009
+    m_Localized: While you hold them off, we will check the wall's condition.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058010
+    m_Localized: Good. We will defend the gate here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058011
+    m_Localized: Defending is fine... but if you get hurt, tell me right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058012
+    m_Localized: The more you hide it here, the bigger the problem will get.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058013
+    m_Localized: Do not worry! I will not let anything get past this point!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058014
+    m_Localized: Good. Just keep that distance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058015
+    m_Localized: Got it. I will take the front!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058016
+    m_Localized: Is everyone okay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058017
+    m_Localized: No one is hurt?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058018
+    m_Localized: I am fine!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058019
+    m_Localized: I held the front of the gate!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058020
+    m_Localized: Yeah. You held it properly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058021
+    m_Localized: Still, we need to check the wall's condition.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058022
+    m_Localized: Looking fine and actually being fine are different...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058023
+    m_Localized: Demian, how is the wall?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058024
+    m_Localized: The wall is still holding.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058025
+    m_Localized: But it has taken quite a lot of impact.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058026
+    m_Localized: It would be risky to have it hold one more time in this state.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058027
+    m_Localized: Would it be hard to defend again right away?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058028
+    m_Localized: Yes. We need at least a short time to reinforce it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058029
+    m_Localized: If we repair the wall, it can hold through the next battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058030
+    m_Localized: There is still movement deeper in the forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058031
+    m_Localized: There are heavier footsteps mixed in than before.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058032
+    m_Localized: Then fighting again right away would be dangerous.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058033
+    m_Localized: Let us repair the wall first, then check the movement inside again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058034
+    m_Localized: If we have maintenance time, maybe I can close my eyes for a moment...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058035
+    m_Localized: Sleeping is not included in maintenance time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058036
+    m_Localized: I did not even finish saying it yet...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058037
+    m_Localized: ...No, you were mostly right, though.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058038
+    m_Localized: Good. Let us start with the gate wall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058039
+    m_Localized: Noah and Alice, keep checking the movement deeper in the forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058040
+    m_Localized: Serah and Spayne, check the repair points with the soldiers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058041
+    m_Localized: Yeah. I will keep watching the movement.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058042
+    m_Localized: Good. I will get ready before the next battle!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058043
+    m_Localized: Getting ready is good... but this time, please aim for fewer injuries.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058044
+    m_Localized: Whether it is you or the wall, more things to fix means more work...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058045
+    m_Localized: Demian, this crack looks pretty bad.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058046
+    m_Localized: If we leave this side alone, it will open up wider next time...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058047
+    m_Localized: We will reinforce the gate wall at once.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058048
+    m_Localized: We cannot fully repair it, but we can make it strong enough for
+      the next battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058049
+    m_Localized: Then it is better to do that now...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058050
+    m_Localized: If it collapses later, there will be too many places to fix.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058051
+    m_Localized: Then let us make it as sturdy as we can right now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058052
+    m_Localized: If the wall holds, I can hold the line longer too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058053
+    m_Localized: If both hold, that gives me fewer things to check...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058054
+    m_Localized: Exactly. That is why we are repairing it now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058055
+    m_Localized: '[Gate wall reinforcement complete. Wall HP has been restored.]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058056
+    m_Localized: The gate wall reinforcement is done.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058057
+    m_Localized: We can tune the signal stones one more time too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058058
+    m_Localized: It would be best to choose one more enhancement before the final
+      battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058059
+    m_Localized: The enhancement you choose now will carry over into the next battle
+      too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058060
+    m_Localized: Good. Tune it where we need it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058061
+    m_Localized: I will be the one holding the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252288
+    m_Localized: I will keep watching movement farther back too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252289
+    m_Localized: I am fine with anything that means fewer things to fix, whether
+      it is people or the wall...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252290
+    m_Localized: Good. Let us do the final tuning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252291
+    m_Localized: '[Display character permanent enhancement candidates]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252292
+    m_Localized: '[The player selects one enhancement]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252293
+    m_Localized: '[Display that the selected enhancement will remain active in later
+      battles]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252294
+    m_Localized: Tuned.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252295
+    m_Localized: Now let us check the next battle's intel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252296
+    m_Localized: Commander, the movement deeper in the forest is strange.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252297
+    m_Localized: One set of footsteps is unusually heavy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252298
+    m_Localized: The nearby monsters seem to be getting swept along by that sound.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252299
+    m_Localized: We still do not know whether it is leading the horde or being driven
+      along with them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252300
+    m_Localized: But that one will be the most dangerous in the next battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252301
+    m_Localized: '[Boss intel confirmed: Final horde centered around a large monster]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252302
+    m_Localized: Let us stop them at the village road entrance behind the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252303
+    m_Localized: We need to stop that thing while the wall holds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252304
+    m_Localized: Got it. I will stop that one from the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252305
+    m_Localized: I will not let it get behind the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252306
+    m_Localized: Please try not to get too badly hurt...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252307
+    m_Localized: I would like the wall to be the only thing we need to fix.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252308
+    m_Localized: Now let us move to the defense line behind the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252309
+    m_Localized: So we have to hurry all the way to the end...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252310
+    m_Localized: It is better than arriving late and making things harder!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252311
+    m_Localized: Serah took my logic...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252312
+    m_Localized: Commander, that is the heavy footstep I heard earlier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252313
+    m_Localized: It is almost here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252314
+    m_Localized: The nearby monsters are being dragged down with it too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252315
+    m_Localized: There is no time to check anything else here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252316
+    m_Localized: Then we cannot let this drag on...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252317
+    m_Localized: I will watch the healing timing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252318
+    m_Localized: Like I said before, I will hold the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252319
+    m_Localized: I will not let them get behind the gate!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252320
+    m_Localized: Yeah. That is reassuring.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252321
+    m_Localized: Just hold your ground where we can see you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252322
+    m_Localized: Got it. I will show you what I can do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252323
+    m_Localized: I will keep watching the enemies coming in from far away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252324
+    m_Localized: If you get hurt, tell me right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252325
+    m_Localized: So please do not push yourself too hard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252326
+    m_Localized: Good. Let us stop them at the central defense line.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252327
+    m_Localized: '[Boss Battle Start]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252328
+    m_Localized: The movement is slowing down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252329
+    m_Localized: At least the horde that was rushing in seems to have stopped.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252330
+    m_Localized: Good! We defended Cies Defense Fortress!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252331
+    m_Localized: Yeah. I am glad everyone is safe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252332
+    m_Localized: We protected both the gate and the village road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252333
+    m_Localized: We stopped the horde that came today.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252334
+    m_Localized: The cause is still unresolved, but this is definitely an accomplishment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252335
+    m_Localized: Then since we accomplished something, that means there is rest time
+      too, right...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252336
+    m_Localized: Guardians, thank you very much for your hard work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252337
+    m_Localized: Thanks to you, Cies Defense Fortress is safe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252338
+    m_Localized: Everyone, good work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252339
+    m_Localized: Commander, we received a message from the Jeple direction during
+      the battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446592
+    m_Localized: They say monsters are also moving in one direction over there.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446593
+    m_Localized: So this was not only happening here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446594
+    m_Localized: Similar movement may continue elsewhere.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446595
+    m_Localized: At least one thing is clear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446596
+    m_Localized: This is not a problem limited to Cies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446597
+    m_Localized: We protected Cies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446598
+    m_Localized: That much we definitely did.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446599
+    m_Localized: Let us check the report from Jeple too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446600
+    m_Localized: Then there is still work left...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446601
+    m_Localized: We need to sort out the situation first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446602
+    m_Localized: Then sorting things out right now is very important...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446603
+    m_Localized: Got it. Let us organize the Cies situation first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446604
+    m_Localized: We will check the Jeple report after that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446605
+    m_Localized: Cies Defense Fortress Gate Front
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446606
+    m_Localized: First Joint Maintenance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446607
+    m_Localized: Forest Path in Front of Cies Gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446608
+    m_Localized: Cies Defense Fortress Southern Entrance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446609
+    m_Localized: Cies Defense Fortress Gate Wall Front
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446610
+    m_Localized: Gate Wall Maintenance Before the Boss Battle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640896
+    m_Localized: Cies Defense Fortress Central Defense Line
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160528
+    m_Localized: Wave 1 ready. Place signal stones to strengthen heroes before battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640897
+    m_Localized: Drag the attack signal stone to Serah's slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640898
+    m_Localized: COMBO +1. Serah attack boost X1.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640899
+    m_Localized: Remaining sort count decreased from 6 to 5.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640900
+    m_Localized: Setup complete. Press BATTLE START to begin combat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640901
+    m_Localized: Level Up! Select the reward you want.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640902
+    m_Localized: Tap a reward card once to select it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640903
+    m_Localized: Tap the selected card once more to confirm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640904
+    m_Localized: '[Sharp Senses] Attack +8 acquired!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640905
+    m_Localized: Noah joins. Ranged support ready.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640906
+    m_Localized: Spayne joins. All heroes ready.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640907
+    m_Localized: Noah and Spayne join!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640908
+    m_Localized: A large monster appeared. Prepare Serah's skill signal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640909
+    m_Localized: Serah's ultimate gauge is full.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640910
+    m_Localized: Touch Serah's portrait to use her ultimate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640911
+    m_Localized: Ultimate activated!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640912
+    m_Localized: Touch the screen during the cutscene to show the Skip button.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640913
+    m_Localized: Stage Clear! Check your rewards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640914
+    m_Localized: Relic effects carry over to the next stage. Choose 1 of 3.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640915
+    m_Localized: Tap the selected relic once more to confirm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640916
+    m_Localized: Ancient Armor acquired. The selected relic has been registered in
+      your owned list. Its effect remains in later stages.
     m_Metadata:
       m_Items: []
   references:
