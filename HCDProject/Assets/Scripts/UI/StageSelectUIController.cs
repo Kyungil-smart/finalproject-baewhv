@@ -131,16 +131,56 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             
             Service.Get<GameManager>()?.EnterStage(chapter, stage);
 
-            if (type == StageType.Event || type == StageType.Maintenance)
+            if (type == StageType.Event)
             {
                 if (rewardPopup != null)
                 {
                     rewardPopup.SetRelicReward(OnRewardSelect);
                 }
             }
+            else if (type == StageType.Maintenance)
+            {
+                if (rewardPopup != null)
+                {
+                    // rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
+                }
+            }
         }
     }
 
+    private void RepairRampart()
+    {
+        if (popupObject != null)
+        {
+            popupObject.SetActive(true);
+            if (popupText != null) popupText.text = "성벽 체력 회복";
+            
+            if (cancelPopup != null) cancelPopup.gameObject.SetActive(false);
+
+            if (continuePopup != null)
+            {
+                if (continueText != null) continueText.text = "continue";
+                
+                continuePopup.onClick.RemoveAllListeners();
+                continuePopup.onClick.AddListener(() =>
+                {
+                    popupObject.SetActive(false);
+                    Service.Get<GameManager>()?.RepairRampart();
+                    Service.Get<GameManager>()?.ClearStage();
+                    StageMap();
+                });
+            }
+        }
+    }
+
+    private void RandomReward()
+    {
+        if (rewardPopup != null)
+        {
+            rewardPopup.SetRelicReward(OnRewardSelect);
+        }
+    }
+    
     public void OnRewardSelect()
     {
         if (popupObject != null)
@@ -172,7 +212,8 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
         if (rewardPopup != null)
         {
-            rewardPopup.SetRelicReward(OnRewardSelect);
+            if (type == StageType.Event) rewardPopup.SetRelicReward(OnRewardSelect);
+            // else if (type == StageType.Maintenance) rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
         }
     }
     
