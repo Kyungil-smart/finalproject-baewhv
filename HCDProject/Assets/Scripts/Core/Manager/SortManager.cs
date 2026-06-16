@@ -420,16 +420,20 @@ public class SortManager : BaseManager<SortManager>
     private Transform GetTargetSlotAndList(out List<DragAndDrop> targetList)
     {
         targetList = null;
+
         if (railABlocks.Count < maxColumns)
         {
             targetList = railABlocks;
-            return railASlots[railABlocks.Count];
+            int targetIndex = (maxColumns - 1) - railABlocks.Count;
+            return railASlots[targetIndex];
         }
         else if (railBBlocks.Count < maxColumns)
         {
             targetList = railBBlocks;
-            return railBSlots[railBBlocks.Count];
+            int targetIndex = (maxColumns - 1) - railBBlocks.Count;
+            return railBSlots[targetIndex];
         }
+
         return null;
     }
 
