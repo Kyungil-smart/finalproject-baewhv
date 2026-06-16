@@ -31,6 +31,7 @@ public class SheetToJson : EditorWindow
         {"899282129", "STORY_EXP_TABLE"},
         {"1690070445", "STORY_STAGE_TABLE"},
         {"1914509138", "SKILL_TABLE"},
+        {"679464318", "TUTORIAL_TABLE"}
     };
 
     

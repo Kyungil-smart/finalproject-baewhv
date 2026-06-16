@@ -24,6 +24,7 @@ public class DataManager : BaseManager<DataManager>
     public StaticValueTable StaticValueTable {get; private set;}
     public StoryExpTable StoryExpTable {get; private set;}
     public StoryStageTable StoryStageTable {get; private set;}
+    public TutorialTable TutorialTable {get; private set;}
 
     public RatioIntValue dataValue;
     
@@ -35,10 +36,7 @@ public class DataManager : BaseManager<DataManager>
         base.Awake();
         
         dataValue = new RatioIntValue(14, 0);
-    }
-
-    private void Start()
-    {
+        
         InitData(() =>
         {
             Debug.Log("초기 데이터 받기 성공");
@@ -64,7 +62,8 @@ public class DataManager : BaseManager<DataManager>
             ("STORY_LOCALIZING_TABLE", json => StoryLocalizingTable = JsonUtility.FromJson<StoryLocalizingTable>(json)),
             ("STATIC_VALUE_TABLE", json => StaticValueTable = JsonUtility.FromJson<StaticValueTable>(json)),
             ("STORY_EXP_TABLE", json => StoryExpTable = JsonUtility.FromJson<StoryExpTable>(json)),
-            ("STORY_STAGE_TABLE", json => StoryStageTable = JsonUtility.FromJson<StoryStageTable>(json))
+            ("STORY_STAGE_TABLE", json => StoryStageTable = JsonUtility.FromJson<StoryStageTable>(json)),
+            ("TUTORIAL_TABLE", json => TutorialTable = JsonUtility.FromJson<TutorialTable>(json)),
         };
         
         // 총 데이터 파일의 개수 

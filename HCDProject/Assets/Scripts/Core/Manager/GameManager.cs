@@ -88,7 +88,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
             {
-                NarrativeEnd();
+                // Service.Get<MonsterSpawnManager>()?.DebugWaveStart(1,1,1);
             }
 
             if (Keyboard.current.uKey.wasPressedThisFrame)
@@ -246,6 +246,21 @@ public class GameManager : BaseManager<GameManager>
         }
         
         List<MapRawData> currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+
+        if (currentStage == null)
+        {
+            _currentChapter = 1;
+            _currentStage = 1;
+            
+            currentStage = Service.Get<DataManager>()?.MapTable.data.FindAll(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+            
+            if  (currentStage == null) return;
+        }
+        else
+        {
+            _currentChapter = chapter;
+            _currentStage = stage;
+        }
         
         ids = new HashSet<string>();
 
@@ -328,6 +343,21 @@ public class GameManager : BaseManager<GameManager>
                 }
             }
         };
+    }
+
+    public void RepairRampart()
+    {
+        var repairData = Service.Get<DataManager>()?.StageClearRewardTable.data.Find(x => x.CLEAR_REWARD_ID == "4012");
+
+        if (repairData != null)
+        {
+            float value = repairData.CLEAR_REWARD_F_01;
+
+            if (_currentWallHp != -1)
+            {
+                _currentWallHp += (int)value;
+            }
+        }
     }
 
     public void ClearStage()

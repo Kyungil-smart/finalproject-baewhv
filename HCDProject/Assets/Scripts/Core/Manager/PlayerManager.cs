@@ -71,7 +71,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     private void OnDestroy()
     {
         if (_prefabHandle.IsValid()) // 유효할 때만
-        Addressables.Release(_prefabHandle);
+            Addressables.Release(_prefabHandle);
         base.OnDestroy();
     }
 
@@ -101,15 +101,18 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             .GetUI<IngameBottomUIController>().AddCharacter(data[index], chr, index);
 
         _characters[index].BindHpUI(_slot[index].SetHPBar);
+        _characters[index].BindSkillUI(_slot[index].SetSkillBar);
+        _characters[index].BindDeathUI(_slot[index].SetAlive);
         if (index == data.Count - 1)
         {
             ApplyRelicStats();
             Service.Get<SortManager>()?.AutoSetupUISlots();
         }
     }
-    
+
     private void SpawnAllCharacters()
     {
+        /*isAllSpawn.Value = false;*/
         var data = Service.Get<DataManager>().CharacterTable.data;
         _characters = new BaseCharacter[data.Count];
         _coroutines = new Coroutine[data.Count];
@@ -118,13 +121,13 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         for (int i = 0; i < data.Count; i++)
         {
             GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
-            
+
             BaseCharacter chr = obj.GetComponent<BaseCharacter>();
-            
+
             chr.homePosition = _homePoints[i].position;
             chr.spawnPosition = _spawnPoints[i].position;
             chr.Init(data[i], _characterDatas[i]);
-            
+
             _characters[i] = chr;
             _slot[i] = Service.Get<UIManager>() // 생성 시 캐릭터의 UI 슬롯을 요청함
             .GetUI<IngameBottomUIController>().AddCharacter(data[i], chr, i);
@@ -134,6 +137,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         for (int i = 0; i < _characters.Length; i++)
         {
             _characters[i].BindHpUI(_slot[i].SetHPBar);
+            _characters[i].BindSkillUI(_slot[i].SetSkillBar);
+            _characters[i].BindDeathUI(_slot[i].SetAlive);
         }
         Service.Get<SortManager>()?.AutoSetupUISlots();
     }
@@ -233,7 +238,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         };
         for (int i = 0; i < _characters.Length; i++)
         {
-            foreach(string effectType in effectTypes)
+            foreach (string effectType in effectTypes)
             {
                 float jobBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobTypes[i], effectType) ?? 0f;
                 float allyBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus("ALLY", effectType) ?? 0f;
@@ -268,7 +273,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                         _characters[i].PlayerStat = playerStat;
                         break;
                     case "SKILL_UPGRADE_RANGE_P": // 마법사 스킬범위 확대
-                        _characters[i].skills[1].SKILL_RANGE_X += 
+                        _characters[i].skills[1].SKILL_RANGE_X +=
                             _characters[i].skills[1].SKILL_RANGE_X * totalBonus / 100f;
                         break;
                     case "SKILL_UPGRADE": // 힐러 치유 증폭기
@@ -300,7 +305,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     public IEnumerator HealingFactor(BaseCharacter character, string jobType) // 힐링팩터 유물(워리어)
     {
-        while(true)
+        while (true)
         {
             float jobBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobType, "MAX_HP_RECOVERY_P") ?? 0f;
             yield return YieldContainer.WaitForSeconds(1f);
@@ -324,7 +329,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     public void StartRevive(BaseCharacter character)
     {
         int index = Array.IndexOf(_characters, character);
-        _coroutines[index] = StartCoroutine(ReviveCoroutine(character));
+        _coroutines[index] = StartCoroutine(ReviveCoroutine(character, index));
     }
 
     public void ImmediateRevive(BaseCharacter character) // 플레이어 부활실행
@@ -336,9 +341,15 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         character.state.ChangeState(character.spawn);
     }
 
-    private IEnumerator ReviveCoroutine(BaseCharacter character) // 플레이어 부활호출
+    private IEnumerator ReviveCoroutine(BaseCharacter character, int index) // 플레이어 부활호출
     {
-        yield return YieldContainer.WaitForSeconds(character.ReviveTime);
+        float elapsed = character.ReviveTime;
+        while (elapsed >= 0)
+        {
+            elapsed -= Time.deltaTime;
+            _slot[index].SetDeathCount(elapsed, character.ReviveTime); // 부활 쿨타임 UI 연동
+            yield return null;
+        }
 
         character.gameObject.SetActive(true);
 

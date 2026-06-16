@@ -44,4 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ef6a81350d2e44eb26d6ccd1bdd07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SortManager
-  allSlots: []
+  _eManager: 0
+  characterSlots: []
+  isEndSort:
+    _data: 0
+  blockPrefabs:
+  - {fileID: 8570466454123474244, guid: 49772096e7b1c2946810b5c09b71a787, type: 3}
+  - {fileID: 6910069291293792682, guid: d0cd2d11824d4964caed490868458c6c, type: 3}
+  - {fileID: 6064258119921155046, guid: f9ccc4ff6bcfcb44ab238c8fa35c8e1c, type: 3}
+  - {fileID: 5216417183687107228, guid: c5db49fada1351f418d2cc4c1ecc7e1b, type: 3}

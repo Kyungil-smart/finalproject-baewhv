@@ -27,6 +27,8 @@ public class BaseCharacter : BaseController
     [SerializeField] private Vector3 _spawnPosition; // 스폰 및 부활
     [SerializeField] private HPBarUI _hpBar; // 캐릭터 개별 HP바
 
+    private SpriteRenderer _characterRenderer;
+
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
     private bool _isFirstCombat = true; // 전사 첫번째 전투
@@ -37,11 +39,23 @@ public class BaseCharacter : BaseController
 
     public bool _isDead;
 
-    private float _activeSkillCoolCount = 999f; // 액티브스킬쿨타임(임시로 999초)
+    private ObserveValue<bool> IsAlived; // 부활 ui 연동
+
+    private float _activeSkillCoolCount; // 액티브스킬쿨타임
+
+    private RatioFloatValue _activeSkillCoolValue; // 액티브 스킬게이지 비율
+
+    private float _attackTimer; // 누적 카운트
 
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
 
     private PlayerStats _playerStats;
+
+    public float AttackTimer // 누적 카운트 프로퍼티
+    {
+        get => _attackTimer;
+        set => _attackTimer = value;
+    }
 
     public bool IsSpawning
     {
@@ -140,6 +154,7 @@ public class BaseCharacter : BaseController
         _chasePlayerState = new ChasePlayerState(this);
         _attackPlayerState = new AttackPlayerState(this);
         _diePlayerState = new DiePlayerState(this);
+        _characterRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     protected override void OnEnable()
@@ -156,9 +171,12 @@ public class BaseCharacter : BaseController
     {
         _stateMachine?.Update();
         _activeSkillCoolCount += Time.deltaTime;
+        float result = Mathf.Clamp(_activeSkillCoolCount, 0, ActiveSkillCoolTime);
+        if (_activeSkillCoolValue == null) return;
+        _activeSkillCoolValue.Value = result;
     }
 
-    public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바
+    public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바 UI 구독
     {
         int maxValue = _stats._maxHp;
         CurrentHp = new RatioIntValue(maxValue);
@@ -169,10 +187,47 @@ public class BaseCharacter : BaseController
         CurrentHp.Invoke();
     }
 
+    public void BindSkillUI(UnityAction<float> action) // 스킬 게이지 UI 구독
+    {
+        float maxValue = skills[1].SKILL_TIME;
+        _activeSkillCoolValue = new RatioFloatValue(maxValue, _activeSkillCoolCount);
+        _activeSkillCoolValue.AddRatioListener(action);
+    }
+
+    public void BindDeathUI(UnityAction<bool> action) // 사망판정 UI 구독
+    {
+        IsAlived = new ObserveValue<bool>();
+        IsAlived.AddListener(action);
+        IsAlived.Value = true;
+    }
+
     #region Init()
     public void Init(CharacterRawData data, PlayerStats stat)
     {
         _playerStats = stat;
+
+        gameObject.name = data.CHARACTER_NAME; // 플레이어 디버그용
+        Color color;
+        switch (data.CHARACTER_ID)
+        {
+            case "3000":
+                ColorUtility.TryParseHtmlString("#BC3F3F", out color);
+                break;
+            case "3001":
+                ColorUtility.TryParseHtmlString("#A25FA6", out color);
+                break;
+            case "3002":
+                ColorUtility.TryParseHtmlString("#EEE83B", out color);
+                break;
+            case "3003":
+                ColorUtility.TryParseHtmlString("#59C8FF", out color);
+                break;
+            default:
+                color = Color.white;
+                Debug.LogWarning($"{data.CHARACTER_ID}의 색이 추가되지 않았습니다.");
+                break;
+        }
+        _characterRenderer.color = color;
 
         _stats = new CharacterStats
         {
@@ -182,7 +237,8 @@ public class BaseCharacter : BaseController
             _moveSpeed = data.MOVE_SPEED,
             _attackSpeed = data.ATK_SPEED,
             _critRate = data.CRI_RATE,
-            _critDamage = data.CRI_DMAGE
+            _critDamage = data.CRI_DMAGE,
+            _chaseRange = data.ACCESS_AREA
         };
 
         skills.Clear();
@@ -276,7 +332,7 @@ public class BaseCharacter : BaseController
     // 데미지 계산만 담당하는 별도 메서드
     private float CalculateDamage(int index)
     {
-        switch(skills[index].SKILL_DT)
+        switch (skills[index].SKILL_DT)
         {
             case ESkillDamageType.ATTACK_BASE:
                 return _stats._attackPower * skills[index].SKILL_ABILLITY;
@@ -337,7 +393,7 @@ public class BaseCharacter : BaseController
 
             Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
 
-            StartCoroutine(DotFieldCoroutine(fieldCenter,(int)CalculateDamage(1)));
+            StartCoroutine(DotFieldCoroutine(fieldCenter, (int)CalculateDamage(1)));
             _activeSkillCoolCount = 0;
         }
     }
@@ -346,7 +402,7 @@ public class BaseCharacter : BaseController
     {
         float elapsed = 0f;
 
-        while(elapsed < 5f)
+        while (elapsed < 5f)
         {
             int count = Physics2D.OverlapCircle(fieldCenter, skills[1].SKILL_RANGE_X, EnemyFilter, Colliders);
             for (int i = 0; i < count; i++)
@@ -396,9 +452,8 @@ public class BaseCharacter : BaseController
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        List<ITargetable> targets = Detect(skills[index].SKILL_IS + GetRadius(), skills[index].SKILL_AT);
+        List<ITargetable> targets = Detect(Stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
         ITargetable nearest = null;
-
         if (FindType == EFindType.LowestHp)
         {
             float lowestRatio = float.MaxValue;
@@ -457,6 +512,7 @@ public class BaseCharacter : BaseController
         if (value <= 0)
         {
             _isDead = true;
+            if (IsAlived != null) IsAlived.Value = false;
             Debug.Log($"[사망] {gameObject.name} | HP: {value}");
             this.state.ChangeState(this.die);
         }
@@ -465,6 +521,7 @@ public class BaseCharacter : BaseController
     public void Revive()
     {
         _isDead = false;
+        if (IsAlived != null) IsAlived.Value = true;
         _isSpawning = true;
         Movement.Agent.enabled = true;
         this.Movement.Agent.Warp(spawnPosition);
@@ -474,11 +531,11 @@ public class BaseCharacter : BaseController
         _findType = _playerStats._initFindType;
     }
 
-    protected new void OnDrawGizmos()
+    /*protected new void OnDrawGizmos()
     {
         if (skills == null || skills.Count == 0) return;
 
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, CurrentSkillRange + GetRadius());
-    }
+    }*/
 }

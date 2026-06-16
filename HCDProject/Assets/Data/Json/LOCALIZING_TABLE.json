@@ -2,7 +2,7 @@
   "data": [
     {
       "TEXT_ID": "L_001",
-      "Korean": "레벨 리워드",
+      "Korean": "날카로운 감각",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -10,7 +10,7 @@
     },
     {
       "TEXT_ID": "L_002",
-      "Korean": "",
+      "Korean": "쾌속",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -18,7 +18,7 @@
     },
     {
       "TEXT_ID": "L_003",
-      "Korean": "",
+      "Korean": "예리한 시각",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -26,7 +26,7 @@
     },
     {
       "TEXT_ID": "L_004",
-      "Korean": "",
+      "Korean": "예리한 공격",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -34,7 +34,7 @@
     },
     {
       "TEXT_ID": "L_005",
-      "Korean": "",
+      "Korean": "넘치는 생명력",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -42,7 +42,7 @@
     },
     {
       "TEXT_ID": "L_006",
-      "Korean": "",
+      "Korean": "흐르는 생명력",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -50,7 +50,7 @@
     },
     {
       "TEXT_ID": "L_007",
-      "Korean": "",
+      "Korean": "신체 강화",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -58,7 +58,7 @@
     },
     {
       "TEXT_ID": "L_008",
-      "Korean": "",
+      "Korean": "경량화",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -66,7 +66,7 @@
     },
     {
       "TEXT_ID": "L_009",
-      "Korean": "",
+      "Korean": "응축된 힘",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -74,7 +74,7 @@
     },
     {
       "TEXT_ID": "L_010",
-      "Korean": "",
+      "Korean": "과부화",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -82,7 +82,7 @@
     },
     {
       "TEXT_ID": "L_011",
-      "Korean": "",
+      "Korean": "바람의 숨결",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -90,7 +90,7 @@
     },
     {
       "TEXT_ID": "L_012",
-      "Korean": "",
+      "Korean": "야수화",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -98,7 +98,7 @@
     },
     {
       "TEXT_ID": "L_013",
-      "Korean": "",
+      "Korean": "철벽의 기세",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -523,14 +523,14 @@
     {
       "TEXT_ID": "C_004",
       "Korean": "스파인",
-      "English": "Spayin",
-      "Thai": "สไปน์",
-      "Vietnamese": "Spayin",
-      "Indonesian": "Spayin"
+      "English": "Spayne",
+      "Thai": "สเปย์น",
+      "Vietnamese": "Spayne",
+      "Indonesian": "Spayne"
     },
     {
       "TEXT_ID": "C_005",
-      "Korean": "지휘관",
+      "Korean": "나레이션",
       "English": "Narration",
       "Thai": "คำบรรยาย",
       "Vietnamese": "Lời dẫn",
@@ -538,7 +538,7 @@
     },
     {
       "TEXT_ID": "C_006",
-      "Korean": "나레이션",
+      "Korean": "요새 병사",
       "English": "Fortress Guard",
       "Thai": "ทหารยามป้อมปราการ",
       "Vietnamese": "Lính gác pháo đài",
@@ -546,7 +546,7 @@
     },
     {
       "TEXT_ID": "C_007",
-      "Korean": "요새 병사",
+      "Korean": "데미안",
       "English": "Demian",
       "Thai": "เดเมียน",
       "Vietnamese": "Demian",
@@ -554,7 +554,7 @@
     },
     {
       "TEXT_ID": "C_008",
-      "Korean": "데미안",
+      "Korean": "지휘관",
       "English": "Commander",
       "Thai": "ผู้บัญชาการ",
       "Vietnamese": "Chỉ huy",
@@ -1194,14 +1194,6 @@
     },
     {
       "TEXT_ID": "PAST_011",
-      "Korean": "",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
-    },
-    {
-      "TEXT_ID": "UI_001",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -3145,8 +3137,1424 @@
       "Indonesian": "Selanjutnya, periksa area di depan dinding gerbang."
     },
     {
+      "TEXT_ID": "TST_243",
+      "Korean": "지휘관님, 수호대 여러분.",
+      "English": "Commander, Guardians.",
+      "Thai": "ท่านผู้บัญชาการ และทุกท่านจากหน่วยพิทักษ์ครับ",
+      "Vietnamese": "Thưa ngài Chỉ huy, các thành viên Đội Hộ vệ.",
+      "Indonesian": "Komandan, para Guardian."
+    },
+    {
+      "TEXT_ID": "TST_244",
+      "Korean": "관문 앞 방어 기록은 정리해 두겠습니다.",
+      "English": "I will organize the defense records from the gate front.",
+      "Thai": "ผมจะจัดการบันทึกการป้องกันหน้าประตูไว้ให้ครับ",
+      "Vietnamese": "Tôi sẽ tổng hợp lại ghi chép phòng thủ trước cổng.",
+      "Indonesian": "Saya akan merapikan catatan pertahanan di depan gerbang."
+    },
+    {
+      "TEXT_ID": "TST_245",
+      "Korean": "고마워, 데미안.",
+      "English": "Thanks, Demian.",
+      "Thai": "ขอบคุณนะ เดเมียน",
+      "Vietnamese": "Cảm ơn, Demian.",
+      "Indonesian": "Terima kasih, Demian."
+    },
+    {
+      "TEXT_ID": "TST_246",
+      "Korean": "우리는 숲길로 나가기 전에 상태를 먼저 확인하자.",
+      "English": "Before we head to the forest path, let us check our condition first.",
+      "Thai": "ก่อนออกไปทางป่า เรามาตรวจสภาพกันก่อนเถอะ",
+      "Vietnamese": "Trước khi ra đường rừng, chúng ta kiểm tra tình trạng trước đã.",
+      "Indonesian": "Sebelum menuju jalan hutan, kita periksa kondisi dulu."
+    },
+    {
+      "TEXT_ID": "TST_247",
+      "Korean": "응. 다들 크게 다친 곳은 없어 보여.",
+      "English": "Yeah. It does not look like anyone is badly hurt.",
+      "Thai": "อืม ดูเหมือนไม่มีใครบาดเจ็บหนักนะ",
+      "Vietnamese": "Ừ. Có vẻ không ai bị thương nặng.",
+      "Indonesian": "Ya. Sepertinya tidak ada yang terluka parah."
+    },
+    {
+      "TEXT_ID": "TST_248",
+      "Korean": "크게 다친 사람이 없다는 건 좋은 일이야.",
+      "English": "No one being badly hurt is a good thing.",
+      "Thai": "ไม่มีใครบาดเจ็บหนักก็ถือว่าเป็นเรื่องดี",
+      "Vietnamese": "Không có ai bị thương nặng là chuyện tốt.",
+      "Indonesian": "Tidak ada yang terluka parah itu hal yang baik."
+    },
+    {
+      "TEXT_ID": "TST_249",
+      "Korean": "내 일이 줄어든다는 뜻이기도 하고...",
+      "English": "It also means I have less work to do...",
+      "Thai": "แปลว่างานของฉันลดลงด้วย...",
+      "Vietnamese": "Cũng có nghĩa là việc của tôi bớt đi...",
+      "Indonesian": "Itu juga berarti pekerjaanku berkurang..."
+    },
+    {
+      "TEXT_ID": "TST_250",
+      "Korean": "좋은 말처럼 시작해서 결국 자기 얘기로 끝났네.",
+      "English": "That started like a nice comment and ended up being about you.",
+      "Thai": "เริ่มเหมือนคำพูดดี ๆ แต่สุดท้ายก็จบที่เรื่องของตัวเองสินะ",
+      "Vietnamese": "Mở đầu nghe như lời tốt đẹp, cuối cùng lại thành chuyện của cậu nhỉ.",
+      "Indonesian": "Awalnya terdengar seperti ucapan baik, tapi akhirnya tentang dirimu sendiri."
+    },
+    {
+      "TEXT_ID": "TST_251",
+      "Korean": "그래도 다들 무사하니까 됐지!",
+      "English": "Still, everyone is safe, so that is what matters!",
+      "Thai": "แต่ทุกคนปลอดภัยก็พอแล้วนี่!",
+      "Vietnamese": "Dù sao mọi người đều an toàn là được rồi!",
+      "Indonesian": "Tetap saja, semua selamat, jadi tidak apa-apa!"
+    },
+    {
+      "TEXT_ID": "TST_252",
+      "Korean": "다음도 이 기세로 막으면 돼!",
+      "English": "We can stop the next one with this momentum too!",
+      "Thai": "ครั้งต่อไปก็กันไว้ด้วยจังหวะแบบนี้ก็ได้!",
+      "Vietnamese": "Lần tới cứ chặn với khí thế này là được!",
+      "Indonesian": "Berikutnya juga tinggal kita tahan dengan semangat ini!"
+    },
+    {
+      "TEXT_ID": "TST_253",
+      "Korean": "기세만으로 가기 전에, 신호석부터 확인하자.",
+      "English": "Before we rely on momentum, let us check the signal stones.",
+      "Thai": "ก่อนจะพึ่งแค่กำลังใจ ไปตรวจศิลาสัญญาณกันก่อนเถอะ",
+      "Vietnamese": "Trước khi chỉ dựa vào khí thế, kiểm tra đá tín hiệu đã.",
+      "Indonesian": "Sebelum hanya mengandalkan semangat, periksa batu sinyal dulu."
+    },
+    {
+      "TEXT_ID": "TST_254",
+      "Korean": "첫 전투 기록을 봤어.",
+      "English": "I looked at the first battle records.",
+      "Thai": "ฉันดูบันทึกการต่อสู้ครั้งแรกแล้ว",
+      "Vietnamese": "Tôi đã xem ghi chép trận đầu.",
+      "Indonesian": "Aku sudah melihat catatan pertempuran pertama."
+    },
+    {
+      "TEXT_ID": "TST_255",
+      "Korean": "지휘관이 보낸 신호가 아직 안정적으로 남아 있어.",
+      "English": "The signal the Commander sent is still holding steady.",
+      "Thai": "สัญญาณที่ผู้บัญชาการส่งไปยังคงเสถียรอยู่",
+      "Vietnamese": "Tín hiệu Chỉ huy gửi vẫn còn ổn định.",
+      "Indonesian": "Sinyal yang dikirim Komandan masih tersisa dengan stabil."
+    },
+    {
+      "TEXT_ID": "TST_256",
+      "Korean": "그걸 다음 전투에도 이어갈 수 있어?",
+      "English": "Can we carry that into the next battle?",
+      "Thai": "เราต่อสัญญาณนั้นไปใช้ในการต่อสู้ครั้งต่อไปได้ไหม?",
+      "Vietnamese": "Có thể nối nó sang trận tiếp theo không?",
+      "Indonesian": "Bisa kita lanjutkan ke pertempuran berikutnya?"
+    },
+    {
+      "TEXT_ID": "TST_257",
+      "Korean": "가능해.",
+      "English": "We can.",
+      "Thai": "ได้",
+      "Vietnamese": "Có thể.",
+      "Indonesian": "Bisa."
+    },
+    {
+      "TEXT_ID": "TST_258",
+      "Korean": "지금 조율하면, 한 명의 전투 방식이 더 안정될 거야.",
+      "English": "If we tune it now, one person's combat style will become more stable.",
+      "Thai": "ถ้าปรับตอนนี้ รูปแบบการต่อสู้ของคนหนึ่งจะเสถียรขึ้น",
+      "Vietnamese": "Nếu điều chỉnh bây giờ, cách chiến đấu của một người sẽ ổn định hơn.",
+      "Indonesian": "Kalau diselaraskan sekarang, gaya bertarung satu orang akan lebih stabil."
+    },
+    {
+      "TEXT_ID": "TST_259",
+      "Korean": "숲길로 나가기 전에 준비할 수 있다면 좋겠어.",
+      "English": "If we can prepare before heading to the forest path, that would help.",
+      "Thai": "ถ้าเตรียมตัวก่อนออกไปทางป่าได้ก็ดีเลย",
+      "Vietnamese": "Nếu chuẩn bị được trước khi ra đường rừng thì tốt.",
+      "Indonesian": "Akan bagus kalau kita bisa bersiap sebelum menuju jalan hutan."
+    },
+    {
+      "TEXT_ID": "TST_260",
+      "Korean": "그럼 앞에서 더 오래 버틸 수 있는 쪽도 괜찮겠네!",
+      "English": "Then strengthening whoever can hold the front longer sounds good!",
+      "Thai": "งั้นเสริมคนที่ยืนแนวหน้าได้นานขึ้นก็ดีเหมือนกัน!",
+      "Vietnamese": "Vậy tăng cường cho người có thể trụ lâu hơn phía trước cũng được đấy!",
+      "Indonesian": "Kalau begitu, memperkuat yang bisa bertahan lebih lama di depan juga bagus!"
+    },
+    {
+      "TEXT_ID": "TST_261",
+      "Korean": "다치는 사람이 줄어드는 쪽이면 나도 찬성이야...",
+      "English": "If it means fewer people get hurt, I am in favor too...",
+      "Thai": "ถ้าช่วยให้คนบาดเจ็บน้อยลง ฉันก็เห็นด้วย...",
+      "Vietnamese": "Nếu giúp giảm người bị thương thì tôi cũng tán thành...",
+      "Indonesian": "Kalau itu berarti lebih sedikit yang terluka, aku juga setuju..."
+    },
+    {
+      "TEXT_ID": "TST_262",
+      "Korean": "지휘관, 조율 방향을 골라줘.",
+      "English": "Commander, choose the tuning direction.",
+      "Thai": "ผู้บัญชาการ เลือกทิศทางการปรับสัญญาณที",
+      "Vietnamese": "Chỉ huy, chọn hướng điều chỉnh đi.",
+      "Indonesian": "Komandan, pilih arah penyelarasannya."
+    },
+    {
+      "TEXT_ID": "TST_263",
+      "Korean": "[이벤트 강화: 세라 체력 증가 / 노아 공격력 증가 / 스파인 회복량 증가 중 1개 선택]",
+      "English": "[Event Enhancement: Choose one from Serah HP increase / Noah attack increase / Spayne healing increase]",
+      "Thai": "[เสริมพลังอีเวนต์: เลือก 1 อย่างจาก เพิ่มพลังชีวิตเซราห์ / เพิ่มพลังโจมตีโนอา / เพิ่มปริมาณฟื้นฟูของสเปย์น]",
+      "Vietnamese": "[Cường hóa sự kiện: Chọn 1 trong tăng HP Serah / tăng tấn công Noah / tăng lượng hồi phục Spayne]",
+      "Indonesian": "[Peningkatan event: Pilih 1 dari peningkatan HP Serah / peningkatan serangan Noah / peningkatan jumlah pemulihan Spayne]"
+    },
+    {
+      "TEXT_ID": "TST_264",
+      "Korean": "[선택한 강화가 이후 전투에도 유지됨을 표시한다]",
+      "English": "[Display that the selected enhancement will remain active in later battles]",
+      "Thai": "[แสดงว่าการเสริมพลังที่เลือกจะคงอยู่ในการต่อสู้ถัดไปด้วย]",
+      "Vietnamese": "[Hiển thị rằng cường hóa đã chọn sẽ được duy trì trong các trận sau]",
+      "Indonesian": "[Tampilkan bahwa peningkatan yang dipilih akan tetap aktif di pertempuran berikutnya]"
+    },
+    {
+      "TEXT_ID": "TST_265",
+      "Korean": "조율됐어.",
+      "English": "Tuned.",
+      "Thai": "ปรับเสร็จแล้ว",
+      "Vietnamese": "Đã điều chỉnh xong.",
+      "Indonesian": "Sudah diselaraskan."
+    },
+    {
+      "TEXT_ID": "TST_266",
+      "Korean": "이번 강화는 다음 전투부터도 유지될 거야.",
+      "English": "This enhancement will remain active from the next battle onward.",
+      "Thai": "การเสริมพลังครั้งนี้จะคงอยู่ตั้งแต่การต่อสู้ครั้งต่อไปด้วย",
+      "Vietnamese": "Cường hóa lần này sẽ được duy trì từ trận tiếp theo trở đi.",
+      "Indonesian": "Peningkatan kali ini akan tetap aktif mulai pertempuran berikutnya."
+    },
+    {
+      "TEXT_ID": "TST_267",
+      "Korean": "좋아! 그럼 더 믿고 앞에 설 수 있겠네.",
+      "English": "Good! Then I can stand in front with more confidence.",
+      "Thai": "ดีเลย! งั้นฉันก็ยืนแนวหน้าได้อย่างมั่นใจขึ้นแล้ว",
+      "Vietnamese": "Tốt! Vậy mình có thể tin tưởng hơn khi đứng phía trước rồi.",
+      "Indonesian": "Bagus! Kalau begitu aku bisa lebih percaya diri berdiri di depan."
+    },
+    {
+      "TEXT_ID": "TST_268",
+      "Korean": "나도 숲길 쪽 움직임을 더 확실히 볼게.",
+      "English": "I will keep a closer watch on the forest path movement too.",
+      "Thai": "ฉันก็จะจับตาดูความเคลื่อนไหวทางป่าให้ชัดขึ้นเหมือนกัน",
+      "Vietnamese": "Tôi cũng sẽ quan sát rõ hơn chuyển động phía đường rừng.",
+      "Indonesian": "Aku juga akan mengawasi pergerakan di jalan hutan dengan lebih jelas."
+    },
+    {
+      "TEXT_ID": "TST_269",
+      "Korean": "그럼 빨리 보고 오자.",
+      "English": "Then let us check it quickly and come back.",
+      "Thai": "งั้นรีบไปดูแล้วกลับมากันเถอะ",
+      "Vietnamese": "Vậy chúng ta xem nhanh rồi quay lại thôi.",
+      "Indonesian": "Kalau begitu, cepat kita lihat lalu kembali."
+    },
+    {
+      "TEXT_ID": "TST_270",
+      "Korean": "늦어지면 쉴 시간도 같이 사라지니까...",
+      "English": "If we take too long, our rest time disappears too...",
+      "Thai": "ถ้าช้าเกินไป เวลาพักก็จะหายไปด้วย...",
+      "Vietnamese": "Nếu chậm quá, thời gian nghỉ cũng biến mất luôn...",
+      "Indonesian": "Kalau terlalu lama, waktu istirahat juga ikut hilang..."
+    },
+    {
+      "TEXT_ID": "TST_271",
+      "Korean": "숲길 쪽 움직임은 아직 남아 있습니다.",
+      "English": "There is still movement near the forest path.",
+      "Thai": "ยังมีความเคลื่อนไหวทางป่าอยู่ครับ",
+      "Vietnamese": "Vẫn còn chuyển động phía đường rừng.",
+      "Indonesian": "Masih ada pergerakan di arah jalan hutan."
+    },
+    {
+      "TEXT_ID": "TST_272",
+      "Korean": "관문에서 멀리 나가실 경우, 조심해 주십시오.",
+      "English": "Please be careful if you go far from the gate.",
+      "Thai": "หากออกไปไกลจากประตูด่าน โปรดระวังด้วยครับ",
+      "Vietnamese": "Nếu các vị đi xa khỏi cổng, xin hãy cẩn thận.",
+      "Indonesian": "Jika kalian pergi jauh dari gerbang, harap berhati-hati."
+    },
+    {
+      "TEXT_ID": "TST_273",
+      "Korean": "알겠어. 관문에서 너무 멀어지진 않을게.",
+      "English": "Got it. We will not go too far from the gate.",
+      "Thai": "เข้าใจแล้ว เราจะไม่ออกห่างจากประตูด่านมากเกินไป",
+      "Vietnamese": "Biết rồi. Chúng ta sẽ không đi quá xa khỏi cổng.",
+      "Indonesian": "Mengerti. Kami tidak akan terlalu jauh dari gerbang."
+    },
+    {
+      "TEXT_ID": "TST_274",
+      "Korean": "다들 준비됐지?",
+      "English": "Everyone ready?",
+      "Thai": "ทุกคนพร้อมแล้วใช่ไหม?",
+      "Vietnamese": "Mọi người sẵn sàng rồi chứ?",
+      "Indonesian": "Semuanya sudah siap?"
+    },
+    {
+      "TEXT_ID": "TST_275",
+      "Korean": "응! 길이 좁아지면 내가 앞에 설게.",
+      "English": "Yeah! If the road gets narrow, I will take the front.",
+      "Thai": "อืม! ถ้าทางแคบลง ฉันจะไปยืนข้างหน้าเอง",
+      "Vietnamese": "Ừ! Nếu đường hẹp lại, tôi sẽ đứng phía trước.",
+      "Indonesian": "Ya! Kalau jalannya menyempit, aku akan berdiri di depan."
+    },
+    {
+      "TEXT_ID": "TST_276",
+      "Korean": "나는 흔적을 살펴볼게.",
+      "English": "I will look for traces.",
+      "Thai": "ฉันจะดูร่องรอยให้",
+      "Vietnamese": "Tôi sẽ xem xét dấu vết.",
+      "Indonesian": "Aku akan memeriksa jejaknya."
+    },
+    {
+      "TEXT_ID": "TST_277",
+      "Korean": "몬스터가 관문을 노린 건지, 도망쳐 내려온 건지 확인해야겠네.",
+      "English": "We need to confirm whether the monsters targeted the gate or fled down here.",
+      "Thai": "ต้องดูให้แน่ใจว่าสัตว์ประหลาดเล็งประตูด่าน หรือหนีลงมาทางนี้กันแน่",
+      "Vietnamese": "Cần xác nhận xem quái vật nhắm vào cổng, hay chạy trốn xuống đây.",
+      "Indonesian": "Kita harus memastikan apakah monster menargetkan gerbang, atau melarikan diri ke sini."
+    },
+    {
+      "TEXT_ID": "TST_278",
+      "Korean": "돌아올 길도 표시해 둘게.",
+      "English": "I will mark the way back too.",
+      "Thai": "ฉันจะทำเครื่องหมายทางกลับไว้ด้วย",
+      "Vietnamese": "Tôi cũng sẽ đánh dấu đường quay về.",
+      "Indonesian": "Aku juga akan menandai jalan pulang."
+    },
+    {
+      "TEXT_ID": "TST_279",
+      "Korean": "길을 잃으면 야영해야 하니까... 그건 싫어.",
+      "English": "If we get lost, we will have to camp out... and I do not want that.",
+      "Thai": "ถ้าหลงทางก็ต้องตั้งค่ายค้างคืน... แบบนั้นไม่เอา",
+      "Vietnamese": "Nếu lạc đường thì phải cắm trại qua đêm... Tôi không thích chuyện đó.",
+      "Indonesian": "Kalau tersesat, kita harus berkemah... aku tidak mau itu."
+    },
+    {
+      "TEXT_ID": "TST_280",
+      "Korean": "수호대 여러분, 무사하십니까?",
+      "English": "Guardians, are you unharmed?",
+      "Thai": "ทุกท่านจากหน่วยพิทักษ์ ปลอดภัยดีหรือไม่ครับ?",
+      "Vietnamese": "Các thành viên Đội Hộ vệ, mọi người vẫn an toàn chứ?",
+      "Indonesian": "Para Guardian, apakah kalian baik-baik saja?"
+    },
+    {
+      "TEXT_ID": "TST_281",
+      "Korean": "응. 남쪽 진입로도 확인했어.",
+      "English": "Yeah. We checked the southern entrance too.",
+      "Thai": "อืม เราตรวจทางเข้าด้านใต้แล้ว",
+      "Vietnamese": "Ừ. Chúng tôi cũng đã kiểm tra lối vào phía nam.",
+      "Indonesian": "Ya. Kami juga sudah memeriksa jalur masuk selatan."
+    },
+    {
+      "TEXT_ID": "TST_282",
+      "Korean": "관문 앞 숲길도, 남쪽 진입로도.",
+      "English": "The forest path in front of the gate, and the southern entrance too.",
+      "Thai": "ทั้งทางป่าหน้าประตูด่าน และทางเข้าด้านใต้",
+      "Vietnamese": "Cả đường rừng trước cổng, lẫn lối vào phía nam.",
+      "Indonesian": "Jalan hutan di depan gerbang, dan jalur masuk selatan juga."
+    },
+    {
+      "TEXT_ID": "TST_283",
+      "Korean": "발자국이 결국 이쪽으로 이어졌어.",
+      "English": "The footprints all end up leading this way.",
+      "Thai": "รอยเท้าสุดท้ายก็เชื่อมมาทางนี้",
+      "Vietnamese": "Dấu chân cuối cùng đều nối về phía này.",
+      "Indonesian": "Jejak kakinya akhirnya tersambung ke arah sini."
+    },
+    {
+      "TEXT_ID": "TST_284",
+      "Korean": "결국 여기로 모였다는 거네.",
+      "English": "So they ended up converging here.",
+      "Thai": "แปลว่าสุดท้ายพวกมันมารวมกันที่นี่สินะ",
+      "Vietnamese": "Vậy cuối cùng chúng tụ lại ở đây nhỉ.",
+      "Indonesian": "Jadi akhirnya mereka berkumpul di sini."
+    },
+    {
+      "TEXT_ID": "TST_285",
+      "Korean": "예. 방어벽 앞에서도 같은 흔적이 보입니다.",
+      "English": "Yes. We can see the same traces in front of the wall.",
+      "Thai": "ครับ ด้านหน้ากำแพงป้องกันก็มีร่องรอยแบบเดียวกัน",
+      "Vietnamese": "Vâng. Trước tường phòng thủ cũng thấy dấu vết tương tự.",
+      "Indonesian": "Ya. Di depan dinding pertahanan juga terlihat jejak yang sama."
+    },
+    {
+      "TEXT_ID": "TST_286",
+      "Korean": "양쪽 길의 발자국이 이 근처에서 겹쳐 있습니다.",
+      "English": "The footprints from both roads overlap around here.",
+      "Thai": "รอยเท้าจากทั้งสองทางซ้อนกันแถวนี้ครับ",
+      "Vietnamese": "Dấu chân từ cả hai đường chồng lên nhau quanh khu vực này.",
+      "Indonesian": "Jejak kaki dari kedua jalan bertumpuk di sekitar sini."
+    },
+    {
+      "TEXT_ID": "TST_287",
+      "Korean": "처음 관문 앞에서 막았던 무리도 같은 방향에서 온 거야?",
+      "English": "Did the first group we stopped at the gate come from the same direction?",
+      "Thai": "กลุ่มแรกที่เราหยุดไว้หน้าประตูด่านก็มาจากทิศเดียวกันเหรอ?",
+      "Vietnamese": "Nhóm đầu tiên chúng ta chặn trước cổng cũng đến từ cùng hướng sao?",
+      "Indonesian": "Gerombolan pertama yang kita tahan di depan gerbang juga datang dari arah yang sama?"
+    },
+    {
+      "TEXT_ID": "TST_288",
+      "Korean": "응. 그렇게 보는 게 맞을 것 같아.",
+      "English": "Yeah. I think that is the right way to read it.",
+      "Thai": "อืม น่าจะมองแบบนั้นได้",
+      "Vietnamese": "Ừ. Tôi nghĩ hiểu như vậy là đúng.",
+      "Indonesian": "Ya. Sepertinya begitu cara membacanya."
+    },
+    {
+      "TEXT_ID": "TST_289",
+      "Korean": "멈춰 서려던 흔적보다 미끄러진 흔적이 더 많아.",
+      "English": "There are more sliding marks than signs that they tried to stop.",
+      "Thai": "ร่องรอยลื่นไถลมีมากกว่าร่องรอยที่พยายามหยุด",
+      "Vietnamese": "Dấu trượt nhiều hơn dấu vết cho thấy chúng cố dừng lại.",
+      "Indonesian": "Jejak tergelincir lebih banyak daripada jejak mencoba berhenti."
+    },
+    {
+      "TEXT_ID": "TST_290",
+      "Korean": "관문을 노리고 온 게 아니라, 계속 밀려 내려온 거네.",
+      "English": "So they were not aiming for the gate. They kept getting driven down here.",
+      "Thai": "แปลว่าไม่ได้เล็งประตูด่าน แต่ถูกไล่ต้อนลงมาตลอดสินะ",
+      "Vietnamese": "Vậy chúng không nhắm vào cổng, mà liên tục bị đẩy xuống đây.",
+      "Indonesian": "Jadi mereka bukan mengincar gerbang, tapi terus terdorong turun ke sini."
+    },
+    {
+      "TEXT_ID": "TST_291",
+      "Korean": "그럼 여기서 밀리면 바로 관문이네...",
+      "English": "Then if we get pushed back here, the gate is right behind us...",
+      "Thai": "งั้นถ้าเราถูกดันถอยจากตรงนี้ ข้างหลังก็เป็นประตูด่านเลยนะ...",
+      "Vietnamese": "Vậy nếu bị đẩy lùi ở đây, ngay sau lưng là cổng...",
+      "Indonesian": "Kalau kita terdorong mundur di sini, gerbang tepat di belakang kita..."
+    },
+    {
+      "TEXT_ID": "TST_292",
+      "Korean": "수리만으로 끝나면 다행이겠는데.",
+      "English": "We will be lucky if repairs are all we need.",
+      "Thai": "ถ้าจบแค่ซ่อมแซมได้ก็คงโชคดีแล้ว",
+      "Vietnamese": "Nếu chỉ dừng ở việc sửa chữa thì còn may.",
+      "Indonesian": "Kalau berakhir hanya dengan perbaikan, itu sudah beruntung."
+    },
+    {
+      "TEXT_ID": "TST_293",
+      "Korean": "그럼 안 밀리면 되지.",
+      "English": "Then we just have to hold our ground.",
+      "Thai": "งั้นก็แค่ไม่ถอยก็พอ",
+      "Vietnamese": "Vậy chỉ cần không bị đẩy lùi là được.",
+      "Indonesian": "Kalau begitu, kita hanya perlu tidak terdorong mundur."
+    },
+    {
+      "TEXT_ID": "TST_294",
+      "Korean": "관문 앞은 내가 맡을게!",
+      "English": "I will handle the front of the gate!",
+      "Thai": "หน้าประตูด่านฉันรับเอง!",
+      "Vietnamese": "Trước cổng cứ để tôi lo!",
+      "Indonesian": "Bagian depan gerbang serahkan padaku!"
+    },
+    {
+      "TEXT_ID": "TST_295",
+      "Korean": "쉽다는 듯이 말해서 더 무섭네...",
+      "English": "The way you make that sound easy makes it scarier...",
+      "Thai": "พูดเหมือนง่ายแบบนั้น ยิ่งน่ากลัวเข้าไปอีก...",
+      "Vietnamese": "Cậu nói như dễ lắm nên lại càng đáng sợ...",
+      "Indonesian": "Caramu membuatnya terdengar mudah justru lebih menakutkan..."
+    },
+    {
+      "TEXT_ID": "TST_296",
+      "Korean": "그래도 틀린 말은 아니야. 이번엔 관문이 바로 뒤야.",
+      "English": "Still, she is not wrong. This time, the gate is right behind us.",
+      "Thai": "ถึงอย่างนั้นก็ไม่ได้ผิดนะ ครั้งนี้ประตูด่านอยู่ข้างหลังเราทันที",
+      "Vietnamese": "Dù vậy cũng không sai. Lần này cổng ở ngay sau lưng chúng ta.",
+      "Indonesian": "Tetap saja, itu tidak salah. Kali ini gerbang tepat di belakang kita."
+    },
+    {
+      "TEXT_ID": "TST_297",
+      "Korean": "너무 앞으로 나가면 지원이 끊겨.",
+      "English": "If you move too far forward, we cannot support you.",
+      "Thai": "ถ้าเธอออกไปข้างหน้ามากเกินไป การสนับสนุนจะขาดช่วง",
+      "Vietnamese": "Nếu tiến quá xa, hỗ trợ sẽ bị cắt đứt.",
+      "Indonesian": "Kalau kamu maju terlalu jauh, dukungan akan terputus."
+    },
+    {
+      "TEXT_ID": "TST_298",
+      "Korean": "알겠어. 보이는 거리 안에서 막을게.",
+      "English": "Got it. I will hold them where you can see me.",
+      "Thai": "เข้าใจแล้ว ฉันจะกันไว้ในระยะที่พวกเธอมองเห็น",
+      "Vietnamese": "Biết rồi. Tôi sẽ chặn trong tầm mọi người nhìn thấy.",
+      "Indonesian": "Mengerti. Aku akan menahan mereka dalam jarak yang terlihat."
+    },
+    {
+      "TEXT_ID": "TST_299",
+      "Korean": "숲 안쪽 움직임이 가까워지고 있어.",
+      "English": "The movement deeper in the forest is getting closer.",
+      "Thai": "ความเคลื่อนไหวด้านในป่ากำลังใกล้เข้ามา",
+      "Vietnamese": "Chuyển động bên trong rừng đang đến gần.",
+      "Indonesian": "Pergerakan di dalam hutan semakin mendekat."
+    },
+    {
+      "TEXT_ID": "TST_300",
+      "Korean": "관문 앞 숲길 쪽이랑 남쪽 진입로 쪽에서 동시에 내려와.",
+      "English": "They are coming down from both the forest path in front of the gate and the southern entrance.",
+      "Thai": "พวกมันลงมาพร้อมกันทั้งจากทางป่าหน้าประตูด่าน และทางเข้าด้านใต้",
+      "Vietnamese": "Chúng đang xuống cùng lúc từ đường rừng trước cổng và lối vào phía nam.",
+      "Indonesian": "Mereka turun bersamaan dari jalan hutan depan gerbang dan jalur masuk selatan."
+    },
+    {
+      "TEXT_ID": "TST_301",
+      "Korean": "병사들은 방어벽 뒤로 물리겠습니다.",
+      "English": "I will pull the soldiers back behind the wall.",
+      "Thai": "ผมจะให้ทหารล่าถอยไปหลังกำแพงป้องกันครับ",
+      "Vietnamese": "Tôi sẽ cho binh lính lùi ra sau tường phòng thủ.",
+      "Indonesian": "Saya akan menarik para prajurit ke belakang dinding pertahanan."
+    },
+    {
+      "TEXT_ID": "TST_302",
+      "Korean": "여러분께서 막아 주시는 동안, 저희는 방어벽 상태를 확인하겠습니다.",
+      "English": "While you hold them off, we will check the wall's condition.",
+      "Thai": "ระหว่างที่ทุกท่านช่วยสกัดไว้ พวกเราจะตรวจสภาพกำแพงป้องกันครับ",
+      "Vietnamese": "Trong lúc các vị chặn chúng, chúng tôi sẽ kiểm tra tình trạng tường phòng thủ.",
+      "Indonesian": "Selama kalian menahan mereka, kami akan memeriksa kondisi dinding pertahanan."
+    },
+    {
+      "TEXT_ID": "TST_303",
+      "Korean": "좋아. 여기서 관문을 지키자.",
+      "English": "Good. We will defend the gate here.",
+      "Thai": "ดี เราป้องกันประตูด่านตรงนี้กัน",
+      "Vietnamese": "Tốt. Chúng ta giữ cổng ở đây.",
+      "Indonesian": "Bagus. Kita pertahankan gerbang di sini."
+    },
+    {
+      "TEXT_ID": "TST_304",
+      "Korean": "지키는 건 좋은데... 다치면 바로 말해줘.",
+      "English": "Defending is fine... but if you get hurt, tell me right away.",
+      "Thai": "ป้องกันน่ะดีอยู่หรอก... แต่ถ้าบาดเจ็บก็บอกทันทีนะ",
+      "Vietnamese": "Giữ cổng thì tốt... nhưng nếu bị thương hãy nói ngay.",
+      "Indonesian": "Mempertahankan itu bagus... tapi kalau terluka, langsung beri tahu."
+    },
+    {
+      "TEXT_ID": "TST_305",
+      "Korean": "여기선 숨길수록 일이 커질 것 같아.",
+      "English": "The more you hide it here, the bigger the problem will get.",
+      "Thai": "ถ้าปิดบังไว้ตรงนี้ เรื่องน่าจะยิ่งบานปลาย",
+      "Vietnamese": "Ở đây càng giấu thì chuyện sẽ càng lớn.",
+      "Indonesian": "Di sini, semakin disembunyikan, masalahnya akan semakin besar."
+    },
+    {
+      "TEXT_ID": "TST_306",
+      "Korean": "걱정 마! 여기서 절대 못 지나가게 할 테니까!",
+      "English": "Do not worry! I will not let anything get past this point!",
+      "Thai": "ไม่ต้องห่วง! ฉันจะไม่ให้ผ่านตรงนี้ไปเด็ดขาด!",
+      "Vietnamese": "Đừng lo! Tôi tuyệt đối sẽ không để chúng vượt qua chỗ này!",
+      "Indonesian": "Jangan khawatir! Aku tidak akan membiarkan apa pun melewati tempat ini!"
+    },
+    {
+      "TEXT_ID": "TST_307",
+      "Korean": "좋아. 그 정도 거리만 지켜줘.",
+      "English": "Good. Just keep that distance.",
+      "Thai": "ดี รักษาระยะประมาณนั้นไว้ก็พอ",
+      "Vietnamese": "Tốt. Cứ giữ khoảng cách đó là được.",
+      "Indonesian": "Bagus. Jaga jarak seperti itu saja."
+    },
+    {
+      "TEXT_ID": "TST_308",
+      "Korean": "알겠어. 앞은 내가 맡을게!",
+      "English": "Got it. I will take the front!",
+      "Thai": "เข้าใจแล้ว ข้างหน้าฉันรับเอง!",
+      "Vietnamese": "Biết rồi. Phía trước cứ để tôi!",
+      "Indonesian": "Mengerti. Bagian depan serahkan padaku!"
+    },
+    {
+      "TEXT_ID": "TST_309",
+      "Korean": "다들 괜찮아?",
+      "English": "Is everyone okay?",
+      "Thai": "ทุกคนไม่เป็นไรนะ?",
+      "Vietnamese": "Mọi người ổn chứ?",
+      "Indonesian": "Semuanya baik-baik saja?"
+    },
+    {
+      "TEXT_ID": "TST_310",
+      "Korean": "다친 데는 없어?",
+      "English": "No one is hurt?",
+      "Thai": "ไม่มีใครบาดเจ็บใช่ไหม?",
+      "Vietnamese": "Có ai bị thương không?",
+      "Indonesian": "Ada yang terluka?"
+    },
+    {
+      "TEXT_ID": "TST_311",
+      "Korean": "난 괜찮아!",
+      "English": "I am fine!",
+      "Thai": "ฉันไม่เป็นไร!",
+      "Vietnamese": "Tôi ổn!",
+      "Indonesian": "Aku baik-baik saja!"
+    },
+    {
+      "TEXT_ID": "TST_312",
+      "Korean": "관문 앞은 제대로 막았어!",
+      "English": "I held the front of the gate!",
+      "Thai": "หน้าประตูด่านฉันกันไว้ได้แน่นอน!",
+      "Vietnamese": "Trước cổng tôi đã chặn chắc rồi!",
+      "Indonesian": "Bagian depan gerbang sudah kutahan dengan benar!"
+    },
+    {
+      "TEXT_ID": "TST_313",
+      "Korean": "응. 제대로 막았어.",
+      "English": "Yeah. You held it properly.",
+      "Thai": "อืม กันไว้ได้จริง ๆ",
+      "Vietnamese": "Ừ. Cậu chặn rất chắc.",
+      "Indonesian": "Ya. Kamu menahannya dengan benar."
+    },
+    {
+      "TEXT_ID": "TST_314",
+      "Korean": "그래도 방어벽 상태는 확인해야 해.",
+      "English": "Still, we need to check the wall's condition.",
+      "Thai": "แต่ก็ยังต้องตรวจสภาพกำแพงป้องกัน",
+      "Vietnamese": "Nhưng vẫn phải kiểm tra tình trạng tường phòng thủ.",
+      "Indonesian": "Tapi kita tetap harus memeriksa kondisi dinding pertahanan."
+    },
+    {
+      "TEXT_ID": "TST_315",
+      "Korean": "멀쩡해 보이는 거랑 실제로 멀쩡한 건 다르니까...",
+      "English": "Looking fine and actually being fine are different...",
+      "Thai": "ดูเหมือนไม่เป็นไร กับไม่เป็นไรจริง ๆ มันคนละเรื่องกัน...",
+      "Vietnamese": "Trông ổn và thật sự ổn là hai chuyện khác nhau...",
+      "Indonesian": "Terlihat baik-baik saja dan benar-benar baik-baik saja itu berbeda..."
+    },
+    {
+      "TEXT_ID": "TST_316",
+      "Korean": "데미안, 방어벽 상태는 어때?",
+      "English": "Demian, how is the wall?",
+      "Thai": "เดเมียน สภาพกำแพงป้องกันเป็นยังไง?",
+      "Vietnamese": "Demian, tình trạng tường phòng thủ thế nào?",
+      "Indonesian": "Demian, bagaimana kondisi dinding pertahanan?"
+    },
+    {
+      "TEXT_ID": "TST_317",
+      "Korean": "방어벽은 아직 버티고 있습니다.",
+      "English": "The wall is still holding.",
+      "Thai": "กำแพงป้องกันยังคงรับไว้ได้ครับ",
+      "Vietnamese": "Tường phòng thủ vẫn đang trụ được.",
+      "Indonesian": "Dinding pertahanan masih bertahan."
+    },
+    {
+      "TEXT_ID": "TST_318",
+      "Korean": "다만 충격이 꽤 쌓였습니다.",
+      "English": "But it has taken quite a lot of impact.",
+      "Thai": "แต่แรงกระแทกสะสมอยู่ค่อนข้างมากครับ",
+      "Vietnamese": "Tuy nhiên, nó đã chịu khá nhiều chấn động.",
+      "Indonesian": "Namun, dampaknya sudah cukup banyak menumpuk."
+    },
+    {
+      "TEXT_ID": "TST_319",
+      "Korean": "지금 상태로 한 번 더 버티긴 위험합니다.",
+      "English": "It would be risky to have it hold one more time in this state.",
+      "Thai": "ถ้าให้รับอีกครั้งในสภาพนี้จะเสี่ยงครับ",
+      "Vietnamese": "Nếu để nó trụ thêm một lần nữa trong tình trạng này thì rất nguy hiểm.",
+      "Indonesian": "Berbahaya jika harus bertahan sekali lagi dalam kondisi sekarang."
+    },
+    {
+      "TEXT_ID": "TST_320",
+      "Korean": "바로 이어서 막기는 어려워?",
+      "English": "Would it be hard to defend again right away?",
+      "Thai": "ถ้าต้องป้องกันต่อทันทีจะยากเหรอ?",
+      "Vietnamese": "Khó chặn tiếp ngay sao?",
+      "Indonesian": "Sulit untuk langsung menahan serangan berikutnya?"
+    },
+    {
+      "TEXT_ID": "TST_321",
+      "Korean": "예. 짧게라도 보강 시간이 필요합니다.",
+      "English": "Yes. We need at least a short time to reinforce it.",
+      "Thai": "ครับ ถึงจะแค่ช่วงสั้น ๆ ก็ต้องมีเวลาเสริมกำแพงครับ",
+      "Vietnamese": "Vâng. Dù chỉ ngắn thôi, cũng cần thời gian gia cố.",
+      "Indonesian": "Ya. Meski sebentar, tetap perlu waktu untuk memperkuatnya."
+    },
+    {
+      "TEXT_ID": "TST_322",
+      "Korean": "방어벽을 손보면 다음 전투는 버틸 수 있습니다.",
+      "English": "If we repair the wall, it can hold through the next battle.",
+      "Thai": "ถ้าซ่อมกำแพงป้องกันก่อน การต่อสู้ครั้งถัดไปน่าจะรับไหวครับ",
+      "Vietnamese": "Nếu sửa tường phòng thủ, nó có thể trụ được trận tiếp theo.",
+      "Indonesian": "Jika dinding pertahanan diperbaiki, itu bisa bertahan untuk pertempuran berikutnya."
+    },
+    {
+      "TEXT_ID": "TST_323",
+      "Korean": "숲 안쪽 움직임은 아직 남아 있어.",
+      "English": "There is still movement deeper in the forest.",
+      "Thai": "ยังมีความเคลื่อนไหวด้านในป่าอยู่",
+      "Vietnamese": "Chuyển động bên trong rừng vẫn còn.",
+      "Indonesian": "Pergerakan di dalam hutan masih tersisa."
+    },
+    {
+      "TEXT_ID": "TST_324",
+      "Korean": "아까보다 무거운 발소리도 섞여 있어.",
+      "English": "There are heavier footsteps mixed in than before.",
+      "Thai": "มีเสียงฝีเท้าที่หนักกว่าก่อนหน้านี้ปนอยู่ด้วย",
+      "Vietnamese": "Có lẫn cả tiếng bước chân nặng hơn lúc nãy.",
+      "Indonesian": "Ada juga suara langkah kaki yang lebih berat dari sebelumnya."
+    },
+    {
+      "TEXT_ID": "TST_325",
+      "Korean": "그럼 바로 이어서 싸우긴 위험해.",
+      "English": "Then fighting again right away would be dangerous.",
+      "Thai": "งั้นสู้ต่อทันทีคงอันตราย",
+      "Vietnamese": "Vậy đánh tiếp ngay sẽ nguy hiểm.",
+      "Indonesian": "Kalau begitu, berbahaya kalau langsung bertarung lagi."
+    },
+    {
+      "TEXT_ID": "TST_326",
+      "Korean": "방어벽을 먼저 손보고, 안쪽 움직임을 다시 확인하자.",
+      "English": "Let us repair the wall first, then check the movement inside again.",
+      "Thai": "ซ่อมกำแพงป้องกันก่อน แล้วค่อยตรวจความเคลื่อนไหวด้านในอีกครั้งเถอะ",
+      "Vietnamese": "Sửa tường phòng thủ trước, rồi kiểm tra lại chuyển động bên trong.",
+      "Indonesian": "Perbaiki dinding pertahanan dulu, lalu periksa lagi pergerakan di dalam."
+    },
+    {
+      "TEXT_ID": "TST_327",
+      "Korean": "정비 시간이 있으면 잠깐 눈을...",
+      "English": "If we have maintenance time, maybe I can close my eyes for a moment...",
+      "Thai": "ถ้ามีเวลาซ่อมบำรุง งั้นขอหลับตาสักแป๊บ...",
+      "Vietnamese": "Nếu có thời gian chỉnh bị, tôi chợp mắt một chút...",
+      "Indonesian": "Kalau ada waktu perawatan, mungkin aku bisa memejamkan mata sebentar..."
+    },
+    {
+      "TEXT_ID": "TST_328",
+      "Korean": "정비 시간에 잠자는 건 포함 안 돼.",
+      "English": "Sleeping is not included in maintenance time.",
+      "Thai": "เวลาซ่อมบำรุงไม่ได้รวมเวลานอนนะ",
+      "Vietnamese": "Ngủ không nằm trong thời gian chỉnh bị đâu.",
+      "Indonesian": "Tidur tidak termasuk dalam waktu perawatan."
+    },
+    {
+      "TEXT_ID": "TST_329",
+      "Korean": "아직 말 끝까지 안 했는데...",
+      "English": "I did not even finish saying it yet...",
+      "Thai": "ฉันยังพูดไม่จบเลย...",
+      "Vietnamese": "Tôi còn chưa nói hết mà...",
+      "Indonesian": "Aku bahkan belum selesai bicara..."
+    },
+    {
+      "TEXT_ID": "TST_330",
+      "Korean": "...아니, 거의 맞긴 했지만.",
+      "English": "...No, you were mostly right, though.",
+      "Thai": "...ไม่สิ ก็เกือบถูกแล้วนั่นแหละ",
+      "Vietnamese": "...Không, gần như đúng thật.",
+      "Indonesian": "...Tidak, memang hampir benar sih."
+    },
+    {
+      "TEXT_ID": "TST_331",
+      "Korean": "좋아. 관문 방어벽부터 손보자.",
+      "English": "Good. Let us start with the gate wall.",
+      "Thai": "ดี เริ่มจากซ่อมกำแพงประตูด่านก่อน",
+      "Vietnamese": "Tốt. Bắt đầu sửa tường cổng trước.",
+      "Indonesian": "Bagus. Kita mulai dari memperbaiki dinding gerbang."
+    },
+    {
+      "TEXT_ID": "TST_332",
+      "Korean": "노아와 엘리스는 숲 안쪽 움직임을 계속 확인해줘.",
+      "English": "Noah and Alice, keep checking the movement deeper in the forest.",
+      "Thai": "โนอากับเอลิส คอยตรวจความเคลื่อนไหวด้านในป่าต่อไป",
+      "Vietnamese": "Noah và Alice, tiếp tục kiểm tra chuyển động bên trong rừng.",
+      "Indonesian": "Noah dan Alice, terus periksa pergerakan di dalam hutan."
+    },
+    {
+      "TEXT_ID": "TST_333",
+      "Korean": "세라와 스파인은 병사들과 함께 정비할 곳을 확인해줘.",
+      "English": "Serah and Spayne, check the repair points with the soldiers.",
+      "Thai": "เซราห์กับสเปย์น ไปตรวจจุดที่ต้องซ่อมกับพวกทหาร",
+      "Vietnamese": "Serah và Spayne, kiểm tra các điểm cần sửa cùng binh lính.",
+      "Indonesian": "Serah dan Spayne, periksa titik yang perlu diperbaiki bersama para prajurit."
+    },
+    {
+      "TEXT_ID": "TST_334",
+      "Korean": "응. 움직임은 계속 볼게.",
+      "English": "Yeah. I will keep watching the movement.",
+      "Thai": "อืม ฉันจะคอยดูความเคลื่อนไหวต่อไป",
+      "Vietnamese": "Ừ. Tôi sẽ tiếp tục quan sát chuyển động.",
+      "Indonesian": "Ya. Aku akan terus mengawasi pergerakannya."
+    },
+    {
+      "TEXT_ID": "TST_335",
+      "Korean": "좋아. 다음 전투 전까지 준비해 둘게!",
+      "English": "Good. I will get ready before the next battle!",
+      "Thai": "ดี ฉันจะเตรียมให้พร้อมก่อนการต่อสู้ครั้งต่อไป!",
+      "Vietnamese": "Tốt. Tôi sẽ chuẩn bị trước trận tiếp theo!",
+      "Indonesian": "Bagus. Aku akan bersiap sebelum pertempuran berikutnya!"
+    },
+    {
+      "TEXT_ID": "TST_336",
+      "Korean": "준비는 좋은데... 이번엔 덜 다치는 방향으로 부탁할게.",
+      "English": "Getting ready is good... but this time, please aim for fewer injuries.",
+      "Thai": "เตรียมก็ดีอยู่หรอก... แต่ครั้งนี้ขอแบบเจ็บน้อยลงนะ",
+      "Vietnamese": "Chuẩn bị thì tốt... nhưng lần này làm sao để ít bị thương hơn nhé.",
+      "Indonesian": "Bersiap itu bagus... tapi kali ini, usahakan lebih sedikit yang terluka."
+    },
+    {
+      "TEXT_ID": "TST_337",
+      "Korean": "너희든 방어벽이든, 손볼 곳이 늘면 힘드니까...",
+      "English": "Whether it is you or the wall, more things to fix means more work...",
+      "Thai": "ไม่ว่าจะพวกเธอหรือกำแพง ถ้ามีที่ต้องซ่อมเพิ่มก็เหนื่อย...",
+      "Vietnamese": "Dù là các cậu hay tường phòng thủ, chỗ cần sửa tăng lên thì mệt lắm...",
+      "Indonesian": "Entah kalian atau dinding pertahanan, kalau yang harus diperbaiki bertambah, itu melelahkan..."
+    },
+    {
+      "TEXT_ID": "TST_338",
+      "Korean": "데미안, 여기 금이 많이 간 것 같아.",
+      "English": "Demian, this crack looks pretty bad.",
+      "Thai": "เดเมียน ตรงนี้รอยร้าวดูหนักนะ",
+      "Vietnamese": "Demian, chỗ này có vẻ nứt khá nhiều.",
+      "Indonesian": "Demian, retakan di sini sepertinya cukup parah."
+    },
+    {
+      "TEXT_ID": "TST_339",
+      "Korean": "이쪽도 그냥 두면 다음엔 더 크게 벌어지겠네...",
+      "English": "If we leave this side alone, it will open up wider next time...",
+      "Thai": "ทางนี้ถ้าปล่อยไว้ ครั้งหน้าคงแยกกว้างกว่าเดิม...",
+      "Vietnamese": "Bên này nếu cứ để vậy, lần sau sẽ nứt rộng hơn...",
+      "Indonesian": "Kalau sisi ini dibiarkan, berikutnya akan terbuka lebih besar..."
+    },
+    {
+      "TEXT_ID": "TST_340",
+      "Korean": "관문 방어벽을 바로 보강하겠습니다.",
+      "English": "We will reinforce the gate wall at once.",
+      "Thai": "เราจะเสริมกำแพงประตูด่านทันทีครับ",
+      "Vietnamese": "Chúng tôi sẽ gia cố tường cổng ngay.",
+      "Indonesian": "Kami akan segera memperkuat dinding gerbang."
+    },
+    {
+      "TEXT_ID": "TST_341",
+      "Korean": "완전히 고치긴 어렵지만, 다음 전투를 버틸 정도는 만들 수 있습니다.",
+      "English": "We cannot fully repair it, but we can make it strong enough for the next battle.",
+      "Thai": "คงซ่อมให้สมบูรณ์ไม่ได้ แต่ทำให้พอรับการต่อสู้ครั้งต่อไปได้ครับ",
+      "Vietnamese": "Không thể sửa hoàn toàn, nhưng có thể làm nó đủ trụ cho trận tiếp theo.",
+      "Indonesian": "Tidak bisa memperbaikinya sepenuhnya, tapi kami bisa membuatnya cukup kuat untuk pertempuran berikutnya."
+    },
+    {
+      "TEXT_ID": "TST_342",
+      "Korean": "그 정도면 지금 해두는 게 낫겠네...",
+      "English": "Then it is better to do that now...",
+      "Thai": "ถ้าระดับนั้นได้ ทำตอนนี้ก็น่าจะดีกว่า...",
+      "Vietnamese": "Nếu được đến mức đó, làm ngay bây giờ vẫn hơn...",
+      "Indonesian": "Kalau sampai sejauh itu bisa, lebih baik dilakukan sekarang..."
+    },
+    {
+      "TEXT_ID": "TST_343",
+      "Korean": "나중에 무너지면 손볼 곳이 너무 많아지니까.",
+      "English": "If it collapses later, there will be too many places to fix.",
+      "Thai": "ถ้ามันพังทีหลัง จุดที่ต้องซ่อมจะเยอะเกินไป",
+      "Vietnamese": "Nếu sau này nó sập, sẽ có quá nhiều chỗ phải sửa.",
+      "Indonesian": "Kalau nanti runtuh, akan ada terlalu banyak tempat yang harus diperbaiki."
+    },
+    {
+      "TEXT_ID": "TST_344",
+      "Korean": "그럼 지금 최대한 튼튼하게 해두자!",
+      "English": "Then let us make it as sturdy as we can right now!",
+      "Thai": "งั้นตอนนี้ทำให้แข็งแรงที่สุดเท่าที่ทำได้เถอะ!",
+      "Vietnamese": "Vậy bây giờ làm nó chắc nhất có thể thôi!",
+      "Indonesian": "Kalau begitu, sekarang kita buat sekokoh mungkin!"
+    },
+    {
+      "TEXT_ID": "TST_345",
+      "Korean": "방어벽이 버텨주면 나도 더 오래 막을 수 있으니까.",
+      "English": "If the wall holds, I can hold the line longer too.",
+      "Thai": "ถ้ากำแพงป้องกันรับไว้ได้ ฉันก็จะกันได้นานขึ้นด้วย",
+      "Vietnamese": "Nếu tường phòng thủ trụ được, tôi cũng có thể chặn lâu hơn.",
+      "Indonesian": "Kalau dinding pertahanan bertahan, aku juga bisa menahan lebih lama."
+    },
+    {
+      "TEXT_ID": "TST_346",
+      "Korean": "둘 다 버티면 내가 볼 곳도 줄어들겠네...",
+      "English": "If both hold, that gives me fewer things to check...",
+      "Thai": "ถ้าทั้งสองอย่างรับไหว จุดที่ฉันต้องดูก็น้อยลง...",
+      "Vietnamese": "Nếu cả hai cùng trụ được, chỗ tôi phải xem cũng sẽ ít đi...",
+      "Indonesian": "Kalau keduanya bertahan, bagian yang harus kulihat juga berkurang..."
+    },
+    {
+      "TEXT_ID": "TST_347",
+      "Korean": "맞아. 그래서 지금 손보는 거야.",
+      "English": "Exactly. That is why we are repairing it now.",
+      "Thai": "ใช่ เพราะงั้นเราถึงซ่อมมันตอนนี้",
+      "Vietnamese": "Đúng vậy. Vì thế bây giờ chúng ta mới sửa nó.",
+      "Indonesian": "Benar. Karena itu kita memperbaikinya sekarang."
+    },
+    {
+      "TEXT_ID": "TST_348",
+      "Korean": "[관문 방어벽 보강 완료. 성벽 체력이 회복되었습니다.]",
+      "English": "[Gate wall reinforcement complete. Wall HP has been restored.]",
+      "Thai": "[เสริมกำแพงประตูด่านเสร็จสิ้น พลังชีวิตของกำแพงฟื้นฟูแล้ว]",
+      "Vietnamese": "[Gia cố tường cổng hoàn tất. HP tường đã được hồi phục.]",
+      "Indonesian": "[Penguatan dinding gerbang selesai. HP dinding telah dipulihkan.]"
+    },
+    {
+      "TEXT_ID": "TST_349",
+      "Korean": "관문 방어벽 보강은 끝났어.",
+      "English": "The gate wall reinforcement is done.",
+      "Thai": "เสริมกำแพงประตูด่านเสร็จแล้ว",
+      "Vietnamese": "Gia cố tường cổng đã xong.",
+      "Indonesian": "Penguatan dinding gerbang sudah selesai."
+    },
+    {
+      "TEXT_ID": "TST_350",
+      "Korean": "신호석도 한 번 더 조율할 수 있어.",
+      "English": "We can tune the signal stones one more time too.",
+      "Thai": "ศิลาสัญญาณก็ยังปรับได้อีกครั้ง",
+      "Vietnamese": "Đá tín hiệu cũng có thể điều chỉnh thêm một lần nữa.",
+      "Indonesian": "Batu sinyal juga bisa diselaraskan sekali lagi."
+    },
+    {
+      "TEXT_ID": "TST_351",
+      "Korean": "마지막 전투 전에 강화 하나를 더 정해두는 게 좋겠어.",
+      "English": "It would be best to choose one more enhancement before the final battle.",
+      "Thai": "ก่อนการต่อสู้ครั้งสุดท้าย เลือกการเสริมพลังไว้อีกหนึ่งอย่างน่าจะดี",
+      "Vietnamese": "Trước trận cuối, tốt nhất nên chọn thêm một cường hóa.",
+      "Indonesian": "Sebelum pertempuran terakhir, sebaiknya kita menentukan satu peningkatan lagi."
+    },
+    {
+      "TEXT_ID": "TST_352",
+      "Korean": "지금 고른 강화는 다음 전투에도 이어질 거야.",
+      "English": "The enhancement you choose now will carry over into the next battle too.",
+      "Thai": "การเสริมพลังที่เลือกตอนนี้จะคงอยู่ในการต่อสู้ครั้งต่อไปด้วย",
+      "Vietnamese": "Cường hóa chọn bây giờ cũng sẽ tiếp tục sang trận tiếp theo.",
+      "Indonesian": "Peningkatan yang dipilih sekarang akan berlanjut ke pertempuran berikutnya."
+    },
+    {
+      "TEXT_ID": "TST_353",
+      "Korean": "좋아. 필요한 쪽으로 맞춰줘.",
+      "English": "Good. Tune it where we need it.",
+      "Thai": "ดี ปรับให้เข้ากับส่วนที่จำเป็นเลย",
+      "Vietnamese": "Tốt. Điều chỉnh theo phía cần thiết đi.",
+      "Indonesian": "Bagus. Sesuaikan ke bagian yang dibutuhkan."
+    },
+    {
+      "TEXT_ID": "TST_354",
+      "Korean": "앞에서 버티는 건 내가 할 테니까.",
+      "English": "I will be the one holding the front.",
+      "Thai": "เพราะคนที่ยืนกันข้างหน้าคือฉัน",
+      "Vietnamese": "Vì người trụ phía trước sẽ là tôi.",
+      "Indonesian": "Karena aku yang akan bertahan di depan."
+    },
+    {
+      "TEXT_ID": "TST_355",
+      "Korean": "나도 뒤쪽 움직임은 계속 볼게.",
+      "English": "I will keep watching movement farther back too.",
+      "Thai": "ฉันก็จะคอยดูความเคลื่อนไหวลึกเข้าไปต่อ",
+      "Vietnamese": "Tôi cũng sẽ tiếp tục quan sát chuyển động phía sau.",
+      "Indonesian": "Aku juga akan terus mengawasi pergerakan di belakang."
+    },
+    {
+      "TEXT_ID": "TST_356",
+      "Korean": "난 사람도 방어벽도 손볼 일이 덜 생기는 쪽이면 좋아...",
+      "English": "I am fine with anything that means fewer things to fix, whether it is people or the wall...",
+      "Thai": "ฉันเอาแบบที่ทำให้ต้องซ่อมทั้งคนทั้งกำแพงน้อยลงก็พอ...",
+      "Vietnamese": "Tôi chỉ cần phía nào khiến người hay tường phòng thủ ít phải sửa hơn...",
+      "Indonesian": "Aku baik dengan pilihan yang membuat orang maupun dinding pertahanan lebih sedikit perlu diperbaiki..."
+    },
+    {
+      "TEXT_ID": "TST_357",
+      "Korean": "좋아. 마지막으로 조율하자.",
+      "English": "Good. Let us do the final tuning.",
+      "Thai": "ดี มาปรับครั้งสุดท้ายกัน",
+      "Vietnamese": "Tốt. Điều chỉnh lần cuối nào.",
+      "Indonesian": "Bagus. Mari lakukan penyelarasan terakhir."
+    },
+    {
+      "TEXT_ID": "TST_358",
+      "Korean": "[캐릭터 영구 강화 후보 표시]",
+      "English": "[Display character permanent enhancement candidates]",
+      "Thai": "[แสดงตัวเลือกเสริมพลังถาวรของตัวละคร]",
+      "Vietnamese": "[Hiển thị ứng viên cường hóa vĩnh viễn cho nhân vật]",
+      "Indonesian": "[Tampilkan kandidat peningkatan permanen karakter]"
+    },
+    {
+      "TEXT_ID": "TST_359",
+      "Korean": "[플레이어가 강화 1개를 선택한다]",
+      "English": "[The player selects one enhancement]",
+      "Thai": "[ผู้เล่นเลือกการเสริมพลัง 1 อย่าง]",
+      "Vietnamese": "[Người chơi chọn 1 cường hóa]",
+      "Indonesian": "[Pemain memilih 1 peningkatan]"
+    },
+    {
+      "TEXT_ID": "TST_360",
+      "Korean": "[선택한 강화가 이후 전투에도 유지됨을 표시한다]",
+      "English": "[Display that the selected enhancement will remain active in later battles]",
+      "Thai": "[แสดงว่าการเสริมพลังที่เลือกจะคงอยู่ในการต่อสู้ถัดไปด้วย]",
+      "Vietnamese": "[Hiển thị rằng cường hóa đã chọn sẽ được duy trì trong các trận sau]",
+      "Indonesian": "[Tampilkan bahwa peningkatan yang dipilih akan tetap aktif di pertempuran berikutnya]"
+    },
+    {
+      "TEXT_ID": "TST_361",
+      "Korean": "조율됐어.",
+      "English": "Tuned.",
+      "Thai": "ปรับเสร็จแล้ว",
+      "Vietnamese": "Đã điều chỉnh xong.",
+      "Indonesian": "Sudah diselaraskan."
+    },
+    {
+      "TEXT_ID": "TST_362",
+      "Korean": "이제 다음 전투 정보를 확인하자.",
+      "English": "Now let us check the next battle's intel.",
+      "Thai": "ต่อไปตรวจข้อมูลการต่อสู้ครั้งถัดไปกัน",
+      "Vietnamese": "Giờ kiểm tra thông tin trận tiếp theo.",
+      "Indonesian": "Sekarang periksa informasi pertempuran berikutnya."
+    },
+    {
+      "TEXT_ID": "TST_363",
+      "Korean": "지휘관, 숲 안쪽 움직임이 이상해.",
+      "English": "Commander, the movement deeper in the forest is strange.",
+      "Thai": "ผู้บัญชาการ ความเคลื่อนไหวด้านในป่าแปลกไป",
+      "Vietnamese": "Chỉ huy, chuyển động bên trong rừng rất lạ.",
+      "Indonesian": "Komandan, pergerakan di dalam hutan aneh."
+    },
+    {
+      "TEXT_ID": "TST_364",
+      "Korean": "발소리가 하나만 유독 무거워.",
+      "English": "One set of footsteps is unusually heavy.",
+      "Thai": "มีเสียงฝีเท้าหนึ่งที่หนักผิดปกติ",
+      "Vietnamese": "Chỉ có một tiếng bước chân đặc biệt nặng.",
+      "Indonesian": "Ada satu suara langkah yang sangat berat."
+    },
+    {
+      "TEXT_ID": "TST_365",
+      "Korean": "주변 몬스터들도 그 소리에 휩쓸려 움직이는 것 같아.",
+      "English": "The nearby monsters seem to be getting swept along by that sound.",
+      "Thai": "เหมือนสัตว์ประหลาดรอบ ๆ ก็ถูกเสียงนั้นพาให้เคลื่อนไหวตามไปด้วย",
+      "Vietnamese": "Có vẻ quái vật xung quanh cũng bị cuốn theo tiếng đó mà di chuyển.",
+      "Indonesian": "Sepertinya monster di sekitar juga ikut terseret bergerak oleh suara itu."
+    },
+    {
+      "TEXT_ID": "TST_366",
+      "Korean": "무리를 이끄는 건지, 같이 밀려오는 건지는 아직 모르겠어.",
+      "English": "We still do not know whether it is leading the horde or being driven along with them.",
+      "Thai": "ยังไม่รู้ว่ามันนำฝูงอยู่ หรือถูกไล่ต้อนมาพร้อมกัน",
+      "Vietnamese": "Vẫn chưa biết nó đang dẫn bầy, hay cũng bị đẩy xuống cùng chúng.",
+      "Indonesian": "Masih belum jelas apakah itu memimpin gerombolan, atau ikut terdorong bersama mereka."
+    },
+    {
+      "TEXT_ID": "TST_367",
+      "Korean": "하지만 다음 전투에서 가장 위험한 건 저 녀석이야.",
+      "English": "But that one will be the most dangerous in the next battle.",
+      "Thai": "แต่ในการต่อสู้ครั้งต่อไป ตัวนั้นจะอันตรายที่สุด",
+      "Vietnamese": "Nhưng trong trận tiếp theo, con đó là nguy hiểm nhất.",
+      "Indonesian": "Tapi dalam pertempuran berikutnya, makhluk itu yang paling berbahaya."
+    },
+    {
+      "TEXT_ID": "TST_368",
+      "Korean": "[보스 정보 확인: 대형 몬스터 중심의 마지막 무리]",
+      "English": "[Boss intel confirmed: Final horde centered around a large monster]",
+      "Thai": "[ยืนยันข้อมูลบอส: ฝูงสุดท้ายที่มีสัตว์ประหลาดขนาดใหญ่เป็นศูนย์กลาง]",
+      "Vietnamese": "[Xác nhận thông tin boss: Đợt cuối xoay quanh quái vật lớn]",
+      "Indonesian": "[Informasi bos dikonfirmasi: Gerombolan terakhir berpusat pada monster besar]"
+    },
+    {
+      "TEXT_ID": "TST_369",
+      "Korean": "관문 뒤 마을길 입구에서 막자.",
+      "English": "Let us stop them at the village road entrance behind the gate.",
+      "Thai": "หยุดพวกมันที่ปากทางถนนหมู่บ้านด้านหลังประตูด่านกัน",
+      "Vietnamese": "Chặn chúng ở lối vào đường làng phía sau cổng.",
+      "Indonesian": "Kita tahan mereka di pintu masuk jalan desa di belakang gerbang."
+    },
+    {
+      "TEXT_ID": "TST_370",
+      "Korean": "방어벽이 버티는 동안 저 녀석을 멈춰야 해.",
+      "English": "We need to stop that thing while the wall holds.",
+      "Thai": "เราต้องหยุดเจ้านั่นระหว่างที่กำแพงป้องกันยังรับไว้ได้",
+      "Vietnamese": "Chúng ta phải chặn con đó khi tường phòng thủ còn trụ được.",
+      "Indonesian": "Kita harus menghentikan makhluk itu selagi dinding bertahan."
+    },
+    {
+      "TEXT_ID": "TST_371",
+      "Korean": "알겠어. 저 녀석은 내가 앞에서 막을게.",
+      "English": "Got it. I will stop that one from the front.",
+      "Thai": "เข้าใจแล้ว เจ้านั่นฉันจะกันไว้จากด้านหน้าเอง",
+      "Vietnamese": "Biết rồi. Con đó tôi sẽ chặn từ phía trước.",
+      "Indonesian": "Mengerti. Makhluk itu akan kutahan dari depan."
+    },
+    {
+      "TEXT_ID": "TST_372",
+      "Korean": "관문 뒤로는 못 보내.",
+      "English": "I will not let it get behind the gate.",
+      "Thai": "ฉันจะไม่ให้มันผ่านไปหลังประตูด่าน",
+      "Vietnamese": "Tôi sẽ không để nó qua phía sau cổng.",
+      "Indonesian": "Aku tidak akan membiarkannya lewat ke belakang gerbang."
+    },
+    {
+      "TEXT_ID": "TST_373",
+      "Korean": "제발 너무 크게 다치진 말아줘...",
+      "English": "Please try not to get too badly hurt...",
+      "Thai": "ขอร้องล่ะ อย่าบาดเจ็บหนักเกินไปนะ...",
+      "Vietnamese": "Làm ơn đừng bị thương quá nặng nhé...",
+      "Indonesian": "Tolong jangan sampai terluka terlalu parah..."
+    },
+    {
+      "TEXT_ID": "TST_374",
+      "Korean": "고치는 게 방어벽만으로 끝나면 좋겠거든.",
+      "English": "I would like the wall to be the only thing we need to fix.",
+      "Thai": "ฉันอยากให้สิ่งที่ต้องซ่อมมีแค่กำแพงป้องกันพอ",
+      "Vietnamese": "Tôi muốn thứ cần sửa chỉ dừng ở tường phòng thủ thôi.",
+      "Indonesian": "Aku ingin yang perlu diperbaiki cukup dinding pertahanan saja."
+    },
+    {
+      "TEXT_ID": "TST_375",
+      "Korean": "이제 관문 뒤쪽 방어선으로 가자.",
+      "English": "Now let us move to the defense line behind the gate.",
+      "Thai": "ตอนนี้ไปที่แนวป้องกันด้านหลังประตูด่านกัน",
+      "Vietnamese": "Giờ đến tuyến phòng thủ phía sau cổng thôi.",
+      "Indonesian": "Sekarang kita menuju garis pertahanan di belakang gerbang."
+    },
+    {
+      "TEXT_ID": "TST_376",
+      "Korean": "결국 마지막까지 뛰어야 하는 거네...",
+      "English": "So we have to hurry all the way to the end...",
+      "Thai": "สุดท้ายก็ต้องวิ่งจนถึงตอนจบเลยสินะ...",
+      "Vietnamese": "Cuối cùng vẫn phải chạy đến tận phút cuối nhỉ...",
+      "Indonesian": "Pada akhirnya, kita harus berlari sampai akhir juga..."
+    },
+    {
+      "TEXT_ID": "TST_377",
+      "Korean": "늦게 가서 더 힘들어지는 것보단 낫잖아!",
+      "English": "It is better than arriving late and making things harder!",
+      "Thai": "ก็ดีกว่าไปช้าแล้วลำบากกว่าเดิมนี่!",
+      "Vietnamese": "Còn hơn đến muộn rồi mọi chuyện khó hơn!",
+      "Indonesian": "Itu lebih baik daripada terlambat lalu semuanya jadi lebih sulit!"
+    },
+    {
+      "TEXT_ID": "TST_378",
+      "Korean": "세라가 내 논리를 가져갔어...",
+      "English": "Serah took my logic...",
+      "Thai": "เซราห์เอาตรรกะของฉันไปใช้แล้ว...",
+      "Vietnamese": "Serah lấy mất lý lẽ của tôi rồi...",
+      "Indonesian": "Serah mengambil logikaku..."
+    },
+    {
+      "TEXT_ID": "TST_379",
+      "Korean": "지휘관, 아까 들었던 무거운 발소리야.",
+      "English": "Commander, that is the heavy footstep I heard earlier.",
+      "Thai": "ผู้บัญชาการ นั่นคือเสียงฝีเท้าหนัก ๆ ที่ฉันได้ยินก่อนหน้านี้",
+      "Vietnamese": "Chỉ huy, đó là tiếng bước chân nặng tôi nghe lúc nãy.",
+      "Indonesian": "Komandan, itu suara langkah berat yang kudengar tadi."
+    },
+    {
+      "TEXT_ID": "TST_380",
+      "Korean": "이제 거의 다 왔어.",
+      "English": "It is almost here.",
+      "Thai": "มันใกล้จะมาถึงแล้ว",
+      "Vietnamese": "Nó gần tới rồi.",
+      "Indonesian": "Sekarang hampir sampai."
+    },
+    {
+      "TEXT_ID": "TST_381",
+      "Korean": "주변 몬스터들도 같이 끌려 내려오고 있어.",
+      "English": "The nearby monsters are being dragged down with it too.",
+      "Thai": "สัตว์ประหลาดรอบ ๆ ก็ถูกลากลงมาด้วยกัน",
+      "Vietnamese": "Quái vật xung quanh cũng đang bị kéo xuống cùng nó.",
+      "Indonesian": "Monster di sekitar juga ikut terseret turun bersamanya."
+    },
+    {
+      "TEXT_ID": "TST_382",
+      "Korean": "여기서 더 확인할 시간은 없겠네.",
+      "English": "There is no time to check anything else here.",
+      "Thai": "คงไม่มีเวลาตรวจอะไรเพิ่มเติมแล้ว",
+      "Vietnamese": "Ở đây không còn thời gian kiểm tra thêm nữa.",
+      "Indonesian": "Tidak ada waktu lagi untuk memeriksa hal lain di sini."
+    },
+    {
+      "TEXT_ID": "TST_383",
+      "Korean": "그럼 오래 끌면 안 되겠네...",
+      "English": "Then we cannot let this drag on...",
+      "Thai": "งั้นจะปล่อยให้ยืดเยื้อไม่ได้สินะ...",
+      "Vietnamese": "Vậy không thể để kéo dài được...",
+      "Indonesian": "Kalau begitu, kita tidak boleh membiarkannya berlarut-larut..."
+    },
+    {
+      "TEXT_ID": "TST_384",
+      "Korean": "회복 타이밍은 내가 볼게.",
+      "English": "I will watch the healing timing.",
+      "Thai": "จังหวะฟื้นฟูฉันจะดูเอง",
+      "Vietnamese": "Tôi sẽ xem thời điểm hồi phục.",
+      "Indonesian": "Aku akan melihat timing pemulihan."
+    },
+    {
+      "TEXT_ID": "TST_385",
+      "Korean": "아까 말한 대로, 앞은 내가 막을게.",
+      "English": "Like I said before, I will hold the front.",
+      "Thai": "อย่างที่พูดไว้ ข้างหน้าฉันจะกันเอง",
+      "Vietnamese": "Như đã nói lúc nãy, phía trước tôi sẽ chặn.",
+      "Indonesian": "Seperti yang kukatakan tadi, bagian depan akan kutahan."
+    },
+    {
+      "TEXT_ID": "TST_386",
+      "Korean": "관문 뒤로는 절대 안 보내도록 할게!",
+      "English": "I will not let them get behind the gate!",
+      "Thai": "ฉันจะไม่ให้พวกมันผ่านไปหลังประตูด่านเด็ดขาด!",
+      "Vietnamese": "Tôi tuyệt đối sẽ không để chúng qua phía sau cổng!",
+      "Indonesian": "Aku tidak akan membiarkan mereka lewat ke belakang gerbang!"
+    },
+    {
+      "TEXT_ID": "TST_387",
+      "Korean": "응. 그 말은 든든하네.",
+      "English": "Yeah. That is reassuring.",
+      "Thai": "อืม ได้ยินแบบนั้นแล้วอุ่นใจนะ",
+      "Vietnamese": "Ừ. Nghe vậy thấy yên tâm đấy.",
+      "Indonesian": "Ya. Mendengar itu membuatku tenang."
+    },
+    {
+      "TEXT_ID": "TST_388",
+      "Korean": "대신 시야 안에서 버텨줘.",
+      "English": "Just hold your ground where we can see you.",
+      "Thai": "แต่ช่วยยืนรับไว้ในจุดที่พวกเรามองเห็นด้วย",
+      "Vietnamese": "Nhưng hãy trụ trong tầm mắt của chúng tôi.",
+      "Indonesian": "Tapi bertahanlah di dalam jarak pandang kami."
+    },
+    {
+      "TEXT_ID": "TST_389",
+      "Korean": "알겠어. 제대로 보여줄게.",
+      "English": "Got it. I will show you what I can do.",
+      "Thai": "เข้าใจแล้ว ฉันจะแสดงให้เห็นชัด ๆ เอง",
+      "Vietnamese": "Biết rồi. Tôi sẽ cho mọi người thấy rõ.",
+      "Indonesian": "Mengerti. Akan kutunjukkan dengan benar."
+    },
+    {
+      "TEXT_ID": "TST_390",
+      "Korean": "나는 멀리서 들어오는 적을 계속 볼게.",
+      "English": "I will keep watching the enemies coming in from far away.",
+      "Thai": "ฉันจะคอยดูศัตรูที่เข้ามาจากระยะไกลต่อไป",
+      "Vietnamese": "Tôi sẽ tiếp tục quan sát kẻ địch tiến vào từ xa.",
+      "Indonesian": "Aku akan terus mengawasi musuh yang datang dari jauh."
+    },
+    {
+      "TEXT_ID": "TST_391",
+      "Korean": "다치면 바로 말해줘.",
+      "English": "If you get hurt, tell me right away.",
+      "Thai": "ถ้าบาดเจ็บก็บอกทันทีนะ",
+      "Vietnamese": "Nếu bị thương thì nói ngay.",
+      "Indonesian": "Kalau terluka, langsung beri tahu."
+    },
+    {
+      "TEXT_ID": "TST_392",
+      "Korean": "그러니까 너무 무리하진 말아줘.",
+      "English": "So please do not push yourself too hard.",
+      "Thai": "เพราะงั้นอย่าฝืนเกินไปล่ะ",
+      "Vietnamese": "Vì vậy đừng cố quá sức nhé.",
+      "Indonesian": "Jadi jangan terlalu memaksakan diri."
+    },
+    {
+      "TEXT_ID": "TST_393",
+      "Korean": "좋아. 중앙 방어선에서 막자.",
+      "English": "Good. Let us stop them at the central defense line.",
+      "Thai": "ดี หยุดพวกมันที่แนวป้องกันกลางกัน",
+      "Vietnamese": "Tốt. Chặn chúng ở tuyến phòng thủ trung tâm.",
+      "Indonesian": "Bagus. Kita tahan mereka di garis pertahanan tengah."
+    },
+    {
+      "TEXT_ID": "TST_394",
+      "Korean": "[보스전 시작]",
+      "English": "[Boss Battle Start]",
+      "Thai": "[เริ่มศึกบอส]",
+      "Vietnamese": "[Bắt đầu trận boss]",
+      "Indonesian": "[Pertempuran bos dimulai]"
+    },
+    {
+      "TEXT_ID": "TST_395",
+      "Korean": "움직임이 줄어들고 있어.",
+      "English": "The movement is slowing down.",
+      "Thai": "ความเคลื่อนไหวกำลังลดลง",
+      "Vietnamese": "Chuyển động đang giảm dần.",
+      "Indonesian": "Pergerakannya mulai berkurang."
+    },
+    {
+      "TEXT_ID": "TST_396",
+      "Korean": "적어도 지금 몰려오던 무리는 멈춘 것 같아.",
+      "English": "At least the horde that was rushing in seems to have stopped.",
+      "Thai": "อย่างน้อยฝูงที่กำลังบุกเข้ามาตอนนี้ก็ดูเหมือนจะหยุดแล้ว",
+      "Vietnamese": "Ít nhất nhóm đang tràn tới lúc này có vẻ đã dừng lại.",
+      "Indonesian": "Setidaknya gerombolan yang datang sekarang sepertinya sudah berhenti."
+    },
+    {
+      "TEXT_ID": "TST_397",
+      "Korean": "좋아! 시에스 방어 요새를 지켜냈어!",
+      "English": "Good! We defended Cies Defense Fortress!",
+      "Thai": "ดีล่ะ! เราปกป้องป้อมปราการป้องกันซีเอสไว้ได้แล้ว!",
+      "Vietnamese": "Tốt! Chúng ta đã bảo vệ được pháo đài phòng thủ Cies!",
+      "Indonesian": "Bagus! Kita berhasil melindungi Benteng Pertahanan Cies!"
+    },
+    {
+      "TEXT_ID": "TST_398",
+      "Korean": "응. 다들 무사해서 다행이야.",
+      "English": "Yeah. I am glad everyone is safe.",
+      "Thai": "อืม ดีจริง ๆ ที่ทุกคนปลอดภัย",
+      "Vietnamese": "Ừ. Mọi người an toàn là tốt rồi.",
+      "Indonesian": "Ya. Syukurlah semua selamat."
+    },
+    {
+      "TEXT_ID": "TST_399",
+      "Korean": "관문도 마을길도 지켜냈어.",
+      "English": "We protected both the gate and the village road.",
+      "Thai": "เราปกป้องได้ทั้งประตูด่านและถนนหมู่บ้าน",
+      "Vietnamese": "Chúng ta đã bảo vệ được cả cổng lẫn đường làng.",
+      "Indonesian": "Kita melindungi gerbang dan jalan desa."
+    },
+    {
+      "TEXT_ID": "TST_400",
+      "Korean": "오늘 몰려온 무리는 막아냈어.",
+      "English": "We stopped the horde that came today.",
+      "Thai": "เราหยุดฝูงที่บุกเข้ามาวันนี้ได้แล้ว",
+      "Vietnamese": "Chúng ta đã chặn được nhóm tràn tới hôm nay.",
+      "Indonesian": "Kita berhasil menahan gerombolan yang datang hari ini."
+    },
+    {
+      "TEXT_ID": "TST_401",
+      "Korean": "원인은 아직 남았지만, 이건 분명한 성과야.",
+      "English": "The cause is still unresolved, but this is definitely an accomplishment.",
+      "Thai": "สาเหตุยังไม่หายไป แต่เรื่องนี้เป็นผลงานที่ชัดเจน",
+      "Vietnamese": "Nguyên nhân vẫn còn đó, nhưng đây chắc chắn là một thành quả.",
+      "Indonesian": "Penyebabnya masih ada, tapi ini jelas sebuah pencapaian."
+    },
+    {
+      "TEXT_ID": "TST_402",
+      "Korean": "그럼 성과가 있으니까, 쉬는 시간도 있겠지...?",
+      "English": "Then since we accomplished something, that means there is rest time too, right...?",
+      "Thai": "งั้นในเมื่อมีผลงานแล้ว เวลาพักก็ควรมีด้วยใช่ไหม...?",
+      "Vietnamese": "Vậy có thành quả rồi, chắc cũng có thời gian nghỉ chứ...?",
+      "Indonesian": "Kalau begitu, karena ada pencapaian, pasti ada waktu istirahat juga, kan...?"
+    },
+    {
+      "TEXT_ID": "TST_403",
+      "Korean": "수호대 여러분, 정말 수고 많으셨습니다.",
+      "English": "Guardians, thank you very much for your hard work.",
+      "Thai": "ทุกท่านจากหน่วยพิทักษ์ ขอบคุณสำหรับความเหนื่อยยากจริง ๆ ครับ",
+      "Vietnamese": "Các thành viên Đội Hộ vệ, thật sự vất vả cho mọi người rồi.",
+      "Indonesian": "Para Guardian, kalian benar-benar sudah bekerja keras."
+    },
+    {
+      "TEXT_ID": "TST_404",
+      "Korean": "덕분에 시에스 방어 요새는 무사합니다.",
+      "English": "Thanks to you, Cies Defense Fortress is safe.",
+      "Thai": "เพราะทุกท่าน ป้อมปราการป้องกันซีเอสจึงปลอดภัยครับ",
+      "Vietnamese": "Nhờ các vị, pháo đài phòng thủ Cies vẫn an toàn.",
+      "Indonesian": "Berkat kalian, Benteng Pertahanan Cies selamat."
+    },
+    {
+      "TEXT_ID": "TST_405",
+      "Korean": "모두 수고했어.",
+      "English": "Everyone, good work.",
+      "Thai": "ทุกคน ทำได้ดีมาก",
+      "Vietnamese": "Mọi người vất vả rồi.",
+      "Indonesian": "Semuanya, kerja bagus."
+    },
+    {
+      "TEXT_ID": "TST_406",
+      "Korean": "지휘관님, 전투 중에 제플 방향에서 연락이 들어왔습니다.",
+      "English": "Commander, we received a message from the Jeple direction during the battle.",
+      "Thai": "ท่านผู้บัญชาการ ระหว่างการต่อสู้มีการติดต่อมาจากทางเจเพิลครับ",
+      "Vietnamese": "Thưa ngài Chỉ huy, trong lúc chiến đấu có liên lạc từ hướng Jeple.",
+      "Indonesian": "Komandan, selama pertempuran ada kontak dari arah Jeple."
+    },
+    {
+      "TEXT_ID": "TST_407",
+      "Korean": "그쪽에서도 몬스터들이 한 방향으로 몰리고 있다고 합니다.",
+      "English": "They say monsters are also moving in one direction over there.",
+      "Thai": "ทางนั้นแจ้งว่ามีสัตว์ประหลาดเคลื่อนตัวไปทางเดียวกันเช่นกันครับ",
+      "Vietnamese": "Họ nói bên đó quái vật cũng đang dồn về một hướng.",
+      "Indonesian": "Mereka mengatakan monster di sana juga bergerak ke satu arah."
+    },
+    {
+      "TEXT_ID": "TST_408",
+      "Korean": "여기만의 일이 아니었구나.",
+      "English": "So this was not only happening here.",
+      "Thai": "แปลว่าไม่ได้เกิดขึ้นแค่ที่นี่สินะ",
+      "Vietnamese": "Vậy không chỉ xảy ra ở đây.",
+      "Indonesian": "Jadi ini bukan hanya terjadi di sini."
+    },
+    {
+      "TEXT_ID": "TST_409",
+      "Korean": "비슷한 움직임이 더 이어질지도 몰라.",
+      "English": "Similar movement may continue elsewhere.",
+      "Thai": "อาจมีการเคลื่อนไหวแบบเดียวกันต่อไปอีก",
+      "Vietnamese": "Có thể những chuyển động tương tự sẽ còn tiếp diễn.",
+      "Indonesian": "Pergerakan serupa mungkin masih akan berlanjut."
+    },
+    {
+      "TEXT_ID": "TST_410",
+      "Korean": "적어도 하나는 확실해.",
+      "English": "At least one thing is clear.",
+      "Thai": "อย่างน้อยมีเรื่องหนึ่งที่แน่ชัด",
+      "Vietnamese": "Ít nhất có một điều chắc chắn.",
+      "Indonesian": "Setidaknya satu hal sudah jelas."
+    },
+    {
+      "TEXT_ID": "TST_411",
+      "Korean": "이건 시에스만의 문제는 아니야.",
+      "English": "This is not a problem limited to Cies.",
+      "Thai": "นี่ไม่ใช่ปัญหาของซีเอสเพียงแห่งเดียว",
+      "Vietnamese": "Đây không phải vấn đề riêng của Cies.",
+      "Indonesian": "Ini bukan masalah Cies saja."
+    },
+    {
+      "TEXT_ID": "TST_412",
+      "Korean": "시에스는 우리가 지켜냈어.",
+      "English": "We protected Cies.",
+      "Thai": "เราได้ปกป้องซีเอสไว้แล้ว",
+      "Vietnamese": "Chúng ta đã bảo vệ được Cies.",
+      "Indonesian": "Kita berhasil melindungi Cies."
+    },
+    {
+      "TEXT_ID": "TST_413",
+      "Korean": "그건 확실히 해낸 거야.",
+      "English": "That much we definitely did.",
+      "Thai": "เรื่องนั้นเราทำสำเร็จแน่นอน",
+      "Vietnamese": "Điều đó chắc chắn chúng ta đã làm được.",
+      "Indonesian": "Itu jelas sudah kita lakukan."
+    },
+    {
+      "TEXT_ID": "TST_414",
+      "Korean": "제플 쪽 보고도 확인해 보자.",
+      "English": "Let us check the report from Jeple too.",
+      "Thai": "ไปตรวจรายงานฝั่งเจเพิลด้วยเถอะ",
+      "Vietnamese": "Hãy kiểm tra cả báo cáo phía Jeple.",
+      "Indonesian": "Mari kita periksa juga laporan dari Jeple."
+    },
+    {
+      "TEXT_ID": "TST_415",
+      "Korean": "그럼 아직 할 일이 남은 거네...?",
+      "English": "Then there is still work left...?",
+      "Thai": "งั้นก็ยังมีงานเหลืออยู่สินะ...?",
+      "Vietnamese": "Vậy vẫn còn việc phải làm nhỉ...?",
+      "Indonesian": "Kalau begitu, masih ada pekerjaan yang tersisa...?"
+    },
+    {
+      "TEXT_ID": "TST_416",
+      "Korean": "상황 정리부터 해야지.",
+      "English": "We need to sort out the situation first.",
+      "Thai": "ต้องเริ่มจากจัดระเบียบสถานการณ์ก่อน",
+      "Vietnamese": "Phải bắt đầu từ việc tổng hợp tình hình đã.",
+      "Indonesian": "Kita harus mulai dari merapikan situasi dulu."
+    },
+    {
+      "TEXT_ID": "TST_417",
+      "Korean": "그럼 지금 정리는 아주 중요하네...",
+      "English": "Then sorting things out right now is very important...",
+      "Thai": "งั้นการจัดระเบียบตอนนี้ก็สำคัญมากเลยสินะ...",
+      "Vietnamese": "Vậy việc tổng hợp bây giờ rất quan trọng nhỉ...",
+      "Indonesian": "Kalau begitu, merapikan situasi sekarang sangat penting..."
+    },
+    {
+      "TEXT_ID": "TST_418",
+      "Korean": "알겠어. 시에스 상황부터 정리하자.",
+      "English": "Got it. Let us organize the Cies situation first.",
+      "Thai": "เข้าใจแล้ว เริ่มจากจัดระเบียบสถานการณ์ของซีเอสก่อน",
+      "Vietnamese": "Biết rồi. Hãy tổng hợp tình hình Cies trước.",
+      "Indonesian": "Mengerti. Kita rapikan situasi Cies dulu."
+    },
+    {
+      "TEXT_ID": "TST_419",
+      "Korean": "제플 보고는 그다음 확인하자.",
+      "English": "We will check the Jeple report after that.",
+      "Thai": "รายงานของเจเพิลค่อยตรวจหลังจากนั้น",
+      "Vietnamese": "Báo cáo của Jeple sẽ kiểm tra sau đó.",
+      "Indonesian": "Laporan Jeple kita periksa setelah itu."
+    },
+    {
       "TEXT_ID": "LRT_001",
-      "Korean": "",
+      "Korean": "공격력이 8 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3154,7 +4562,7 @@
     },
     {
       "TEXT_ID": "LRT_002",
-      "Korean": "",
+      "Korean": "공격 속도가 0.07 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3162,7 +4570,7 @@
     },
     {
       "TEXT_ID": "LRT_003",
-      "Korean": "",
+      "Korean": "치명타 확률이 0.02 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3170,7 +4578,7 @@
     },
     {
       "TEXT_ID": "LRT_004",
-      "Korean": "",
+      "Korean": "치명타 피해량이 0.2 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3178,7 +4586,7 @@
     },
     {
       "TEXT_ID": "LRT_005",
-      "Korean": "",
+      "Korean": "최대 체력이 30 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3186,7 +4594,7 @@
     },
     {
       "TEXT_ID": "LRT_006",
-      "Korean": "",
+      "Korean": "현재 체력이 15만큼 회복됩니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3194,7 +4602,7 @@
     },
     {
       "TEXT_ID": "LRT_007",
-      "Korean": "",
+      "Korean": "방어력이 2만큼 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3202,7 +4610,7 @@
     },
     {
       "TEXT_ID": "LRT_008",
-      "Korean": "",
+      "Korean": "이동속도가 6 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3210,7 +4618,7 @@
     },
     {
       "TEXT_ID": "LRT_009",
-      "Korean": "",
+      "Korean": "공격력이 14 증가하며 공격속도가 0.4 감소합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3218,7 +4626,7 @@
     },
     {
       "TEXT_ID": "LRT_010",
-      "Korean": "",
+      "Korean": "공격  속도가 0.03 증가하며 치명타 확률이 0.01 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3226,7 +4634,7 @@
     },
     {
       "TEXT_ID": "LRT_011",
-      "Korean": "",
+      "Korean": "최대 체력이 15 감소하며 이동 속도가 10 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3234,7 +4642,7 @@
     },
     {
       "TEXT_ID": "LRT_012",
-      "Korean": "",
+      "Korean": "공격력이 20 증가하며 최대 체력이 20 감소합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3242,7 +4650,7 @@
     },
     {
       "TEXT_ID": "LRT_013",
-      "Korean": "",
+      "Korean": "방어력이 1 증가하며 최대 체력이 22 증가합니다",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -3367,6 +4775,230 @@
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "SSN_001",
+      "Korean": "시에스 방어 요새 관문 앞",
+      "English": "Cies Defense Fortress Gate Front",
+      "Thai": "หน้าประตูป้อมป้องกันซีเอส",
+      "Vietnamese": "Trước cổng pháo đài phòng thủ Cies",
+      "Indonesian": "Depan Gerbang Benteng Pertahanan Cies"
+    },
+    {
+      "TEXT_ID": "SSN_002",
+      "Korean": "첫 합동 정비",
+      "English": "First Joint Maintenance",
+      "Thai": "การซ่อมบำรุงร่วมครั้งแรก",
+      "Vietnamese": "Lần bảo trì chung đầu tiên",
+      "Indonesian": "Pemeliharaan Bersama Pertama"
+    },
+    {
+      "TEXT_ID": "SSN_003",
+      "Korean": "시에스 관문 앞 숲길",
+      "English": "Forest Path in Front of Cies Gate",
+      "Thai": "ทางป่าหน้าประตูซีเอส",
+      "Vietnamese": "Đường rừng trước cổng Cies",
+      "Indonesian": "Jalan Hutan di Depan Gerbang Cies"
+    },
+    {
+      "TEXT_ID": "SSN_004",
+      "Korean": "시에스 방어 요새 남쪽 진입로",
+      "English": "Cies Defense Fortress Southern Entrance",
+      "Thai": "ทางเข้าด้านใต้ของป้อมป้องกันซีเอส",
+      "Vietnamese": "Lối vào phía nam pháo đài phòng thủ Cies",
+      "Indonesian": "Jalan Masuk Selatan Benteng Pertahanan Cies"
+    },
+    {
+      "TEXT_ID": "SSN_005",
+      "Korean": "시에스 방어 요새 관문 방어벽 앞",
+      "English": "Cies Defense Fortress Gate Wall Front",
+      "Thai": "หน้ากำแพงประตูป้อมป้องกันซีเอส",
+      "Vietnamese": "Trước tường cổng pháo đài phòng thủ Cies",
+      "Indonesian": "Depan Dinding Gerbang Benteng Pertahanan Cies"
+    },
+    {
+      "TEXT_ID": "SSN_006",
+      "Korean": "보스전 전 관문 방어벽 정비",
+      "English": "Gate Wall Maintenance Before the Boss Battle",
+      "Thai": "ซ่อมกำแพงประตูก่อนศึกบอส",
+      "Vietnamese": "Bảo trì tường cổng trước trận Boss",
+      "Indonesian": "Pemeliharaan Dinding Gerbang Sebelum Boss"
+    },
+    {
+      "TEXT_ID": "SSN_007",
+      "Korean": "시에스 방어 요새 중앙 방어선",
+      "English": "Cies Defense Fortress Central Defense Line",
+      "Thai": "แนวป้องกันกลางป้อมป้องกันซีเอส",
+      "Vietnamese": "Tuyến phòng thủ trung tâm pháo đài phòng thủ Cies",
+      "Indonesian": "Garis Pertahanan Tengah Benteng Pertahanan Cies"
+    },
+    {
+      "TEXT_ID": "UI_001",
+      "Korean": "Wave 1 준비. 신호석을 배치해 전투 전 영웅을 강화해주세요.",
+      "English": "Wave 1 ready. Place signal stones to strengthen heroes before battle.",
+      "Thai": "Wave 1 พร้อมแล้ว วางศิลาสัญญาณเพื่อเสริมพลังฮีโร่ก่อนการต่อสู้",
+      "Vietnamese": "Wave 1 đã sẵn sàng. Hãy đặt đá tín hiệu để cường hóa anh hùng trước trận chiến.",
+      "Indonesian": "Wave 1 siap. Tempatkan batu sinyal untuk memperkuat hero sebelum bertempur."
+    },
+    {
+      "TEXT_ID": "UI_002",
+      "Korean": "공격 신호석을 세라 슬롯으로 드래그해주세요.",
+      "English": "Drag the attack signal stone to Serah's slot.",
+      "Thai": "ลากศิลาสัญญาณโจมตีไปยังสล็อตของเซราห์",
+      "Vietnamese": "Kéo đá tín hiệu tấn công vào ô của Serah.",
+      "Indonesian": "Seret batu sinyal serangan ke slot Serah."
+    },
+    {
+      "TEXT_ID": "UI_003",
+      "Korean": "+1 COMBO. 세라 공격 강화 X1.",
+      "English": "COMBO +1. Serah attack boost X1.",
+      "Thai": "COMBO +1 พลังโจมตีของเซราห์เพิ่ม X1",
+      "Vietnamese": "COMBO +1. Tấn công của Serah tăng X1.",
+      "Indonesian": "COMBO +1. Serangan Serah diperkuat X1."
+    },
+    {
+      "TEXT_ID": "UI_004",
+      "Korean": "남은 소트 횟수가 6에서 5로 감소했습니다.",
+      "English": "Remaining sort count decreased from 6 to 5.",
+      "Thai": "จำนวนครั้งจัดเรียงที่เหลือลดจาก 6 เป็น 5",
+      "Vietnamese": "Số lượt Sort còn lại giảm từ 6 xuống 5.",
+      "Indonesian": "Sisa Sort berkurang dari 6 menjadi 5."
+    },
+    {
+      "TEXT_ID": "UI_005",
+      "Korean": "준비가 끝났습니다. BATTLE START를 눌러 전투를 시작해주세요.",
+      "English": "Setup complete. Press BATTLE START to begin combat.",
+      "Thai": "เตรียมพร้อมแล้ว กด BATTLE START เพื่อเริ่มการต่อสู้",
+      "Vietnamese": "Đã chuẩn bị xong. Nhấn BATTLE START để bắt đầu chiến đấu.",
+      "Indonesian": "Persiapan selesai. Tekan BATTLE START untuk memulai pertempuran."
+    },
+    {
+      "TEXT_ID": "UI_006",
+      "Korean": "Level Up! 원하는 보상을 선택해주세요.",
+      "English": "Level Up! Select the reward you want.",
+      "Thai": "Level Up! เลือกรางวัลที่ต้องการ",
+      "Vietnamese": "Level Up! Hãy chọn phần thưởng bạn muốn.",
+      "Indonesian": "Level Up! Pilih hadiah yang kamu inginkan."
+    },
+    {
+      "TEXT_ID": "UI_007",
+      "Korean": "보상 카드를 한 번 터치하면 선택됩니다.",
+      "English": "Tap a reward card once to select it.",
+      "Thai": "แตะการ์ดรางวัลหนึ่งครั้งเพื่อเลือก",
+      "Vietnamese": "Chạm vào thẻ thưởng một lần để chọn.",
+      "Indonesian": "Ketuk kartu hadiah satu kali untuk memilihnya."
+    },
+    {
+      "TEXT_ID": "UI_008",
+      "Korean": "선택한 카드를 한 번 더 터치하면 확정됩니다.",
+      "English": "Tap the selected card once more to confirm.",
+      "Thai": "แตะการ์ดที่เลือกอีกครั้งเพื่อยืนยัน",
+      "Vietnamese": "Chạm thêm một lần vào thẻ đã chọn để xác nhận.",
+      "Indonesian": "Ketuk kartu yang dipilih sekali lagi untuk mengonfirmasi."
+    },
+    {
+      "TEXT_ID": "UI_009",
+      "Korean": "[날카로운 감각] 공격력 +8 획득!",
+      "English": "[Sharp Senses] Attack +8 acquired!",
+      "Thai": "ได้รับ [ประสาทสัมผัสเฉียบคม] พลังโจมตี +8!",
+      "Vietnamese": "Đã nhận [Giác Quan Sắc Bén] Tấn công +8!",
+      "Indonesian": "Mendapatkan [Indra Tajam] Serangan +8!"
+    },
+    {
+      "TEXT_ID": "UI_010",
+      "Korean": "노아 합류. 원거리 지원 준비.",
+      "English": "Noah joins. Ranged support ready.",
+      "Thai": "โนอาเข้าร่วม เตรียมการสนับสนุนระยะไกลแล้ว",
+      "Vietnamese": "Noah gia nhập. Hỗ trợ tầm xa đã sẵn sàng.",
+      "Indonesian": "Noah bergabung. Dukungan jarak jauh siap."
+    },
+    {
+      "TEXT_ID": "UI_011",
+      "Korean": "스파인 합류. 영웅 전원 준비.",
+      "English": "Spayne joins. All heroes ready.",
+      "Thai": "สเปย์นเข้าร่วม ฮีโร่ทุกคนพร้อมแล้ว",
+      "Vietnamese": "Spayne gia nhập. Tất cả anh hùng đã sẵn sàng.",
+      "Indonesian": "Spayne bergabung. Semua hero siap."
+    },
+    {
+      "TEXT_ID": "UI_012",
+      "Korean": "노아, 스파인 합류!",
+      "English": "Noah and Spayne join!",
+      "Thai": "โนอาและสเปย์นเข้าร่วม!",
+      "Vietnamese": "Noah và Spayne gia nhập!",
+      "Indonesian": "Noah dan Spayne bergabung!"
+    },
+    {
+      "TEXT_ID": "UI_013",
+      "Korean": "대형 몬스터 등장. 세라의 스킬 신호를 준비해주세요.",
+      "English": "A large monster appeared. Prepare Serah's skill signal.",
+      "Thai": "มอนสเตอร์ขนาดใหญ่ปรากฏตัว เตรียมสัญญาณสกิลของเซราห์",
+      "Vietnamese": "Quái vật lớn xuất hiện. Hãy chuẩn bị tín hiệu kỹ năng của Serah.",
+      "Indonesian": "Monster besar muncul. Siapkan sinyal skill Serah."
+    },
+    {
+      "TEXT_ID": "UI_014",
+      "Korean": "세라의 필살기 게이지가 가득 찼습니다.",
+      "English": "Serah's ultimate gauge is full.",
+      "Thai": "เกจไม้ตายของเซราห์เต็มแล้ว",
+      "Vietnamese": "Thanh tuyệt kỹ của Serah đã đầy.",
+      "Indonesian": "Gauge jurus pamungkas Serah sudah penuh."
+    },
+    {
+      "TEXT_ID": "UI_015",
+      "Korean": "세라 초상화를 터치해 필살기를 사용해주세요.",
+      "English": "Touch Serah's portrait to use her ultimate.",
+      "Thai": "แตะภาพประจำตัวของเซราห์เพื่อใช้ไม้ตาย",
+      "Vietnamese": "Chạm vào chân dung Serah để dùng tuyệt kỹ.",
+      "Indonesian": "Sentuh potret Serah untuk menggunakan jurus pamungkasnya."
+    },
+    {
+      "TEXT_ID": "UI_016",
+      "Korean": "필살기 발동!",
+      "English": "Ultimate activated!",
+      "Thai": "ไม้ตายทำงาน!",
+      "Vietnamese": "Tuyệt kỹ kích hoạt!",
+      "Indonesian": "Jurus pamungkas aktif!"
+    },
+    {
+      "TEXT_ID": "UI_017",
+      "Korean": "컷신 재생 중 화면을 터치하면 스킵 버튼이 표시됩니다.",
+      "English": "Touch the screen during the cutscene to show the Skip button.",
+      "Thai": "แตะหน้าจอระหว่างคัตซีนเพื่อแสดงปุ่มข้าม",
+      "Vietnamese": "Chạm vào màn hình trong lúc phát cắt cảnh để hiện nút Bỏ qua.",
+      "Indonesian": "Sentuh layar saat cutscene untuk menampilkan tombol Lewati."
+    },
+    {
+      "TEXT_ID": "UI_018",
+      "Korean": "Stage Clear! 보상을 확인해주세요.",
+      "English": "Stage Clear! Check your rewards.",
+      "Thai": "Stage Clear! ตรวจสอบรางวัลของคุณ",
+      "Vietnamese": "Stage Clear! Hãy kiểm tra phần thưởng.",
+      "Indonesian": "Stage Clear! Periksa hadiahmu."
+    },
+    {
+      "TEXT_ID": "UI_019",
+      "Korean": "유물 효과는 다음 스테이지에도 유지됩니다. 3개 중 1개를 선택해주세요.",
+      "English": "Relic effects carry over to the next stage. Choose 1 of 3.",
+      "Thai": "เอฟเฟกต์ของวัตถุโบราณจะคงอยู่ถึงสเตจถัดไป เลือก 1 จาก 3 อย่าง",
+      "Vietnamese": "Hiệu ứng di vật sẽ duy trì sang màn tiếp theo. Hãy chọn 1 trong 3.",
+      "Indonesian": "Efek relik akan berlanjut ke stage berikutnya. Pilih 1 dari 3."
+    },
+    {
+      "TEXT_ID": "UI_020",
+      "Korean": "선택한 유물을 한 번 더 터치하면 확정됩니다.",
+      "English": "Tap the selected relic once more to confirm.",
+      "Thai": "แตะวัตถุโบราณที่เลือกอีกครั้งเพื่อยืนยัน",
+      "Vietnamese": "Chạm thêm một lần vào di vật đã chọn để xác nhận.",
+      "Indonesian": "Ketuk relik yang dipilih sekali lagi untuk mengonfirmasi."
+    },
+    {
+      "TEXT_ID": "UI_021",
+      "Korean": "고대 갑옷을 획득했습니다. 선택한 유물이 보유 목록에 등록됩니다. 이후 스테이지에도 효과가 유지됩니다.",
+      "English": "Ancient Armor acquired. The selected relic has been registered in your owned list. Its effect remains in later stages.",
+      "Thai": "ได้รับเกราะโบราณแล้ว วัตถุโบราณที่เลือกถูกบันทึกลงในรายการที่ครอบครอง และเอฟเฟกต์จะคงอยู่ในสเตจถัดไป",
+      "Vietnamese": "Đã nhận Áo Giáp Cổ Đại. Di vật đã chọn được đăng ký vào danh sách sở hữu. Hiệu ứng sẽ duy trì ở các màn sau.",
+      "Indonesian": "Ancient Armor diperoleh. Relik yang dipilih telah terdaftar di daftar milikmu. Efeknya tetap berlaku di stage berikutnya."
     }
   ]
 }

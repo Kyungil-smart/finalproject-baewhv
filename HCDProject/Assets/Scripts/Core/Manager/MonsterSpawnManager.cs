@@ -120,7 +120,12 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         _waveSpawnCountList.Clear();
         
         MapRawData waveData = Service.Get<DataManager>()?.MapTable.data.Find(x => x.CHAPTER == chapter  && x.STAGE == stage && x.WAVE == wave);
-        if (waveData == null) return;
+        
+        if (waveData == null)
+        {
+            GetDummyMonster();
+            return;
+        }
 
         _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_01);
         _waveMonsterList.Add(waveData.SPAWN_MONSTER_ID_02);
@@ -241,5 +246,50 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         pos.x = randomX;
         
         return pos;
+    }
+    
+    public void DebugWaveStart(int chapter, int stage, int wave)
+    {
+        if (wave >= 3) return;
+        currentWave.Value = wave;
+        
+        AddMonsterData(chapter, stage, wave);
+        
+        List<string> dummyList = new List<string>();
+        foreach (var id in _waveMonsterList)
+        {
+            if (!string.IsNullOrEmpty(id))
+            {
+                dummyList.Add(id);
+            }
+        }
+        
+        if (dummyList.Count == 0) return;
+        
+        StageMonster(dummyList, () =>
+        {
+            SpawnCountCheck();
+            StartCoroutine(SpawnMonster(_waveMonsterList, _waveSpawnCountList));
+        });
+    }
+    
+    private void GetDummyMonster()
+    {
+        _waveMonsterList.Add("1000");
+        _waveMonsterList.Add("1001");
+        _waveMonsterList.Add("1002");
+        _waveMonsterList.Add("1003");
+        _waveMonsterList.Add("1004");
+        _waveMonsterList.Add("1035");
+        
+        _waveSpawnCountList.Add(13);
+        _waveSpawnCountList.Add(2);
+        _waveSpawnCountList.Add(5);
+        _waveSpawnCountList.Add(2);
+        _waveSpawnCountList.Add(2);
+        _waveSpawnCountList.Add(1);
+
+        _spawnDelay = 10f;
+        _totalSpawnCycle = 3;
     }
 }

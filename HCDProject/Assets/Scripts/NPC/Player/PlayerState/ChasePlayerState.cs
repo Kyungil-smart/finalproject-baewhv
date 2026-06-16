@@ -31,7 +31,7 @@ public class ChasePlayerState : IState
             return;
         }
         float homeDist = Vector2.Distance(_owner.transform.position, _owner.homePosition);
-        if (homeDist > 2f)
+        if (homeDist > _owner.Stats._chaseRange)
         {
             _owner.SetCurrentTarget(null);
             _owner.Movement.Stop();
