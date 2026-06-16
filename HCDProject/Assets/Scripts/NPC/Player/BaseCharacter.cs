@@ -237,7 +237,8 @@ public class BaseCharacter : BaseController
             _moveSpeed = data.MOVE_SPEED,
             _attackSpeed = data.ATK_SPEED,
             _critRate = data.CRI_RATE,
-            _critDamage = data.CRI_DMAGE
+            _critDamage = data.CRI_DMAGE,
+            _chaseRange = data.ACCESS_AREA
         };
 
         skills.Clear();
@@ -451,7 +452,7 @@ public class BaseCharacter : BaseController
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        List<ITargetable> targets = Detect(skills[index].SKILL_IS + GetRadius(), skills[index].SKILL_AT);
+        List<ITargetable> targets = Detect(Stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
         ITargetable nearest = null;
         if (FindType == EFindType.LowestHp)
         {
@@ -530,11 +531,11 @@ public class BaseCharacter : BaseController
         _findType = _playerStats._initFindType;
     }
 
-    protected new void OnDrawGizmos()
+    /*protected new void OnDrawGizmos()
     {
         if (skills == null || skills.Count == 0) return;
 
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, CurrentSkillRange + GetRadius());
-    }
+    }*/
 }
