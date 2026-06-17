@@ -5,6 +5,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 
 public class RewardButtonUI : MonoBehaviour
@@ -19,11 +20,9 @@ public class RewardButtonUI : MonoBehaviour
 
     public void SetReward(StageClearRewardRawData data, UnityAction<int> func, int _index)
     {
-        //todo : SpriteAtlas 도입할것
-        icon.sprite = Addressables.LoadAssetAsync<Sprite>(data.CLEAR_REWARD_ICON).WaitForCompletion();
-        if (!icon.sprite)
-            icon.sprite = defaultImage;
+        LoadIcon(data.CLEAR_REWARD_ICON);
         RewardName.SetEntry(data.CLEAR_REWARD_NAME);
+        RewardDesc.SetEntry(data.CLEAR_REWARD_TEXT_ID);
         buttonAction = func;
         GetIndex = _index;
         IsSelected = false;
@@ -31,13 +30,26 @@ public class RewardButtonUI : MonoBehaviour
 
     public void SetReward(LevelRewardRawData data, UnityAction<int> func, int _index)
     {
-        icon.sprite = Addressables.LoadAssetAsync<Sprite>(data.LEVEL_REWARD_ICON).WaitForCompletion();
-        if (!icon.sprite)
-            icon.sprite = defaultImage;
+        LoadIcon(data.LEVEL_REWARD_ICON);
+
         RewardName.SetEntry(data.LEVEL_REWARD_NAME);
+        RewardDesc.SetEntry(data.LEVEL_REWARD_TEXT_ID);
         buttonAction = func;
         GetIndex = _index;
         IsSelected = false;
+    }
+
+    private void LoadIcon(string address)
+    {
+        icon.sprite = defaultImage;
+        if (string.IsNullOrEmpty(address)) return;
+        Addressables.LoadAssetAsync<Sprite>(address).Completed += (handle) =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                icon.sprite = handle.Result;
+            }
+        };
     }
 
     public void OnButtonInvoke()
