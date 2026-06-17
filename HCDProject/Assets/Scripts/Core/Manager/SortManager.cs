@@ -424,13 +424,13 @@ public class SortManager : BaseManager<SortManager>
         if (railABlocks.Count < maxColumns)
         {
             targetList = railABlocks;
-            int targetIndex = (maxColumns - 1) - railABlocks.Count;
+            int targetIndex = railABlocks.Count;
             return railASlots[targetIndex];
         }
         else if (railBBlocks.Count < maxColumns)
         {
             targetList = railBBlocks;
-            int targetIndex = (maxColumns - 1) - railBBlocks.Count;
+            int targetIndex = railBBlocks.Count;
             return railBSlots[targetIndex];
         }
 
