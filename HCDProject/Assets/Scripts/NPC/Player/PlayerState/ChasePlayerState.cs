@@ -28,7 +28,7 @@ public class ChasePlayerState : PlayerBaseState
         float dist = Vector2.Distance(_owner.transform.position,
             _owner.GetCurrentTarget.GetTargetObject.transform.position)
             - _owner.GetRadius() - _owner.GetCurrentTarget.GetRadius();
-        //float homeDist = Vector2.Distance(_owner.transform.position, _owner.homePosition);
+
         if (dist > _owner.Stats._chaseRange)
         {
             _owner.SetCurrentTarget(null);
