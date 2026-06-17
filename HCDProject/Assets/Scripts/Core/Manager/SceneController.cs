@@ -71,7 +71,7 @@ public class SceneController : BaseManager<SceneController>
         }
         OnLoading?.Invoke(1f);
 
-        yield return YieldContainer.WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         
         if (async != null)  async.allowSceneActivation = true;
 
