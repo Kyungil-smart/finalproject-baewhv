@@ -1,28 +1,23 @@
 ﻿using UnityEngine;
 
-public class AttackPlayerState : IState
+public class AttackPlayerState : PlayerBaseState
 {
-    private BaseCharacter _owner;
-
-    public AttackPlayerState(BaseCharacter owner)
+    public AttackPlayerState(BaseCharacter owner) : base(owner)
     {
-        _owner = owner;
+        
     }
-
-    public void Enter()
+    public override void Enter()
     {
         Debug.Log($"[{_owner.gameObject.name}] Attack 진입 " +
               $"/ FindType: {_owner.FindType} " +
               $"/ 타겟: {_owner.GetCurrentTarget?.GetTargetObject.name}");
         _owner.AttackTimer = 0;
     }
-
-    public void Exit()
+    public override void Exit()
     {
         
     }
-
-    public void Update()
+    public override void Update()
     {
         if (_owner.GetCurrentTarget == null || !_owner.GetCurrentTarget.IsAlive()) // 타겟이 없다면?
         {

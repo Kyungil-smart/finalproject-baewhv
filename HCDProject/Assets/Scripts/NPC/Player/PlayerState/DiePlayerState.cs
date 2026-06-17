@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class DiePlayerState : IState
+public class DiePlayerState : PlayerBaseState
 {
-    private BaseCharacter _owner;
-
     private float _reviveCount;
 
-    public DiePlayerState(BaseCharacter owner)
+    public DiePlayerState(BaseCharacter owner) : base(owner)
     {
-        _owner = owner;
+        
     }
-
-    public void Enter()
+    public override void Enter()
     {
         if (_owner.Movement.Agent.isOnNavMesh)
         {
@@ -21,14 +18,12 @@ public class DiePlayerState : IState
         _owner.gameObject.SetActive(false);
         Service.Get<PlayerManager>()?.StartRevive(_owner);
     }
-
-    public void Exit()
+    public override void Exit()
     {
         _owner.Revive();
     }
-
-    public void Update()
+    public override void Update()
     {
-
+        
     }
 }
