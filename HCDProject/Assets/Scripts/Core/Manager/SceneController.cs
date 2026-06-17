@@ -38,8 +38,6 @@ public class SceneController : BaseManager<SceneController>
     public void ChangeScene(SceneType scene)
     {
         if (scene == SceneType.StageSelect) CreateSession();
-
-        UnLoadActiveScene();
         
         LoadSceneMode sceneMode = (scene == SceneType.Title || scene == SceneType.ModeSelect) ? LoadSceneMode.Single : LoadSceneMode.Additive;
 
@@ -56,6 +54,8 @@ public class SceneController : BaseManager<SceneController>
         
         float loadTime = 0f;
         float needTime = 5f;
+        
+        SceneType backupScene = _currentScene;
         _currentScene = scene;
 
         while (async.progress < 0.9f)/*|| loadTime < needTime*/
@@ -76,17 +76,25 @@ public class SceneController : BaseManager<SceneController>
         if (async != null)  async.allowSceneActivation = true;
 
         while (!async.isDone) yield return null;
+
+        if (mode == LoadSceneMode.Additive) yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
         
         OnLoadingComplete?.Invoke();
     }
 
-    private void UnLoadActiveScene()
+    private IEnumerator UnLoadActiveSceneRoutine(SceneType sceneType)
     {
-        if (_currentScene == SceneType.ModeSelect || _currentScene == SceneType.StageSelect || _currentScene == SceneType.InGame ||
-            _currentScene == SceneType.Tutorial || _currentScene == SceneType.Narrative)
+        if (sceneType == SceneType.ModeSelect || sceneType == SceneType.StageSelect || sceneType == SceneType.InGame || sceneType == SceneType.Tutorial || sceneType == SceneType.Narrative)
         {
-            Scene targerScene = SceneManager.GetSceneByBuildIndex((int)_currentScene);
-            if (targerScene.isLoaded) SceneManager.UnloadSceneAsync((int)_currentScene);
+            Scene targerScene = SceneManager.GetSceneByBuildIndex((int)sceneType);
+            if (targerScene.isLoaded)
+            {
+                AsyncOperation unload = SceneManager.UnloadSceneAsync((int)sceneType);
+                if (unload != null)
+                {
+                    while (!unload.isDone) yield return null;
+                }
+            }
         }
     }
 
