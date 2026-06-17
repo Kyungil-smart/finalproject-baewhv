@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class LocalizationManager : BaseManager<LocalizationManager>
 {
@@ -11,7 +12,19 @@ public class LocalizationManager : BaseManager<LocalizationManager>
     {
         base.Awake();
 
-        LocalizationSettings.InitializationOperation.WaitForCompletion();
+        var handle = LocalizationSettings.InitializationOperation;
+
+        if (handle.IsDone) InitializationComplete(handle);
+        else               handle.Completed += InitializationComplete;
+    }
+
+    private void InitializationComplete(AsyncOperationHandle<LocalizationSettings> handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            int saveLanguage = PlayerPrefs.GetInt("SaveLanguage", 0);
+            ChangeLanguage(saveLanguage);
+        }
     }
 
     public void ChangeLanguage(int index)
