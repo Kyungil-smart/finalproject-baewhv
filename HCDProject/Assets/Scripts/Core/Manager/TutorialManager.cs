@@ -34,7 +34,7 @@ public class TutorialManager : BaseManager<TutorialManager>
         
         Service.Get<GameManager>()?.CurrentState.AddListener(OnChangeGameStateType);
         Service.Get<MonsterSpawnManager>()?.currentWave.AddListener(OnChangeWave);
-        Service.Get<SortManager>()?.RemainingSorts.AddListener(OnRemainingSort);
+        //Service.Get<SortManager>()?.RemainingSorts.AddListener(OnRemainingSort);
         Service.Get<UIManager>().GetUI<IngamePopupController>().GetRewardPopup.AddListener(OpenLevelUpPopup);
         Service.Get<UIManager>().GetUI<IngamePopupController>().GetClearPopup.AddListener(OpenResultPopup);
         
@@ -50,7 +50,7 @@ public class TutorialManager : BaseManager<TutorialManager>
             {
                 Service.Get<SortManager>().TutorialBlocks(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3,0,1,2,3 });
                 Tutorial0();
-                sortRemain = Service.Get<SortManager>().RemainingSorts.Value;
+                //sortRemain = Service.Get<SortManager>().RemainingSorts.Value;
             }
             else
             {

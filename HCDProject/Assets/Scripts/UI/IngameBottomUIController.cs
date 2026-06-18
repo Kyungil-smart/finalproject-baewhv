@@ -131,10 +131,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
     }
 
-    public void SetLeftSortCountText(int value)
+    public void SetLeftSortCountText(float value)
     {
-        leftSortCountText.text = $"남은 소트 횟수 : {value}";
-        if (value == 0)
+        leftSortCountText.text = $"남은 시간 : {value:F1} s";
+        if (value < 0)
         {
             StartBattleButton.SetSortDone();
         }
