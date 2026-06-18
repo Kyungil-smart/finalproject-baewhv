@@ -142,7 +142,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             {
                 if (rewardPopup != null)
                 {
-                    // rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
+                     rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
                 }
             }
         }

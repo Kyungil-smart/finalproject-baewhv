@@ -90,4 +90,25 @@ public class RewardUIController : MonoBehaviour
     {
         isOpenRewardPopup.RemoveListener(action);
     }
+    [SerializeField] private GameObject maintenance;
+    [SerializeField] private Button repairRampart;
+    [SerializeField] private Button randomReward;
+    public void SetMaintenanceReward(UnityAction repair, UnityAction randomReward)
+    {
+        if (maintenance != null) maintenance.SetActive(true);
+        
+        repairRampart.onClick.RemoveAllListeners();
+        repairRampart.onClick.AddListener(() =>
+        {
+            maintenance.SetActive(false);
+            repair?.Invoke();
+        });
+        
+        this.randomReward.onClick.RemoveAllListeners();
+        this.randomReward.onClick.AddListener(() =>
+        {
+            maintenance.SetActive(false);
+            randomReward?.Invoke();
+        });
+    }
 }

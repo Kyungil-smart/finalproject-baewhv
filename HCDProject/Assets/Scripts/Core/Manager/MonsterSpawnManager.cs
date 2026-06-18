@@ -186,6 +186,9 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         
         foreach (var loadId in loadTarget)
         {
+            currentLoadCount++;
+            if (loadId == "NONE") continue;
+            
             Addressables.LoadAssetAsync<GameObject>(loadId).Completed += (handle) =>
             {
                 if (handle.Status == AsyncOperationStatus.Succeeded)
@@ -194,12 +197,11 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
                     _monsterHandles[loadId] = handle;
                     Debug.Log($"load 성공 : {loadId}");
                 }
-                else Debug.Log($"load 실패 :  {loadId}");
-
-                currentLoadCount++;
-                if (currentLoadCount >= maxLoadCount) onComplete?.Invoke();
+                else Debug.Log($"load 실패 : {loadId}");
             };
         }
+        
+        if (currentLoadCount >= maxLoadCount) onComplete?.Invoke();
     }
 
     public GameObject GetMonsterPrefab(string monsterAddress)

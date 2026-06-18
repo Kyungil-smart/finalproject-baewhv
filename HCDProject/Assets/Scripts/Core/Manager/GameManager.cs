@@ -67,7 +67,6 @@ public class GameManager : BaseManager<GameManager>
         if (isReady)
         {
             CurrentState.AddListener(ChangeState);
-            CurrentState.Value = GameState.Ready;
         }
     }
 
@@ -283,7 +282,6 @@ public class GameManager : BaseManager<GameManager>
     private void NextStageScene(StoryStageRawData stageStoryData, StageType type)
     {
         isLoading = true;
-        CurrentState.Value = GameState.Ready;
         
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
@@ -340,6 +338,8 @@ public class GameManager : BaseManager<GameManager>
                         wallHpUi.SetWallHP(_wall.CurrentHp.Value);
                         _wall.CurrentHp.AddRatioListener(wallHpUi.SetWallHP);
                     }
+                    
+                    CurrentState.Value = GameState.Ready;
                 }
             }
         };

@@ -95,7 +95,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160448
-    m_Localized: Spayin
+    m_Localized: Spayne
     m_Metadata:
       m_Items: []
   - m_Id: 863262176796672
@@ -1141,6 +1141,854 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1035299440648230
     m_Localized: Selanjutnya, periksa area di depan dinding gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901911920640
+    m_Localized: Komandan, para Guardian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669376
+    m_Localized: Saya akan merapikan catatan pertahanan di depan gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669377
+    m_Localized: Terima kasih, Demian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669378
+    m_Localized: Sebelum menuju jalan hutan, kita periksa kondisi dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669379
+    m_Localized: Ya. Sepertinya tidak ada yang terluka parah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669380
+    m_Localized: Tidak ada yang terluka parah itu hal yang baik.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669381
+    m_Localized: Itu juga berarti pekerjaanku berkurang...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669382
+    m_Localized: Awalnya terdengar seperti ucapan baik, tapi akhirnya tentang dirimu
+      sendiri.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669383
+    m_Localized: Tetap saja, semua selamat, jadi tidak apa-apa!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669384
+    m_Localized: Berikutnya juga tinggal kita tahan dengan semangat ini!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669385
+    m_Localized: Sebelum hanya mengandalkan semangat, periksa batu sinyal dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669386
+    m_Localized: Aku sudah melihat catatan pertempuran pertama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669387
+    m_Localized: Sinyal yang dikirim Komandan masih tersisa dengan stabil.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669388
+    m_Localized: Bisa kita lanjutkan ke pertempuran berikutnya?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669389
+    m_Localized: Bisa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669390
+    m_Localized: Kalau diselaraskan sekarang, gaya bertarung satu orang akan lebih
+      stabil.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669391
+    m_Localized: Akan bagus kalau kita bisa bersiap sebelum menuju jalan hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669392
+    m_Localized: Kalau begitu, memperkuat yang bisa bertahan lebih lama di depan
+      juga bagus!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669393
+    m_Localized: Kalau itu berarti lebih sedikit yang terluka, aku juga setuju...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669394
+    m_Localized: Komandan, pilih arah penyelarasannya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669395
+    m_Localized: '[Peningkatan event: Pilih 1 dari peningkatan HP Serah / peningkatan
+      serangan Noah / peningkatan jumlah pemulihan Spayne]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669396
+    m_Localized: '[Tampilkan bahwa peningkatan yang dipilih akan tetap aktif di pertempuran
+      berikutnya]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669397
+    m_Localized: Sudah diselaraskan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669398
+    m_Localized: Peningkatan kali ini akan tetap aktif mulai pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669399
+    m_Localized: Bagus! Kalau begitu aku bisa lebih percaya diri berdiri di depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669400
+    m_Localized: Aku juga akan mengawasi pergerakan di jalan hutan dengan lebih jelas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669401
+    m_Localized: Kalau begitu, cepat kita lihat lalu kembali.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669402
+    m_Localized: Kalau terlalu lama, waktu istirahat juga ikut hilang...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669403
+    m_Localized: Masih ada pergerakan di arah jalan hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669404
+    m_Localized: Jika kalian pergi jauh dari gerbang, harap berhati-hati.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669405
+    m_Localized: Mengerti. Kami tidak akan terlalu jauh dari gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669406
+    m_Localized: Semuanya sudah siap?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669407
+    m_Localized: Ya! Kalau jalannya menyempit, aku akan berdiri di depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901949669408
+    m_Localized: Aku akan memeriksa jejaknya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057984
+    m_Localized: Kita harus memastikan apakah monster menargetkan gerbang, atau melarikan
+      diri ke sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057985
+    m_Localized: Aku juga akan menandai jalan pulang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057986
+    m_Localized: Kalau tersesat, kita harus berkemah... aku tidak mau itu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057987
+    m_Localized: Para Guardian, apakah kalian baik-baik saja?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057988
+    m_Localized: Ya. Kami juga sudah memeriksa jalur masuk selatan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057989
+    m_Localized: Jalan hutan di depan gerbang, dan jalur masuk selatan juga.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057990
+    m_Localized: Jejak kakinya akhirnya tersambung ke arah sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057991
+    m_Localized: Jadi akhirnya mereka berkumpul di sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057992
+    m_Localized: Ya. Di depan dinding pertahanan juga terlihat jejak yang sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057993
+    m_Localized: Jejak kaki dari kedua jalan bertumpuk di sekitar sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057994
+    m_Localized: Gerombolan pertama yang kita tahan di depan gerbang juga datang
+      dari arah yang sama?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057995
+    m_Localized: Ya. Sepertinya begitu cara membacanya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057996
+    m_Localized: Jejak tergelincir lebih banyak daripada jejak mencoba berhenti.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057997
+    m_Localized: Jadi mereka bukan mengincar gerbang, tapi terus terdorong turun
+      ke sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057998
+    m_Localized: Kalau kita terdorong mundur di sini, gerbang tepat di belakang kita...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958057999
+    m_Localized: Kalau berakhir hanya dengan perbaikan, itu sudah beruntung.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058000
+    m_Localized: Kalau begitu, kita hanya perlu tidak terdorong mundur.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058001
+    m_Localized: Bagian depan gerbang serahkan padaku!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058002
+    m_Localized: Caramu membuatnya terdengar mudah justru lebih menakutkan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058003
+    m_Localized: Tetap saja, itu tidak salah. Kali ini gerbang tepat di belakang
+      kita.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058004
+    m_Localized: Kalau kamu maju terlalu jauh, dukungan akan terputus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058005
+    m_Localized: Mengerti. Aku akan menahan mereka dalam jarak yang terlihat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058006
+    m_Localized: Pergerakan di dalam hutan semakin mendekat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058007
+    m_Localized: Mereka turun bersamaan dari jalan hutan depan gerbang dan jalur
+      masuk selatan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058008
+    m_Localized: Saya akan menarik para prajurit ke belakang dinding pertahanan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058009
+    m_Localized: Selama kalian menahan mereka, kami akan memeriksa kondisi dinding
+      pertahanan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058010
+    m_Localized: Bagus. Kita pertahankan gerbang di sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058011
+    m_Localized: Mempertahankan itu bagus... tapi kalau terluka, langsung beri tahu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058012
+    m_Localized: Di sini, semakin disembunyikan, masalahnya akan semakin besar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058013
+    m_Localized: Jangan khawatir! Aku tidak akan membiarkan apa pun melewati tempat
+      ini!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058014
+    m_Localized: Bagus. Jaga jarak seperti itu saja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058015
+    m_Localized: Mengerti. Bagian depan serahkan padaku!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058016
+    m_Localized: Semuanya baik-baik saja?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058017
+    m_Localized: Ada yang terluka?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058018
+    m_Localized: Aku baik-baik saja!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058019
+    m_Localized: Bagian depan gerbang sudah kutahan dengan benar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058020
+    m_Localized: Ya. Kamu menahannya dengan benar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058021
+    m_Localized: Tapi kita tetap harus memeriksa kondisi dinding pertahanan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058022
+    m_Localized: Terlihat baik-baik saja dan benar-benar baik-baik saja itu berbeda...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058023
+    m_Localized: Demian, bagaimana kondisi dinding pertahanan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058024
+    m_Localized: Dinding pertahanan masih bertahan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058025
+    m_Localized: Namun, dampaknya sudah cukup banyak menumpuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058026
+    m_Localized: Berbahaya jika harus bertahan sekali lagi dalam kondisi sekarang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058027
+    m_Localized: Sulit untuk langsung menahan serangan berikutnya?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058028
+    m_Localized: Ya. Meski sebentar, tetap perlu waktu untuk memperkuatnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058029
+    m_Localized: Jika dinding pertahanan diperbaiki, itu bisa bertahan untuk pertempuran
+      berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058030
+    m_Localized: Pergerakan di dalam hutan masih tersisa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058031
+    m_Localized: Ada juga suara langkah kaki yang lebih berat dari sebelumnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058032
+    m_Localized: Kalau begitu, berbahaya kalau langsung bertarung lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058033
+    m_Localized: Perbaiki dinding pertahanan dulu, lalu periksa lagi pergerakan di
+      dalam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058034
+    m_Localized: Kalau ada waktu perawatan, mungkin aku bisa memejamkan mata sebentar...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058035
+    m_Localized: Tidur tidak termasuk dalam waktu perawatan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058036
+    m_Localized: Aku bahkan belum selesai bicara...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058037
+    m_Localized: ...Tidak, memang hampir benar sih.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058038
+    m_Localized: Bagus. Kita mulai dari memperbaiki dinding gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058039
+    m_Localized: Noah dan Alice, terus periksa pergerakan di dalam hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058040
+    m_Localized: Serah dan Spayne, periksa titik yang perlu diperbaiki bersama para
+      prajurit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058041
+    m_Localized: Ya. Aku akan terus mengawasi pergerakannya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058042
+    m_Localized: Bagus. Aku akan bersiap sebelum pertempuran berikutnya!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058043
+    m_Localized: Bersiap itu bagus... tapi kali ini, usahakan lebih sedikit yang
+      terluka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058044
+    m_Localized: Entah kalian atau dinding pertahanan, kalau yang harus diperbaiki
+      bertambah, itu melelahkan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058045
+    m_Localized: Demian, retakan di sini sepertinya cukup parah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058046
+    m_Localized: Kalau sisi ini dibiarkan, berikutnya akan terbuka lebih besar...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058047
+    m_Localized: Kami akan segera memperkuat dinding gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058048
+    m_Localized: Tidak bisa memperbaikinya sepenuhnya, tapi kami bisa membuatnya
+      cukup kuat untuk pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058049
+    m_Localized: Kalau sampai sejauh itu bisa, lebih baik dilakukan sekarang...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058050
+    m_Localized: Kalau nanti runtuh, akan ada terlalu banyak tempat yang harus diperbaiki.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058051
+    m_Localized: Kalau begitu, sekarang kita buat sekokoh mungkin!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058052
+    m_Localized: Kalau dinding pertahanan bertahan, aku juga bisa menahan lebih lama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058053
+    m_Localized: Kalau keduanya bertahan, bagian yang harus kulihat juga berkurang...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058054
+    m_Localized: Benar. Karena itu kita memperbaikinya sekarang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058055
+    m_Localized: '[Penguatan dinding gerbang selesai. HP dinding telah dipulihkan.]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058056
+    m_Localized: Penguatan dinding gerbang sudah selesai.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058057
+    m_Localized: Batu sinyal juga bisa diselaraskan sekali lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058058
+    m_Localized: Sebelum pertempuran terakhir, sebaiknya kita menentukan satu peningkatan
+      lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058059
+    m_Localized: Peningkatan yang dipilih sekarang akan berlanjut ke pertempuran
+      berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058060
+    m_Localized: Bagus. Sesuaikan ke bagian yang dibutuhkan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901958058061
+    m_Localized: Karena aku yang akan bertahan di depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252288
+    m_Localized: Aku juga akan terus mengawasi pergerakan di belakang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252289
+    m_Localized: Aku baik dengan pilihan yang membuat orang maupun dinding pertahanan
+      lebih sedikit perlu diperbaiki...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252290
+    m_Localized: Bagus. Mari lakukan penyelarasan terakhir.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252291
+    m_Localized: '[Tampilkan kandidat peningkatan permanen karakter]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252292
+    m_Localized: '[Pemain memilih 1 peningkatan]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252293
+    m_Localized: '[Tampilkan bahwa peningkatan yang dipilih akan tetap aktif di pertempuran
+      berikutnya]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252294
+    m_Localized: Sudah diselaraskan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252295
+    m_Localized: Sekarang periksa informasi pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252296
+    m_Localized: Komandan, pergerakan di dalam hutan aneh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252297
+    m_Localized: Ada satu suara langkah yang sangat berat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252298
+    m_Localized: Sepertinya monster di sekitar juga ikut terseret bergerak oleh suara
+      itu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252299
+    m_Localized: Masih belum jelas apakah itu memimpin gerombolan, atau ikut terdorong
+      bersama mereka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252300
+    m_Localized: Tapi dalam pertempuran berikutnya, makhluk itu yang paling berbahaya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252301
+    m_Localized: '[Informasi bos dikonfirmasi: Gerombolan terakhir berpusat pada
+      monster besar]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252302
+    m_Localized: Kita tahan mereka di pintu masuk jalan desa di belakang gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252303
+    m_Localized: Kita harus menghentikan makhluk itu selagi dinding bertahan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252304
+    m_Localized: Mengerti. Makhluk itu akan kutahan dari depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252305
+    m_Localized: Aku tidak akan membiarkannya lewat ke belakang gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252306
+    m_Localized: Tolong jangan sampai terluka terlalu parah...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252307
+    m_Localized: Aku ingin yang perlu diperbaiki cukup dinding pertahanan saja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252308
+    m_Localized: Sekarang kita menuju garis pertahanan di belakang gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252309
+    m_Localized: Pada akhirnya, kita harus berlari sampai akhir juga...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252310
+    m_Localized: Itu lebih baik daripada terlambat lalu semuanya jadi lebih sulit!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252311
+    m_Localized: Serah mengambil logikaku...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252312
+    m_Localized: Komandan, itu suara langkah berat yang kudengar tadi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252313
+    m_Localized: Sekarang hampir sampai.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252314
+    m_Localized: Monster di sekitar juga ikut terseret turun bersamanya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252315
+    m_Localized: Tidak ada waktu lagi untuk memeriksa hal lain di sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252316
+    m_Localized: Kalau begitu, kita tidak boleh membiarkannya berlarut-larut...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252317
+    m_Localized: Aku akan melihat timing pemulihan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252318
+    m_Localized: Seperti yang kukatakan tadi, bagian depan akan kutahan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252319
+    m_Localized: Aku tidak akan membiarkan mereka lewat ke belakang gerbang!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252320
+    m_Localized: Ya. Mendengar itu membuatku tenang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252321
+    m_Localized: Tapi bertahanlah di dalam jarak pandang kami.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252322
+    m_Localized: Mengerti. Akan kutunjukkan dengan benar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252323
+    m_Localized: Aku akan terus mengawasi musuh yang datang dari jauh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252324
+    m_Localized: Kalau terluka, langsung beri tahu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252325
+    m_Localized: Jadi jangan terlalu memaksakan diri.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252326
+    m_Localized: Bagus. Kita tahan mereka di garis pertahanan tengah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252327
+    m_Localized: '[Pertempuran bos dimulai]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252328
+    m_Localized: Pergerakannya mulai berkurang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252329
+    m_Localized: Setidaknya gerombolan yang datang sekarang sepertinya sudah berhenti.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252330
+    m_Localized: Bagus! Kita berhasil melindungi Benteng Pertahanan Cies!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252331
+    m_Localized: Ya. Syukurlah semua selamat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252332
+    m_Localized: Kita melindungi gerbang dan jalan desa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252333
+    m_Localized: Kita berhasil menahan gerombolan yang datang hari ini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252334
+    m_Localized: Penyebabnya masih ada, tapi ini jelas sebuah pencapaian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252335
+    m_Localized: Kalau begitu, karena ada pencapaian, pasti ada waktu istirahat juga,
+      kan...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252336
+    m_Localized: Para Guardian, kalian benar-benar sudah bekerja keras.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252337
+    m_Localized: Berkat kalian, Benteng Pertahanan Cies selamat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252338
+    m_Localized: Semuanya, kerja bagus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901962252339
+    m_Localized: Komandan, selama pertempuran ada kontak dari arah Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446592
+    m_Localized: Mereka mengatakan monster di sana juga bergerak ke satu arah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446593
+    m_Localized: Jadi ini bukan hanya terjadi di sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446594
+    m_Localized: Pergerakan serupa mungkin masih akan berlanjut.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446595
+    m_Localized: Setidaknya satu hal sudah jelas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446596
+    m_Localized: Ini bukan masalah Cies saja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446597
+    m_Localized: Kita berhasil melindungi Cies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446598
+    m_Localized: Itu jelas sudah kita lakukan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446599
+    m_Localized: Mari kita periksa juga laporan dari Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446600
+    m_Localized: Kalau begitu, masih ada pekerjaan yang tersisa...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446601
+    m_Localized: Kita harus mulai dari merapikan situasi dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446602
+    m_Localized: Kalau begitu, merapikan situasi sekarang sangat penting...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446603
+    m_Localized: Mengerti. Kita rapikan situasi Cies dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446604
+    m_Localized: Laporan Jeple kita periksa setelah itu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446605
+    m_Localized: Depan Gerbang Benteng Pertahanan Cies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446606
+    m_Localized: Pemeliharaan Bersama Pertama
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446607
+    m_Localized: Jalan Hutan di Depan Gerbang Cies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446608
+    m_Localized: Jalan Masuk Selatan Benteng Pertahanan Cies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446609
+    m_Localized: Depan Dinding Gerbang Benteng Pertahanan Cies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901966446610
+    m_Localized: Pemeliharaan Dinding Gerbang Sebelum Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640896
+    m_Localized: Garis Pertahanan Tengah Benteng Pertahanan Cies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160528
+    m_Localized: Wave 1 siap. Tempatkan batu sinyal untuk memperkuat hero sebelum
+      bertempur.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640897
+    m_Localized: Seret batu sinyal serangan ke slot Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640898
+    m_Localized: COMBO +1. Serangan Serah diperkuat X1.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640899
+    m_Localized: Sisa Sort berkurang dari 6 menjadi 5.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640900
+    m_Localized: Persiapan selesai. Tekan BATTLE START untuk memulai pertempuran.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640901
+    m_Localized: Level Up! Pilih hadiah yang kamu inginkan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640902
+    m_Localized: Ketuk kartu hadiah satu kali untuk memilihnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640903
+    m_Localized: Ketuk kartu yang dipilih sekali lagi untuk mengonfirmasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640904
+    m_Localized: Mendapatkan [Indra Tajam] Serangan +8!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640905
+    m_Localized: Noah bergabung. Dukungan jarak jauh siap.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640906
+    m_Localized: Spayne bergabung. Semua hero siap.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640907
+    m_Localized: Noah dan Spayne bergabung!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640908
+    m_Localized: Monster besar muncul. Siapkan sinyal skill Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640909
+    m_Localized: Gauge jurus pamungkas Serah sudah penuh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640910
+    m_Localized: Sentuh potret Serah untuk menggunakan jurus pamungkasnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640911
+    m_Localized: Jurus pamungkas aktif!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640912
+    m_Localized: Sentuh layar saat cutscene untuk menampilkan tombol Lewati.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640913
+    m_Localized: Stage Clear! Periksa hadiahmu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640914
+    m_Localized: Efek relik akan berlanjut ke stage berikutnya. Pilih 1 dari 3.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640915
+    m_Localized: Ketuk relik yang dipilih sekali lagi untuk mengonfirmasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554901970640916
+    m_Localized: Ancient Armor diperoleh. Relik yang dipilih telah terdaftar di daftar
+      milikmu. Efeknya tetap berlaku di stage berikutnya.
     m_Metadata:
       m_Items: []
   references:

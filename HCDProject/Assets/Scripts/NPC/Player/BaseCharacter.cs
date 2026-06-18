@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class BaseCharacter : BaseController
 {
     #region State
-    private StateMachine _stateMachine;
+    private PlayerStateMachine _stateMachine;
 
     private SpawnPlayerState _spawnPlayerState;
 
@@ -132,7 +132,7 @@ public class BaseCharacter : BaseController
         set => _homePosition = value;
     }
     #region stateMachine
-    public StateMachine state => _stateMachine;
+    public PlayerStateMachine state => _stateMachine;
 
     public AttackPlayerState attack => _attackPlayerState;
 
@@ -148,7 +148,7 @@ public class BaseCharacter : BaseController
     protected override void Awake()
     {
         base.Awake();
-        _stateMachine = new StateMachine();
+        _stateMachine = new PlayerStateMachine();
         _spawnPlayerState = new SpawnPlayerState(this);
         _idlePlayerState = new IdlePlayerState(this);
         _chasePlayerState = new ChasePlayerState(this);
@@ -167,6 +167,11 @@ public class BaseCharacter : BaseController
         CurrentHp.RemoveListener(CheckDeath);
     }
 
+    public void FixedUpdate()
+    {
+        _stateMachine?.FixedUpdate();
+    }
+
     protected virtual void Update()
     {
         _stateMachine?.Update();
@@ -175,7 +180,6 @@ public class BaseCharacter : BaseController
         if (_activeSkillCoolValue == null) return;
         _activeSkillCoolValue.Value = result;
     }
-
     public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바 UI 구독
     {
         int maxValue = _stats._maxHp;
@@ -237,7 +241,8 @@ public class BaseCharacter : BaseController
             _moveSpeed = data.MOVE_SPEED,
             _attackSpeed = data.ATK_SPEED,
             _critRate = data.CRI_RATE,
-            _critDamage = data.CRI_DMAGE
+            _critDamage = data.CRI_DMAGE,
+            _chaseRange = data.ACCESS_AREA
         };
 
         skills.Clear();
@@ -447,11 +452,11 @@ public class BaseCharacter : BaseController
             }
         }
     }
-
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        List<ITargetable> targets = Detect(skills[index].SKILL_IS + GetRadius(), skills[index].SKILL_AT);
+        List<ITargetable> targets = Detect(Stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
+        Debug.Log(targets.Count);
         ITargetable nearest = null;
         if (FindType == EFindType.LowestHp)
         {
@@ -530,11 +535,11 @@ public class BaseCharacter : BaseController
         _findType = _playerStats._initFindType;
     }
 
-    protected new void OnDrawGizmos()
+    /*protected new void OnDrawGizmos()
     {
         if (skills == null || skills.Count == 0) return;
 
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, CurrentSkillRange + GetRadius());
-    }
+    }*/
 }

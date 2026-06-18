@@ -81,7 +81,7 @@
     {
       "MAP_ID": "7003",
       "CHAPTER": 1,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 4,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -107,7 +107,7 @@
     {
       "MAP_ID": "7004",
       "CHAPTER": 1,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 4,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -133,7 +133,7 @@
     {
       "MAP_ID": "7005",
       "CHAPTER": 1,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 4,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -159,7 +159,7 @@
     {
       "MAP_ID": "7006",
       "CHAPTER": 1,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 5,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -185,7 +185,7 @@
     {
       "MAP_ID": "7007",
       "CHAPTER": 1,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 5,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -211,7 +211,7 @@
     {
       "MAP_ID": "7008",
       "CHAPTER": 1,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 5,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -237,7 +237,7 @@
     {
       "MAP_ID": "7009",
       "CHAPTER": 1,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 6,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -263,7 +263,7 @@
     {
       "MAP_ID": "7010",
       "CHAPTER": 1,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 6,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -289,7 +289,7 @@
     {
       "MAP_ID": "7011",
       "CHAPTER": 1,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 6,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -315,7 +315,7 @@
     {
       "MAP_ID": "7012",
       "CHAPTER": 1,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 7,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -341,7 +341,7 @@
     {
       "MAP_ID": "7013",
       "CHAPTER": 1,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 7,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -367,7 +367,7 @@
     {
       "MAP_ID": "7014",
       "CHAPTER": 1,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 7,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -471,7 +471,7 @@
     {
       "MAP_ID": "7018",
       "CHAPTER": 2,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 9,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -497,7 +497,7 @@
     {
       "MAP_ID": "7019",
       "CHAPTER": 2,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 9,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -523,7 +523,7 @@
     {
       "MAP_ID": "7020",
       "CHAPTER": 2,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 9,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -549,7 +549,7 @@
     {
       "MAP_ID": "7021",
       "CHAPTER": 2,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 10,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -575,7 +575,7 @@
     {
       "MAP_ID": "7022",
       "CHAPTER": 2,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 10,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -601,7 +601,7 @@
     {
       "MAP_ID": "7023",
       "CHAPTER": 2,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 10,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -627,7 +627,7 @@
     {
       "MAP_ID": "7024",
       "CHAPTER": 2,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 11,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -653,7 +653,7 @@
     {
       "MAP_ID": "7025",
       "CHAPTER": 2,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 11,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -679,7 +679,7 @@
     {
       "MAP_ID": "7026",
       "CHAPTER": 2,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 11,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -705,7 +705,7 @@
     {
       "MAP_ID": "7027",
       "CHAPTER": 2,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 12,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -731,7 +731,7 @@
     {
       "MAP_ID": "7028",
       "CHAPTER": 2,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 12,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -757,7 +757,7 @@
     {
       "MAP_ID": "7029",
       "CHAPTER": 2,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 12,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -861,7 +861,7 @@
     {
       "MAP_ID": "7033",
       "CHAPTER": 3,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 14,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -887,7 +887,7 @@
     {
       "MAP_ID": "7034",
       "CHAPTER": 3,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 14,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -913,7 +913,7 @@
     {
       "MAP_ID": "7035",
       "CHAPTER": 3,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 14,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -939,7 +939,7 @@
     {
       "MAP_ID": "7036",
       "CHAPTER": 3,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 15,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -965,7 +965,7 @@
     {
       "MAP_ID": "7037",
       "CHAPTER": 3,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 15,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -991,7 +991,7 @@
     {
       "MAP_ID": "7038",
       "CHAPTER": 3,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 15,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1017,7 +1017,7 @@
     {
       "MAP_ID": "7039",
       "CHAPTER": 3,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 16,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1043,7 +1043,7 @@
     {
       "MAP_ID": "7040",
       "CHAPTER": 3,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 16,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1069,7 +1069,7 @@
     {
       "MAP_ID": "7041",
       "CHAPTER": 3,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 16,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1095,7 +1095,7 @@
     {
       "MAP_ID": "7042",
       "CHAPTER": 3,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 17,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1121,7 +1121,7 @@
     {
       "MAP_ID": "7043",
       "CHAPTER": 3,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 17,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1147,7 +1147,7 @@
     {
       "MAP_ID": "7044",
       "CHAPTER": 3,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 17,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1251,7 +1251,7 @@
     {
       "MAP_ID": "7048",
       "CHAPTER": 4,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 19,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1277,7 +1277,7 @@
     {
       "MAP_ID": "7049",
       "CHAPTER": 4,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 19,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1303,7 +1303,7 @@
     {
       "MAP_ID": "7050",
       "CHAPTER": 4,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 19,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1329,7 +1329,7 @@
     {
       "MAP_ID": "7051",
       "CHAPTER": 4,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 20,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1355,7 +1355,7 @@
     {
       "MAP_ID": "7052",
       "CHAPTER": 4,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 20,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1381,7 +1381,7 @@
     {
       "MAP_ID": "7053",
       "CHAPTER": 4,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 20,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1407,7 +1407,7 @@
     {
       "MAP_ID": "7054",
       "CHAPTER": 4,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 21,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1433,7 +1433,7 @@
     {
       "MAP_ID": "7055",
       "CHAPTER": 4,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 21,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1459,7 +1459,7 @@
     {
       "MAP_ID": "7056",
       "CHAPTER": 4,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 21,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1485,7 +1485,7 @@
     {
       "MAP_ID": "7057",
       "CHAPTER": 4,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 22,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1511,7 +1511,7 @@
     {
       "MAP_ID": "7058",
       "CHAPTER": 4,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 22,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1537,7 +1537,7 @@
     {
       "MAP_ID": "7059",
       "CHAPTER": 4,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 22,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1641,7 +1641,7 @@
     {
       "MAP_ID": "7063",
       "CHAPTER": 5,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 24,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1667,7 +1667,7 @@
     {
       "MAP_ID": "7064",
       "CHAPTER": 5,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 24,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1693,7 +1693,7 @@
     {
       "MAP_ID": "7065",
       "CHAPTER": 5,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 24,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1719,7 +1719,7 @@
     {
       "MAP_ID": "7066",
       "CHAPTER": 5,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 25,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1745,7 +1745,7 @@
     {
       "MAP_ID": "7067",
       "CHAPTER": 5,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 25,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1771,7 +1771,7 @@
     {
       "MAP_ID": "7068",
       "CHAPTER": 5,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 25,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1797,7 +1797,7 @@
     {
       "MAP_ID": "7069",
       "CHAPTER": 5,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 26,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1823,7 +1823,7 @@
     {
       "MAP_ID": "7070",
       "CHAPTER": 5,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 26,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1849,7 +1849,7 @@
     {
       "MAP_ID": "7071",
       "CHAPTER": 5,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 26,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -1875,7 +1875,7 @@
     {
       "MAP_ID": "7072",
       "CHAPTER": 5,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 27,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -1901,7 +1901,7 @@
     {
       "MAP_ID": "7073",
       "CHAPTER": 5,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 27,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -1927,7 +1927,7 @@
     {
       "MAP_ID": "7074",
       "CHAPTER": 5,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 27,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2031,7 +2031,7 @@
     {
       "MAP_ID": "7078",
       "CHAPTER": 6,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 29,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2057,7 +2057,7 @@
     {
       "MAP_ID": "7079",
       "CHAPTER": 6,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 29,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2083,7 +2083,7 @@
     {
       "MAP_ID": "7080",
       "CHAPTER": 6,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 29,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2109,7 +2109,7 @@
     {
       "MAP_ID": "7081",
       "CHAPTER": 6,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 30,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2135,7 +2135,7 @@
     {
       "MAP_ID": "7082",
       "CHAPTER": 6,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 30,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2161,7 +2161,7 @@
     {
       "MAP_ID": "7083",
       "CHAPTER": 6,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 30,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2187,7 +2187,7 @@
     {
       "MAP_ID": "7084",
       "CHAPTER": 6,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 31,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2213,7 +2213,7 @@
     {
       "MAP_ID": "7085",
       "CHAPTER": 6,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 31,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2239,7 +2239,7 @@
     {
       "MAP_ID": "7086",
       "CHAPTER": 6,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 31,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2265,7 +2265,7 @@
     {
       "MAP_ID": "7087",
       "CHAPTER": 6,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 32,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2291,7 +2291,7 @@
     {
       "MAP_ID": "7088",
       "CHAPTER": 6,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 32,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2317,7 +2317,7 @@
     {
       "MAP_ID": "7089",
       "CHAPTER": 6,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 32,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2421,7 +2421,7 @@
     {
       "MAP_ID": "7093",
       "CHAPTER": 7,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 34,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2447,7 +2447,7 @@
     {
       "MAP_ID": "7094",
       "CHAPTER": 7,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 34,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2473,7 +2473,7 @@
     {
       "MAP_ID": "7095",
       "CHAPTER": 7,
-      "STAGE": 2,
+      "STAGE": 3,
       "SORT_COUNT": 34,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2499,7 +2499,7 @@
     {
       "MAP_ID": "7096",
       "CHAPTER": 7,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 35,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2525,7 +2525,7 @@
     {
       "MAP_ID": "7097",
       "CHAPTER": 7,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 35,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2551,7 +2551,7 @@
     {
       "MAP_ID": "7098",
       "CHAPTER": 7,
-      "STAGE": 3,
+      "STAGE": 4,
       "SORT_COUNT": 35,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2577,7 +2577,7 @@
     {
       "MAP_ID": "7099",
       "CHAPTER": 7,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 36,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2603,7 +2603,7 @@
     {
       "MAP_ID": "7100",
       "CHAPTER": 7,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 36,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2629,7 +2629,7 @@
     {
       "MAP_ID": "7101",
       "CHAPTER": 7,
-      "STAGE": 4,
+      "STAGE": 5,
       "SORT_COUNT": 36,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
@@ -2655,7 +2655,7 @@
     {
       "MAP_ID": "7102",
       "CHAPTER": 7,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 37,
       "TOTAL_WAVE": 3,
       "WAVE": 1,
@@ -2681,7 +2681,7 @@
     {
       "MAP_ID": "7103",
       "CHAPTER": 7,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 37,
       "TOTAL_WAVE": 3,
       "WAVE": 2,
@@ -2707,7 +2707,7 @@
     {
       "MAP_ID": "7104",
       "CHAPTER": 7,
-      "STAGE": 5,
+      "STAGE": 7,
       "SORT_COUNT": 37,
       "TOTAL_WAVE": 3,
       "WAVE": 3,
