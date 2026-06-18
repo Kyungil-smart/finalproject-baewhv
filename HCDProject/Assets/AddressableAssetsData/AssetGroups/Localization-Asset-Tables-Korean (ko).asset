@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Assets-Shared
+  m_Name: Localization-Asset-Tables-Korean (ko)
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Localization-Assets-Shared
-  m_GUID: fbf990279d4b00243a4d3e32b3920416
+  m_GroupName: Localization-Asset-Tables-Korean (ko)
+  m_GUID: 77788f613d8198d40bccdffe450f8533
   m_SerializeEntries:
-  - m_GUID: 0de41de839ccd5b4593b69647bbad4a8
-    m_Address: Assets/Localization/FontTable Shared Data.asset
+  - m_GUID: 3d7e5e3c9b081764ca56e4a47ce4d91f
+    m_Address: FontTable_ko
     m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4ccbdbf1878cce04a8441eeb10934d6b
-    m_Address: Assets/Localization/LocalizationTable Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-ko
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 659786fb8861e664a8a88334390f8666, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e91a72b511dbf0345b62594939316cf2, type: 2}
-    - {fileID: 11400000, guid: a1c595c0c2c3484419599cee02498b5f, type: 2}
+    - {fileID: 11400000, guid: da4f8c6ec78316d46b093d97ea0b41d8, type: 2}
+    - {fileID: 11400000, guid: 348da000d1d385f4a87b867f867c24d0, type: 2}
