@@ -295,13 +295,12 @@ public class TutorialManager : BaseManager<TutorialManager>
     {
         //대사 종료
         TouchActions = null;
-        touchShield.SetActive(true);
         touchField.SetActive(true);
+        background.DOFade(0.75f, 1);
         Service.Get<TimeManager>().SaveTimeScale();
         ShowMessage(scripts.GetData[10].title, scripts.GetData[10].desc);
         CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots[0].gameObject);
         TouchActions = Tutorial16;
-        background.DOFade(0.75f, 1);
         HideMessage();
     }
     private void Tutorial16()
@@ -405,20 +404,20 @@ public class TutorialManager : BaseManager<TutorialManager>
         //5 대사 출력 연속
         TouchActions = null;
         touchField.SetActive(true);
-        ShowMessage(scripts.GetData[11].title, scripts.GetData[11].desc, false);
+        ShowMessage(scripts.GetData[20].title, scripts.GetData[20].desc, false);
         TouchActions = Tutorial29;
     }
     private void Tutorial29()
     {
         TouchActions = null;
-        ShowMessage(scripts.GetData[12].title, scripts.GetData[12].desc, false);
+        ShowMessage(scripts.GetData[21].title, scripts.GetData[21].desc, false);
         TouchActions = Tutorial30;
     }
 
     private void Tutorial30()
     {
         TouchActions = null;
-        ShowMessage(scripts.GetData[13].title, scripts.GetData[13].desc, false);
+        ShowMessage(scripts.GetData[22].title, scripts.GetData[22].desc, false);
         TouchActions = Tutorial31;
     }
     private void Tutorial31()
