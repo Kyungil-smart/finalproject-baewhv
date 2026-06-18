@@ -361,6 +361,10 @@ public class GameManager : BaseManager<GameManager>
 
     public void ClearStage()
     {
+        var currentStageData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+        
+        bool isEndChapter = (currentStageData != null && CheckStageType(currentStageData) == StageType.Boss);
+        
         NextStage();
         
         var nextStageData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
@@ -384,7 +388,8 @@ public class GameManager : BaseManager<GameManager>
             _wall = null;
         }
 
-        Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(isBattle);
+        if (isEndChapter) Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(false);
+        else              Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(isBattle);
         
         CurrentState.Value = GameState.Clear;
     }
