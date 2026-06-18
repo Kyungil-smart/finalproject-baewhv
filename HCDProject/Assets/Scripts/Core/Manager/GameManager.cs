@@ -283,6 +283,8 @@ public class GameManager : BaseManager<GameManager>
     {
         isLoading = true;
         
+        CurrentState.Value = GameState.Ready;
+        
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
             Service.Get<SceneController>()?.ChangeScene(SceneType.Narrative);
@@ -294,12 +296,10 @@ public class GameManager : BaseManager<GameManager>
                 case StageType.Tutorial:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
                     Time.timeScale = 1;
-                    SpawnWall();
                     break;
                 case StageType.Normal:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
                     Time.timeScale = 1;
-                    SpawnWall();
                     break;
                 case StageType.Event:
                     break;
@@ -308,7 +308,6 @@ public class GameManager : BaseManager<GameManager>
                 case StageType.Boss:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
                     Time.timeScale = 1;
-                    SpawnWall();
                     break;
             }
         }
@@ -316,6 +315,8 @@ public class GameManager : BaseManager<GameManager>
     
     public void SpawnWall()
     {
+        if (_wall != null) return;
+        
         Addressables.InstantiateAsync(_wallAddress).Completed += (handle) =>
         {
             if (handle.Status == AsyncOperationStatus.Succeeded)
@@ -338,8 +339,6 @@ public class GameManager : BaseManager<GameManager>
                         wallHpUi.SetWallHP(_wall.CurrentHp.Value);
                         _wall.CurrentHp.AddRatioListener(wallHpUi.SetWallHP);
                     }
-                    
-                    CurrentState.Value = GameState.Ready;
                 }
             }
         };
