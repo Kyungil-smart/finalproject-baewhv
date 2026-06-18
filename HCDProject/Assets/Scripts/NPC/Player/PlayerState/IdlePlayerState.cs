@@ -1,28 +1,22 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class IdlePlayerState : IState
+public class IdlePlayerState : PlayerBaseState
 {
-    private BaseCharacter _owner;
-
-
-    public IdlePlayerState(BaseCharacter owner)
+    public IdlePlayerState(BaseCharacter owner) : base(owner)
     {
-        _owner = owner;
+        
     }
-
-    public void Enter()
+    public override void Enter()
     {
         // TODO : 대기 애니메이션(있다면)
         Debug.Log("상태: Idle 진입");
     }
-
-    public void Exit()
+    public override void Exit()
     {
         // TODO : 대기 애니메이션 정지
     }
-
-    public void Update()
+    public override void Update()
     {
         float homeDist = Vector2.Distance(_owner.transform.position, _owner.homePosition);
         if (_owner.GetCurrentTarget == null)
@@ -37,6 +31,11 @@ public class IdlePlayerState : IState
             }
         }
 
+        
+    }
+
+    public override void FixedUpdate()
+    {
         ITargetable target = _owner.FindTarget(_owner.SkillTargetIndex);
         if (target != null)
         {

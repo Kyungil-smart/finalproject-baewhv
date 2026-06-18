@@ -39,6 +39,8 @@ public class RelicManager : BaseManager<RelicManager>
         Service.Get<DataManager>()?.SelectStageReward(currentRandomRewards[selectedIndex].CLEAR_REWARD_ID);
 
         string rewardId = currentRandomRewards[selectedIndex].CLEAR_REWARD_ID;
+        var rewardData = currentRandomRewards[selectedIndex];
+
         if (MyRelics.ContainsKey(rewardId))
         {
             MyRelics[rewardId]++;
@@ -50,6 +52,40 @@ public class RelicManager : BaseManager<RelicManager>
 
         var currentStack = MyRelics[rewardId];
         Debug.Log($"유물 {rewardId} | 중첩치: {currentStack}");
+
+        if (rewardData.CLEAR_REWARD_TARGET.ToString() == "CASTLE")
+        {
+            var gameManager = Service.Get<GameManager>();
+            if (gameManager != null && gameManager._wall != null)
+            {
+                var typeField = rewardData.GetType().GetField("CLEAR_REWARD_TYPE_01");
+                var effectType = typeField?.GetValue(rewardData)?.ToString();
+
+                if (!string.IsNullOrEmpty(effectType))
+                {
+                    var bField = rewardData.GetType().GetField("CLEAR_REWARD_F_01"); // 최초 수치
+                    var sField = rewardData.GetType().GetField("CLEAR_REWARD_S_01"); // 중첩 수치
+
+                    float baseValue = bField != null ? Convert.ToSingle(bField.GetValue(rewardData)) : 0f;
+                    float stackValue = sField != null ? Convert.ToSingle(sField.GetValue(rewardData)) : 0f;
+
+                    int applyValue = (currentStack == 1) ? (int)baseValue : (int)stackValue;
+
+                    if (effectType == "REPAIR")
+                    {
+                        int repairedHp = Mathf.Min(gameManager._wall.CurrentHp.Value + applyValue, gameManager._wall.CurrentHp.MaxValue);
+                        gameManager._wall.SetHp(repairedHp);
+                        Debug.Log($"성벽 HP {applyValue} 수리");
+                    }
+                    else if (effectType == "MAX_HP")
+                    {
+                        int nextHp = gameManager._wall.CurrentHp.Value + applyValue;
+                        gameManager._wall.SetHp(nextHp);
+                        Debug.Log($"성벽 최대 HP {applyValue} 증가");
+                    }
+                }
+            }
+        }
 
         currentRandomRewards = null;
     }

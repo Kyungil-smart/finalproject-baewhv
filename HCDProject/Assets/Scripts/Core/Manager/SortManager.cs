@@ -17,7 +17,8 @@ public class SortManager : BaseManager<SortManager>
 
     public CharacterSlotUI[] characterSlots;
 
-    public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
+    //public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
+    public ObserveValue<float> RemainingSorts { get; private set; } = new ObserveValue<float>();
     public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
 
     public ObserveValue<bool> isEndSort = new();
@@ -66,8 +67,13 @@ public class SortManager : BaseManager<SortManager>
             PlayerInputLock(false);
             return;
         }
-
-        InitializeRail();
+    }
+    private void Update()
+    {
+        if (RemainingSorts.Value > 0)
+        {
+            RemainingSorts.Value -= Time.deltaTime;
+        }
     }
 
     #region [Sort]
@@ -82,6 +88,7 @@ public class SortManager : BaseManager<SortManager>
     public void AddCombo(int amount)
     {
         CurrentCombo.Value += amount;
+        RemainingSorts.Value += 1.5f;
     }
 
     // 블록 드랍 -> 슬롯 안착
@@ -202,7 +209,8 @@ public class SortManager : BaseManager<SortManager>
 
             if (mapData != null)
             {
-                RemainingSorts.Value = mapData.SORT_COUNT;
+                RemainingSorts.Value = mapData.SORT_COUNT; //TODO : 임시수정
+                //RemainingSorts.Value = 15;
                 Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 횟수: {mapData.SORT_COUNT}회");
             }
         }
@@ -282,6 +290,24 @@ public class SortManager : BaseManager<SortManager>
     public void InitializeRail()
     {
         AutoSetupRailSlots();
+
+        for (int i = 0; i < maxColumns; i++)
+        {
+            if (railASlots[i] != null && railASlots[i].childCount > 0)
+            {
+                for (int j = railASlots[i].childCount - 1; j >= 0; j--)
+                {
+                    DestroyImmediate(railASlots[i].GetChild(j).gameObject);
+                }
+            }
+            if (railBSlots[i] != null && railBSlots[i].childCount > 0)
+            {
+                for (int j = railBSlots[i].childCount - 1; j >= 0; j--)
+                {
+                    DestroyImmediate(railBSlots[i].GetChild(j).gameObject);
+                }
+            }
+        }
 
         foreach (var block in railABlocks) if (block != null) Destroy(block.gameObject);
         foreach (var block in railBBlocks) if (block != null) Destroy(block.gameObject);
