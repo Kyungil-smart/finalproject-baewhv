@@ -15,6 +15,19 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: fbf990279d4b00243a4d3e32b3920416
   m_SerializeEntries:
+  - m_GUID: 0de41de839ccd5b4593b69647bbad4a8
+    m_Address: Assets/Localization/FontTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40c1e2b89ce8509439539f6b456ec7ed
+    m_Address: NotoSans-Regular SDF
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-id
+    - Locale-vi
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ccbdbf1878cce04a8441eeb10934d6b
     m_Address: Assets/Localization/LocalizationTable Shared Data.asset
     m_ReadOnly: 1
