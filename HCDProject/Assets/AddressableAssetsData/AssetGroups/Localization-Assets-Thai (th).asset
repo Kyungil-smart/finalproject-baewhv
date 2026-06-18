@@ -10,20 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Assets-Korean (ko)
+  m_Name: Localization-Assets-Thai (th)
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Localization-Assets-Korean (ko)
-  m_GUID: 9cb1b84f738a58842bc7f03fe9942267
-  m_SerializeEntries:
-  - m_GUID: c985bc60af8bf814a9f5fd94022c6976
-    m_Address: NotoSansKR-Regular SDF
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko
-    FlaggedDuringContentUpdateRestriction: 0
+  m_GroupName: Localization-Assets-Thai (th)
+  m_GUID: 832f9e12b20009b418281062e436cf09
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 659786fb8861e664a8a88334390f8666, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 67d96ba70d370d64aab7d9058e38c953, type: 2}
-    - {fileID: 11400000, guid: a16e7d5f119ff9645833c467e0e61ac7, type: 2}
+    - {fileID: 11400000, guid: 42f7513e95ecee740a4ba5f9b980ce66, type: 2}
+    - {fileID: 11400000, guid: f93985ecb26c7104894ebd5266507543, type: 2}

@@ -16,11 +16,12 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 0de41de839ccd5b4593b69647bbad4a8
   m_Entries:
   - m_Id: 15986941952
-    m_Key: New Entry
+    m_Key: TMPFontAsset
     m_Metadata:
       m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 9112770372408967168
   m_KeyGenerator:
     rid: 9112770351769583711
   references:
@@ -30,3 +31,15 @@ MonoBehaviour:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1781687937261
+    - rid: 9112770372408967168
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 15986941952
+          m_TableCodes:
+          - en
+          - ko
+          - vi
+          - id
+        m_TypeString: TMPro.TMP_FontAsset, Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
