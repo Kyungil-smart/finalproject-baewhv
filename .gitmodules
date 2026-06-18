@@ -1,4 +1,4 @@
-[submodule "HCDProject/Assets/Shared"]
+[submodule "HCDProject/Assets/_Shared"]
 	path = HCDProject/Assets/_Shared
 	url = http://baewhv.iptime.org:3001/vishas_eye/HDC_ResourceRepo.git
 	branch = main
