@@ -66,8 +66,6 @@ public class SortManager : BaseManager<SortManager>
             PlayerInputLock(false);
             return;
         }
-
-        InitializeRail();
     }
 
     #region [Sort]
@@ -282,6 +280,24 @@ public class SortManager : BaseManager<SortManager>
     public void InitializeRail()
     {
         AutoSetupRailSlots();
+
+        for (int i = 0; i < maxColumns; i++)
+        {
+            if (railASlots[i] != null && railASlots[i].childCount > 0)
+            {
+                for (int j = railASlots[i].childCount - 1; j >= 0; j--)
+                {
+                    DestroyImmediate(railASlots[i].GetChild(j).gameObject);
+                }
+            }
+            if (railBSlots[i] != null && railBSlots[i].childCount > 0)
+            {
+                for (int j = railBSlots[i].childCount - 1; j >= 0; j--)
+                {
+                    DestroyImmediate(railBSlots[i].GetChild(j).gameObject);
+                }
+            }
+        }
 
         foreach (var block in railABlocks) if (block != null) Destroy(block.gameObject);
         foreach (var block in railBBlocks) if (block != null) Destroy(block.gameObject);

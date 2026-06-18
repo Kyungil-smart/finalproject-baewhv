@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class SpawnPlayerState : IState
+public class SpawnPlayerState : PlayerBaseState
 {
-    private BaseCharacter _owner;
-
-
-    public SpawnPlayerState(BaseCharacter owner)
+    public SpawnPlayerState(BaseCharacter owner) : base(owner)
     {
-        _owner = owner;
+        
     }
-    public void Enter()
+
+    public override void Enter()
     {
         // Todo : 걷기 애니메이션(있다면)
         _owner.IsSpawning = true;
@@ -19,8 +17,7 @@ public class SpawnPlayerState : IState
         _owner.Movement.Move(_owner.spawnPosition);
         _owner.Movement.Move(_owner.homePosition);
     }
-
-    public void Exit()
+    public override void Exit()
     {
         _owner.IsSpawning = false;
         _owner.Movement.Agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
@@ -29,9 +26,7 @@ public class SpawnPlayerState : IState
         Debug.Log($"플레이어 도착 :{_owner.gameObject.name} / {_owner.homePosition} / {_owner.transform.position}");
         _owner.SetNavMeshActive(false);
     }
-
-
-    public void Update()
+    public override void Update()
     {
         float dist = Vector3.Distance(_owner.transform.position, _owner.homePosition);
         if (dist <= 0.1f)
