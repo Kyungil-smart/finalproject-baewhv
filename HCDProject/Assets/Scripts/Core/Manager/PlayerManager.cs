@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.InputSystem;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.TextCore.Text;
 
 public partial class PlayerManager : BaseManager<PlayerManager>
 {
@@ -25,6 +27,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     Coroutine[] _coroutines;
 
     Coroutine[] _healCoroutines; // 힐링팩터 코루틴
+
+    Coroutine[] _arrowCoroutines; // 화살비 코루틴
 
     private AsyncOperationHandle<GameObject> _prefabHandle;
 
@@ -89,6 +93,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             _characters = new BaseCharacter[data.Count];
             _coroutines = new Coroutine[data.Count];
             _healCoroutines = new Coroutine[data.Count];
+            _arrowCoroutines = new Coroutine[data.Count];
             _slot = new CharacterSlotUI[data.Count];
         }
         GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[index].position, Quaternion.identity);
@@ -117,6 +122,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         _characters = new BaseCharacter[data.Count];
         _coroutines = new Coroutine[data.Count];
         _healCoroutines = new Coroutine[data.Count];
+        _arrowCoroutines = new Coroutine[data.Count];
         _slot = new CharacterSlotUI[data.Count];
         for (int i = 0; i < data.Count; i++)
         {
@@ -220,7 +226,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         }
     }
 
-    public void ApplyRelicStats() // 유물적용(SCR_001,002,003,004,006,007,009,010,012,015)
+    public void ApplyRelicStats() // 유물적용(SCR_001,002,003,004,005,006,007,009,010,012,015)
     {
         string[] jobTypes = { "WARRIOR", "ARCHER", "WIZARD", "HEALER" };
         string[] effectTypes =
@@ -300,6 +306,50 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             {
                 _healCoroutines[i] = StartCoroutine(HealingFactor(_characters[i], jobTypes[i]));
             }
+
+            float arrowBonus = Service.Get<RelicManager>()?
+                .GetTotalRelicBonus(jobTypes[i], "SKILL_UPGRADE_DAMAGE_P") ?? 0F;
+            if (arrowBonus > 0) // 화살비 적용
+            {
+                var skillTable = Service.Get<DataManager>().PlayerSkillTable.data;
+                var skillData = skillTable.Find(s => s.SKILL_ID == "6508");
+                if (skillData != null)
+                {
+                    if (_characters[i].skills.Find(s => s.SKILL_ID == "6508") == null)
+                   _characters[i].skills.Add(new Skill(skillData));
+                } 
+                _arrowCoroutines[i] = StartCoroutine(RainOfArrows(_characters[i], jobTypes[i]));
+            }
+
+            float earthquakeBonus = Service.Get<RelicManager>()?
+                .GetTotalRelicBonus(jobTypes[i], "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
+            if (earthquakeBonus > 0) // 지진마법 적용
+            {
+                var skillTable = Service.Get<DataManager>().PlayerSkillTable.data;
+                var skillData = skillTable.Find(s => s.SKILL_ID == "6509");
+                if (skillData != null)
+                {
+                    if (_characters[i].skills.Find(s => s.SKILL_ID == "6509") == null)
+                        _characters[i].skills.Add(new Skill(skillData));
+                }
+            }
+        }
+    }
+
+    public IEnumerator RainOfArrows(BaseCharacter character, string jobtype) // 화살비 유물(궁수)
+    {
+        while (true)
+        {
+            float jobBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobtype, "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
+            float skillCdValue = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobtype, "SKILL_CD") ?? 0F;
+            yield return YieldContainer.WaitForSeconds(skillCdValue);
+            if (character._isDead || character.GetCurrentTarget == null) continue;
+            Debug.Log($"[화살비] {character.gameObject.name} 발동! / " +
+          $"타겟: {character.GetCurrentTarget.GetTargetObject.name} / " +
+          $"DAMAGE_P: {jobBonus} / SKILL_CD: {skillCdValue}");
+            character.FireRainOfArrows(character.GetCurrentTarget.GetTargetObject.transform.position,
+                Mathf.CeilToInt(character.Stats._attackPower * character.skills[2].SKILL_ABILLITY 
+                * (jobBonus / 100f)));
         }
     }
 

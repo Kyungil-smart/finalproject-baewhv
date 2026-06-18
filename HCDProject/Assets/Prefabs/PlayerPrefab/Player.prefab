@@ -60,6 +60,9 @@ MonoBehaviour:
     _critDamage: 0
     _attackRange: 1
     _chaseRange: 4
+  CurrentHp:
+    _data: 0
+    _maxValue: 0
   skills:
   - SKILL_ABILLITY: 0
     SKILL_ID: 
@@ -113,6 +116,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
+  _hpBar: {fileID: 8508475954353417218, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
   _isDead: 0
   _reviveTime: 3
   <CurrentState>k__BackingField:
@@ -242,7 +246,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1581155118150785694}
