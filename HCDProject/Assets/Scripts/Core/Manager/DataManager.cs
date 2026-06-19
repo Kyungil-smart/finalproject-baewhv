@@ -31,9 +31,11 @@ public class DataManager : BaseManager<DataManager>
     private Dictionary<string, int> _stageRewardCounts = new Dictionary<string, int>();
     private Dictionary<string, int> _levelRewardCounts = new Dictionary<string, int>();
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
+        
+        if (isManagerDestroy) return;
         
         dataValue = new RatioIntValue(14, 0);
         
