@@ -8,9 +8,11 @@ public class LocalizationManager : BaseManager<LocalizationManager>
 {
     private readonly List<string> _language = new() { "ko", "en", "th", "vi", "id" };
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
+        
+        if (IsManagerDestroy) return;
 
         var handle = LocalizationSettings.InitializationOperation;
 

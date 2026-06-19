@@ -12,9 +12,11 @@ public class SceneController : BaseManager<SceneController>
     public event Action<float> OnLoading;
     public event Action OnLoadingComplete;
     
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
+        
+        if (IsManagerDestroy) return;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
