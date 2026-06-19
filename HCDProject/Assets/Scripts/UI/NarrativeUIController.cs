@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class NarrativeUIController : BaseUIController<NarrativeUIController>
 {
     [SerializeField] private LocalizeStringEvent nameText;
+    [SerializeField] private TextMeshProUGUI nameTMP;
     [SerializeField] private LocalizeStringEvent descText;
     [SerializeField] private TextMeshProUGUI descTMP;
     [SerializeField] private Image leftPortrait;
@@ -20,6 +21,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     {
         descText.OnUpdateString.AddListener(SetText);
     }
+
     private void OnDisable()
     {
         descText.OnUpdateString.RemoveListener(SetText);
@@ -33,10 +35,16 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
             isEnd = true;
             return;
         }
+
         currentdata = data;
-        nameText.SetEntry(data.NAME);
-        descText.SetEntry(data.TEXT_ID);
-        
+        if (string.IsNullOrEmpty(data.NAME))
+            nameTMP.text = "";
+        else
+            nameText.SetEntry(data.NAME);
+        if (string.IsNullOrEmpty(data.NAME))
+            descTMP.text = "";
+        else
+            descText.SetEntry(data.TEXT_ID);
     }
 
     private void SetText(string text)
@@ -48,7 +56,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     public void OnNextButton()
     {
         if (isEnd) return;
-        if(currentdata.NEXT_ID == ""|| currentdata.NEXT_ID == null)
+        if (currentdata.NEXT_ID == "" || currentdata.NEXT_ID == null)
         {
             Service.Get<NarrativeManager>().EndNarrative();
             isEnd = true;
@@ -63,5 +71,4 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         Service.Get<NarrativeManager>().EndNarrative();
         isEnd = true;
     }
-    
 }
