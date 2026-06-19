@@ -1599,6 +1599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NarrativeUIController
   nameText: {fileID: 3412985413598922322}
   descText: {fileID: 7404621200833038285}
+  descTMP: {fileID: 7466894442779334614}
   leftPortrait: {fileID: 4595235588683074015}
   rightPortrait: {fileID: 1673882248263318468}
   ColorLine: {fileID: 160972948268638449}
