@@ -380,6 +380,10 @@ public class BaseCharacter : BaseController
                 Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
                 int skillDamage = (int)CalculateDamage(1);
                 StartCoroutine(DotFieldCoroutine(fieldCenter, skillDamage));
+                Debug.Log($"[지진 가드] skills.Count={skills.Count} / " +
+    $"skills[0].SKILL_ID='{skills[0].SKILL_ID}' / " +
+    $"skills[1].SKILL_ID='{skills[1].SKILL_ID}' / " +
+    $"skills[2].SKILL_ID='{skills[2].SKILL_ID}'");
                 if (skills.Find(s => s.SKILL_ID == "6509") != null)
                 {
                     float earthquakeBonus = Service.Get<RelicManager>()?
@@ -491,7 +495,7 @@ public class BaseCharacter : BaseController
     {
         if (_isSpawning) return null;
         List<ITargetable> targets = Detect(Stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
-        Debug.Log(targets.Count);
+        //Debug.Log(targets.Count);
         ITargetable nearest = null;
         if (FindType == EFindType.LowestHp)
         {

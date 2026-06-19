@@ -309,7 +309,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
             float arrowBonus = Service.Get<RelicManager>()?
                 .GetTotalRelicBonus(jobTypes[i], "SKILL_UPGRADE_DAMAGE_P") ?? 0F;
-            if (arrowBonus > 0) // 화살비 적용
+            if (arrowBonus > 0 && jobTypes[i] == "ARCHER") // 화살비 적용
             {
                 var skillTable = Service.Get<DataManager>().PlayerSkillTable.data;
                 var skillData = skillTable.Find(s => s.SKILL_ID == "6508");
@@ -323,14 +323,17 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
             float earthquakeBonus = Service.Get<RelicManager>()?
                 .GetTotalRelicBonus(jobTypes[i], "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
-            if (earthquakeBonus > 0) // 지진마법 적용
+            Debug.Log($"[지진 체크] i={i} / job={jobTypes[i]} / earthquakeBonus={earthquakeBonus}");
+            if (earthquakeBonus > 0 && jobTypes[i] == "WIZARD") // 지진마법 적용
             {
                 var skillTable = Service.Get<DataManager>().PlayerSkillTable.data;
                 var skillData = skillTable.Find(s => s.SKILL_ID == "6509");
+                Debug.Log($"[지진 추적1] skillData null? {skillData == null}");
                 if (skillData != null)
                 {
                     if (_characters[i].skills.Find(s => s.SKILL_ID == "6509") == null)
                         _characters[i].skills.Add(new Skill(skillData));
+                    Debug.Log($"[지진 추적2] skills.Add 완료! Count={_characters[i].skills.Count}");
                 }
             }
         }
