@@ -246,7 +246,7 @@ public class BaseCharacter : BaseController
         };
 
         skills.Clear();
-        var skillTable = Service.Get<DataManager>().PlayerSkillTable.data;
+        var skillTable = Service.Get<DataManager>().SkillTable.data;
         var atkData = skillTable.Find(s => s.SKILL_ID == data.ATK_ID);
         if (atkData != null) skills.Add(new Skill(atkData));
 
@@ -494,8 +494,21 @@ public class BaseCharacter : BaseController
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        List<ITargetable> targets = Detect(Stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
-        //Debug.Log(targets.Count);
+
+        List<ITargetable> targets = new List<ITargetable>();
+        
+        for (int i = 0; i < Service.Get<PlayerManager>().Characters.Length; i++)
+        {
+            if (Service.Get<PlayerManager>().Characters[i].TryGetComponent(out ITargetable target))
+            {
+                if (Service.Get<PlayerManager>().Characters[i]._isDead == true) continue;
+                
+                targets.Add(target);
+            }
+        }
+        
+        // Debug.Log(targets.Count);
+        
         ITargetable nearest = null;
         if (FindType == EFindType.LowestHp)
         {
