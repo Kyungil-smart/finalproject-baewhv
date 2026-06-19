@@ -16,7 +16,7 @@ public class SceneController : BaseManager<SceneController>
     {
         base.Awake();
         
-        if (isManagerDestroy) return;
+        if (IsManagerDestroy) return;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

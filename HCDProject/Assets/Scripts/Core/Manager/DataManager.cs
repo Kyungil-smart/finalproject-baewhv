@@ -35,7 +35,7 @@ public class DataManager : BaseManager<DataManager>
     {
         base.Awake();
         
-        if (isManagerDestroy) return;
+        if (IsManagerDestroy) return;
         
         dataValue = new RatioIntValue(14, 0);
         

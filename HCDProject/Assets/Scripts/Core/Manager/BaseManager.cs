@@ -4,14 +4,14 @@ public abstract class BaseManager<T> : MonoBehaviour where T : MonoBehaviour
 {
     [SerializeField] protected EManagerType _eManager;
 
-    public bool isManagerDestroy { get; private set; } = false;
+    protected bool IsManagerDestroy { get; private set; } = false;
     protected virtual void Awake()
     {
         T temp = this as T;
         if (!Service.Register(temp, EManagerType.dontDestroyOnLoad))
         {
             Destroy(gameObject);
-            isManagerDestroy = true;
+            IsManagerDestroy = true;
             return;
         }
         

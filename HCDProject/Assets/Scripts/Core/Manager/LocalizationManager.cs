@@ -12,7 +12,7 @@ public class LocalizationManager : BaseManager<LocalizationManager>
     {
         base.Awake();
         
-        if (isManagerDestroy) return;
+        if (IsManagerDestroy) return;
 
         var handle = LocalizationSettings.InitializationOperation;
 
