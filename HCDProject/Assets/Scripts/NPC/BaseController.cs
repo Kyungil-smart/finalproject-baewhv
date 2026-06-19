@@ -30,7 +30,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public CharacterMovement Movement { get; private set; }
 
     protected ITargetable _currentTarget;
-
     public ITargetable GetCurrentTarget => _currentTarget;
 
 
@@ -38,22 +37,21 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public GameObject GetTargetObject { get; set; }
 
-    protected List<Collider2D> Colliders = new List<Collider2D>(10);
-    [SerializeField] protected ContactFilter2D EnemyFilter;
-    [SerializeField] protected ContactFilter2D AllyFilter;
+    protected BaseSkill BaseSkill;
+    public List<Collider2D> Colliders = new List<Collider2D>(10);
+    [field:SerializeField] public ContactFilter2D EnemyFilter;
+    [field:SerializeField] public ContactFilter2D AllyFilter;
 
     private List<ITargetable> _targets = new List<ITargetable>();
 
     private CircleCollider2D _baseCollider;
-
-    protected int Count;
 
     protected virtual void Awake()
     {
         GetTargetObject = gameObject;
         Movement = GetComponent<CharacterMovement>();
         _baseCollider = GetComponent<CircleCollider2D>();
-        Count = 0;
+        BaseSkill = GetComponent<BaseSkill>();
 
         EnemyFilter.useLayerMask = true;
         EnemyFilter.useTriggers = false;
@@ -139,7 +137,12 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
         CurrentHp.Value = overHp;
     }
-    
+
+    public void SetBuff(float buff)
+    {
+        _stats._attackSpeed = buff;
+    }
+
     public float GetRadius()
     {
         return _baseCollider.radius;

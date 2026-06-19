@@ -53,11 +53,11 @@ public class BaseMonster : BaseController
         skills.Clear();
 
         // 몬스터의 공격(스킬) 데이터 초기화
-        var skillDataTable = Service.Get<DataManager>().MonsterSkillTable.data;
-        MonsterSkillRawData atkData = skillDataTable.Find(x => x.SKILL_ID == data.ATK_ID);
+        var skillDataTable = Service.Get<DataManager>().SkillTable.data;
+        SkillRawData atkData = skillDataTable.Find(x => x.SKILL_ID == data.ATK_ID);
         if (atkData != null) skills.Add(new Skill(atkData));
-
-        MonsterSkillRawData skillData = skillDataTable.Find(x => x.SKILL_ID == data.SKILL_ID);
+        
+        SkillRawData skillData = skillDataTable.Find(x => x.SKILL_ID == data.SKILL_ID);
         if (skillData != null) skills.Add(new Skill(skillData));
     }
 
@@ -159,6 +159,7 @@ public class BaseMonster : BaseController
 
     public override void UseSkill(int index)
     {
+        /*
         if (GetCurrentTarget == null) return;
 
         if (skills[index].ATK_TYPE == EAtkType.NORMAL)
@@ -167,11 +168,11 @@ public class BaseMonster : BaseController
         }
         else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
         {
-            RangeDetect(index);
+            RangeDetect(skills[index]);
 
-            if (Count <= 0) return;
+            if (count <= 0) return;
 
-            for (int i = 0; i < Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 if (Colliders[i].TryGetComponent(out ITargetable target))
                 {
@@ -181,11 +182,11 @@ public class BaseMonster : BaseController
         }
         else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK)
         {
-            RangeDetect(index);
+            RangeDetect(skills[index]);
 
-            if (Count <= 0) return;
+            if (count <= 0) return;
 
-            for (int i = 0; i < Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 if (Colliders[i].TryGetComponent(out BaseMonster controller))
                 {
@@ -193,10 +194,12 @@ public class BaseMonster : BaseController
                 }
             }
         }
+        */
     }
 
     public void ReSkill(int index)
     {
+        /*
         if (GetCurrentTarget == null) return;
 
         if (skills[index].SKILL_AT == ETargetType.ENEMY)
@@ -231,11 +234,11 @@ public class BaseMonster : BaseController
                 if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
                 {
                     // 플레이어 체력 감소
-                    RangeDetect(index);
+                    RangeDetect(skills[index]);
 
-                    if (Count <= 0) return;
+                    if (count <= 0) return;
 
-                    for (int i = 0; i < Count; i++)
+                    for (int i = 0; i < count; i++)
                     {
                         if (Colliders[i].TryGetComponent(out BaseCharacter target))
                         {
@@ -248,21 +251,21 @@ public class BaseMonster : BaseController
                          skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
                 {
                     // 플레이어 이동속도, 공격속도 감소 or 플레이어 CC
-                    RangeDetect(index);
+                    RangeDetect(skills[index]);
 
-                    if (Count <= 0) return;
+                    if (count <= 0) return;
 
-                    StartCoroutine(SkillDurate(index, Count));
+                    StartCoroutine(SkillDurate(index, count));
                 }
 
                 else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.SKILL_CD)
                 {
                     // 플레이어 스킬의 쿨타임 증가
-                    RangeDetect(index);
+                    RangeDetect(skills[index]);
 
-                    if (Count <= 0) return;
+                    if (count <= 0) return;
 
-                    SkillCoolDown(index, Count);
+                    SkillCoolDown(index, count);
                 }
             }
         }
@@ -271,11 +274,11 @@ public class BaseMonster : BaseController
             if (skills[index].SKILL_ABT_01 == ESkillAbilityType.HP)
             {
                 // 몬스터의 체력 회복
-                RangeDetect(index);
+                RangeDetect(skills[index]);
 
-                if (Count <= 0) return;
+                if (count <= 0) return;
 
-                for (int i = 0; i < Count; i++)
+                for (int i = 0; i < count; i++)
                 {
                     if (Colliders[i].TryGetComponent(out ITargetable target))
                     {
@@ -287,11 +290,11 @@ public class BaseMonster : BaseController
             else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK)
             {
                 // 몬스터 공격력 증가
-                RangeDetect(index);
+                RangeDetect(skills[index]);
 
-                if (Count <= 0) return;
+                if (count <= 0) return;
 
-                for (int i = 0; i < Count; i++)
+                for (int i = 0; i < count; i++)
                 {
                     if (Colliders[i].TryGetComponent(out BaseMonster controller))
                     {
@@ -307,22 +310,7 @@ public class BaseMonster : BaseController
                 
             }
         }
-    }
-
-    private void RangeDetect(int index)
-    {
-        ContactFilter2D filter = new ContactFilter2D();
-
-        if (skills[index].SKILL_AT == ETargetType.ENEMY)
-        {
-            filter = EnemyFilter;
-        }
-        else if (skills[index].SKILL_AT == ETargetType.ALLY)
-        {
-            filter = AllyFilter;
-        }
-
-        Count = Physics2D.OverlapCircle(transform.position, skills[index].SKILL_IS, filter, Colliders);
+        */
     }
     
     private IEnumerator DotAttack(int index, int damage)
