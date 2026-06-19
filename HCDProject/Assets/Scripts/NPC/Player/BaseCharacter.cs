@@ -329,7 +329,7 @@ public class BaseCharacter : BaseController
                 break;
 
             case (ESkillType.ALL_TARGET, ETargetType.ENEMY): // TODO : 유물구현시
-                // 추후 구현 (유물 마법사)
+                 // (유물 마법사)
                 break;
         }
     }
@@ -378,7 +378,18 @@ public class BaseCharacter : BaseController
         {
             case EActiveSkillBehavior.DotField:
                 Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
-                StartCoroutine(DotFieldCoroutine(fieldCenter, (int)CalculateDamage(1)));
+                int skillDamage = (int)CalculateDamage(1);
+                StartCoroutine(DotFieldCoroutine(fieldCenter, skillDamage));
+                Debug.Log($"[지진 가드] skills.Count={skills.Count} / " +
+    $"skills[0].SKILL_ID='{skills[0].SKILL_ID}' / " +
+    $"skills[1].SKILL_ID='{skills[1].SKILL_ID}' / " +
+    $"skills[2].SKILL_ID='{skills[2].SKILL_ID}'");
+                if (skills.Find(s => s.SKILL_ID == "6509") != null)
+                {
+                    float earthquakeBonus = Service.Get<RelicManager>()?
+                    .GetTotalRelicBonus("WIZARD", "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
+                    FireEarthquake(Mathf.CeilToInt(skillDamage * earthquakeBonus / 100f));
+                }
                 break;
 
             case EActiveSkillBehavior.Instant:
@@ -387,6 +398,34 @@ public class BaseCharacter : BaseController
                 break;
         }
         _activeSkillCoolCount = 0;
+    }
+
+    public void FireRainOfArrows(Vector2 center, int damage) // 궁수 화살비 데미지호출
+    {
+        Debug.Log($"[화살비 발사] 중심: {center} / 데미지: {damage} / 반경: {skills[2].SKILL_RANGE_X}");
+        int count = Physics2D.OverlapCircle(center, skills[2].SKILL_RANGE_X, EnemyFilter, Colliders);
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out ITargetable target))
+            {
+                target.SetDamage(damage);
+                Debug.Log($"[화살비 적중] {target.GetTargetObject.name}");
+            }
+        }
+    }
+
+    public void FireEarthquake(int damage) // 마법사 유물 지진마법
+    {
+        Debug.Log($"[지진 마법 발동]데미지 : {damage}");
+        int count = Physics2D.OverlapCircle(transform.position, 100f, EnemyFilter, Colliders);
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out ITargetable target))
+            {
+                target.SetDamage(damage);
+                Debug.Log($"[지진 적중] {target.GetTargetObject.name}");
+            }
+        }
     }
 
     public void TryDotFieldSkill() // 마법사 액티브호출
@@ -456,7 +495,7 @@ public class BaseCharacter : BaseController
     {
         if (_isSpawning) return null;
         List<ITargetable> targets = Detect(Stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
-        Debug.Log(targets.Count);
+        //Debug.Log(targets.Count);
         ITargetable nearest = null;
         if (FindType == EFindType.LowestHp)
         {
@@ -534,12 +573,4 @@ public class BaseCharacter : BaseController
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
     }
-
-    /*protected new void OnDrawGizmos()
-    {
-        if (skills == null || skills.Count == 0) return;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, CurrentSkillRange + GetRadius());
-    }*/
 }

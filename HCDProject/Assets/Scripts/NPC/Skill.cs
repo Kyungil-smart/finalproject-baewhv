@@ -35,6 +35,7 @@ public class Skill
 
     public Skill(PlayerSkillRawData data)
     {
+        SKILL_ID = data.SKILL_ID;
         SKILL_ABILLITY = data.SKILL_ABILLITY;
         SKILL_IS = data.SKILL_IS;
         SKILL_RANGE_X = data.SKILL_RANGE_X;
