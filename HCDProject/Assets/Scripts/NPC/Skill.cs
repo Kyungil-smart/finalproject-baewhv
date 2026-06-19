@@ -30,25 +30,8 @@ public class Skill
     public string SKILL_HIT_SFX;
     public string SKILL_HIT_FX;
     public string SKILL_ICON;
-    
-    public int targetCount;
 
-    public Skill(PlayerSkillRawData data)
-    {
-        SKILL_ID = data.SKILL_ID;
-        SKILL_ABILLITY = data.SKILL_ABILLITY;
-        SKILL_IS = data.SKILL_IS;
-        SKILL_RANGE_X = data.SKILL_RANGE_X;
-        SKILL_RANGE_Y = data.SKILL_RANGE_Y;
-        SKILL_TIME = data.SKILL_TIME;
-        SKILL_AT = Enum.Parse<ETargetType>(data.SKILL_AT);
-        ATK_TYPE = Enum.Parse<EAtkType>(data.ATK_TYPE);
-        SKILL_TYPE = Enum.Parse<ESkillType>(data.SKILL_TYPE);
-        SKILL_DT = Enum.Parse<ESkillDamageType>(data.SKILL_DT);
-        targetCount = 1;
-    }
-
-    public Skill(MonsterSkillRawData data)
+    public Skill(SkillRawData data)
     {
         SKILL_ID = data.SKILL_ID;
         SKILL_NAME = data.SKILL_NAME;
