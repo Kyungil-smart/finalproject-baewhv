@@ -12,6 +12,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     [SerializeField] private TextMeshProUGUI nameTMP;
     [SerializeField] private LocalizeStringEvent descText;
     [SerializeField] private TextMeshProUGUI descTMP;
+    private Tweener decsTweener;
     
     //Character
     [SerializeField] private Image leftPortrait;
@@ -21,6 +22,8 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     //Auto
     [SerializeField] private TextMeshProUGUI autoStatusText;
     [SerializeField] private TextMeshProUGUI autoText;
+    [SerializeField] private Image autoLogo;
+    private bool isAuto;
     
     //Queue
     [SerializeField] private NarrativeUIQueue queue;
@@ -29,9 +32,13 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     //Region
     [SerializeField] private TextMeshProUGUI StageNumber;
     [SerializeField] private LocalizeStringEvent StageText;
-    
-    
-    
+
+
+    private void Update()
+    {
+        
+    }
+
     private StoryLocalizingRawData currentdata;
     private bool isEnd;
 
@@ -75,13 +82,22 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     private void SetText(string text)
     {
         descTMP.maxVisibleCharacters = 0;
-        DOTween.To(x => descTMP.maxVisibleCharacters = (int)x, 0f, descTMP.text.Length, 0.5f);
+        decsTweener = DOTween.To(x => descTMP.maxVisibleCharacters = (int)x, 0f, descTMP.text.Length, 1f);
     }
 
     public void OnNextButton()
     {
         if (isEnd) return;
-        if (currentdata.NEXT_ID == "" || currentdata.NEXT_ID == null)
+        //텍스트 연출 중이라면 스킵
+        if (decsTweener != null && decsTweener.active)
+        {
+            decsTweener.Kill();
+            descTMP.maxVisibleCharacters = descTMP.text.Length;
+            return;
+        }
+
+        //연출이 끝났으면 다음 텍스트 출력.
+        if (string.IsNullOrEmpty(currentdata.NEXT_ID))
         {
             Service.Get<NarrativeManager>().EndNarrative();
             isEnd = true;
