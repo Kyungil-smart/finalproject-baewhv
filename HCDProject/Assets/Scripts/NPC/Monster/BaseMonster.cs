@@ -21,7 +21,7 @@ public class BaseMonster : BaseController
 
     #endregion
 
-    [field: SerializeField] public Vector3 Target { get; set; }
+    public Vector3 Target { get; set; }
 
     [SerializeField] private HPBarUI hpBarCanvas;
     private bool _isActive;

@@ -33,7 +33,8 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public GameObject GetTargetObject { get; set; }
 
-    public BaseSkill BaseSkill;
+    public BaseSkill BaseSkill { get; set; }
+    
     public List<Collider2D> Colliders = new List<Collider2D>(10);
     [field:SerializeField] public ContactFilter2D EnemyFilter;
     [field:SerializeField] public ContactFilter2D AllyFilter;
