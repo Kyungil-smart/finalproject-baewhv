@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ATK_SPEED_P : BaseEffect
 {
