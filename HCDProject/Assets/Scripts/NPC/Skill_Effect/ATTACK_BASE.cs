@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ATTACK_BASE : BaseEffect
 {
@@ -9,6 +9,9 @@ public class ATTACK_BASE : BaseEffect
     
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01));
+        for (int i = 0; i < BaseSkill.attackHitCount; i++)
+        {
+            target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01));
+        }
     }
 }

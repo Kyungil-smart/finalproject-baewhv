@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2160024432606769975}
   - component: {fileID: 8230121561236651956}
   - component: {fileID: 4310512092811849079}
+  - component: {fileID: 3289921994600883329}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -85,7 +86,7 @@ MonoBehaviour:
     SKILL_HIT_SFX: 
     SKILL_HIT_FX: 
     SKILL_ICON: 
-    targetCount: 1
+  Colliders: []
   EnemyFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -218,6 +219,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.000000029802322, y: 0}
   m_Radius: 0.31304863
+--- !u!114 &3289921994600883329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672613106973507048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e391e08eaf5b08b4690978ff5feaef7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseSkill
+  skills: []
+  Colliders: []
+  count: 0
+  isDurationActive: 0
 --- !u!1 &2146874695588745659
 GameObject:
   m_ObjectHideFlags: 0

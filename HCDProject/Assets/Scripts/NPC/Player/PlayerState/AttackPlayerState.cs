@@ -35,11 +35,10 @@ public class AttackPlayerState : PlayerBaseState
             return;
         }
 
-        if (_owner.AttackTimer <= _owner.SkillCoolTime)
+        if (!_owner.isCC && _owner.AttackTimer <= _owner.SkillCoolTime)
         {
             _owner.AttackTimer += Time.deltaTime;
         }
-
         else
         {
             Debug.Log($"[공격] {_owner.gameObject.name}이(가) " +

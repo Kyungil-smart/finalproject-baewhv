@@ -73,6 +73,13 @@ public enum ESkillType
     ATTACK_OF_SCOPE = 2
 }
 
+public enum ERangeType
+{
+    NONE = 0,
+    CIRCLE = 1,
+    BOX = 2
+}
+
 public enum ESkillSlot
 {
     Normal = 0,
@@ -111,5 +118,6 @@ public enum ESkillAbilityType
     INVISIBILITY = 12,
     DAMAGE_IMMUNITY = 13,
     SKILL_CD = 14,
-    ATTACK_BASE = 15
+    ATTACK_BASE = 15,
+    BASE_SKILL_WARIOR = 16
 }
