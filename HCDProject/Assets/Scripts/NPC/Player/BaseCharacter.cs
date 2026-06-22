@@ -53,6 +53,8 @@ public class BaseCharacter : BaseController
 
     private PlayerStats _playerStats;
 
+    public bool isCC = false;
+    
     public float AttackTimer // 누적 카운트 프로퍼티
     {
         get => _attackTimer;
@@ -177,7 +179,7 @@ public class BaseCharacter : BaseController
     protected virtual void Update()
     {
         _stateMachine?.Update();
-        _activeSkillCoolCount += Time.deltaTime;
+        if (!isCC) _activeSkillCoolCount += Time.deltaTime;
         float result = Mathf.Clamp(_activeSkillCoolCount, 0, ActiveSkillCoolTime);
         if (_activeSkillCoolValue == null) return;
         _activeSkillCoolValue.Value = result;
