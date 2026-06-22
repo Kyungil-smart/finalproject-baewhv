@@ -12,12 +12,11 @@ public class SortManager : BaseManager<SortManager>
     {
         public int index;
         public string objType;
-        public float finalBuffValue;
+        public float BuffValue;
     }
 
     public CharacterSlotUI[] characterSlots;
 
-    //public ObserveValue<int> RemainingSorts { get; private set; } = new ObserveValue<int>();
     public ObserveValue<float> RemainingSorts { get; private set; } = new ObserveValue<float>();
     public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
 
@@ -70,9 +69,15 @@ public class SortManager : BaseManager<SortManager>
     }
     private void Update()
     {
-        if (RemainingSorts.Value > 0)
+        if (!isEndSort.Value && RemainingSorts.Value > 0)
         {
             RemainingSorts.Value -= Time.deltaTime;
+
+            if (RemainingSorts.Value <= 0)
+            {
+                RemainingSorts.Value = 0;
+                PlayerInputLock(true);
+            }
         }
     }
 
@@ -160,12 +165,26 @@ public class SortManager : BaseManager<SortManager>
             RemainingSorts.Value--;
         }
 
-        ApplyBuffToPlayer(slot, buffType);
+        SortCount(slot, buffType);
 
         if (RemainingSorts.Value <= 0)
         {
             PlayerInputLock(true);
         }
+    }
+
+    public void SortCount(CharacterSlotUI slot, string buffName)
+    {
+        var index = Array.IndexOf(characterSlots, slot);
+
+        float BuffValue = 0f;
+
+        BuffsBox.Add(new SortBuffData
+        {
+            index = index,
+            objType = buffName,
+            BuffValue = 0f
+        });
     }
 
     // 정렬 시작
@@ -211,7 +230,7 @@ public class SortManager : BaseManager<SortManager>
             {
                 RemainingSorts.Value = mapData.SORT_COUNT; //TODO : 임시수정
                 //RemainingSorts.Value = 15;
-                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 횟수: {mapData.SORT_COUNT}회");
+                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 시간: {mapData.SORT_COUNT}초");
             }
         }
 
@@ -238,50 +257,79 @@ public class SortManager : BaseManager<SortManager>
     // 정렬 완료, 버프 적용
     public void FinishSortPhase()
     {
+        if (isEndSort.Value) return;
         isEndSort.Value = true;
-        Debug.Log($"[FinishSort] BuffsBox 총 {BuffsBox.Count}개 적용 시작");
+        PlayerInputLock(true);
 
-        var playerManager = Service.Get<PlayerManager>();
-        if (playerManager != null && BuffsBox.Count > 0)
+        int finalCombo = CurrentCombo.Value;
+        Debug.Log($"최종 콤보: {finalCombo}회");
+
+        var dataManager = Service.Get<DataManager>();
+        if (dataManager == null || BuffsBox.Count == 0)
         {
-            foreach (var data in BuffsBox)
-            {
-                Debug.Log($"[적용] index:{data.index} | {data.objType} | {data.finalBuffValue}");
-                playerManager.ApplyBuff(data.index, data.objType, data.finalBuffValue);
-            }
-            Debug.Log($"전송 완료");
-        }
-    }
-
-    // 데이블 기반 버프 수치 계산
-    public void ApplyBuffToPlayer(CharacterSlotUI slot, string buffName)
-    {
-        Debug.Log($"buffName 확인: {buffName}");
-        var objectData = Service.Get<DataManager>()?.ObjectTable.data.Find(x => x.OBJ_TYPE == buffName);
-
-        if (objectData == null)
-        {
-            Debug.Log($"{buffName}을 찾지 못함");
             return;
         }
 
-        var objType = objectData.OBJ_TYPE;
-        var objAbility = objectData.OBJ_ABILITY;
-        var objWeight = objectData.OBJ_WEIGHT;
+        Dictionary<string, (int index, int sortCount)> completedSort = new Dictionary<string, (int index, int sortCount)>();
 
-        var comboCount = CurrentCombo.Value;
-        var finalBuffValue = objAbility + (objWeight * comboCount);
-
-        Debug.Log($"타입: {objType} | 계산식: {objAbility} + ({objWeight} * {comboCount}콤보) | 최종 적용치: {finalBuffValue}");
-
-        var index = Array.IndexOf(characterSlots, slot);
-
-        BuffsBox.Add(new SortBuffData
+        foreach (var sortData in BuffsBox)
         {
-            index = index,
-            objType = objType,
-            finalBuffValue = finalBuffValue
-        });
+            if (completedSort.ContainsKey(sortData.objType))
+            {
+                var data = completedSort[sortData.objType];
+                data.sortCount++;
+                completedSort[sortData.objType] = data;
+            }
+            else
+            {
+                completedSort[sortData.objType] = (sortData.index, 1);
+            }
+        }
+
+        List<SortBuffData> finalCalculatedBuffs = new List<SortBuffData>();
+
+        foreach (var sortGroup in completedSort)
+        {
+            string buffName = sortGroup.Key;
+            int slotIndex = sortGroup.Value.index;
+            int totalSortCount = sortGroup.Value.sortCount; 
+
+            var objectData = dataManager.ObjectTable.data.Find(x => x.OBJ_TYPE == buffName);
+            if (objectData == null) continue;
+
+            float objAbility = objectData.OBJ_ABILITY; 
+            float objWeight = objectData.OBJ_WEIGHT;  
+
+            float BuffValue = 0f;
+
+            if (totalSortCount > 0)
+            {
+                BuffValue = (objAbility * totalSortCount) + (objAbility * (finalCombo * objWeight));
+            }
+
+            Debug.Log($"{slotIndex} | {buffName} | 공식: ({objAbility} * {totalSortCount}) + {{{objAbility} * ({finalCombo} * {objWeight})}} = 예상 적용치: {BuffValue}");
+
+            finalCalculatedBuffs.Add(new SortBuffData
+            {
+                index = slotIndex,
+                objType = buffName,
+                BuffValue = BuffValue
+            });
+        }
+
+        var playerManager = Service.Get<PlayerManager>();
+        if (playerManager != null && finalCalculatedBuffs.Count > 0)
+        {
+            foreach (var data in finalCalculatedBuffs)
+            {
+                int ceiledBuffValue = Mathf.CeilToInt(data.BuffValue);
+
+                Debug.Log($"[최종 버프 전송] index:{data.index} | {data.objType} | {data.BuffValue} -> int:{ceiledBuffValue}");
+                playerManager.ApplyBuff(data.index, data.objType, data.BuffValue);
+            }
+            Debug.Log($"전송 완료");
+        }
+
     }
     #endregion
 
