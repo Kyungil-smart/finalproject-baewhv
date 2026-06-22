@@ -91,8 +91,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         //텍스트 연출 중이라면 스킵
         if (decsTweener != null && decsTweener.active)
         {
-            decsTweener.Kill();
-            descTMP.maxVisibleCharacters = descTMP.text.Length;
+            decsTweener.Complete();
             return;
         }
 
