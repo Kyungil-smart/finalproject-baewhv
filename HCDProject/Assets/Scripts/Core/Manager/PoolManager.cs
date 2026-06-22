@@ -14,9 +14,10 @@ public class PoolManager : BaseManager<PoolManager>
 
         GameObject obj = _pool[prefab].Count > 0 ? _pool[prefab].Dequeue() : Instantiate(prefab, position, rotation);
 
-        if (obj == null)
+        if (obj != null)
         {
-            obj = Instantiate(prefab, position, rotation);
+            obj.transform.position = position;
+            obj.transform.rotation = rotation;
         }
         
         obj.SetActive(true);

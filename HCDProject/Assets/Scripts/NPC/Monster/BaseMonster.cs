@@ -44,7 +44,9 @@ public class BaseMonster : BaseController
         CurrentHp.MaxValue = Stat.HP;
         CurrentHp.Value = CurrentHp.MaxValue;
         _stats._maxHp = Stat.HP;
+        _stats._attackPower = Stat.ATK;
         _stats._defense = Stat.DEF;
+        _stats._moveSpeed = Stat.MOVE_SPEED;
         Movement.Agent.speed = Stat.MOVE_SPEED;
     }
 

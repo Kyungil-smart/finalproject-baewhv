@@ -39,7 +39,11 @@ public class SceneController : BaseManager<SceneController>
 
     public void ChangeScene(SceneType scene)
     {
-        if (scene == SceneType.StageSelect) CreateSession();
+        if (scene == SceneType.StageSelect)
+        {
+            CreateSession();
+            Service.Get<TimeManager>()?.ResetTimeScale();
+        }
         
         LoadSceneMode sceneMode = (scene == SceneType.Title || scene == SceneType.ModeSelect) ? LoadSceneMode.Single : LoadSceneMode.Additive;
 
