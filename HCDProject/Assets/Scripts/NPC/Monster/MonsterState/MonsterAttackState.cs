@@ -31,7 +31,7 @@ public class MonsterAttackState : IState
             if (_timer >= _controller.Stat.ATK_SPEED)
             {
                 _timer = 0f;
-                _controller.UseSkill(0);
+                _controller.BaseSkill.UseSkill(0);
             }
         }
         else
@@ -39,7 +39,7 @@ public class MonsterAttackState : IState
             if (_timer >= _controller.BaseSkill.skills[0].SKILL_TIME)
             {
                 _timer = 0f;
-                _controller.UseSkill(0);
+                _controller.BaseSkill.UseSkill(0);
             }
         }
     }
