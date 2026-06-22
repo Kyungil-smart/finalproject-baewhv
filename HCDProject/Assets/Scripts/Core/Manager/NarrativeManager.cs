@@ -19,9 +19,16 @@ public class NarrativeManager : BaseManager<NarrativeManager>
             currentStage = gm.CurrentStage;
             currentChapter = gm.CurrentChapter;
         }
-        data = Service.Get<DataManager>().StoryLocalizingTable.data.FindAll(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
+
+        data = Service.Get<DataManager>().StoryLocalizingTable.data
+            .FindAll(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
+        var sstData = Service.Get<DataManager>().StoryStageTable.data
+            .Find(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
         ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
+
+
         Debug.Log($"{data.Count}");
+        ui.SetRegion(currentChapter, currentStage, sstData.STAGE_NAME_ID);
         ui.SetNarrative(data[currentIndex]);
     }
 

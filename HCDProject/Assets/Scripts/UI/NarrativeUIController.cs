@@ -7,15 +7,40 @@ using UnityEngine.UI;
 
 public class NarrativeUIController : BaseUIController<NarrativeUIController>
 {
+    //Desc
     [SerializeField] private LocalizeStringEvent nameText;
     [SerializeField] private TextMeshProUGUI nameTMP;
     [SerializeField] private LocalizeStringEvent descText;
     [SerializeField] private TextMeshProUGUI descTMP;
+    
+    //Character
     [SerializeField] private Image leftPortrait;
     [SerializeField] private Image rightPortrait;
     [SerializeField] private Image ColorLine;
+    
+    //Auto
+    [SerializeField] private TextMeshProUGUI autoStatusText;
+    [SerializeField] private TextMeshProUGUI autoText;
+    
+    //Queue
+    [SerializeField] private NarrativeUIQueue queue;
+    
+    
+    //Region
+    [SerializeField] private TextMeshProUGUI StageNumber;
+    [SerializeField] private LocalizeStringEvent StageText;
+    
+    
+    
     private StoryLocalizingRawData currentdata;
     private bool isEnd;
+
+    public void SetRegion(int chapter, int stage, string text)
+    {
+        StageNumber.text = $"stage {chapter}-{stage}";
+        StageText.SetEntry(text);
+    }
+
 
     private void OnEnable()
     {
