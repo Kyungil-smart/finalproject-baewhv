@@ -24,7 +24,6 @@ public class BaseSkill : MonoBehaviour
     
     #endregion
     
-
     private void Awake()
     {
         _controller = GetComponent<BaseController>();
@@ -60,10 +59,12 @@ public class BaseSkill : MonoBehaviour
             _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller,
                 _controller.GetCurrentTarget, skills[index]);
         }
-        else if (skills[index].SKILL_TYPE == ESkillType.ALL_TARGET)
+        else if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE || skills[index].SKILL_TYPE == ESkillType.ALL_TARGET)
         {
-            RangeDetect(skills[index]);
+            RangeDetect(skills[index], _controller, _controller.GetCurrentTarget);
+            
             if (count <= 0) return;
+            
             for (int i = 0; i < count; i++)
             {
                 if (Colliders[i].TryGetComponent(out ITargetable target))
@@ -74,14 +75,8 @@ public class BaseSkill : MonoBehaviour
                 }
             }
         }
-        else if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE)
-        {
-            RangeDetect(skills[index], _controller, _controller.GetCurrentTarget);
-
-            _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller,
-                _controller.GetCurrentTarget, skills[index]);
-        }
     }
+    
     /*private float CalculateValue(int index)
     {
         Skill skill = skills[index];
@@ -125,21 +120,6 @@ public class BaseSkill : MonoBehaviour
         
         _effects.Add(type, effect);
     }
-    public void RangeDetect(Skill skill)
-    {
-        ContactFilter2D filter = new ContactFilter2D();
-
-        if (skill.SKILL_AT == ETargetType.ENEMY)
-        {
-            filter = _controller.EnemyFilter;
-        }
-        else if (skill.SKILL_AT == ETargetType.ALLY)
-        {
-            filter = _controller.AllyFilter;
-        }
-
-        count = Physics2D.OverlapCircle(transform.position, skill.SKILL_IS, filter, Colliders);
-    }
 
     public void RangeDetect(Skill skill, BaseController user, ITargetable target)
     {
@@ -154,7 +134,12 @@ public class BaseSkill : MonoBehaviour
             filter = _controller.AllyFilter;
         }
 
-        /*if (skill.SKILL_RANGE_TYPE == ERangeType.CIRCLE) // 마법사 스킬체크
+        /*
+        if (skill.SKILL_RANGE_TYPE == ERangeType.NONE)
+        {
+            count = Physics2D.OverlapCircle(transform.position, skill.SKILL_IS, filter, Colliders);
+        }
+        else if (skill.SKILL_RANGE_TYPE == ERangeType.CIRCLE) // 마법사 스킬체크
         {
             count = Physics2D.OverlapCircle(transform.position, skill.SKILL_IS, filter, Colliders);
         }
@@ -179,8 +164,8 @@ public class BaseSkill : MonoBehaviour
 
             int count = Physics2D.OverlapBox(node, new Vector2(skill.SKILL_RANGE_X, skill.SKILL_RANGE_Y),
                 0f, user.EnemyFilter, user.Colliders);
-        }*/
-        
+        }
+        */
     }
 
     public void SetTarget(Skill skill)
@@ -202,24 +187,68 @@ public class BaseSkill : MonoBehaviour
         if (targetObject == null) yield break;
 
         var stat = targetObject.Stats;
-        float originAttackSpeed = stat._attackSpeed;
-
-        stat._attackSpeed *= (1f - value / 100f);
-
-        // 궁수 버프(SELF)일 때만 3타 적용
-        if (skill.SKILL_ID == "6503")
+        float originAttackSpeed = 0f;
+        float originMoveSpeed = 0f;
+        
+        if (skill.SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
         {
-            attackHitCount = 3;
+            originAttackSpeed = stat._attackSpeed;
+            stat._attackSpeed *= (1f - value / 100f);
+            
+            if (skill.SKILL_ID == "6053")
+            {
+                originMoveSpeed = stat._moveSpeed;
+                stat._moveSpeed *= (1f - value / 100f);
+            }
+            else if (skill.SKILL_ID == "6503")
+            {
+                // 궁수 버프(SELF)일 때만 3타 적용
+                attackHitCount = 3;
+            }
         }
-
+        else if (skill.SKILL_ABT_01 == ESkillAbilityType.CC)
+        {
+            originMoveSpeed = stat._moveSpeed;
+            
+            targetObject.TryGetComponent(out BaseCharacter player);
+            
+            player.isCC = true;
+            isDurationActive = true;
+            stat._moveSpeed = 0f;
+        }
+        
         yield return new WaitForSeconds(skill.SKILL_DURATION);
 
         // 원상복구
-        stat._attackSpeed = originAttackSpeed;
-
-        if (skill.SKILL_ID == "6503")
+        if (skill.SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
         {
-            attackHitCount = 1;
+            stat._attackSpeed = originAttackSpeed;
+            
+            if (skill.SKILL_ID == "6053")
+            {
+                stat._moveSpeed = originMoveSpeed;
+            }
+            else if (skill.SKILL_ID == "6503")
+            {
+                attackHitCount = 1;
+            }
+        }
+        else if (skill.SKILL_ABT_01 == ESkillAbilityType.CC)
+        { 
+            targetObject.TryGetComponent(out BaseCharacter player);
+            
+            player.isCC = false;
+            isDurationActive = false;
+            stat._moveSpeed = originMoveSpeed;
+        }
+    }
+
+    public void OnCC(bool value)
+    {
+        if (value)
+        {
+            // 플레이어 액티브 스킬 UI 버튼 비활성화
+            
         }
     }
 }
