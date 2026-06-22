@@ -23,10 +23,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         return CurrentHp.Value > 0;
     }
 
-    public List<Skill> skills = new List<Skill>();
-
-    protected ESkillSlot SkillIndex;
-
     public CharacterMovement Movement { get; private set; }
 
     protected ITargetable _currentTarget;
@@ -37,7 +33,8 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public GameObject GetTargetObject { get; set; }
 
-    protected BaseSkill BaseSkill;
+    public BaseSkill BaseSkill { get; set; }
+    
     public List<Collider2D> Colliders = new List<Collider2D>(10);
     [field:SerializeField] public ContactFilter2D EnemyFilter;
     [field:SerializeField] public ContactFilter2D AllyFilter;
@@ -89,34 +86,6 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         }
 
         return _targets;
-    }
-    public void AttackRange(int index, int damage)
-    {
-        List<Collider2D> Colliders = new List<Collider2D>(); // 범위에 들어온 대상을 넣어둘 주머니
-
-        ContactFilter2D filter;
-
-        if (skills[index].SKILL_AT == ETargetType.ENEMY)
-        {
-            filter = EnemyFilter;
-        }
-
-        else
-        {
-            filter = AllyFilter;
-        }
-
-        int count = Physics2D.OverlapCircle(transform.position, skills[index].SKILL_IS,
-            filter, Colliders); // 범위 들어온 대상을 체크하고, 그후 저장
-
-        for (int i = 0; i < count; i++) // 대상을 하나 씩 체크
-        {
-            if (Colliders[i].TryGetComponent(out ITargetable target)) // ITargetable의 대상으로 꺼내온다.
-            {
-                int rangeDamage = UseCritDamage(damage); // 플레이어의 치명타 대상인지 체크
-                target.SetDamage(rangeDamage); // 맞다면 범위공격을 전달
-            }
-        }
     }
 
     public void SetDamage(int damage)

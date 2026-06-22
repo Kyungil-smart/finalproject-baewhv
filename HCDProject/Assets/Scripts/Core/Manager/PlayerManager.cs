@@ -279,12 +279,12 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                         _characters[i].PlayerStat = playerStat;
                         break;
                     case "SKILL_UPGRADE_RANGE_P": // 마법사 스킬범위 확대
-                        _characters[i].skills[1].SKILL_RANGE_X +=
-                            _characters[i].skills[1].SKILL_RANGE_X * totalBonus / 100f;
+                        _characters[i].BaseSkill.skills[1].SKILL_RANGE_X +=
+                            _characters[i].BaseSkill.skills[1].SKILL_RANGE_X * totalBonus / 100f;
                         break;
                     case "SKILL_UPGRADE": // 힐러 치유 증폭기
-                        _characters[i].skills[1].SKILL_ABILLITY +=
-                            _characters[i].skills[1].SKILL_ABILLITY * totalBonus / 100f;
+                        _characters[i].BaseSkill.skills[1].SKILL_ABILLITY +=
+                            _characters[i].BaseSkill.skills[1].SKILL_ABILLITY * totalBonus / 100f;
                         break;
                     case "ALLY_UPGRADE_P": // 모든스탯 증가
                         stats._maxHp += Mathf.CeilToInt(stats._maxHp * totalBonus / 100f);
@@ -315,8 +315,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                 var skillData = skillTable.Find(s => s.SKILL_ID == "6508");
                 if (skillData != null)
                 {
-                    if (_characters[i].skills.Find(s => s.SKILL_ID == "6508") == null)
-                        _characters[i].skills.Add(new Skill(skillData));
+                    if (_characters[i].BaseSkill.skills.Find(s => s.SKILL_ID == "6508") == null)
+                        _characters[i].BaseSkill.skills.Add(new Skill(skillData));
                 } 
                 _arrowCoroutines[i] = StartCoroutine(RainOfArrows(_characters[i], jobTypes[i]));
             }
@@ -331,9 +331,9 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                 Debug.Log($"[지진 추적1] skillData null? {skillData == null}");
                 if (skillData != null)
                 {
-                    if (_characters[i].skills.Find(s => s.SKILL_ID == "6509") == null)
-                        _characters[i].skills.Add(new Skill(skillData));
-                    Debug.Log($"[지진 추적2] skills.Add 완료! Count={_characters[i].skills.Count}");
+                    if (_characters[i].BaseSkill.skills.Find(s => s.SKILL_ID == "6509") == null)
+                        _characters[i].BaseSkill.skills.Add(new Skill(skillData));
+                    Debug.Log($"[지진 추적2] skills.Add 완료! Count={_characters[i].BaseSkill.skills.Count}");
                 }
             }
         }
@@ -351,7 +351,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
           $"타겟: {character.GetCurrentTarget.GetTargetObject.name} / " +
           $"DAMAGE_P: {jobBonus} / SKILL_CD: {skillCdValue}");
             character.FireRainOfArrows(character.GetCurrentTarget.GetTargetObject.transform.position,
-                Mathf.CeilToInt(character.Stats._attackPower * character.skills[2].SKILL_ABILLITY 
+                Mathf.CeilToInt(character.Stats._attackPower * character.BaseSkill.skills[2].SKILL_ABILLITY 
                 * (jobBonus / 100f)));
         }
     }

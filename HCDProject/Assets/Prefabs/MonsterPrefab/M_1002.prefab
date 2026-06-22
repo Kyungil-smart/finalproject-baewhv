@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8934702763559330218}
   - component: {fileID: 2038341139102292476}
   - component: {fileID: -521427581935490531}
+  - component: {fileID: 1415411414286671791}
   m_Layer: 8
   m_Name: M_1002
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
     _data: 0
     _maxValue: 0
   skills: []
+  Colliders: []
   EnemyFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -131,7 +133,7 @@ MonoBehaviour:
     MONSTER_HIT_FX: 
   <CurrentState>k__BackingField:
     _data: 0
-  <Target>k__BackingField: {x: 0, y: 0}
+  <Target>k__BackingField: {x: 0, y: 0, z: 0}
   hpBarCanvas: {fileID: 7907189062757389230}
 --- !u!114 &8934702763559330218
 MonoBehaviour:
@@ -208,6 +210,23 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!114 &1415411414286671791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3197708758547554465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e391e08eaf5b08b4690978ff5feaef7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseSkill
+  skills: []
+  Colliders: []
+  count: 0
+  attackHitCount: 1
+  isDurationActive: 0
 --- !u!1 &5212466613440333835
 GameObject:
   m_ObjectHideFlags: 0

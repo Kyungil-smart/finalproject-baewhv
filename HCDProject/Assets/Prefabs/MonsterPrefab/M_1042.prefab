@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3680012934991206369}
   - component: {fileID: 753362797579537566}
   - component: {fileID: 3731925969552240162}
+  - component: {fileID: 8776733627336181129}
   m_Layer: 8
   m_Name: M_1042
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
     _data: 0
     _maxValue: 0
   skills: []
+  Colliders: []
   EnemyFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -208,6 +210,23 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.44
+--- !u!114 &8776733627336181129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253905671187352241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e391e08eaf5b08b4690978ff5feaef7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseSkill
+  skills: []
+  Colliders: []
+  count: 0
+  attackHitCount: 1
+  isDurationActive: 0
 --- !u!1 &2752089763345614506
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +309,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1407632878, guid: be77fca8be8c0d0469c634f8961f1c12, type: 3}
+  m_Sprite: {fileID: 1979491092, guid: 2aa784cb41566ab42a44f3bbf9c86fd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -310,7 +329,7 @@ Animator:
   m_GameObject: {fileID: 2752089763345614506}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: cf80effbbd58243409fce30a1290e50e, type: 2}
+  m_Controller: {fileID: 22100000, guid: 7cef2449b07b84246a4ab22ebf96e5f7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
