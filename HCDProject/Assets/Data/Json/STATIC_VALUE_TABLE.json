@@ -4,6 +4,36 @@
       "VARIABLE_NAME": "CASTLE_HP",
       "VARIABLE_TYPE": "FLOAT",
       "VARIABLE_VALUE": "1000"
+    },
+    {
+      "VARIABLE_NAME": "NARRATIVE_TEXT_SPEED",
+      "VARIABLE_TYPE": "FLOAT",
+      "VARIABLE_VALUE": "1"
+    },
+    {
+      "VARIABLE_NAME": "NARRATIVE_SKIP_TIME",
+      "VARIABLE_TYPE": "FLOAT",
+      "VARIABLE_VALUE": "2"
+    },
+    {
+      "VARIABLE_NAME": "COLOR_SERAH",
+      "VARIABLE_TYPE": "COLOR",
+      "VARIABLE_VALUE": "BC3F3F"
+    },
+    {
+      "VARIABLE_NAME": "COLOR_NOAH",
+      "VARIABLE_TYPE": "COLOR",
+      "VARIABLE_VALUE": "A25FA6"
+    },
+    {
+      "VARIABLE_NAME": "COLOR_ALICE",
+      "VARIABLE_TYPE": "COLOR",
+      "VARIABLE_VALUE": "EEE83B"
+    },
+    {
+      "VARIABLE_NAME": "COLOR_SPAYNE",
+      "VARIABLE_TYPE": "COLOR",
+      "VARIABLE_VALUE": "59C8FF"
     }
   ]
 }

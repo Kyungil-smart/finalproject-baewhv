@@ -11,6 +11,7 @@ public class SkillRawData
     public string SKILL_TYPE;
     public string SKILL_AT;
     public float SKILL_IS;
+    public string SKILL_RANGE_TYPE;
     public float SKILL_RANGE_X;
     public float SKILL_RANGE_Y;
     public float SKILL_TIME;
