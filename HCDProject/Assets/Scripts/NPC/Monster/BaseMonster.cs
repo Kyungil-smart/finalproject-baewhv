@@ -50,15 +50,15 @@ public class BaseMonster : BaseController
 
     private void InitSkill(MonsterRawData data)
     {
-        skills.Clear();
+        BaseSkill.skills.Clear();
 
         // 몬스터의 공격(스킬) 데이터 초기화
         var skillDataTable = Service.Get<DataManager>().SkillTable.data;
         SkillRawData atkData = skillDataTable.Find(x => x.SKILL_ID == data.ATK_ID);
-        if (atkData != null) skills.Add(new Skill(atkData));
+        if (atkData != null) BaseSkill.skills.Add(new Skill(atkData));
         
         SkillRawData skillData = skillDataTable.Find(x => x.SKILL_ID == data.SKILL_ID);
-        if (skillData != null) skills.Add(new Skill(skillData));
+        if (skillData != null) BaseSkill.skills.Add(new Skill(skillData));
     }
 
     public override void SetCurrentTarget(ITargetable target)
@@ -317,7 +317,7 @@ public class BaseMonster : BaseController
     {
         _durateTimer = 0f;
         
-        while (_durateTimer < skills[index].SKILL_DURATION)
+        while (_durateTimer < BaseSkill.skills[index].SKILL_DURATION)
         {
             GetCurrentTarget.SetDamage(damage);
             
@@ -334,38 +334,38 @@ public class BaseMonster : BaseController
         {
             if (Colliders[i].TryGetComponent(out BaseCharacter target))
             {
-                if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
+                if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
                 {
                     var stat = target.Stats;
                     
                     originMoveSpeed = stat._moveSpeed;
                     originAttackSpeed = stat._attackSpeed;
                     
-                    stat._moveSpeed = stat._moveSpeed + (stat._moveSpeed * (skills[index].SKILL_AB_01 / 100));
-                    stat._attackSpeed = stat._attackSpeed + (stat._attackSpeed * (skills[index].SKILL_AB_02 / 100));
+                    stat._moveSpeed = stat._moveSpeed + (stat._moveSpeed * (BaseSkill.skills[index].SKILL_AB_01 / 100));
+                    stat._attackSpeed = stat._attackSpeed + (stat._attackSpeed * (BaseSkill.skills[index].SKILL_AB_02 / 100));
                 }
                 
-                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
+                else if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
                 {
                     // 모든 플레이어 CC 이동정지 및 공격 정지 상태
                 }
             }
         }
             
-        yield return new WaitForSeconds(skills[index].SKILL_DURATION);
+        yield return new WaitForSeconds(BaseSkill.skills[index].SKILL_DURATION);
         
         for (int i = 0; i < count; i++)
         {
             if (Colliders[i].TryGetComponent(out BaseCharacter target))
             {
-                if (skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
+                if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
                 {
                     var stat = target.Stats;
                     stat._moveSpeed = originMoveSpeed;
                     stat._attackSpeed = originAttackSpeed;
                 }
                 
-                else if (skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
+                else if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
                 {
                     // 모든 플레이어 CC 이동정지 및 공격 정지 상태
                 }
@@ -379,7 +379,7 @@ public class BaseMonster : BaseController
         {
             if (Colliders[i].TryGetComponent(out BaseCharacter target))
             {
-                target.AttackTimer -= skills[index].SKILL_AB_01;
+                target.AttackTimer -= BaseSkill.skills[index].SKILL_AB_01;
                 if (target.AttackTimer < 0)
                 {
                     target.AttackTimer = 0f;
