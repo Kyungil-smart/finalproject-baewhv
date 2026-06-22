@@ -26,7 +26,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
             .Find(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
         ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
 
-
+    
         Debug.Log($"{data.Count}");
         ui.SetRegion(currentChapter, currentStage, sstData.STAGE_NAME_ID);
         ui.SetNarrative(data[currentIndex]);
