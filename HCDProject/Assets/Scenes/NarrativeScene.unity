@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993198bf3846707458fc09f7a78e378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _eManager: 0
 --- !u!1 &1974976536
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,26 +426,6 @@ PrefabInstance:
     - target: {fileID: 7049416956137658504, guid: dea0e755821dc0643830931fecf71ca9, type: 3}
       propertyPath: m_Name
       value: NarrativeUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 7466894442779334614, guid: dea0e755821dc0643830931fecf71ca9, type: 3}
-      propertyPath: m_text
-      value: "\uB0B4\uC77C\uC740 \uBB50 \uBA39\uC9C0?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7466894442779334614, guid: dea0e755821dc0643830931fecf71ca9, type: 3}
-      propertyPath: m_fontSize
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7466894442779334614, guid: dea0e755821dc0643830931fecf71ca9, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888705007383777603, guid: dea0e755821dc0643830931fecf71ca9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 381.7679
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888705007383777603, guid: dea0e755821dc0643830931fecf71ca9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -109.30525
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
