@@ -18,6 +18,8 @@ public class ChasePlayerState : PlayerBaseState
     }
     public override void Update()
     {
+        if (_owner.isCC) return;
+
         if (_owner.GetCurrentTarget == null)
         {
             Debug.Log("타겟이 없음");

@@ -37,8 +37,6 @@ public class BaseCharacter : BaseController
 
     private bool _isSpawning = true;
 
-    private bool _isBuffActive = false; // 버프 판별
-
     public bool _isDead;
 
     private ObserveValue<bool> IsAlived; // 부활 ui 연동
@@ -283,8 +281,11 @@ public class BaseCharacter : BaseController
 
     public override void UseSkill(int index)
     {
-        // 현재 스킬의 n번째 스킬이 범위인지, 단일인지
-        if (index == 0 || skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WARIOR)
+        if (index == 0
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WARIOR
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.MAX_HP_P
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WIZARD)
         {
             _baseSkillData.UseSkill(index);
             return;
@@ -294,35 +295,7 @@ public class BaseCharacter : BaseController
 
         switch (skills[index].SKILL_TYPE, skills[index].SKILL_AT) // 스킬타입과, 스킬대상 비교
         {
-            case (ESkillType.SINGLE_TARGET, ETargetType.SELF): // 궁수버프
-                SetBuff();
-                break;
-
-            case (ESkillType.SINGLE_TARGET, ETargetType.ALLY): // 아군 힐
-                GetCurrentTarget.SetHeal(UseCritDamage((int)totalDamage));
-                break;
-
-            case (ESkillType.SINGLE_TARGET, ETargetType.ENEMY): // 적에게 단일공격
-                if (_isBuffActive)
-                {
-                    for (int i = 0; i < 3; i++) // 궁수가 버프를 받았다면 3번공격
-                        GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                }
-                else // 그외 단일공격
-                {
-                    GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                    if (UnityEngine.Random.value < _playerStats._doubleAtkRate) // 궁수유물적용시 연속공격
-                    {
-                        GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                    }
-                }
-                break;
-
-           /* case (ESkillType.ATTACK_OF_SCOPE, ETargetType.ENEMY): // 적에게 범위스킬
-                AttackRangeBox(index, (int)totalDamage);
-                break;*/
-
-            case (ESkillType.ALL_TARGET, ETargetType.ALLY): // 아군에게 전체스킬
+            /*case (ESkillType.ALL_TARGET, ETargetType.ALLY): // 아군에게 전체스킬
                 var characters = Service.Get<PlayerManager>()?.Characters;
                 if (characters == null) return;
                 foreach (BaseCharacter chr in characters)
@@ -338,7 +311,7 @@ public class BaseCharacter : BaseController
                         Debug.Log($"[부활] {chr.gameObject.name} 즉시 부활!");
                     }
                 }
-                break;
+                break;*/
 
             case (ESkillType.ALL_TARGET, ETargetType.ENEMY): // TODO : 유물구현시
                                                              // (유물 마법사)
@@ -361,26 +334,9 @@ public class BaseCharacter : BaseController
         }
     }
 
-    public void SetBuff() // 궁수 공속버프
-    {
-        if (_isBuffActive) return;
-        _isBuffActive = true;
-        float originSpeed = _stats._attackSpeed;
-        _stats._attackSpeed *= 0.7f;
-        Debug.Log($"[궁수 버프] 발동! 공속: {_stats._attackSpeed}");
-        StartCoroutine(BuffCoroutine(originSpeed));
-    }
-
-    private IEnumerator BuffCoroutine(float originSpeed) // 궁수 버프 코루틴
-    {
-        yield return YieldContainer.WaitForSeconds(7f);
-        _isBuffActive = false;
-        _stats._attackSpeed = originSpeed;
-        Debug.Log($"[궁수 버프] 종료! 공속 복구: {originSpeed}");
-    }
-
     public void TryUseActiveSkill() // 액티브 스킬 발동
     {
+        if (this.isCC) return;
         if (_activeSkillCoolCount < ActiveSkillCoolTime) return;
 
         if (skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
@@ -389,14 +345,12 @@ public class BaseCharacter : BaseController
         switch (_playerStats._activeSkillBehavior)
         {
             case EActiveSkillBehavior.DotField:
-                Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
-                int skillDamage = (int)CalculateDamage(1);
-                StartCoroutine(DotFieldCoroutine(fieldCenter, skillDamage));
+                UseSkill(1);
                 if (skills.Find(s => s.SKILL_ID == "6509") != null)
                 {
                     float earthquakeBonus = Service.Get<RelicManager>()?
                     .GetTotalRelicBonus("WIZARD", "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
-                    FireEarthquake(Mathf.CeilToInt(skillDamage * earthquakeBonus / 100f));
+                    //FireEarthquake(Mathf.CeilToInt( * earthquakeBonus / 100f));
                 }
                 break;
 
@@ -436,7 +390,7 @@ public class BaseCharacter : BaseController
         }
     }
 
-    public void TryDotFieldSkill() // 마법사 액티브호출
+    /*public void TryDotFieldSkill() // 마법사 액티브호출
     {
         if (_activeSkillCoolCount >= ActiveSkillCoolTime)
         {
@@ -466,37 +420,6 @@ public class BaseCharacter : BaseController
             Debug.Log($"[마법사 장판] {elapsed}초 틱 → {count}명 적중");
             yield return YieldContainer.WaitForSeconds(1f);
             elapsed += 1f;
-        }
-    }
-
-    /*public void AttackRangeBox(int index, int damage) // 전사 액티브 스킬
-    {
-        if (GetCurrentTarget == null) return;
-        Vector2 dir = (GetCurrentTarget.GetTargetObject.transform.position - transform.position).normalized;
-        Vector2[] directions = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
-        Vector2 bestDir = Vector2.right;
-        float bestDot = float.MinValue;
-
-        foreach (Vector2 candidate in directions)
-        {
-            float dot = Vector2.Dot(dir, candidate);
-            if (dot > bestDot)
-            {
-                bestDir = candidate;
-                bestDot = dot;
-            }
-        }
-        Vector2 node = (Vector2)transform.position + bestDir * (skills[index].SKILL_RANGE_X * 0.5f);
-
-        int count = Physics2D.OverlapBox(node, new Vector2(skills[index].SKILL_RANGE_X, skills[index].SKILL_RANGE_Y),
-            0f, EnemyFilter, Colliders);
-        Debug.Log($"[전사 스킬] 범위 공격 → {count}명 적중");
-        for (int i = 0; i < count; i++)
-        {
-            if (Colliders[i].TryGetComponent(out ITargetable target))
-            {
-                target.SetDamage(damage);
-            }
         }
     }*/
     public ITargetable FindTarget(int index)
