@@ -29,13 +29,13 @@ public class BaseCharacter : BaseController
 
     private SpriteRenderer _characterRenderer;
 
+    private BaseSkill _baseSkillData;
+
     private int _skillTargetIndex; // 지정된 타겟에 대한 스킬 인덱스
 
     private bool _isFirstCombat = true; // 전사 첫번째 전투
 
     private bool _isSpawning = true;
-
-    private bool _isBuffActive = false; // 버프 판별
 
     public bool _isDead;
 
@@ -51,6 +51,8 @@ public class BaseCharacter : BaseController
 
     private PlayerStats _playerStats;
 
+    public bool isCC = false;
+    
     public float AttackTimer // 누적 카운트 프로퍼티
     {
         get => _attackTimer;
@@ -175,7 +177,7 @@ public class BaseCharacter : BaseController
     protected virtual void Update()
     {
         _stateMachine?.Update();
-        _activeSkillCoolCount += Time.deltaTime;
+        if (!isCC) _activeSkillCoolCount += Time.deltaTime;
         float result = Mathf.Clamp(_activeSkillCoolCount, 0, ActiveSkillCoolTime);
         if (_activeSkillCoolValue == null) return;
         _activeSkillCoolValue.Value = result;
@@ -246,12 +248,14 @@ public class BaseCharacter : BaseController
         };
 
         skills.Clear();
-        var skillTable = Service.Get<DataManager>().PlayerSkillTable.data;
+        var skillTable = Service.Get<DataManager>().SkillTable.data;
         var atkData = skillTable.Find(s => s.SKILL_ID == data.ATK_ID);
         if (atkData != null) skills.Add(new Skill(atkData));
 
         var skillData = skillTable.Find(s => s.SKILL_ID == data.SKILL_ID);
         if (skillData != null) skills.Add(new Skill(skillData));
+        _baseSkillData = GetComponent<BaseSkill>(); // 베이스 스킬 갖고옴
+        _baseSkillData.skills = this.skills;
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
         _playerStats._doubleAtkRate = data.DOUBLE_ATK_RATE;
@@ -277,40 +281,21 @@ public class BaseCharacter : BaseController
 
     public override void UseSkill(int index)
     {
-        // 현재 스킬의 n번째 스킬이 범위인지, 단일인지
+        if (index == 0
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WARIOR
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.MAX_HP_P
+        || skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WIZARD)
+        {
+            _baseSkillData.UseSkill(index);
+            return;
+        }
+
         float totalDamage = CalculateDamage(index);
 
         switch (skills[index].SKILL_TYPE, skills[index].SKILL_AT) // 스킬타입과, 스킬대상 비교
         {
-            case (ESkillType.SINGLE_TARGET, ETargetType.SELF): // 궁수버프
-                SetBuff();
-                break;
-
-            case (ESkillType.SINGLE_TARGET, ETargetType.ALLY): // 아군 힐
-                GetCurrentTarget.SetHeal(UseCritDamage((int)totalDamage));
-                break;
-
-            case (ESkillType.SINGLE_TARGET, ETargetType.ENEMY): // 적에게 단일공격
-                if (_isBuffActive)
-                {
-                    for (int i = 0; i < 3; i++) // 궁수가 버프를 받았다면 3번공격
-                        GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                }
-                else // 그외 단일공격
-                {
-                    GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                    if (UnityEngine.Random.value < _playerStats._doubleAtkRate) // 궁수유물적용시 연속공격
-                    {
-                        GetCurrentTarget.SetDamage(UseCritDamage((int)totalDamage));
-                    }
-                }
-                break;
-
-            case (ESkillType.ATTACK_OF_SCOPE, ETargetType.ENEMY): // 적에게 범위스킬
-                AttackRangeBox(index, (int)totalDamage);
-                break;
-
-            case (ESkillType.ALL_TARGET, ETargetType.ALLY): // 아군에게 전체스킬
+            /*case (ESkillType.ALL_TARGET, ETargetType.ALLY): // 아군에게 전체스킬
                 var characters = Service.Get<PlayerManager>()?.Characters;
                 if (characters == null) return;
                 foreach (BaseCharacter chr in characters)
@@ -326,10 +311,10 @@ public class BaseCharacter : BaseController
                         Debug.Log($"[부활] {chr.gameObject.name} 즉시 부활!");
                     }
                 }
-                break;
+                break;*/
 
             case (ESkillType.ALL_TARGET, ETargetType.ENEMY): // TODO : 유물구현시
-                // 추후 구현 (유물 마법사)
+                                                             // (유물 마법사)
                 break;
         }
     }
@@ -349,26 +334,9 @@ public class BaseCharacter : BaseController
         }
     }
 
-    public void SetBuff() // 궁수 공속버프
-    {
-        if (_isBuffActive) return;
-        _isBuffActive = true;
-        float originSpeed = _stats._attackSpeed;
-        _stats._attackSpeed *= 0.7f;
-        Debug.Log($"[궁수 버프] 발동! 공속: {_stats._attackSpeed}");
-        StartCoroutine(BuffCoroutine(originSpeed));
-    }
-
-    private IEnumerator BuffCoroutine(float originSpeed) // 궁수 버프 코루틴
-    {
-        yield return YieldContainer.WaitForSeconds(7f);
-        _isBuffActive = false;
-        _stats._attackSpeed = originSpeed;
-        Debug.Log($"[궁수 버프] 종료! 공속 복구: {originSpeed}");
-    }
-
     public void TryUseActiveSkill() // 액티브 스킬 발동
     {
+        if (this.isCC) return;
         if (_activeSkillCoolCount < ActiveSkillCoolTime) return;
 
         if (skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
@@ -377,8 +345,13 @@ public class BaseCharacter : BaseController
         switch (_playerStats._activeSkillBehavior)
         {
             case EActiveSkillBehavior.DotField:
-                Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
-                StartCoroutine(DotFieldCoroutine(fieldCenter, (int)CalculateDamage(1)));
+                UseSkill(1);
+                if (skills.Find(s => s.SKILL_ID == "6509") != null)
+                {
+                    float earthquakeBonus = Service.Get<RelicManager>()?
+                    .GetTotalRelicBonus("WIZARD", "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
+                    //FireEarthquake(Mathf.CeilToInt( * earthquakeBonus / 100f));
+                }
                 break;
 
             case EActiveSkillBehavior.Instant:
@@ -389,7 +362,35 @@ public class BaseCharacter : BaseController
         _activeSkillCoolCount = 0;
     }
 
-    public void TryDotFieldSkill() // 마법사 액티브호출
+    public void FireRainOfArrows(Vector2 center, int damage) // 궁수 화살비 데미지호출
+    {
+        Debug.Log($"[화살비 발사] 중심: {center} / 데미지: {damage} / 반경: {skills[2].SKILL_RANGE_X}");
+        int count = Physics2D.OverlapCircle(center, skills[2].SKILL_RANGE_X, EnemyFilter, Colliders);
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out ITargetable target))
+            {
+                target.SetDamage(damage);
+                Debug.Log($"[화살비 적중] {target.GetTargetObject.name}");
+            }
+        }
+    }
+
+    public void FireEarthquake(int damage) // 마법사 유물 지진마법
+    {
+        Debug.Log($"[지진 마법 발동]데미지 : {damage}");
+        int count = Physics2D.OverlapCircle(transform.position, 100f, EnemyFilter, Colliders);
+        for (int i = 0; i < count; i++)
+        {
+            if (Colliders[i].TryGetComponent(out ITargetable target))
+            {
+                target.SetDamage(damage);
+                Debug.Log($"[지진 적중] {target.GetTargetObject.name}");
+            }
+        }
+    }
+
+    /*public void TryDotFieldSkill() // 마법사 액티브호출
     {
         if (_activeSkillCoolCount >= ActiveSkillCoolTime)
         {
@@ -420,93 +421,79 @@ public class BaseCharacter : BaseController
             yield return YieldContainer.WaitForSeconds(1f);
             elapsed += 1f;
         }
-    }
-
-    public void AttackRangeBox(int index, int damage) // 전사 액티브 스킬
-    {
-        if (GetCurrentTarget == null) return;
-        Vector2 dir = (GetCurrentTarget.GetTargetObject.transform.position - transform.position).normalized;
-        Vector2[] directions = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
-        Vector2 bestDir = Vector2.right;
-        float bestDot = float.MinValue;
-
-        foreach (Vector2 candidate in directions)
-        {
-            float dot = Vector2.Dot(dir, candidate);
-            if (dot > bestDot)
-            {
-                bestDir = candidate;
-                bestDot = dot;
-            }
-        }
-        Vector2 node = (Vector2)transform.position + bestDir * (skills[index].SKILL_RANGE_X * 0.5f);
-
-        int count = Physics2D.OverlapBox(node, new Vector2(skills[index].SKILL_RANGE_X, skills[index].SKILL_RANGE_Y),
-            0f, EnemyFilter, Colliders);
-        Debug.Log($"[전사 스킬] 범위 공격 → {count}명 적중");
-        for (int i = 0; i < count; i++)
-        {
-            if (Colliders[i].TryGetComponent(out ITargetable target))
-            {
-                target.SetDamage(damage);
-            }
-        }
-    }
+    }*/
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        List<ITargetable> targets = Detect(Stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
-        Debug.Log(targets.Count);
+        ETargetType targetType = skills[index].SKILL_AT;
+        List<ITargetable> targets = new List<ITargetable>();
         ITargetable nearest = null;
-        if (FindType == EFindType.LowestHp)
+        switch (targetType)
         {
-            float lowestRatio = float.MaxValue;
-            foreach (ITargetable t in targets)
-            {
-                if (!this.Movement.CanReach(t.GetTargetObject.transform.position)) continue;
-                if (t is BaseCharacter ally)
+            case ETargetType.ENEMY:
+                targets = Detect(_stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
+                float nearestDis = float.MaxValue;
+                float fartDis = float.MinValue;
+
+                foreach (ITargetable target in targets)
                 {
-                    float ratio = (float)ally.CurrentHp.Value / ally.Stats._maxHp;
-                    if (ratio < lowestRatio && ratio < 1.0f)
+                    if (!this.Movement.CanReach(target.GetTargetObject.transform.position)) continue;
+                    float dis = (this.transform.position - target.GetTargetObject.transform.position).magnitude
+                        - GetRadius() - target.GetRadius();
+
+                    switch (FindType)
                     {
-                        lowestRatio = ratio;
-                        nearest = t;
+                        case EFindType.Nearest:
+                            if (dis < nearestDis)
+                            {
+                                nearestDis = dis;
+                                nearest = target;
+                            }
+                            break;
+                        case EFindType.Farthest:
+                            if (dis > fartDis)
+                            {
+                                fartDis = dis;
+                                nearest = target;
+                            }
+                            break;
                     }
                 }
-            }
-            return nearest;
-        }
+                return nearest;
 
-        float nearestDis = float.MaxValue;
-        float fartDis = float.MinValue;
-
-        foreach (ITargetable target in targets)
-        {
-            if (!this.Movement.CanReach(target.GetTargetObject.transform.position)) continue;
-            float dis = (this.transform.position - target.GetTargetObject.transform.position).magnitude
-                - GetRadius() - target.GetRadius();
-
-            switch (FindType)
-            {
-                case EFindType.Nearest:
-                    if (dis < nearestDis)
+            case ETargetType.ALLY:
+                for (int i = 0; i < Service.Get<PlayerManager>().Characters.Length; i++)
+                {
+                    if (Service.Get<PlayerManager>().Characters[i].TryGetComponent(out ITargetable target))
                     {
-                        nearestDis = dis;
-                        nearest = target;
+                        if (Service.Get<PlayerManager>().Characters[i]._isDead == true) continue;
+
+                        targets.Add(target);
                     }
-                    break;
-                case EFindType.Farthest:
-                    if (dis > fartDis)
+                }
+                if (FindType == EFindType.LowestHp)
+                {
+                    float lowestRatio = float.MaxValue;
+                    foreach (ITargetable t in targets)
                     {
-                        fartDis = dis;
-                        nearest = target;
+                        if (!this.Movement.CanReach(t.GetTargetObject.transform.position)) continue;
+                        if (t is BaseCharacter ally)
+                        {
+                            float ratio = (float)ally.CurrentHp.Value / ally.Stats._maxHp;
+                            if (ratio < lowestRatio && ratio < 1.0f)
+                            {
+                                lowestRatio = ratio;
+                                nearest = t;
+                            }
+                        }
                     }
-                    break;
-
-            }
-
+                    return nearest;
+                }
+                break;
+            case ETargetType.SELF:
+                return this;
         }
-        return nearest;
+        return null;
     }
 
     private void CheckDeath(int value)
@@ -534,12 +521,4 @@ public class BaseCharacter : BaseController
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
     }
-
-    /*protected new void OnDrawGizmos()
-    {
-        if (skills == null || skills.Count == 0) return;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, CurrentSkillRange + GetRadius());
-    }*/
 }

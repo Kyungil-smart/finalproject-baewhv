@@ -19,6 +19,8 @@ public class AttackPlayerState : PlayerBaseState
     }
     public override void Update()
     {
+        if (_owner.isCC) return;
+
         if (_owner.GetCurrentTarget == null || !_owner.GetCurrentTarget.IsAlive()) // 타겟이 없다면?
         {
             _owner.SetCurrentTarget(null);
@@ -39,7 +41,6 @@ public class AttackPlayerState : PlayerBaseState
         {
             _owner.AttackTimer += Time.deltaTime;
         }
-
         else
         {
             Debug.Log($"[공격] {_owner.gameObject.name}이(가) " +

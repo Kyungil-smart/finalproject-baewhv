@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2160024432606769975}
   - component: {fileID: 8230121561236651956}
   - component: {fileID: 4310512092811849079}
+  - component: {fileID: 3289921994600883329}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -60,6 +61,9 @@ MonoBehaviour:
     _critDamage: 0
     _attackRange: 1
     _chaseRange: 4
+  CurrentHp:
+    _data: 0
+    _maxValue: 0
   skills:
   - SKILL_ABILLITY: 0
     SKILL_ID: 
@@ -82,7 +86,7 @@ MonoBehaviour:
     SKILL_HIT_SFX: 
     SKILL_HIT_FX: 
     SKILL_ICON: 
-    targetCount: 1
+  Colliders: []
   EnemyFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -113,6 +117,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
+  _hpBar: {fileID: 719768421303187962}
   _isDead: 0
   _reviveTime: 3
   <CurrentState>k__BackingField:
@@ -214,6 +219,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.000000029802322, y: 0}
   m_Radius: 0.31304863
+--- !u!114 &3289921994600883329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672613106973507048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e391e08eaf5b08b4690978ff5feaef7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseSkill
+  skills: []
+  Colliders: []
+  count: 0
+  isDurationActive: 0
 --- !u!1 &2146874695588745659
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +263,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1581155118150785694}
@@ -336,6 +357,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1581155118150785694}
     m_Modifications:
+    - target: {fileID: 5234234990821547610, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
+      propertyPath: m_Value
+      value: 0.1474359
+      objectReference: {fileID: 0}
     - target: {fileID: 6031210747448492291, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -433,6 +458,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
+--- !u!114 &719768421303187962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8508475954353417218, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
+  m_PrefabInstance: {fileID: 9216911702327678456}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0c0513ea4ba6d409fe1b80ebb434c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HPBarUI
 --- !u!224 &1312832661659759385 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7913125836048525025, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}

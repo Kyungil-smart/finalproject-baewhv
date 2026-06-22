@@ -1,9 +1,29 @@
+using System;
 using UnityEngine;
 
 public class TimeManager : BaseManager<TimeManager>
 {
+    private float[] timeScaleSpeeds = { 1f, 2f, 3f };
+    private int currentSpeedIndex = 0;
+    
     private float saveTimeScale = 1;
     private int pauseCount = 0;
+
+    public int ChangeSpeed()
+    {
+        if (pauseCount == 0)
+        {
+            currentSpeedIndex = (currentSpeedIndex + 1) % timeScaleSpeeds.Length;
+            Time.timeScale = timeScaleSpeeds[currentSpeedIndex];
+        }
+        else
+        {
+            currentSpeedIndex = (currentSpeedIndex + 1) % timeScaleSpeeds.Length;
+            saveTimeScale = timeScaleSpeeds[currentSpeedIndex];
+        }
+
+        return (int)timeScaleSpeeds[currentSpeedIndex];
+    }
     
     public void SetSpeed(float speed)
     {
@@ -22,13 +42,20 @@ public class TimeManager : BaseManager<TimeManager>
     
     public void LoadTimeScale()
     {
-        if (pauseCount < 0) return;
-        
         pauseCount--;
-
-        if (pauseCount == 0)
+        
+        if (pauseCount <= 0)
         {
+            pauseCount = 0;
             Time.timeScale = saveTimeScale;
         }
+    }
+
+    public void ResetTimeScale()
+    {
+        currentSpeedIndex = 0;
+        saveTimeScale = timeScaleSpeeds[0];
+        pauseCount = 0;
+        Time.timeScale = timeScaleSpeeds[0];
     }
 }

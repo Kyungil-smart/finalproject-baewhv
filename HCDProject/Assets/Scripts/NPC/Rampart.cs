@@ -57,6 +57,11 @@ public class Rampart : MonoBehaviour, ITargetable
         CurrentHp.Value += heal;
     }
 
+    public void SetBuff(float buff)
+    {
+        
+    }
+
     public float GetRadius()
     {
         return 0f;
