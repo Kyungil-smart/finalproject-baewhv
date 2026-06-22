@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 762429504326585699}
   - component: {fileID: 1103769911934726664}
   - component: {fileID: 269113924539814841}
+  - component: {fileID: -7302154842049404870}
   m_Layer: 8
   m_Name: M_1035
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
     _data: 0
     _maxValue: 0
   skills: []
+  Colliders: []
   EnemyFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -208,6 +210,23 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.44
+--- !u!114 &-7302154842049404870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651356421304257865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e391e08eaf5b08b4690978ff5feaef7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseSkill
+  skills: []
+  Colliders: []
+  count: 0
+  attackHitCount: 1
+  isDurationActive: 0
 --- !u!1 &6120511941419546570
 GameObject:
   m_ObjectHideFlags: 0
