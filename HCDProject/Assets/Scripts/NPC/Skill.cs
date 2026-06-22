@@ -73,6 +73,13 @@ public enum ESkillType
     ATTACK_OF_SCOPE = 2
 }
 
+public enum ERangeType
+{
+    NONE = 0,
+    CIRCLE = 1,
+    BOX = 2
+}
+
 public enum ESkillSlot
 {
     Normal = 0,
