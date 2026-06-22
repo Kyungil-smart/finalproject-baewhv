@@ -119,5 +119,7 @@ public enum ESkillAbilityType
     DAMAGE_IMMUNITY = 13,
     SKILL_CD = 14,
     ATTACK_BASE = 15,
-    BASE_SKILL_WARIOR = 16
+    BASE_SKILL_WARIOR = 16,
+    MAX_HP_P = 17,
+    BASE_SKILL_WIZARD = 18
 }
