@@ -70,6 +70,10 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void ChangeMode(bool isSort)
     {
         SkillArea.SetActive(!isSort);
+        foreach (var slot in _subslots)
+        {
+            slot.gameObject.SetActive(isSort);
+        }
     }
 
     /// <summary>
