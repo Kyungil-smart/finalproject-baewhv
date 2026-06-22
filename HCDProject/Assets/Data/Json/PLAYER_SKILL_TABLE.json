@@ -42,7 +42,7 @@
       "ATK_TYPE": "NORMAL",
       "SKILL_TYPE": "SINGLE_TARGET",
       "SKILL_AT": "ENEMY",
-      "SKILL_IS": 5,
+      "SKILL_IS": 4,
       "SKILL_RANGE_X": 0,
       "SKILL_RANGE_Y": 0,
       "SKILL_TIME": 0,

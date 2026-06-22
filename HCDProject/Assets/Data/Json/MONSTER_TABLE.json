@@ -30,7 +30,7 @@
       "MONSTER_IMG": "Monsters_01_5",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1002",
@@ -46,7 +46,7 @@
       "MONSTER_IMG": "Monsters_01_3",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1003",
@@ -62,7 +62,7 @@
       "MONSTER_IMG": "Monsters_01_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1004",
@@ -78,7 +78,7 @@
       "MONSTER_IMG": "Monsters_01_4",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1005",
@@ -94,7 +94,7 @@
       "MONSTER_IMG": "Monsters_01_6",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1006",
@@ -110,7 +110,7 @@
       "MONSTER_IMG": "Monsters_01_5",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1007",
@@ -126,7 +126,7 @@
       "MONSTER_IMG": "Monsters_05_0",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1008",
@@ -142,7 +142,7 @@
       "MONSTER_IMG": "Monsters_05_1",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1009",
@@ -158,7 +158,7 @@
       "MONSTER_IMG": "Monsters_02_6",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1010",
@@ -174,7 +174,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_2_1",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1011",
@@ -190,7 +190,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_1_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1012",
@@ -206,7 +206,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_3_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1013",
@@ -222,7 +222,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_1_3",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1014",
@@ -238,7 +238,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_2_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1015",
@@ -254,7 +254,7 @@
       "MONSTER_IMG": "Monsters_02_6",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1016",
@@ -270,7 +270,7 @@
       "MONSTER_IMG": "Monsters_02_3",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1017",
@@ -286,7 +286,7 @@
       "MONSTER_IMG": "Monsters_02_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1018",
@@ -302,7 +302,7 @@
       "MONSTER_IMG": "Monsters_02_7",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1019",
@@ -318,7 +318,7 @@
       "MONSTER_IMG": "Monsters_04_0Monsters_02_1",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1020",
@@ -334,7 +334,7 @@
       "MONSTER_IMG": "Monsters_03_1",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1021",
@@ -350,7 +350,7 @@
       "MONSTER_IMG": "Monsters_03_0",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1022",
@@ -366,7 +366,7 @@
       "MONSTER_IMG": "Monsters_03_3",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1023",
@@ -382,7 +382,7 @@
       "MONSTER_IMG": "Monsters_03_5",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1024",
@@ -398,7 +398,7 @@
       "MONSTER_IMG": "Monsters_02_1",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1025",
@@ -414,7 +414,7 @@
       "MONSTER_IMG": "Monsters_04_5",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1026",
@@ -430,7 +430,7 @@
       "MONSTER_IMG": "Monsters_04_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1027",
@@ -446,7 +446,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_0_1_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1028",
@@ -462,7 +462,7 @@
       "MONSTER_IMG": "Monsters_04_6",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1029",
@@ -478,7 +478,7 @@
       "MONSTER_IMG": "Monsters_04_4",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1030",
@@ -494,7 +494,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_5_2",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1031",
@@ -510,7 +510,7 @@
       "MONSTER_IMG": "Monsters_05_5",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1032",
@@ -526,7 +526,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_4_1",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1033",
@@ -542,7 +542,7 @@
       "MONSTER_IMG": "Monsters_04_1",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1034",
@@ -558,7 +558,7 @@
       "MONSTER_IMG": "Monsters_04_0",
       "EXP": 3,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1035",
@@ -574,7 +574,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_1_1",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1036",
@@ -590,7 +590,7 @@
       "MONSTER_IMG": "Monsters_03_6",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1037",
@@ -606,7 +606,7 @@
       "MONSTER_IMG": "Monsters_05_3",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1038",
@@ -622,7 +622,7 @@
       "MONSTER_IMG": "Monsters_05_4",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1039",
@@ -638,7 +638,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_3_1",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1040",
@@ -654,7 +654,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_3_3",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1041",
@@ -670,7 +670,7 @@
       "MONSTER_IMG": "Monsters_02_4",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1042",
@@ -686,7 +686,7 @@
       "MONSTER_IMG": "Monsters_02_0",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1043",
@@ -702,7 +702,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_0_1_1",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1044",
@@ -718,7 +718,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_0_1_3",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1045",
@@ -734,7 +734,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_2_3",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1046",
@@ -750,7 +750,7 @@
       "MONSTER_IMG": "Monsters_04_3",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1047",
@@ -766,7 +766,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_5_1",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1048",
@@ -782,7 +782,7 @@
       "MONSTER_IMG": "Additional_bonus_Monsters_front_anim_only_4_1",
       "EXP": 0,
       "MONSTER_HIT_SFX": "",
-      "MONSTER_HIT_FX": ""
+      "MONSTER_HIT_FX": "Effect_Blink"
     }
   ]
 }

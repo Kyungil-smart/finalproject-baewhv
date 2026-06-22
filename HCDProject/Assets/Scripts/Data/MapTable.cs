@@ -8,7 +8,7 @@ public class MapRawData
     public string MAP_ID;
     public int CHAPTER;
     public int STAGE;
-    public int SORT_COUNT;
+    public int SORT_TIME;
     public int TOTAL_WAVE;
     public int WAVE;
     public int TOTAL_WAVE_MONSTER;
