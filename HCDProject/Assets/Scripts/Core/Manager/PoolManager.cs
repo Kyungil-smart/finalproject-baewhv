@@ -16,11 +16,9 @@ public class PoolManager : BaseManager<PoolManager>
 
         if (obj == null)
         {
-            obj = Instantiate(prefab);
+            obj = Instantiate(prefab, position, rotation);
         }
         
-        obj.transform.position = position;
-        obj.transform.rotation =  rotation;
         obj.SetActive(true);
 
         return obj;
