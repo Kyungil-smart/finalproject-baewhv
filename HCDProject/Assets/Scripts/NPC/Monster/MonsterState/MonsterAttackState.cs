@@ -18,7 +18,7 @@ public class MonsterAttackState : IState
     public void Update()
     {
         if (Vector3.Distance(_controller.transform.position, _controller.Target) 
-              > _controller.skills[0].SKILL_IS + _controller.GetRadius() + _controller.GetCurrentTarget.GetRadius())
+              > _controller.BaseSkill.skills[0].SKILL_IS + _controller.GetRadius() + _controller.GetCurrentTarget.GetRadius())
         {
             _controller.CurrentState.Value = EStateType.Chase;
             return;
@@ -26,7 +26,7 @@ public class MonsterAttackState : IState
         
         _timer += Time.deltaTime;
 
-        if (_controller.skills[0].ATK_TYPE == EAtkType.NORMAL)
+        if (_controller.BaseSkill.skills[0].ATK_TYPE == EAtkType.NORMAL)
         {
             if (_timer >= _controller.Stat.ATK_SPEED)
             {
@@ -36,7 +36,7 @@ public class MonsterAttackState : IState
         }
         else
         {
-            if (_timer >= _controller.skills[0].SKILL_TIME)
+            if (_timer >= _controller.BaseSkill.skills[0].SKILL_TIME)
             {
                 _timer = 0f;
                 _controller.UseSkill(0);

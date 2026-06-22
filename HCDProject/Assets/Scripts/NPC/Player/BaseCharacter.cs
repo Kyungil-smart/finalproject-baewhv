@@ -69,10 +69,10 @@ public class BaseCharacter : BaseController
 
     private EFindType _findType;
 
-    public float SkillCoolTime => skills[_skillTargetIndex].SKILL_TIME > 0 ?
-        skills[_skillTargetIndex].SKILL_TIME : _stats._attackSpeed; // 노말공격 쿨타임
-    public float ActiveSkillCoolTime => skills.Count > 1 ? skills[1].SKILL_TIME : 0f; // 액티브 쿨타임
-    public float CurrentSkillRange => skills[_skillTargetIndex].SKILL_IS;
+    public float SkillCoolTime => BaseSkill.skills[_skillTargetIndex].SKILL_TIME > 0 ?
+        BaseSkill.skills[_skillTargetIndex].SKILL_TIME : _stats._attackSpeed; // 노말공격 쿨타임
+    public float ActiveSkillCoolTime => BaseSkill.skills.Count > 1 ? BaseSkill.skills[1].SKILL_TIME : 0f; // 액티브 쿨타임
+    public float CurrentSkillRange => BaseSkill.skills[_skillTargetIndex].SKILL_IS;
 
     public EFindType FindType
     {
@@ -195,7 +195,7 @@ public class BaseCharacter : BaseController
 
     public void BindSkillUI(UnityAction<float> action) // 스킬 게이지 UI 구독
     {
-        float maxValue = skills[1].SKILL_TIME;
+        float maxValue = BaseSkill.skills[1].SKILL_TIME;
         _activeSkillCoolValue = new RatioFloatValue(maxValue, _activeSkillCoolCount);
         _activeSkillCoolValue.AddRatioListener(action);
     }
@@ -247,15 +247,15 @@ public class BaseCharacter : BaseController
             _chaseRange = data.ACCESS_AREA
         };
 
-        skills.Clear();
+        BaseSkill.skills.Clear();
         var skillTable = Service.Get<DataManager>().SkillTable.data;
         var atkData = skillTable.Find(s => s.SKILL_ID == data.ATK_ID);
-        if (atkData != null) skills.Add(new Skill(atkData));
+        if (atkData != null) BaseSkill.skills.Add(new Skill(atkData));
 
         var skillData = skillTable.Find(s => s.SKILL_ID == data.SKILL_ID);
-        if (skillData != null) skills.Add(new Skill(skillData));
+        if (skillData != null) BaseSkill.skills.Add(new Skill(skillData));
         _baseSkillData = GetComponent<BaseSkill>(); // 베이스 스킬 갖고옴
-        _baseSkillData.skills = this.skills;
+        _baseSkillData.skills = BaseSkill.skills;
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
         _playerStats._doubleAtkRate = data.DOUBLE_ATK_RATE;
@@ -282,10 +282,10 @@ public class BaseCharacter : BaseController
     public override void UseSkill(int index)
     {
         if (index == 0
-        || skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WARIOR
-        || skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P
-        || skills[index].SKILL_ABT_01 == ESkillAbilityType.MAX_HP_P
-        || skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WIZARD)
+        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WARIOR
+        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P
+        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.MAX_HP_P
+        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WIZARD)
         {
             _baseSkillData.UseSkill(index);
             return;
@@ -293,7 +293,7 @@ public class BaseCharacter : BaseController
 
         float totalDamage = CalculateDamage(index);
 
-        switch (skills[index].SKILL_TYPE, skills[index].SKILL_AT) // 스킬타입과, 스킬대상 비교
+        switch (BaseSkill.skills[index].SKILL_TYPE, BaseSkill.skills[index].SKILL_AT) // 스킬타입과, 스킬대상 비교
         {
             /*case (ESkillType.ALL_TARGET, ETargetType.ALLY): // 아군에게 전체스킬
                 var characters = Service.Get<PlayerManager>()?.Characters;
@@ -321,12 +321,12 @@ public class BaseCharacter : BaseController
     // 데미지 계산만 담당하는 별도 메서드
     private float CalculateDamage(int index)
     {
-        switch (skills[index].SKILL_DT)
+        switch (BaseSkill.skills[index].SKILL_DT)
         {
             case ESkillDamageType.ATTACK_BASE:
-                return _stats._attackPower * skills[index].SKILL_ABILLITY;
+                return _stats._attackPower * BaseSkill.skills[index].SKILL_ABILLITY;
             case ESkillDamageType.TRUE_DAMAGE:
-                return skills[index].SKILL_ABILLITY;
+                return BaseSkill.skills[index].SKILL_ABILLITY;
             case ESkillDamageType.SKILL_DAMAGE_P:
                 return 0f; // 추후 구현예정
             default:
@@ -339,14 +339,14 @@ public class BaseCharacter : BaseController
         if (this.isCC) return;
         if (_activeSkillCoolCount < ActiveSkillCoolTime) return;
 
-        if (skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
+        if (BaseSkill.skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
 
         Debug.Log($"[액티브 스킬] {gameObject.name} 발동!");
         switch (_playerStats._activeSkillBehavior)
         {
             case EActiveSkillBehavior.DotField:
                 UseSkill(1);
-                if (skills.Find(s => s.SKILL_ID == "6509") != null)
+                if (BaseSkill.skills.Find(s => s.SKILL_ID == "6509") != null)
                 {
                     float earthquakeBonus = Service.Get<RelicManager>()?
                     .GetTotalRelicBonus("WIZARD", "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
@@ -364,8 +364,8 @@ public class BaseCharacter : BaseController
 
     public void FireRainOfArrows(Vector2 center, int damage) // 궁수 화살비 데미지호출
     {
-        Debug.Log($"[화살비 발사] 중심: {center} / 데미지: {damage} / 반경: {skills[2].SKILL_RANGE_X}");
-        int count = Physics2D.OverlapCircle(center, skills[2].SKILL_RANGE_X, EnemyFilter, Colliders);
+        Debug.Log($"[화살비 발사] 중심: {center} / 데미지: {damage} / 반경: {BaseSkill.skills[2].SKILL_RANGE_X}");
+        int count = Physics2D.OverlapCircle(center, BaseSkill.skills[2].SKILL_RANGE_X, EnemyFilter, Colliders);
         for (int i = 0; i < count; i++)
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
@@ -425,13 +425,13 @@ public class BaseCharacter : BaseController
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
-        ETargetType targetType = skills[index].SKILL_AT;
+        ETargetType targetType = BaseSkill.skills[index].SKILL_AT;
         List<ITargetable> targets = new List<ITargetable>();
         ITargetable nearest = null;
         switch (targetType)
         {
             case ETargetType.ENEMY:
-                targets = Detect(_stats._chaseRange + GetRadius(), skills[index].SKILL_AT);
+                targets = Detect(_stats._chaseRange + GetRadius(), BaseSkill.skills[index].SKILL_AT);
                 float nearestDis = float.MaxValue;
                 float fartDis = float.MinValue;
 
