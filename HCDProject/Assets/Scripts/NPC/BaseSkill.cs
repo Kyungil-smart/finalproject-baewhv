@@ -23,6 +23,8 @@ public class BaseSkill : MonoBehaviour
     private ATK_SPEED_P _atkSpeedP;
     private MAX_HP_P _maxHpP;
     private BASE_SKILL_WIZARD _baseSkillWizard;
+    private CC _cc;
+    private ATK _atk;
     
     #endregion
     
@@ -41,6 +43,8 @@ public class BaseSkill : MonoBehaviour
         _atkSpeedP = new ATK_SPEED_P(this);
         _maxHpP = new MAX_HP_P(this);
         _baseSkillWizard = new BASE_SKILL_WIZARD(this);
+        _atk = new ATK(this);
+        _cc = new CC(this);
 
         #endregion
     }
@@ -111,31 +115,33 @@ public class BaseSkill : MonoBehaviour
 
     private void InitEffect(ESkillAbilityType type)
     {
-        var effect = new BaseEffect();
-        
         switch (type)
         {
             case ESkillAbilityType.ATTACK_BASE:
-                effect = _attackBase;
+                _effects.Add(type, _attackBase);
                 break;
             case ESkillAbilityType.HP:
-                effect = _hp;
+                _effects.Add(type, _hp);
                 break;
             case ESkillAbilityType.BASE_SKILL_WARIOR: // 워리어 액티브 스킬추가
-                effect = _baseSkillWarrior;
+                _effects.Add(type, _baseSkillWarrior);
                 break;
             case ESkillAbilityType.ATK_SPEED_P:
-                effect = _atkSpeedP;
+                _effects.Add(type, _atkSpeedP);
                 break;
             case ESkillAbilityType.MAX_HP_P:
-                effect = _maxHpP;
+                _effects.Add(type, _maxHpP);
                 break;
             case ESkillAbilityType.BASE_SKILL_WIZARD:
-                effect = _baseSkillWizard;
+                _effects.Add(type, _baseSkillWizard);
+                break;
+            case ESkillAbilityType.ATK:
+                _effects.Add(type, _atk);
+                break;
+            case ESkillAbilityType.CC:
+                _effects.Add(type, _cc);
                 break;
         }
-        
-        _effects.Add(type, effect);
     }
     public void RangeDetect(Skill skill, BaseController user, ITargetable target, Vector2 center)
     {
