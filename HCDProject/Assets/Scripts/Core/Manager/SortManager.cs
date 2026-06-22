@@ -228,9 +228,8 @@ public class SortManager : BaseManager<SortManager>
 
             if (mapData != null)
             {
-                RemainingSorts.Value = mapData.SORT_COUNT; //TODO : 임시수정
-                //RemainingSorts.Value = 15;
-                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 시간: {mapData.SORT_COUNT}초");
+                RemainingSorts.Value = mapData.SORT_TIME; 
+                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 시간: {mapData.SORT_TIME}초");
             }
         }
 
