@@ -14,7 +14,7 @@
       "MONSTER_IMG": "Monsters_01_0",
       "EXP": 3,
       "MONSTER_HIT_SFX": "0",
-      "MONSTER_HIT_FX": "0"
+      "MONSTER_HIT_FX": "Effect_Blink"
     },
     {
       "MONSTER_ID": "1001",
