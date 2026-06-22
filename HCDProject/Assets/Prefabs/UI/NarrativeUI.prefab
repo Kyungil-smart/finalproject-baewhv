@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8229519305324552396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 416, y: -261}
-  m_SizeDelta: {x: 1024, y: 1536}
+  m_AnchoredPosition: {x: 321, y: -211}
+  m_SizeDelta: {x: 1451.2725, y: 2176.9084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3661110021928396362
 CanvasRenderer:
@@ -196,7 +196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3240625231155865299}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4193968783811462499}
+        m_TargetAssemblyTypeName: NarrativeUIController, Assembly-CSharp
+        m_MethodName: OnToggleAuto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &144676888426750561
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4121626229387750719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -721,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -395, y: -261}
-  m_SizeDelta: {x: 1024, y: 1536}
+  m_AnchoredPosition: {x: -365, y: -211}
+  m_SizeDelta: {x: 1451.2725, y: 2176.9084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3425082810020332098
 CanvasRenderer:
@@ -2485,9 +2497,10 @@ MonoBehaviour:
   leftPortrait: {fileID: 4595235588683074015}
   rightPortrait: {fileID: 1673882248263318468}
   ColorLine: {fileID: 160972948268638449}
-  autoStatusText: {fileID: 3787386833205104626}
+  autoStatusText: {fileID: 8555415846750303963}
   autoText: {fileID: 8103756769836470148}
-  autoLogo: {fileID: 0}
+  autoLogo: {fileID: 4945131606134624763}
+  autoColor: {r: 0.0627451, g: 0.7490196, b: 1, a: 1}
   queue: {fileID: 0}
   StageNumber: {fileID: 2109985374305845078}
   StageText: {fileID: 5646520028247431333}
@@ -3149,7 +3162,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.0627451, g: 0.7490196, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

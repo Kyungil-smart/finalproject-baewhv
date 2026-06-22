@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -13,22 +14,25 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     [SerializeField] private LocalizeStringEvent descText;
     [SerializeField] private TextMeshProUGUI descTMP;
     private Tweener decsTweener;
-    
+
     //Character
     [SerializeField] private Image leftPortrait;
     [SerializeField] private Image rightPortrait;
     [SerializeField] private Image ColorLine;
-    
+
     //Auto
-    [SerializeField] private TextMeshProUGUI autoStatusText;
+    [SerializeField] private GameObject autoStatusText;
     [SerializeField] private TextMeshProUGUI autoText;
     [SerializeField] private Image autoLogo;
     private bool isAuto;
-    
+    [SerializeField] private Color autoColor;
+    Color defaultColor = Color.white;
+    private Coroutine autoRoutine;
+
     //Queue
     [SerializeField] private NarrativeUIQueue queue;
-    
-    
+
+
     //Region
     [SerializeField] private TextMeshProUGUI StageNumber;
     [SerializeField] private LocalizeStringEvent StageText;
@@ -36,7 +40,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
 
     private void Update()
     {
-        
+        Debug.Log($"{autoRoutine}");
     }
 
     private StoryLocalizingRawData currentdata;
@@ -83,6 +87,8 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     {
         descTMP.maxVisibleCharacters = 0;
         decsTweener = DOTween.To(x => descTMP.maxVisibleCharacters = (int)x, 0f, descTMP.text.Length, 1f);
+        if(isAuto)
+            decsTweener.OnComplete(()=>StartCoroutine(OnAuto()));
     }
 
     public void OnNextButton()
@@ -110,5 +116,32 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         if (isEnd) return;
         Service.Get<NarrativeManager>().EndNarrative();
         isEnd = true;
+    }
+
+    public void OnToggleAuto()
+    {
+        isAuto = !isAuto;
+        autoStatusText.SetActive(isAuto);
+        autoText.color = isAuto ? autoColor : defaultColor;
+        autoLogo.color = isAuto ? autoColor : defaultColor;
+
+
+        if (isAuto)
+        {
+            if (decsTweener == null || !decsTweener.active)
+                autoRoutine = StartCoroutine(OnAuto());
+            else
+                decsTweener.OnComplete(() => StartCoroutine(OnAuto()));
+        }
+        else
+        {
+            decsTweener.onComplete = null;
+        }
+    }
+
+    private IEnumerator OnAuto()
+    {
+        yield return YieldContainer.WaitForSeconds(2.0f);
+        OnNextButton();
     }
 }
