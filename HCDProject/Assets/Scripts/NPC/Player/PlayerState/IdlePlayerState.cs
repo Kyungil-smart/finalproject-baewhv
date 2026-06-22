@@ -18,6 +18,8 @@ public class IdlePlayerState : PlayerBaseState
     }
     public override void Update()
     {
+        if (_owner.isCC) return;
+
         float homeDist = Vector2.Distance(_owner.transform.position, _owner.homePosition);
         if (_owner.GetCurrentTarget == null)
         {
@@ -30,12 +32,12 @@ public class IdlePlayerState : PlayerBaseState
                 _owner.Movement.MoveFalse();
             }
         }
-
-        
     }
 
     public override void FixedUpdate()
     {
+        if (_owner.isCC) return;
+
         ITargetable target = _owner.FindTarget(_owner.SkillTargetIndex);
         if (target != null)
         {
