@@ -25,9 +25,6 @@ public class GameManager : BaseManager<GameManager>
     
     public int CurrentChapter {get => _currentChapter; private set => _currentChapter = value; }
     public int CurrentStage { get => _currentStage; private set => _currentStage = value; }
-
-    private int currentSpeedIndex = 0;
-    private float[] timeScaleSpeeds = { 1f, 2f, 3f };
     
     public bool isLoading = false;
     private bool isReady = false;
@@ -120,15 +117,8 @@ public class GameManager : BaseManager<GameManager>
 
     public int ChangeSpeed()
     {
-        currentSpeedIndex = (currentSpeedIndex + 1) % timeScaleSpeeds.Length;
-        
-        float gameSpeed = timeScaleSpeeds[currentSpeedIndex];
-        
-        Service.Get<TimeManager>().SetSpeed(gameSpeed);
-        
-        Debug.Log($"현재 타임스케일 {Time.timeScale}");
-        
-        return (int)gameSpeed;
+        int gameSpeed = Service.Get<TimeManager>().ChangeSpeed();
+        return gameSpeed;
     }
 
     public List<StageData> GetStageDataList(int currentChapter)
@@ -285,6 +275,8 @@ public class GameManager : BaseManager<GameManager>
         
         CurrentState.Value = GameState.Ready;
         
+        Service.Get<TimeManager>()?.ResetTimeScale();
+        
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
             Service.Get<SceneController>()?.ChangeScene(SceneType.Narrative);
@@ -295,11 +287,9 @@ public class GameManager : BaseManager<GameManager>
             {
                 case StageType.Tutorial:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
-                    Time.timeScale = 1;
                     break;
                 case StageType.Normal:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
-                    Time.timeScale = 1;
                     break;
                 case StageType.Event:
                     break;
@@ -307,7 +297,6 @@ public class GameManager : BaseManager<GameManager>
                     break;
                 case StageType.Boss:
                     Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
-                    Time.timeScale = 1;
                     break;
             }
         }
