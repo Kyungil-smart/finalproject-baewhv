@@ -111,5 +111,6 @@ public enum ESkillAbilityType
     INVISIBILITY = 12,
     DAMAGE_IMMUNITY = 13,
     SKILL_CD = 14,
-    ATTACK_BASE = 15
+    ATTACK_BASE = 15,
+    BASE_SKILL_WARIOR = 16
 }
