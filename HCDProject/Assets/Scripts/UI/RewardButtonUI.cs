@@ -45,6 +45,7 @@ public class RewardButtonUI : MonoBehaviour
         if (string.IsNullOrEmpty(address)) return;
         Addressables.LoadAssetAsync<Sprite>(address).Completed += (handle) =>
         {
+            if(!icon) return;
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
                 icon.sprite = handle.Result;

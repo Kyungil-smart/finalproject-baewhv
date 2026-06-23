@@ -4,6 +4,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 
 public class IngameBottomUIController : BaseUIController<IngameBottomUIController>
@@ -25,7 +26,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public GameObject GetComboView => ComboView.gameObject;
     [SerializeField] private StartBattleButtonUI StartBattleButton;
     public GameObject GetStartButton => StartBattleButton.gameObject;
-    
+
 
     [SerializeField] private GameObject characterSlotPrefab;
     [SerializeField] private RectTransform characterSlot;
@@ -99,6 +100,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
             slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0);
             slot.ChangeMode(true);
         }
+
         isSortMode.Value = true;
         StartBattleButton.SetSortStart();
     }
@@ -126,14 +128,13 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
                     comboText.text = $"<color=red>{value}</color> Combo!";
                     break;
             }
+
             comboText.gameObject.SetActive(true);
         }
-
     }
 
     public void SetLeftSortCountText(float value)
     {
-        
         if (value < 0)
         {
             leftSortCountText.text = "남은 시간 : 0 s";
@@ -141,7 +142,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         }
         else
         {
-            leftSortCountText.text = $"남은 시간 : {value:F1} s";    
+            leftSortCountText.text = $"남은 시간 : {value:F1} s";
         }
     }
 
@@ -164,7 +165,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public CharacterSlotUI AddCharacter(CharacterRawData data, BaseCharacter character, int order = -1)
     {
         var slot = Instantiate(characterSlotPrefab, characterSlot).GetComponent<CharacterSlotUI>();
-        if(order != -1)
+        if (order != -1)
             slot.transform.SetSiblingIndex(order);
         string address;
         switch (data.CHARACTER_ID) //TODO : HardCoding
@@ -182,8 +183,16 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
                 address = "Player/Spayin[Spayin_BattlePortrait]";
                 break;
         }
-        Sprite sp = Addressables.LoadAssetAsync<Sprite>(address).WaitForCompletion();
-        slot.InitSlot(character, sp);
+
+        Addressables.LoadAssetAsync<Sprite>(address).Completed += handle =>
+        {
+            if (!slot) return;
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                slot.InitPortrait(handle.Result);
+            }
+        };
+        slot.InitSlot(character);
         characterSlots.Add(slot);
         return slot;
     }
