@@ -58,7 +58,7 @@ public class BaseSkill : MonoBehaviour
 
     private void Update()
     {
-        _durateTimer += Time.deltaTime;
+        if (isDurationActive) _durateTimer += Time.deltaTime;
     }
 
     public void UseSkill(int index)
@@ -83,8 +83,7 @@ public class BaseSkill : MonoBehaviour
             ITargetable originalTarget = _controller.GetCurrentTarget;
             SetTarget(skills[index]);
 
-            _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller,
-                _controller.GetCurrentTarget, skills[index]);
+            _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller, _controller.GetCurrentTarget, skills[index]);
 
             _controller.SetCurrentTarget(originalTarget);
         }
@@ -100,8 +99,8 @@ public class BaseSkill : MonoBehaviour
                 if (Colliders[i].TryGetComponent(out ITargetable target))
                 {
                     _controller.SetCurrentTarget(target);
-                    _effects[skills[index].SKILL_ABT_01].ApplyEffect(
-                        _controller, _controller.GetCurrentTarget, skills[index]);
+                    
+                    _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller, _controller.GetCurrentTarget, skills[index]);
                 }
             }
         }
@@ -261,13 +260,21 @@ public class BaseSkill : MonoBehaviour
 
     private IEnumerator DotMaxHpCor(ITargetable target, Skill skill, float value)
     {
+        isDurationActive = true;
+        
+        target.GetTargetObject.TryGetComponent(out BaseController targetObject);
+        if (targetObject == null) yield break;
+
+        var stat = targetObject.Stats;
+        
         while (_durateTimer <= skill.SKILL_DURATION)
         {
-            target.SetDamage((int)value);
+            target.SetDamage((int)value + stat._defense);
             
             yield return new WaitForSeconds(1f);
         }
 
+        isDurationActive = false;
         _durateTimer = 0f;
     }
     private IEnumerator SpeedDebuffCor(ITargetable target, Skill skill, float value)
@@ -328,7 +335,6 @@ public class BaseSkill : MonoBehaviour
     
     #endregion
     
-
     public void OnCC(bool value)
     {
         if (value)
