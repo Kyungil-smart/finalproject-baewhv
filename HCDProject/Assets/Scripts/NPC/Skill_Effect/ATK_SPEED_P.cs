@@ -16,7 +16,6 @@ public class ATK_SPEED_P : BaseEffect
         else if (skill.SKILL_AT == ETargetType.ENEMY)
         {
             BaseSkill.StartDuration(target, skill, skill.SKILL_AB_01);
-            BaseSkill.StartDuration(target, skill, skill.SKILL_AB_02);
         }
     }
 }
