@@ -7,6 +7,7 @@ public class BaseSkill : MonoBehaviour
     private Dictionary<ESkillAbilityType, BaseEffect> _effects = new Dictionary<ESkillAbilityType, BaseEffect>();
 
     private BaseController _controller;
+    private PlayerRelics _playerRelics;
 
     public List<Skill> skills = new List<Skill>();
     public List<Collider2D> Colliders = new List<Collider2D>(10);    
@@ -35,6 +36,7 @@ public class BaseSkill : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<BaseController>();
+        _playerRelics = GetComponent<PlayerRelics>();
 
         isDurationActive = false;
         count = 0;
@@ -86,6 +88,11 @@ public class BaseSkill : MonoBehaviour
             _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller, _controller.GetCurrentTarget, skills[index]);
 
             _controller.SetCurrentTarget(originalTarget);
+            if (index == 0 && skills[index].SKILL_AT == ETargetType.ENEMY)
+            {
+                _playerRelics?.TryMagicBow(originalTarget, skills[index]);
+            }
+
         }
         else if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE || skills[index].SKILL_TYPE == ESkillType.ALL_TARGET)
         {
