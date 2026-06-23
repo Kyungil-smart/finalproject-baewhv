@@ -26,8 +26,6 @@ public class BaseMonster : BaseController
     [SerializeField] private HPBarUI hpBarCanvas;
     private bool _isActive;
 
-    private float _durateTimer;
-
     protected BaseCharacter[] _characters;
 
     public void InitStatus(MonsterRawData data)
@@ -313,18 +311,6 @@ public class BaseMonster : BaseController
             }
         }
         */
-    }
-    
-    private IEnumerator DotAttack(int index, int damage)
-    {
-        _durateTimer = 0f;
-        
-        while (_durateTimer < BaseSkill.skills[index].SKILL_DURATION)
-        {
-            GetCurrentTarget.SetDamage(damage);
-            
-            yield return new WaitForSeconds(1f);
-        }
     }
 
     private IEnumerator SkillDurate(int index, int count)
