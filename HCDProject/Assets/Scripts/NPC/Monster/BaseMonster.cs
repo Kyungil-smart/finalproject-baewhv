@@ -313,54 +313,6 @@ public class BaseMonster : BaseController
         */
     }
 
-    private IEnumerator SkillDurate(int index, int count)
-    {
-        float originMoveSpeed = 0f;
-        float originAttackSpeed = 0f;
-        
-        for (int i = 0; i < count; i++)
-        {
-            if (Colliders[i].TryGetComponent(out BaseCharacter target))
-            {
-                if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
-                {
-                    var stat = target.Stats;
-                    
-                    originMoveSpeed = stat._moveSpeed;
-                    originAttackSpeed = stat._attackSpeed;
-                    
-                    stat._moveSpeed = stat._moveSpeed + (stat._moveSpeed * (BaseSkill.skills[index].SKILL_AB_01 / 100));
-                    stat._attackSpeed = stat._attackSpeed + (stat._attackSpeed * (BaseSkill.skills[index].SKILL_AB_02 / 100));
-                }
-                
-                else if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
-                {
-                    // 모든 플레이어 CC 이동정지 및 공격 정지 상태
-                }
-            }
-        }
-            
-        yield return new WaitForSeconds(BaseSkill.skills[index].SKILL_DURATION);
-        
-        for (int i = 0; i < count; i++)
-        {
-            if (Colliders[i].TryGetComponent(out BaseCharacter target))
-            {
-                if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
-                {
-                    var stat = target.Stats;
-                    stat._moveSpeed = originMoveSpeed;
-                    stat._attackSpeed = originAttackSpeed;
-                }
-                
-                else if (BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.CC)
-                {
-                    // 모든 플레이어 CC 이동정지 및 공격 정지 상태
-                }
-            }
-        }
-    }
-
     private void SkillCoolDown(int index, int count)
     {
         for (int i = 0; i < count; i++)
