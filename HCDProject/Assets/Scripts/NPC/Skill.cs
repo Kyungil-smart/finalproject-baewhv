@@ -12,6 +12,7 @@ public class Skill
     public ESkillType SKILL_TYPE;
     public ETargetType SKILL_AT;
     public float SKILL_IS;
+    public ERangeType SKILL_RANGE_TYPE;
     public float SKILL_RANGE_X;
     public float SKILL_RANGE_Y;
     public float SKILL_TIME;
@@ -42,6 +43,7 @@ public class Skill
         SKILL_AT = Enum.Parse<ETargetType>(data.SKILL_AT);
         ATK_TYPE = Enum.Parse<EAtkType>(data.ATK_TYPE);
         SKILL_TYPE = Enum.Parse<ESkillType>(data.SKILL_TYPE);
+        SKILL_RANGE_TYPE = Enum.Parse<ERangeType>(data.SKILL_RANGE_TYPE);
         SKILL_DURATION = data.SKILL_DURATION;
         SKILL_ABT_01 = Enum.Parse<ESkillAbilityType>(data.SKILL_ABT_01);
         SKILL_AB_01 = data.SKILL_AB_01;
