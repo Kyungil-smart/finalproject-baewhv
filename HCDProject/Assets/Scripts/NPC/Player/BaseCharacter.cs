@@ -281,59 +281,9 @@ public class BaseCharacter : BaseController
 
     public override void UseSkill(int index)
     {
-        if (index == 0
-        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WARIOR
-        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P
-        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.MAX_HP_P
-        || BaseSkill.skills[index].SKILL_ABT_01 == ESkillAbilityType.BASE_SKILL_WIZARD)
-        {
-            _baseSkillData.UseSkill(index);
-            return;
-        }
-
-        float totalDamage = CalculateDamage(index);
-
-        switch (BaseSkill.skills[index].SKILL_TYPE, BaseSkill.skills[index].SKILL_AT) // 스킬타입과, 스킬대상 비교
-        {
-            /*case (ESkillType.ALL_TARGET, ETargetType.ALLY): // 아군에게 전체스킬
-                var characters = Service.Get<PlayerManager>()?.Characters;
-                if (characters == null) return;
-                foreach (BaseCharacter chr in characters)
-                {
-                    if (!chr._isDead)
-                    {
-                        chr.SetHeal((int)totalDamage);
-                        Debug.Log($"[힐] {chr.gameObject.name} → {(int)totalDamage} 회복");
-                    }
-                    else
-                    {
-                        Service.Get<PlayerManager>()?.ImmediateRevive(chr);
-                        Debug.Log($"[부활] {chr.gameObject.name} 즉시 부활!");
-                    }
-                }
-                break;*/
-
-            case (ESkillType.ALL_TARGET, ETargetType.ENEMY): // TODO : 유물구현시
-                                                             // (유물 마법사)
-                break;
-        }
+        _baseSkillData.UseSkill(index);
     }
-    // 데미지 계산만 담당하는 별도 메서드
-    private float CalculateDamage(int index)
-    {
-        switch (BaseSkill.skills[index].SKILL_DT)
-        {
-            case ESkillDamageType.ATTACK_BASE:
-                return _stats._attackPower * BaseSkill.skills[index].SKILL_ABILLITY;
-            case ESkillDamageType.TRUE_DAMAGE:
-                return BaseSkill.skills[index].SKILL_ABILLITY;
-            case ESkillDamageType.SKILL_DAMAGE_P:
-                return 0f; // 추후 구현예정
-            default:
-                return 0f;
-        }
-    }
-
+    
     public void TryUseActiveSkill() // 액티브 스킬 발동
     {
         if (this.isCC) return;
@@ -348,9 +298,10 @@ public class BaseCharacter : BaseController
                 UseSkill(1);
                 if (BaseSkill.skills.Find(s => s.SKILL_ID == "6509") != null)
                 {
+                    int skillDamage = (int)(_stats._attackPower * BaseSkill.skills[1].SKILL_AB_02);
                     float earthquakeBonus = Service.Get<RelicManager>()?
                     .GetTotalRelicBonus("WIZARD", "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
-                    //FireEarthquake(Mathf.CeilToInt( * earthquakeBonus / 100f));
+                    FireEarthquake(Mathf.CeilToInt(skillDamage * earthquakeBonus / 100f));
                 }
                 break;
 
