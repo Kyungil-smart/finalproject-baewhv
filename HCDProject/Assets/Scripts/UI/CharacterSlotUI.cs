@@ -22,12 +22,13 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     private BaseCharacter _character;
 
 
-    public void InitSlot(BaseCharacter character, Sprite image)
+    public void InitSlot(BaseCharacter character)
     {
         //캐릭터 초상화 설정
         _character = character;
-        portraitImage.sprite = image;
     }
+    public void InitPortrait(Sprite image) =>portraitImage.sprite = image;
+
 
     public void OnDrop(PointerEventData eventData)
     {
