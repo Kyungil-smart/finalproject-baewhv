@@ -68,10 +68,13 @@ public class BaseSkill : MonoBehaviour
         }
         if (skills[index].SKILL_TYPE == ESkillType.SINGLE_TARGET)
         {
+            ITargetable originalTarget = _controller.GetCurrentTarget;
             SetTarget(skills[index]);
 
             _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller,
                 _controller.GetCurrentTarget, skills[index]);
+
+            _controller.SetCurrentTarget(originalTarget);
         }
         else if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE || skills[index].SKILL_TYPE == ESkillType.ALL_TARGET)
         {
@@ -152,7 +155,7 @@ public class BaseSkill : MonoBehaviour
         else if (skill.SKILL_AT == ETargetType.ALLY)
             filter = _controller.AllyFilter;
 
-        /*if (skill.SKILL_RANGE_TYPE == ERangeType.CIRCLE)
+        if (skill.SKILL_RANGE_TYPE == ERangeType.CIRCLE)
         {
             // 마법사 장판, 궁수 화살비: center 위치 기준 원형 탐지
             count = Physics2D.OverlapCircle(center, skill.SKILL_RANGE_X, filter, Colliders);
@@ -181,7 +184,7 @@ public class BaseSkill : MonoBehaviour
         else // NONE: 시전자 위치 기준 (몬스터 ALL_TARGET 등)
         {
             count = Physics2D.OverlapCircle(user.transform.position, skill.SKILL_IS, filter, Colliders);
-        }*/
+        }
     }
     public void SetTarget(Skill skill)
     {
