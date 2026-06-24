@@ -33,6 +33,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Service.Get<SortManager>()?.StartTimer();
+
         if (canvasGroup != null)
         {
             canvasGroup.blocksRaycasts = false;
