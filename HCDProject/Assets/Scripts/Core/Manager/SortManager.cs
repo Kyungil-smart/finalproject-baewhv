@@ -697,11 +697,25 @@ public class SortManager : BaseManager<SortManager>
 
         foreach (var block in railABlocks)
         {
-            if (block != null) block.enabled = enableInteraction;
+            if (block == null) continue;
+
+            if (isLock && block.IsGrab)
+            {
+                block.ReturnToRail();
+            }
+
+            block.enabled = enableInteraction;
         }
         foreach (var block in railBBlocks)
         {
-            if (block != null) block.enabled = enableInteraction;
+            if (block == null) continue;
+
+            if (isLock && block.IsGrab)
+            {
+                block.ReturnToRail();
+            }
+
+            block.enabled = enableInteraction;
         }
     }
 

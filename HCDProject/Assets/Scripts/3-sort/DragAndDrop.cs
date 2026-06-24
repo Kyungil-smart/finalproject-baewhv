@@ -12,6 +12,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private Vector2 originalAnchoredPosition;
     private float originalLocalZ;
 
+    public bool IsGrab { get; private set; } = false;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -34,6 +36,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnBeginDrag(PointerEventData eventData)
     {
         Service.Get<SortManager>()?.StartTimer();
+        IsGrab = true;
 
         if (canvasGroup != null)
         {
@@ -62,6 +65,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        IsGrab = false;
+
         if (canvasGroup != null)
         {
             canvasGroup.blocksRaycasts = true;
@@ -69,8 +74,14 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
         if (transform.parent == originalParent)
         {
-            rectTransform.anchoredPosition = originalAnchoredPosition;
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, originalLocalZ);
+            ReturnToRail();
         }
+    }
+
+    public void ReturnToRail()
+    {
+        IsGrab = false;
+        rectTransform.anchoredPosition = originalAnchoredPosition;
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, originalLocalZ);
     }
 }
