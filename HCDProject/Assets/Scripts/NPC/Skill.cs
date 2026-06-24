@@ -123,5 +123,6 @@ public enum ESkillAbilityType
     ATTACK_BASE = 15,
     BASE_SKILL_WARIOR = 16,
     MAX_HP_P = 17,
-    BASE_SKILL_WIZARD = 18
+    BASE_SKILL_WIZARD = 18,
+    SKILL_DAMAGE_P = 19
 }
