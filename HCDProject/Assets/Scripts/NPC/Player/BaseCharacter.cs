@@ -300,7 +300,7 @@ public class BaseCharacter : BaseController
                 {
                     int skillDamage = (int)(_stats._attackPower * BaseSkill.skills[1].SKILL_AB_02);
                     float earthquakeBonus = Service.Get<RelicManager>()?
-                    .GetTotalRelicBonus("WIZARD", "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
+                    .GetTotalRelicBonus("WIZARD", "EARTHQUAKE_DAMAGE_P") ?? 0f;
                     FireEarthquake(Mathf.CeilToInt(skillDamage * earthquakeBonus / 100f));
                 }
                 break;
@@ -311,6 +311,8 @@ public class BaseCharacter : BaseController
                 break;
         }
         _activeSkillCoolCount = 0;
+
+        GetComponent<PlayerRelics>()?.TryShield();
     }
 
     public void FireRainOfArrows(Vector2 center, int damage) // 궁수 화살비 데미지호출
@@ -340,39 +342,6 @@ public class BaseCharacter : BaseController
             }
         }
     }
-
-    /*public void TryDotFieldSkill() // 마법사 액티브호출
-    {
-        if (_activeSkillCoolCount >= ActiveSkillCoolTime)
-        {
-            if (GetCurrentTarget == null) return;
-
-            Vector2 fieldCenter = GetCurrentTarget.GetTargetObject.transform.position;
-
-            StartCoroutine(DotFieldCoroutine(fieldCenter, (int)CalculateDamage(1)));
-            _activeSkillCoolCount = 0;
-        }
-    }
-
-    private IEnumerator DotFieldCoroutine(Vector2 fieldCenter, int damage) // 장판 도트딜
-    {
-        float elapsed = 0f;
-
-        while (elapsed < 5f)
-        {
-            int count = Physics2D.OverlapCircle(fieldCenter, skills[1].SKILL_RANGE_X, EnemyFilter, Colliders);
-            for (int i = 0; i < count; i++)
-            {
-                if (Colliders[i].TryGetComponent(out ITargetable target))
-                {
-                    target.SetDamage(damage);
-                }
-            }
-            Debug.Log($"[마법사 장판] {elapsed}초 틱 → {count}명 적중");
-            yield return YieldContainer.WaitForSeconds(1f);
-            elapsed += 1f;
-        }
-    }*/
     public ITargetable FindTarget(int index)
     {
         if (_isSpawning) return null;
