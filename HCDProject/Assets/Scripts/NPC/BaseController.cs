@@ -6,6 +6,8 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 {
     [SerializeField] protected CharacterStats _stats;
 
+    public bool isInvincible = false; // 무적 판별변수
+
     public CharacterStats Stats
     {
         get => _stats;
@@ -90,6 +92,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public void SetDamage(int damage)
     {
+        if (isInvincible) return;
         int def = Mathf.Max(damage - _stats._defense, 0);
         
         CurrentHp.Value -= def;
