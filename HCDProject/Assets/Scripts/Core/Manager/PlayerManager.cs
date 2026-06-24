@@ -238,6 +238,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         };
         for (int i = 0; i < _characters.Length; i++)
         {
+            _characters[i].GetComponent<PlayerRelics>()?.Init(jobTypes[i]);
             foreach (string effectType in effectTypes)
             {
                 float jobBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobTypes[i], effectType) ?? 0f;
@@ -316,7 +317,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             }
 
             float earthquakeBonus = Service.Get<RelicManager>()?
-                .GetTotalRelicBonus(jobTypes[i], "SKILL_UPGRADE_DAMAGE_P") ?? 0f;
+                .GetTotalRelicBonus(jobTypes[i], "EARTHQUAKE_DAMAGE_P") ?? 0f;
             Debug.Log($"[지진 체크] i={i} / job={jobTypes[i]} / earthquakeBonus={earthquakeBonus}");
             if (earthquakeBonus > 0 && jobTypes[i] == "WIZARD") // 지진마법 적용
             {
@@ -341,11 +342,11 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             float skillCdValue = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobtype, "SKILL_CD") ?? 0F;
             yield return YieldContainer.WaitForSeconds(skillCdValue);
             if (character._isDead || character.GetCurrentTarget == null) continue;
-            Debug.Log($"[화살비] {character.gameObject.name} 발동! / " +
+            /*Debug.Log($"[화살비] {character.gameObject.name} 발동! / " +
           $"타겟: {character.GetCurrentTarget.GetTargetObject.name} / " +
-          $"DAMAGE_P: {jobBonus} / SKILL_CD: {skillCdValue}");
+          $"DAMAGE_P: {jobBonus} / SKILL_CD: {skillCdValue}");*/
             character.FireRainOfArrows(character.GetCurrentTarget.GetTargetObject.transform.position,
-                Mathf.CeilToInt(character.Stats._attackPower * character.BaseSkill.skills[2].SKILL_ABILLITY 
+                Mathf.CeilToInt(character.Stats._attackPower * character.BaseSkill.skills[2].SKILL_AB_01
                 * (jobBonus / 100f)));
         }
     }
