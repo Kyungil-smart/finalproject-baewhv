@@ -25,7 +25,7 @@ public class PlayerRelics : MonoBehaviour
 
         if(Random.value < rate)
         {
-            target.SetDamage((int)(_character.Stats._attackPower * skill.SKILL_AB_01));
+            target.SetDamage((int)(_character.Stats._attackPower * skill.SKILL_AB_01), skill);
         }
     }
     public void TryShield() // 보호막 마법

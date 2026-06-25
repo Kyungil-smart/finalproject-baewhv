@@ -10,7 +10,7 @@ public interface ITargetable
 
     public bool IsAlive();
 
-    public void SetDamage(int damage);
+    public void SetDamage(int damage, Skill skill);
     public void SetHeal(int heal);
     public void SetBuff(float buff);
     
