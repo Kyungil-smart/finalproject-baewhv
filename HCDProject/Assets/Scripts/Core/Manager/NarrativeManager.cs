@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -15,9 +16,26 @@ public class NarrativeManager : BaseManager<NarrativeManager>
     protected override void Awake()
     {
         base.Awake();
-        if (!IsManagerDestroy && !ui)
+        if (IsManagerDestroy) return;
+        SetNarrativeUI();
+    }
+
+    private void OnEnable()
+    {
+        Service.Get<SceneController>().OnLoadingComplete += SetNarrativeUI;
+    }
+
+    private void OnDisable()
+    {
+        Service.Get<SceneController>().OnLoadingComplete -= SetNarrativeUI;
+    }
+
+
+    private void SetNarrativeUI()
+    {
+        if (!ui)
         {
-            ui = Instantiate(uiObj, transform).GetComponent<NarrativeUIController>();
+            ui = Instantiate(uiObj).GetComponent<NarrativeUIController>();
             ui.GameObject().SetActive(false);
         }
     }
@@ -38,7 +56,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
         ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
 
         ui.GameObject().SetActive(true);
-        ui.SetRegion(data);
+        ui.InitData(data);
         ui.SetNarrative(storyData[currentIndex]);
     }
 
@@ -50,7 +68,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 
     public StoryLocalizingRawData GetNextNarrative()
     {
-        if (currentIndex+1 >= storyData.Count) return null;
+        if (currentIndex + 1 >= storyData.Count) return null;
         return storyData[++currentIndex];
     }
 }
