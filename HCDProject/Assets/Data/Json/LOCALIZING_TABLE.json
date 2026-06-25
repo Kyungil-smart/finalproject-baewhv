@@ -1082,15 +1082,15 @@
     },
     {
       "TEXT_ID": "OBJ_001",
-      "Korean": "오브젝트",
-      "English": "Sword",
+      "Korean": "공격",
+      "English": "Attack",
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_002",
-      "Korean": "",
+      "Korean": "방어",
       "English": "Shield",
       "Thai": "",
       "Vietnamese": "",
@@ -1098,15 +1098,15 @@
     },
     {
       "TEXT_ID": "OBJ_003",
-      "Korean": "",
-      "English": "Bow",
+      "Korean": "공격 속도",
+      "English": "Attack Speed",
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
     },
     {
       "TEXT_ID": "OBJ_004",
-      "Korean": "",
+      "Korean": "체력",
       "English": "Heart",
       "Thai": "",
       "Vietnamese": "",
