@@ -50,7 +50,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 
     public StoryLocalizingRawData GetNextNarrative()
     {
-        if (currentIndex >= storyData.Count) return null;
+        if (currentIndex+1 >= storyData.Count) return null;
         return storyData[++currentIndex];
     }
 }
