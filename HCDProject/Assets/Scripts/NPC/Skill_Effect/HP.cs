@@ -28,7 +28,7 @@ public class HP : BaseEffect
         }
         else if (skill.SKILL_AT == ETargetType.ENEMY)
         {
-            target.SetDamage((int)skill.SKILL_AB_01 * -1);
+            target.SetDamage((int)skill.SKILL_AB_01 * -1, skill);
         }
     }
 }

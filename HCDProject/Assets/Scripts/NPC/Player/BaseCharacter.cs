@@ -316,7 +316,7 @@ public class BaseCharacter : BaseController
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
-                target.SetDamage(damage);
+                target.SetDamage(damage, BaseSkill.skills[2]);
                 Debug.Log($"[화살비 적중] {target.GetTargetObject.name}");
             }
         }
@@ -330,7 +330,7 @@ public class BaseCharacter : BaseController
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
-                target.SetDamage(damage);
+                target.SetDamage(damage, BaseSkill.skills[2]);
                 Debug.Log($"[지진 적중] {target.GetTargetObject.name}");
             }
         }

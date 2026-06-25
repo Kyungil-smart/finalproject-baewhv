@@ -17,6 +17,10 @@ public class BaseSkill : MonoBehaviour
     public bool isDurationActive;
     private float _durateTimer;
 
+    public bool isNormalImmunity = false;
+    public bool isIgnoreDef = false;
+    public bool isReduction = false;
+
     private CharacterStats _originStats;
 
     #region skillList
@@ -30,6 +34,8 @@ public class BaseSkill : MonoBehaviour
     private CC _cc;
     private ATK _atk;
     private DAMAGE_TARGET_MAX_HP_P _damageTargetMaxHpP;
+    private INVISIBILITY _invisibility;
+    private ATK_MULT _atkMult;
     
     #endregion
     
@@ -53,7 +59,8 @@ public class BaseSkill : MonoBehaviour
         _atk = new ATK(this);
         _cc = new CC(this);
         _damageTargetMaxHpP = new DAMAGE_TARGET_MAX_HP_P(this);
-
+        _invisibility = new INVISIBILITY(this);
+        _atkMult = new ATK_MULT(this);
 
         #endregion
     }
@@ -165,6 +172,12 @@ public class BaseSkill : MonoBehaviour
             case ESkillAbilityType.DAMAGE_TARGET_MAX_HP_P:
                 _effects.Add(type, _damageTargetMaxHpP);
                 break;
+            case ESkillAbilityType.INVISIBILITY:
+                _effects.Add(type, _invisibility);
+                break;
+            case ESkillAbilityType.ATK_MULT:
+                _effects.Add(type, _atkMult);
+                break;
         }
     }
     
@@ -172,10 +185,20 @@ public class BaseSkill : MonoBehaviour
     {
         // 1. 필터 설정
         ContactFilter2D filter = new ContactFilter2D();
+        
         if (skill.SKILL_AT == ETargetType.ENEMY)
             filter = _controller.EnemyFilter;
         else if (skill.SKILL_AT == ETargetType.ALLY)
             filter = _controller.AllyFilter;
+
+        if (skill.SKILL_ABT_01 == ESkillAbilityType.ATK_MULT)
+        {
+            Vector2 point = new Vector2(user.gameObject.transform.position.x, -skill.SKILL_RANGE_Y);
+
+            count = Physics2D.OverlapBox(point, new Vector2(skill.SKILL_RANGE_X, skill.SKILL_RANGE_Y), 0f, filter, Colliders);
+
+            return;
+        }
 
         if (skill.SKILL_RANGE_TYPE == ERangeType.CIRCLE)
         {
@@ -233,7 +256,7 @@ public class BaseSkill : MonoBehaviour
             {
                 if (Colliders[i].TryGetComponent(out ITargetable target))
                 {
-                    target.SetDamage(damage);
+                    target.SetDamage(damage, skill);
                 }
             }
 
@@ -256,11 +279,13 @@ public class BaseSkill : MonoBehaviour
             case "6054":
                 StartCoroutine(SetCcCor(target, skill));
                 break;
+            case "6057":
+                StartCoroutine(InvisibleCor(target, skill));
+                break;
             case "6503":
                 StartCoroutine(ArcherActiveCor(target, skill, value));
                 break;
         }
-        
     }
 
     #region CoroutineSkill
@@ -276,7 +301,7 @@ public class BaseSkill : MonoBehaviour
         
         while (_durateTimer <= skill.SKILL_DURATION)
         {
-            target.SetDamage((int)value + stat._defense);
+            target.SetDamage((int)value + stat._defense, skill);
             
             yield return new WaitForSeconds(1f);
         }
@@ -322,6 +347,19 @@ public class BaseSkill : MonoBehaviour
         player.isCC = false;
         isDurationActive = false;
         stat._moveSpeed = _originStats._moveSpeed;
+    }
+    private IEnumerator InvisibleCor(ITargetable target, Skill skill)
+    {
+        target.GetTargetObject.TryGetComponent(out BaseController targetObject);
+
+        var targetSprite = target.GetTargetObject.GetComponentInChildren<SpriteRenderer>().color;
+        targetSprite.a = 0.5f;
+        // targetObject.isInvincible = true;
+        
+        yield return new WaitForSeconds(skill.SKILL_DURATION);
+
+        targetSprite.a = 1f;
+        // targetObject.isInvincible = false;
     }
     private IEnumerator ArcherActiveCor(ITargetable target, Skill skill, float value)
     {
