@@ -87,7 +87,7 @@
       "LEVEL_REWARD_TYPE_01": "ATK",
       "LEVEL_REWARD_01": 14,
       "LEVEL_REWARD_TYPE_02": "ATK_SPEED",
-      "LEVEL_REWARD_02": -2,
+      "LEVEL_REWARD_02": -0.4,
       "LEVEL_REWARD_ICON": ""
     },
     {

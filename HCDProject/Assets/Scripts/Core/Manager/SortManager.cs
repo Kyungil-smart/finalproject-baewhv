@@ -42,10 +42,16 @@ public class SortManager : BaseManager<SortManager>
     private bool isAnimating = false;
     public bool IsAnimating => isAnimating;
 
+    private bool isTimeStart = false;
+
+    private float realDeltaTime => Time.unscaledDeltaTime;
+
     protected override void Awake()
     {
         base.Awake();
         isEndSort.Value = false;
+
+        Input.multiTouchEnabled = false;
     }
 
     private void Start()
@@ -69,9 +75,9 @@ public class SortManager : BaseManager<SortManager>
     }
     private void Update()
     {
-        if (!isEndSort.Value && RemainingSorts.Value > 0)
+        if (isTimeStart && !isEndSort.Value && RemainingSorts.Value > 0)
         {
-            RemainingSorts.Value -= Time.deltaTime;
+            RemainingSorts.Value -= realDeltaTime;
 
             if (RemainingSorts.Value <= 0)
             {
@@ -82,6 +88,15 @@ public class SortManager : BaseManager<SortManager>
     }
 
     #region [Sort]
+    public void StartTimer()
+    {
+        if (!isTimeStart)
+        {
+            isTimeStart = true;
+            Debug.Log("SORT 시작");
+        }
+    }
+
     // UI 슬롯 연결
     public void AutoSetupUISlots()
     {
@@ -93,7 +108,16 @@ public class SortManager : BaseManager<SortManager>
     public void AddCombo(int amount)
     {
         CurrentCombo.Value += amount;
-        RemainingSorts.Value += 1.5f;
+        if (CurrentCombo.Value >= 6)
+        {
+            RemainingSorts.Value += 1.5f;
+            Debug.Log($"{CurrentCombo.Value}콤보 +1.5초");
+        }
+        else
+        {
+            RemainingSorts.Value += 1.0f;
+            Debug.Log($"{CurrentCombo.Value}콤보 +1.0초");
+        }
     }
 
     // 블록 드랍 -> 슬롯 안착
@@ -108,6 +132,12 @@ public class SortManager : BaseManager<SortManager>
 
         if (RemainingSorts.Value <= 0)
         {
+            return;
+        }
+
+        if (isAnimating)
+        {
+            draggedobject.ReturnToRail();
             return;
         }
 
@@ -177,21 +207,25 @@ public class SortManager : BaseManager<SortManager>
     {
         var index = Array.IndexOf(characterSlots, slot);
 
-        float BuffValue = 0f;
-
         BuffsBox.Add(new SortBuffData
         {
             index = index,
             objType = buffName,
             BuffValue = 0f
         });
+
+        Debug.Log($"{index}번 | {buffName} (현재 총 누적: {BuffsBox.Count}개)");
     }
 
     // 정렬 시작
     public void OnStartSort()
     {
+        Time.timeScale = 0f;
+
         isEndSort.Value = false;
         CurrentCombo.Value = 0;
+
+        isTimeStart = false;
 
         if (characterSlots != null)
         {
@@ -260,6 +294,8 @@ public class SortManager : BaseManager<SortManager>
         isEndSort.Value = true;
         PlayerInputLock(true);
 
+        Time.timeScale = 1f;
+
         int finalCombo = CurrentCombo.Value;
         Debug.Log($"최종 콤보: {finalCombo}회");
 
@@ -321,12 +357,20 @@ public class SortManager : BaseManager<SortManager>
         {
             foreach (var data in finalCalculatedBuffs)
             {
-                int ceiledBuffValue = Mathf.CeilToInt(data.BuffValue);
+                if (data.objType == "OBJ_AS")
+                {
+                    Debug.Log($"index:{data.index} | {data.objType} | {data.BuffValue}");
+                    playerManager.ApplyBuff(data.index, data.objType, data.BuffValue);
+                }
+                else
+                {
+                    int ceiledBuffValue = Mathf.CeilToInt(data.BuffValue);
 
-                Debug.Log($"[최종 버프 전송] index:{data.index} | {data.objType} | {data.BuffValue} -> int:{ceiledBuffValue}");
-                playerManager.ApplyBuff(data.index, data.objType, data.BuffValue);
+                    Debug.Log($"index:{data.index} | {data.objType} | {data.BuffValue} -> int:{ceiledBuffValue}");
+                    playerManager.ApplyBuff(data.index, data.objType, ceiledBuffValue);
+                }
             }
-            Debug.Log($"전송 완료");
+            Debug.Log("전송 완료");
         }
 
     }
@@ -595,7 +639,7 @@ public class SortManager : BaseManager<SortManager>
                     }
                 }
 
-                Sequence comboSeq = DOTween.Sequence();
+                Sequence comboSeq = DOTween.Sequence().SetUpdate(true);
 
                 comboSeq.Join(b1.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack));
                 comboSeq.Join(b1.GetComponent<Image>().DOFade(0f, 0.2f));
@@ -631,7 +675,7 @@ public class SortManager : BaseManager<SortManager>
         isAnimating = true;
         PlayerInputLock(true);
 
-        Sequence moveSeq = DOTween.Sequence();
+        Sequence moveSeq = DOTween.Sequence().SetUpdate(true);
 
         for (int i = 0; i < railABlocks.Count; i++)
         {
@@ -674,11 +718,44 @@ public class SortManager : BaseManager<SortManager>
 
         foreach (var block in railABlocks)
         {
-            if (block != null) block.enabled = enableInteraction;
+            if (block == null) continue;
+
+            if (isLock && RemainingSorts.Value <= 0 && block.IsGrab)
+            {
+                block.ReturnToRail();
+                block.enabled = false;
+                continue;
+            }
+
+            if (isLock && block.IsGrab)
+            {
+                block.enabled = true;
+            }
+            else
+            {
+                block.enabled = enableInteraction;
+            }
         }
+
         foreach (var block in railBBlocks)
         {
-            if (block != null) block.enabled = enableInteraction;
+            if (block == null) continue;
+
+            if (isLock && RemainingSorts.Value <= 0 && block.IsGrab)
+            {
+                block.ReturnToRail();
+                block.enabled = false;
+                continue;
+            }
+
+            if (isLock && block.IsGrab)
+            {
+                block.enabled = true;
+            }
+            else
+            {
+                block.enabled = enableInteraction;
+            }
         }
     }
 

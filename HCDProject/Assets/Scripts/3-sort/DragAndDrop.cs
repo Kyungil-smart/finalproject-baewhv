@@ -12,10 +12,15 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private Vector2 originalAnchoredPosition;
     private float originalLocalZ;
 
+    private Transform canvasTransform;
+    public bool IsGrab { get; private set; } = false;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
+
+        if (canvas != null) canvasTransform = canvas.transform;
 
         canvasGroup = GetComponent<CanvasGroup>();
         if (canvasGroup == null)
@@ -33,11 +38,20 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Service.Get<SortManager>()?.StartTimer();
+        IsGrab = true;
+
+        Service.Get<SortManager>()?.PlayerInputLock(true);
+
         if (canvasGroup != null)
         {
             canvasGroup.blocksRaycasts = false;
         }
 
+        if (canvasTransform != null)
+        {
+            transform.SetParent(canvasTransform);
+        }
         transform.SetAsLastSibling();
     }
 
@@ -60,15 +74,35 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        IsGrab = false;
+
         if (canvasGroup != null)
         {
             canvasGroup.blocksRaycasts = true;
         }
 
-        if (transform.parent == originalParent)
+        var sortManager = Service.Get<SortManager>();
+        if (sortManager != null && sortManager.RemainingSorts.Value > 0)
         {
-            rectTransform.anchoredPosition = originalAnchoredPosition;
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, originalLocalZ);
+            sortManager.PlayerInputLock(false);
         }
+
+        if (transform.parent == canvasTransform || transform.parent == originalParent)
+        {
+            ReturnToRail();
+        }
+    }
+
+    public void ReturnToRail()
+    {
+        IsGrab = false;
+
+        if (originalParent != null)
+        {
+            transform.SetParent(originalParent);
+        }
+
+        rectTransform.anchoredPosition = originalAnchoredPosition;
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, originalLocalZ);
     }
 }

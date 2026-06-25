@@ -37,6 +37,7 @@ public partial class PlayerManager
             level.AddListener(Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetLevelText);
             exp.AddValuesListener(Service.Get<UIManager>().GetUI<IngameBottomUIController>().SetExp);
             exp.Invoke();
+            level.Invoke();
         }
 
         exp.AddListener(CheckLevelUp);

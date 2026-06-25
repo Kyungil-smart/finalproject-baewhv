@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8230121561236651956}
   - component: {fileID: 4310512092811849079}
   - component: {fileID: 3289921994600883329}
+  - component: {fileID: 3594632525199063414}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -61,31 +62,10 @@ MonoBehaviour:
     _critDamage: 0
     _attackRange: 1
     _chaseRange: 4
+  isInvincible: 0
   CurrentHp:
     _data: 0
     _maxValue: 0
-  skills:
-  - SKILL_ABILLITY: 0
-    SKILL_ID: 
-    SKILL_NAME: 
-    ATK_TYPE: 0
-    SKILL_TYPE: 0
-    SKILL_AT: 0
-    SKILL_IS: 0
-    SKILL_RANGE_X: 0
-    SKILL_RANGE_Y: 0
-    SKILL_TIME: 0
-    SKILL_DURATION: 0
-    SKILL_ABT_01: 0
-    SKILL_ABT_02: 0
-    SKILL_AB_01: 0
-    SKILL_AB_02: 0
-    SKILL_DT: 0
-    SKILL_SFX: 
-    SKILL_FX: 
-    SKILL_HIT_SFX: 
-    SKILL_HIT_FX: 
-    SKILL_ICON: 
   Colliders: []
   EnemyFilter:
     useTriggers: 0
@@ -120,6 +100,7 @@ MonoBehaviour:
   _hpBar: {fileID: 719768421303187962}
   _isDead: 0
   _reviveTime: 3
+  isCC: 0
   <CurrentState>k__BackingField:
     _data: 0
 --- !u!114 &1694128193336104729
@@ -234,7 +215,20 @@ MonoBehaviour:
   skills: []
   Colliders: []
   count: 0
+  attackHitCount: 1
   isDurationActive: 0
+--- !u!114 &3594632525199063414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672613106973507048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49eb4ff64fe7634ca6e54d6e2ddb2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRelics
 --- !u!1 &2146874695588745659
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics.Geometry;
@@ -111,9 +111,9 @@ public class BaseMonster : BaseController
 
     protected virtual void Update()
     {
-        State?.Update();
-
         ResetTarget();
+
+        State?.Update();
     }
 
     private void ChangeState(EStateType state)
