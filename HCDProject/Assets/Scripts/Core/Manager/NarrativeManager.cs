@@ -15,34 +15,28 @@ public class NarrativeManager : BaseManager<NarrativeManager>
     protected override void Awake()
     {
         base.Awake();
-        if (gameObject && !ui)
+        if (!IsManagerDestroy && !ui)
         {
             ui = Instantiate(uiObj, transform).GetComponent<NarrativeUIController>();
             ui.GameObject().SetActive(false);
         }
-        else
-        {
-            Debug.Log("중복");
-        }
     }
 
-    private void Start()
+    public void StartNarrative(StoryStageRawData data, bool isBefore)
     {
-        //StartCoroutine(TempSkip());
-        if (Service.Get<GameManager>() is GameManager gm)
-        {
-            currentStage = gm.CurrentStage;
-            currentChapter = gm.CurrentChapter;
-        }
+        ui.GameObject().SetActive(false);
+        currentStage = data.STAGE;
+        currentStage = data.CHAPTER;
 
-        data = Service.Get<DataManager>().StoryLocalizingTable.data
-            .FindAll(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
-        var sstData = Service.Get<DataManager>().StoryStageTable.data
-            .Find(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
+        var localData = Service.Get<DataManager>().StoryLocalizingTable.data
+            .FindAll(x =>
+                x.STAGE == currentStage &&
+                x.CHAPTER == currentChapter &&
+                x.STAGE_DIALOGUE_EVENT_TYPE == (isBefore ? "BEFORE_STAGE" : "AFTER_STAGE"));
         ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
-        
-        ui.SetRegion(currentChapter, currentStage, sstData.STAGE_NAME_ID);
-        ui.SetNarrative(data[currentIndex]);
+
+        ui.SetRegion(data);
+        ui.SetNarrative(localData[currentIndex]);
     }
 
     public void EndNarrative()
