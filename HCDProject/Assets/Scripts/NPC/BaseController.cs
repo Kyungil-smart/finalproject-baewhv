@@ -63,7 +63,10 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         CurrentHp.Value = _stats._maxHp;
     }
 
-    public abstract void UseSkill(int index);
+    public virtual void UseSkill(int index)
+    {
+        
+    }
 
     public virtual int UseCritDamage(int baseDamage) // 플레이어 크리티컬 적용
     {
@@ -96,6 +99,11 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         if (BaseSkill.isNormalImmunity && (skill.SKILL_ID == "6500" || skill.SKILL_ID == "6502")) return;
         
         int def = Mathf.Max(damage - _stats._defense, 0);
+        
+        if (BaseSkill.isReduction)
+        {
+            def -= (int)(def * (skill.SKILL_AB_01 / 100f));
+        }
         
         CurrentHp.Value -= def;
 
