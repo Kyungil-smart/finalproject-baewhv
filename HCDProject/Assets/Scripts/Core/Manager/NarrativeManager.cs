@@ -7,7 +7,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 {
     [SerializeField] private GameObject uiObj;
     private NarrativeUIController ui;
-    private List<StoryLocalizingRawData> data;
+    private List<StoryLocalizingRawData> storyData = new List<StoryLocalizingRawData>();
     private int currentChapter = -1;
     private int currentStage = -1;
     private int currentIndex = 0;
@@ -26,27 +26,31 @@ public class NarrativeManager : BaseManager<NarrativeManager>
     {
         ui.GameObject().SetActive(false);
         currentStage = data.STAGE;
-        currentStage = data.CHAPTER;
+        currentChapter = data.CHAPTER;
+        currentIndex = 0;
 
-        var localData = Service.Get<DataManager>().StoryLocalizingTable.data
+        storyData = Service.Get<DataManager>().StoryLocalizingTable.data
             .FindAll(x =>
                 x.STAGE == currentStage &&
                 x.CHAPTER == currentChapter &&
                 x.STAGE_DIALOGUE_EVENT_TYPE == (isBefore ? "BEFORE_STAGE" : "AFTER_STAGE"));
+        Debug.Log($"NarrativeManager: StartNarrative {storyData.Count}");
         ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
 
+        ui.GameObject().SetActive(true);
         ui.SetRegion(data);
-        ui.SetNarrative(localData[currentIndex]);
+        ui.SetNarrative(storyData[currentIndex]);
     }
 
     public void EndNarrative()
     {
+        ui.GameObject().SetActive(false);
         Service.Get<GameManager>()?.NarrativeEnd();
     }
 
     public StoryLocalizingRawData GetNextNarrative()
     {
-        if (currentIndex >= data.Count) return null;
-        return data[++currentIndex];
+        if (currentIndex+1 >= storyData.Count) return null;
+        return storyData[++currentIndex];
     }
 }
