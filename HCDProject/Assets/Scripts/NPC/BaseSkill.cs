@@ -254,7 +254,7 @@ public class BaseSkill : MonoBehaviour
             {
                 if (Colliders[i].TryGetComponent(out ITargetable target))
                 {
-                    target.SetDamage(damage);
+                    target.SetDamage(damage, skill);
                 }
             }
 
@@ -299,7 +299,7 @@ public class BaseSkill : MonoBehaviour
         
         while (_durateTimer <= skill.SKILL_DURATION)
         {
-            target.SetDamage((int)value + stat._defense);
+            target.SetDamage((int)value + stat._defense, skill);
             
             yield return new WaitForSeconds(1f);
         }

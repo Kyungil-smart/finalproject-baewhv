@@ -11,7 +11,7 @@ public class ATTACK_BASE : BaseEffect
     {
         for (int i = 0; i < BaseSkill.attackHitCount; i++)
         {
-            target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01));
+            target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01), skill);
         }
     }
 }
