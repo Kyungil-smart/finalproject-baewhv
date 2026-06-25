@@ -85,6 +85,8 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         }
 
         isSortMode.Value = false;
+        Service.Get<TimeManager>().LoadTimeScale();
+        
     }
 
     public void SetSortPhase()
@@ -103,6 +105,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
         isSortMode.Value = true;
         StartBattleButton.SetSortStart();
+        Service.Get<TimeManager>().SaveTimeScale();
     }
 
     public void SetComboText(int value)
