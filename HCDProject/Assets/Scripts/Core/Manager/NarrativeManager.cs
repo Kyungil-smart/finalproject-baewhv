@@ -27,7 +27,8 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 
     private void OnDisable()
     {
-        Service.Get<SceneController>().OnLoadingComplete -= SetNarrativeUI;
+        if(Service.Get<SceneController>())
+            Service.Get<SceneController>().OnLoadingComplete -= SetNarrativeUI;
     }
 
 
