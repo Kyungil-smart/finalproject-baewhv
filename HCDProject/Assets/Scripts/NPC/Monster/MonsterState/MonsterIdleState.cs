@@ -16,7 +16,7 @@ public class MonsterIdleState : IState
     
     public void Update()
     {
-        if (_controller.BaseSkill.skills[1].SKILL_TIME < 0f)
+        if (_controller.BaseSkill.skills.Count > 1 && _controller.BaseSkill.skills[1].SKILL_TIME < 0f)
         {
             _controller.BaseSkill.UseSkill(1);
         }

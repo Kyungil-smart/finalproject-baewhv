@@ -110,7 +110,7 @@ public class BaseSkill : MonoBehaviour
         else if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE || skills[index].SKILL_TYPE == ESkillType.ALL_TARGET)
         {
             Vector2 center = _controller.GetCurrentTarget.GetTargetObject.transform.position;
-            RangeDetect(skills[index], _controller, _controller.GetCurrentTarget, center);
+            RangeDetect(skills[index], _controller.GetCurrentTarget, center);
             
             if (count <= 0) return;
             
@@ -196,7 +196,7 @@ public class BaseSkill : MonoBehaviour
         }
     }
     
-    public void RangeDetect(Skill skill, BaseController user, ITargetable target, Vector2 center)
+    public void RangeDetect(Skill skill, ITargetable target, Vector2 center)
     {
         // 1. 필터 설정
         ContactFilter2D filter = new ContactFilter2D();
@@ -208,7 +208,7 @@ public class BaseSkill : MonoBehaviour
 
         if (skill.SKILL_ABT_01 == ESkillAbilityType.ATK_MULT)
         {
-            Vector2 point = new Vector2(user.gameObject.transform.position.x, -skill.SKILL_RANGE_Y);
+            Vector2 point = new Vector2(transform.position.x, transform.position.y - skill.SKILL_RANGE_Y);
 
             count = Physics2D.OverlapBox(point, new Vector2(skill.SKILL_RANGE_X, skill.SKILL_RANGE_Y), 0f, filter, Colliders);
 
@@ -224,7 +224,7 @@ public class BaseSkill : MonoBehaviour
         {
 
             if (target == null) return;
-            Vector2 dir = (target.GetTargetObject.transform.position - user.transform.position).normalized;
+            Vector2 dir = (target.GetTargetObject.transform.position - transform.position).normalized;
             Vector2[] directions = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
             Vector2 bestDir = Vector2.right;
             float bestDot = float.MinValue;
@@ -237,13 +237,13 @@ public class BaseSkill : MonoBehaviour
                     bestDot = dot;
                 }
             }
-            Vector2 node = (Vector2)user.transform.position + bestDir * (skill.SKILL_RANGE_X * 0.5f);
+            Vector2 node = (Vector2)transform.position + bestDir * (skill.SKILL_RANGE_X * 0.5f);
             count = Physics2D.OverlapBox(node,
                 new Vector2(skill.SKILL_RANGE_X, skill.SKILL_RANGE_Y), 0f, filter, Colliders);
         }
         else // NONE: 시전자 위치 기준 (몬스터 ALL_TARGET 등)
         {
-            count = Physics2D.OverlapCircle(user.transform.position, skill.SKILL_IS, filter, Colliders);
+            count = Physics2D.OverlapCircle(transform.position, skill.SKILL_IS, filter, Colliders);
         }
     }
     
@@ -266,7 +266,7 @@ public class BaseSkill : MonoBehaviour
 
         while (elapsed < skill.SKILL_DURATION)
         {
-            RangeDetect(skill, _controller, null, center);
+            RangeDetect(skill, null, center);
 
             for (int i = 0; i < count; i++)
             {
