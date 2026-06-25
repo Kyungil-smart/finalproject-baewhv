@@ -46,6 +46,7 @@ public class AttackPlayerState : PlayerBaseState
             /*Debug.Log($"[공격] {_owner.gameObject.name}이(가) " +
           $"{_owner.BaseSkill.skills[_owner.SkillTargetIndex].SKILL_TYPE} / " +
           $"{_owner.BaseSkill.skills[_owner.SkillTargetIndex].SKILL_AT} 발동");*/
+            _owner.Movement.Anim.SetTrigger("Attack");
             _owner.UseSkill(_owner.SkillTargetIndex); // 공격
             _owner.CompleteFirstCombat();
             _owner.AttackTimer = 0;
