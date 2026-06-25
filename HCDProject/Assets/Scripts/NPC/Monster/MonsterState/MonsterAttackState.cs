@@ -33,7 +33,7 @@ public class MonsterAttackState : IState
         }
         
         _timer += Time.deltaTime;
-        _bossSkillTimer += Time.deltaTime;
+        if (_controller.BaseSkill.skills.Count > 1) _bossSkillTimer += Time.deltaTime;
 
         if (_controller.BaseSkill.skills[0].ATK_TYPE == EAtkType.NORMAL)
         {
@@ -54,6 +54,8 @@ public class MonsterAttackState : IState
 
         if (_controller.BaseSkill.skills.Count > 1)
         {
+            if (_controller.BaseSkill.skills[1].SKILL_TIME < 0f) return;
+            
             if (_bossSkillTimer >= _controller.BaseSkill.skills[1].SKILL_TIME)
             {
                 _bossSkillTimer = 0f;

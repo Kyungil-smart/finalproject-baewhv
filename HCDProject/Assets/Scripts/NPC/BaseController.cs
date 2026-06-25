@@ -93,6 +93,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void SetDamage(int damage)
     {
         if (isInvincible) return;
+        
         int def = Mathf.Max(damage - _stats._defense, 0);
         
         CurrentHp.Value -= def;
