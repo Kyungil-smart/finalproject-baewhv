@@ -7,6 +7,7 @@ public class BaseSkill : MonoBehaviour
     private Dictionary<ESkillAbilityType, BaseEffect> _effects = new Dictionary<ESkillAbilityType, BaseEffect>();
 
     private BaseController _controller;
+    private PlayerRelics _playerRelics;
 
     public List<Skill> skills = new List<Skill>();
     public List<Collider2D> Colliders = new List<Collider2D>(10);    
@@ -14,6 +15,9 @@ public class BaseSkill : MonoBehaviour
     public int attackHitCount = 1; // 궁수 3타 카운트
 
     public bool isDurationActive;
+    private float _durateTimer;
+
+    private CharacterStats _originStats;
 
     #region skillList
     
@@ -25,15 +29,18 @@ public class BaseSkill : MonoBehaviour
     private BASE_SKILL_WIZARD _baseSkillWizard;
     private CC _cc;
     private ATK _atk;
+    private DAMAGE_TARGET_MAX_HP_P _damageTargetMaxHpP;
     
     #endregion
     
     private void Awake()
     {
         _controller = GetComponent<BaseController>();
+        _playerRelics = GetComponent<PlayerRelics>();
 
         isDurationActive = false;
         count = 0;
+        _originStats = new CharacterStats();
 
         #region skillListInit
 
@@ -45,8 +52,15 @@ public class BaseSkill : MonoBehaviour
         _baseSkillWizard = new BASE_SKILL_WIZARD(this);
         _atk = new ATK(this);
         _cc = new CC(this);
+        _damageTargetMaxHpP = new DAMAGE_TARGET_MAX_HP_P(this);
+
 
         #endregion
+    }
+
+    private void Update()
+    {
+        if (isDurationActive) _durateTimer += Time.deltaTime;
     }
 
     public void UseSkill(int index)
@@ -71,10 +85,14 @@ public class BaseSkill : MonoBehaviour
             ITargetable originalTarget = _controller.GetCurrentTarget;
             SetTarget(skills[index]);
 
-            _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller,
-                _controller.GetCurrentTarget, skills[index]);
+            _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller, _controller.GetCurrentTarget, skills[index]);
 
             _controller.SetCurrentTarget(originalTarget);
+            if (index == 0 && skills[index].SKILL_AT == ETargetType.ENEMY)
+            {
+                _playerRelics?.TryMagicBow(originalTarget, skills[index]);
+            }
+
         }
         else if (skills[index].SKILL_TYPE == ESkillType.ATTACK_OF_SCOPE || skills[index].SKILL_TYPE == ESkillType.ALL_TARGET)
         {
@@ -88,8 +106,8 @@ public class BaseSkill : MonoBehaviour
                 if (Colliders[i].TryGetComponent(out ITargetable target))
                 {
                     _controller.SetCurrentTarget(target);
-                    _effects[skills[index].SKILL_ABT_01].ApplyEffect(
-                        _controller, _controller.GetCurrentTarget, skills[index]);
+                    
+                    _effects[skills[index].SKILL_ABT_01].ApplyEffect(_controller, _controller.GetCurrentTarget, skills[index]);
                 }
             }
         }
@@ -144,8 +162,12 @@ public class BaseSkill : MonoBehaviour
             case ESkillAbilityType.CC:
                 _effects.Add(type, _cc);
                 break;
+            case ESkillAbilityType.DAMAGE_TARGET_MAX_HP_P:
+                _effects.Add(type, _damageTargetMaxHpP);
+                break;
         }
     }
+    
     public void RangeDetect(Skill skill, BaseController user, ITargetable target, Vector2 center)
     {
         // 1. 필터 설정
@@ -223,71 +245,103 @@ public class BaseSkill : MonoBehaviour
 
     public void StartDuration(ITargetable target, Skill skill, float value)
     {
-        StartCoroutine(DurationCor(target, skill, value));
+        switch (skill.SKILL_ID)
+        {
+            case "6049":
+                StartCoroutine(DotMaxHpCor(target, skill, value));
+                break;
+            case "6053":
+                StartCoroutine(SpeedDebuffCor(target, skill, value));
+                break;
+            case "6054":
+                StartCoroutine(SetCcCor(target, skill));
+                break;
+            case "6503":
+                StartCoroutine(ArcherActiveCor(target, skill, value));
+                break;
+        }
+        
     }
 
-    private IEnumerator DurationCor(ITargetable target, Skill skill, float value)
+    #region CoroutineSkill
+
+    private IEnumerator DotMaxHpCor(ITargetable target, Skill skill, float value)
+    {
+        isDurationActive = true;
+        
+        target.GetTargetObject.TryGetComponent(out BaseController targetObject);
+        if (targetObject == null) yield break;
+
+        var stat = targetObject.Stats;
+        
+        while (_durateTimer <= skill.SKILL_DURATION)
+        {
+            target.SetDamage((int)value + stat._defense);
+            
+            yield return new WaitForSeconds(1f);
+        }
+
+        isDurationActive = false;
+        _durateTimer = 0f;
+    }
+    private IEnumerator SpeedDebuffCor(ITargetable target, Skill skill, float value)
     {
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
 
         var stat = targetObject.Stats;
-        float originAttackSpeed = 0f;
-        float originMoveSpeed = 0f;
         
-        if (skill.SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
-        {
-            originAttackSpeed = stat._attackSpeed;
-            stat._attackSpeed *= (1f - value / 100f);
-            
-            if (skill.SKILL_ID == "6053")
-            {
-                originMoveSpeed = stat._moveSpeed;
-                stat._moveSpeed *= (1f - value / 100f);
-            }
-            else if (skill.SKILL_ID == "6503")
-            {
-                // 궁수 버프(SELF)일 때만 3타 적용
-                attackHitCount = 3;
-            }
-        }
-        else if (skill.SKILL_ABT_01 == ESkillAbilityType.CC)
-        {
-            originMoveSpeed = stat._moveSpeed;
-            
-            targetObject.TryGetComponent(out BaseCharacter player);
-            
-            player.isCC = true;
-            isDurationActive = true;
-            stat._moveSpeed = 0f;
-        }
+        _originStats._attackSpeed = stat._attackSpeed;
+        _originStats._moveSpeed = stat._moveSpeed;
+        
+        stat._attackSpeed *= (1f - value / 100f);
+        stat._moveSpeed *= (1f - value / 100f);
+        
+        yield return new WaitForSeconds(skill.SKILL_DURATION);
+        
+        stat._attackSpeed = _originStats._attackSpeed;
+        stat._moveSpeed = _originStats._moveSpeed;
+    }
+    private IEnumerator SetCcCor(ITargetable target, Skill skill)
+    {
+        target.GetTargetObject.TryGetComponent(out BaseController targetObject);
+        if (targetObject == null) yield break;
+
+        var stat = targetObject.Stats;
+        
+        _originStats._moveSpeed = stat._moveSpeed;
+        
+        targetObject.TryGetComponent(out BaseCharacter player);
+        
+        player.isCC = true;
+        isDurationActive = true;
+        stat._moveSpeed = 0f;
+        
+        yield return new WaitForSeconds(skill.SKILL_DURATION);
+        
+        player.isCC = false;
+        isDurationActive = false;
+        stat._moveSpeed = _originStats._moveSpeed;
+    }
+    private IEnumerator ArcherActiveCor(ITargetable target, Skill skill, float value)
+    {
+        target.GetTargetObject.TryGetComponent(out BaseCharacter targetObject);
+        if (targetObject == null) yield break;
+        
+        var stat = targetObject.Stats;
+
+        _originStats._attackSpeed = stat._attackSpeed;
+        stat._attackSpeed *= (1f - value / 100f);
+        attackHitCount = 3;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
 
-        // 원상복구
-        if (skill.SKILL_ABT_01 == ESkillAbilityType.ATK_SPEED_P)
-        {
-            stat._attackSpeed = originAttackSpeed;
-            
-            if (skill.SKILL_ID == "6053")
-            {
-                stat._moveSpeed = originMoveSpeed;
-            }
-            else if (skill.SKILL_ID == "6503")
-            {
-                attackHitCount = 1;
-            }
-        }
-        else if (skill.SKILL_ABT_01 == ESkillAbilityType.CC)
-        { 
-            targetObject.TryGetComponent(out BaseCharacter player);
-            
-            player.isCC = false;
-            isDurationActive = false;
-            stat._moveSpeed = originMoveSpeed;
-        }
+        stat._attackSpeed = _originStats._attackSpeed;
+        attackHitCount = 1;
     }
-
+    
+    #endregion
+    
     public void OnCC(bool value)
     {
         if (value)

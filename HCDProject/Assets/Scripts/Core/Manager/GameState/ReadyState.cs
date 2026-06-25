@@ -8,11 +8,20 @@ public class ReadyState : IState
     
     public void Enter()
     {
+        var playerManager = Service.Get<PlayerManager>();
+        if (playerManager != null && playerManager.isAllSpawn != null)
+        {
+            playerManager.isAllSpawn.Value = false;
+        }
     }
 
     public void Update()
     {
-        if (Service.Get<PlayerManager>() != null)
+        var playerManager = Service.Get<PlayerManager>();
+        
+        if (playerManager == null || !playerManager.IsPrefabLoaded) return;
+        
+        if (playerManager != null)
         {
             if (Service.Get<PlayerManager>().isAllSpawn.Value) _manager.CurrentState.Value = GameState.Sort;
         }

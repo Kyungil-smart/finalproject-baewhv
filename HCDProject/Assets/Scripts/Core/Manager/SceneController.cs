@@ -54,6 +54,16 @@ public class SceneController : BaseManager<SceneController>
     {
         OnLoading?.Invoke(0f);
         
+        SceneType backupScene = _currentScene;
+        _currentScene = scene;
+
+        if (mode == LoadSceneMode.Additive && backupScene == scene)
+        {
+            yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
+
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
+        
         AsyncOperation async = SceneManager.LoadSceneAsync((int)scene, mode);
 
         if (async != null) async.allowSceneActivation = false;
@@ -61,9 +71,6 @@ public class SceneController : BaseManager<SceneController>
         float loadTime = 0f;
         float needTime = 5f;
         
-        SceneType backupScene = _currentScene;
-        _currentScene = scene;
-
         while (async.progress < 0.9f)/*|| loadTime < needTime*/
         {
             yield return null;
@@ -83,7 +90,7 @@ public class SceneController : BaseManager<SceneController>
 
         while (!async.isDone) yield return null;
 
-        if (mode == LoadSceneMode.Additive) yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
+        if (mode == LoadSceneMode.Additive && backupScene != scene) yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
         
         OnLoadingComplete?.Invoke();
     }

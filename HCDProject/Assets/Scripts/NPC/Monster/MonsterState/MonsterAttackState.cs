@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonsterAttackState : IState
 {
@@ -17,6 +17,13 @@ public class MonsterAttackState : IState
 
     public void Update()
     {
+        if (_controller.GetCurrentTarget == null || !_controller.GetCurrentTarget.IsAlive()) // Null참조 방어
+        {
+            _controller.SetCurrentTarget(null);
+            _controller.CurrentState.Value = EStateType.Idle;
+            return;
+        }
+
         if (Vector3.Distance(_controller.transform.position, _controller.Target) 
               > _controller.BaseSkill.skills[0].SKILL_IS + _controller.GetRadius() + _controller.GetCurrentTarget.GetRadius())
         {

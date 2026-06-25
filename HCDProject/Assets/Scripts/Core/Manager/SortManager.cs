@@ -42,6 +42,8 @@ public class SortManager : BaseManager<SortManager>
     private bool isAnimating = false;
     public bool IsAnimating => isAnimating;
 
+    private bool isTimeStart = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -69,7 +71,7 @@ public class SortManager : BaseManager<SortManager>
     }
     private void Update()
     {
-        if (!isEndSort.Value && RemainingSorts.Value > 0)
+        if (isTimeStart && !isEndSort.Value && RemainingSorts.Value > 0)
         {
             RemainingSorts.Value -= Time.deltaTime;
 
@@ -82,6 +84,15 @@ public class SortManager : BaseManager<SortManager>
     }
 
     #region [Sort]
+    public void StartTimer()
+    {
+        if (!isTimeStart)
+        {
+            isTimeStart = true;
+            Debug.Log("SORT 시작");
+        }
+    }
+
     // UI 슬롯 연결
     public void AutoSetupUISlots()
     {
@@ -185,6 +196,8 @@ public class SortManager : BaseManager<SortManager>
             objType = buffName,
             BuffValue = 0f
         });
+
+        Debug.Log($"{index}번 | {buffName} (현재 총 누적: {BuffsBox.Count}개)");
     }
 
     // 정렬 시작
@@ -192,6 +205,8 @@ public class SortManager : BaseManager<SortManager>
     {
         isEndSort.Value = false;
         CurrentCombo.Value = 0;
+
+        isTimeStart = false;
 
         if (characterSlots != null)
         {
@@ -321,10 +336,18 @@ public class SortManager : BaseManager<SortManager>
         {
             foreach (var data in finalCalculatedBuffs)
             {
-                int ceiledBuffValue = Mathf.CeilToInt(data.BuffValue);
+                if (data.objType == "OBJ_AS")
+                {
+                    Debug.Log("index:{data.index} | {data.objType} | {data.BuffValue}");
+                    playerManager.ApplyBuff(data.index, data.objType, data.BuffValue);
+                }
+                else
+                {
+                    int ceiledBuffValue = Mathf.CeilToInt(data.BuffValue);
 
-                Debug.Log($"[최종 버프 전송] index:{data.index} | {data.objType} | {data.BuffValue} -> int:{ceiledBuffValue}");
-                playerManager.ApplyBuff(data.index, data.objType, data.BuffValue);
+                    Debug.Log("index:{data.index} | {data.objType} | {data.BuffValue} -> int:{ceiledBuffValue}");
+                    playerManager.ApplyBuff(data.index, data.objType, ceiledBuffValue);
+                }
             }
             Debug.Log($"전송 완료");
         }
@@ -674,11 +697,25 @@ public class SortManager : BaseManager<SortManager>
 
         foreach (var block in railABlocks)
         {
-            if (block != null) block.enabled = enableInteraction;
+            if (block == null) continue;
+
+            if (isLock && block.IsGrab)
+            {
+                block.ReturnToRail();
+            }
+
+            block.enabled = enableInteraction;
         }
         foreach (var block in railBBlocks)
         {
-            if (block != null) block.enabled = enableInteraction;
+            if (block == null) continue;
+
+            if (isLock && block.IsGrab)
+            {
+                block.ReturnToRail();
+            }
+
+            block.enabled = enableInteraction;
         }
     }
 
