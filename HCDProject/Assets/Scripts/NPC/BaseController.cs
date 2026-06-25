@@ -93,7 +93,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void SetDamage(int damage, Skill skill)
     {
         if (isInvincible) return;
-        if (BaseSkill.isPassive && (skill.SKILL_ID == "6500" || skill.SKILL_ID == "6502")) return;
+        if (BaseSkill.isNormalImmunity && (skill.SKILL_ID == "6500" || skill.SKILL_ID == "6502")) return;
         
         int def = Mathf.Max(damage - _stats._defense, 0);
         

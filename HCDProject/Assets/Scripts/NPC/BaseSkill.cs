@@ -17,7 +17,9 @@ public class BaseSkill : MonoBehaviour
     public bool isDurationActive;
     private float _durateTimer;
 
-    public bool isPassive = false;
+    public bool isNormalImmunity = false;
+    public bool isIgnoreDef = false;
+    public bool isReduction = false;
 
     private CharacterStats _originStats;
 

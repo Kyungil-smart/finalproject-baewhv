@@ -9,9 +9,21 @@ public class ATTACK_BASE : BaseEffect
     
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        for (int i = 0; i < BaseSkill.attackHitCount; i++)
+        if (BaseSkill.isIgnoreDef)
         {
-            target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01), skill);
+            target.GetTargetObject.TryGetComponent(out BaseController targetObject);
+            if (targetObject == null) return;
+
+            var stat = targetObject.Stats;
+            
+            target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01) + stat._defense, skill);
+        }
+        else
+        {
+            for (int i = 0; i < BaseSkill.attackHitCount; i++)
+            {
+                target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01), skill);
+            }
         }
     }
 }

@@ -9,6 +9,6 @@ public class NORMAL_ATK_IMMUNITY : BaseEffect
 
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        BaseSkill.isPassive = true;
+        BaseSkill.isNormalImmunity = true;
     }
 }
