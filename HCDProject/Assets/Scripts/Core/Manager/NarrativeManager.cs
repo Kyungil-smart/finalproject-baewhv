@@ -1,15 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NarrativeManager : BaseManager<NarrativeManager>
 {
+    [SerializeField] private GameObject uiObj;
     private NarrativeUIController ui;
     private List<StoryLocalizingRawData> data;
     private int currentChapter = -1;
     private int currentStage = -1;
-
     private int currentIndex = 0;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (gameObject && !ui)
+        {
+            ui = Instantiate(uiObj, transform).GetComponent<NarrativeUIController>();
+            ui.GameObject().SetActive(false);
+        }
+        else
+        {
+            Debug.Log("중복");
+        }
+    }
 
     private void Start()
     {
