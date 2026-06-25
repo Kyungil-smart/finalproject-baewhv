@@ -108,11 +108,11 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         switch (data.CATEGORY)
         {
             case "FADEIN":
-                decsTweener = Certain.DOFade(0.0f, 1.0f);
+                decsTweener = Certain.DOFade(0.0f, 1.0f).SetUpdate(true);
                 decsTweener.onComplete += SetEndText;
                 break;
             case "FADEOUT":
-                decsTweener = Certain.DOFade(1.0f, 1.0f);
+                decsTweener = Certain.DOFade(1.0f, 1.0f).SetUpdate(true);
                 decsTweener.onComplete += SetEndText;
                 break;
         }
@@ -121,7 +121,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     private void SetText(string text)
     {
         descTMP.maxVisibleCharacters = 0;
-        decsTweener = DOTween.To(x => descTMP.maxVisibleCharacters = (int)x, 0f, descTMP.text.Length, 1f);
+        decsTweener = DOTween.To(x => descTMP.maxVisibleCharacters = (int)x, 0f, descTMP.text.Length, 1f).SetUpdate(true);
         if (isAuto)
             decsTweener.onComplete += SetAuto;
         decsTweener.onComplete += SetEndText;
@@ -192,7 +192,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
 
     private IEnumerator OnAuto()
     {
-        yield return YieldContainer.WaitForSeconds(2.0f);
+        yield return new WaitForSecondsRealtime(2.0f);
         OnNextButton();
     }
 }
