@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
@@ -13,11 +14,14 @@ public class GameManager : BaseManager<GameManager>
     private StateMachine _state;
     [field:SerializeField] public ObserveValue<GameState> CurrentState { get; private set; }
 
+    private UnityAction _endNarrativeAction;
+
     public ReadyState ReadyState { get; protected set; }
     public SortState SortState { get; protected set; }
     public WaveState WaveState { get; protected set; }
     public ClearState ClearState { get; protected set; }
     public GameOverState GameOverState { get; protected set; }
+    public NarrativeState NarrativeState { get; protected set; }
     #endregion
     
     private int _currentChapter = 1;
@@ -55,6 +59,7 @@ public class GameManager : BaseManager<GameManager>
         WaveState = new(this);
         ClearState = new(this);
         GameOverState = new(this);
+        NarrativeState = new(this);
 
         _currentWallHp = -1;
     }
@@ -84,7 +89,7 @@ public class GameManager : BaseManager<GameManager>
 
             if (Keyboard.current.pKey.wasPressedThisFrame)
             {
-                // Service.Get<MonsterSpawnManager>()?.DebugWaveStart(1,1,1);
+                Service.Get<NarrativeManager>().EndNarrative();
             }
 
             if (Keyboard.current.uKey.wasPressedThisFrame)
@@ -111,6 +116,9 @@ public class GameManager : BaseManager<GameManager>
                 break;
             case GameState.GameOver:
                 _state.ChangeState(GameOverState);
+                break;
+            case GameState.Narrative:
+                _state.ChangeState(NarrativeState);
                 break;
         }
     }
@@ -146,18 +154,7 @@ public class GameManager : BaseManager<GameManager>
 
     public void NarrativeEnd()
     {
-        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
-
-        if (stageStoryData == null) return;
-        
-        var type = CheckStageType(stageStoryData);
-
-        if (type == StageType.Event || type == StageType.Maintenance)
-        {
-            Service.Get<SceneController>()?.ChangeScene(SceneType.StageSelect);
-            Service.Get<UIManager>()?.GetUI<StageSelectUIController>()?.ShowReward(type);
-        }
-        else NextStageScene(null, type);
+        _endNarrativeAction?.Invoke();
     }
 
     private StageType CheckStageType(StoryStageRawData data)
@@ -277,29 +274,72 @@ public class GameManager : BaseManager<GameManager>
         
         Service.Get<TimeManager>()?.ResetTimeScale();
         
+        
+        switch (type) 
+        {
+            case StageType.Tutorial:
+                Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
+                break;
+            case StageType.Normal:
+                Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                break;
+            case StageType.Event:
+                CheckAndStartNarrative(stageStoryData, true);
+                break;
+            case StageType.Maintenance:
+                CheckAndStartNarrative(stageStoryData, true);
+                break;
+            case StageType.Boss:
+                Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
+                break;
+        }
+    }
+
+    public void StartNarrative()
+    {
+        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+        CheckAndStartNarrative(stageStoryData, true);
+    }
+
+    private void CheckAndStartNarrative(StoryStageRawData stageStoryData, bool isBefore, UnityAction action)
+    {
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
-            Service.Get<SceneController>()?.ChangeScene(SceneType.Narrative);
+            CurrentState.Value = GameState.Narrative;
+
+            _endNarrativeAction = action;
+            
+            Service.Get<NarrativeManager>()?.StartNarrative(stageStoryData, isBefore);
+        }
+        else NarrativeEnd();
+    }
+
+    public void NarrativeEnd(bool isBefore)
+    {
+        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+        var type = stageStoryData != null ? CheckStageType(stageStoryData) : StageType.Normal;
+
+        if (isBefore)
+        {
+            if (type == StageType.Event || type == StageType.Maintenance)
+            {
+                Service.Get<UIManager>()?.GetUI<StageSelectUIController>()?.ShowReward(type);
+            }
+            else CurrentState.Value = GameState.Sort;
         }
         else
         {
-            switch (type)
+            if (type == StageType.Event || type == StageType.Maintenance)
             {
-                case StageType.Tutorial:
-                    Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
-                    break;
-                case StageType.Normal:
-                    Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
-                    break;
-                case StageType.Event:
-                    break;
-                case StageType.Maintenance:
-                    break;
-                case StageType.Boss:
-                    Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
-                    break;
+                Service.Get<UIManager>()?.GetUI<StageSelectUIController>()?.ShowReward(type);
             }
+            else NextBattle();
         }
+    }
+
+    private void NarrativeEnd_EventNode()
+    {
+        
     }
     
     public void SpawnWall()
@@ -363,10 +403,7 @@ public class GameManager : BaseManager<GameManager>
         if (nextStageData != null)
         {
             StageType nextStageType = CheckStageType(nextStageData);
-            if (nextStageType == StageType.Event || nextStageType == StageType.Maintenance)
-            {
-                isBattle = false;
-            }
+            if (nextStageType == StageType.Event || nextStageType == StageType.Maintenance) isBattle = false;
         }
         
         if (_wall != null)
@@ -381,6 +418,8 @@ public class GameManager : BaseManager<GameManager>
         else              Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(isBattle);
         
         CurrentState.Value = GameState.Clear;
+        
+        CheckAndStartNarrative(currentStageData, false);
     }
 
     private void NextStage()
@@ -419,6 +458,7 @@ public class GameManager : BaseManager<GameManager>
 
 public enum GameState
 {
+    Narrative,
     Ready,
     Wave,
     Sort,
