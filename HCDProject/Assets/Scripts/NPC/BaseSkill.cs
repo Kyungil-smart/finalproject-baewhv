@@ -36,6 +36,9 @@ public class BaseSkill : MonoBehaviour
     private DAMAGE_TARGET_MAX_HP_P _damageTargetMaxHpP;
     private INVISIBILITY _invisibility;
     private ATK_MULT _atkMult;
+    private NORMAL_ATK_IMMUNITY _normalAtkImmunity;
+    private IGNORE_DEF _ignoreDef;
+    private DAMAGE_REDUCTION_P _damageReductionP;
     
     #endregion
     
@@ -61,6 +64,9 @@ public class BaseSkill : MonoBehaviour
         _damageTargetMaxHpP = new DAMAGE_TARGET_MAX_HP_P(this);
         _invisibility = new INVISIBILITY(this);
         _atkMult = new ATK_MULT(this);
+        _normalAtkImmunity = new NORMAL_ATK_IMMUNITY(this);
+        _ignoreDef = new IGNORE_DEF(this);
+        _damageReductionP = new DAMAGE_REDUCTION_P(this);
 
         #endregion
     }
@@ -178,6 +184,15 @@ public class BaseSkill : MonoBehaviour
             case ESkillAbilityType.ATK_MULT:
                 _effects.Add(type, _atkMult);
                 break;
+            case ESkillAbilityType.NORMAL_ATK_IMMUNITY:
+                _effects.Add(type, _normalAtkImmunity);
+                break;
+            case ESkillAbilityType.IGNORE_DEF:
+                _effects.Add(type, _ignoreDef);
+                break;
+            case ESkillAbilityType.DAMAGE_REDUCTION_P:
+                _effects.Add(type, _damageReductionP);
+                break;
         }
     }
     
@@ -231,7 +246,8 @@ public class BaseSkill : MonoBehaviour
             count = Physics2D.OverlapCircle(user.transform.position, skill.SKILL_IS, filter, Colliders);
         }
     }
-    public void SetTarget(Skill skill)
+    
+    private void SetTarget(Skill skill)
     {
         if (skill.SKILL_AT == ETargetType.SELF)
         {
