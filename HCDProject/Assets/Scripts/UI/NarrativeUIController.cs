@@ -45,8 +45,9 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     private StoryLocalizingRawData currentdata;
     private bool isEnd;
 
-    public void SetRegion(StoryStageRawData data)
+    public void InitData(StoryStageRawData data)
     {
+        isEnd = false;
         StageNumber.text = $"stage {data.CHAPTER}-{data.STAGE}";
         StageText.SetEntry(data.STAGE_NAME_ID);
     }
