@@ -17,6 +17,8 @@ public class BaseSkill : MonoBehaviour
     public bool isDurationActive;
     private float _durateTimer;
 
+    public bool isPassive = false;
+
     private CharacterStats _originStats;
 
     #region skillList
@@ -31,6 +33,7 @@ public class BaseSkill : MonoBehaviour
     private ATK _atk;
     private DAMAGE_TARGET_MAX_HP_P _damageTargetMaxHpP;
     private INVISIBILITY _invisibility;
+    private ATK_MULT _atkMult;
     
     #endregion
     
@@ -55,6 +58,7 @@ public class BaseSkill : MonoBehaviour
         _cc = new CC(this);
         _damageTargetMaxHpP = new DAMAGE_TARGET_MAX_HP_P(this);
         _invisibility = new INVISIBILITY(this);
+        _atkMult = new ATK_MULT(this);
 
         #endregion
     }
@@ -168,6 +172,9 @@ public class BaseSkill : MonoBehaviour
                 break;
             case ESkillAbilityType.INVISIBILITY:
                 _effects.Add(type, _invisibility);
+                break;
+            case ESkillAbilityType.ATK_MULT:
+                _effects.Add(type, _atkMult);
                 break;
         }
     }
