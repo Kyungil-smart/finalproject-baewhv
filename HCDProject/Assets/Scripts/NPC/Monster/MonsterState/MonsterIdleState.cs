@@ -16,6 +16,11 @@ public class MonsterIdleState : IState
     
     public void Update()
     {
+        if (_controller.BaseSkill.skills[1].SKILL_TIME < 0f)
+        {
+            _controller.BaseSkill.UseSkill(1);
+        }
+        
         _controller.CurrentState.Value = EStateType.Chase;
     }
     

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -213,27 +214,19 @@ public class BaseCharacter : BaseController
         _playerStats = stat;
 
         gameObject.name = data.CHARACTER_NAME; // 플레이어 디버그용
-        Color color;
-        switch (data.CHARACTER_ID)
+        if (data.CHARACTER_ID != "3000")
         {
-            case "3000":
-                ColorUtility.TryParseHtmlString("#BC3F3F", out color);
-                break;
-            case "3001":
-                ColorUtility.TryParseHtmlString("#A25FA6", out color);
-                break;
-            case "3002":
-                ColorUtility.TryParseHtmlString("#EEE83B", out color);
-                break;
-            case "3003":
-                ColorUtility.TryParseHtmlString("#59C8FF", out color);
-                break;
-            default:
-                color = Color.white;
-                Debug.LogWarning($"{data.CHARACTER_ID}의 색이 추가되지 않았습니다.");
-                break;
+            string address = "";
+            switch(data.CHARACTER_ID)
+            {
+                case "3001": address = "Player/NoahOverride"; break;
+                case "3002": address = "Player/AliceOverride"; break;
+                case "3003": address = "Player/SpayneOverride"; break;
+            }
+            RuntimeAnimatorController controller = 
+                Addressables.LoadAssetAsync<RuntimeAnimatorController>(address).WaitForCompletion();
+            Movement.Anim.runtimeAnimatorController = controller;
         }
-        _characterRenderer.color = color;
 
         _stats = new CharacterStats
         {
@@ -323,7 +316,7 @@ public class BaseCharacter : BaseController
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
-                target.SetDamage(damage);
+                target.SetDamage(damage, BaseSkill.skills[2]);
                 Debug.Log($"[화살비 적중] {target.GetTargetObject.name}");
             }
         }
@@ -337,7 +330,7 @@ public class BaseCharacter : BaseController
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
-                target.SetDamage(damage);
+                target.SetDamage(damage, BaseSkill.skills[2]);
                 Debug.Log($"[지진 적중] {target.GetTargetObject.name}");
             }
         }

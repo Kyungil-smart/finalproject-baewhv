@@ -47,8 +47,10 @@ public class Rampart : MonoBehaviour, ITargetable
         return true;
     }
     
-    public void SetDamage(int damage)
+    public void SetDamage(int damage, Skill skill)
     {
+        if (skill.ATK_TYPE != EAtkType.NORMAL) return;
+        
         CurrentHp.Value -= damage;
     }
 

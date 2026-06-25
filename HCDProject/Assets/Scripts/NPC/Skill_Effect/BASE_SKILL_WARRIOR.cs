@@ -10,6 +10,6 @@ public class BASE_SKILL_WARRIOR : BaseEffect
 
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_02));
+        target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_02), skill);
     }
 }
