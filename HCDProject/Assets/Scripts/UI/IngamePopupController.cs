@@ -40,7 +40,11 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
         ClearLogo.SetActive(false);
         FailLogo.SetActive(false);
 
-        if (isClear) OnRewardPopup(OnClearPopup);
+        if (isClear)
+        {
+            var currentStageData = Service.Get<GameManager>().currentStageData;
+            Service.Get<GameManager>().CheckAndStartNarrative(currentStageData, false, ()=>OnRewardPopup(OnClearPopup));
+        }
         else OnFailPopup();
     }
 

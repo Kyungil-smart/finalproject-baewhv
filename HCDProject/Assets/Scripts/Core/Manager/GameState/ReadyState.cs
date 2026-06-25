@@ -8,6 +8,7 @@ public class ReadyState : IState
     
     public void Enter()
     {
+        
         var playerManager = Service.Get<PlayerManager>();
         if (playerManager != null && playerManager.isAllSpawn != null)
         {

@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c4b488501f01f144af8e83c37b3a9ee
+    m_Address: Player/AliceOverride
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 44fdb355f65fdfb45a57388b13354d0a
     m_Address: MONSTER_TABLE
     m_ReadOnly: 0
@@ -62,6 +67,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ccc1408cea93f044954f5f35cb53e0e
     m_Address: SKILL_TABLE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7d7b69989acea640922c6a736e29fe8
+    m_Address: Player/SpayneOverride
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8e8945a44679594289fc6e3ee287a44
+    m_Address: Player/NoahOverride
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

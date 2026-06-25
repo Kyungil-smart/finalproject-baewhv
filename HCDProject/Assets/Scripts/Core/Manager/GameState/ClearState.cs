@@ -8,6 +8,7 @@ public class ClearState : IState
     
     public void Enter()
     {
+        
         Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnGameClear();
     }
 
