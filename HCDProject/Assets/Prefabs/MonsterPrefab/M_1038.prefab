@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2173403361877643598}
   - {fileID: 2795032694207925718}
@@ -83,10 +83,10 @@ MonoBehaviour:
     _critDamage: 0
     _attackRange: 0
     _chaseRange: 0
+  isInvincible: 0
   CurrentHp:
     _data: 0
     _maxValue: 0
-  skills: []
   Colliders: []
   EnemyFilter:
     useTriggers: 0
@@ -133,7 +133,6 @@ MonoBehaviour:
     MONSTER_HIT_FX: 
   <CurrentState>k__BackingField:
     _data: 0
-  <Target>k__BackingField: {x: 0, y: 0, z: 0}
   hpBarCanvas: {fileID: 4399115942765692725}
 --- !u!114 &3680012934991206369
 MonoBehaviour:
@@ -209,7 +208,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.44
+  m_Radius: 0.35
 --- !u!114 &-5177672202530677071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +226,9 @@ MonoBehaviour:
   count: 0
   attackHitCount: 1
   isDurationActive: 0
+  isNormalImmunity: 0
+  isIgnoreDef: 0
+  isReduction: 0
 --- !u!1 &2752089763345614506
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,8 +257,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4537058997130539190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -394,6 +396,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7913125836048525025, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913125836048525025, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913125836048525025, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913125836048525025, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -440,6 +454,10 @@ PrefabInstance:
     - target: {fileID: 7913125836048525025, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913125836048525025, guid: ffb4dc465e81e3440bc89843c6394192, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
