@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,8 +50,13 @@ public class BaseCharacter : BaseController
     private float _attackTimer; // 누적 카운트
 
     [SerializeField] private float _reviveTime; // 캐릭터 부활시간
-
+    [SerializeField] private float _flickerInterval = 0.05f;
+    [SerializeField] private int _flickerCycleCount = 3;
     private PlayerStats _playerStats;
+
+    private Sequence _hitFlickerSeq;
+
+    private int _previousHp;
 
     public bool isCC = false;
     
@@ -163,11 +169,14 @@ public class BaseCharacter : BaseController
     protected override void OnEnable()
     {
         CurrentHp.AddListener(CheckDeath);
+        CurrentHp.AddListener(OnHpChanged);
     }
 
     protected void OnDisable()
     {
         CurrentHp.RemoveListener(CheckDeath);
+        CurrentHp.RemoveListener(OnHpChanged);
+        StopHitFlicker();
     }
 
     public void FixedUpdate()
@@ -189,6 +198,7 @@ public class BaseCharacter : BaseController
         CurrentHp = new RatioIntValue(maxValue);
         CurrentHp.AddRatioListener(action);
         CurrentHp.AddListener(CheckDeath);
+        CurrentHp.AddListener(OnHpChanged);
         if (_hpBar != null)
             CurrentHp.AddRatioListener(_hpBar.SetHPBar);
         CurrentHp.Invoke();
@@ -206,6 +216,41 @@ public class BaseCharacter : BaseController
         IsAlived = new ObserveValue<bool>();
         IsAlived.AddListener(action);
         IsAlived.Value = true;
+    }
+
+    private void OnHpChanged(int newHp)
+    {
+        if (_isDead) return;
+        if (newHp < _previousHp)
+        {
+            PlayHitFlicker();
+        }
+        _previousHp = newHp;
+    }
+
+    private void PlayHitFlicker()
+    {
+        StopHitFlicker();
+        _hitFlickerSeq = DOTween.Sequence();
+        _hitFlickerSeq.AppendCallback(() => _characterRenderer.enabled = false);
+        _hitFlickerSeq.AppendInterval(_flickerInterval);
+        _hitFlickerSeq.AppendCallback(() => _characterRenderer.enabled = true);
+        _hitFlickerSeq.AppendInterval(_flickerInterval);
+        _hitFlickerSeq.SetLoops(_flickerCycleCount);
+        _hitFlickerSeq.OnComplete(() => _characterRenderer.enabled = true);
+    }
+
+    private void StopHitFlicker()
+    {
+        if(_hitFlickerSeq != null && _hitFlickerSeq.IsActive())
+        {
+            _hitFlickerSeq.Kill();
+        }
+
+        if(_characterRenderer != null)
+        {
+            _characterRenderer.enabled = true;
+        }
     }
 
     #region Init()
@@ -253,6 +298,7 @@ public class BaseCharacter : BaseController
         _findType = _playerStats._initFindType;
         _playerStats._doubleAtkRate = data.DOUBLE_ATK_RATE;
         CurrentHp.Value = _stats._maxHp;
+        _previousHp = CurrentHp.Value;
         Movement.Agent.speed = _stats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
         Debug.Log($"[캐릭터초기화] {gameObject.name} / FindType: {_findType}");
@@ -416,6 +462,7 @@ public class BaseCharacter : BaseController
         if (value <= 0)
         {
             _isDead = true;
+            StopHitFlicker();
             if (IsAlived != null) IsAlived.Value = false;
             Debug.Log($"[사망] {gameObject.name} | HP: {value}");
             this.state.ChangeState(this.die);
@@ -430,6 +477,7 @@ public class BaseCharacter : BaseController
         Movement.Agent.enabled = true;
         this.Movement.Agent.Warp(spawnPosition);
         CurrentHp.Value = Stats._maxHp;
+        _previousHp = CurrentHp.Value;
 
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
