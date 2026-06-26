@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Authentication.ExtendedProtection;
 using TMPro;
 using UnityEngine;
 
-public class SettingPopupUi : MonoBehaviour
+public class SettingPopupUI : BaseUIController<SettingPopupUI>
 {
     [SerializeField] private TMP_Dropdown languageDropdown;
+    [SerializeField] private GameObject soundUI;
+    [SerializeField] private GameObject intensityUI;
     private LocalizationManager localizationManager;
 
-    private void Awake()
+    private void Start()
     {
         localizationManager = Service.Get<LocalizationManager>();
     }
@@ -27,7 +30,7 @@ public class SettingPopupUi : MonoBehaviour
     private void DropdownUi()
     {
         if (languageDropdown == null || localizationManager == null) return;
-        
+
         languageDropdown.ClearOptions();
 
         List<string> languageOptions = new()
@@ -39,7 +42,7 @@ public class SettingPopupUi : MonoBehaviour
             "Indonesian"
         };
         languageDropdown.AddOptions(languageOptions);
-        
+
         languageDropdown.value = localizationManager.GetCurrentLanguage();
         languageDropdown.onValueChanged.RemoveAllListeners();
         languageDropdown.onValueChanged.AddListener(OnLanguageChange);
@@ -47,11 +50,25 @@ public class SettingPopupUi : MonoBehaviour
 
     private void OnLanguageChange(int value)
     {
-        localizationManager.ChangeLanguage(value);
+        localizationManager.ChangeLanguage((SystemLanguage)value);
+    }
+
+    public void OpenPopup(ESettingPopupType type)
+    {
+        gameObject.SetActive(true);
+        soundUI.SetActive(type != ESettingPopupType.OnlyLanguage);
+        intensityUI.SetActive(type != ESettingPopupType.OnlyLanguage);
     }
 
     public void ClosePopup()
     {
         gameObject.SetActive(false);
     }
+}
+
+public enum ESettingPopupType
+{
+    none = 0,
+    OnlyLanguage = 1,
+    Battle = 2,
 }

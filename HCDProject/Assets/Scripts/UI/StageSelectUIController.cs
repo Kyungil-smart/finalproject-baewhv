@@ -17,8 +17,6 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     [SerializeField] private Button continuePopup;
     [SerializeField] private Text continueText;
     [SerializeField] private Button cancelPopup;
-    [SerializeField] private Button settingButton;
-    [SerializeField] private GameObject settingPopup;
 
     private int _currentChapter;
 
@@ -27,20 +25,12 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         _currentChapter = Service.Get<GameManager>().CurrentChapter;
         
         if (popupObject != null) popupObject.SetActive(false);
-        if (popupObject != null) settingPopup.SetActive(false);
         
         if (cancelPopup != null)
         {
             cancelPopup.onClick.RemoveAllListeners();
             cancelPopup.onClick.AddListener(() => { popupObject.SetActive(false); });
         }
-        
-        if (settingButton != null)
-        {
-            settingButton.onClick.RemoveAllListeners();
-            settingButton.onClick.AddListener(() => { settingPopup.SetActive(true); });
-        }
-
         StageMap();
     }
 
@@ -216,6 +206,11 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             if (type == StageType.Event) rewardPopup.SetRelicReward(OnRewardSelect);
             // else if (type == StageType.Maintenance) rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
         }
+    }
+    
+    public void OnOpenSettingUI()
+    {
+        Service.Get<UIManager>()?.OpenOption();
     }
     
     // 추후 무한모드 제작시 이용 가능성 정도는 있음
