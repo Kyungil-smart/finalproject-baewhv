@@ -40,6 +40,8 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         {
             Service.Get<GameManager>().isLoading = false;
         });
+        
+        Service.Get<EffectManager>()?.InitEffect();
     }
 
     public void WaveStart()
@@ -171,6 +173,17 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         foreach (var id in currentStageMonsterIds)
         {
             if (!_stageMonsterPrefabs.ContainsKey(id)) loadTarget.Add(id);
+
+            MonsterRawData monsterEffect = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == id);
+            if (monsterEffect != null)
+            {
+                if (!string.IsNullOrEmpty(monsterEffect.MONSTER_HIT_FX)) Service.Get<EffectManager>()?.EffectIds.Add(monsterEffect.MONSTER_HIT_FX);
+                SkillRawData skillEffect = Service.Get<DataManager>()?.SkillTable.data.Find(x => x.SKILL_ID == monsterEffect.SKILL_ID);
+                if (skillEffect != null)
+                {
+                    if (!string.IsNullOrEmpty(skillEffect.SKILL_HIT_FX)) Service.Get<EffectManager>()?.EffectIds.Add(skillEffect.SKILL_HIT_FX);
+                }
+            }
         }
         
         Debug.Log(loadTarget.Count);
