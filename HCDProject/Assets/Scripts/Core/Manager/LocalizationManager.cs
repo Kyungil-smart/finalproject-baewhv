@@ -7,44 +7,65 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class LocalizationManager : BaseManager<LocalizationManager>
 {
     private readonly List<string> _language = new() { "ko", "en", "th", "vi", "id" };
+    private SystemLanguage systemLanguage;
 
     protected override void Awake()
     {
         base.Awake();
-        
+
         if (IsManagerDestroy) return;
 
         var handle = LocalizationSettings.InitializationOperation;
 
+        systemLanguage = Application.systemLanguage;
+
         if (handle.IsDone) InitializationComplete(handle);
-        else               handle.Completed += InitializationComplete;
+        else handle.Completed += InitializationComplete;
     }
+
 
     private void InitializationComplete(AsyncOperationHandle<LocalizationSettings> handle)
     {
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            int saveLanguage = PlayerPrefs.GetInt("SaveLanguage", 0);
-            ChangeLanguage(saveLanguage);
+            systemLanguage = (SystemLanguage)PlayerPrefs.GetInt("SaveLanguage", (int)Application.systemLanguage);
+            ChangeLanguage(systemLanguage);
         }
     }
 
-    public void ChangeLanguage(int index)
+    public void ChangeLanguage(SystemLanguage index)
     {
-        if (index < 0 || index >= _language.Count) return;
-        
-        string targetLanguage = _language[index];
-        Locale locale = LocalizationSettings.AvailableLocales.GetLocale(targetLanguage);
+        string targetLanguage;
+        switch (index)
+        {
+            case SystemLanguage.Korean:
+                targetLanguage = _language[0];
+                break;
+            case SystemLanguage.Thai:
+                targetLanguage = _language[2];
+                break;
+            case SystemLanguage.Vietnamese:
+                targetLanguage = _language[3];
+                break;
+            case SystemLanguage.Indonesian:
+                targetLanguage = _language[4];
+                break;
+            default:
+                targetLanguage = _language[1];
+                break;
+        }
+
+        Locale locale = LocalizationSettings.AvailableLocales.GetLocale(systemLanguage);
 
         if (locale != null)
         {
             LocalizationSettings.SelectedLocale = locale;
-            
-            PlayerPrefs.SetInt("SaveLanguage", index);
+
+            PlayerPrefs.SetInt("SaveLanguage", (int)systemLanguage);
             PlayerPrefs.Save();
         }
     }
-    
+
     public int GetCurrentLanguage()
     {
         Locale currentlocale = LocalizationSettings.SelectedLocale;
@@ -55,6 +76,7 @@ public class LocalizationManager : BaseManager<LocalizationManager>
             Locale locale = LocalizationSettings.AvailableLocales.GetLocale(_language[i]);
             if (locale == currentlocale) return i;
         }
+
         return 0;
     }
 }

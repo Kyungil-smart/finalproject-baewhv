@@ -10,6 +10,8 @@ public class UIManager : BaseManager<UIManager>
 {
     private Dictionary<Type, object> _uiControllers = new();
     [SerializeField] private Image fader;
+    [SerializeField] private SettingPopupUI OptionPopup;
+    public Image GetFader => fader;
 
     protected override void Awake()
     {
@@ -38,5 +40,16 @@ public class UIManager : BaseManager<UIManager>
     {
         if (_uiControllers.TryGetValue(typeof(T), out object service)) return (T)service;
         return null;
+    }
+
+    public void RemoveFader()
+    {
+        if(fader)
+            Destroy(fader.gameObject);
+    }
+
+    public void OpenOption(ESettingPopupType type = ESettingPopupType.none)
+    {
+        OptionPopup.OpenPopup(type);
     }
 }
