@@ -842,6 +842,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5587684530843734218, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587684530843734218, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587684530843734218, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1369126937574977744}
+    - target: {fileID: 5587684530843734218, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587684530843734218, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickAdButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587684530843734218, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: IngamePopupController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587684530843734218, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5609587838818775447, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
       propertyPath: m_Name
       value: IngamePopupCanvas
@@ -931,6 +959,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+--- !u!114 &1369126937574977744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6979268650236809914, guid: 8aaacffab80d4dd41ae09eb9b24324f7, type: 3}
+  m_PrefabInstance: {fileID: 1369126937574977743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49eb5df9a47951c49a3ee364a46a2cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &2405672572279576623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3432947737659388433, guid: e634b184d467e5c41aadb0b18b5e8b9b, type: 3}

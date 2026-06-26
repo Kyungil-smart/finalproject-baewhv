@@ -660,6 +660,39 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2331825034389842712, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+    - target: {fileID: 1253357426516991089, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253357426516991089, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253357426516991089, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5781530544837867825}
+    - target: {fileID: 1253357426516991089, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253357426516991089, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickAdButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253357426516991089, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StageSelectUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253357426516991089, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688876185245567388, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688876185245567388, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -804,6 +837,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+--- !u!114 &5781530544837867825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3421973048550800864, guid: 57fa94f432b66fb4bbb84b8767bf5fa7, type: 3}
+  m_PrefabInstance: {fileID: 5781530544837867824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd6d99aa2be4aa6905e68676fc662f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageSelectScene
 --- !u!1001 &5874813088702886486
 PrefabInstance:
   m_ObjectHideFlags: 0

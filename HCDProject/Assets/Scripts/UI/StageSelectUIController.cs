@@ -218,6 +218,19 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         }
     }
     
+    public void OnClickAdButton()
+    {
+        Service.Get<AdsController>()?.ShowRewardedAd(() =>
+        {
+            RerollReward();
+        });
+    }
+
+    private void RerollReward()
+    {
+        if (rewardPopup != null) rewardPopup.SetRelicReward(OnRewardSelect);
+    }
+    
     // 추후 무한모드 제작시 이용 가능성 정도는 있음
     #region  챕터
 

@@ -25,11 +25,6 @@ public class TimeManager : BaseManager<TimeManager>
         return (int)timeScaleSpeeds[currentSpeedIndex];
     }
     
-    public void SetSpeed(float speed)
-    {
-        Time.timeScale = speed;
-    }
-
     public void SaveTimeScale()
     {
         if (pauseCount == 0)

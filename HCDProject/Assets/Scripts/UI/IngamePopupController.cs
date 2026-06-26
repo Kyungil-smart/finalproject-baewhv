@@ -14,6 +14,18 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     public ClearPopupUI GetClearPopup => ClearPopup;
     [SerializeField] private GameObject SortWarningPopup;
 
+    public void OnClickAdButton()
+    {
+        Service.Get<AdsController>()?.ShowRewardedAd(() =>
+        {
+            RerollReward();
+        });
+    }
+
+    private void RerollReward()
+    {
+        OnRewardPopup();
+    }
     
     public void OnSetDangerBorder(float ratio)
     {
