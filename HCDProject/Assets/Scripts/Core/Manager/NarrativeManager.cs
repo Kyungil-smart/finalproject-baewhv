@@ -1,43 +1,75 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NarrativeManager : BaseManager<NarrativeManager>
 {
+    [SerializeField] private GameObject uiObj;
     private NarrativeUIController ui;
-    private List<StoryLocalizingRawData> data;
+    private List<StoryLocalizingRawData> storyData = new List<StoryLocalizingRawData>();
     private int currentChapter = -1;
     private int currentStage = -1;
-
     private int currentIndex = 0;
 
-    private void Start()
+    protected override void Awake()
     {
-        //StartCoroutine(TempSkip());
-        if (Service.Get<GameManager>() is GameManager gm)
-        {
-            currentStage = gm.CurrentStage;
-            currentChapter = gm.CurrentChapter;
-        }
+        base.Awake();
+        if (IsManagerDestroy) return;
+        SetNarrativeUI();
+    }
 
-        data = Service.Get<DataManager>().StoryLocalizingTable.data
-            .FindAll(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
-        var sstData = Service.Get<DataManager>().StoryStageTable.data
-            .Find(x => x.STAGE == currentStage && x.CHAPTER == currentChapter);
+    private void OnEnable()
+    {
+        Service.Get<SceneController>().OnLoadingComplete += SetNarrativeUI;
+    }
+
+    private void OnDisable()
+    {
+        if(Service.Get<SceneController>())
+            Service.Get<SceneController>().OnLoadingComplete -= SetNarrativeUI;
+    }
+
+
+    private void SetNarrativeUI()
+    {
+        if (!ui)
+        {
+            ui = Instantiate(uiObj).GetComponent<NarrativeUIController>();
+            ui.GameObject().SetActive(false);
+        }
+    }
+
+    public void StartNarrative(StoryStageRawData data, bool isBefore)
+    {
+        ui.GameObject().SetActive(false);
+        currentStage = data.STAGE;
+        currentChapter = data.CHAPTER;
+        currentIndex = 0;
+
+        storyData = Service.Get<DataManager>().StoryLocalizingTable.data
+            .FindAll(x =>
+                x.STAGE == currentStage &&
+                x.CHAPTER == currentChapter &&
+                x.STAGE_DIALOGUE_EVENT_TYPE == (isBefore ? "BEFORE_STAGE" : "AFTER_STAGE"));
+        Debug.Log($"NarrativeManager: StartNarrative {storyData.Count}");
         ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
-        
-        ui.SetRegion(currentChapter, currentStage, sstData.STAGE_NAME_ID);
-        ui.SetNarrative(data[currentIndex]);
+
+        ui.GameObject().SetActive(true);
+        ui.InitData(data);
+        ui.SetNarrative(storyData[currentIndex]);
     }
 
     public void EndNarrative()
     {
+        ui.GameObject().SetActive(false);
         Service.Get<GameManager>()?.NarrativeEnd();
     }
 
     public StoryLocalizingRawData GetNextNarrative()
     {
-        if (currentIndex >= data.Count) return null;
-        return data[++currentIndex];
+        if (currentIndex + 1 >= storyData.Count) return null;
+        return storyData[++currentIndex];
     }
 }

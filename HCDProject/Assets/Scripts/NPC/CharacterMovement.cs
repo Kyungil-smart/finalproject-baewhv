@@ -5,6 +5,7 @@ public class CharacterMovement : MonoBehaviour
 {
     private BaseController _controller;
     public NavMeshAgent Agent { get; private set; }
+    public Animator Anim => _anim;
 
     private Animator _anim;
     private Vector2 _lastDir;

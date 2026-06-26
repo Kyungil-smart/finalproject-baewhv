@@ -85,24 +85,27 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         }
 
         isSortMode.Value = false;
+        Service.Get<TimeManager>().LoadTimeScale();
+        
     }
 
     public void SetSortPhase()
     {
         sortTopObject.SetActive(true);
         sortBottomObject.SetActive(true);
-        ComboView.DOAnchorPosY(419.0f, 0);
-        charactersSlotUI.DOAnchorPosY(205.0f, 0);
-        charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0);
+        ComboView.DOAnchorPosY(419.0f, 0).SetUpdate(true);
+        charactersSlotUI.DOAnchorPosY(205.0f, 0).SetUpdate(true);
+        charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0).SetUpdate(true);
         foreach (CharacterSlotUI slot in characterSlots)
         {
-            ((RectTransform)slot.transform).DOSizeDelta(sortPhaseSlotRect, 0);
-            slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0);
+            ((RectTransform)slot.transform).DOSizeDelta(sortPhaseSlotRect, 0).SetUpdate(true);
+            slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0).SetUpdate(true);
             slot.ChangeMode(true);
         }
 
         isSortMode.Value = true;
         StartBattleButton.SetSortStart();
+        Service.Get<TimeManager>().SaveTimeScale();
     }
 
     public void SetComboText(int value)

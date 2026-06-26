@@ -8,6 +8,7 @@ namespace UI
 {
     public class IngameTopUIController : BaseUIController<IngameTopUIController>
     {
+        [SerializeField] private TextMeshProUGUI stageText;
         [SerializeField] private TextMeshProUGUI waveText;
         [SerializeField] private Slider waveSlider;
         [SerializeField] private TextMeshProUGUI monsterCountText;
@@ -27,6 +28,11 @@ namespace UI
                 ChangeWave(spawnManager.currentWave.Value);
                 ChangeMonsterCount(spawnManager.monsterCount.Value);
             }
+
+            stageText.text =
+                $"Stage {Service.Get<GameManager>().CurrentChapter} - {Service.Get<GameManager>().CurrentStage}";
+
+
         }
 
         private IEnumerator WaitRoution()

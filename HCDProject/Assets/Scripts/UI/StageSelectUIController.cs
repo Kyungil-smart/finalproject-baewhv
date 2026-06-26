@@ -27,6 +27,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         _currentChapter = Service.Get<GameManager>().CurrentChapter;
         
         if (popupObject != null) popupObject.SetActive(false);
+        if (popupObject != null) settingPopup.SetActive(false);
         
         if (cancelPopup != null)
         {
