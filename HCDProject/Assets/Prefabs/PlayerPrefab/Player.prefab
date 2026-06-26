@@ -217,6 +217,9 @@ MonoBehaviour:
   count: 0
   attackHitCount: 1
   isDurationActive: 0
+  isNormalImmunity: 0
+  isIgnoreDef: 0
+  isReduction: 0
 --- !u!114 &3594632525199063414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +312,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 650662126, guid: 0d4df1c6fde90d245b0b660afd28c4e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
