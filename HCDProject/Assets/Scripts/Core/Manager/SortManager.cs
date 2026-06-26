@@ -220,8 +220,6 @@ public class SortManager : BaseManager<SortManager>
     // 정렬 시작
     public void OnStartSort()
     {
-        Time.timeScale = 0f;
-
         isEndSort.Value = false;
         CurrentCombo.Value = 0;
 
@@ -293,8 +291,6 @@ public class SortManager : BaseManager<SortManager>
         if (isEndSort.Value) return;
         isEndSort.Value = true;
         PlayerInputLock(true);
-
-        Time.timeScale = 1f;
 
         int finalCombo = CurrentCombo.Value;
         Debug.Log($"최종 콤보: {finalCombo}회");

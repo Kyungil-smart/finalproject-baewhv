@@ -293,10 +293,10 @@ public class GameManager : BaseManager<GameManager>
 
     public void CheckAndStartNarrative(StoryStageRawData stageStoryData, bool isBefore, UnityAction action)
     {
+        _endNarrativeAction = action;
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
             CurrentState.Value = GameState.Narrative;
-            _endNarrativeAction = action;
             Service.Get<NarrativeManager>()?.StartNarrative(stageStoryData, isBefore);
         }
         else NarrativeEnd();
