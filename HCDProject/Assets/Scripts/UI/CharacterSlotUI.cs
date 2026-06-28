@@ -53,6 +53,12 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
         hpText.text = $"{value:p0}";
     }
 
+    public void SetHPBar(int min, int max)
+    {
+        hpBar.value = Mathf.Clamp01((float)min / max);
+        hpText.text = $"{min} / {max}";
+    }
+
     /// <summary>
     /// 스킬 구독
     /// </summary>
