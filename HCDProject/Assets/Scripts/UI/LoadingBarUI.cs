@@ -1,18 +1,26 @@
-using System;
-using TMPro;
+using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LoadingBarUI : MonoBehaviour
 {
-    [SerializeField] private GameObject loadingBar;
-    [SerializeField] private Slider loadingBarSlider;
-    [SerializeField] private TextMeshProUGUI loadingBarText;
+    [SerializeField] private RectTransform LoadingImage;
 
     public void Init()
     {
         Service.Get<SceneController>().OnLoading += LoadingUi;
+        Debug.Log("here");
         Service.Get<SceneController>().OnLoadingComplete += CloseLoadingUi;
+    }
+
+    private void OnEnable()
+    {
+        //LoadingImage.DORotate(Vector3.zero, 0.0f);
+        LoadingImage.DORotate(new Vector3(0, 0, -360), 1.0f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1, LoopType.Restart);
+    }
+
+    private void OnDisable()
+    {
+        LoadingImage.DOKill();
     }
 
     private void OnDestroy()
@@ -20,25 +28,19 @@ public class LoadingBarUI : MonoBehaviour
         var sceneController = Service.Get<SceneController>();
         if (sceneController != null)
         {
-            sceneController.OnLoading -= LoadingUi;
+            //sceneController.OnLoading -= LoadingUi;
             sceneController.OnLoadingComplete -= CloseLoadingUi;
         }
     }
 
     private void LoadingUi(float progress)
     {
-        if (!loadingBar.activeSelf) loadingBar.SetActive(true);
+        if (!gameObject.activeSelf) gameObject.SetActive(true);
         
-        loadingBarSlider.value = progress;
-        
-        float percent = progress * 100f;
-        
-        if (percent >= 99.9f) loadingBarText.text = "100%";
-        else                  loadingBarText.text = $"{(percent):F2}%";
     }
 
     private void CloseLoadingUi()
     {
-        loadingBar.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
