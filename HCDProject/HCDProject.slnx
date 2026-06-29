@@ -4,6 +4,7 @@
   <Project Path="FangAutoTile.Editor.csproj" />
   <Project Path="NavMeshPlusEditor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="GoogleMobileAds.Editor.csproj" />
   <Project Path="FangAutoTile.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
