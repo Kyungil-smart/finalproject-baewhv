@@ -721,10 +721,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8279206873860695670, guid: f7b45f72cc16ded42b41c8c5ebeed0e7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9099223536660558142, guid: f7b45f72cc16ded42b41c8c5ebeed0e7, type: 3}
       propertyPath: m_Name
       value: loadingbarUI
