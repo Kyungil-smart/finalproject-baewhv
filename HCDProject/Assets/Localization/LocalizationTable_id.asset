@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 51780677632
-    m_Localized: 
+    m_Localized: Indra Tajam
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160463
@@ -1989,6 +1989,1573 @@ MonoBehaviour:
   - m_Id: 2554901970640916
     m_Localized: Ancient Armor diperoleh. Relik yang dipilih telah terdaftar di daftar
       milikmu. Efeknya tetap berlaku di stage berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160384
+    m_Localized: Gerak Cepat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160385
+    m_Localized: Penglihatan Tajam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160386
+    m_Localized: Serangan Tajam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160387
+    m_Localized: Vitalitas Melimpah
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160388
+    m_Localized: Vitalitas Mengalir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160389
+    m_Localized: Penguatan Tubuh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160390
+    m_Localized: Tubuh Ringan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160391
+    m_Localized: Kekuatan Terkonsentrasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160392
+    m_Localized: Overload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160393
+    m_Localized: Napas Angin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160394
+    m_Localized: Wujud Buas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160395
+    m_Localized: Semangat Tembok Besi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160396
+    m_Localized: Nama Monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160464
+    m_Localized: Info Skill Monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160513
+    m_Localized: Serangan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160514
+    m_Localized: Pertahanan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160515
+    m_Localized: Kecepatan Serangan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160516
+    m_Localized: HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160517
+    m_Localized: Skill Aktif
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233806413824
+    m_Localized: Berarti mereka masuk lebih jauh ke tempat orang-orang berada.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356864
+    m_Localized: Ya. Jejak yang bercabang di depan gerbang menuju ke area pertanian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356865
+    m_Localized: Dilihat dari laporannya, mereka sudah masuk jauh ke dalam area pertanian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356866
+    m_Localized: Kalau itu jalan ladang, pasti ada lumpur juga...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356867
+    m_Localized: Kalau aku jatuh, waktu untuk bersih-bersih bisa lebih lama daripada
+      istirahat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356868
+    m_Localized: Sekarang bukan waktunya menghitung waktu istirahat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356869
+    m_Localized: Jangan meremehkan istirahat...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356870
+    m_Localized: Pertama, mari bergerak ke pos komando sementara.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356871
+    m_Localized: Sebelum menuju pertanian, mari rapikan catatan dari depan gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356872
+    m_Localized: Ya. Aku juga akan memeriksa respons batu sinyal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356873
+    m_Localized: Mari periksa mereka bercabang ke jalan mana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356874
+    m_Localized: Baik. Begitu beres, langsung berangkat ke pertanian!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356875
+    m_Localized: Aku akan terus mengawasi jejaknya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356876
+    m_Localized: Kalau begitu, cepat selesaikan penataan ini dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356877
+    m_Localized: Makin lama, waktu istirahat juga makin menjauh...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356878
+    m_Localized: Sebagian besar warga di dalam gerbang sudah dievakuasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356879
+    m_Localized: Yang terluka sedikit, tetapi gerobak persediaan terguncang cukup
+      parah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356880
+    m_Localized: Syukurlah tidak banyak yang terluka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356881
+    m_Localized: Kalau aku diminta merawat gerobaknya juga, itu akan merepotkan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356882
+    m_Localized: Kita berhasil menahan kerusakan tetap kecil.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356883
+    m_Localized: Sekarang masalahnya, gerombolan ini terhubung ke jalan mana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356884
+    m_Localized: Jejak kakinya juga berlanjut ke luar gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356885
+    m_Localized: Hampir tidak ada tanda mereka berhenti atau berputar-putar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356886
+    m_Localized: Berarti seperti di Cies, kita menghentikan gerombolan yang datang
+      di sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356887
+    m_Localized: Ya. Tapi Jeple punya lebih banyak jalan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356888
+    m_Localized: Meski kita menahan mereka di gerbang, mereka bisa bercabang ke jalan
+      lain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356889
+    m_Localized: Rapikan catatan pertahanan gerbang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356890
+    m_Localized: Mari bandingkan dengan catatan Cies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745472
+    m_Localized: Kalau dibandingkan, kita seharusnya bisa menemukan titik percabangannya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745473
+    m_Localized: Komandan, ada laporan tambahan dari area pertanian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745474
+    m_Localized: Pagar di beberapa tempat terdorong roboh, dan monster melewati sela-sela
+      ladang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745475
+    m_Localized: Di sela-sela ladang? Orang-orang bagaimana?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745476
+    m_Localized: Para pengelola sedang mengevakuasi mereka, tetapi jalan pertanian
+      lebar sehingga sulit diblokir.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745477
+    m_Localized: Jejaknya langsung bercabang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745478
+    m_Localized: Mari periksa area pertanian dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745479
+    m_Localized: Di jalan ladang, kaki bisa terbenam...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745480
+    m_Localized: Sepertinya sepatu hari ini harus direlakan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745481
+    m_Localized: Rapikan catatan pertahanan, lalu segera bergerak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745482
+    m_Localized: UI pilihan peningkatan permanen terbuka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745483
+    m_Localized: 'Contoh pilihan: peningkatan serangan Serah / peningkatan pertahanan
+      Spayne / peningkatan HP Alice.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745484
+    m_Localized: Peningkatan yang dipilih akan tetap berlaku di pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745485
+    m_Localized: Apakah Anda para Penjaga? Lewat sini!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745486
+    m_Localized: Monster menghancurkan pagar dan lewat di sela-sela ladang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745487
+    m_Localized: Semua orang sudah dievakuasi?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745488
+    m_Localized: Orang-orang terdekat sudah dievakuasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745489
+    m_Localized: Tapi evakuasi di jalan dekat gudang kerja belum selesai.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745490
+    m_Localized: Hampir tidak ada tanda mereka memakan tanaman.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745491
+    m_Localized: Lebih seperti mereka hanya mendorong lewat saat melintas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745492
+    m_Localized: Jalan pertanian yang lebar justru menjadi masalah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745493
+    m_Localized: Makin banyak tempat yang harus diblokir, makin banyak jalan bagi
+      mereka untuk lolos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745494
+    m_Localized: Jalan ladang membuat kaki lebih mudah terbenam daripada kelihatannya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745495
+    m_Localized: Kalau jatuh, pakaian bisa lebih parah duluan daripada lukanya...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745496
+    m_Localized: Baik. Kalau begitu, kita tahan mereka di depan gudang kerja!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745497
+    m_Localized: Aku tidak akan membiarkan mereka menuju gudang kerja!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745498
+    m_Localized: Pengelola, tolong evakuasi orang-orang ke sisi seberang gudang kerja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745499
+    m_Localized: Kita tahan gerombolan yang masuk di antara ladang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745500
+    m_Localized: Baik. Saya akan memandu mereka ke jalan di seberang gudang kerja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745501
+    m_Localized: Jejak kaki terbagi dua.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745502
+    m_Localized: Jejak gerombolan besar mengarah ke tengah ladang, dan jejak gerombolan
+      kecil mengarah di samping pagar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745503
+    m_Localized: Kalau kita tidak menghentikan yang bergerak di sepanjang pagar lebih
+      dulu, jalurnya akan bertumpuk dengan jalur evakuasi warga.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745504
+    m_Localized: Serah, ambil posisi di bagian dalam pagar depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745505
+    m_Localized: Serahkan padaku! Aku tidak akan membiarkan mereka melewati pagar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745506
+    m_Localized: Jangan bergerak terlalu jauh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745507
+    m_Localized: Menarik orang keluar dari lumpur lebih sulit daripada merawat luka...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745508
+    m_Localized: Pergerakannya makin dekat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745509
+    m_Localized: Mereka masuk lurus ke tengah ladang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745510
+    m_Localized: Baik. Kita tahan mereka di jalan di antara ladang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745511
+    m_Localized: Selesaikan sebelum mereka bertemu dengan jalur evakuasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745512
+    m_Localized: Kerusakan di sisi gudang kerja berhasil kami cegah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745513
+    m_Localized: Orang-orang juga tidak terluka parah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745514
+    m_Localized: Syukurlah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745515
+    m_Localized: Kalau pagar terdorong sampai seperti itu, orang di dekatnya pasti
+      dalam bahaya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745516
+    m_Localized: Ya. Hanya sedikit tanda bahwa monster berhenti untuk bertarung.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745517
+    m_Localized: Mereka terus terdorong maju seperti tersesat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745518
+    m_Localized: Medan pertanian membuat jejak kaki bercabang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745519
+    m_Localized: Satu sisi sudah kita hentikan, tetapi jejak lainnya mengarah ke
+      jalan pasar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745520
+    m_Localized: Kalau pasar, orangnya pasti lebih banyak... kan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745521
+    m_Localized: Berjalan mungkin lebih mudah daripada di ladang, tapi orang dan
+      barang bawaan juga akan lebih banyak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745522
+    m_Localized: Di sisi pasar masih ada pedagang yang belum bisa dievakuasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745523
+    m_Localized: Banyak juga yang sulit langsung bergerak karena tidak bisa meninggalkan
+      barang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745524
+    m_Localized: Kalau begitu kita harus cepat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745525
+    m_Localized: Jika mereka masuk ke tempat yang ramai, bahayanya akan bertambah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745526
+    m_Localized: Jejak kaki mengarah ke jalan utama pasar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745527
+    m_Localized: Sebagian mengikuti jalan yang dilalui gerobak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745528
+    m_Localized: Monster bukan memilih orang. Mereka terdorong ke jalan yang digunakan
+      orang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745529
+    m_Localized: Karena itu, cara menghentikannya juga jadi lebih sulit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745530
+    m_Localized: Serahkan area pertanian kepada pengelola, dan kita pindah ke jalan
+      pasar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745531
+    m_Localized: Kalau pasar, mencari orang terluka juga bakal jadi pekerjaan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745532
+    m_Localized: Jangan anggap mencari orang itu sekadar pekerjaan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745533
+    m_Localized: Ugh... Kalau mencari mereka saja lama, perawatan juga akan terlambat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745534
+    m_Localized: Lewat sini! Ada gerobak menghalangi jalan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745535
+    m_Localized: Warga sedang bergerak ke gang bagian dalam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745536
+    m_Localized: Tapi jalan utama pasar belum dibersihkan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745537
+    m_Localized: Orang-orang lebih dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745538
+    m_Localized: Kita singkirkan gerobaknya, meski harus mendorongnya sendiri!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939776
+    m_Localized: Kalau mendorong gerobak berat terburu-buru, punggung bisa menyerah
+      duluan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939777
+    m_Localized: Tetap saja, itu lebih baik daripada didorong monster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939778
+    m_Localized: Jejak kaki dari sisi pertanian mengarah ke sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939779
+    m_Localized: Sepertinya mereka bukan menghindari lapak, tapi masuk mengikuti
+      celah kosong.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939780
+    m_Localized: Jalan utama pasar adalah tempat para pedagang berjualan, sekaligus
+      jalur evakuasi bagi warga untuk keluar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939781
+    m_Localized: Jika monster masuk ke jalan utama pasar, kerusakan tetap akan terjadi
+      meski mereka tidak mengincar siapa pun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939782
+    m_Localized: Mari buat garis pertahanan sambil tetap membuka jalur evakuasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939783
+    m_Localized: Biarkan jalan utama tetap terbuka, dan hentikan gerombolan yang
+      masuk di pintu masuk pasar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939784
+    m_Localized: Mengerti. Aku akan menyisakan jalan untuk orang-orang lewat!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939785
+    m_Localized: Kalau Serah mengambil bagian depan, aku akan mengawasi yang lolos
+      di antara lapak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939786
+    m_Localized: Aku juga akan memeriksa pergerakan di atas atap.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939787
+    m_Localized: Di pasar ada banyak tempat yang menghalangi pandangan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939788
+    m_Localized: Kirim orang yang terluka ke dalam garis pertahanan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939789
+    m_Localized: Kalau mereka bertahan di samping lapak, aku akan sulit menemukan
+      mereka...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939790
+    m_Localized: Jalannya sudah kosong!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939791
+    m_Localized: Tapi ada suara dari pintu masuk sisi pertanian!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939792
+    m_Localized: Mereka masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939793
+    m_Localized: Kita harus menghentikan mereka sebelum menyebar di antara lapak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939794
+    m_Localized: Baik. Kita tahan mereka di pintu masuk pasar sebelum menyebar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939795
+    m_Localized: Warga di dalam pasar sudah dievakuasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939796
+    m_Localized: Kita berhasil mencegah kerusakan besar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939797
+    m_Localized: Bagus. Kita melindungi orang-orang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939798
+    m_Localized: Masalahnya, mereka bisa masuk sejauh ini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939799
+    m_Localized: Tidak ada tanda monster mengejar orang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939800
+    m_Localized: Sebaliknya, mereka langsung melewati celah yang muncul saat orang-orang
+      mengungsi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939801
+    m_Localized: Karena itu lebih berbahaya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939802
+    m_Localized: Jeple punya banyak jalan, jadi orang punya banyak tempat untuk menghindar,
+      tapi hal yang sama juga berlaku bagi monster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939803
+    m_Localized: Jika orang-orang tersebar, merawat mereka juga jadi sulit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939804
+    m_Localized: Karena mencari siapa yang terluka saja sudah memakan waktu...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939805
+    m_Localized: Saya dengar ada keributan juga di gudang dekat saluran air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939806
+    m_Localized: Katanya saluran air tersumbat, membuat jalan di antara gudang menjadi
+      sempit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939807
+    m_Localized: Jejak kaki juga mengarah ke saluran air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939808
+    m_Localized: Mereka mengikuti jalan utama pasar, lalu berbelok ke arah saluran
+      air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939809
+    m_Localized: Jika saluran air tersumbat, arah pergerakan mereka bisa berbelok
+      makin aneh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134080
+    m_Localized: Itu akan memengaruhi bukan hanya monster, tapi juga evakuasi orang-orang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134081
+    m_Localized: Kalau begitu, sisi saluran air juga harus kita hadang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134082
+    m_Localized: Kita sudah melindungi pasar, jadi jalan berikutnya juga tinggal
+      kita lindungi!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134083
+    m_Localized: Kalau di dekat air, pasti licin...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134084
+    m_Localized: Kali ini aku akan mengingatkan agar berhati-hati sebelum ada yang
+      jatuh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134085
+    m_Localized: Mari bergerak ke area saluran air dan gudang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134086
+    m_Localized: Mari periksa apakah saluran air memengaruhi pergerakan monster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134087
+    m_Localized: Apakah Anda datang dari sisi pasar?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134088
+    m_Localized: Saluran air tersumbat, sehingga jalan di antara gudang menyempit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134089
+    m_Localized: Monster-monster berkumpul masuk ke jalan di antara gudang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134090
+    m_Localized: Jejak kaki berbelok di tepi air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134091
+    m_Localized: Aku belum tahu apakah mereka menghindari air atau terdorong memutar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134092
+    m_Localized: Terlihat jalurnya menjadi kacau.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134093
+    m_Localized: Saluran air yang tersumbat juga mempersempit jalan yang dipakai
+      orang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134094
+    m_Localized: Kalau jalannya menyempit, bukankah lebih mudah untuk diblokir?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134095
+    m_Localized: Untuk sementara mungkin. Tapi kalau semuanya terdorong ke satu tempat,
+      tekanannya juga berkumpul di sana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134096
+    m_Localized: Kalau terdorong di dekat air, cara terluka bisa macam-macam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134097
+    m_Localized: Tergelincir, terbentur, basah kuyup... bukan kombinasi yang bagus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134098
+    m_Localized: Apakah masih ada orang di tepi saluran air?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134099
+    m_Localized: Staf gudang sudah dievakuasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328384
+    m_Localized: Namun, persediaan gudang menghalangi jalan, sehingga pekerjaan pembersihan
+      tertunda.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328385
+    m_Localized: Jejak gerombolan besar berlanjut di jalan antara gudang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328386
+    m_Localized: Jejaknya tertekan lebih dalam daripada yang kita lihat di pasar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328387
+    m_Localized: Berarti ada sesuatu yang lebih besar?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328388
+    m_Localized: Ada kemungkinan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328389
+    m_Localized: Tapi yang dekat saat ini adalah gerombolan di depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328390
+    m_Localized: Untuk memeriksa pergerakan yang lebih besar, kita harus membuka
+      jalan di samping saluran air dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328391
+    m_Localized: Jika kita tidak membersihkan saluran air, garis pertahanan berikutnya
+      juga akan goyah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328392
+    m_Localized: Baik. Kalau begitu, hentikan mereka di jalan samping saluran air
+      dulu!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328393
+    m_Localized: Hati-hati di dekat air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328394
+    m_Localized: Orang yang berada dekat air mungkin akan kena omel sebelum aku merawatnya...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328395
+    m_Localized: Pergerakannya makin dekat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328396
+    m_Localized: Mereka masuk ke jalan sempit di antara gudang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328397
+    m_Localized: Kita tahan mereka di jalan samping saluran air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328398
+    m_Localized: Sampai pembersihan saluran air selesai, tahan mereka sebelum mencapai
+      sisi gudang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328399
+    m_Localized: Kerusakan di sisi gudang tidak menyebar lebih jauh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328400
+    m_Localized: Tapi saluran air harus segera ditangani.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328401
+    m_Localized: Jejak gerombolan besar tidak berakhir di sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328402
+    m_Localized: Jejaknya berlanjut ke alun-alun di depan Wisma Penguasa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328403
+    m_Localized: Kalau sampai ke alun-alun, bukankah akan ada lebih banyak orang
+      berkumpul di sana?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328404
+    m_Localized: Tempat evakuasi berada di dekat alun-alun depan Wisma Penguasa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328405
+    m_Localized: Saat ini para penjaga menahan sisi luar alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328406
+    m_Localized: Sepertinya saluran air yang tersumbat membuat jalannya kacau.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328407
+    m_Localized: Monster tidak mengikuti saluran air, tetapi saluran air yang tersumbat
+      memaksa mereka ke jalan yang digunakan orang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328408
+    m_Localized: Jadi kita harus menahan air, menahan monster, dan melindungi orang-orang
+      juga.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328409
+    m_Localized: Hari ini terlalu banyak yang harus diurus...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328410
+    m_Localized: Pergerakan besar masih ada di sisi alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328411
+    m_Localized: Bobotnya berbeda dari gerombolan yang turun lebih dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328412
+    m_Localized: Sebelum menuju alun-alun, mari perbaiki saluran air dan garis pertahanan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328413
+    m_Localized: Kita harus mengurangi pergerakan yang datang dari sini, walau sedikit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328414
+    m_Localized: Ya. Ayo percepat perbaikannya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328415
+    m_Localized: Jika dibiarkan, garis pertahanan alun-alun akan lebih cepat goyah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328416
+    m_Localized: Mengerti. Selama perbaikan, aku akan mengawasi bagian depan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328417
+    m_Localized: Kalau begitu, aku akan memeriksa kru perbaikan dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328418
+    m_Localized: Setelah bekerja di dekat air, selalu saja ada yang terpeleset...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328419
+    m_Localized: Saluran air yang tersumbat sudah sedikit terbuka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328420
+    m_Localized: Tapi kami butuh waktu lagi untuk membersihkan semua tumpukan tanah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328421
+    m_Localized: Saat ini kita tidak punya waktu untuk membersihkan semuanya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328422
+    m_Localized: Kita harus mengulur waktu agar garis pertahanan pintu masuk alun-alun
+      bisa bertahan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328423
+    m_Localized: Baik. Kalau begitu, kita buka saluran air sedikit lagi sendiri!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328424
+    m_Localized: Garis pertahanan yang dibuat terburu-buru selalu saja bermasalah
+      lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328425
+    m_Localized: Tetap saja, sekarang yang utama adalah jangan sampai runtuh...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328426
+    m_Localized: Jejak gerombolan besar terus mengarah ke alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328427
+    m_Localized: Monster di sekitar juga terseret ke arah itu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328428
+    m_Localized: Kita masih belum tahu apakah makhluk besar itu memimpin gerombolan,
+      atau ikut terdorong seperti yang lain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328429
+    m_Localized: Tapi ada satu hal yang pasti. Jika mereka melewati pintu masuk alun-alun,
+      kerusakan akan membesar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328430
+    m_Localized: Siapkan pertahanan alun-alun di depan Wisma Penguasa, lalu bergerak
+      segera setelah perbaikan sementara selesai.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328431
+    m_Localized: Saya akan memperkuat garis pertahanan sementara di sisi saluran
+      air dan menyampaikan ini kepada penjaga di sisi alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328432
+    m_Localized: Arahkan orang-orang yang terluka ke jalur evakuasi di belakang Wisma
+      Penguasa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328433
+    m_Localized: Jika jalur evakuasi terhalang, perawatan juga akan tertunda.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328434
+    m_Localized: Mengerti. Aku akan menjaga jalur evakuasi tetap terbuka!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328435
+    m_Localized: Pergerakan monster di sisi saluran air sedikit melambat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328436
+    m_Localized: Sepertinya membuka saluran air mulai berpengaruh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328437
+    m_Localized: Kalau begitu, sekarang saatnya melakukan perbaikan. Tapi kita tidak
+      boleh tertahan di sini terlalu lama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328438
+    m_Localized: HP tembok dipulihkan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328439
+    m_Localized: UI pilihan peningkatan permanen terbuka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328440
+    m_Localized: 'Contoh pilihan: peningkatan peluang kritikal Noah / peningkatan
+      HP Serah / peningkatan jumlah penyembuhan Spayne.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328441
+    m_Localized: Peningkatan yang dipilih akan tetap berlaku di pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328442
+    m_Localized: Pergerakan besar makin mendekat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328443
+    m_Localized: Yang akan tiba lebih dulu adalah gerombolan depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328444
+    m_Localized: Baik. Bergerak ke pintu masuk alun-alun dan hentikan mereka sebelum
+      mencapai pusat Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328445
+    m_Localized: Warga sudah bergerak ke jalur evakuasi di belakang Wisma Penguasa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328446
+    m_Localized: Jika Anda bisa menahan pintu masuk alun-alun, kami bisa mencegah
+      kerusakan menyebar ke pusat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328447
+    m_Localized: Kalau begitu, kita selesaikan di pintu masuk alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328448
+    m_Localized: Aku akan melindungi pusat Jeple!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328449
+    m_Localized: Jejak gerombolan besar dari sisi saluran air berlanjut sampai pintu
+      masuk alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328450
+    m_Localized: Jejak monster di sekitar juga bertumpuk ke arah yang sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328451
+    m_Localized: Karena kita sudah membereskan saluran air, para penjaga seharusnya
+      bisa menahan monster di sisi itu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328452
+    m_Localized: Tapi jika makhluk besar itu bertahan terlalu lama, garis pertahanan
+      pintu masuk alun-alun akan mulai goyah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328453
+    m_Localized: Alun-alun luas, jadi lebih mudah mencari orang terluka, tapi...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328454
+    m_Localized: Karena luas, orang juga terlihat mudah terluka saat berlarian.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522688
+    m_Localized: Biarkan jalur evakuasi tetap terbuka dan hentikan mereka di pintu
+      masuk alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522689
+    m_Localized: Meski makhluk besar muncul, kita tahan dulu gerombolan yang turun
+      lebih awal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522690
+    m_Localized: Ya. Makhluk besar itu masih berada di belakang gerombolan depan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522691
+    m_Localized: Gerombolan depan akan tiba lebih dulu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522692
+    m_Localized: Bagian depan akan aku tahan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522693
+    m_Localized: Kalau yang besar di belakang juga datang, kita hentikan sekalian!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522694
+    m_Localized: Ya. Tapi kalau gerombolan depan menyebar, jalur evakuasi akan berbahaya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522695
+    m_Localized: Kalau terluka, segera mundur ke dalam garis pertahanan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522696
+    m_Localized: Kalau menahan sakit karena ini yang terakhir, setelah selesai akan
+      lebih sulit...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522697
+    m_Localized: Mereka masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522698
+    m_Localized: Gerombolan depan akan segera mencapai pintu masuk alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522699
+    m_Localized: Baik. Kita hentikan gerombolan depan dulu di pintu masuk alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522700
+    m_Localized: Kami berhasil mencegah kerusakan menyebar ke bagian dalam alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522701
+    m_Localized: Pusat Jeple juga aman.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522702
+    m_Localized: Bagus! Semuanya, kita juga berhasil melindungi Jeple!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522703
+    m_Localized: Akhirnya ada kabar baik.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522704
+    m_Localized: Kalau sejauh ini, bukankah kita juga melindungi waktu istirahat...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522705
+    m_Localized: Masih terlalu cepat untuk menyimpulkan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716992
+    m_Localized: Monster besar itu juga tidak berniat berhenti di alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716993
+    m_Localized: Jejaknya lebih seperti mencoba melewati alun-alun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716994
+    m_Localized: Jadi Jeple bukan target, melainkan jalan yang dilewatinya?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716995
+    m_Localized: Ya. Jejak yang kita lihat sejauh ini menunjukkan begitu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716996
+    m_Localized: Ada laporan tambahan saat perbaikan saluran air. Katanya saluran
+      air yang tersumbat dan jejak monster sama-sama mengarah ke Hutan Lumer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716997
+    m_Localized: Hutan Lumer?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716998
+    m_Localized: Kalau hutan, berarti berjalan lagi...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716999
+    m_Localized: Pasti ada naungan pohon, kan...? Semoga saja ada...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717000
+    m_Localized: Istirahat nanti saja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717001
+    m_Localized: Berarti masuknya mereka ke Jeple mungkin disebabkan pergerakan yang
+      terdorong dari sisi hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717002
+    m_Localized: Ada kemungkinan. Tapi kita masih belum tahu penyebabnya. Kita harus
+      memeriksanya langsung.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717003
+    m_Localized: Jejak menuju hutan adalah yang paling kuat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717004
+    m_Localized: Aliran air dan jejak kaki menunjuk ke arah yang sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717005
+    m_Localized: Kalau mereka terdorong dari sisi hutan lagi, Jeple juga akan kembali
+      berbahaya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717006
+    m_Localized: Serahkan pertahanan Jeple kepada pengelola, lalu kita bergerak ke
+      pintu masuk Hutan Lumer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717007
+    m_Localized: Ya. Kita harus melihat sejauh mana pergerakan yang terlihat di Jeple
+      berlanjut.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717008
+    m_Localized: Jejak yang kita lihat di Jeple berlanjut sampai ke sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717009
+    m_Localized: Arahnya dari dalam hutan menuju ke luar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717010
+    m_Localized: Berarti para monster bergerombol dari sini menuju Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717011
+    m_Localized: Masih terlalu cepat untuk memastikan ini titik awalnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717012
+    m_Localized: Tapi yang jelas, para monster berbondong-bondong keluar dari dalam
+      hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717013
+    m_Localized: Tidak kusangka jejak seperti ini berlanjut tepat di belakang Jeple...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717014
+    m_Localized: Bahkan setelah kita berhasil menahan mereka, melihat ini tetap terasa
+      tidak enak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717015
+    m_Localized: Kupikir hutan itu tempat yang tenang...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717016
+    m_Localized: Ternyata ada tempat yang justru makin tidak nyaman karena terlalu
+      tenang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717017
+    m_Localized: Tidak apa-apa! Kalau sedang tenang, kita bisa cepat memeriksanya!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717018
+    m_Localized: ...Tidak adanya suara malah membuatku makin gelisah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717019
+    m_Localized: Sebelum masuk ke dalam, kita periksa dulu jejak di sisi pintu masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717020
+    m_Localized: Jejak kakinya tersebar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717021
+    m_Localized: Mereka tidak berkumpul untuk bertarung. Ini jejak mereka kehilangan
+      arah lalu bergerombol ke pintu masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717022
+    m_Localized: Jejak kaki yang menuju keluar tampak dalam, sedangkan yang kembali
+      ke dalam tampak dangkal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717023
+    m_Localized: Sepertinya mereka terdesak keluar oleh suatu kekuatan, lalu mencoba
+      bersembunyi kembali ke hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717024
+    m_Localized: Mereka bukan mondar-mandir di tempat yang sama. Ini jejak terdorong
+      keluar lalu mencoba bertahan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717025
+    m_Localized: Kalau mereka tersesat, kita harus lebih berhati-hati.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717026
+    m_Localized: Artinya kita tidak tahu mereka akan melesat ke mana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717027
+    m_Localized: Ya. Daripada mengejar secara paksa, kita harus menahan sisi pintu
+      masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717028
+    m_Localized: Kalau mereka menyebar di sini, mereka bisa turun ke arah Jeple lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717029
+    m_Localized: Kalau begitu, kita harus menahan mereka dulu di pintu masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717030
+    m_Localized: Bagian depan biar aku yang urus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717031
+    m_Localized: Aku tidak akan membiarkan mereka keluar dari hutan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717032
+    m_Localized: Kalau terluka di jalan hutan, memindahkannya juga akan sulit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717033
+    m_Localized: Kumohon, kalau ada yang jatuh, semoga hanya di tanah yang rata...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717034
+    m_Localized: Pergerakannya sudah mendekat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717035
+    m_Localized: Mereka bergerombol keluar menuju pintu masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717036
+    m_Localized: Baik. Hentikan mereka di pintu masuk Hutan Lumer sebelum mereka
+      bergerombol menuju Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717037
+    m_Localized: Kita memang berhasil menahan mereka, tapi... ini aneh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717038
+    m_Localized: Rasanya mereka lebih seperti mencoba keluar daripada menyerang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717039
+    m_Localized: Mereka tidak tampak ingin bertarung, tapi kita tidak bisa membiarkan
+      mereka turun lagi ke arah Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717040
+    m_Localized: Ya. Ini bukan jejak mereka berkumpul menuju kita.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717041
+    m_Localized: Ini jejak mereka menghindari bagian dalam lalu bergerombol keluar
+      ke pintu masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717042
+    m_Localized: Ini lebih jelas daripada yang kita lihat di Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717043
+    m_Localized: Ini bukan sekadar bergerak mengikuti jalan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717044
+    m_Localized: Berarti di dalam hutan ada sesuatu yang lebih mengerikan, kan...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717045
+    m_Localized: Mendengarnya saja membuatku ingin istirahat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717046
+    m_Localized: Aku mengerti kalau ingin istirahat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717047
+    m_Localized: Tetap saja, sekarang kita harus melihat dulu alasan mereka berhenti
+      di pintu masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717048
+    m_Localized: Jejak kakinya berlanjut ke arah jalan setapak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717049
+    m_Localized: Sebagian tampaknya berbalik masuk lagi dari pintu masuk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717050
+    m_Localized: Berarti ini belum selesai di sini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911296
+    m_Localized: Masih ada sesuatu yang tersisa di dalam hutan, kan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911297
+    m_Localized: Mari kita susun catatan pertempuran di pintu masuk hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911298
+    m_Localized: Setelah membandingkannya dengan jejak yang kita lihat di Jeple,
+      mari bersiap masuk ke dalam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911299
+    m_Localized: Ya. Kita harus memeriksanya lebih rinci daripada saat di Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911300
+    m_Localized: Jejak kakinya tidak berlanjut dalam satu jalur lurus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911301
+    m_Localized: Mereka beberapa kali mengubah arah, tapi akhirnya tetap bergerombol
+      ke sisi yang sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911302
+    m_Localized: Jejak kaki yang dalam menuju keluar hutan, sedangkan yang dangkal
+      menuju ke dalam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911303
+    m_Localized: Sepertinya para monster yang tersesat bergerombol sekaligus ke sisi
+      yang sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911304
+    m_Localized: Ya. Tapi kalau hanya tersesat, arah mereka terlalu mirip.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911305
+    m_Localized: Daripada mengikuti seluruh jalan setapak, kita harus melihat titik
+      tempat mereka berkumpul ke arah yang sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911306
+    m_Localized: Manusia saja cukup berbahaya kalau tersesat di hutan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911307
+    m_Localized: Kalau monster juga tersesat, urusannya jadi makin merepotkan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911308
+    m_Localized: Ikuti jalan setapak dan pastikan arahnya sebelum jejaknya bercabang
+      lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911309
+    m_Localized: Tinggalkan penanda arah ke Jeple juga. Jalan kembali tidak boleh
+      sampai tertutup.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911310
+    m_Localized: Oh, jalan kembali memang benar-benar penting...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911311
+    m_Localized: Jejak kaki ke arah jalan setapak lebih dangkal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911312
+    m_Localized: Bukan seperti berlari, melainkan jejak mencoba bertahan agar tidak
+      terdorong pergi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911313
+    m_Localized: Mungkin ada sesuatu di dalam hutan yang mengacaukan pergerakan mereka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911314
+    m_Localized: Untuk sekarang, anggap saja itu masih kemungkinan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911315
+    m_Localized: Reaksi batu sinyalnya lemah, tapi juga berlanjut ke dalam hutan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105600
+    m_Localized: Itu lebih seperti jejak yang bisa kita ikuti, bukan penyebabnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105601
+    m_Localized: Baik. Masuklah tanpa kehilangan penandanya!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105602
+    m_Localized: Masuk boleh saja, tapi ingat juga jalan keluarnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105603
+    m_Localized: Akan gawat kalau kita ikut masuk daftar yang tersesat...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105604
+    m_Localized: UI pilihan peningkatan permanen terbuka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105605
+    m_Localized: 'Contoh pilihan: peningkatan peluang kritikal Noah / peningkatan
+      HP Serah / peningkatan jumlah penyembuhan Spayne.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105606
+    m_Localized: Peningkatan yang dipilih akan tetap berlaku di pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105607
+    m_Localized: Mulai dari sini, jejaknya menjadi lebih rumit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105608
+    m_Localized: Mereka mengikuti jalan, masuk ke semak-semak, lalu kembali ke jalan
+      lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105609
+    m_Localized: Sepertinya mereka tidak bisa menemukan jalan saat melarikan diri.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105610
+    m_Localized: Tapi arah akhirnya hampir sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105611
+    m_Localized: Meski tampak menyebar, pada akhirnya mereka tetap terdorong ke sisi
+      yang sama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105612
+    m_Localized: Kalau terdorong ke sana kemari di jalan sempit, mudah sekali terluka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105613
+    m_Localized: Goresan dari semak-semak pun bisa lama terasa...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105614
+    m_Localized: Kalau sempit, menahan mereka lebih mudah, tapi kalau terlepas akan
+      sulit ditemukan lagi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105615
+    m_Localized: Benar. Karena itu kita tidak boleh membiarkan bagian tengah terbuka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105616
+    m_Localized: Kuasai bagian tengah jalan setapak, tapi jangan mengejar terlalu
+      dalam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105617
+    m_Localized: Cegah gerombolan yang tersebar agar tidak lolos ke arah Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105618
+    m_Localized: Ada pergerakan di semak-semak sebelah kiri.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105619
+    m_Localized: Di bawah jalan sebelah kanan juga ada gerombolan kecil bersembunyi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105620
+    m_Localized: Kalau begitu, aku akan menahan bagian tengah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105621
+    m_Localized: Kalau mereka lolos ke kedua sisi, segera beri tahu!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105622
+    m_Localized: Karena semak-semak, sulit melihat kedua sisi sekaligus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105623
+    m_Localized: Kalau kita memaksa mengejar, justru bisa kehilangan mereka.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105624
+    m_Localized: Jejak di kanan dangkal. Itu gerombolan kecil.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105625
+    m_Localized: Di kiri, ranting baru saja patah. Gerombolan yang lebih besar sudah
+      dekat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105626
+    m_Localized: Kalau begitu, hentikan gerombolan besar di kiri dulu, lalu bereskan
+      gerombolan kecil di kanan di dalam jalan setapak.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105627
+    m_Localized: Baik. Yang besar akan aku tahan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105628
+    m_Localized: Kalau terluka, segera mundur ke belakang. Aku akan memeriksanya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105629
+    m_Localized: Kalau ada yang terguling keluar dari semak-semak, aku akan menghela
+      napas dulu baru mengobati...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105630
+    m_Localized: Pergerakannya sudah dimulai.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105631
+    m_Localized: Mereka keluar bersamaan dari kedua sisi jalan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105632
+    m_Localized: Baik. Kita hentikan mereka di tengah jalan setapak.
     m_Metadata:
       m_Items: []
   references:
