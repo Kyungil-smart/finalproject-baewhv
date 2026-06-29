@@ -9,15 +9,8 @@ public class LoadingBarUI : MonoBehaviour
     [SerializeField] private Slider loadingBarSlider;
     [SerializeField] private TextMeshProUGUI loadingBarText;
 
-    private void Awake()
+    public void Init()
     {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
-        loadingBar.SetActive(false);
-
         Service.Get<SceneController>().OnLoading += LoadingUi;
         Service.Get<SceneController>().OnLoadingComplete += CloseLoadingUi;
     }
