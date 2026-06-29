@@ -16,7 +16,7 @@
       "CLEAR_REWARD_TYPE_03": "MOVE_SPEED",
       "CLEAR_REWARD_F_03": -0.2,
       "CLEAR_REWARD_S_03": -0.2,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Sera_1]"
     },
     {
       "CLEAR_REWARD_ID": "4001",
@@ -34,7 +34,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Sera_2]"
     },
     {
       "CLEAR_REWARD_ID": "4002",
@@ -52,7 +52,7 @@
       "CLEAR_REWARD_TYPE_03": "DEF_P",
       "CLEAR_REWARD_F_03": 2,
       "CLEAR_REWARD_S_03": 2,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Sera_3]"
     },
     {
       "CLEAR_REWARD_ID": "4003",
@@ -70,7 +70,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Noah_1]"
     },
     {
       "CLEAR_REWARD_ID": "4004",
@@ -88,7 +88,7 @@
       "CLEAR_REWARD_TYPE_03": "SKILL_CD",
       "CLEAR_REWARD_F_03": 25,
       "CLEAR_REWARD_S_03": -3,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Noah_2]"
     },
     {
       "CLEAR_REWARD_ID": "4005",
@@ -106,7 +106,7 @@
       "CLEAR_REWARD_TYPE_03": "DEF_P",
       "CLEAR_REWARD_F_03": 2,
       "CLEAR_REWARD_S_03": 2,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Noah_3]"
     },
     {
       "CLEAR_REWARD_ID": "4006",
@@ -124,7 +124,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Alice_1]"
     },
     {
       "CLEAR_REWARD_ID": "4007",
@@ -142,7 +142,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Alice_2]"
     },
     {
       "CLEAR_REWARD_ID": "4008",
@@ -160,7 +160,7 @@
       "CLEAR_REWARD_TYPE_03": "DEF_P",
       "CLEAR_REWARD_F_03": 2,
       "CLEAR_REWARD_S_03": 2,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Alice_3]"
     },
     {
       "CLEAR_REWARD_ID": "4009",
@@ -178,7 +178,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Spine_1]"
     },
     {
       "CLEAR_REWARD_ID": "4010",
@@ -196,7 +196,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Spine_2]"
     },
     {
       "CLEAR_REWARD_ID": "4011",
@@ -214,7 +214,7 @@
       "CLEAR_REWARD_TYPE_03": "DEF_P",
       "CLEAR_REWARD_F_03": 2,
       "CLEAR_REWARD_S_03": 2,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_Spine_3]"
     },
     {
       "CLEAR_REWARD_ID": "4012",
@@ -232,7 +232,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_All_1]"
     },
     {
       "CLEAR_REWARD_ID": "4013",
@@ -250,7 +250,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_All_2]"
     },
     {
       "CLEAR_REWARD_ID": "4014",
@@ -268,7 +268,7 @@
       "CLEAR_REWARD_TYPE_03": "NONE",
       "CLEAR_REWARD_F_03": 0,
       "CLEAR_REWARD_S_03": 0,
-      "CLEAR_REWARD_ICON": ""
+      "CLEAR_REWARD_ICON": "Icon/Icons[HCD_All_3]"
     }
   ]
 }
