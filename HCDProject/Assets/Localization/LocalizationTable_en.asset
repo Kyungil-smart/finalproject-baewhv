@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 51780677632
-    m_Localized: 
+    m_Localized: Sharp Senses
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160516
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160515
-    m_Localized: Bow
+    m_Localized: Attack Speed
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160514
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160513
-    m_Localized: Sword
+    m_Localized: Attack
     m_Metadata:
       m_Items: []
   - m_Id: 2040774160463
@@ -619,7 +619,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1035299428065294
-    m_Localized: Right. And you just said "yet."
+    m_Localized: Right. And you just said\"yet.\"
     m_Metadata:
       m_Items: []
   - m_Id: 1035299428065295
@@ -1988,6 +1988,1980 @@ MonoBehaviour:
   - m_Id: 2554901970640916
     m_Localized: Ancient Armor acquired. The selected relic has been registered in
       your owned list. Its effect remains in later stages.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160384
+    m_Localized: Swiftness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160385
+    m_Localized: Keen Vision
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160386
+    m_Localized: Keen Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160387
+    m_Localized: Overflowing Vitality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160388
+    m_Localized: Flowing Vitality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160389
+    m_Localized: Body Enhancement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160390
+    m_Localized: Lightweight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160391
+    m_Localized: Condensed Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160392
+    m_Localized: Overload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160393
+    m_Localized: Breath of Wind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160394
+    m_Localized: Beastform
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160395
+    m_Localized: Ironwall Momentum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160396
+    m_Localized: Monster Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160464
+    m_Localized: Monster Skill Info
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040774160517
+    m_Localized: Active Skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233806413824
+    m_Localized: Then that means they went farther into where the people are.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356864
+    m_Localized: Yeah. The traces that split off in front of the gate headed toward
+      the farm district.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356865
+    m_Localized: Judging by the report, they have already gone deep into the farms.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356866
+    m_Localized: If it is a field path, there will probably be mud...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356867
+    m_Localized: If I fall, washing up will take longer than resting.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356868
+    m_Localized: This is not the time to calculate break time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356869
+    m_Localized: Do not underestimate rest...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356870
+    m_Localized: First, let us move to the temporary command post.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356871
+    m_Localized: Before we head to the farms, let us sort out the records from the
+      gate front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356872
+    m_Localized: Yeah. I will check the signal stone responses too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356873
+    m_Localized: Let us check which road they split off onto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356874
+    m_Localized: All right. Once we are done sorting this out, let us head straight
+      to the farms!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356875
+    m_Localized: I will keep watching the traces.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356876
+    m_Localized: Then let us hurry and finish sorting this out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356877
+    m_Localized: The longer this takes, the farther break time gets...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356878
+    m_Localized: Most of the residents inside the gate have evacuated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356879
+    m_Localized: There are few injured, but the supply carts were shaken up badly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356880
+    m_Localized: It is a relief that there are not many injured.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356881
+    m_Localized: If they ask me to treat the carts too, I will be in trouble...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356882
+    m_Localized: We kept the damage small.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356883
+    m_Localized: Now the question is which road this group leads to.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356884
+    m_Localized: The footprints continue outside the gate too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356885
+    m_Localized: There are almost no signs that they stopped or circled around.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356886
+    m_Localized: Then, like at Cies, we stopped the incoming group here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356887
+    m_Localized: Yeah. But Jeple has more roads.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356888
+    m_Localized: Even if we block them at the gate, they can split off onto other
+      roads.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356889
+    m_Localized: Keep the gate defense records organized.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233848356890
+    m_Localized: Let us compare them with the Cies records.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745472
+    m_Localized: If we compare them, we should be able to find the point where they
+      split off.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745473
+    m_Localized: Commander, we have an additional report from the farm district.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745474
+    m_Localized: Fences have been pushed in at several places, and monsters are passing
+      between the fields.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745475
+    m_Localized: Between the fields? What about the people?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745476
+    m_Localized: The managers are evacuating them, but the farm roads are wide, so
+      they are difficult to block.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745477
+    m_Localized: The traces split off right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745478
+    m_Localized: Let us check the farm district first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745479
+    m_Localized: On field paths, your feet can sink in...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745480
+    m_Localized: I guess today's shoes are done for.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745481
+    m_Localized: Let us organize the defense records and move right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745482
+    m_Localized: The permanent enhancement selection UI opens.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745483
+    m_Localized: 'Selection examples: Serah attack increase / Spayne defense increase
+      / Alice HP increase.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745484
+    m_Localized: The selected enhancement remains in later battles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745485
+    m_Localized: Are you the Guardians? This way, please!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745486
+    m_Localized: The monsters broke the fence and passed between the fields.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745487
+    m_Localized: Did everyone evacuate?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745488
+    m_Localized: The nearby people have been evacuated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745489
+    m_Localized: But evacuation is not finished yet along the road by the work shed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745490
+    m_Localized: There are almost no signs that they ate the crops.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745491
+    m_Localized: It is closer to them simply pushing through as they passed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745492
+    m_Localized: The wide farm roads are the problem instead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745493
+    m_Localized: The more places there are to block, the more paths there are for
+      them to slip through.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745494
+    m_Localized: Field paths make your feet sink in more easily than they look.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745495
+    m_Localized: If you fall, your clothes might end up worse off than your injuries...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745496
+    m_Localized: All right. Then let us stop them in front of the work shed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745497
+    m_Localized: I will not let them get toward the work shed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745498
+    m_Localized: Manager, please evacuate the people to the opposite side of the
+      work shed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745499
+    m_Localized: We will stop the group coming in between the fields.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745500
+    m_Localized: Understood. I will guide them to the road on the opposite side of
+      the work shed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745501
+    m_Localized: The footprints split into two paths.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745502
+    m_Localized: The large group's tracks lead through the middle of the fields,
+      and the small group's tracks lead along the fence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745503
+    m_Localized: If we do not stop the ones moving along the fence first, they will
+      overlap with the residents' evacuation route.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745504
+    m_Localized: Serah, take the inside of the front fence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745505
+    m_Localized: Leave it to me! I will not let them past the fence!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745506
+    m_Localized: Do not go too far.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745507
+    m_Localized: Pulling someone out of mud is harder than treating them...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745508
+    m_Localized: The movement is getting closer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745509
+    m_Localized: They are coming straight into the middle of the fields.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745510
+    m_Localized: All right. Let us stop them on the path between the fields.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745511
+    m_Localized: Let us finish this before they cross the evacuation route.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745512
+    m_Localized: We prevented damage near the work shed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745513
+    m_Localized: The people were not badly hurt either.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745514
+    m_Localized: That is a relief.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745515
+    m_Localized: If the fence was pushed in that much, anyone nearby would have been
+      in danger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745516
+    m_Localized: Yeah. There are few signs that the monsters stopped to fight.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745517
+    m_Localized: They kept being driven forward like they were lost.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745518
+    m_Localized: The farm terrain split the footprints.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745519
+    m_Localized: We stopped one side, but the other trail continues toward the market
+      street.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745520
+    m_Localized: If it is the market, there will be more people... right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745521
+    m_Localized: It should be easier to walk than the fields, but there will be more
+      people and baggage too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745522
+    m_Localized: There are merchants on the market side who still have not evacuated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745523
+    m_Localized: Many people will have trouble moving right away if they leave their
+      goods behind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745524
+    m_Localized: Then we have to hurry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745525
+    m_Localized: If they get into a crowded place, it will become more dangerous.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745526
+    m_Localized: The footprints lead to the market main road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745527
+    m_Localized: Some followed the road used by carts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745528
+    m_Localized: The monsters did not choose people. They were driven onto the roads
+      people use.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745529
+    m_Localized: That makes stopping them more difficult too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745530
+    m_Localized: Let us leave the farm district to the managers and move to the market
+      street.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745531
+    m_Localized: If it is the market, even finding injured people will be work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745532
+    m_Localized: Do not think of finding people as just work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745533
+    m_Localized: Ugh... If finding them takes too long, treatment will be delayed
+      too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745534
+    m_Localized: This way! A cart is blocking the road!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745535
+    m_Localized: The residents are moving into the inner alleys.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745536
+    m_Localized: But the market main road has not been cleared yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745537
+    m_Localized: People come first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233856745538
+    m_Localized: Let us move the carts ourselves, even if we have to push them!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939776
+    m_Localized: If we rush to push heavy carts, our backs will give out first...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939777
+    m_Localized: Still, that is better than being pushed by monsters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939778
+    m_Localized: The footprints from the farm side lead here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939779
+    m_Localized: It does not look like they avoided the stalls. It looks like they
+      came in along the gaps.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939780
+    m_Localized: The market main road is where merchants do business, and also the
+      evacuation route residents use to get out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939781
+    m_Localized: If monsters get into the market main road, there will be damage
+      even if they are not aiming for anyone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939782
+    m_Localized: Let us form a defensive line while keeping the evacuation route
+      open.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939783
+    m_Localized: Keep the main road open, and stop the incoming group at the market
+      entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939784
+    m_Localized: Got it. I will leave a path for people to pass!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939785
+    m_Localized: If Serah takes the front, I will watch the ones slipping between
+      the stalls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939786
+    m_Localized: I will check the movement on the rooftops too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939787
+    m_Localized: There are many places in the market where visibility is blocked.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939788
+    m_Localized: Send injured people inside the defensive line.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939789
+    m_Localized: If they hold out beside the stalls, it will be hard for me to find
+      them...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939790
+    m_Localized: The road is clear!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939791
+    m_Localized: But there is noise coming from the farm-side entrance!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939792
+    m_Localized: They are coming in.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939793
+    m_Localized: We need to stop them before they scatter between the stalls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939794
+    m_Localized: All right. Let us stop them at the market entrance before they scatter.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939795
+    m_Localized: The residents inside the market have evacuated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939796
+    m_Localized: We prevented major damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939797
+    m_Localized: Good. We protected the people.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939798
+    m_Localized: The problem is that they made it this far.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939799
+    m_Localized: There are no signs that the monsters chased people.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939800
+    m_Localized: Instead, they stepped right through the openings left as people
+      evacuated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939801
+    m_Localized: That is why it was more dangerous.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939802
+    m_Localized: Jeple has many roads, so people have many places to escape, but
+      the same applies to monsters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939803
+    m_Localized: If people are scattered, treating them becomes difficult too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939804
+    m_Localized: Because it takes time just to find out who is hurt...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939805
+    m_Localized: I heard there was a commotion at the warehouses near the waterway
+      too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939806
+    m_Localized: They say the waterway is blocked, narrowing the road between the
+      warehouses.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939807
+    m_Localized: The footprints lead toward the waterway too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939808
+    m_Localized: They followed the market main road, then turned toward the waterway.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233860939809
+    m_Localized: If the waterway is blocked, their movement path could bend even
+      more strangely.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134080
+    m_Localized: It will affect not only monsters, but people's evacuation too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134081
+    m_Localized: Then we should block the waterway side too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134082
+    m_Localized: We protected the market, so we just have to protect the next road
+      too!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134083
+    m_Localized: If it is by the water, it will be slippery...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134084
+    m_Localized: This time, I will warn everyone to be careful before they fall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134085
+    m_Localized: Let us move to the waterway and warehouse area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134086
+    m_Localized: Let us check whether the waterways are affecting monster movement.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134087
+    m_Localized: Did you come from the market side?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134088
+    m_Localized: The waterway is blocked, so the road between the warehouses has
+      narrowed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134089
+    m_Localized: The monsters are swarming into the road between the warehouses.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134090
+    m_Localized: The footprints turned at the water's edge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134091
+    m_Localized: I still do not know whether they were avoiding the water or were
+      pushed into a detour.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134092
+    m_Localized: We can see that the path is tangled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134093
+    m_Localized: The blocked waterway has narrowed even the paths people use.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134094
+    m_Localized: If the roads shrink, does that not make them easier to block?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134095
+    m_Localized: Temporarily, maybe. But if everything is forced into one place,
+      the force gathers there too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134096
+    m_Localized: If you get pushed near the water, there are all kinds of ways to
+      get hurt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134097
+    m_Localized: Slipping, bumping into things, getting soaked... It is not a very
+      good combination.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134098
+    m_Localized: Are there any people left along the waterway edge?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233865134099
+    m_Localized: The warehouse staff have been evacuated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328384
+    m_Localized: However, warehouse supplies are blocking the road, so the clearing
+      work is being delayed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328385
+    m_Localized: The tracks of the large group continue along the road between the
+      warehouses.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328386
+    m_Localized: They are pressed in deeper than what we saw at the market.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328387
+    m_Localized: Does that mean there is something bigger?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328388
+    m_Localized: It is possible.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328389
+    m_Localized: But what is close right now is the group up ahead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328390
+    m_Localized: To check the larger movement, we need to open the road beside the
+      waterway first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328391
+    m_Localized: If we do not clear the waterway, the next defensive line will become
+      unstable too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328392
+    m_Localized: All right. Then let us stop them on the road beside the waterway
+      first!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328393
+    m_Localized: Be careful near the water.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328394
+    m_Localized: Anyone near the water might get a scolding before I even treat them...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328395
+    m_Localized: The movement is getting closer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328396
+    m_Localized: They are entering the narrow road between the warehouses.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328397
+    m_Localized: Let us stop them on the road beside the waterway.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328398
+    m_Localized: Until the waterway clearing is finished, let us stop them before
+      they reach the warehouse side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328399
+    m_Localized: The damage on the warehouse side did not spread any farther.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328400
+    m_Localized: But the waterway needs to be handled immediately.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328401
+    m_Localized: The large group's tracks do not end here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328402
+    m_Localized: They continue toward the plaza in front of the Lord's Manor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328403
+    m_Localized: If they reach the plaza, will there not be more people gathered
+      there?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328404
+    m_Localized: The evacuation site is near the plaza in front of the Lord's Manor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328405
+    m_Localized: Right now, the guards are blocking the outside of the plaza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328406
+    m_Localized: It looks like the blocked waterway has tangled the roads.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328407
+    m_Localized: The monsters did not follow the waterway, but the blocked waterway
+      forced them onto the roads people use.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328408
+    m_Localized: So we have to stop the water, stop the monsters, and protect the
+      people.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328409
+    m_Localized: There is too much to take care of today...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328410
+    m_Localized: The large movement is still on the plaza side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328411
+    m_Localized: Its weight is different from the group that came down first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328412
+    m_Localized: Before we go to the plaza, let us repair the waterway and defensive
+      line.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328413
+    m_Localized: We need to reduce the incoming movement here, even a little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328414
+    m_Localized: Yeah. Let us hurry with the repairs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328415
+    m_Localized: If we leave it as is, the plaza defensive line will shake sooner.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328416
+    m_Localized: Got it. I will watch the front while the repairs are happening!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328417
+    m_Localized: Then I will check on the repair crew first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328418
+    m_Localized: After work by the water, someone always seems to have slipped...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328419
+    m_Localized: The blocked waterway has opened a little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328420
+    m_Localized: But we need more time to clear all the piles of dirt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328421
+    m_Localized: We do not have time to clear everything right now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328422
+    m_Localized: We need to buy time for the plaza entrance defensive line to hold.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328423
+    m_Localized: All right. Then let us open the waterway even a little more ourselves!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328424
+    m_Localized: A hastily built defensive line always seems to cause trouble again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328425
+    m_Localized: Still, keeping it from collapsing comes first right now...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328426
+    m_Localized: The large group's tracks continue toward the plaza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328427
+    m_Localized: The nearby monsters are being swept in that direction too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328428
+    m_Localized: We still do not know whether the large creature is leading the group
+      or being driven along just the same.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328429
+    m_Localized: But one thing is certain. If they get past the plaza entrance, the
+      damage will grow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328430
+    m_Localized: Prepare the defense of the plaza in front of the Lord's Manor, and
+      move as soon as the temporary repairs are finished.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328431
+    m_Localized: I will reinforce the temporary defensive line by the waterway and
+      inform the guards near the plaza as well.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328432
+    m_Localized: Guide the injured people to the evacuation route behind the Lord's
+      Manor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328433
+    m_Localized: If the evacuation route is blocked, treatment will be delayed too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328434
+    m_Localized: Got it. I will keep the evacuation route open!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328435
+    m_Localized: The monster movement near the waterway has slowed a little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328436
+    m_Localized: Opening the waterway seems to be working.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328437
+    m_Localized: Then we should use this chance to make repairs. But we cannot get
+      stuck here for long.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328438
+    m_Localized: Wall HP is restored.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328439
+    m_Localized: The permanent enhancement selection UI opens.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328440
+    m_Localized: 'Selection examples: Noah critical rate increase / Serah HP increase
+      / Spayne healing amount increase.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328441
+    m_Localized: The selected enhancement remains in later battles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328442
+    m_Localized: The large movement is getting closer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328443
+    m_Localized: The first to arrive will be the group up front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328444
+    m_Localized: All right. Move to the plaza entrance and stop them before they
+      reach the center of Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328445
+    m_Localized: The residents have moved to the evacuation route behind the Lord's
+      Manor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328446
+    m_Localized: If you can hold the plaza entrance, we can stop the damage from
+      spreading to the center.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328447
+    m_Localized: Then let us finish this at the plaza entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328448
+    m_Localized: I will protect the center of Jeple!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328449
+    m_Localized: The tracks of the large group from the waterway side continue all
+      the way to the plaza entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328450
+    m_Localized: The traces of nearby monsters overlap in the same direction too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328451
+    m_Localized: Since we cleared the waterway, the guards should be able to stop
+      the monsters on that side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328452
+    m_Localized: But if the large creature holds out for too long, the plaza entrance
+      defensive line will start to shake.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328453
+    m_Localized: The plaza is wide, so it is better for finding injured people, but...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233869328454
+    m_Localized: Because it is wide, it also looks easy to get hurt while running
+      around.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522688
+    m_Localized: Keep the evacuation route open and stop them at the plaza entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522689
+    m_Localized: Even if the large creature appears, let us stop the group coming
+      down first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522690
+    m_Localized: Yeah. The large creature is still behind the front group.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522691
+    m_Localized: The front group will arrive first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522692
+    m_Localized: I will stop the front!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522693
+    m_Localized: If the big one behind them comes too, we can stop it together!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522694
+    m_Localized: Yeah. But if the front group scatters, the evacuation route will
+      be in danger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522695
+    m_Localized: If you are hurt, fall back inside the defensive line right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522696
+    m_Localized: If you hold it in because it is the last battle, it will be harder
+      after it ends...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522697
+    m_Localized: They are coming in.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522698
+    m_Localized: The front group will reach the plaza entrance soon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522699
+    m_Localized: All right. Let us stop the front group first at the plaza entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522700
+    m_Localized: We stopped the damage from spreading deeper into the plaza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522701
+    m_Localized: The center of Jeple is safe too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522702
+    m_Localized: Good! Everyone, we protected Jeple too!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522703
+    m_Localized: Finally, some good news.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522704
+    m_Localized: At this point, did we protect our break time too...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233873522705
+    m_Localized: It is too early to conclude that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716992
+    m_Localized: The large monster was not trying to stop at the plaza either.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716993
+    m_Localized: The tracks look closer to it trying to pass through the plaza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716994
+    m_Localized: So Jeple was not the target, but a path it was passing through?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716995
+    m_Localized: Yeah. The traces we have seen so far look that way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716996
+    m_Localized: An additional report came in during the waterway repairs. They say
+      both the blocked waterway and the monster tracks point toward Lumer Forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716997
+    m_Localized: Lumer Forest?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716998
+    m_Localized: If it is a forest, that means more walking...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877716999
+    m_Localized: There will be tree shade, right...? Please let there be...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717000
+    m_Localized: Let us rest later.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717001
+    m_Localized: Then the monsters entering Jeple may have been caused by movement
+      being driven in from the forest side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717002
+    m_Localized: It is possible. But we still do not know the cause. We need to check
+      it ourselves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717003
+    m_Localized: The traces toward the forest are the strongest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717004
+    m_Localized: The waterway and the footprints are pointing the same way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717005
+    m_Localized: If they get driven in from the forest side again, Jeple will be
+      in danger again too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717006
+    m_Localized: Hand Jeple's defense over to the manager, and let's move to the
+      entrance of Lumer Forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717007
+    m_Localized: Yeah. We need to see how far the movement we saw in Jeple continues.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717008
+    m_Localized: The traces we saw in Jeple continue all the way here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717009
+    m_Localized: The direction is from inside the forest to the outside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717010
+    m_Localized: Then the monsters rushed from here toward Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717011
+    m_Localized: It's too early to say this is where it started.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717012
+    m_Localized: But what is clear is that the monsters came flooding out from inside
+      the forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717013
+    m_Localized: I can't believe traces like this continued right behind Jeple...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717014
+    m_Localized: Even seeing it after we stopped them, it still doesn't feel good.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717015
+    m_Localized: I thought forests were quiet places...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717016
+    m_Localized: So some places are even more uncomfortable because they're quiet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717017
+    m_Localized: It's okay! If it's quiet, we can hurry and check it now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717018
+    m_Localized: ...The lack of sound just made me more uneasy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717019
+    m_Localized: Before we head inside, let's check the traces near the entrance
+      first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717020
+    m_Localized: The footprints are scattered.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717021
+    m_Localized: They weren't gathering to fight. These are traces of them losing
+      direction and crowding toward the entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717022
+    m_Localized: The footprints heading outside are deep, and the ones that turned
+      back inside are shallow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717023
+    m_Localized: It looks like they were forced out, then tried to hide back in the
+      forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717024
+    m_Localized: They weren't going back and forth over the same spot. These are
+      traces of being pushed out and then holding their ground.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717025
+    m_Localized: If they lost their way, we need to be even more careful.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717026
+    m_Localized: That means we don't know where they'll bolt next.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717027
+    m_Localized: Yeah. Rather than chase them recklessly, we need to block the entrance
+      side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717028
+    m_Localized: If they scatter here, they could head down toward Jeple again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717029
+    m_Localized: Then we need to hold them at the entrance first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717030
+    m_Localized: I'll take the front.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717031
+    m_Localized: I won't let them get out of the forest!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717032
+    m_Localized: If someone gets hurt on a forest path, moving them will be hard
+      too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717033
+    m_Localized: Please, if anyone has to fall, let it only be on flat ground...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717034
+    m_Localized: The movement has gotten closer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717035
+    m_Localized: They're crowding out toward the entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717036
+    m_Localized: All right. Stop them at the entrance of Lumer Forest before they
+      rush toward Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717037
+    m_Localized: We stopped them, but... it's strange.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717038
+    m_Localized: It felt more like they were trying to get out than attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717039
+    m_Localized: They didn't look like they wanted to fight, but we couldn't let
+      them head back down toward Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717040
+    m_Localized: Yeah. These aren't traces of them gathering toward us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717041
+    m_Localized: These are traces of them avoiding the inside and crowding out toward
+      the entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717042
+    m_Localized: It's clearer than what we saw in Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717043
+    m_Localized: This wasn't simply movement along a path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717044
+    m_Localized: Then that means there's something more horrific inside the forest,
+      right...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717045
+    m_Localized: Just hearing that makes me want to rest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717046
+    m_Localized: I understand wanting to rest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717047
+    m_Localized: Still, right now we need to see why they stopped at the entrance
+      first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717048
+    m_Localized: The footprints continue toward the footpath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717049
+    m_Localized: Some of them seem to have turned back inside from the entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233877717050
+    m_Localized: Then this isn't over here yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911296
+    m_Localized: There's still something left inside the forest, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911297
+    m_Localized: Let's organize the battle record from the forest entrance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911298
+    m_Localized: After comparing them with the traces we saw in Jeple, let's prepare
+      to head inside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911299
+    m_Localized: Yeah. We'll need to look more closely than we did at Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911300
+    m_Localized: The footprints don't continue in one straight line.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911301
+    m_Localized: They changed direction several times, but in the end they all crowded
+      toward the same side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911302
+    m_Localized: The deep footprints lead out of the forest, and the shallow ones
+      lead inward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911303
+    m_Localized: It looks like monsters that lost their way all crowded toward the
+      same side at once.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911304
+    m_Localized: Yeah. But for simple wandering, their direction is too similar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911305
+    m_Localized: Rather than follow the whole footpath, we need to look for where
+      they gather in the same direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911306
+    m_Localized: Even people are in real danger if they get lost in a forest...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911307
+    m_Localized: So it gets even more troublesome when monsters get lost too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911308
+    m_Localized: Let's follow the footpath and confirm the direction before the traces
+      split again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911309
+    m_Localized: Leave markers toward Jeple too. We can't let the way back get blocked.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911310
+    m_Localized: Oh, the way back really is important...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911311
+    m_Localized: The footprints toward the footpath are shallower.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911312
+    m_Localized: Rather than running, these are traces of trying to hold their ground
+      and not be pushed away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911313
+    m_Localized: There may be something inside the forest disrupting their movement.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911314
+    m_Localized: For now, let's leave it as a possibility.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233881911315
+    m_Localized: The signal stone reaction is weak, but it also continues deeper
+      into the forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105600
+    m_Localized: It's less a cause and more a trace we can follow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105601
+    m_Localized: Good. Let's go in without losing the markers!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105602
+    m_Localized: Going in is fine, but let's remember the way out too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105603
+    m_Localized: It'd be a problem if we got added to the list of lost ones...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105604
+    m_Localized: The permanent enhancement selection UI opens.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105605
+    m_Localized: 'Selection examples: Noah critical rate increase / Serah HP increase
+      / Spayne healing amount increase.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105606
+    m_Localized: The selected enhancement remains in later battles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105607
+    m_Localized: From here, the traces have gotten more complicated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105608
+    m_Localized: They followed the path, slipped into the bushes, then returned to
+      the path again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105609
+    m_Localized: It looks like they couldn't find the way while running away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105610
+    m_Localized: But their final direction is almost the same.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105611
+    m_Localized: Even if they look scattered, in the end they're being drawn toward
+      the same side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105612
+    m_Localized: If you're shoved around on a narrow path, it's easy to get hurt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105613
+    m_Localized: Even scratches from bushes can linger longer than you'd think...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105614
+    m_Localized: If it's narrow, blocking them is easier, but if we miss them, finding
+      them again will be hard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105615
+    m_Localized: Right. That's why we can't leave the center open.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105616
+    m_Localized: Hold the center of the footpath, but don't chase too deep.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105617
+    m_Localized: Stop the scattered groups from slipping toward Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105618
+    m_Localized: There's movement in the bushes on the left.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105619
+    m_Localized: A small group is hiding below the path on the right too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105620
+    m_Localized: Then I'll hold the middle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105621
+    m_Localized: Tell me right away if they slip out to either side!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105622
+    m_Localized: The bushes make it hard to watch both sides at once.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105623
+    m_Localized: If we follow too forcefully, we might lose them instead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105624
+    m_Localized: The traces on the right are shallow. It's a small group.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105625
+    m_Localized: On the left, branches just broke. A larger group is close.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105626
+    m_Localized: Then stop the large group on the left first, and handle the small
+      group on the right inside the footpath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105627
+    m_Localized: Good. I'll hold the bigger group!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105628
+    m_Localized: If you're hurt, come back right away. I'll take a look.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105629
+    m_Localized: If anyone rolls out of the bushes, I'll sigh first and then treat
+      them...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105630
+    m_Localized: The movement has started.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105631
+    m_Localized: They're coming out from both sides of the path at the same time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105632
+    m_Localized: All right. Let's stop them at the center of the footpath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105633
+    m_Localized: Don't give them any opening to slip toward Jeple.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105634
+    m_Localized: For now, we kept them from scattering.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105635
+    m_Localized: As expected, those things moved like they were scared.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105636
+    m_Localized: Rather than scared, it's more that we don't know where they'll bolt,
+      which is even more exhausting...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105637
+    m_Localized: Right. They didn't spread out to attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105638
+    m_Localized: They searched for somewhere to escape, then crowded in the same
+      direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105639
+    m_Localized: If this were natural movement, they wouldn't gather again at the
+      same point like this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105640
+    m_Localized: There's still something left to check deeper in the forest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105641
+    m_Localized: The phrase "something left to check" is starting to sound scarier
+      and scarier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105642
+    m_Localized: Still, stopping now would feel even more unsettling...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105643
+    m_Localized: There's a logging site up ahead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105644
+    m_Localized: The footprints become heavily disturbed right in front of the logging
+      site.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105645
+    m_Localized: The movement up ahead has grown again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105646
+    m_Localized: They're rushing toward the footpath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105647
+    m_Localized: Fall back. The path is narrow, so we can't all get out at once.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105648
+    m_Localized: I'll block the front. You all get out first!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105649
+    m_Localized: Serah, fall back with us!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105650
+    m_Localized: It's okay! You know I'm good at stopping things like this!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105651
+    m_Localized: I'll catch up right away!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105652
+    m_Localized: Don't say that...! I said don't!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105653
+    m_Localized: ...Serah's footsteps stopped.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105654
+    m_Localized: No... she was with us just a moment ago...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105655
+    m_Localized: She said she'd catch up right away...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105656
+    m_Localized: Why did she go off alone...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105657
+    m_Localized: We could have fought with her...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105658
+    m_Localized: Spayne, if we stop now, we'll lose the path Serah barely opened
+      for us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105659
+    m_Localized: We'll lose the reason Serah sent us ahead, too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105660
+    m_Localized: So we have to move.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105661
+    m_Localized: ...We have to move, but...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105662
+    m_Localized: Sorry. I can't speak properly right now either.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105663
+    m_Localized: There is still monster movement up ahead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105664
+    m_Localized: ...This is the opening Serah made for us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105665
+    m_Localized: Knowing Serah, she'd hate it even more if we stopped.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105666
+    m_Localized: Then what about Serah...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105667
+    m_Localized: Let's trust Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105668
+    m_Localized: Serah didn't stay behind to make us stop.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105669
+    m_Localized: She stayed to send us forward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105670
+    m_Localized: If we fall apart here, we'll lose the path Serah made, too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105671
+    m_Localized: Let's head toward the logging site. We need to stop the remaining
+      monsters and open the path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105672
+    m_Localized: And let's make sure we find Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105673
+    m_Localized: ...All right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105674
+    m_Localized: Yeah. We will.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105675
+    m_Localized: Wait. There are Serah's footprints up ahead!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105676
+    m_Localized: They didn't stop. They keep going.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105677
+    m_Localized: Really...? Noah, are you sure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105678
+    m_Localized: Yeah. There are marks from her sword scraping the ground too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105679
+    m_Localized: Let's follow them before the footprints disappear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105680
+    m_Localized: Serah...! If you can hear me, answer...!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105681
+    m_Localized: Wait. Something moved up ahead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105682
+    m_Localized: I can hear a sword scraping the ground too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105683
+    m_Localized: ...Yes. It's Serah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105684
+    m_Localized: Serah!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105685
+    m_Localized: Everyone, over here...!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105686
+    m_Localized: I'm okay! Is everyone safe?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105687
+    m_Localized: That's what we're supposed to ask you...!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105688
+    m_Localized: Are you hurt anywhere? Are you really okay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105689
+    m_Localized: Say you're okay after we check. Spayne, take a look.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105690
+    m_Localized: Yeah... This time, I'm not just taking your word for it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105691
+    m_Localized: All right. Check me. But I'm not badly hurt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105692
+    m_Localized: I'm glad you're safe, Serah. What happened?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105693
+    m_Localized: Why did you stay behind alone... We could have fought with you...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105694
+    m_Localized: Sorry. I thought that was the only way you could get out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233886105695
+    m_Localized: When the path collapsed, I was pushed downward, but it wasn't completely
+      cut off.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299904
+    m_Localized: It continued on a slope, like an old work path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299905
+    m_Localized: So that's why the footprints didn't stop.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299906
+    m_Localized: Yeah. I climbed back up by bracing myself with my sword. I also
+      ran into a few monsters on the way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299907
+    m_Localized: Don't say something like that so calmly...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299908
+    m_Localized: Sorry. I tried to come back right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299909
+    m_Localized: But at the end of the lower work path, I saw a strange light.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299910
+    m_Localized: You didn't touch that light, did you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299911
+    m_Localized: No. I didn't touch it. If anything, the monsters came bursting out
+      to avoid that light.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299912
+    m_Localized: I only stopped the ones that came toward me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299913
+    m_Localized: Then the reaction we already knew about appeared on Serah's side
+      too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299914
+    m_Localized: There's a similar marking on the central stone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299915
+    m_Localized: Let's check whether the two traces connect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299916
+    m_Localized: The footprints curve around the edge of the clearing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299917
+    m_Localized: There are almost no traces of anything going near the center.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299918
+    m_Localized: The traces show they hesitated in front of the marking, then turned
+      aside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299919
+    m_Localized: Like they didn't go around on purpose, but were pushed away in front
+      of the marking?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299920
+    m_Localized: Yeah. The traces show they tried to hold on, then got pushed sideways.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299921
+    m_Localized: An unknown marking in the middle of the forest...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299922
+    m_Localized: I wish it were just an old trail sign... but it probably isn't.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299923
+    m_Localized: If trail signs feel this ominous, I might consider getting lost
+      instead...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299924
+    m_Localized: Don't touch the area around the marking. Let's check the monster
+      movement first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299925
+    m_Localized: There's movement deeper in the logging site.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299926
+    m_Localized: They're splitting to both sides to avoid the marking.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299927
+    m_Localized: The direction they're avoiding it is consistent.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299928
+    m_Localized: It's different from simply going around an obstacle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299929
+    m_Localized: Then they're coming from both sides, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299930
+    m_Localized: Let's stop them together before they scatter!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299931
+    m_Localized: Be careful not to get caught on the tree stumps.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299932
+    m_Localized: There are too many things here that could hurt you if you fall...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299933
+    m_Localized: They're coming from both sides.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299934
+    m_Localized: They're avoiding the center.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299935
+    m_Localized: Let's stop them at the edge of the logging site.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299936
+    m_Localized: Don't drive them toward the marking.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299937
+    m_Localized: The monsters avoided the center to the very end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299938
+    m_Localized: Rather than avoiding it by choice, it looked like they couldn't
+      get close.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299939
+    m_Localized: Now that the battle is over, let's take a closer look at the marking.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7178233890299940
+    m_Localized: The logging traces and the marking are both old. I don't think anyone
+      touched them recently.
     m_Metadata:
       m_Items: []
   references:

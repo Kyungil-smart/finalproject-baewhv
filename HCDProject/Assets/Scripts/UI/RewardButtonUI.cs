@@ -14,9 +14,25 @@ public class RewardButtonUI : MonoBehaviour
     [SerializeField] private LocalizeStringEvent RewardName;
     [SerializeField] private LocalizeStringEvent RewardDesc;
     [SerializeField] private Sprite defaultImage;
+    [SerializeField] private Color SelectedColor;
+    private Image Background;
     public int GetIndex { get; private set; }
-    public bool IsSelected { get; set; }
+
+    private bool isSelected;
+    public bool IsSelected
+    {
+        get => isSelected;
+        set
+        {
+            isSelected = value;
+            Background.color = value ? SelectedColor : Color.white;
+        }
+    }
+
     private UnityAction<int> buttonAction;
+
+    private void Awake() => Background = GetComponent<Image>(); 
+
 
     public void SetReward(StageClearRewardRawData data, UnityAction<int> func, int _index)
     {
@@ -45,7 +61,7 @@ public class RewardButtonUI : MonoBehaviour
         if (string.IsNullOrEmpty(address)) return;
         Addressables.LoadAssetAsync<Sprite>(address).Completed += (handle) =>
         {
-            if(!icon) return;
+            //if(!icon) return;
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
                 icon.sprite = handle.Result;
