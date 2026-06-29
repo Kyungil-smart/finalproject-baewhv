@@ -19,6 +19,7 @@ public class MonsterRawData
     public float EXP;
     public string MONSTER_HIT_SFX;
     public string MONSTER_HIT_FX;
+    public string MONSTER_DEATH_EFEECT;
 }
 
 [Serializable]

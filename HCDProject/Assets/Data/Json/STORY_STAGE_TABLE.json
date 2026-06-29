@@ -18,7 +18,7 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_002",
       "TYPE_OF_ID": "EV-002",
-      "STORY_ID": "ST_0254"
+      "STORY_ID": "ST_0096"
     },
     {
       "STAGE_ID": "CH01_NODE_003",
@@ -28,7 +28,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_003",
       "TYPE_OF_ID": "7003",
-      "STORY_ID": "ST_0102"
+      "STORY_ID": "ST_0134"
     },
     {
       "STAGE_ID": "CH01_NODE_004",
@@ -38,7 +38,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_004",
       "TYPE_OF_ID": "7006",
-      "STORY_ID": "ST_0177"
+      "STORY_ID": "ST_0206"
     },
     {
       "STAGE_ID": "CH01_NODE_005",
@@ -48,7 +48,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_005",
       "TYPE_OF_ID": "7009",
-      "STORY_ID": "ST_0293"
+      "STORY_ID": "ST_0264"
     },
     {
       "STAGE_ID": "CH01_NODE_006",
@@ -58,7 +58,7 @@
       "STAGE_TYPE": "MAINTANANCE",
       "STAGE_NAME_ID": "SSN_006",
       "TYPE_OF_ID": "EV-006",
-      "STORY_ID": "ST_0354"
+      "STORY_ID": "ST_0308"
     },
     {
       "STAGE_ID": "CH01_NODE_007",
@@ -68,7 +68,7 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_007",
       "TYPE_OF_ID": "7012",
-      "STORY_ID": "ST_0397"
+      "STORY_ID": "ST_0343"
     },
     {
       "STAGE_ID": "CH01_NODE_008",
@@ -78,7 +78,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_008",
       "TYPE_OF_ID": "7015",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0390"
     },
     {
       "STAGE_ID": "CH01_NODE_009",
@@ -88,7 +88,7 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_009",
       "TYPE_OF_ID": "EV-009",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0462"
     },
     {
       "STAGE_ID": "CH01_NODE_010",
@@ -98,7 +98,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_010",
       "TYPE_OF_ID": "7018",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0490"
     },
     {
       "STAGE_ID": "CH01_NODE_011",
@@ -108,7 +108,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_011",
       "TYPE_OF_ID": "7021",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0543"
     },
     {
       "STAGE_ID": "CH01_NODE_012",
@@ -118,7 +118,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_012",
       "TYPE_OF_ID": "7024",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0593"
     },
     {
       "STAGE_ID": "CH01_NODE_013",
@@ -128,7 +128,7 @@
       "STAGE_TYPE": "MAINTANANCE",
       "STAGE_NAME_ID": "SSN_013",
       "TYPE_OF_ID": "EV-013",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0645"
     },
     {
       "STAGE_ID": "CH01_NODE_014",
@@ -138,7 +138,7 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_014",
       "TYPE_OF_ID": "7027",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0673"
     },
     {
       "STAGE_ID": "CH01_NODE_015",
@@ -148,7 +148,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_015",
       "TYPE_OF_ID": "7030",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0721"
     },
     {
       "STAGE_ID": "CH01_NODE_016",
@@ -158,7 +158,7 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_016",
       "TYPE_OF_ID": "EV-016",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0772"
     },
     {
       "STAGE_ID": "CH01_NODE_017",
@@ -168,7 +168,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_017",
       "TYPE_OF_ID": "7033",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0797"
     },
     {
       "STAGE_ID": "CH01_NODE_018",
@@ -178,7 +178,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_018",
       "TYPE_OF_ID": "7036",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0869"
     },
     {
       "STAGE_ID": "CH01_NODE_019",
@@ -188,7 +188,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_019",
       "TYPE_OF_ID": "7039",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0943"
     },
     {
       "STAGE_ID": "CH01_NODE_020",
@@ -198,7 +198,7 @@
       "STAGE_TYPE": "MAINTANANCE",
       "STAGE_NAME_ID": "SSN_020",
       "TYPE_OF_ID": "EV-020",
-      "STORY_ID": ""
+      "STORY_ID": "ST_0992"
     },
     {
       "STAGE_ID": "CH01_NODE_021",
@@ -208,7 +208,7 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_021",
       "TYPE_OF_ID": "7042",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1022"
     },
     {
       "STAGE_ID": "CH01_NODE_022",
@@ -218,7 +218,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_022",
       "TYPE_OF_ID": "7045",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1077"
     },
     {
       "STAGE_ID": "CH01_NODE_023",
@@ -228,7 +228,7 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_023",
       "TYPE_OF_ID": "EV-023",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1121"
     },
     {
       "STAGE_ID": "CH01_NODE_024",
@@ -238,7 +238,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_024",
       "TYPE_OF_ID": "7048",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1147"
     },
     {
       "STAGE_ID": "CH01_NODE_025",
@@ -248,7 +248,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_025",
       "TYPE_OF_ID": "7051",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1194"
     },
     {
       "STAGE_ID": "CH01_NODE_026",
@@ -258,7 +258,7 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_026",
       "TYPE_OF_ID": "7054",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1240"
     },
     {
       "STAGE_ID": "CH01_NODE_027",
@@ -268,7 +268,7 @@
       "STAGE_TYPE": "MAINTANANCE",
       "STAGE_NAME_ID": "SSN_027",
       "TYPE_OF_ID": "EV-027",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1287"
     },
     {
       "STAGE_ID": "CH01_NODE_028",
@@ -278,7 +278,7 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_028",
       "TYPE_OF_ID": "7057",
-      "STORY_ID": ""
+      "STORY_ID": "ST_1315"
     },
     {
       "STAGE_ID": "CH01_NODE_029",
