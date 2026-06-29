@@ -1,15 +1,14 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class StageSelectUIController : BaseUIController<StageSelectUIController>
 {
     [SerializeField] private List<Button> _stageButtons = new();
-
+    [SerializeField] private List<Sprite> stageSprites;
     [SerializeField] private GameObject popupObject;
     [SerializeField] private RewardUIController rewardPopup;
     [SerializeField] private TMP_Text popupText;
@@ -32,6 +31,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             cancelPopup.onClick.AddListener(() => { popupObject.SetActive(false); });
         }
         StageMap();
+        LoadChapterDesign();
     }
 
     public void StageMap()
@@ -51,38 +51,29 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
             if (stageText != null) stageText.text = $"{_currentChapter} - {data.Stage}";
             
-            stageButton.interactable = data.State == StageState.Current || data.State == StageState.OpenBoss || data.State == StageState.OpenSpecial;
+            //stageButton.interactable = data.State == StageState.Current || data.State == StageState.OpenBoss || data.State == StageState.OpenSpecial;
 
             if (stageImage != null)
             {
-                switch (data.State)
-                {
-                    case StageState.Lock:
-                        stageImage.color = new Color(0.6f, 0f, 0f);
-                        break;
-                    case StageState.Clear:
-                        stageImage.color = Color.blue;
-                        break;
-                    case StageState.Current:
-                        stageImage.color = new Color(0.3f, 1f, 0.3f);
-                        break;
-                    case StageState.LockSpecial:
-                        stageImage.color = Color.yellow;
-                        break;
-                    case StageState.OpenSpecial:
-                        stageImage.color = Color.yellow;
-                        break;
-                    case StageState.LockBoss:
-                        stageImage.color = new Color(0.86f, 0.63f, 0.86f);
-                        break;
-                    case StageState.OpenBoss:
-                        stageImage.color = new Color(0.86f, 0.63f, 0.86f);
-                        break;
-                }
+                stageImage.sprite = stageSprites[(int)data.State];
             }
             stageButton.onClick.RemoveAllListeners();
             stageButton.onClick.AddListener(() => OnClickStageButton(_currentChapter, data.Stage, data.type));
         }
+    }
+
+    private void LoadChapterDesign()
+    {
+        Addressables.LoadAssetAsync<GameObject>($"Grid/Chapter{_currentChapter}").Completed += asset =>
+        {
+            if (asset.Status == AsyncOperationStatus.Succeeded)
+            {
+                GameObject Map = Instantiate(asset.Result);
+                GridData gd = Map.GetComponent<GridData>();
+                Camera.main.transform.position = gd.GetCameraPos;
+                Camera.main.orthographicSize = gd.GetOrthographicSize;
+            }
+        };
     }
 
 
