@@ -185,7 +185,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                 sortBuff._maxHp += (int)bonus;
                 break;
         }
-        _characters[index].Stats = stats;
+        _characters[index].UpdateStats(stats);
         _sortBuffStats[index] = sortBuff;
     }
 
@@ -198,7 +198,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             stats._defense -= _sortBuffStats[i]._defense;
             stats._attackSpeed -= _sortBuffStats[i]._attackSpeed;
             stats._maxHp -= _sortBuffStats[i]._maxHp;
-            _characters[i].Stats = stats;
+            _characters[i].UpdateStats(stats);
             _characters[i].SetHeal(0);
             _sortBuffStats[i] = new CharacterStats();
         }
@@ -249,7 +249,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                     stats._critDamage += bonus;
                     break;
             }
-            chr.Stats = stats;
+            chr.UpdateStats(stats);
         }
     }
 
@@ -324,7 +324,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                         stats._critDamage += stats._critDamage * totalBonus / 100f;
                         break;
                 }
-                _characters[i].Stats = stats;
+                _characters[i].UpdateStats(stats);
             }
             _characters[i].Movement.Agent.speed = _characters[i].Stats._moveSpeed;
 

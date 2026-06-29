@@ -192,11 +192,11 @@ public class BaseCharacter : BaseController
         if (_activeSkillCoolValue == null) return;
         _activeSkillCoolValue.Value = result;
     }
-    public void BindHpUI(UnityAction<float> action) // 슬롯 HP, 캐릭터 HP바 UI 구독
+    public void BindHpUI(UnityAction<int, int> action) // 슬롯 HP, 캐릭터 HP바 UI 구독
     {
         int maxValue = _stats._maxHp;
         CurrentHp = new RatioIntValue(maxValue);
-        CurrentHp.AddRatioListener(action);
+        CurrentHp.AddValuesListener(action);
         CurrentHp.AddListener(CheckDeath);
         CurrentHp.AddListener(OnHpChanged);
         if (_hpBar != null)
@@ -217,7 +217,20 @@ public class BaseCharacter : BaseController
         IsAlived.AddListener(action);
         IsAlived.Value = true;
     }
+    public void UpdateStats(CharacterStats newStats)
+    {
+        _stats = newStats;
 
+        CurrentHp.MaxValue = _stats._maxHp;
+
+        
+        if (CurrentHp.Value > _stats._maxHp)
+        {
+            CurrentHp.Value = _stats._maxHp;
+        }
+
+        Movement.Agent.speed = _stats._moveSpeed;
+    }
     private void OnHpChanged(int newHp)
     {
         if (_isDead) return;
