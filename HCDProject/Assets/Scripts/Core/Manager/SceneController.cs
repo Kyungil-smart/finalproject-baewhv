@@ -20,11 +20,6 @@ public class SceneController : BaseManager<SceneController>
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    
-    private void Update()
-    {
-        if (Keyboard.current.iKey.wasPressedThisFrame) ChangeScene(SceneType.Title);
-    }
 
     private void OnDestroy()
     {
