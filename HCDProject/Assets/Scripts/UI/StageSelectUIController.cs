@@ -60,7 +60,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
             if (stageText != null) stageText.text = $"{_currentChapter} - {data.Stage}";
             
-            //stageButton.interactable = data.State == StageState.Current || data.State == StageState.OpenBoss || data.State == StageState.OpenSpecial;
+            stageButton.interactable = data.State == StageState.Current || data.State == StageState.OpenBoss || data.State == StageState.OpenSpecial;
 
             if (stageImage != null)
             {
