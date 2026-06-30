@@ -19,25 +19,25 @@ public class SimplePopup : MonoBehaviour
         desc.text = _desc;
         positiveButton.onClick.AddListener(() =>
         {
-            positive?.Invoke();
             gameObject.SetActive(false);
+            positive?.Invoke();
         });
     }
     public void SetTwoButtonPopup(string _title, string _desc, UnityAction positive, UnityAction negative)
     {
         gameObject.SetActive(true);
-        negativeButton.gameObject.SetActive(false);
+        negativeButton.gameObject.SetActive(true);
         title.text = _title;
         desc.text = _desc;
         positiveButton.onClick.AddListener(() =>
         {
-            positive?.Invoke();
             gameObject.SetActive(false);
+            positive?.Invoke();
         });
         negativeButton.onClick.AddListener(() =>
         {
-            negative.Invoke();
             gameObject.SetActive(false);
+            negative.Invoke();
         });
     }
 }
