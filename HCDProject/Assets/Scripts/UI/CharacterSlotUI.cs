@@ -11,7 +11,6 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     [SerializeField] private Slider hpBar;
     [SerializeField] private TextMeshProUGUI hpText;
     [SerializeField] private Slider skillBar;
-    [SerializeField] private TextMeshProUGUI skillText;
     [SerializeField] private RectTransform borderRect;
     [SerializeField] private GameObject SkillArea;
     [SerializeField] private Image portraitImage;
@@ -66,7 +65,6 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void SetSkillBar(float value)
     {
         skillBar.value = value;
-        skillText.text = $"{value:p0}";
     }
 
     public void OnUseSkill()

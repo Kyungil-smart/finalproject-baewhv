@@ -18,6 +18,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     BaseCharacter[] _characters;
 
+    CharacterStats[] _sortBuffStats; // 소트 버프 누적량 변수
+
     Coroutine[] _coroutines;
 
     Coroutine[] _healCoroutines; // 힐링팩터 코루틴
@@ -70,6 +72,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     {
         if (_prefabHandle.IsValid()) // 유효할 때만
             Addressables.Release(_prefabHandle);
+        Service.Get<GameManager>()?.CurrentState.RemoveListener(OnGameStateChanged);
         base.OnDestroy();
     }
 
@@ -88,6 +91,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             _coroutines = new Coroutine[data.Count];
             _healCoroutines = new Coroutine[data.Count];
             _arrowCoroutines = new Coroutine[data.Count];
+            _sortBuffStats = new CharacterStats[data.Count];
             _slot = new CharacterSlotUI[data.Count];
         }
         GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[index].position, Quaternion.identity);
@@ -106,6 +110,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         {
             ApplyRelicStats();
             Service.Get<SortManager>()?.AutoSetupUISlots();
+            Service.Get<GameManager>().CurrentState.AddListener(OnGameStateChanged);
         }
     }
 
@@ -117,6 +122,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         _coroutines = new Coroutine[data.Count];
         _healCoroutines = new Coroutine[data.Count];
         _arrowCoroutines = new Coroutine[data.Count];
+        _sortBuffStats = new CharacterStats[data.Count];
         _slot = new CharacterSlotUI[data.Count];
         for (int i = 0; i < data.Count; i++)
         {
@@ -141,6 +147,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             _characters[i].BindDeathUI(_slot[i].SetAlive);
         }
         Service.Get<SortManager>()?.AutoSetupUISlots();
+        Service.Get<GameManager>().CurrentState.AddListener(OnGameStateChanged);
     }
 
     public void IsAllSpawnPlayer()
@@ -158,22 +165,48 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     public void ApplyBuff(int index, string objType, float bonus) // Sort 적용 함수
     {
         var stats = _characters[index].Stats;
+        var sortBuff = _sortBuffStats[index];
         switch (objType)
         {
             case "OBJ_ATK":
                 stats._attackPower += (int)bonus;
+                sortBuff._attackPower += (int)bonus;
                 break;
             case "OBJ_DEF":
                 stats._defense += (int)bonus;
+                sortBuff._defense += (int)bonus;
                 break;
             case "OBJ_AS":
                 stats._attackSpeed += bonus;
+                sortBuff._attackSpeed += bonus;
                 break;
             case "OBJ_HP":
                 stats._maxHp += (int)bonus;
+                sortBuff._maxHp += (int)bonus;
                 break;
         }
-        _characters[index].Stats = stats;
+        _characters[index].UpdateStats(stats);
+        _sortBuffStats[index] = sortBuff;
+    }
+
+    public void ResetSortBuffs() // 웨이브 끝나고 소트 버프 리셋
+    {
+        for (int i = 0; i < _characters.Length; i++)
+        {
+            var stats = _characters[i].Stats;
+            stats._attackPower -= _sortBuffStats[i]._attackPower;
+            stats._defense -= _sortBuffStats[i]._defense;
+            stats._attackSpeed -= _sortBuffStats[i]._attackSpeed;
+            stats._maxHp -= _sortBuffStats[i]._maxHp;
+            _characters[i].UpdateStats(stats);
+            _characters[i].SetHeal(0);
+            _sortBuffStats[i] = new CharacterStats();
+        }
+    }
+
+    private void OnGameStateChanged(GameState state) // 게임 상태 변화 감지 → 상태별 처리
+    {
+        if (state == GameState.Sort) ResetSortBuffs();
     }
 
     public void ApplyLevelReward(LevelRewardRawData reward) // 레벨업 보상 호출
@@ -216,7 +249,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                     stats._critDamage += bonus;
                     break;
             }
-            chr.Stats = stats;
+            chr.UpdateStats(stats);
         }
     }
 
@@ -291,7 +324,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                         stats._critDamage += stats._critDamage * totalBonus / 100f;
                         break;
                 }
-                _characters[i].Stats = stats;
+                _characters[i].UpdateStats(stats);
             }
             _characters[i].Movement.Agent.speed = _characters[i].Stats._moveSpeed;
 

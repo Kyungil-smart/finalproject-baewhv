@@ -177,11 +177,11 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
             MonsterRawData monsterEffect = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == id);
             if (monsterEffect != null)
             {
-                if (!string.IsNullOrEmpty(monsterEffect.MONSTER_HIT_FX)) Service.Get<EffectManager>()?.EffectIds.Add(monsterEffect.MONSTER_HIT_FX);
+                if (!string.IsNullOrEmpty(monsterEffect.MONSTER_DEATH_EFEECT)) Service.Get<EffectManager>()?.EffectIds.Add(monsterEffect.MONSTER_DEATH_EFEECT);
                 SkillRawData skillEffect = Service.Get<DataManager>()?.SkillTable.data.Find(x => x.SKILL_ID == monsterEffect.SKILL_ID);
                 if (skillEffect != null)
                 {
-                    if (!string.IsNullOrEmpty(skillEffect.SKILL_HIT_FX)) Service.Get<EffectManager>()?.EffectIds.Add(skillEffect.SKILL_HIT_FX);
+                    if (!string.IsNullOrEmpty(skillEffect.SKILL_FX)) Service.Get<EffectManager>()?.EffectIds.Add(skillEffect.SKILL_FX);
                 }
             }
         }

@@ -1,16 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceManager : MonoBehaviour
+public class ResourceManager : BaseManager<ResourceManager>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Dictionary<string, Sprite> DefaultSprite;
+    public Sprite GetSprite(string name)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (DefaultSprite.ContainsKey(name))
+            return DefaultSprite[name];
+        return null;
     }
 }

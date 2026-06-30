@@ -11,6 +11,10 @@ public class UIManager : BaseManager<UIManager>
     private Dictionary<Type, object> _uiControllers = new();
     [SerializeField] private Image fader;
     [SerializeField] private SettingPopupUI OptionPopup;
+    [SerializeField] private LoadingBarUI loadingBar;
+    [SerializeField] private SimplePopup simplePopup;
+    public LoadingBarUI LoadingBar => loadingBar;
+    public SimplePopup SimplePopup => simplePopup;
     public Image GetFader => fader;
 
     protected override void Awake()
@@ -18,6 +22,11 @@ public class UIManager : BaseManager<UIManager>
         base.Awake();
         fader.gameObject.SetActive(true);
         fader.DOFade(0.0f, 1.0f);
+    }
+
+    private void Start()
+    {
+        loadingBar.Init();
     }
 
     public bool Register<T>(T service) where T : MonoBehaviour

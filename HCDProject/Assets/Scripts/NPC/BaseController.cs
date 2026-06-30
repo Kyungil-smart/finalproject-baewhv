@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public abstract class BaseController : MonoBehaviour, ITargetable
 {
@@ -44,12 +45,14 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     private List<ITargetable> _targets = new List<ITargetable>();
 
     private CircleCollider2D _baseCollider;
+    private SpriteRenderer _renderer;
 
     protected virtual void Awake()
     {
         GetTargetObject = gameObject;
         Movement = GetComponent<CharacterMovement>();
         _baseCollider = GetComponent<CircleCollider2D>();
+        _renderer = GetComponentInChildren<SpriteRenderer>();
         BaseSkill = GetComponent<BaseSkill>();
 
         EnemyFilter.useLayerMask = true;
@@ -106,6 +109,8 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         }
         
         CurrentHp.Value -= def;
+        
+        HitFlash();
 
         if (CurrentHp.Value < 0)
         {
@@ -123,6 +128,21 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     public void SetBuff(float buff)
     {
         _stats._attackSpeed = buff;
+    }
+
+    private void HitFlash()
+    {
+        _renderer.DOKill();
+
+        _renderer.color = Color.white;
+
+        _renderer
+            .DOColor(Color.red, 0.05f)
+            .SetLoops(4, LoopType.Yoyo)
+            .OnComplete(() =>
+            {
+                _renderer.color = Color.white;
+            });
     }
 
     public float GetRadius()

@@ -35,16 +35,23 @@ public class EffectManager : BaseManager<EffectManager>
         if (prefab != null)
         {
             GameObject obj = Service.Get<PoolManager>()?.GetPool(prefab, pos, rot);
-            
-            StartCoroutine(DespawnEffect(prefab, obj));
+
+            if (obj != null)
+            {
+                obj.TryGetComponent(out ParticleSystem ps);
+                ps.Clear();
+                ps.Play();
+                
+                StartCoroutine(DespawnEffect(prefab, obj));
+            }
         }
     }
 
     private IEnumerator DespawnEffect(GameObject origin, GameObject obj)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         
-        Service.Get<PoolManager>()?.ReturnPool(obj, origin);
+        Service.Get<PoolManager>()?.ReturnPool(origin, obj);
     }
     
     private GameObject GetEffectPrefab(string id)
