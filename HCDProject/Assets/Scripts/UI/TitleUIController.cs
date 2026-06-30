@@ -73,8 +73,11 @@ public class TitleUIController : BaseUIController<TitleUIController>
         if (Service.Get<UIManager>())
         {
             Image fader = Service.Get<UIManager>().GetFader;
-            fader.color = new Color(1,1,1,0);
-            NextSceneTweener.Append(Service.Get<UIManager>().GetFader.DOFade(1.0f, 1.0f));
+            if (fader)
+            {
+                fader.color = new Color(1, 1, 1, 0);
+                NextSceneTweener.Append(Service.Get<UIManager>().GetFader.DOFade(1.0f, 1.0f));
+            }
         }
 
         NextSceneTweener.OnComplete(() =>

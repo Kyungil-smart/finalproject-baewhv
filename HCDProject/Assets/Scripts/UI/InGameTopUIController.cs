@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class IngameTopUIController : BaseUIController<IngameTopUIController>
+    public class InGameTopUIController : BaseUIController<InGameTopUIController>
     {
         [SerializeField] private TextMeshProUGUI stageText;
         [SerializeField] private TextMeshProUGUI waveText;
@@ -69,6 +69,11 @@ namespace UI
             var spawnManager = Service.Get<MonsterSpawnManager>();
             int maxSpawn = spawnManager != null ? spawnManager.SpawnCount : 0;
             monsterCountText.text = $": {count} / {maxSpawn}";
+        }
+
+        public void OnOpenSettingUI()
+        {
+            Service.Get<UIManager>()?.OpenOption(ESettingPopupType.Battle);
         }
     }
 }
