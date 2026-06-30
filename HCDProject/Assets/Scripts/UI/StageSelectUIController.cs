@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,8 +31,16 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             cancelPopup.onClick.RemoveAllListeners();
             cancelPopup.onClick.AddListener(() => { popupObject.SetActive(false); });
         }
+        
         StageMap();
-        LoadChapterDesign();
+        Service.Get<SceneController>().OnLoadingComplete += LoadChapterDesign;
+        
+    }
+
+    private void OnDisable()
+    {
+        if(Service.Get<SceneController>())
+            Service.Get<SceneController>().OnLoadingComplete -= LoadChapterDesign;
     }
 
     public void StageMap()
