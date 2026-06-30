@@ -12,7 +12,9 @@ public class UIManager : BaseManager<UIManager>
     [SerializeField] private Image fader;
     [SerializeField] private SettingPopupUI OptionPopup;
     [SerializeField] private LoadingBarUI loadingBar;
+    [SerializeField] private SimplePopup simplePopup;
     public LoadingBarUI LoadingBar => loadingBar;
+    public SimplePopup SimplePopup => simplePopup;
     public Image GetFader => fader;
 
     protected override void Awake()

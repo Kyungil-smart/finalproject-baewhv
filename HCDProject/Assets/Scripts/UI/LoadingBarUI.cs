@@ -8,7 +8,6 @@ public class LoadingBarUI : MonoBehaviour
     public void Init()
     {
         Service.Get<SceneController>().OnLoading += LoadingUi;
-        Debug.Log("here");
         Service.Get<SceneController>().OnLoadingComplete += CloseLoadingUi;
     }
 

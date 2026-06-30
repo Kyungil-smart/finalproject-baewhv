@@ -9,12 +9,6 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
     [SerializeField] private TMP_Dropdown languageDropdown;
     [SerializeField] private GameObject soundUI;
     [SerializeField] private GameObject intensityUI;
-    private LocalizationManager localizationManager;
-
-    private void Start()
-    {
-        localizationManager = Service.Get<LocalizationManager>();
-    }
 
     private void OnEnable()
     {
@@ -29,7 +23,7 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
 
     private void DropdownUi()
     {
-        if (languageDropdown == null || localizationManager == null) return;
+        if (languageDropdown == null) return;
 
         languageDropdown.ClearOptions();
 
@@ -42,15 +36,15 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
             "Indonesian"
         };
         languageDropdown.AddOptions(languageOptions);
-
-        languageDropdown.value = localizationManager.GetCurrentLanguage();
+        Debug.Log("here");
+        languageDropdown.value = Service.Get<LocalizationManager>().GetCurrentLanguage();
         languageDropdown.onValueChanged.RemoveAllListeners();
         languageDropdown.onValueChanged.AddListener(OnLanguageChange);
     }
 
     private void OnLanguageChange(int value)
     {
-        localizationManager.ChangeLanguage((SystemLanguage)value);
+        Service.Get<LocalizationManager>().ChangeLanguage((SystemLanguage)value);
     }
 
     public void OpenPopup(ESettingPopupType type)
