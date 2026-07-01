@@ -13,9 +13,10 @@ public class RewardUIController : MonoBehaviour
     [SerializeField] private RewardButtonUI[] buttonList;
     [SerializeField] private Button reRollButton;
     //private int selectedIndex = -1;
-    
+
     private UnityAction CloseCallback;
-    
+    private UnityAction RewardAction;
+
     public ObserveValue<bool> isOpenRewardPopup = new();
 
     private void OnDisable()
@@ -46,39 +47,65 @@ public class RewardUIController : MonoBehaviour
             {
                 button.IsSelected = false;
             }
-
         }
     }
 
-    private void StartPopup(string title, string content)
+    private void StartPopup(string title, string content, bool isReRoll)
     {
         gameObject.SetActive(true);
+        if(!isReRoll)
+            Service.Get<AdsManager>()?.ResetAdChance();
         isOpenRewardPopup.Value = true;
         titleText.text = title;
         contentText.text = content;
         Service.Get<TimeManager>()?.SaveTimeScale();
     }
-    
 
-    public void SetLevelUpReward(UnityAction action)
+
+    public void SetLevelUpReward(UnityAction action, bool isReRoll = false)
     {
-        StartPopup("Level UP!", "강화 효과를 선택하세요.\n해당 효과는 이번 노드에서만 적용됩니다.");
+        StartPopup("Level UP!", "강화 효과를 선택하세요.\n해당 효과는 이번 노드에서만 적용됩니다.", isReRoll);
         CloseCallback = action;
         var CurrentReward = Service.Get<PlayerManager>()?.GetLevelUpRewards();
         for (int i = 0; i < buttonList.Length; i++)
         {
             buttonList[i].SetReward(CurrentReward[i], Service.Get<PlayerManager>().OnSelectLevelUpReward, i);
         }
+
+        if (!Service.Get<AdsManager>().IsAdUsed)
+        {
+            reRollButton.interactable = true;
+            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetLevelUpReward(action, true); }));
+        }
+        else
+        {
+            reRollButton.interactable = false;
+        }
     }
 
-    public void SetRelicReward(UnityAction action)
+    private void OnShowAds(UnityAction action)
     {
-        StartPopup("Stage Clear!", "강화 효과를 선택하세요.\n해당 효과는 <color=red>영구적</color>으로 적용됩니다.");
+        Service.Get<AdsManager>()?.ShowRewardedAd(() => { SetLevelUpReward(action); });
+    }
+
+    public void SetRelicReward(UnityAction action, bool isReRoll = false)
+    {
+        StartPopup("Stage Clear!", "강화 효과를 선택하세요.\n해당 효과는 <color=red>영구적</color>으로 적용됩니다.", isReRoll);
         CloseCallback = action;
         var CurrentReward = Service.Get<RelicManager>()?.GetStageRandomRewards();
         for (int i = 0; i < buttonList.Length; i++)
         {
             buttonList[i].SetReward(CurrentReward[i], Service.Get<RelicManager>().OnSelectRelicReward, i);
+        }
+
+        if (!Service.Get<AdsManager>().IsAdUsed)
+        {
+            reRollButton.interactable = true;
+            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetRelicReward(action, true); }));    
+        }
+        else
+        {
+            reRollButton.interactable = false;
         }
     }
 
@@ -86,24 +113,27 @@ public class RewardUIController : MonoBehaviour
     {
         isOpenRewardPopup.AddListener(action);
     }
+
     public void RemoveListener(UnityAction<bool> action)
     {
         isOpenRewardPopup.RemoveListener(action);
     }
+
     [SerializeField] private GameObject maintenance;
     [SerializeField] private Button repairRampart;
     [SerializeField] private Button randomReward;
+
     public void SetMaintenanceReward(UnityAction repair, UnityAction randomReward)
     {
         if (maintenance != null) maintenance.SetActive(true);
-        
+
         repairRampart.onClick.RemoveAllListeners();
         repairRampart.onClick.AddListener(() =>
         {
             maintenance.SetActive(false);
             repair?.Invoke();
         });
-        
+
         this.randomReward.onClick.RemoveAllListeners();
         this.randomReward.onClick.AddListener(() =>
         {
