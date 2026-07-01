@@ -15,6 +15,8 @@ public class ATK_SPEED_P : BaseEffect
         
         else if (skill.SKILL_AT == ETargetType.ENEMY)
         {
+            Service.Get<EffectManager>().SpawnEffect(skill.SKILL_FX, target.GetTargetObject.transform.position, Quaternion.identity);
+            
             BaseSkill.StartDuration(target, skill, skill.SKILL_AB_01);
         }
     }
