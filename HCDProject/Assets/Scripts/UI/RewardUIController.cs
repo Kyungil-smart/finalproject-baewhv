@@ -50,10 +50,11 @@ public class RewardUIController : MonoBehaviour
         }
     }
 
-    private void StartPopup(string title, string content)
+    private void StartPopup(string title, string content, bool isReRoll)
     {
         gameObject.SetActive(true);
-        Service.Get<AdsManager>()?.ResetAdChance();
+        if(!isReRoll)
+            Service.Get<AdsManager>()?.ResetAdChance();
         isOpenRewardPopup.Value = true;
         titleText.text = title;
         contentText.text = content;
@@ -61,9 +62,9 @@ public class RewardUIController : MonoBehaviour
     }
 
 
-    public void SetLevelUpReward(UnityAction action)
+    public void SetLevelUpReward(UnityAction action, bool isReRoll = false)
     {
-        StartPopup("Level UP!", "강화 효과를 선택하세요.\n해당 효과는 이번 노드에서만 적용됩니다.");
+        StartPopup("Level UP!", "강화 효과를 선택하세요.\n해당 효과는 이번 노드에서만 적용됩니다.", isReRoll);
         CloseCallback = action;
         var CurrentReward = Service.Get<PlayerManager>()?.GetLevelUpRewards();
         for (int i = 0; i < buttonList.Length; i++)
@@ -74,7 +75,7 @@ public class RewardUIController : MonoBehaviour
         if (!Service.Get<AdsManager>().IsAdUsed)
         {
             reRollButton.interactable = true;
-            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetLevelUpReward(action); }));
+            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetLevelUpReward(action, true); }));
         }
         else
         {
@@ -87,9 +88,9 @@ public class RewardUIController : MonoBehaviour
         Service.Get<AdsManager>()?.ShowRewardedAd(() => { SetLevelUpReward(action); });
     }
 
-    public void SetRelicReward(UnityAction action)
+    public void SetRelicReward(UnityAction action, bool isReRoll = false)
     {
-        StartPopup("Stage Clear!", "강화 효과를 선택하세요.\n해당 효과는 <color=red>영구적</color>으로 적용됩니다.");
+        StartPopup("Stage Clear!", "강화 효과를 선택하세요.\n해당 효과는 <color=red>영구적</color>으로 적용됩니다.", isReRoll);
         CloseCallback = action;
         var CurrentReward = Service.Get<RelicManager>()?.GetStageRandomRewards();
         for (int i = 0; i < buttonList.Length; i++)
@@ -100,7 +101,7 @@ public class RewardUIController : MonoBehaviour
         if (!Service.Get<AdsManager>().IsAdUsed)
         {
             reRollButton.interactable = true;
-            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetRelicReward(action); }));
+            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetRelicReward(action, true); }));    
         }
         else
         {
