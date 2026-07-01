@@ -351,6 +351,39 @@ public class GameManager : BaseManager<GameManager>
     public void ClearStage()
     {
         currentStageData = Service.Get<DataManager>()?.StoryStageTable.data.FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
+
+        if (_wall != null)
+        {
+            _currentWallHp = _wall.CurrentHp.Value;
+            
+            Addressables.ReleaseInstance(_wall.gameObject);
+            _wall = null;
+        }
+        
+        if (_currentChapter == 4 && _currentStage == 7)
+        {
+            CurrentState.Value = GameState.Clear;
+
+            var inGamePopUp = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
+
+            if (inGamePopUp != null)
+            {
+                inGamePopUp.gameObject.SetActive(false);
+            }
+
+            var plsWaitUpdate = Service.Get<UIManager>()?.SimplePopup;
+
+            if (plsWaitUpdate != null)
+            {
+                plsWaitUpdate.SetOneButtonPopup("다음 노드는 개발중에 있습니다", "플레이 해주셔서 감사합니다", () =>
+                {
+                    Service.Get<TimeManager>()?.ResetTimeScale();
+                    Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
+                });
+            }
+            
+            return;
+        }
         
         bool isEndChapter = (currentStageData != null && CheckStageType(currentStageData) == StageType.Boss);
         
@@ -364,14 +397,6 @@ public class GameManager : BaseManager<GameManager>
         {
             StageType nextStageType = CheckStageType(nextStageData);
             if (nextStageType == StageType.Event || nextStageType == StageType.Maintenance) isBattle = false;
-        }
-        
-        if (_wall != null)
-        {
-            _currentWallHp = _wall.CurrentHp.Value;
-            
-            Addressables.ReleaseInstance(_wall.gameObject);
-            _wall = null;
         }
 
         if (isEndChapter) Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(false);

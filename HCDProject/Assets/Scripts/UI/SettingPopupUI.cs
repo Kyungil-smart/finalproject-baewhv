@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Security.Authentication.ExtendedProtection;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingPopupUI : BaseUIController<SettingPopupUI>
 {
     [SerializeField] private TMP_Dropdown languageDropdown;
     [SerializeField] private GameObject soundUI;
     [SerializeField] private GameObject intensityUI;
+    [SerializeField] private GameObject RetireButton;
 
     private void OnEnable()
     {
@@ -52,11 +54,22 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
         gameObject.SetActive(true);
         soundUI.SetActive(type != ESettingPopupType.OnlyLanguage);
         intensityUI.SetActive(type != ESettingPopupType.OnlyLanguage);
+        RetireButton.SetActive(type == ESettingPopupType.Battle);
     }
 
     public void ClosePopup()
     {
         gameObject.SetActive(false);
+    }
+
+    public void OnReturnMenu()
+    {
+        Service.Get<UIManager>().SimplePopup.SetTwoButtonPopup("경고", "퇴각할 경우 현재 스테이지는 초기화됩니다.\n\n퇴각하시겠습니까?", 
+            () =>
+            {
+                gameObject.SetActive(false);    
+                Service.Get<SceneController>().ChangeScene(SceneType.StageSelect);
+            },null);
     }
 }
 

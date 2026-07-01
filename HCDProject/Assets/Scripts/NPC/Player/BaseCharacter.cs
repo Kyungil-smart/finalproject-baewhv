@@ -228,8 +228,6 @@ public class BaseCharacter : BaseController
         {
             CurrentHp.Value = _stats._maxHp;
         }
-
-        Movement.Agent.speed = _stats._moveSpeed;
     }
     private void OnHpChanged(int newHp)
     {
