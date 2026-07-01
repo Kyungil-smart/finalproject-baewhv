@@ -11,11 +11,14 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
     [SerializeField] private GameObject soundUI;
     [SerializeField] private GameObject intensityUI;
     [SerializeField] private GameObject RetireButton;
+    [SerializeField] private Slider bgmVolumeSlider;
+    [SerializeField] private Slider sfxVolumeSlider;
 
     private void OnEnable()
     {
         Service.Get<TimeManager>()?.SaveTimeScale();
         DropdownUi();
+        SoundSlider();
     }
 
     private void OnDisable()
@@ -23,6 +26,20 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
         Service.Get<TimeManager>()?.LoadTimeScale();
     }
 
+    private void SoundSlider()
+    {
+        var soundManager = Service.Get<SoundManager>();
+        
+        if (soundManager != null)
+        {
+            bgmVolumeSlider.onValueChanged.RemoveAllListeners();
+            sfxVolumeSlider.onValueChanged.RemoveAllListeners();
+            
+            bgmVolumeSlider.onValueChanged.AddListener(soundManager.SetBgmVolume);
+            sfxVolumeSlider.onValueChanged.AddListener(soundManager.SetSfxVolume);
+        }
+    }
+    
     private void DropdownUi()
     {
         if (languageDropdown == null) return;
@@ -38,7 +55,6 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
             "Indonesian"
         };
         languageDropdown.AddOptions(languageOptions);
-        Debug.Log("here");
         languageDropdown.value = Service.Get<LocalizationManager>().GetCurrentLanguage();
         languageDropdown.onValueChanged.RemoveAllListeners();
         languageDropdown.onValueChanged.AddListener(OnLanguageChange);

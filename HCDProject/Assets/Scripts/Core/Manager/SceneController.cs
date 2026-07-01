@@ -83,6 +83,8 @@ public class SceneController : BaseManager<SceneController>
         
         if (async != null)  async.allowSceneActivation = true;
 
+        PlaySceneBgm(scene);
+
         while (!async.isDone) yield return null;
 
         if (mode == LoadSceneMode.Additive && backupScene != scene) yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
@@ -90,9 +92,36 @@ public class SceneController : BaseManager<SceneController>
         OnLoadingComplete?.Invoke();
     }
 
+    private void PlaySceneBgm(SceneType scene)
+    {
+        var soundManager = Service.Get<SoundManager>();
+        
+        if (soundManager != null)
+        {
+            switch (scene)
+            {
+                case SceneType.Title:
+                    soundManager.PlayBgmSound("HCD_Title");
+                    break;
+                case SceneType.ModeSelect:
+                    soundManager.PlayBgmSound("HCD_Title");
+                    break;
+                case SceneType.StageSelect:
+                    soundManager.PlayBgmSound("HCD_Stage");
+                    break;
+                case SceneType.InGame:
+                    soundManager.PlayBgmSound("HCD_Battle_1");
+                    break;
+                case SceneType.Tutorial:
+                    soundManager.PlayBgmSound("HCD_Battle_1");
+                    break;
+            }
+        }
+    }
+
     private IEnumerator UnLoadActiveSceneRoutine(SceneType sceneType)
     {
-        if (sceneType == SceneType.ModeSelect || sceneType == SceneType.StageSelect || sceneType == SceneType.InGame || sceneType == SceneType.Tutorial || sceneType == SceneType.Narrative)
+        if (sceneType == SceneType.ModeSelect || sceneType == SceneType.StageSelect || sceneType == SceneType.InGame || sceneType == SceneType.Tutorial)
         {
             Scene targerScene = SceneManager.GetSceneByBuildIndex((int)sceneType);
             if (targerScene.isLoaded)
@@ -126,6 +155,5 @@ public enum SceneType
     ModeSelect = 1,
     StageSelect = 2,
     InGame = 3,
-    Tutorial = 4,
-    Narrative = 5
+    Tutorial = 4
 }

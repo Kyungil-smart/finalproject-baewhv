@@ -8,7 +8,7 @@ public class NarrativeState : IState
     
     public void Enter()
     {
-        
+        Service.Get<SoundManager>()?.PlayBgmSound("HCD_Narrative");
     }
 
     public void Update()
