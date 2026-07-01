@@ -35,32 +35,12 @@ public class LocalizationManager : BaseManager<LocalizationManager>
 
     public void ChangeLanguage(SystemLanguage index)
     {
-        string targetLanguage;
-        switch (index)
-        {
-            case SystemLanguage.Korean:
-                targetLanguage = _language[0];
-                break;
-            case SystemLanguage.Thai:
-                targetLanguage = _language[2];
-                break;
-            case SystemLanguage.Vietnamese:
-                targetLanguage = _language[3];
-                break;
-            case SystemLanguage.Indonesian:
-                targetLanguage = _language[4];
-                break;
-            default:
-                targetLanguage = _language[1];
-                break;
-        }
-
-        Locale locale = LocalizationSettings.AvailableLocales.GetLocale(systemLanguage);
+        Locale locale = LocalizationSettings.AvailableLocales.GetLocale(index);
 
         if (locale != null)
         {
             LocalizationSettings.SelectedLocale = locale;
-
+            Debug.Log(locale);
             PlayerPrefs.SetInt("SaveLanguage", (int)systemLanguage);
             PlayerPrefs.Save();
         }

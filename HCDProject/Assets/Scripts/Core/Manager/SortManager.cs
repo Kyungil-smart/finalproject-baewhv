@@ -161,6 +161,8 @@ public class SortManager : BaseManager<SortManager>
                 draggedobject.transform.SetParent(subSlots[i]);
                 draggedobject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
+                draggedobject.enabled = false;
+
                 RemoveBlockFromRail(draggedobject);
 
                 CheckSlotState(targetSlot);
@@ -751,6 +753,25 @@ public class SortManager : BaseManager<SortManager>
             else
             {
                 block.enabled = enableInteraction;
+            }
+        }
+
+        if (characterSlots != null)
+        {
+            foreach (var slot in characterSlots)
+            {
+                if (slot == null || slot.SubSlots == null) continue;
+                foreach (var subSlot in slot.SubSlots)
+                {
+                    if (subSlot != null && subSlot.childCount > 0)
+                    {
+                        var slotBlock = subSlot.GetComponentInChildren<DragAndDrop>();
+                        if (slotBlock != null)
+                        {
+                            slotBlock.enabled = false;
+                        }
+                    }
+                }
             }
         }
     }
