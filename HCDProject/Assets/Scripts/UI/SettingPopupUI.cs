@@ -46,7 +46,16 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
 
     private void OnLanguageChange(int value)
     {
-        Service.Get<LocalizationManager>().ChangeLanguage((SystemLanguage)value);
+        SystemLanguage language = value switch
+        {
+            0 => SystemLanguage.Korean,
+            2 => SystemLanguage.Thai,
+            3 => SystemLanguage.Vietnamese,
+            4 => SystemLanguage.Indonesian,
+            _ => SystemLanguage.English
+        };
+        Debug.Log($"language change : {value}");
+        Service.Get<LocalizationManager>().ChangeLanguage(language);
     }
 
     public void OpenPopup(ESettingPopupType type)
