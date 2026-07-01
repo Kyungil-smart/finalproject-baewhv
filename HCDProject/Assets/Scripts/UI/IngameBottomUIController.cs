@@ -43,6 +43,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] private TextMeshProUGUI leftTimeText;
+    [SerializeField] private TextMeshProUGUI addTimeText;
     [SerializeField] private Slider LeftTimeGauge;
 
     [SerializeField] private TextMeshProUGUI gameSpeedText;
@@ -156,6 +157,16 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
             LeftTimeGauge.value = Mathf.Clamp01(value / max);
             leftTimeText.text = $"남은 시간 : {value:F1} s";
         }
+    }
+
+    public void SetAddTimeText(float value)
+    {
+        addTimeText.color = new Color(0, 1, 0, 1);
+        RectTransform rt = (RectTransform)addTimeText.transform;
+        addTimeText.text = $"+ {value:F1}";
+        Sequence sq = DOTween.Sequence();
+        sq.Join(rt.DOAnchorPosY(20.0f, 1.0f).From());
+        sq.Join(addTimeText.DOFade(0.0f, 1.0f));
     }
 
     public void SetExp(int curr, int max)
