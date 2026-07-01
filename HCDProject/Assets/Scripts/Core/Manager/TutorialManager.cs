@@ -194,7 +194,7 @@ public class TutorialManager : BaseManager<TutorialManager>
         touchField.SetActive(true);
         touchShield.SetActive(true);
         CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetSlots[0].gameObject);
-        CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetComboView);
+        //CopyNGlow(Service.Get<UIManager>().GetUI<IngameBottomUIController>().GetComboView);
         background.DOFade(0.75f, 1);
         TouchActions = Tutorial4;
     }
