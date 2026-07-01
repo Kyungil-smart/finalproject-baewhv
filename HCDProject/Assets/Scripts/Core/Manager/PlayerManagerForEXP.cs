@@ -60,7 +60,6 @@ public partial class PlayerManager
         {
             isOpenLevelUpPopup = true;
             Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnLevelUpPopup(CheckEXPNextFrame);
-            Debug.Log($"LevelUp! currentLevel = {level.Value}");
         }
     }
 
