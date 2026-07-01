@@ -174,14 +174,19 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         {
             if (!_stageMonsterPrefabs.ContainsKey(id)) loadTarget.Add(id);
 
-            MonsterRawData monsterEffect = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == id);
-            if (monsterEffect != null)
+            MonsterRawData monster = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == id.Trim());
+            if (monster != null)
             {
-                if (!string.IsNullOrEmpty(monsterEffect.MONSTER_DEATH_EFEECT)) Service.Get<EffectManager>()?.EffectIds.Add(monsterEffect.MONSTER_DEATH_EFEECT);
-                SkillRawData skillEffect = Service.Get<DataManager>()?.SkillTable.data.Find(x => x.SKILL_ID == monsterEffect.SKILL_ID);
+                if (!string.IsNullOrEmpty(monster.MONSTER_DEATH_EFEECT)) Service.Get<EffectManager>()?.EffectIds.Add(monster.MONSTER_DEATH_EFEECT.Trim());
+                SkillRawData attackEffect = Service.Get<DataManager>()?.SkillTable.data.Find(x => x.SKILL_ID == monster.ATK_ID.Trim());
+                if (attackEffect != null)
+                {
+                    if (!string.IsNullOrEmpty(attackEffect.SKILL_FX)) Service.Get<EffectManager>()?.EffectIds.Add(attackEffect.SKILL_FX.Trim());
+                }
+                SkillRawData skillEffect = Service.Get<DataManager>()?.SkillTable.data.Find(x => x.SKILL_ID == monster.SKILL_ID.Trim());
                 if (skillEffect != null)
                 {
-                    if (!string.IsNullOrEmpty(skillEffect.SKILL_FX)) Service.Get<EffectManager>()?.EffectIds.Add(skillEffect.SKILL_FX);
+                    if (!string.IsNullOrEmpty(skillEffect.SKILL_FX)) Service.Get<EffectManager>()?.EffectIds.Add(skillEffect.SKILL_FX.Trim());
                 }
             }
         }

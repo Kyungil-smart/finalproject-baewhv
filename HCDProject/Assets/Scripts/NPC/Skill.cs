@@ -49,6 +49,7 @@ public class Skill
         SKILL_AB_01 = data.SKILL_AB_01;
         SKILL_ABT_02 = Enum.Parse<ESkillAbilityType>(data.SKILL_ABT_02);
         SKILL_AB_02 = data.SKILL_AB_02;
+        SKILL_FX = data.SKILL_FX;
     }
 }
 

@@ -9,6 +9,12 @@ public class ATTACK_BASE : BaseEffect
     
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
+        int skillID = int.Parse(skill.SKILL_ID.Trim());
+        if (skillID >= 6035 && skillID <= 6048)
+        {
+            Service.Get<EffectManager>().SpawnEffect(skill.SKILL_FX, target.GetTargetObject.transform.position, Quaternion.identity);
+        }
+        
         if (BaseSkill.isIgnoreDef)
         {
             target.GetTargetObject.TryGetComponent(out BaseController targetObject);
