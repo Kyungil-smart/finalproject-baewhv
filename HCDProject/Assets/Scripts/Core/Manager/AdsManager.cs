@@ -13,7 +13,21 @@ public class AdsManager : BaseManager<AdsManager>
 
     private bool isAdUsed = false;
 
+    private bool isShowing = false;
+
+    public bool IsAdUsed => isAdUsed;
+    public event Action<bool> OnAdReroll;
+
     public bool CanReroll => !isAdUsed && _rewardedAd != null && _rewardedAd.CanShowAd();
+
+    private void SetAdUsed(bool value)
+    {
+        if (isAdUsed != value)
+        {
+            isAdUsed = value;
+            OnAdReroll?.Invoke(isAdUsed);
+        }
+    }
 
     private void Start()
     {
@@ -50,7 +64,7 @@ public class AdsManager : BaseManager<AdsManager>
 
     public void ResetAdChance()
     {
-        isAdUsed = false;
+        SetAdUsed(false);
         Debug.Log("새로운 보상 노드 진입: 광고 리롤 기회 초기화");
     }
 
@@ -79,7 +93,7 @@ public class AdsManager : BaseManager<AdsManager>
 
     public void ShowRewardedAd(Action rewardedAdOpen)
     {
-        if (isAdUsed)
+        if (isAdUsed || isShowing)
         {
             Debug.Log("이미 광고 시청 완료");
             return;
@@ -87,13 +101,15 @@ public class AdsManager : BaseManager<AdsManager>
 
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
+            isShowing = true;
             _rewardedAd.Show((Reward reward) =>
             {
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
+                    isShowing = false;
                     Debug.Log("보상 획득 성공");
 
-                    isAdUsed = true;
+                    SetAdUsed(true);
 
                     rewardedAdOpen?.Invoke();
 
