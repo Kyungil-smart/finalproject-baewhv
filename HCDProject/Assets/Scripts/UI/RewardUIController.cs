@@ -13,9 +13,10 @@ public class RewardUIController : MonoBehaviour
     [SerializeField] private RewardButtonUI[] buttonList;
     [SerializeField] private Button reRollButton;
     //private int selectedIndex = -1;
-    
+
     private UnityAction CloseCallback;
-    
+    private UnityAction RewardAction;
+
     public ObserveValue<bool> isOpenRewardPopup = new();
 
     private void OnDisable()
@@ -46,19 +47,19 @@ public class RewardUIController : MonoBehaviour
             {
                 button.IsSelected = false;
             }
-
         }
     }
 
     private void StartPopup(string title, string content)
     {
         gameObject.SetActive(true);
+        Service.Get<AdsManager>()?.ResetAdChance();
         isOpenRewardPopup.Value = true;
         titleText.text = title;
         contentText.text = content;
         Service.Get<TimeManager>()?.SaveTimeScale();
     }
-    
+
 
     public void SetLevelUpReward(UnityAction action)
     {
@@ -69,6 +70,21 @@ public class RewardUIController : MonoBehaviour
         {
             buttonList[i].SetReward(CurrentReward[i], Service.Get<PlayerManager>().OnSelectLevelUpReward, i);
         }
+
+        if (!Service.Get<AdsManager>().IsAdUsed)
+        {
+            reRollButton.interactable = true;
+            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetLevelUpReward(action); }));
+        }
+        else
+        {
+            reRollButton.interactable = false;
+        }
+    }
+
+    private void OnShowAds(UnityAction action)
+    {
+        Service.Get<AdsManager>()?.ShowRewardedAd(() => { SetLevelUpReward(action); });
     }
 
     public void SetRelicReward(UnityAction action)
@@ -80,30 +96,43 @@ public class RewardUIController : MonoBehaviour
         {
             buttonList[i].SetReward(CurrentReward[i], Service.Get<RelicManager>().OnSelectRelicReward, i);
         }
+
+        if (!Service.Get<AdsManager>().IsAdUsed)
+        {
+            reRollButton.interactable = true;
+            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetRelicReward(action); }));
+        }
+        else
+        {
+            reRollButton.interactable = false;
+        }
     }
 
     public void AddListener(UnityAction<bool> action)
     {
         isOpenRewardPopup.AddListener(action);
     }
+
     public void RemoveListener(UnityAction<bool> action)
     {
         isOpenRewardPopup.RemoveListener(action);
     }
+
     [SerializeField] private GameObject maintenance;
     [SerializeField] private Button repairRampart;
     [SerializeField] private Button randomReward;
+
     public void SetMaintenanceReward(UnityAction repair, UnityAction randomReward)
     {
         if (maintenance != null) maintenance.SetActive(true);
-        
+
         repairRampart.onClick.RemoveAllListeners();
         repairRampart.onClick.AddListener(() =>
         {
             maintenance.SetActive(false);
             repair?.Invoke();
         });
-        
+
         this.randomReward.onClick.RemoveAllListeners();
         this.randomReward.onClick.AddListener(() =>
         {

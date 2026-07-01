@@ -271,7 +271,15 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         };
         for (int i = 0; i < _characters.Length; i++)
         {
+            float hpPercent = 0f;
+            float atkPercent = 0f;
+            float defPercent = 0f;
+            float atkSpeedPercent = 0f;
+            float moveSpeedPercent = 0f;
+            float critRatePercent = 0f;
+            float critDamagePercent = 0f;
             _characters[i].GetComponent<PlayerRelics>()?.Init(jobTypes[i]);
+            var stats = _characters[i].Stats;
             foreach (string effectType in effectTypes)
             {
                 float jobBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobTypes[i], effectType) ?? 0f;
@@ -279,27 +287,25 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                 float totalBonus = jobBonus + allyBonus;
                 if (totalBonus == 0) continue;
 
-                var stats = _characters[i].Stats;
-
                 switch (effectType)
                 {
                     case "MAX_HP_P":
-                        stats._maxHp += Mathf.CeilToInt(stats._maxHp * totalBonus / 100f);
+                        hpPercent += totalBonus;
                         break;
                     case "ATK_P":
-                        stats._attackPower += Mathf.CeilToInt(stats._attackPower * totalBonus / 100f);
+                        atkPercent += totalBonus;
                         break;
                     case "DEF_P":
-                        stats._defense += Mathf.CeilToInt(stats._defense * totalBonus / 100f);
+                        defPercent += totalBonus;
                         break;
                     case "ATK_SPEED_P":
-                        stats._attackSpeed += stats._attackSpeed * totalBonus / 100f;
+                        atkSpeedPercent += totalBonus;
                         break;
                     case "MOVE_SPEED":
                         stats._moveSpeed += totalBonus;
                         break;
                     case "MOVE_SPEED_P":
-                        stats._moveSpeed += stats._moveSpeed * totalBonus / 100f;
+                        moveSpeedPercent += totalBonus;
                         break;
                     case "DOUBLE_ATK_RATE_P": // 궁수 연속공격 확률
                         var playerStat = _characters[i].PlayerStat;
@@ -315,17 +321,24 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                             _characters[i].BaseSkill.skills[1].SKILL_ABILLITY * totalBonus / 100f;
                         break;
                     case "ALLY_UPGRADE_P": // 모든스탯 증가
-                        stats._maxHp += Mathf.CeilToInt(stats._maxHp * totalBonus / 100f);
-                        stats._attackPower += Mathf.CeilToInt(stats._attackPower * totalBonus / 100f);
-                        stats._defense += Mathf.CeilToInt(stats._defense * totalBonus / 100f);
-                        stats._attackSpeed += stats._attackSpeed * totalBonus / 100f;
-                        stats._moveSpeed += stats._moveSpeed * totalBonus / 100f;
-                        stats._critRate += stats._critRate * totalBonus / 100f;
-                        stats._critDamage += stats._critDamage * totalBonus / 100f;
+                        hpPercent += totalBonus;
+                        atkPercent += totalBonus;
+                        defPercent += totalBonus;
+                        atkSpeedPercent += totalBonus;
+                        moveSpeedPercent += totalBonus;
+                        critRatePercent += totalBonus;
+                        critDamagePercent += totalBonus;
                         break;
                 }
-                _characters[i].UpdateStats(stats);
             }
+            stats._maxHp += Mathf.CeilToInt(stats._maxHp * hpPercent / 100f);
+            stats._attackPower += Mathf.CeilToInt(stats._attackPower * atkPercent / 100f);
+            stats._defense += Mathf.CeilToInt(stats._defense * defPercent / 100f);
+            stats._attackSpeed += stats._attackSpeed * atkSpeedPercent / 100f;
+            stats._moveSpeed += stats._moveSpeed * moveSpeedPercent / 100f;
+            stats._critRate += stats._critRate * critRatePercent / 100f;
+            stats._critDamage += stats._critDamage * critDamagePercent / 100f;
+            _characters[i].UpdateStats(stats);
             _characters[i].Movement.Agent.speed = _characters[i].Stats._moveSpeed;
 
             float healBonus = Service.Get<RelicManager>()?
