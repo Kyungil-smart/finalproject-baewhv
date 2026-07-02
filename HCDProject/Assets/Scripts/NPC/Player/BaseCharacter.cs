@@ -49,7 +49,6 @@ public class BaseCharacter : BaseController
 
     private float _attackTimer; // 누적 카운트
 
-    [SerializeField] private float _reviveTime; // 캐릭터 부활시간
     [SerializeField] private float _flickerInterval = 0.05f;
     [SerializeField] private int _flickerCycleCount = 3;
     private PlayerStats _playerStats;
@@ -59,6 +58,8 @@ public class BaseCharacter : BaseController
     private int _previousHp;
 
     public bool isCC = false;
+
+    public bool isBattle = false; // 배틀 중이면 스킬게이지 안오르게
     
     public float AttackTimer // 누적 카운트 프로퍼티
     {
@@ -71,8 +72,6 @@ public class BaseCharacter : BaseController
         get => _isSpawning;
         set => _isSpawning = value;
     }
-
-    public float ReviveTime => _reviveTime;
 
     private EFindType _findType;
 
@@ -187,7 +186,7 @@ public class BaseCharacter : BaseController
     protected virtual void Update()
     {
         _stateMachine?.Update();
-        if (!isCC) _activeSkillCoolCount += Time.deltaTime;
+        if (!isCC && isBattle) _activeSkillCoolCount += Time.deltaTime;
         float result = Mathf.Clamp(_activeSkillCoolCount, 0, ActiveSkillCoolTime);
         if (_activeSkillCoolValue == null) return;
         _activeSkillCoolValue.Value = result;
