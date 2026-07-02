@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
@@ -58,7 +58,8 @@ public class RewardUIController : MonoBehaviour
         isOpenRewardPopup.Value = true;
         titleText.text = title;
         contentText.text = content;
-        Service.Get<TimeManager>()?.SaveTimeScale();
+        if (!isReRoll)
+            Service.Get<TimeManager>()?.SaveTimeScale();
     }
 
 
@@ -75,12 +76,31 @@ public class RewardUIController : MonoBehaviour
         if (!Service.Get<AdsManager>().IsAdUsed)
         {
             reRollButton.interactable = true;
-            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetLevelUpReward(action, true); }));
+            reRollButton.onClick.RemoveAllListeners();
+            reRollButton.onClick.AddListener(() =>
+            {
+                Service.Get<AdsManager>().ShowRewardedAd(() =>
+                {
+                    StartCoroutine(KeepTimeScaleRoutine(() =>
+                    {
+                        SetLevelUpReward(action, true);
+                    }));
+                });
+            });
         }
         else
         {
             reRollButton.interactable = false;
         }
+    }
+
+    private IEnumerator KeepTimeScaleRoutine(Action action)
+    {
+        yield return null;
+
+        Time.timeScale = 0;
+
+        action?.Invoke();
     }
 
     private void OnShowAds(UnityAction action)
@@ -101,7 +121,17 @@ public class RewardUIController : MonoBehaviour
         if (!Service.Get<AdsManager>().IsAdUsed)
         {
             reRollButton.interactable = true;
-            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetRelicReward(action, true); }));    
+            reRollButton.onClick.RemoveAllListeners();
+            reRollButton.onClick.AddListener(() =>
+            {
+                Service.Get<AdsManager>().ShowRewardedAd(() =>
+                {
+                    StartCoroutine(KeepTimeScaleRoutine(() =>
+                    {
+                        SetRelicReward(action, true);
+                    }));
+                });
+            });
         }
         else
         {

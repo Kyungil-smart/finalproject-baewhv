@@ -91,7 +91,7 @@ public class AdsManager : BaseManager<AdsManager>
         });
     }
 
-    public void ShowRewardedAd(Action rewardedAdOpen)
+    public void ShowRewardedAd(Action rewardedAdClosed)
     {
         if (isAdUsed || isShowing)
         {
@@ -102,19 +102,21 @@ public class AdsManager : BaseManager<AdsManager>
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             isShowing = true;
-            _rewardedAd.Show((Reward reward) =>
+            _rewardedAd.OnAdFullScreenContentClosed += () =>
             {
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
                     isShowing = false;
-                    Debug.Log("보상 획득 성공");
-
                     SetAdUsed(true);
-
-                    rewardedAdOpen?.Invoke();
-
+                    rewardedAdClosed?.Invoke();
                     LoadAds();
                 });
+            };
+
+            // 광고 실행
+            _rewardedAd.Show((Reward reward) =>
+            {
+                Debug.Log("보상 지급 처리");
             });
         }
         else
