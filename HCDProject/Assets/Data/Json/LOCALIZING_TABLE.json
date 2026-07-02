@@ -11338,7 +11338,7 @@
     },
     {
       "TEXT_ID": "LRT_002",
-      "Korean": "공격 속도가 0.07 증가합니다.",
+      "Korean": "공격 속도가 7% 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11346,7 +11346,7 @@
     },
     {
       "TEXT_ID": "LRT_003",
-      "Korean": "치명타 확률이 0.02 증가합니다",
+      "Korean": "치명타 확률이 2% 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11354,7 +11354,7 @@
     },
     {
       "TEXT_ID": "LRT_004",
-      "Korean": "치명타 피해량이 0.2 증가합니다",
+      "Korean": "치명타 피해량이 20% 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11362,7 +11362,7 @@
     },
     {
       "TEXT_ID": "LRT_005",
-      "Korean": "최대 체력이 30 증가합니다",
+      "Korean": "최대 체력이 30 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11370,7 +11370,7 @@
     },
     {
       "TEXT_ID": "LRT_006",
-      "Korean": "현재 체력이 15만큼 회복됩니다",
+      "Korean": "현재 체력이 15 만큼 회복됩니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11378,7 +11378,7 @@
     },
     {
       "TEXT_ID": "LRT_007",
-      "Korean": "방어력이 2만큼 증가합니다",
+      "Korean": "방어력이 2 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11386,7 +11386,7 @@
     },
     {
       "TEXT_ID": "LRT_008",
-      "Korean": "이동속도가 6 증가합니다",
+      "Korean": "이동속도가 6 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11394,7 +11394,7 @@
     },
     {
       "TEXT_ID": "LRT_009",
-      "Korean": "공격력이 14 증가하며 공격속도가 0.4 감소합니다",
+      "Korean": "공격력이 14 증가하며 공격 속도가 40% 감소합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11402,7 +11402,7 @@
     },
     {
       "TEXT_ID": "LRT_010",
-      "Korean": "공격  속도가 0.03 증가하며 치명타 확률이 0.01 증가합니다",
+      "Korean": "공격 속도가 3% 증가하며 치명타 확률이 1% 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11410,7 +11410,7 @@
     },
     {
       "TEXT_ID": "LRT_011",
-      "Korean": "최대 체력이 15 감소하며 이동 속도가 10 증가합니다",
+      "Korean": "최대 체력이 20 증가하며 이동 속도가 20% 감소합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11418,7 +11418,7 @@
     },
     {
       "TEXT_ID": "LRT_012",
-      "Korean": "공격력이 20 증가하며 최대 체력이 20 감소합니다",
+      "Korean": "공격력이 14 증가하며 공격 속도가 40% <color=#FF4A4A>감소</color>합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -11426,14 +11426,14 @@
     },
     {
       "TEXT_ID": "LRT_013",
-      "Korean": "방어력이 1 증가하며 최대 체력이 22 증가합니다",
+      "Korean": "방어력이 1 증가하며 최대 체력이 22 증가합니다.",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_001",
+      "TEXT_ID": "CRTF_001",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11441,7 +11441,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_002",
+      "TEXT_ID": "CRTF_002",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11449,7 +11449,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_003",
+      "TEXT_ID": "CRTF_003",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11457,7 +11457,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_004",
+      "TEXT_ID": "CRTF_004",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11465,7 +11465,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_005",
+      "TEXT_ID": "CRTF_005",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11473,7 +11473,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_006",
+      "TEXT_ID": "CRTF_006",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11481,7 +11481,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_007",
+      "TEXT_ID": "CRTF_007",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11489,7 +11489,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_008",
+      "TEXT_ID": "CRTF_008",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11497,7 +11497,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_009",
+      "TEXT_ID": "CRTF_009",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11505,7 +11505,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_010",
+      "TEXT_ID": "CRTF_010",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11513,7 +11513,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_011",
+      "TEXT_ID": "CRTF_011",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11521,7 +11521,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_012",
+      "TEXT_ID": "CRTF_012",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11529,7 +11529,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_013",
+      "TEXT_ID": "CRTF_013",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11537,7 +11537,7 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_014",
+      "TEXT_ID": "CRTF_014",
       "Korean": "",
       "English": "",
       "Thai": "",
@@ -11545,7 +11545,127 @@
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "CRT_015",
+      "TEXT_ID": "CRTF_015",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_001",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_002",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_003",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_004",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_005",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_006",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_007",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_008",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_009",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_010",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_011",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_012",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_013",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_014",
+      "Korean": "",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "CRTD_015",
       "Korean": "",
       "English": "",
       "Thai": "",
