@@ -38,7 +38,7 @@ public class RewardButtonUI : MonoBehaviour
     {
         LoadIcon(data.CLEAR_REWARD_ICON);
         RewardName.SetEntry(data.CLEAR_REWARD_NAME);
-        RewardDesc.SetEntry(data.CLEAR_REWARD_TEXT_ID);
+        RewardDesc.SetEntry(data.CLEAR_REWARD_TEXT_ID_01);
         buttonAction = func;
         GetIndex = _index;
         IsSelected = false;
