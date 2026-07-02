@@ -272,7 +272,6 @@ public class GameManager : BaseManager<GameManager>
         
         Service.Get<TimeManager>()?.ResetTimeScale();
         
-        
         switch (type) 
         {
             case StageType.Tutorial:
@@ -327,6 +326,7 @@ public class GameManager : BaseManager<GameManager>
                     {
                         wallHpUi.SetWallHP(_wall.CurrentHp.Value);
                         _wall.CurrentHp.AddRatioListener(wallHpUi.SetWallHP);
+                        _wall.CurrentHp.Value = _wall.CurrentHp.Value;
                     }
                 }
             }
