@@ -28,6 +28,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     private AsyncOperationHandle<GameObject> _prefabHandle;
 
+    private int _revaivalTime;
+
     CharacterSlotUI[] _slot;
 
     public ObserveValue<bool> isAllSpawn = new();
@@ -124,6 +126,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         _arrowCoroutines = new Coroutine[data.Count];
         _sortBuffStats = new CharacterStats[data.Count];
         _slot = new CharacterSlotUI[data.Count];
+        LoadStaticValues();
         for (int i = 0; i < data.Count; i++)
         {
             GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
@@ -148,6 +151,18 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         }
         Service.Get<SortManager>()?.AutoSetupUISlots();
         Service.Get<GameManager>().CurrentState.AddListener(OnGameStateChanged);
+    }
+
+    public void LoadStaticValues() // 부활시간 테이블 값 불러옴
+    {
+        var reviveData = Service.Get<DataManager>()?.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "REVAIVAL_TIME");
+        if (reviveData != null)
+        {
+            if (int.TryParse(reviveData.VARIABLE_VALUE, out int value))
+            {
+                _revaivalTime = value;
+            }
+        }
     }
 
     public void IsAllSpawnPlayer()
@@ -204,9 +219,19 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         }
     }
 
+    public void SetCharacterBattleState(bool battle) // 전투상태 감지
+    {
+        for (int i = 0; i < _characters.Length; i++)
+        {
+            _characters[i].isBattle = battle;
+        }
+    }
+
     private void OnGameStateChanged(GameState state) // 게임 상태 변화 감지 → 상태별 처리
     {
         if (state == GameState.Sort) ResetSortBuffs();
+
+        SetCharacterBattleState(state != GameState.Sort);
     }
 
     public void ApplyLevelReward(LevelRewardRawData reward) // 레벨업 보상 호출
@@ -437,11 +462,11 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     private IEnumerator ReviveCoroutine(BaseCharacter character, int index) // 플레이어 부활호출
     {
-        float elapsed = character.ReviveTime;
+        float elapsed = _revaivalTime;
         while (elapsed >= 0)
         {
             elapsed -= Time.deltaTime;
-            _slot[index].SetDeathCount(elapsed, character.ReviveTime); // 부활 쿨타임 UI 연동
+            _slot[index].SetDeathCount(elapsed, _revaivalTime); // 부활 쿨타임 UI 연동
             yield return null;
         }
 
