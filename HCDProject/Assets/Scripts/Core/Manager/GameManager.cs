@@ -435,6 +435,26 @@ public class GameManager : BaseManager<GameManager>
     public void EndStage()
     {
         CurrentState.Value = GameState.GameOver;
+
+        if (_wall != null)
+        {
+            Addressables.ReleaseInstance(_wall.gameObject);
+            _wall = null;
+        }
+        Service.Get<TimeManager>()?.ResetTimeScale();
+    }
+
+    public void RestartStage()
+    {
+        if (_wall != null)
+        {
+            Addressables.ReleaseInstance(_wall.gameObject);
+            _wall = null;
+        }
+        
+        Service.Get<TimeManager>()?.ResetTimeScale();
+        
+        EnterStage(_currentChapter, _currentStage);
     }
     
     public void NarrativeEnd()

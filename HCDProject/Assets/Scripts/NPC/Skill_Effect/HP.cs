@@ -21,6 +21,8 @@ public class HP : BaseEffect
 
             return;
         }
+        
+        Service.Get<EffectManager>().SpawnEffect(skill.SKILL_FX, target.GetTargetObject.transform.position, Quaternion.identity);
 
         if (skill.SKILL_AT == ETargetType.ALLY)
         {

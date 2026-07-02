@@ -121,7 +121,7 @@ public class SceneController : BaseManager<SceneController>
 
     private IEnumerator UnLoadActiveSceneRoutine(SceneType sceneType)
     {
-        if (sceneType == SceneType.ModeSelect || sceneType == SceneType.StageSelect || sceneType == SceneType.InGame || sceneType == SceneType.Tutorial)
+        if (sceneType == SceneType.ModeSelect || sceneType == SceneType.StageSelect || sceneType == SceneType.InGame || sceneType == SceneType.Tutorial )
         {
             Scene targerScene = SceneManager.GetSceneByBuildIndex((int)sceneType);
             if (targerScene.isLoaded)

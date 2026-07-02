@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class IngameBottomUIController : BaseUIController<IngameBottomUIController>
@@ -20,10 +21,9 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
     //DoTweenControlled
     [SerializeField] private RectTransform charactersSlotUI;
-    private readonly Vector2 battleModeCharactersSlot = new Vector2(1057, 405);
-    private readonly Vector2 sortModeCharactersSlot = new Vector2(1057, 1034);
-    [SerializeField] private RectTransform ComboView;
-    public GameObject GetComboView => ComboView.gameObject;
+    private readonly Vector2 battleModeCharactersSlot = new Vector2(1057, 575);
+    private readonly Vector2 sortModeCharactersSlot = new Vector2(1057, 1095);
+
     [SerializeField] private StartBattleButtonUI StartBattleButton;
     public GameObject GetStartButton => StartBattleButton.gameObject;
 
@@ -32,10 +32,8 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     [SerializeField] private RectTransform characterSlot;
     private List<CharacterSlotUI> characterSlots = new();
 
-    private readonly Vector2 battlePhaseSlotRect = new Vector2(245, 361);
-    private readonly Vector2 sortPhaseSlotRect = new Vector2(245, 990);
-    private readonly Vector2 battlePhasePortraitRect = new Vector2(-12, -56.0f);
-    private readonly Vector2 sortPhasePortraitRect = new Vector2(-12, -166.4f);
+
+    //687
     public CharacterSlotUI[] GetSlots => characterSlots.ToArray();
 
     [SerializeField] private StoneRail upperRail;
@@ -44,7 +42,9 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public StoneRail GetLowerRail => lowerRail;
 
     [SerializeField] private TextMeshProUGUI comboText;
-    [SerializeField] private TextMeshProUGUI leftSortCountText;
+    [SerializeField] private TextMeshProUGUI leftTimeText;
+    [SerializeField] private TextMeshProUGUI addTimeText;
+    [SerializeField] private Slider LeftTimeGauge;
 
     [SerializeField] private TextMeshProUGUI gameSpeedText;
 
@@ -74,13 +74,11 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     {
         sortTopObject.SetActive(false);
         sortBottomObject.SetActive(false);
-        ComboView.DOAnchorPosY(206.0f, 0);
-        charactersSlotUI.DOAnchorPosY(-692.5f, 0);
+        //ComboView.DOAnchorPosY(206.0f, 0);
+        charactersSlotUI.DOAnchorPosY(-786.5f, 0);
         charactersSlotUI.DOSizeDelta(battleModeCharactersSlot, 0);
         foreach (CharacterSlotUI slot in characterSlots)
         {
-            ((RectTransform)slot.transform).DOSizeDelta(battlePhaseSlotRect, 0);
-            slot.GetBorderRect.DOSizeDelta(battlePhasePortraitRect, 0);
             slot.ChangeMode(false);
         }
 
@@ -93,13 +91,11 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     {
         sortTopObject.SetActive(true);
         sortBottomObject.SetActive(true);
-        ComboView.DOAnchorPosY(419.0f, 0).SetUpdate(true);
-        charactersSlotUI.DOAnchorPosY(205.0f, 0).SetUpdate(true);
+        //ComboView.DOAnchorPosY(419.0f, 0).SetUpdate(true);
+        charactersSlotUI.DOAnchorPosY(262.0f, 0).SetUpdate(true);
         charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0).SetUpdate(true);
         foreach (CharacterSlotUI slot in characterSlots)
         {
-            ((RectTransform)slot.transform).DOSizeDelta(sortPhaseSlotRect, 0).SetUpdate(true);
-            slot.GetBorderRect.DOSizeDelta(sortPhasePortraitRect, 0).SetUpdate(true);
             slot.ChangeMode(true);
         }
 
@@ -140,13 +136,37 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     {
         if (value < 0)
         {
-            leftSortCountText.text = "남은 시간 : 0 s";
+            leftTimeText.text = "남은 시간 : 0 s";
             StartBattleButton.SetSortDone();
         }
         else
         {
-            leftSortCountText.text = $"남은 시간 : {value:F1} s";
+            leftTimeText.text = $"남은 시간 : {value:F1} s";
         }
+    }
+    public void SetLeftSortCountText(float value, float max)
+    {
+        if (value < 0)
+        {
+            leftTimeText.text = "남은 시간 : 0 s";
+            LeftTimeGauge.value = 0;
+            StartBattleButton.SetSortDone();
+        }
+        else
+        {
+            LeftTimeGauge.value = Mathf.Clamp01(value / max);
+            leftTimeText.text = $"남은 시간 : {value:F1} s";
+        }
+    }
+
+    public void SetAddTimeText(float value)
+    {
+        addTimeText.color = new Color(0, 1, 0, 1);
+        RectTransform rt = (RectTransform)addTimeText.transform;
+        addTimeText.text = $"+ {value:F1}";
+        Sequence sq = DOTween.Sequence();
+        sq.Join(rt.DOAnchorPosY(20.0f, 1.0f).From());
+        sq.Join(addTimeText.DOFade(0.0f, 1.0f));
     }
 
     public void SetExp(int curr, int max)
