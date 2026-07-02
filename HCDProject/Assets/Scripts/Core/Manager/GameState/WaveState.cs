@@ -27,8 +27,8 @@ public class WaveState : IState
 
     public void Exit()
     {
-        if (_spawnManager != null && _spawnManager.currentWave.Value == 1) Service.Get<SoundManager>()?.PlayBgmSound("HCD_Battle_2");
-        if (_spawnManager != null && _spawnManager.currentWave.Value == 2) Service.Get<SoundManager>()?.PlayBgmSound("HCD_Battle_3");
+        if (_spawnManager != null && _spawnManager.currentWave.Value == 1) Service.Get<SoundManager>()?.PlayBgmSound("Battle_2");
+        if (_spawnManager != null && _spawnManager.currentWave.Value == 2) Service.Get<SoundManager>()?.PlayBgmSound("Battle_3");
         
         if (_spawnManager != null) _spawnManager.monsterCount.RemoveListener(MonsterCountChange);
     }

@@ -101,19 +101,19 @@ public class SceneController : BaseManager<SceneController>
             switch (scene)
             {
                 case SceneType.Title:
-                    soundManager.PlayBgmSound("HCD_Title");
+                    soundManager.PlayBgmSound("Title");
                     break;
                 case SceneType.ModeSelect:
-                    soundManager.PlayBgmSound("HCD_Title");
+                    soundManager.PlayBgmSound("Title");
                     break;
                 case SceneType.StageSelect:
-                    soundManager.PlayBgmSound("HCD_Stage");
+                    soundManager.PlayBgmSound("StageSelect");
                     break;
                 case SceneType.InGame:
-                    soundManager.PlayBgmSound("HCD_Battle_1");
+                    soundManager.PlayBgmSound("Battle_1");
                     break;
                 case SceneType.Tutorial:
-                    soundManager.PlayBgmSound("HCD_Battle_1");
+                    soundManager.PlayBgmSound("Battle_1");
                     break;
             }
         }

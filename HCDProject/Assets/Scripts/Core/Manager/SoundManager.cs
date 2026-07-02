@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class SoundManager : BaseManager<SoundManager>
 {
@@ -10,60 +13,34 @@ public class SoundManager : BaseManager<SoundManager>
     
     [SerializeField] private AudioSource[] bgm = new AudioSource[2];
     [SerializeField] private AudioSource sfx;
-    [SerializeField] private List<AudioClip> _bgmClip = new List<AudioClip>();
-    [SerializeField] private List<AudioClip> _sfxClip = new List<AudioClip>();
-    
-    private Dictionary<string, AudioClip> _sound = new Dictionary<string, AudioClip>();
+
+    private AsyncOperationHandle<AudioClip> _currentBgm;
     
     private int currentBgmIndex = 0;
     private Coroutine bgmRoutine;
 
     private void Start()
     {
-        Init();
-        
-        PlayBgmSound("HCD_Title");
-    }
-
-    public void Init()
-    {
-        foreach (var clip in _bgmClip)
-        {
-            if (clip == null) continue;
-            RegisterClip(clip.name, clip);
-        }
-
-        foreach (var clip in _sfxClip)
-        {
-            if (clip == null) continue;
-            RegisterClip(clip.name, clip);
-        }
-    }
-
-    private void RegisterClip(string clipName, AudioClip clip)
-    {
-        if (!_sound.ContainsKey(clipName)) _sound.Add(clipName, clip);
-    }
-
-    private AudioClip GetClip(string soundName)
-    {
-        if (_sound.TryGetValue(soundName, out AudioClip clip)) return clip;
-        
-        return null;
+        PlayBgmSound("Title");
     }
 
     public void PlayBgmSound(string soundName, float bgmDuration = 1f)
     {
-        AudioClip clip = GetClip(soundName);
-        
-        if (clip == null) return;
-        if (bgm[currentBgmIndex].clip == clip && bgm[currentBgmIndex].isPlaying) return;
-        
-        if (bgmRoutine != null) StopCoroutine(bgmRoutine);
-        bgmRoutine = StartCoroutine(BgmRoutine(clip, bgmDuration));
+        Addressables.LoadAssetAsync<AudioClip>(soundName).Completed += handle =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                AudioClip clip = handle.Result;
+
+                if (bgm[currentBgmIndex].clip == clip && bgm[currentBgmIndex].isPlaying) return;
+
+                if (bgmRoutine != null) StopCoroutine(bgmRoutine);
+                bgmRoutine = StartCoroutine(BgmRoutine(clip, handle, bgmDuration));
+            }
+        };
     }
 
-    private IEnumerator BgmRoutine(AudioClip clip, float duration)
+    private IEnumerator BgmRoutine(AudioClip clip, AsyncOperationHandle<AudioClip> handle , float duration)
     {
         int nextBgmIndex = (currentBgmIndex + 1) % 2;
         
@@ -85,14 +62,31 @@ public class SoundManager : BaseManager<SoundManager>
         }
         
         bgm[currentBgmIndex].Stop();
+        bgm[currentBgmIndex].clip = null;
+        
+        if (_currentBgm.IsValid()) Addressables.Release(_currentBgm);
         currentBgmIndex = nextBgmIndex;
+        _currentBgm = handle;
     }
     
     public void PlaySfxSound(string soundName)
     {
-        AudioClip clip = GetClip(soundName);
-        if (clip == null) return;
-        sfx.PlayOneShot(clip);
+        Addressables.LoadAssetAsync<AudioClip>(soundName).Completed += handle =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                sfx.PlayOneShot(handle.Result);
+
+                StartCoroutine(ReleaseSfxRoutine(handle, handle.Result.length));
+            }
+        };
+    }
+
+    private IEnumerator ReleaseSfxRoutine(AsyncOperationHandle<AudioClip> handle, float length)
+    {
+        yield return new WaitForSecondsRealtime(length);
+        
+        if (handle.IsValid()) Addressables.Release(handle);
     }
 
     public void SetMasterVolume(float value)
