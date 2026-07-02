@@ -136,26 +136,26 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     {
         if (value < 0)
         {
-            leftTimeText.text = "남은 시간 : 0 s";
+            leftTimeText.text = "0 s";
             StartBattleButton.SetSortDone();
         }
         else
         {
-            leftTimeText.text = $"남은 시간 : {value:F1} s";
+            leftTimeText.text = $"{value:F1} s";
         }
     }
     public void SetLeftSortCountText(float value, float max)
     {
         if (value < 0)
         {
-            leftTimeText.text = "남은 시간 : 0 s";
+            leftTimeText.text = "0 s";
             LeftTimeGauge.value = 0;
             StartBattleButton.SetSortDone();
         }
         else
         {
             LeftTimeGauge.value = Mathf.Clamp01(value / max);
-            leftTimeText.text = $"남은 시간 : {value:F1} s";
+            leftTimeText.text = $"{value:F1} s";
         }
     }
 
