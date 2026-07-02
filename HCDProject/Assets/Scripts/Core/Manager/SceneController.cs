@@ -83,11 +83,40 @@ public class SceneController : BaseManager<SceneController>
         
         if (async != null)  async.allowSceneActivation = true;
 
+        PlaySceneBgm(scene);
+
         while (!async.isDone) yield return null;
 
         if (mode == LoadSceneMode.Additive && backupScene != scene) yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
         
         OnLoadingComplete?.Invoke();
+    }
+
+    private void PlaySceneBgm(SceneType scene)
+    {
+        var soundManager = Service.Get<SoundManager>();
+        
+        if (soundManager != null)
+        {
+            switch (scene)
+            {
+                case SceneType.Title:
+                    soundManager.PlayBgmSound("Title");
+                    break;
+                case SceneType.ModeSelect:
+                    soundManager.PlayBgmSound("Title");
+                    break;
+                case SceneType.StageSelect:
+                    soundManager.PlayBgmSound("StageSelect");
+                    break;
+                case SceneType.InGame:
+                    soundManager.PlayBgmSound("Battle_1");
+                    break;
+                case SceneType.Tutorial:
+                    soundManager.PlayBgmSound("Battle_1");
+                    break;
+            }
+        }
     }
 
     private IEnumerator UnLoadActiveSceneRoutine(SceneType sceneType)

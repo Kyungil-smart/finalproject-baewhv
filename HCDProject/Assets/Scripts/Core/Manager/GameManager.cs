@@ -272,7 +272,6 @@ public class GameManager : BaseManager<GameManager>
         
         Service.Get<TimeManager>()?.ResetTimeScale();
         
-        
         switch (type) 
         {
             case StageType.Tutorial:
