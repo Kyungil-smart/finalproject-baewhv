@@ -58,7 +58,8 @@ public class RewardUIController : MonoBehaviour
         isOpenRewardPopup.Value = true;
         titleText.text = title;
         contentText.text = content;
-        Service.Get<TimeManager>()?.SaveTimeScale();
+        if (!isReRoll)
+            Service.Get<TimeManager>()?.SaveTimeScale();
     }
 
 
@@ -75,18 +76,7 @@ public class RewardUIController : MonoBehaviour
         if (!Service.Get<AdsManager>().IsAdUsed)
         {
             reRollButton.interactable = true;
-            reRollButton.onClick.AddListener(() => Service.Get<AdsManager>().ShowRewardedAd(() => { SetLevelUpReward(action, true); }));
-        }
-        else
-        {
-            reRollButton.interactable = false;
-        }
-
-        if (!Service.Get<AdsManager>().IsAdUsed)
-        {
-            reRollButton.interactable = true;
             reRollButton.onClick.RemoveAllListeners();
-            //  코루틴을 통해 sdk에서 제어하는 타임스케일을 다시 제어해주어야 합니다 null 대기로 close이벤트 발생시 먼저 발동하는 sdk의 resume 이후에 타임스케일을 한번 다시 제어합니다 
             reRollButton.onClick.AddListener(() =>
             {
                 Service.Get<AdsManager>().ShowRewardedAd(() =>
@@ -104,12 +94,13 @@ public class RewardUIController : MonoBehaviour
         }
     }
 
-    // 타임스케일을 다시 0으로 제어 이후 게임 로직상의 타임스케일은 timemanager가 제어가능한걸로 확인 됨 
     private IEnumerator KeepTimeScaleRoutine(Action action)
     {
         yield return null;
 
         Time.timeScale = 0;
+
+        action?.Invoke();
     }
 
     private void OnShowAds(UnityAction action)
@@ -130,7 +121,17 @@ public class RewardUIController : MonoBehaviour
         if (!Service.Get<AdsManager>().IsAdUsed)
         {
             reRollButton.interactable = true;
-            reRollButton.onClick.AddListener(()=>Service.Get<AdsManager>().ShowRewardedAd(() => { SetRelicReward(action, true); }));    
+            reRollButton.onClick.RemoveAllListeners();
+            reRollButton.onClick.AddListener(() =>
+            {
+                Service.Get<AdsManager>().ShowRewardedAd(() =>
+                {
+                    StartCoroutine(KeepTimeScaleRoutine(() =>
+                    {
+                        SetRelicReward(action, true);
+                    }));
+                });
+            });
         }
         else
         {
