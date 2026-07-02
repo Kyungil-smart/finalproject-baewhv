@@ -13,7 +13,8 @@ public class MonsterAttackState : IState
     
     public void Enter()
     {
-        _timer = 0f;
+        _timer = _controller.BaseSkill.skills[0].ATK_TYPE == EAtkType.NORMAL ? _controller.Stat.ATK_SPEED : _controller.BaseSkill.skills[0].SKILL_TIME;
+        if(_controller.BaseSkill.skills.Count > 1) _bossSkillTimer = _controller.BaseSkill.skills[1].SKILL_TIME;
     }
 
     public void Update()

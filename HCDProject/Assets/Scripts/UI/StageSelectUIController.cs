@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Serialization;
 
 public class StageSelectUIController : BaseUIController<StageSelectUIController>
 {
@@ -18,7 +19,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     [SerializeField] private Text continueText;
     [SerializeField] private Button cancelPopup;
     [SerializeField] private Color LockColor;
-    [SerializeField] private Color OpenColor;
+    [FormerlySerializedAs("OpenColor")] [SerializeField] private Color ClearColor;
 
     private int _currentChapter;
 
@@ -67,11 +68,9 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             if (stageImage != null)
             {
                 stageImage.sprite = stageSprites[(int)data.State];
-                if (data.State == StageState.Lock || data.State == StageState.LockSpecial ||
-                    data.State == StageState.LockBoss)
-                    stageImage.color = LockColor;
-                else
-                    stageImage.color = OpenColor;
+                if (data.State == StageState.Clear)
+                    stageImage.color = ClearColor;
+                    
             }
             stageButton.onClick.RemoveAllListeners();
             stageButton.onClick.AddListener(() => OnClickStageButton(_currentChapter, data.Stage, data.type));
