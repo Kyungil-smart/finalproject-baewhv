@@ -306,12 +306,13 @@ public class GameManager : BaseManager<GameManager>
     {
         if (_wall != null) return;
         
-        Addressables.InstantiateAsync(_wallAddress).Completed += (handle) =>
+        Addressables.LoadAssetAsync<GameObject>(_wallAddress).Completed += handle =>
         {
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
-                GameObject wallObj = handle.Result;
-
+                GameObject wallPrefab = handle.Result;
+                GameObject wallObj = Instantiate(wallPrefab);
+                
                 if (wallObj.TryGetComponent(out Rampart wall))
                 {
                     _wall = wall;
