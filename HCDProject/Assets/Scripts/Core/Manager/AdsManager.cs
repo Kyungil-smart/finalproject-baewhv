@@ -108,6 +108,7 @@ public class AdsManager : BaseManager<AdsManager>
                 {
                     isShowing = false;
                     SetAdUsed(true);
+                    rewardedAdClosed?.Invoke();
                     LoadAds();
                 });
             };
@@ -115,7 +116,6 @@ public class AdsManager : BaseManager<AdsManager>
             // 광고 실행
             _rewardedAd.Show((Reward reward) =>
             {
-                rewardedAdClosed?.Invoke();
                 Debug.Log("보상 지급 처리");
             });
         }
