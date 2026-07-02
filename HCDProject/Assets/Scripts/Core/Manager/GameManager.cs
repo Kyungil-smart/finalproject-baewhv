@@ -326,6 +326,7 @@ public class GameManager : BaseManager<GameManager>
                     {
                         wallHpUi.SetWallHP(_wall.CurrentHp.Value);
                         _wall.CurrentHp.AddRatioListener(wallHpUi.SetWallHP);
+                        _wall.CurrentHp.Value = _wall.CurrentHp.Value;
                     }
                 }
             }
