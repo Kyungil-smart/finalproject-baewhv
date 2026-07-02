@@ -22,7 +22,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     //DoTweenControlled
     [SerializeField] private RectTransform charactersSlotUI;
     private readonly Vector2 battleModeCharactersSlot = new Vector2(1057, 575);
-    private readonly Vector2 sortModeCharactersSlot = new Vector2(1057, 1034);
+    private readonly Vector2 sortModeCharactersSlot = new Vector2(1057, 1095);
 
     [SerializeField] private StartBattleButtonUI StartBattleButton;
     public GameObject GetStartButton => StartBattleButton.gameObject;
@@ -92,7 +92,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         sortTopObject.SetActive(true);
         sortBottomObject.SetActive(true);
         //ComboView.DOAnchorPosY(419.0f, 0).SetUpdate(true);
-        charactersSlotUI.DOAnchorPosY(205.0f, 0).SetUpdate(true);
+        charactersSlotUI.DOAnchorPosY(262.0f, 0).SetUpdate(true);
         charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0).SetUpdate(true);
         foreach (CharacterSlotUI slot in characterSlots)
         {
