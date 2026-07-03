@@ -45,6 +45,7 @@ public class SoundManager : BaseManager<SoundManager>
         int nextBgmIndex = (currentBgmIndex + 1) % 2;
         
         bgm[nextBgmIndex].clip = clip;
+        bgm[nextBgmIndex].loop = true;
         bgm[nextBgmIndex].volume = 0;
         bgm[nextBgmIndex].Play();
 
@@ -62,6 +63,7 @@ public class SoundManager : BaseManager<SoundManager>
         }
         
         bgm[currentBgmIndex].Stop();
+        bgm[currentBgmIndex].loop = false;
         bgm[currentBgmIndex].clip = null;
         
         if (_currentBgm.IsValid()) Addressables.Release(_currentBgm);

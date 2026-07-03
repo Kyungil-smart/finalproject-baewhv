@@ -23,7 +23,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -49,7 +49,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -75,7 +75,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -101,7 +101,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -127,7 +127,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -153,7 +153,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -179,7 +179,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -205,7 +205,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -231,7 +231,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -257,7 +257,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -283,7 +283,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -309,7 +309,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -335,7 +335,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -361,7 +361,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -387,7 +387,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -413,7 +413,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -439,7 +439,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -465,7 +465,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -491,7 +491,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -517,7 +517,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -543,7 +543,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -569,7 +569,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -595,7 +595,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -621,7 +621,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -647,7 +647,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -673,7 +673,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -699,7 +699,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -725,7 +725,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -751,7 +751,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -777,7 +777,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -803,7 +803,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -829,7 +829,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -855,7 +855,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -881,7 +881,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -907,7 +907,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -933,7 +933,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -959,7 +959,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -985,7 +985,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1011,7 +1011,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1037,7 +1037,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1063,7 +1063,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1089,7 +1089,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1115,7 +1115,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1141,7 +1141,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1167,7 +1167,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_1",
       "BG_IMG": ""
     },
     {
@@ -1193,7 +1193,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1219,7 +1219,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1245,7 +1245,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1271,7 +1271,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1297,7 +1297,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1323,7 +1323,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1349,7 +1349,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1375,7 +1375,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1401,7 +1401,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1427,7 +1427,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1453,7 +1453,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1479,7 +1479,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1505,7 +1505,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1531,7 +1531,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1557,7 +1557,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1583,7 +1583,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1609,7 +1609,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1635,7 +1635,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1661,7 +1661,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1687,7 +1687,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1713,7 +1713,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1739,7 +1739,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1765,7 +1765,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1791,7 +1791,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1817,7 +1817,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1843,7 +1843,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1869,7 +1869,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1895,7 +1895,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1921,7 +1921,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1947,7 +1947,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_2",
       "BG_IMG": ""
     },
     {
@@ -1973,7 +1973,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -1999,7 +1999,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2025,7 +2025,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2051,7 +2051,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2077,7 +2077,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2103,7 +2103,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2129,7 +2129,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2155,7 +2155,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2181,7 +2181,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2207,7 +2207,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2233,7 +2233,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2259,7 +2259,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2285,7 +2285,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2311,7 +2311,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2337,7 +2337,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2363,7 +2363,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2389,7 +2389,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2415,7 +2415,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2441,7 +2441,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2467,7 +2467,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2493,7 +2493,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2519,7 +2519,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2545,7 +2545,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2571,7 +2571,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2597,7 +2597,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2623,7 +2623,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2649,7 +2649,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2675,7 +2675,7 @@
       "SPAWN_MONSTER_COUNT_06": 0,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2701,7 +2701,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     },
     {
@@ -2727,7 +2727,7 @@
       "SPAWN_MONSTER_COUNT_06": 1,
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
-      "BGM": "",
+      "BGM": "Battle_3",
       "BG_IMG": ""
     }
   ]
