@@ -8,7 +8,8 @@
       "STAGE_TYPE": "TUTORIAL",
       "STAGE_NAME_ID": "SSN_001",
       "TYPE_OF_ID": "7000",
-      "STORY_ID": "ST_0001"
+      "STORY_ID": "ST_0001",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_002",
@@ -18,7 +19,8 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_002",
       "TYPE_OF_ID": "EV-002",
-      "STORY_ID": "ST_0096"
+      "STORY_ID": "ST_0096",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_003",
@@ -28,7 +30,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_003",
       "TYPE_OF_ID": "7003",
-      "STORY_ID": "ST_0134"
+      "STORY_ID": "ST_0134",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_004",
@@ -38,7 +41,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_004",
       "TYPE_OF_ID": "7006",
-      "STORY_ID": "ST_0206"
+      "STORY_ID": "ST_0206",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_005",
@@ -48,17 +52,19 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_005",
       "TYPE_OF_ID": "7009",
-      "STORY_ID": "ST_0264"
+      "STORY_ID": "ST_0264",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_006",
       "NEXT_STAGE_ID": "CH01_NODE_007",
       "CHAPTER": 1,
       "STAGE": 6,
-      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_TYPE": "MAINTENANCE",
       "STAGE_NAME_ID": "SSN_006",
       "TYPE_OF_ID": "EV-006",
-      "STORY_ID": "ST_0308"
+      "STORY_ID": "ST_0308",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_007",
@@ -68,7 +74,8 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_007",
       "TYPE_OF_ID": "7012",
-      "STORY_ID": "ST_0343"
+      "STORY_ID": "ST_0343",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_008",
@@ -78,7 +85,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_008",
       "TYPE_OF_ID": "7015",
-      "STORY_ID": "ST_0390"
+      "STORY_ID": "ST_0390",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_009",
@@ -88,7 +96,8 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_009",
       "TYPE_OF_ID": "EV-009",
-      "STORY_ID": "ST_0462"
+      "STORY_ID": "ST_0462",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_010",
@@ -98,7 +107,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_010",
       "TYPE_OF_ID": "7018",
-      "STORY_ID": "ST_0490"
+      "STORY_ID": "ST_0490",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_011",
@@ -108,7 +118,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_011",
       "TYPE_OF_ID": "7021",
-      "STORY_ID": "ST_0543"
+      "STORY_ID": "ST_0543",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_012",
@@ -118,17 +129,19 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_012",
       "TYPE_OF_ID": "7024",
-      "STORY_ID": "ST_0593"
+      "STORY_ID": "ST_0593",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_013",
       "NEXT_STAGE_ID": "CH01_NODE_014",
       "CHAPTER": 2,
       "STAGE": 6,
-      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_TYPE": "MAINTENANCE",
       "STAGE_NAME_ID": "SSN_013",
       "TYPE_OF_ID": "EV-013",
-      "STORY_ID": "ST_0645"
+      "STORY_ID": "ST_0645",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_014",
@@ -138,7 +151,8 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_014",
       "TYPE_OF_ID": "7027",
-      "STORY_ID": "ST_0673"
+      "STORY_ID": "ST_0673",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_015",
@@ -148,7 +162,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_015",
       "TYPE_OF_ID": "7030",
-      "STORY_ID": "ST_0721"
+      "STORY_ID": "ST_0721",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_016",
@@ -158,7 +173,8 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_016",
       "TYPE_OF_ID": "EV-016",
-      "STORY_ID": "ST_0772"
+      "STORY_ID": "ST_0772",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_017",
@@ -168,7 +184,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_017",
       "TYPE_OF_ID": "7033",
-      "STORY_ID": "ST_0797"
+      "STORY_ID": "ST_0797",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_018",
@@ -178,7 +195,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_018",
       "TYPE_OF_ID": "7036",
-      "STORY_ID": "ST_0869"
+      "STORY_ID": "ST_0869",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_019",
@@ -188,17 +206,19 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_019",
       "TYPE_OF_ID": "7039",
-      "STORY_ID": "ST_0943"
+      "STORY_ID": "ST_0943",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_020",
       "NEXT_STAGE_ID": "CH01_NODE_021",
       "CHAPTER": 3,
       "STAGE": 6,
-      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_TYPE": "MAINTENANCE",
       "STAGE_NAME_ID": "SSN_020",
       "TYPE_OF_ID": "EV-020",
-      "STORY_ID": "ST_0992"
+      "STORY_ID": "ST_0992",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_021",
@@ -208,7 +228,8 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_021",
       "TYPE_OF_ID": "7042",
-      "STORY_ID": "ST_1022"
+      "STORY_ID": "ST_1022",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_022",
@@ -218,7 +239,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_022",
       "TYPE_OF_ID": "7045",
-      "STORY_ID": "ST_1077"
+      "STORY_ID": "ST_1077",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_023",
@@ -228,7 +250,8 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_023",
       "TYPE_OF_ID": "EV-023",
-      "STORY_ID": "ST_1121"
+      "STORY_ID": "ST_1121",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_024",
@@ -238,7 +261,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_024",
       "TYPE_OF_ID": "7048",
-      "STORY_ID": "ST_1147"
+      "STORY_ID": "ST_1147",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_025",
@@ -248,7 +272,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_025",
       "TYPE_OF_ID": "7051",
-      "STORY_ID": "ST_1194"
+      "STORY_ID": "ST_1194",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_026",
@@ -258,17 +283,19 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_026",
       "TYPE_OF_ID": "7054",
-      "STORY_ID": "ST_1240"
+      "STORY_ID": "ST_1240",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_027",
       "NEXT_STAGE_ID": "CH01_NODE_028",
       "CHAPTER": 4,
       "STAGE": 6,
-      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_TYPE": "MAINTENANCE",
       "STAGE_NAME_ID": "SSN_027",
       "TYPE_OF_ID": "EV-027",
-      "STORY_ID": "ST_1287"
+      "STORY_ID": "ST_1287",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_028",
@@ -278,7 +305,8 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_028",
       "TYPE_OF_ID": "7057",
-      "STORY_ID": "ST_1315"
+      "STORY_ID": "ST_1315",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_029",
@@ -288,7 +316,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_029",
       "TYPE_OF_ID": "7060",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_030",
@@ -298,7 +327,8 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_030",
       "TYPE_OF_ID": "EV-030",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_031",
@@ -308,7 +338,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_031",
       "TYPE_OF_ID": "7063",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_032",
@@ -318,7 +349,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_032",
       "TYPE_OF_ID": "7066",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_033",
@@ -328,17 +360,19 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_033",
       "TYPE_OF_ID": "7069",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_034",
       "NEXT_STAGE_ID": "CH01_NODE_035",
       "CHAPTER": 5,
       "STAGE": 6,
-      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_TYPE": "MAINTENANCE",
       "STAGE_NAME_ID": "SSN_034",
       "TYPE_OF_ID": "EV-034",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_035",
@@ -348,7 +382,8 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_035",
       "TYPE_OF_ID": "7072",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_036",
@@ -358,7 +393,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_036",
       "TYPE_OF_ID": "7075",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_037",
@@ -368,7 +404,8 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_037",
       "TYPE_OF_ID": "EV-037",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_038",
@@ -378,7 +415,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_038",
       "TYPE_OF_ID": "7078",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_039",
@@ -388,7 +426,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_039",
       "TYPE_OF_ID": "7081",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_040",
@@ -398,17 +437,19 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_040",
       "TYPE_OF_ID": "7084",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_041",
       "NEXT_STAGE_ID": "CH01_NODE_042",
       "CHAPTER": 6,
       "STAGE": 6,
-      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_TYPE": "MAINTENANCE",
       "STAGE_NAME_ID": "SSN_041",
       "TYPE_OF_ID": "EV-041",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_042",
@@ -418,7 +459,8 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_042",
       "TYPE_OF_ID": "7087",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_043",
@@ -428,7 +470,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_043",
       "TYPE_OF_ID": "7090",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_044",
@@ -438,7 +481,8 @@
       "STAGE_TYPE": "EVENT",
       "STAGE_NAME_ID": "SSN_044",
       "TYPE_OF_ID": "EV-044",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_045",
@@ -448,7 +492,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_045",
       "TYPE_OF_ID": "7093",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_046",
@@ -458,7 +503,8 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_046",
       "TYPE_OF_ID": "7096",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_047",
@@ -468,17 +514,19 @@
       "STAGE_TYPE": "NORMAL_F",
       "STAGE_NAME_ID": "SSN_047",
       "TYPE_OF_ID": "7099",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_048",
       "NEXT_STAGE_ID": "CH01_NODE_049",
       "CHAPTER": 7,
       "STAGE": 6,
-      "STAGE_TYPE": "MAINTANANCE",
+      "STAGE_TYPE": "MAINTENANCE",
       "STAGE_NAME_ID": "SSN_048",
       "TYPE_OF_ID": "EV-048",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     },
     {
       "STAGE_ID": "CH01_NODE_049",
@@ -488,7 +536,8 @@
       "STAGE_TYPE": "BOSS_F",
       "STAGE_NAME_ID": "SSN_049",
       "TYPE_OF_ID": "7102",
-      "STORY_ID": ""
+      "STORY_ID": "",
+      "BOSS_MONSTER_IMG_ID": ""
     }
   ]
 }

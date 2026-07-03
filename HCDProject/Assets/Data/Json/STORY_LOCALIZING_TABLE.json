@@ -2,7 +2,7 @@
   "data": [
     {
       "STORY_ID": "ST_0001",
-      "NEXT_ID": "ST_0002",
+      "NEXT_ID": "ST_0003",
       "CHAPTER": 1,
       "STAGE": 1,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -11,15 +11,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_005",
+      "TEXT_ID": "TST_001"
     },
     {
       "STORY_ID": "ST_0002",
       "NEXT_ID": "ST_0003",
       "CHAPTER": 1,
       "STAGE": 1,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -1332,7 +1332,7 @@
     },
     {
       "STORY_ID": "ST_0096",
-      "NEXT_ID": "ST_0097",
+      "NEXT_ID": "ST_0098",
       "CHAPTER": 1,
       "STAGE": 2,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -1341,15 +1341,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_007",
+      "TEXT_ID": "TST_093"
     },
     {
       "STORY_ID": "ST_0097",
       "NEXT_ID": "ST_0098",
       "CHAPTER": 1,
       "STAGE": 2,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -1556,7 +1556,7 @@
     },
     {
       "STORY_ID": "ST_0264",
-      "NEXT_ID": "ST_0265",
+      "NEXT_ID": "ST_0266",
       "CHAPTER": 1,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -1565,15 +1565,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_007",
+      "TEXT_ID": "TST_251"
     },
     {
       "STORY_ID": "ST_0265",
       "NEXT_ID": "ST_0266",
       "CHAPTER": 1,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -1836,7 +1836,7 @@
     },
     {
       "STORY_ID": "ST_0284",
-      "NEXT_ID": "ST_0285",
+      "NEXT_ID": "ST_0286",
       "CHAPTER": 1,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -1845,15 +1845,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_269"
     },
     {
       "STORY_ID": "ST_0285",
       "NEXT_ID": "ST_0286",
       "CHAPTER": 1,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -2410,7 +2410,7 @@
     },
     {
       "STORY_ID": "ST_0134",
-      "NEXT_ID": "ST_0135",
+      "NEXT_ID": "ST_0136",
       "CHAPTER": 1,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -2419,15 +2419,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_008",
+      "TEXT_ID": "TST_129"
     },
     {
       "STORY_ID": "ST_0135",
       "NEXT_ID": "ST_0136",
       "CHAPTER": 1,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -3040,7 +3040,7 @@
     },
     {
       "STORY_ID": "ST_0179",
-      "NEXT_ID": "ST_0180",
+      "NEXT_ID": "ST_0181",
       "CHAPTER": 1,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -3049,15 +3049,15 @@
       "BGM": "",
       "SFX": "전투 소리가 잦아드는 소리",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_172"
     },
     {
       "STORY_ID": "ST_0180",
       "NEXT_ID": "ST_0181",
       "CHAPTER": 1,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -3418,7 +3418,7 @@
     },
     {
       "STORY_ID": "ST_0206",
-      "NEXT_ID": "ST_0207",
+      "NEXT_ID": "ST_0208",
       "CHAPTER": 1,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -3427,15 +3427,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_008",
+      "TEXT_ID": "TST_197"
     },
     {
       "STORY_ID": "ST_0207",
       "NEXT_ID": "ST_0208",
       "CHAPTER": 1,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -3922,7 +3922,7 @@
     },
     {
       "STORY_ID": "ST_0242",
-      "NEXT_ID": "ST_0243",
+      "NEXT_ID": "ST_0244",
       "CHAPTER": 1,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -3931,15 +3931,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_231"
     },
     {
       "STORY_ID": "ST_0243",
       "NEXT_ID": "ST_0244",
       "CHAPTER": 1,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -4300,7 +4300,7 @@
     },
     {
       "STORY_ID": "ST_0308",
-      "NEXT_ID": "ST_0309",
+      "NEXT_ID": "ST_0310",
       "CHAPTER": 1,
       "STAGE": 6,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -4309,15 +4309,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_291"
     },
     {
       "STORY_ID": "ST_0309",
       "NEXT_ID": "ST_0310",
       "CHAPTER": 1,
       "STAGE": 6,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -4790,7 +4790,7 @@
     },
     {
       "STORY_ID": "ST_0343",
-      "NEXT_ID": "ST_0344",
+      "NEXT_ID": "ST_0345",
       "CHAPTER": 1,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -4799,15 +4799,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_324"
     },
     {
       "STORY_ID": "ST_0344",
       "NEXT_ID": "ST_0345",
       "CHAPTER": 1,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -5070,7 +5070,7 @@
     },
     {
       "STORY_ID": "ST_0363",
-      "NEXT_ID": "ST_0364",
+      "NEXT_ID": "ST_0365",
       "CHAPTER": 1,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -5079,15 +5079,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_342"
     },
     {
       "STORY_ID": "ST_0364",
       "NEXT_ID": "ST_0365",
       "CHAPTER": 1,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -5448,7 +5448,7 @@
     },
     {
       "STORY_ID": "ST_0390",
-      "NEXT_ID": "ST_0391",
+      "NEXT_ID": "ST_0392",
       "CHAPTER": 2,
       "STAGE": 1,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -5457,15 +5457,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_010",
+      "TEXT_ID": "TST_367"
     },
     {
       "STORY_ID": "ST_0391",
       "NEXT_ID": "ST_0392",
       "CHAPTER": 2,
       "STAGE": 1,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -5994,7 +5994,7 @@
     },
     {
       "STORY_ID": "ST_0429",
-      "NEXT_ID": "ST_0430",
+      "NEXT_ID": "ST_0431",
       "CHAPTER": 2,
       "STAGE": 1,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -6003,15 +6003,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_404"
     },
     {
       "STORY_ID": "ST_0430",
       "NEXT_ID": "ST_0431",
       "CHAPTER": 2,
       "STAGE": 1,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -6456,7 +6456,7 @@
     },
     {
       "STORY_ID": "ST_0462",
-      "NEXT_ID": "ST_0463",
+      "NEXT_ID": "ST_0464",
       "CHAPTER": 2,
       "STAGE": 2,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -6465,15 +6465,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_010",
+      "TEXT_ID": "TST_435"
     },
     {
       "STORY_ID": "ST_0463",
       "NEXT_ID": "ST_0464",
       "CHAPTER": 2,
       "STAGE": 2,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -6848,7 +6848,7 @@
     },
     {
       "STORY_ID": "ST_0490",
-      "NEXT_ID": "ST_0491",
+      "NEXT_ID": "ST_0492",
       "CHAPTER": 2,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -6857,15 +6857,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_011",
+      "TEXT_ID": "TST_461"
     },
     {
       "STORY_ID": "ST_0491",
       "NEXT_ID": "ST_0492",
       "CHAPTER": 2,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -7254,7 +7254,7 @@
     },
     {
       "STORY_ID": "ST_0519",
-      "NEXT_ID": "ST_0520",
+      "NEXT_ID": "ST_0521",
       "CHAPTER": 2,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -7263,15 +7263,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_011",
+      "TEXT_ID": "TST_488"
     },
     {
       "STORY_ID": "ST_0520",
       "NEXT_ID": "ST_0521",
       "CHAPTER": 2,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -7590,7 +7590,7 @@
     },
     {
       "STORY_ID": "ST_0543",
-      "NEXT_ID": "ST_0544",
+      "NEXT_ID": "ST_0545",
       "CHAPTER": 2,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -7599,15 +7599,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_012",
+      "TEXT_ID": "TST_510"
     },
     {
       "STORY_ID": "ST_0544",
       "NEXT_ID": "ST_0545",
       "CHAPTER": 2,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -7954,7 +7954,7 @@
     },
     {
       "STORY_ID": "ST_0569",
-      "NEXT_ID": "ST_0570",
+      "NEXT_ID": "ST_0571",
       "CHAPTER": 2,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -7963,15 +7963,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_010",
+      "TEXT_ID": "TST_534"
     },
     {
       "STORY_ID": "ST_0570",
       "NEXT_ID": "ST_0571",
       "CHAPTER": 2,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -8290,7 +8290,7 @@
     },
     {
       "STORY_ID": "ST_0593",
-      "NEXT_ID": "ST_0594",
+      "NEXT_ID": "ST_0595",
       "CHAPTER": 2,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -8299,15 +8299,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_013",
+      "TEXT_ID": "TST_556"
     },
     {
       "STORY_ID": "ST_0594",
       "NEXT_ID": "ST_0595",
       "CHAPTER": 2,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -8710,7 +8710,7 @@
     },
     {
       "STORY_ID": "ST_0623",
-      "NEXT_ID": "ST_0624",
+      "NEXT_ID": "ST_0625",
       "CHAPTER": 2,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -8719,15 +8719,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_013",
+      "TEXT_ID": "TST_584"
     },
     {
       "STORY_ID": "ST_0624",
       "NEXT_ID": "ST_0625",
       "CHAPTER": 2,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -9018,7 +9018,7 @@
     },
     {
       "STORY_ID": "ST_0645",
-      "NEXT_ID": "ST_0646",
+      "NEXT_ID": "ST_0647",
       "CHAPTER": 2,
       "STAGE": 6,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -9027,15 +9027,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_013",
+      "TEXT_ID": "TST_604"
     },
     {
       "STORY_ID": "ST_0646",
       "NEXT_ID": "ST_0647",
       "CHAPTER": 2,
       "STAGE": 6,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -9410,7 +9410,7 @@
     },
     {
       "STORY_ID": "ST_0673",
-      "NEXT_ID": "ST_0674",
+      "NEXT_ID": "ST_0675",
       "CHAPTER": 2,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -9419,15 +9419,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_013",
+      "TEXT_ID": "TST_630"
     },
     {
       "STORY_ID": "ST_0674",
       "NEXT_ID": "ST_0675",
       "CHAPTER": 2,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -9746,7 +9746,7 @@
     },
     {
       "STORY_ID": "ST_0697",
-      "NEXT_ID": "ST_0698",
+      "NEXT_ID": "ST_0699",
       "CHAPTER": 2,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -9755,15 +9755,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_013",
+      "TEXT_ID": "TST_652"
     },
     {
       "STORY_ID": "ST_0698",
       "NEXT_ID": "ST_0699",
       "CHAPTER": 2,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -10082,7 +10082,7 @@
     },
     {
       "STORY_ID": "ST_0721",
-      "NEXT_ID": "ST_0722",
+      "NEXT_ID": "ST_0723",
       "CHAPTER": 3,
       "STAGE": 1,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -10091,15 +10091,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_674"
     },
     {
       "STORY_ID": "ST_0722",
       "NEXT_ID": "ST_0723",
       "CHAPTER": 3,
       "STAGE": 1,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -10516,7 +10516,7 @@
     },
     {
       "STORY_ID": "ST_0752",
-      "NEXT_ID": "ST_0753",
+      "NEXT_ID": "ST_0754",
       "CHAPTER": 3,
       "STAGE": 1,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -10525,15 +10525,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_703"
     },
     {
       "STORY_ID": "ST_0753",
       "NEXT_ID": "ST_0754",
       "CHAPTER": 3,
       "STAGE": 1,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -10796,7 +10796,7 @@
     },
     {
       "STORY_ID": "ST_0772",
-      "NEXT_ID": "ST_0773",
+      "NEXT_ID": "ST_0774",
       "CHAPTER": 3,
       "STAGE": 2,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -10805,15 +10805,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_721"
     },
     {
       "STORY_ID": "ST_0773",
       "NEXT_ID": "ST_0774",
       "CHAPTER": 3,
       "STAGE": 2,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -11146,7 +11146,7 @@
     },
     {
       "STORY_ID": "ST_0797",
-      "NEXT_ID": "ST_0798",
+      "NEXT_ID": "ST_0799",
       "CHAPTER": 3,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -11155,15 +11155,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_744"
     },
     {
       "STORY_ID": "ST_0798",
       "NEXT_ID": "ST_0799",
       "CHAPTER": 3,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -11552,7 +11552,7 @@
     },
     {
       "STORY_ID": "ST_0826",
-      "NEXT_ID": "ST_0827",
+      "NEXT_ID": "ST_0828",
       "CHAPTER": 3,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -11561,15 +11561,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_771"
     },
     {
       "STORY_ID": "ST_0827",
       "NEXT_ID": "ST_0828",
       "CHAPTER": 3,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -12154,7 +12154,7 @@
     },
     {
       "STORY_ID": "ST_0869",
-      "NEXT_ID": "ST_0870",
+      "NEXT_ID": "ST_0871",
       "CHAPTER": 3,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -12163,15 +12163,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_812"
     },
     {
       "STORY_ID": "ST_0870",
       "NEXT_ID": "ST_0871",
       "CHAPTER": 3,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -12938,7 +12938,7 @@
     },
     {
       "STORY_ID": "ST_0925",
-      "NEXT_ID": "ST_0926",
+      "NEXT_ID": "ST_0927",
       "CHAPTER": 3,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -12947,15 +12947,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_866"
     },
     {
       "STORY_ID": "ST_0926",
       "NEXT_ID": "ST_0927",
       "CHAPTER": 3,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -13190,7 +13190,7 @@
     },
     {
       "STORY_ID": "ST_0943",
-      "NEXT_ID": "ST_0944",
+      "NEXT_ID": "ST_0945",
       "CHAPTER": 3,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -13199,15 +13199,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_004",
+      "TEXT_ID": "TST_882"
     },
     {
       "STORY_ID": "ST_0944",
       "NEXT_ID": "ST_0945",
       "CHAPTER": 3,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -13582,7 +13582,7 @@
     },
     {
       "STORY_ID": "ST_0971",
-      "NEXT_ID": "ST_0972",
+      "NEXT_ID": "ST_0973",
       "CHAPTER": 3,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -13591,15 +13591,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_003",
+      "TEXT_ID": "TST_908"
     },
     {
       "STORY_ID": "ST_0972",
       "NEXT_ID": "ST_0973",
       "CHAPTER": 3,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -13876,7 +13876,7 @@
     },
     {
       "STORY_ID": "ST_0992",
-      "NEXT_ID": "ST_0993",
+      "NEXT_ID": "ST_0994",
       "CHAPTER": 3,
       "STAGE": 6,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -13885,15 +13885,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_004",
+      "TEXT_ID": "TST_927"
     },
     {
       "STORY_ID": "ST_0993",
       "NEXT_ID": "ST_0994",
       "CHAPTER": 3,
       "STAGE": 6,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -14296,7 +14296,7 @@
     },
     {
       "STORY_ID": "ST_1022",
-      "NEXT_ID": "ST_1023",
+      "NEXT_ID": "ST_1024",
       "CHAPTER": 3,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -14305,15 +14305,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_955"
     },
     {
       "STORY_ID": "ST_1023",
       "NEXT_ID": "ST_1024",
       "CHAPTER": 3,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -14618,7 +14618,7 @@
     },
     {
       "STORY_ID": "ST_1045",
-      "NEXT_ID": "ST_1046",
+      "NEXT_ID": "ST_1047",
       "CHAPTER": 3,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -14627,15 +14627,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_976"
     },
     {
       "STORY_ID": "ST_1046",
       "NEXT_ID": "ST_1047",
       "CHAPTER": 3,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -15066,7 +15066,7 @@
     },
     {
       "STORY_ID": "ST_1077",
-      "NEXT_ID": "ST_1078",
+      "NEXT_ID": "ST_1079",
       "CHAPTER": 4,
       "STAGE": 1,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -15075,15 +15075,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_014",
+      "TEXT_ID": "TST_1006"
     },
     {
       "STORY_ID": "ST_1078",
       "NEXT_ID": "ST_1079",
       "CHAPTER": 4,
       "STAGE": 1,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -15458,7 +15458,7 @@
     },
     {
       "STORY_ID": "ST_1105",
-      "NEXT_ID": "ST_1106",
+      "NEXT_ID": "ST_1107",
       "CHAPTER": 4,
       "STAGE": 1,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -15467,15 +15467,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_014",
+      "TEXT_ID": "TST_1032"
     },
     {
       "STORY_ID": "ST_1106",
       "NEXT_ID": "ST_1107",
       "CHAPTER": 4,
       "STAGE": 1,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -15682,7 +15682,7 @@
     },
     {
       "STORY_ID": "ST_1121",
-      "NEXT_ID": "ST_1122",
+      "NEXT_ID": "ST_1123",
       "CHAPTER": 4,
       "STAGE": 2,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -15691,15 +15691,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_014",
+      "TEXT_ID": "TST_1046"
     },
     {
       "STORY_ID": "ST_1122",
       "NEXT_ID": "ST_1123",
       "CHAPTER": 4,
       "STAGE": 2,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -16046,7 +16046,7 @@
     },
     {
       "STORY_ID": "ST_1147",
-      "NEXT_ID": "ST_1148",
+      "NEXT_ID": "ST_1149",
       "CHAPTER": 4,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -16055,15 +16055,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_015",
+      "TEXT_ID": "TST_1070"
     },
     {
       "STORY_ID": "ST_1148",
       "NEXT_ID": "ST_1149",
       "CHAPTER": 4,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -16452,7 +16452,7 @@
     },
     {
       "STORY_ID": "ST_1176",
-      "NEXT_ID": "ST_1177",
+      "NEXT_ID": "ST_1178",
       "CHAPTER": 4,
       "STAGE": 3,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -16461,15 +16461,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_1097"
     },
     {
       "STORY_ID": "ST_1177",
       "NEXT_ID": "ST_1178",
       "CHAPTER": 4,
       "STAGE": 3,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -16704,7 +16704,7 @@
     },
     {
       "STORY_ID": "ST_1194",
-      "NEXT_ID": "ST_1195",
+      "NEXT_ID": "ST_1196",
       "CHAPTER": 4,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -16713,15 +16713,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_015",
+      "TEXT_ID": "TST_1113"
     },
     {
       "STORY_ID": "ST_1195",
       "NEXT_ID": "ST_1196",
       "CHAPTER": 4,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -17110,7 +17110,7 @@
     },
     {
       "STORY_ID": "ST_1223",
-      "NEXT_ID": "ST_1224",
+      "NEXT_ID": "ST_1225",
       "CHAPTER": 4,
       "STAGE": 4,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -17119,15 +17119,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_1140"
     },
     {
       "STORY_ID": "ST_1224",
       "NEXT_ID": "ST_1225",
       "CHAPTER": 4,
       "STAGE": 4,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -17348,7 +17348,7 @@
     },
     {
       "STORY_ID": "ST_1240",
-      "NEXT_ID": "ST_1241",
+      "NEXT_ID": "ST_1242",
       "CHAPTER": 4,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -17357,15 +17357,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_015",
+      "TEXT_ID": "TST_1155"
     },
     {
       "STORY_ID": "ST_1241",
       "NEXT_ID": "ST_1242",
       "CHAPTER": 4,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -17740,7 +17740,7 @@
     },
     {
       "STORY_ID": "ST_1268",
-      "NEXT_ID": "ST_1269",
+      "NEXT_ID": "ST_1270",
       "CHAPTER": 4,
       "STAGE": 5,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -17749,15 +17749,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_1181"
     },
     {
       "STORY_ID": "ST_1269",
       "NEXT_ID": "ST_1270",
       "CHAPTER": 4,
       "STAGE": 5,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -18006,7 +18006,7 @@
     },
     {
       "STORY_ID": "ST_1287",
-      "NEXT_ID": "ST_1288",
+      "NEXT_ID": "ST_1289",
       "CHAPTER": 4,
       "STAGE": 6,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -18015,15 +18015,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_015",
+      "TEXT_ID": "TST_1198"
     },
     {
       "STORY_ID": "ST_1288",
       "NEXT_ID": "ST_1289",
       "CHAPTER": 4,
       "STAGE": 6,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -18398,7 +18398,7 @@
     },
     {
       "STORY_ID": "ST_1315",
-      "NEXT_ID": "ST_1316",
+      "NEXT_ID": "ST_1317",
       "CHAPTER": 4,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
@@ -18407,15 +18407,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_002",
+      "TEXT_ID": "TST_1224"
     },
     {
       "STORY_ID": "ST_1316",
       "NEXT_ID": "ST_1317",
       "CHAPTER": 4,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "BEFORE_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -18734,7 +18734,7 @@
     },
     {
       "STORY_ID": "ST_1339",
-      "NEXT_ID": "ST_1340",
+      "NEXT_ID": "ST_1341",
       "CHAPTER": 4,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
@@ -18743,15 +18743,15 @@
       "BGM": "",
       "SFX": "",
       "PORTRAIT": "",
-      "NAME": "",
-      "TEXT_ID": ""
+      "NAME": "C_001",
+      "TEXT_ID": "TST_1246"
     },
     {
       "STORY_ID": "ST_1340",
       "NEXT_ID": "ST_1341",
       "CHAPTER": 4,
       "STAGE": 7,
-      "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
+      "STAGE_DIALOGUE_EVENT_TYPE": "MERGED_FADEIN",
       "CATEGORY": "NONE",
       "BACKGROUND": "",
       "BGM": "",
@@ -19028,7 +19028,7 @@
     },
     {
       "STORY_ID": "ST_1360",
-      "NEXT_ID": "ST_1361",
+      "NEXT_ID": "",
       "CHAPTER": 4,
       "STAGE": 7,
       "STAGE_DIALOGUE_EVENT_TYPE": "AFTER_STAGE",
