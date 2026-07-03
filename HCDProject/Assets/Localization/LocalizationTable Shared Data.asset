@@ -5879,6 +5879,174 @@ MonoBehaviour:
     m_Key: SSN_007
     m_Metadata:
       m_Items: []
+  - m_Id: 8695235997949952
+    m_Key: SSN_008
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892992
+    m_Key: SSN_009
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892993
+    m_Key: SSN_010
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892994
+    m_Key: SSN_011
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892995
+    m_Key: SSN_012
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892996
+    m_Key: SSN_013
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892997
+    m_Key: SSN_014
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892998
+    m_Key: SSN_015
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892999
+    m_Key: SSN_016
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893000
+    m_Key: SSN_017
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893001
+    m_Key: SSN_018
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893002
+    m_Key: SSN_019
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893003
+    m_Key: SSN_020
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893004
+    m_Key: SSN_021
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893005
+    m_Key: SSN_022
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893006
+    m_Key: SSN_023
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893007
+    m_Key: SSN_024
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893008
+    m_Key: SSN_025
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893009
+    m_Key: SSN_026
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893010
+    m_Key: SSN_027
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893011
+    m_Key: SSN_028
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893012
+    m_Key: SSN_029
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893013
+    m_Key: SSN_030
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893014
+    m_Key: SSN_031
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893015
+    m_Key: SSN_032
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893016
+    m_Key: SSN_033
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893017
+    m_Key: SSN_034
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893018
+    m_Key: SSN_035
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893019
+    m_Key: SSN_036
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893020
+    m_Key: SSN_037
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893021
+    m_Key: SSN_038
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893022
+    m_Key: SSN_039
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893023
+    m_Key: SSN_040
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893024
+    m_Key: SSN_041
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893025
+    m_Key: SSN_042
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893026
+    m_Key: SSN_043
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893027
+    m_Key: SSN_044
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893028
+    m_Key: SSN_045
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893029
+    m_Key: SSN_046
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893030
+    m_Key: SSN_047
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893031
+    m_Key: SSN_048
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893032
+    m_Key: SSN_049
+    m_Metadata:
+      m_Items: []
   - m_Id: 2040774160528
     m_Key: UI_001
     m_Metadata:
@@ -5961,6 +6129,82 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2554901970640916
     m_Key: UI_021
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087296
+    m_Key: UI_SS_TYPE_TUTORIAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087297
+    m_Key: UI_SS_TYPE_NORMAL_F
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087298
+    m_Key: UI_SS_TYPE_EVENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087299
+    m_Key: UI_SS_TYPE_BOSS_F
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087300
+    m_Key: UI_SS_TYPE_MAINTENANCE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087301
+    m_Key: UI_SS_LOOT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087302
+    m_Key: UI_SS_PRESENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087303
+    m_Key: UI_SS_SELECTWARNING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087304
+    m_Key: UI_SS_WALL_HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087305
+    m_Key: UI_SS_MAINTENANCE_REPAIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087306
+    m_Key: UI_SS_MAINTENANCE_RELIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087307
+    m_Key: UI_SS_BOSS_HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087308
+    m_Key: UI_SS_BOSS_INCOUNT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087309
+    m_Key: UI_ADS_REROLL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087310
+    m_Key: UI_POPUP_YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087311
+    m_Key: UI_POPUP_NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087312
+    m_Key: UI_POPUP_CHECK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087313
+    m_Key: UI_POPUP_START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087314
+    m_Key: UI_POPUP_BACK
     m_Metadata:
       m_Items: []
   m_Metadata:
