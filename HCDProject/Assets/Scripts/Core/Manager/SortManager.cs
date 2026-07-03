@@ -78,6 +78,11 @@ public class SortManager : BaseManager<SortManager>
     }
     private void Update()
     {
+        var settingUI = Service.Get<UIManager>()?.GetUI<SettingPopupUI>();
+        bool isSettingOpen = (settingUI != null && settingUI.gameObject.activeInHierarchy);
+
+        if (isSettingOpen) return;
+
         if (isTimeStart && !isEndSort.Value && RemainingSorts.Value > 0)
         {
             RemainingSorts.Value -= realDeltaTime;
