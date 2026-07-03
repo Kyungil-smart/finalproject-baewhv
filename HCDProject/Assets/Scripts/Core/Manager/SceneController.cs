@@ -88,6 +88,10 @@ public class SceneController : BaseManager<SceneController>
         while (!async.isDone) yield return null;
 
         if (mode == LoadSceneMode.Additive && backupScene != scene) yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
+
+        yield return null;
+        
+        if (scene == SceneType.InGame ||  scene == SceneType.Tutorial) Service.Get<GameManager>()?.SpawnWall();
         
         OnLoadingComplete?.Invoke();
     }

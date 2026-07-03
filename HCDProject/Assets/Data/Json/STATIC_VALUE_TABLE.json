@@ -39,6 +39,11 @@
       "VARIABLE_NAME": "REVAIVAL_TIME",
       "VARIABLE_TYPE": "INT",
       "VARIABLE_VALUE": "10"
+    },
+    {
+      "VARIABLE_NAME": "CASTLE_HP_RECOVERY",
+      "VARIABLE_TYPE": "INT",
+      "VARIABLE_VALUE": "150"
     }
   ]
 }
