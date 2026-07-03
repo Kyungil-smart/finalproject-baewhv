@@ -158,12 +158,12 @@ public class GameManager : BaseManager<GameManager>
     private StageType CheckStageType(StoryStageRawData data)
     {
         string tableType = data.STAGE_TYPE.ToUpper();
-        if (tableType == "TUTORIAL") return StageType.Tutorial;
-        else if (tableType == "EVENT") return StageType.Event;
-        else if (tableType == "NORMAL_F") return StageType.Normal;
-        else if (tableType == "MAINTANANCE") return StageType.Maintenance;
-        else if (tableType == "BOSS_F") return StageType.Boss;
-        else return StageType.Normal;
+        if (tableType == "TUTORIAL") return StageType.TUTORIAL;
+        else if (tableType == "EVENT") return StageType.EVENT;
+        else if (tableType == "NORMAL_F") return StageType.NORMAL_F;
+        else if (tableType == "MAINTANANCE") return StageType.MAINTENANCE;
+        else if (tableType == "BOSS_F") return StageType.BOSS_F;
+        else return StageType.NORMAL_F;
     }
     
     private StageState CurrentStageState(int chapter, int stage, StageType type)
@@ -174,11 +174,11 @@ public class GameManager : BaseManager<GameManager>
         {
             switch (type)
             {
-                case StageType.Event:
+                case StageType.EVENT:
                     return StageState.LockSpecial;
-                case StageType.Maintenance:
+                case StageType.MAINTENANCE:
                     return StageState.LockSpecial;
-                case StageType.Boss:
+                case StageType.BOSS_F:
                     return StageState.LockBoss;
                 default:
                     return StageState.Lock;
@@ -187,11 +187,11 @@ public class GameManager : BaseManager<GameManager>
         
         switch (type)
         {
-            case StageType.Event:
+            case StageType.EVENT:
                 return StageState.OpenSpecial;
-            case StageType.Maintenance:
+            case StageType.MAINTENANCE:
                 return StageState.OpenSpecial;
-            case StageType.Boss:
+            case StageType.BOSS_F:
                 return StageState.OpenBoss;
             default:
                 return StageState.Current;
@@ -222,7 +222,7 @@ public class GameManager : BaseManager<GameManager>
         
         var type = CheckStageType(stageStoryData);
 
-        if (type != StageType.Normal && type != StageType.Boss && type != StageType.Tutorial)
+        if (type != StageType.NORMAL_F && type != StageType.BOSS_F && type != StageType.TUTORIAL)
         {
             ids.Clear();
             CheckAndStartNarrative(stageStoryData, true, () => NextStageScene(stageStoryData, type));
@@ -274,17 +274,17 @@ public class GameManager : BaseManager<GameManager>
         
         switch (type) 
         {
-            case StageType.Tutorial:
+            case StageType.TUTORIAL:
                 Service.Get<SceneController>()?.ChangeScene(SceneType.Tutorial);
                 break;
-            case StageType.Normal:
+            case StageType.NORMAL_F:
                 Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
                 break;
-            case StageType.Event:
+            case StageType.EVENT:
                 break;
-            case StageType.Maintenance:
+            case StageType.MAINTENANCE:
                 break;
-            case StageType.Boss:
+            case StageType.BOSS_F:
                 Service.Get<SceneController>()?.ChangeScene(SceneType.InGame);
                 break;
         }
@@ -386,7 +386,7 @@ public class GameManager : BaseManager<GameManager>
             return;
         }
         
-        bool isEndChapter = (currentStageData != null && CheckStageType(currentStageData) == StageType.Boss);
+        bool isEndChapter = (currentStageData != null && CheckStageType(currentStageData) == StageType.BOSS_F);
         
         NextStage();
         
@@ -397,7 +397,7 @@ public class GameManager : BaseManager<GameManager>
         if (nextStageData != null)
         {
             StageType nextStageType = CheckStageType(nextStageData);
-            if (nextStageType == StageType.Event || nextStageType == StageType.Maintenance) isBattle = false;
+            if (nextStageType == StageType.EVENT || nextStageType == StageType.MAINTENANCE) isBattle = false;
         }
 
         if (isEndChapter) Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(false);
