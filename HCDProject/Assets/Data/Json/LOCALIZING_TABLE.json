@@ -12231,6 +12231,150 @@
       "Thai": "ได้รับเกราะโบราณแล้ว วัตถุโบราณที่เลือกถูกบันทึกลงในรายการที่ครอบครอง และเอฟเฟกต์จะคงอยู่ในสเตจถัดไป",
       "Vietnamese": "Đã nhận Áo Giáp Cổ Đại. Di vật đã chọn được đăng ký vào danh sách sở hữu. Hiệu ứng sẽ duy trì ở các màn sau.",
       "Indonesian": "Ancient Armor diperoleh. Relik yang dipilih telah terdaftar di daftar milikmu. Efeknya tetap berlaku di stage berikutnya."
+    },
+    {
+      "TEXT_ID": "UI_SS_TYPE_TUTORIAL",
+      "Korean": "튜토리얼 스테이지",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_TYPE_NORMAL_F",
+      "Korean": "일반 스테이지",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_TYPE_EVENT",
+      "Korean": "이벤트 스테이지",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_TYPE_BOSS_F",
+      "Korean": "보스 스테이지",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_TYPE_MAINTENANCE",
+      "Korean": "정비 스테이지",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_LOOT",
+      "Korean": "{0}가 무언가를 주워왔습니다!",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_PRESENT",
+      "Korean": "{0}의 선물",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_SELECTWARNING",
+      "Korean": "1가지만 선택할 수 있습니다.",
+      "English": "you can choose only one",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_WALL_HP",
+      "Korean": "현재 성벽 체력",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_MAINTENANCE_REPAIR",
+      "Korean": "성벽 체력 30% 회복",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_MAINTENANCE_RELIC",
+      "Korean": "유물 1개 획득",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_SS_BOSS_INCOUNT",
+      "Korean": "다음 보스",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_ADS_REROLL",
+      "Korean": "광고를 시청하고 1회 리롤",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_POPUP_YES",
+      "Korean": "예",
+      "English": "YES",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_POPUP_NO",
+      "Korean": "아니오",
+      "English": "NO",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_POPUP_CHECK",
+      "Korean": "확인하기",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_POPUP_START",
+      "Korean": "출격",
+      "English": "START",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_POPUP_BACK",
+      "Korean": "뒤로가기",
+      "English": "BACK",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
     }
   ]
 }

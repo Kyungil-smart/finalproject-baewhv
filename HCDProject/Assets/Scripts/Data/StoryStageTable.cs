@@ -13,6 +13,7 @@ public class StoryStageRawData
     public string STAGE_NAME_ID;
     public string TYPE_OF_ID;
     public string STORY_ID;
+    public string BOSS_MONSTER_IMG_ID;
 }
 
 [Serializable]
