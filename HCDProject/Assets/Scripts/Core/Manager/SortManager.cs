@@ -1,9 +1,10 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using Random = UnityEngine.Random;
 
 public class SortManager : BaseManager<SortManager>
@@ -20,11 +21,13 @@ public class SortManager : BaseManager<SortManager>
     public ObserveValue<float> RemainingSorts { get; private set; } = new ObserveValue<float>();
     public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
 
+    private float maxSortTime = 60.0f;
+
     public ObserveValue<bool> isEndSort = new();
 
     private List<SortBuffData> BuffsBox = new List<SortBuffData>();
 
-    
+
     [SerializeField] private GameObject[] blockPrefabs = new GameObject[4];
 
     private Transform[] railASlots = new Transform[6];
@@ -62,7 +65,7 @@ public class SortManager : BaseManager<SortManager>
         var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
         if (bottomUI != null)
         {
-            RemainingSorts.AddListener(bottomUI.SetLeftSortCountText);
+            RemainingSorts.AddListener((val) => bottomUI.SetLeftSortCountText(val, maxSortTime));
             CurrentCombo.AddListener(bottomUI.SetComboText);
         }
 
@@ -108,15 +111,25 @@ public class SortManager : BaseManager<SortManager>
     public void AddCombo(int amount)
     {
         CurrentCombo.Value += amount;
+
+        float addedTime = 0f;
         if (CurrentCombo.Value >= 6)
         {
+            addedTime = 1.5f;
             RemainingSorts.Value += 1.5f;
             Debug.Log($"{CurrentCombo.Value}콤보 +1.5초");
         }
         else
         {
+            addedTime = 1.0f;
             RemainingSorts.Value += 1.0f;
             Debug.Log($"{CurrentCombo.Value}콤보 +1.0초");
+        }
+
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        if (bottomUI != null && !bottomUI.Equals(null))
+        {
+            bottomUI.SetAddTimeText(addedTime);
         }
     }
 
@@ -199,6 +212,26 @@ public class SortManager : BaseManager<SortManager>
 
         SortCount(slot, buffType);
 
+        int slotIdx = Array.IndexOf(characterSlots, slot);
+        int currentCount = 0;
+        foreach (var data in BuffsBox)
+        {
+            if (data.index == slotIdx && data.objType == buffType) currentCount++;
+        }
+
+        string enumName = buffType.Replace("OBJ_", "");
+        if (Enum.TryParse(enumName, out EStoneType stoneType))
+        {
+            TextMeshProUGUI[] allTexts = slot.GetComponentsInChildren<TextMeshProUGUI>();
+
+            int idx = (int)stoneType;
+
+            if (idx >= 0 && idx < allTexts.Length)
+            {
+                allTexts[idx].text = $"X{currentCount}";
+            }
+        }
+
         if (RemainingSorts.Value <= 0)
         {
             PlayerInputLock(true);
@@ -243,6 +276,15 @@ public class SortManager : BaseManager<SortManager>
                         }
                     }
                 }
+
+                TextMeshProUGUI[] allTexts = slot.GetComponentsInChildren<TextMeshProUGUI>();
+                foreach (var text in allTexts)
+                {
+                    if (text.text.StartsWith("X"))
+                    {
+                        text.text = "X0";
+                    }
+                }
             }
         }
 
@@ -262,7 +304,8 @@ public class SortManager : BaseManager<SortManager>
 
             if (mapData != null)
             {
-                RemainingSorts.Value = mapData.SORT_TIME; 
+                maxSortTime = mapData.SORT_TIME;
+                RemainingSorts.Value = mapData.SORT_TIME;
                 Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 시간: {mapData.SORT_TIME}초");
             }
         }
@@ -325,13 +368,13 @@ public class SortManager : BaseManager<SortManager>
         {
             string buffName = sortGroup.Key;
             int slotIndex = sortGroup.Value.index;
-            int totalSortCount = sortGroup.Value.sortCount; 
+            int totalSortCount = sortGroup.Value.sortCount;
 
             var objectData = dataManager.ObjectTable.data.Find(x => x.OBJ_TYPE == buffName);
             if (objectData == null) continue;
 
-            float objAbility = objectData.OBJ_ABILITY; 
-            float objWeight = objectData.OBJ_WEIGHT;  
+            float objAbility = objectData.OBJ_ABILITY;
+            float objWeight = objectData.OBJ_WEIGHT;
 
             float BuffValue = 0f;
 
