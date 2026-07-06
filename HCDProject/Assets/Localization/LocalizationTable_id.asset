@@ -3915,6 +3915,126 @@ MonoBehaviour:
     m_Localized: Alun-Alun Tengah Atra
     m_Metadata:
       m_Items: []
+  - m_Id: 9819496586240000
+    m_Localized: Arsip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988736
+    m_Localized: Cerita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087296
+    m_Localized: Stage Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087297
+    m_Localized: Stage Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087298
+    m_Localized: Stage Event
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087299
+    m_Localized: Stage Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087300
+    m_Localized: Stage Perawatan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087301
+    m_Localized: '{0} menemukan sesuatu!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087302
+    m_Localized: Hadiah dari {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087303
+    m_Localized: Hanya bisa memilih 1.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087304
+    m_Localized: HP Tembok Saat Ini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087305
+    m_Localized: Pulihkan HP Tembok 30%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087306
+    m_Localized: Dapatkan 1 Relik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087308
+    m_Localized: Boss Berikutnya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988737
+    m_Localized: Otomatis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988738
+    m_Localized: Sembunyikan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988739
+    m_Localized: Riwayat Dialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988740
+    m_Localized: Lewati
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087309
+    m_Localized: Tonton iklan untuk reroll 1 kali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087310
+    m_Localized: Ya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087311
+    m_Localized: Tidak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087312
+    m_Localized: Konfirmasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087313
+    m_Localized: Berangkat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087314
+    m_Localized: Kembali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988741
+    m_Localized: Suara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988742
+    m_Localized: Musik Latar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988743
+    m_Localized: Efek Suara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988744
+    m_Localized: Getaran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988745
+    m_Localized: Intensitas Getaran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988746
+    m_Localized: Bahasa
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

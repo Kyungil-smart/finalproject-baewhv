@@ -619,7 +619,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1035299428065294
-    m_Localized: Right. And you just said\"yet.\"
+    m_Localized: Right. And you just said "yet."
     m_Metadata:
       m_Items: []
   - m_Id: 1035299428065295
@@ -6027,23 +6027,123 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087303
-    m_Localized: you can choose only one
+    m_Localized: You can choose only one.
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087310
-    m_Localized: YES
+    m_Localized: Yes
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087311
-    m_Localized: NO
+    m_Localized: No
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087313
-    m_Localized: START
+    m_Localized: Start
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087314
-    m_Localized: BACK
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496586240000
+    m_Localized: Archive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988736
+    m_Localized: Story
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087296
+    m_Localized: Tutorial Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087297
+    m_Localized: Normal Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087298
+    m_Localized: Event Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087299
+    m_Localized: Boss Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087300
+    m_Localized: Maintenance Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087301
+    m_Localized: '{0} found something!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087302
+    m_Localized: '{0}''s Gift'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087304
+    m_Localized: Current Wall HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087305
+    m_Localized: Restore Wall HP by 30%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087306
+    m_Localized: Obtain 1 Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087308
+    m_Localized: Next Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988737
+    m_Localized: Auto Advance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988738
+    m_Localized: Hide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988739
+    m_Localized: Dialogue Log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988740
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087309
+    m_Localized: Watch an ad to reroll once
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087312
+    m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988741
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988742
+    m_Localized: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988743
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988744
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988745
+    m_Localized: Vibration Intensity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988746
+    m_Localized: Language
     m_Metadata:
       m_Items: []
   references:

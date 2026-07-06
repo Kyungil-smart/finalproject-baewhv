@@ -6778,7 +6778,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087301
-    m_Localized: "{0}\uAC00 \uBB34\uC5B8\uAC00\uB97C \uC8FC\uC6CC\uC654\uC2B5\uB2C8\uB2E4!"
+    m_Localized: "{0} \uBB34\uC5B8\uAC00\uB97C \uC8FC\uC6CC\uC654\uC2B5\uB2C8\uB2E4!"
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087302
@@ -6799,10 +6799,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8695236044087306
     m_Localized: "\uC720\uBB3C 1\uAC1C \uD68D\uB4DD"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 8695236044087307
-    m_Localized: "\uBCF4\uC2A4 \uCCB4\uB825"
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087308
@@ -6831,6 +6827,54 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8695236044087314
     m_Localized: "\uB4A4\uB85C\uAC00\uAE30"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496586240000
+    m_Localized: "\uC544\uCE74\uC774\uBE0C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988736
+    m_Localized: "\uC2A4\uD1A0\uB9AC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988737
+    m_Localized: "\uC790\uB3D9 \uC9C4\uD589"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988738
+    m_Localized: "\uC228\uAE30\uAE30"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988739
+    m_Localized: "\uB300\uD654 \uB0B4\uC5ED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988740
+    m_Localized: "\uC2A4\uD0B5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988741
+    m_Localized: "\uC0AC\uC6B4\uB4DC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988742
+    m_Localized: "\uBC30\uACBD\uC74C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988743
+    m_Localized: "\uD6A8\uACFC\uC74C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988744
+    m_Localized: "\uC9C4\uB3D9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988745
+    m_Localized: "\uC9C4\uB3D9 \uC138\uAE30"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988746
+    m_Localized: "\uC5B8\uC5B4"
     m_Metadata:
       m_Items: []
   references:
