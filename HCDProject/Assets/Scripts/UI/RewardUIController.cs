@@ -56,8 +56,8 @@ public class RewardUIController : MonoBehaviour
         if(!isReRoll)
             Service.Get<AdsManager>()?.ResetAdChance();
         isOpenRewardPopup.Value = true;
-        titleText.text = title;
-        contentText.text = content;
+        if(titleText) titleText.text = title;
+        if(contentText) contentText.text = content;
         if (!isReRoll)
             Service.Get<TimeManager>()?.SaveTimeScale();
     }
@@ -147,28 +147,5 @@ public class RewardUIController : MonoBehaviour
     public void RemoveListener(UnityAction<bool> action)
     {
         isOpenRewardPopup.RemoveListener(action);
-    }
-
-    [SerializeField] private GameObject maintenance;
-    [SerializeField] private Button repairRampart;
-    [SerializeField] private Button randomReward;
-
-    public void SetMaintenanceReward(UnityAction repair, UnityAction randomReward)
-    {
-        if (maintenance != null) maintenance.SetActive(true);
-
-        repairRampart.onClick.RemoveAllListeners();
-        repairRampart.onClick.AddListener(() =>
-        {
-            maintenance.SetActive(false);
-            repair?.Invoke();
-        });
-
-        this.randomReward.onClick.RemoveAllListeners();
-        this.randomReward.onClick.AddListener(() =>
-        {
-            maintenance.SetActive(false);
-            randomReward?.Invoke();
-        });
     }
 }

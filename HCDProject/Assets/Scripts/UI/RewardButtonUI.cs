@@ -1,9 +1,6 @@
-using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
-using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
@@ -15,6 +12,7 @@ public class RewardButtonUI : MonoBehaviour
     [SerializeField] private LocalizeStringEvent RewardDesc;
     [SerializeField] private Sprite defaultImage;
     [SerializeField] private Color SelectedColor;
+    [SerializeField] private Color DefalutColor = Color.white;
     private Image Background;
     public int GetIndex { get; private set; }
 
@@ -25,7 +23,7 @@ public class RewardButtonUI : MonoBehaviour
         set
         {
             isSelected = value;
-            Background.color = value ? SelectedColor : Color.white;
+            Background.color = value ? SelectedColor : DefalutColor;
         }
     }
 

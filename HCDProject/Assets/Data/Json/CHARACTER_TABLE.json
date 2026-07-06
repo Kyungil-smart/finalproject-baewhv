@@ -3,7 +3,7 @@
     {
       "CHARACTER_ID": "3000",
       "CHARACTER_NAME": "C_001",
-      "HP": 225,
+      "HP": 250,
       "ATK": 17,
       "DEF": 12,
       "ACCESS_AREA": 2.55,
@@ -22,7 +22,7 @@
     {
       "CHARACTER_ID": "3001",
       "CHARACTER_NAME": "C_002",
-      "HP": 150,
+      "HP": 175,
       "ATK": 24,
       "DEF": 7,
       "ACCESS_AREA": 5,
@@ -41,7 +41,7 @@
     {
       "CHARACTER_ID": "3002",
       "CHARACTER_NAME": "C_003",
-      "HP": 110,
+      "HP": 150,
       "ATK": 26,
       "DEF": 7,
       "ACCESS_AREA": 7,
@@ -60,7 +60,7 @@
     {
       "CHARACTER_ID": "3003",
       "CHARACTER_NAME": "C_004",
-      "HP": 95,
+      "HP": 120,
       "ATK": 25,
       "DEF": 5,
       "ACCESS_AREA": 3,
