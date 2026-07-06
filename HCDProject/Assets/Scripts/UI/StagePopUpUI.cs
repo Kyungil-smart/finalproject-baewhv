@@ -53,7 +53,6 @@ public class StagePopUpUI : MonoBehaviour
     {
         int currChapter = Service.Get<GameManager>().CurrentChapter;
         int currStage = Service.Get<GameManager>().CurrentStage;
-        Debug.Log($"click <current = {currChapter}-{currStage}> <node = {_data.CHAPTER}-{_data.STAGE}> ");
         if (currStage != _data.STAGE || currChapter != _data.CHAPTER) return;
 
         data = _data;
