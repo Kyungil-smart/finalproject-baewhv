@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -19,14 +18,15 @@ public class StagePopUpUI : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI eventTopText;
     [SerializeField] private TextMeshProUGUI eventBottomText;
-    
+
     [SerializeField] private GameObject bossInfoLayout;
     [SerializeField] private Image bossSprite;
-    
+
     [SerializeField] private GameObject maintenanceLayout;
     [SerializeField] private GameObject relicLayout;
+    [SerializeField] private RewardUIController reward;
     [SerializeField] private GameObject hpGaugeLayout;
-        
+
     [SerializeField] private GameObject buttonLayout;
     [SerializeField] private Button positiveButton;
     [SerializeField] private LocalizeStringEvent positiveText;
@@ -38,48 +38,57 @@ public class StagePopUpUI : MonoBehaviour
 
     public void InitLayout()
     {
+        gameObject.SetActive(true);
         imageLayout.SetActive(false);
         buttonLayout.SetActive(false);
         maintenanceLayout.SetActive(false);
-        relicLayout.SetActive(false); 
+        relicLayout.SetActive(false);
         eventTopText.gameObject.SetActive(false);
         eventBottomText.gameObject.SetActive(false);
         hpGaugeLayout.SetActive(false);
         bossInfoLayout.SetActive(false);
     }
 
-    public void OpenStagePopup(StoryStageRawData _data)
+    public void OpenStagePopup(StoryStageRawData _data, EStageType type)
     {
+        int currChapter = Service.Get<GameManager>().CurrentChapter;
+        int currStage = Service.Get<GameManager>().CurrentStage;
+        Debug.Log($"click <current = {currChapter}-{currStage}> <node = {_data.CHAPTER}-{_data.STAGE}> ");
+        if (currStage != _data.STAGE || currChapter != _data.CHAPTER) return;
+
         data = _data;
+
         InitLayout();
         stageText.text = $"Stage {_data.CHAPTER} - {_data.STAGE}";
         stageTypeText.SetEntry($"UI_STAGE_{_data.STAGE_TYPE}");
-        
-        StageType type = Enum.Parse<StageType>(_data.STAGE_TYPE);
+
         switch (type)
         {
-            case StageType.NORMAL_F:
-            case StageType.TUTORIAL:
+            case EStageType.NORMAL_F:
+            case EStageType.TUTORIAL:
+            default:
                 SetNormal();
                 break;
-            case StageType.EVENT:
+            case EStageType.EVENT:
                 SetEvent();
                 break;
-            case StageType.MAINTENANCE:
+            case EStageType.MAINTENANCE:
                 SetMaintenance();
                 break;
-            case StageType.BOSS_F:
+            case EStageType.BOSS_F:
                 SetBoss();
                 break;
         }
     }
-    
+
 
     private void SetEvent()
     {
         imageLayout.SetActive(true);
         stageImage.sprite = tempCharacterImage;
-        
+        SetBottomButton(EStageType.NORMAL_F, 
+            () => { SetRelic(true); },
+            () => { gameObject.SetActive(false); });
     }
 
     private void SetMaintenance()
@@ -102,7 +111,9 @@ public class StagePopUpUI : MonoBehaviour
         imageLayout.SetActive(true);
         stageImage.sprite = tempStageImage;
         hpGaugeLayout.SetActive(true);
-        SetBottomButton(StageType.NORMAL_F, () => { }, () => { });
+        SetBottomButton(EStageType.NORMAL_F, 
+            () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
+            () => { gameObject.SetActive(false); });
     }
 
     private void SetBoss()
@@ -110,32 +121,46 @@ public class StagePopUpUI : MonoBehaviour
         imageLayout.SetActive(true);
         stageImage.sprite = tempBossImage;
         hpGaugeLayout.SetActive(true);
-        SetBottomButton(StageType.BOSS_F, () => { }, () => { });
+        SetBottomButton(EStageType.BOSS_F, 
+            () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
+            () => { gameObject.SetActive(false); });
     }
 
     private void SetRelic(bool isPresent)
     {
         maintenanceLayout.SetActive(false);
         bossInfoLayout.SetActive(false);
+        imageLayout.SetActive(false);
+        buttonLayout.SetActive(false);
+        reward.SetRelicReward(
+            () =>
+            {
+                Service.Get<GameManager>()?.ClearStage();
+                if(gameObject.activeSelf)
+                    gameObject.SetActive(false);
+            });  
     }
 
-    private void SetBottomButton(StageType type, UnityAction positive, UnityAction negative)
+    private void SetBottomButton(EStageType type, UnityAction positive, UnityAction negative)
     {
         buttonLayout.SetActive(true);
         positiveButton.onClick.RemoveAllListeners();
         negativeButton.onClick.RemoveAllListeners();
         positiveButton.onClick.AddListener(positive);
         negativeButton.onClick.AddListener(negative);
-        positiveText.SetEntry(type == StageType.EVENT ? "UI_POPUP_CHECK" : "UI_POPUP_START");
-        positiveText.SetEntry("UI_POPUP_BACK");
+        positiveText.SetEntry(type == EStageType.EVENT ? "UI_POPUP_CHECK" : "UI_POPUP_START");
+        negativeText.SetEntry("UI_POPUP_BACK");
     }
-}
 
-public enum StageType
-{
-    TUTORIAL,
-    NORMAL_F,
-    EVENT,
-    MAINTENANCE,
-    BOSS_F
+    public void OnRepairWall()
+    {
+        Service.Get<GameManager>()?.RepairRampart();
+        Service.Get<GameManager>()?.ClearStage();
+        gameObject.SetActive(false);
+    }
+
+    public void OnSelectRelic()
+    {
+        SetRelic(false);
+    }
 }
