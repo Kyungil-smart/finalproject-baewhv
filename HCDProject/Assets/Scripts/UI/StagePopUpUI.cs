@@ -60,7 +60,7 @@ public class StagePopUpUI : MonoBehaviour
 
         InitLayout();
         stageText.text = $"Stage {_data.CHAPTER} - {_data.STAGE}";
-        stageTypeText.SetEntry($"UI_STAGE_{_data.STAGE_TYPE}");
+        stageTypeText.SetEntry($"UI_SS_TYPE_{_data.STAGE_TYPE}");
 
         switch (type)
         {
