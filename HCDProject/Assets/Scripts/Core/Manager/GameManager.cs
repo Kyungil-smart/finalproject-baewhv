@@ -158,12 +158,12 @@ public class GameManager : BaseManager<GameManager>
     private StageType CheckStageType(StoryStageRawData data)
     {
         string tableType = data.STAGE_TYPE.ToUpper();
-        if (tableType == "TUTORIAL") return StageType.TUTORIAL;
-        else if (tableType == "EVENT") return StageType.EVENT;
-        else if (tableType == "NORMAL_F") return StageType.NORMAL_F;
-        else if (tableType == "MAINTANANCE") return StageType.MAINTENANCE;
-        else if (tableType == "BOSS_F") return StageType.BOSS_F;
-        else return StageType.NORMAL_F;
+        if (tableType == "TUTORIAL") return StageType.Tutorial;
+        else if (tableType == "EVENT") return StageType.Event;
+        else if (tableType == "NORMAL_F") return StageType.Normal;
+        else if (tableType == "MAINTENANCE") return StageType.Maintenance;
+        else if (tableType == "BOSS_F") return StageType.Boss;
+        else return StageType.Normal;
     }
     
     private StageState CurrentStageState(int chapter, int stage, StageType type)
