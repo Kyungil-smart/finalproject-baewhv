@@ -49,6 +49,8 @@ public class BaseCharacter : BaseController
 
     private float _attackTimer; // 누적 카운트
 
+    private string _playerSfx; // 플레이어 공격 효과음
+
     [SerializeField] private float _flickerInterval = 0.05f;
     [SerializeField] private int _flickerCycleCount = 3;
     private PlayerStats _playerStats;
@@ -60,7 +62,9 @@ public class BaseCharacter : BaseController
     public bool isCC = false;
 
     public bool isBattle = false; // 배틀 중이면 스킬게이지 안오르게
-    
+
+    public string PlayerSfx => _playerSfx; // 플레이어 공격 사운드 프로퍼티
+
     public float AttackTimer // 누적 카운트 프로퍼티
     {
         get => _attackTimer;
@@ -281,6 +285,17 @@ public class BaseCharacter : BaseController
             RuntimeAnimatorController controller = 
                 Addressables.LoadAssetAsync<RuntimeAnimatorController>(address).WaitForCompletion();
             Movement.Anim.runtimeAnimatorController = controller;
+        }
+
+        if (data.CHARACTER_ID != null) // 플레이어 공격 효과음 초기화
+        {
+            switch (data.CHARACTER_ID)
+            {
+                case "3000": _playerSfx = "Sword"; break;
+                case "3001": _playerSfx = "Arrow"; break;
+                case "3002": _playerSfx = "Spell"; break;
+                case "3003": _playerSfx = "Healing"; break;
+            }
         }
 
         _stats = new CharacterStats
