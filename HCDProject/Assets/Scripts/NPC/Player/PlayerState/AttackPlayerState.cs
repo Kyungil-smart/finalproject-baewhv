@@ -48,6 +48,10 @@ public class AttackPlayerState : PlayerBaseState
           $"{_owner.BaseSkill.skills[_owner.SkillTargetIndex].SKILL_AT} 발동");*/
             _owner.Movement.Anim.SetTrigger("Attack");
             _owner.UseSkill(_owner.SkillTargetIndex); // 공격
+            if (!string.IsNullOrEmpty(_owner.PlayerSfx))
+            {
+                Service.Get<SoundManager>()?.PlaySfxSound(_owner.PlayerSfx); // 플레이어 일반공격 사운드 호출
+            }
             _owner.CompleteFirstCombat();
             _owner.AttackTimer = 0;
             if (_owner.FindType == EFindType.LowestHp)
