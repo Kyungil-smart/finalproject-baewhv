@@ -329,40 +329,43 @@ public class BaseSkill : MonoBehaviour
     {
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
-
-        var stat = targetObject.Stats;
         
-        _originStats._attackSpeed = stat._attackSpeed;
-        _originStats._moveSpeed = stat._moveSpeed;
+        var stat = targetObject.Stats;
+
+        _originStats = stat;
         
         stat._attackSpeed *= (1f - value / 100f);
         stat._moveSpeed *= (1f - value / 100f);
+
+        targetObject.Stats = stat;
+        targetObject.Movement.Agent.speed = stat._moveSpeed;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
         
-        stat._attackSpeed = _originStats._attackSpeed;
-        stat._moveSpeed = _originStats._moveSpeed;
+        stat = _originStats;
+        
+        targetObject.Stats = stat;
+        targetObject.Movement.Agent.speed = _originStats._moveSpeed;
     }
     private IEnumerator SetCcCor(ITargetable target, Skill skill)
     {
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
 
-        var stat = targetObject.Stats;
         
-        _originStats._moveSpeed = stat._moveSpeed;
+        _originStats._moveSpeed = targetObject.Movement.Agent.speed;
         
         targetObject.TryGetComponent(out BaseCharacter player);
         
         player.isCC = true;
         isDurationActive = true;
-        stat._moveSpeed = 0f;
+        targetObject.Movement.Agent.speed = 0f;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
         
         player.isCC = false;
         isDurationActive = false;
-        stat._moveSpeed = _originStats._moveSpeed;
+        targetObject.Movement.Agent.speed = _originStats._moveSpeed;
     }
     private IEnumerator InvisibleCor(ITargetable target, Skill skill)
     {
