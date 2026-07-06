@@ -161,7 +161,7 @@ public class GameManager : BaseManager<GameManager>
         if (tableType == "TUTORIAL") return StageType.Tutorial;
         else if (tableType == "EVENT") return StageType.Event;
         else if (tableType == "NORMAL_F") return StageType.Normal;
-        else if (tableType == "MAINTANANCE") return StageType.Maintenance;
+        else if (tableType == "MAINTENANCE") return StageType.Maintenance;
         else if (tableType == "BOSS_F") return StageType.Boss;
         else return StageType.Normal;
     }
