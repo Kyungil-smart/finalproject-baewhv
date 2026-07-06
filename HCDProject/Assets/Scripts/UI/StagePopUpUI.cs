@@ -90,7 +90,7 @@ public class StagePopUpUI : MonoBehaviour
         eventBottomText.text = string.Format(eventBottomText.text, "세라");
         stageImage.sprite = tempCharacterImage;
         stageImage.SetNativeSize();
-        SetBottomButton(EStageType.NORMAL_F, 
+        SetBottomButton(EStageType.EVENT, 
             () => { SetRelic(true); },
             () => { gameObject.SetActive(false); });
     }
