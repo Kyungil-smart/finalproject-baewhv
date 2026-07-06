@@ -85,7 +85,12 @@ public class StagePopUpUI : MonoBehaviour
     private void SetEvent()
     {
         imageLayout.SetActive(true);
+        eventTopText.gameObject.SetActive(true);
+        eventTopText.text = string.Format(eventTopText.text, "세라");
+        eventBottomText.gameObject.SetActive(true);
+        eventBottomText.text = string.Format(eventBottomText.text, "세라");
         stageImage.sprite = tempCharacterImage;
+        stageImage.SetNativeSize();
         SetBottomButton(EStageType.NORMAL_F, 
             () => { SetRelic(true); },
             () => { gameObject.SetActive(false); });
@@ -110,6 +115,7 @@ public class StagePopUpUI : MonoBehaviour
     {
         imageLayout.SetActive(true);
         stageImage.sprite = tempStageImage;
+        stageImage.SetNativeSize();
         hpGaugeLayout.SetActive(true);
         SetBottomButton(EStageType.NORMAL_F, 
             () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
@@ -120,6 +126,7 @@ public class StagePopUpUI : MonoBehaviour
     {
         imageLayout.SetActive(true);
         stageImage.sprite = tempBossImage;
+        stageImage.SetNativeSize();
         hpGaugeLayout.SetActive(true);
         SetBottomButton(EStageType.BOSS_F, 
             () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
@@ -132,6 +139,7 @@ public class StagePopUpUI : MonoBehaviour
         bossInfoLayout.SetActive(false);
         imageLayout.SetActive(false);
         buttonLayout.SetActive(false);
+        eventBottomText.gameObject.SetActive(false);
         reward.SetRelicReward(
             () =>
             {
