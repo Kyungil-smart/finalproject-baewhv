@@ -27,6 +27,10 @@ public class BaseMonster : BaseController
     private bool _isActive;
 
     protected BaseCharacter[] _characters;
+    
+    // 기본 공격 및 스킬 타이머
+    public float timer;
+    public float bossSkillTimer;
 
     public void InitStatus(MonsterRawData data)
     {
@@ -76,6 +80,9 @@ public class BaseMonster : BaseController
     protected void Start()
     {
         _characters = Service.Get<PlayerManager>().Characters;
+        
+        timer = BaseSkill.skills[0].ATK_TYPE == EAtkType.NORMAL ? Stat.ATK_SPEED : BaseSkill.skills[0].SKILL_TIME;
+        if(BaseSkill.skills.Count > 1) bossSkillTimer = BaseSkill.skills[1].SKILL_TIME;
     }
 
     protected override void OnEnable()
