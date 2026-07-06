@@ -6131,6 +6131,14 @@ MonoBehaviour:
     m_Key: UI_021
     m_Metadata:
       m_Items: []
+  - m_Id: 9819496586240000
+    m_Key: UI_MS_ARCHIVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988736
+    m_Key: UI_MS_STORY
+    m_Metadata:
+      m_Items: []
   - m_Id: 8695236044087296
     m_Key: UI_SS_TYPE_TUTORIAL
     m_Metadata:
@@ -6175,12 +6183,24 @@ MonoBehaviour:
     m_Key: UI_SS_MAINTENANCE_RELIC
     m_Metadata:
       m_Items: []
-  - m_Id: 8695236044087307
-    m_Key: UI_SS_BOSS_HP
-    m_Metadata:
-      m_Items: []
   - m_Id: 8695236044087308
     m_Key: UI_SS_BOSS_INCOUNT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988737
+    m_Key: UI_NAR_AUTO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988738
+    m_Key: UI_NAR_HIDE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988739
+    m_Key: UI_NAR_LOG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988740
+    m_Key: UI_NAR_SKIP
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087309
@@ -6205,6 +6225,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8695236044087314
     m_Key: UI_POPUP_BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988741
+    m_Key: UI_OPT_SOUND
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988742
+    m_Key: UI_OPT_BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988743
+    m_Key: UI_OPT_SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988744
+    m_Key: UI_OPT_VIBRATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988745
+    m_Key: UI_OPT_INTENCITY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988746
+    m_Key: UI_OPT_LANGUAGE
     m_Metadata:
       m_Items: []
   m_Metadata:

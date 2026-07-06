@@ -32,24 +32,7 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
                 sp = lockStageSprites;
                 break;
             default:
-                switch (type)
-                {
-                    case EStageType.TUTORIAL:
-                    case EStageType.NORMAL_F:
-                    default:
-                        sp = stageSprites[2];
-                        break;
-                    case EStageType.EVENT:
-                        sp = stageSprites[3];
-                        break;
-                    case EStageType.MAINTENANCE:
-                        sp = stageSprites[4];
-                        break;
-                    case EStageType.BOSS_F:
-                        sp = stageSprites[5];
-                        break;
-                }
-
+                sp = stageSprites[(int)type];
                 break;
         }
 

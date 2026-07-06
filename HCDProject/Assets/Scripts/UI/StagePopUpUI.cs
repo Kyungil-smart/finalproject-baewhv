@@ -53,14 +53,13 @@ public class StagePopUpUI : MonoBehaviour
     {
         int currChapter = Service.Get<GameManager>().CurrentChapter;
         int currStage = Service.Get<GameManager>().CurrentStage;
-        Debug.Log($"click <current = {currChapter}-{currStage}> <node = {_data.CHAPTER}-{_data.STAGE}> ");
         if (currStage != _data.STAGE || currChapter != _data.CHAPTER) return;
 
         data = _data;
 
         InitLayout();
         stageText.text = $"Stage {_data.CHAPTER} - {_data.STAGE}";
-        stageTypeText.SetEntry($"UI_STAGE_{_data.STAGE_TYPE}");
+        stageTypeText.SetEntry($"UI_SS_TYPE_{_data.STAGE_TYPE}");
 
         switch (type)
         {
@@ -85,8 +84,13 @@ public class StagePopUpUI : MonoBehaviour
     private void SetEvent()
     {
         imageLayout.SetActive(true);
+        eventTopText.gameObject.SetActive(true);
+        eventTopText.text = string.Format(eventTopText.text, "세라");
+        eventBottomText.gameObject.SetActive(true);
+        eventBottomText.text = string.Format(eventBottomText.text, "세라");
         stageImage.sprite = tempCharacterImage;
-        SetBottomButton(EStageType.NORMAL_F, 
+        stageImage.SetNativeSize();
+        SetBottomButton(EStageType.EVENT, 
             () => { SetRelic(true); },
             () => { gameObject.SetActive(false); });
     }
@@ -110,6 +114,7 @@ public class StagePopUpUI : MonoBehaviour
     {
         imageLayout.SetActive(true);
         stageImage.sprite = tempStageImage;
+        stageImage.SetNativeSize();
         hpGaugeLayout.SetActive(true);
         SetBottomButton(EStageType.NORMAL_F, 
             () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
@@ -120,6 +125,7 @@ public class StagePopUpUI : MonoBehaviour
     {
         imageLayout.SetActive(true);
         stageImage.sprite = tempBossImage;
+        stageImage.SetNativeSize();
         hpGaugeLayout.SetActive(true);
         SetBottomButton(EStageType.BOSS_F, 
             () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
@@ -132,6 +138,7 @@ public class StagePopUpUI : MonoBehaviour
         bossInfoLayout.SetActive(false);
         imageLayout.SetActive(false);
         buttonLayout.SetActive(false);
+        eventBottomText.gameObject.SetActive(false);
         reward.SetRelicReward(
             () =>
             {
