@@ -15,7 +15,7 @@ public class MonsterDieState : IState
         Service.Get<PlayerManager>()?.GetExp((int)_controller.Stat.EXP);
         // Service.Get<SoundManager>()?.PlaySfxSound(_controller.Stat.MONSTER_HIT_SFX);
         Service.Get<SoundManager>()?.PlaySfxSound("MonsterKill");
-        Service.Get<MonsterSpawnManager>().DespawnMonster(_controller.PrefabIndex, _controller.gameObject);
+        Service.Get<MonsterSpawnManager>().DespawnMonster(_controller.Stat.MONSTER_ID, _controller.gameObject);
     }
 
     public void Update()

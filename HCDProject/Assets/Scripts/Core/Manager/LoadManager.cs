@@ -111,11 +111,11 @@ public class LoadManager : BaseManager<LoadManager>
     {
         if (targetScene == SceneType.InGame || targetScene == SceneType.Tutorial)
         {
-            foreach (var prefab in _managerPrefabs)
+            for (int i = 0; i < _managerPrefabs.Count; i++)
             {
-                if (prefab == null) continue;
-
-                GameObject manager = Instantiate(prefab);
+                if (i == 8 && targetScene != SceneType.Tutorial) continue;
+                
+                GameObject manager = Instantiate(_managerPrefabs[i]);
                 
                 DontDestroyOnLoad(manager);
                 _loadManagers.Add(manager);

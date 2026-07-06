@@ -37,49 +37,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     {
         Service.Get<EffectManager>()?.InitEffect();
     }
-    
-    public void CheckCurrentStageMonsters()
-    {
-        // 1. 현재 게임 매니저로부터 챕터와 스테이지 번호 가져오기
-        int chapter = Service.Get<GameManager>().CurrentChapter;
-        int stage = Service.Get<GameManager>().CurrentStage;
-    
-        Debug.Log($"<color=cyan>[MonsterDebug]</color> 현재 진입한 스테이지: {chapter}-{stage}");
-
-        // 2. 데이터 매니저 등에서 해당 스테이지의 테이블 데이터 긁어오기
-        // 💡 프로젝트의 실제 테이블 명칭(예: StageTable, MonsterTable 등)에 맞게 수정하세요!
-        var stageTable = Service.Get<DataManager>()?.MapTable?.data; 
-    
-        if (stageTable == null)
-        {
-            Debug.LogError("<color=red>[MonsterDebug]</color> 데이터 매니저에서 스테이지 테이블을 로드하지 못했습니다!");
-            return;
-        }
-
-        // 현재 스테이지와 일치하는 웨이브/몬스터 데이터 필터링
-        var currentStageData = stageTable.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
-    
-        Debug.Log($"<color=cyan>[MonsterDebug]</color> 검색된 스테이지 데이터 행 개수: {currentStageData.Count}");
-
-        if (currentStageData.Count == 0)
-        {
-            Debug.LogWarning($"<color=yellow>[MonsterDebug]</color> 경고! 테이블에 {chapter}-{stage}에 해당하는 데이터가 한 줄도 없습니다! (ID 누락 가능성)");
-            return;
-        }
-
-        // 3. 루프를 돌며 스폰될 몬스터 ID와 예정 마리 수 전부 로그로 찍기
-        foreach (var row in currentStageData)
-        {
-            // 💡 row.MONSTER_ID, row.COUNT 등 실제 기획 테이블 컬럼명에 맞게 변수를 매칭해 주세요.
-            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_01} | 생성 수: {row.SPAWN_MONSTER_COUNT_01}마리");
-            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_02} | 생성 수: {row.SPAWN_MONSTER_COUNT_02}마리");
-            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_03} | 생성 수: {row.SPAWN_MONSTER_COUNT_03}마리");
-            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_04} | 생성 수: {row.SPAWN_MONSTER_COUNT_04}마리");
-            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_05} | 생성 수: {row.SPAWN_MONSTER_COUNT_05}마리");
-            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_06} | 생성 수: {row.SPAWN_MONSTER_COUNT_06}마리");
-            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_07} | 생성 수: {row.SPAWN_MONSTER_COUNT_07}마리");
-        }
-    }
 
     public IEnumerator LoadStageMonstersRoutine(List<string> currentStageMonsterIds)
     {
