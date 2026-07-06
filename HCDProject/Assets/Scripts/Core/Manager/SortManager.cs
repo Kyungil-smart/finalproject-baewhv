@@ -469,7 +469,31 @@ public class SortManager : BaseManager<SortManager>
             initialBlockBag[randomIndex] = temp;
         }
 
+        if (HasCombo(initialBlockBag))
+        {
+            for (int i = initialBlockBag.Count - 1; i > 0; i--)
+            {
+                int randomIndex = Random.Range(0, i + 1);
+                GameObject temp = initialBlockBag[i];
+                initialBlockBag[i] = initialBlockBag[randomIndex];
+                initialBlockBag[randomIndex] = temp;
+            }
+        }
+
         StartCoroutine(StartRail());
+    }
+
+    private bool HasCombo(List<GameObject> bag)
+    {
+        for (int i = 0; i < bag.Count - 2; i++)
+        {
+            if (i == 5 || i == 11) continue;
+
+            if (GetCleanName(bag[i].name) == GetCleanName(bag[i + 1].name) &&
+                GetCleanName(bag[i + 1].name) == GetCleanName(bag[i + 2].name))
+                return true;
+        }
+        return false;
     }
 
     public void TutorialBlocks(List<int> blockSequence)
