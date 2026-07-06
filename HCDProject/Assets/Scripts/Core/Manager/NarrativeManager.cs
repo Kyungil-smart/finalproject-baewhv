@@ -22,13 +22,13 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 
     private void OnEnable()
     {
-        Service.Get<SceneController>().OnLoadingComplete += SetNarrativeUI;
+        Service.Get<LoadManager>().OnLoadingComplete += SetNarrativeUI;
     }
 
     private void OnDisable()
     {
-        if(Service.Get<SceneController>())
-            Service.Get<SceneController>().OnLoadingComplete -= SetNarrativeUI;
+        if(Service.Get<LoadManager>())
+            Service.Get<LoadManager>().OnLoadingComplete -= SetNarrativeUI;
     }
 
 

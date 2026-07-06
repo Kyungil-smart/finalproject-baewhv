@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -42,12 +43,15 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     {
         base.Awake();
         isAllSpawn.Value = false;
-        LoadCharcterPrefab();
     }
 
-    private void LoadCharcterPrefab()
+    public IEnumerator LoadCharcterPrefabRoutine()
     {
+        if (_loadedPrefab != null) yield break;
+        
         _prefabHandle = Addressables.LoadAssetAsync<GameObject>(_characterAddress);
+
+        while (!_prefabHandle.IsDone) yield return null;
 
         _prefabHandle.Completed += (handle) =>
         {
@@ -55,12 +59,6 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             {
                 _loadedPrefab = handle.Result;
                 Debug.Log("플레이어 프리팹 로드 성공");
-
-                SpawnAllCharacters();
-                /*if (!Service.Get<TutorialManager>())
-                {
-                    
-                }*/
             }
 
             else
@@ -116,8 +114,14 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         }
     }
 
-    private void SpawnAllCharacters()
+    public void SpawnAllCharacters()
     {
+        GameObject spawnPoints = GameObject.Find("SpawnPoints");
+        if (spawnPoints != null) _spawnPoints = spawnPoints.GetComponentsInChildren<Transform>().Where(x => x != spawnPoints.transform).ToArray();
+        
+        GameObject homePoints = GameObject.Find("HomePoints");
+        if (homePoints != null) _homePoints = homePoints.GetComponentsInChildren<Transform>().Where(x => x != homePoints.transform).ToArray();
+        
         /*isAllSpawn.Value = false;*/
         var data = Service.Get<DataManager>().CharacterTable.data;
         _characters = new BaseCharacter[data.Count];
@@ -138,8 +142,10 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             chr.Init(data[i], _characterDatas[i]);
 
             _characters[i] = chr;
-            _slot[i] = Service.Get<UIManager>() // 생성 시 캐릭터의 UI 슬롯을 요청함
-            .GetUI<IngameBottomUIController>().AddCharacter(data[i], chr, i);
+
+            var ingameUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+
+            if (ingameUi != null) _slot[i] = ingameUi.AddCharacter(data[i], chr, i);
         }
         ApplyRelicStats();
 

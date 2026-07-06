@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -60,5 +61,27 @@ public class UIManager : BaseManager<UIManager>
     public void OpenOption(ESettingPopupType type = ESettingPopupType.none)
     {
         OptionPopup.OpenPopup(type);
+    }
+
+    public IEnumerator WaitUiRoutine(SceneType targetScene)
+    {
+        switch (targetScene)
+        {
+            case SceneType.Title:
+                while (GetUI<TitleUIController>() == null) yield return null;
+                break;
+            case SceneType.ModeSelect:
+                while (GetUI<ModeUIController>() == null) yield return null;
+                break;
+            case SceneType.StageSelect:
+                while (GetUI<StageSelectUIController>() == null) yield return null;
+                break;
+            case SceneType.InGame:
+                while (GetUI<IngameBottomUIController>() == null && GetUI<IngamePopupController>() == null) yield return null;
+                break;
+            case SceneType.Tutorial:
+                while (GetUI<IngameBottomUIController>() == null && GetUI<IngamePopupController>() == null) yield return null;
+                break;
+        }
     }
 }

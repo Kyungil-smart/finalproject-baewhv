@@ -36,14 +36,14 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
         }
         
         StageMap();
-        Service.Get<SceneController>().OnLoadingComplete += LoadChapterDesign;
+        Service.Get<LoadManager>().OnLoadingComplete += LoadChapterDesign;
         
     }
 
     private void OnDisable()
     {
-        if(Service.Get<SceneController>())
-            Service.Get<SceneController>().OnLoadingComplete -= LoadChapterDesign;
+        if(Service.Get<LoadManager>())
+            Service.Get<LoadManager>().OnLoadingComplete -= LoadChapterDesign;
     }
 
     public void StageMap()

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 
 // 모든 직업군이 공통으로 가질 클래스
@@ -278,9 +279,16 @@ public class BaseCharacter : BaseController
                 case "3002": address = "Player/AliceOverride"; break;
                 case "3003": address = "Player/SpayneOverride"; break;
             }
-            RuntimeAnimatorController controller = 
-                Addressables.LoadAssetAsync<RuntimeAnimatorController>(address).WaitForCompletion();
-            Movement.Anim.runtimeAnimatorController = controller;
+
+            Addressables.LoadAssetAsync<RuntimeAnimatorController>(address).Completed += handle =>
+            {
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    if (Movement != null && Movement.Anim != null)
+                        Movement.Anim.runtimeAnimatorController = handle.Result;
+                    else Debug.Log("애니메이터 로드 실패");
+                }
+            };
         }
 
         _stats = new CharacterStats

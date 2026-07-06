@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class BaseManager<T> : MonoBehaviour where T : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public abstract class BaseManager<T> : MonoBehaviour where T : MonoBehaviour
     protected virtual void Awake()
     {
         T temp = this as T;
-        if (!Service.Register(temp, EManagerType.dontDestroyOnLoad))
+        if (!Service.Register(temp, _eManager))
         {
             Destroy(gameObject);
             IsManagerDestroy = true;
@@ -22,6 +23,10 @@ public abstract class BaseManager<T> : MonoBehaviour where T : MonoBehaviour
                 break;
             case EManagerType.Session:
                 Service.Get<SceneController>()?.MoveGameObjectToSessionScene(gameObject);
+                break;
+            case EManagerType.none:
+                Scene activeScene = SceneManager.GetActiveScene();
+                if (activeScene.IsValid() && activeScene.isLoaded) SceneManager.MoveGameObjectToScene(gameObject, activeScene);
                 break;
             default:
                 break;

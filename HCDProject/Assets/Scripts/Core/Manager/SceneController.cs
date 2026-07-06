@@ -8,9 +8,6 @@ public class SceneController : BaseManager<SceneController>
 {
     private Scene _sessionScene;
     private SceneType _currentScene = SceneType.Title;
-
-    public event Action<float> OnLoading;
-    public event Action OnLoadingComplete;
     
     protected override void Awake()
     {
@@ -42,57 +39,17 @@ public class SceneController : BaseManager<SceneController>
         
         LoadSceneMode sceneMode = (scene == SceneType.Title || scene == SceneType.ModeSelect) ? LoadSceneMode.Single : LoadSceneMode.Additive;
 
-        StartCoroutine(LoadSceneRoutine(scene, sceneMode));
-    }
-
-    private IEnumerator LoadSceneRoutine(SceneType scene, LoadSceneMode mode)
-    {
-        OnLoading?.Invoke(0f);
-        
         SceneType backupScene = _currentScene;
         _currentScene = scene;
 
-        if (mode == LoadSceneMode.Additive && backupScene == scene)
+        var loadManager = Service.Get<LoadManager>();
+        if (loadManager != null)
         {
-            yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
-
-            yield return new WaitForSecondsRealtime(0.5f);
+            loadManager.StartLoading(scene, sceneMode, backupScene);
         }
-        
-        AsyncOperation async = SceneManager.LoadSceneAsync((int)scene, mode);
-
-        if (async != null) async.allowSceneActivation = false;
-        
-        float loadTime = 0f;
-        float needTime = 5f;
-        
-        while (async.progress < 0.9f)/*|| loadTime < needTime*/
-        {
-            yield return null;
-
-            loadTime += Time.unscaledDeltaTime;
-            
-            float time = loadTime / needTime;
-            float progress = Mathf.Clamp01(time);
-            
-            OnLoading?.Invoke(progress);
-        }
-        OnLoading?.Invoke(1f);
-
-        yield return new WaitForSecondsRealtime(0.5f);
-        
-        if (async != null)  async.allowSceneActivation = true;
-
-        PlaySceneBgm(scene);
-
-        while (!async.isDone) yield return null;
-
-        if (mode == LoadSceneMode.Additive && backupScene != scene) yield return StartCoroutine(UnLoadActiveSceneRoutine(backupScene));
-        
-        OnLoadingComplete?.Invoke();
     }
 
-    private void PlaySceneBgm(SceneType scene)
+    public void PlaySceneBgm(SceneType scene)
     {
         var soundManager = Service.Get<SoundManager>();
         
@@ -119,9 +76,9 @@ public class SceneController : BaseManager<SceneController>
         }
     }
 
-    private IEnumerator UnLoadActiveSceneRoutine(SceneType sceneType)
+    public IEnumerator UnLoadActiveSceneRoutine(SceneType sceneType)
     {
-        if (sceneType == SceneType.ModeSelect || sceneType == SceneType.StageSelect || sceneType == SceneType.InGame || sceneType == SceneType.Tutorial )
+        if (sceneType == SceneType.ModeSelect || sceneType == SceneType.StageSelect || sceneType == SceneType.InGame || sceneType == SceneType.Tutorial)
         {
             Scene targerScene = SceneManager.GetSceneByBuildIndex((int)sceneType);
             if (targerScene.isLoaded)

@@ -17,6 +17,7 @@ public class WaveState : IState
         if (_spawnManager != null)
         {
             _spawnManager.monsterCount.AddListener(MonsterCountChange);
+            _spawnManager.CheckCurrentStageMonsters();
             _spawnManager.WaveStart();
         }
     }

@@ -15,7 +15,6 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
     [SerializeField] private float _spawnOffsetY;
     private float _spawnDelay;
     private int _totalSpawnCycle;
-    [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
     
     // 생성 되어야할 총 몬스터 수
     public int SpawnCount { get; set; }
@@ -36,12 +35,113 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
 
     private void Start()
     {
-        StageMonster(new List<string>(Service.Get<GameManager>().ids), () =>
-        {
-            Service.Get<GameManager>().isLoading = false;
-        });
-        
         Service.Get<EffectManager>()?.InitEffect();
+    }
+    
+    public void CheckCurrentStageMonsters()
+    {
+        // 1. 현재 게임 매니저로부터 챕터와 스테이지 번호 가져오기
+        int chapter = Service.Get<GameManager>().CurrentChapter;
+        int stage = Service.Get<GameManager>().CurrentStage;
+    
+        Debug.Log($"<color=cyan>[MonsterDebug]</color> 현재 진입한 스테이지: {chapter}-{stage}");
+
+        // 2. 데이터 매니저 등에서 해당 스테이지의 테이블 데이터 긁어오기
+        // 💡 프로젝트의 실제 테이블 명칭(예: StageTable, MonsterTable 등)에 맞게 수정하세요!
+        var stageTable = Service.Get<DataManager>()?.MapTable?.data; 
+    
+        if (stageTable == null)
+        {
+            Debug.LogError("<color=red>[MonsterDebug]</color> 데이터 매니저에서 스테이지 테이블을 로드하지 못했습니다!");
+            return;
+        }
+
+        // 현재 스테이지와 일치하는 웨이브/몬스터 데이터 필터링
+        var currentStageData = stageTable.FindAll(x => x.CHAPTER == chapter && x.STAGE == stage);
+    
+        Debug.Log($"<color=cyan>[MonsterDebug]</color> 검색된 스테이지 데이터 행 개수: {currentStageData.Count}");
+
+        if (currentStageData.Count == 0)
+        {
+            Debug.LogWarning($"<color=yellow>[MonsterDebug]</color> 경고! 테이블에 {chapter}-{stage}에 해당하는 데이터가 한 줄도 없습니다! (ID 누락 가능성)");
+            return;
+        }
+
+        // 3. 루프를 돌며 스폰될 몬스터 ID와 예정 마리 수 전부 로그로 찍기
+        foreach (var row in currentStageData)
+        {
+            // 💡 row.MONSTER_ID, row.COUNT 등 실제 기획 테이블 컬럼명에 맞게 변수를 매칭해 주세요.
+            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_01} | 생성 수: {row.SPAWN_MONSTER_COUNT_01}마리");
+            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_02} | 생성 수: {row.SPAWN_MONSTER_COUNT_02}마리");
+            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_03} | 생성 수: {row.SPAWN_MONSTER_COUNT_03}마리");
+            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_04} | 생성 수: {row.SPAWN_MONSTER_COUNT_04}마리");
+            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_05} | 생성 수: {row.SPAWN_MONSTER_COUNT_05}마리");
+            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_06} | 생성 수: {row.SPAWN_MONSTER_COUNT_06}마리");
+            Debug.Log($"<color=green>[MonsterInfo]</color> 웨이브: {row.WAVE} | 몬스터 ID: {row.SPAWN_MONSTER_ID_07} | 생성 수: {row.SPAWN_MONSTER_COUNT_07}마리");
+        }
+    }
+
+    public IEnumerator LoadStageMonstersRoutine(List<string> currentStageMonsterIds)
+    {
+        List<string> release = new List<string>();
+
+        foreach (var id in _stageMonsterPrefabs.Keys)
+        {
+            if (!currentStageMonsterIds.Contains(id)) release.Add(id);
+        }
+
+        foreach (var id in release)
+        {
+            if (_monsterHandles.TryGetValue(id, out var handle))
+            {
+                Addressables.Release(handle);
+                _monsterHandles.Remove(id);
+                _stageMonsterPrefabs.Remove(id);
+                
+            }
+        }
+        
+        List<string> loadTarget = new List<string>();
+
+        foreach (var id in currentStageMonsterIds)
+        {
+            if (string.IsNullOrEmpty(id) || id == "NONE") continue;
+            if (!_stageMonsterPrefabs.ContainsKey(id)) loadTarget.Add(id);
+            
+            MonsterRawData monsterEffect = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == id);
+            if (monsterEffect != null)
+            {
+                if (!string.IsNullOrEmpty(monsterEffect.MONSTER_HIT_FX)) Service.Get<EffectManager>()?.EffectIds.Add(monsterEffect.MONSTER_HIT_FX);
+                SkillRawData skillEffect = Service.Get<DataManager>()?.SkillTable.data.Find(x => x.SKILL_ID == monsterEffect.SKILL_ID);
+                if (skillEffect != null)
+                {
+                    if (!string.IsNullOrEmpty(skillEffect.SKILL_HIT_FX)) Service.Get<EffectManager>()?.EffectIds.Add(skillEffect.SKILL_HIT_FX);
+                }
+            }
+        }
+        
+        if (loadTarget.Count == 0) yield break;
+        
+        List<AsyncOperationHandle<GameObject>> handles = new List<AsyncOperationHandle<GameObject>>();
+        List<string> handleIds = new List<string>();
+
+        foreach (var loadId in loadTarget)
+        {
+            var handle = Addressables.LoadAssetAsync<GameObject>(loadId);
+            handles.Add(handle);
+            handleIds.Add(loadId);
+        }
+
+        for (int i = 0; i < handles.Count; i++)
+        {
+            while (!handles[i].IsDone) yield return null;
+
+            if (handles[i].Status == AsyncOperationStatus.Succeeded)
+            {
+                _stageMonsterPrefabs[handleIds[i]] = handles[i].Result;
+                _monsterHandles[handleIds[i]] = handles[i];
+            }
+        }
     }
 
     public void WaveStart()
@@ -59,65 +159,63 @@ public class MonsterSpawnManager : BaseManager<MonsterSpawnManager>
         }
     }
 
-    public void DespawnMonster(int prefabIndex, GameObject monster)
+    public void DespawnMonster(string monsterAddress, GameObject monster)
     {
-        Service.Get<PoolManager>().ReturnPool(prefabs[prefabIndex], monster);
+        GameObject prefab = GetMonsterPrefab(monsterAddress);
+        
+        if (prefab != null) Service.Get<PoolManager>().ReturnPool(prefab, monster);
+        else                   Destroy(monster);
+        
         monsterCount.Value--;
     }
 
     private IEnumerator SpawnMonster(List<string> monsterList, List<int> spawnCountList)
     {
-        prefabs.Clear();
-
         for (int k = 0; k < _totalSpawnCycle; k++)
         {
             for (int i = 0; i < monsterList.Count; i++)
             {
-                if (!string.IsNullOrEmpty(monsterList[i]))
-                {
-                    string address = monsterList[i].Trim();
-                    prefabs.Add(GetMonsterPrefab(address));
-                    MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == monsterList[i].Trim());
+                if (string.IsNullOrEmpty(monsterList[i]) || monsterList[i] == "NONE") continue;
+                
+                string address = monsterList[i].Trim();
+                GameObject targetPrefab = GetMonsterPrefab(address);
 
-                    for (int j = 0; j < spawnCountList[i]; j++)
+                if (targetPrefab == null) continue;
+                    
+                MonsterRawData stat = Service.Get<DataManager>()?.MonsterTable.data.Find(x => x.MONSTER_ID == monsterList[i].Trim());
+
+                for (int j = 0; j < spawnCountList[i]; j++)
+                {
+                    if (int.Parse(address) < 1035)
                     {
-                        if (int.Parse(address) < 1035)
+                        GameObject obj = Service.Get<PoolManager>().GetPool(targetPrefab, RandomPosition(), Quaternion.identity);
+                        if (obj.TryGetComponent(out BaseMonster monster))
                         {
-                            GameObject obj = Service.Get<PoolManager>().GetPool(prefabs[i], RandomPosition(), Quaternion.identity);
+                            monster.PrefabIndex = i;
+                            monster.InitStatus(stat);
+                        }
+                    }
+                    else
+                    {
+                        if (k == _totalSpawnCycle - 1)
+                        {
+                            GameObject obj = Service.Get<PoolManager>().GetPool(targetPrefab, RandomPosition(), Quaternion.identity);
                             if (obj.TryGetComponent(out BaseMonster monster))
                             {
                                 monster.PrefabIndex = i;
                                 monster.InitStatus(stat);
                             }
                         }
-                        else
-                        {
-                            if (k == _totalSpawnCycle - 1)
-                            {
-                                GameObject obj = Service.Get<PoolManager>().GetPool(prefabs[i], RandomPosition(), Quaternion.identity);
-                                if (obj.TryGetComponent(out BaseMonster monster))
-                                {
-                                    monster.PrefabIndex = i;
-                                    monster.InitStatus(stat);
-                                }
-                            }
-                        }
-
-                        yield return new WaitForSeconds(0.1f);
                     }
+                    yield return new WaitForSeconds(0.1f);
                 }
             }
-        
             yield return new WaitForSeconds(_spawnDelay);
         }
-        
-        
     }
     
     private void AddMonsterData(int chapter, int stage, int wave)
     {
-        if (Service.Get<GameManager>().isLoading) return;
-        
         _waveMonsterList.Clear();
         _waveSpawnCountList.Clear();
         

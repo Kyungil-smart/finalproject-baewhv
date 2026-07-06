@@ -7,8 +7,8 @@ public class LoadingBarUI : MonoBehaviour
 
     public void Init()
     {
-        Service.Get<SceneController>().OnLoading += LoadingUi;
-        Service.Get<SceneController>().OnLoadingComplete += CloseLoadingUi;
+        Service.Get<LoadManager>().OnLoading += LoadingUi;
+        Service.Get<LoadManager>().OnLoadingComplete += CloseLoadingUi;
     }
 
     private void OnEnable()
@@ -24,11 +24,11 @@ public class LoadingBarUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        var sceneController = Service.Get<SceneController>();
-        if (sceneController != null)
+        var loadManager = Service.Get<LoadManager>();
+        if (loadManager != null)
         {
             //sceneController.OnLoading -= LoadingUi;
-            sceneController.OnLoadingComplete -= CloseLoadingUi;
+            loadManager.OnLoadingComplete -= CloseLoadingUi;
         }
     }
 

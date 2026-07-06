@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -29,14 +30,23 @@ public class TutorialManager : BaseManager<TutorialManager>
     private bool IsSkillTutorial;
     private GameState currentState;
 
-    private void Start()
+    private IEnumerator Start()
     {
+        while (Service.Get<UIManager>() == null || Service.Get<GameManager>() == null ||
+               Service.Get<MonsterSpawnManager>() == null) yield return null;
+
+        IngamePopupController ingamePopupController = null;
+        while (ingamePopupController == null)
+        {
+            ingamePopupController = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
+            yield return null;
+        }
         
         Service.Get<GameManager>()?.CurrentState.AddListener(OnChangeGameStateType);
         Service.Get<MonsterSpawnManager>()?.currentWave.AddListener(OnChangeWave);
         //Service.Get<SortManager>()?.RemainingSorts.AddListener(OnRemainingSort);
-        Service.Get<UIManager>().GetUI<IngamePopupController>().GetRewardPopup.AddListener(OpenLevelUpPopup);
-        Service.Get<UIManager>().GetUI<IngamePopupController>().GetClearPopup.AddListener(OpenResultPopup);
+        Service.Get<UIManager>()?.GetUI<IngamePopupController>().GetRewardPopup.AddListener(OpenLevelUpPopup);
+        Service.Get<UIManager>()?.GetUI<IngamePopupController>().GetClearPopup.AddListener(OpenResultPopup);
         
         background = touchShield.GetComponent<Image>();
     }

@@ -271,7 +271,8 @@ public class GameManager : BaseManager<GameManager>
         CurrentState.Value = GameState.Ready;
         
         Service.Get<TimeManager>()?.ResetTimeScale();
-        
+
+        SceneType targetScene;
         switch (type) 
         {
             case StageType.Tutorial:
@@ -299,6 +300,12 @@ public class GameManager : BaseManager<GameManager>
             Service.Get<NarrativeManager>()?.StartNarrative(stageStoryData, isBefore);
         }
         else NarrativeEnd();
+    }
+
+    public AsyncOperationHandle<GameObject> loadWall()
+    {
+        AsyncOperationHandle<GameObject> _wallLoadHandle = Addressables.LoadAssetAsync<GameObject>("Rampart");
+        return  _wallLoadHandle;
     }
     
     public void SpawnWall()
