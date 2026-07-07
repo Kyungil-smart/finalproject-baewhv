@@ -383,30 +383,30 @@ public class GameManager : BaseManager<GameManager>
             _wall = null;
         }
 
-        if (_currentChapter == 4 && _currentStage == 7)
-        {
-            CurrentState.Value = GameState.Clear;
-
-            var inGamePopUp = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
-
-            if (inGamePopUp != null)
-            {
-                inGamePopUp.gameObject.SetActive(false);
-            }
-
-            var plsWaitUpdate = Service.Get<UIManager>()?.SimplePopup;
-
-            if (plsWaitUpdate != null)
-            {
-                plsWaitUpdate.SetOneButtonPopup("다음 노드는 개발중에 있습니다", "플레이 해주셔서 감사합니다", () =>
-                {
-                    Service.Get<TimeManager>()?.ResetTimeScale();
-                    Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
-                });
-            }
-
-            return;
-        }
+        // if (_currentChapter == 4 && _currentStage == 7)
+        // {
+        //     CurrentState.Value = GameState.Clear;
+        //
+        //     var inGamePopUp = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
+        //
+        //     if (inGamePopUp != null)
+        //     {
+        //         inGamePopUp.gameObject.SetActive(false);
+        //     }
+        //
+        //     var plsWaitUpdate = Service.Get<UIManager>()?.SimplePopup;
+        //
+        //     if (plsWaitUpdate != null)
+        //     {
+        //         plsWaitUpdate.SetOneButtonPopup("다음 노드는 개발중에 있습니다", "플레이 해주셔서 감사합니다", () =>
+        //         {
+        //             Service.Get<TimeManager>()?.ResetTimeScale();
+        //             Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
+        //         });
+        //     }
+        //
+        //     return;
+        // }
 
         bool isEndChapter = (currentStageData != null && CheckStageType(currentStageData) == EStageType.BOSS_F);
 
