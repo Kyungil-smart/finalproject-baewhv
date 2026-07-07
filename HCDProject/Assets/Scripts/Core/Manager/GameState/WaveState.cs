@@ -36,7 +36,7 @@ public class WaveState : IState
 
         if (_spawnManager.currentWave.Value >= totalWave)
         {
-            _manager.ClearStage();
+            Service.Get<UIManager>().GetUI<IngamePopupController>().OnWaveClear(_manager.ClearStage);
         }
         else _manager.CurrentState.Value = GameState.Sort;
     }
