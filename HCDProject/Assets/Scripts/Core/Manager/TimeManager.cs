@@ -26,12 +26,6 @@ public class TimeManager : BaseManager<TimeManager>
     private void UpdateBattleTime()
     {
         _battleTime += Time.deltaTime;
-        
-        int min = (int)BattleTime / 60;
-        int sec = (int)BattleTime % 60;
-        string time = string.Format("{0:D2}:{1:D2}", min, sec);
-        
-        Debug.Log($"{time}");
     }
 
     public int ChangeSpeed()
