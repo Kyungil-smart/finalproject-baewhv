@@ -15,7 +15,7 @@
       "LEVEL_REWARD_NAME": "L_002",
       "LEVEL_REWARD_TEXT_ID": "LRT_002",
       "LEVEL_REWARD_TYPE_01": "ATK_SPEED",
-      "LEVEL_REWARD_01": 0.07,
+      "LEVEL_REWARD_01": -0.07,
       "LEVEL_REWARD_TYPE_02": "NONE",
       "LEVEL_REWARD_02": 0,
       "LEVEL_REWARD_ICON": "Icon/Icons[HCD_Lv_AS]"
@@ -87,7 +87,7 @@
       "LEVEL_REWARD_TYPE_01": "ATK",
       "LEVEL_REWARD_01": 14,
       "LEVEL_REWARD_TYPE_02": "ATK_SPEED",
-      "LEVEL_REWARD_02": -0.4,
+      "LEVEL_REWARD_02": 0.4,
       "LEVEL_REWARD_ICON": "Icon/Icons[HCD_Lv_ATK]"
     },
     {
@@ -95,7 +95,7 @@
       "LEVEL_REWARD_NAME": "L_010",
       "LEVEL_REWARD_TEXT_ID": "LRT_010",
       "LEVEL_REWARD_TYPE_01": "ATK_SPEED",
-      "LEVEL_REWARD_01": 0.03,
+      "LEVEL_REWARD_01": -0.03,
       "LEVEL_REWARD_TYPE_02": "CRITICAL_RATE",
       "LEVEL_REWARD_02": 0.01,
       "LEVEL_REWARD_ICON": "Icon/Icons[HCD_Lv_AS]"
