@@ -3558,6 +3558,483 @@ MonoBehaviour:
     m_Localized: Baik. Kita hentikan mereka di tengah jalan setapak.
     m_Metadata:
       m_Items: []
+  - m_Id: 863262239711259
+    m_Localized: Serangan meningkat 8.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711260
+    m_Localized: Kecepatan serang meningkat 7%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711261
+    m_Localized: Peluang kritikal meningkat 2%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711262
+    m_Localized: Kerusakan kritikal meningkat 20%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711263
+    m_Localized: HP maksimum meningkat 30.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711264
+    m_Localized: HP saat ini pulih 15.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711265
+    m_Localized: Pertahanan meningkat 2.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711266
+    m_Localized: Kecepatan gerak meningkat 6.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711267
+    m_Localized: Serangan meningkat 14, dan Kecepatan serang <color=#FF4A4A>berkurang</color>
+      40%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711268
+    m_Localized: Kecepatan serang meningkat 3%, dan Peluang kritikal meningkat 1%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711269
+    m_Localized: HP maksimum meningkat 20, dan Kecepatan gerak <color=#FF4A4A>berkurang</color>
+      20%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711270
+    m_Localized: Serangan meningkat 20, dan HP maksimum <color=#FF4A4A>berkurang</color>
+      22.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863262239711271
+    m_Localized: Pertahanan meningkat 1, dan HP maksimum meningkat 22.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625686110208
+    m_Localized: HP maksimum Serah meningkat 5%<br>Pertahanan Serah meningkat 5%<br>Kecepatan
+      gerak Serah <color=#FF4A4A>berkurang</color> 20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858944
+    m_Localized: Serah memulihkan 1% HP maksimum setiap detik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858945
+    m_Localized: HP maksimum Serah meningkat 2%<br>Serangan Serah meningkat 2%<br>Pertahanan
+      Serah meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858946
+    m_Localized: Peluang serangan ganda Noah meningkat 50%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858947
+    m_Localized: Noah memperoleh Hujan Panah<br>Kerusakan Hujan Panah meningkat 100%<br>Hujan
+      Panah aktif setiap 25 detik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858948
+    m_Localized: HP maksimum Noah meningkat 2%<br>Serangan Noah meningkat 2%<br>Pertahanan
+      Noah meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858949
+    m_Localized: Jangkauan skill Alice meningkat 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858950
+    m_Localized: Alice memperoleh Sihir Gempa<br>Kerusakan Sihir Gempa meningkat
+      12%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858951
+    m_Localized: HP maksimum Alice meningkat 2%<br>Serangan Alice meningkat 2%<br>Pertahanan
+      Alice meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858952
+    m_Localized: Pemulihan Spayne meningkat 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858953
+    m_Localized: Spayne memperoleh Sihir Perisai<br>Durasi Sihir Perisai meningkat
+      3 detik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858954
+    m_Localized: HP maksimum Spayne meningkat 2%<br>Serangan Spayne meningkat 2%<br>Pertahanan
+      Spayne meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858955
+    m_Localized: HP Tembok pulih 150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858956
+    m_Localized: HP maksimum Tembok meningkat 150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858957
+    m_Localized: Stat semua hero meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858958
+    m_Localized: HP maksimum Serah meningkat 5%<br>Pertahanan Serah meningkat 5%<br>Kecepatan
+      gerak Serah <color=#FF4A4A>berkurang</color> 20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858959
+    m_Localized: Serah memulihkan 1% HP maksimum setiap detik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858960
+    m_Localized: HP maksimum Serah meningkat 2%<br>Serangan Serah meningkat 2%<br>Pertahanan
+      Serah meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858961
+    m_Localized: Peluang serangan ganda Noah meningkat 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858962
+    m_Localized: Kerusakan Hujan Panah meningkat 10%<br>Interval aktif Hujan Panah
+      <color=#FF4A4A>berkurang</color> 3 detik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858963
+    m_Localized: HP maksimum Noah meningkat 2%<br>Serangan Noah meningkat 2%<br>Pertahanan
+      Noah meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858964
+    m_Localized: Jangkauan skill Alice meningkat 10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858965
+    m_Localized: Kerusakan Sihir Gempa meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858966
+    m_Localized: HP maksimum Alice meningkat 2%<br>Serangan Alice meningkat 2%<br>Pertahanan
+      Alice meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858967
+    m_Localized: Pemulihan Spayne meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858968
+    m_Localized: Durasi Sihir Perisai meningkat 1 detik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858969
+    m_Localized: HP maksimum Spayne meningkat 2%<br>Serangan Spayne meningkat 2%<br>Pertahanan
+      Spayne meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858970
+    m_Localized: HP Tembok pulih 150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858971
+    m_Localized: HP maksimum Tembok meningkat 150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8336625723858972
+    m_Localized: Stat semua hero meningkat 2%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695235997949952
+    m_Localized: Gerbang Luar Jeple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892992
+    m_Localized: Analisis Pertahanan Gerbang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892993
+    m_Localized: Area Pertanian Jeple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892994
+    m_Localized: Jalan Pasar Jeple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892995
+    m_Localized: Area Saluran Air dan Gudang Jeple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892996
+    m_Localized: Pemeliharaan Saluran Air Sebelum Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892997
+    m_Localized: Alun-Alun di Depan Kediaman Lord Jeple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892998
+    m_Localized: Pintu Masuk Hutan Lumer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039892999
+    m_Localized: Pelacakan Jalur Hutan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893000
+    m_Localized: Jalur Hutan Lumer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893001
+    m_Localized: Area Penebangan Hutan Lumer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893002
+    m_Localized: Rawa Dalam Hutan Lumer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893003
+    m_Localized: Pemeliharaan Jalur Hutan Sebelum Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893004
+    m_Localized: Lapangan Tengah Hutan Lumer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893005
+    m_Localized: Desa Tambang Verdin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893006
+    m_Localized: Dukungan Desa Tambang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893007
+    m_Localized: Pintu Masuk Tambang Verdin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893008
+    m_Localized: Terowongan Tambang Terbengkalai Verdin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893009
+    m_Localized: Rel Pengangkut Verdin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893010
+    m_Localized: Pemeliharaan Rel Sebelum Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893011
+    m_Localized: Area Terdalam Tambang Verdin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893012
+    m_Localized: Desa Tepi Danau Milen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893013
+    m_Localized: Penguatan Pertahanan Tepi Danau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893014
+    m_Localized: Rawa Alang-Alang Milen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893015
+    m_Localized: Jembatan Apung Milen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893016
+    m_Localized: Dermaga Danau Milen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893017
+    m_Localized: Pemeliharaan Dermaga Sebelum Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893018
+    m_Localized: Pulau Tengah Danau Milen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893019
+    m_Localized: Pintu Masuk Dataran Tinggi Norua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893020
+    m_Localized: Adaptasi Angin Dataran Tinggi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893021
+    m_Localized: Bukit Angin Norua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893022
+    m_Localized: Pinggiran Reruntuhan Kuno Norua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893023
+    m_Localized: Koridor Reruntuhan Norua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893024
+    m_Localized: Pemeliharaan Reruntuhan Sebelum Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893025
+    m_Localized: Ruang Kendali Reruntuhan Norua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893026
+    m_Localized: Dataran Tengah Atra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893027
+    m_Localized: Berkumpul di Garis Pertahanan Terakhir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893028
+    m_Localized: Pinggiran Ibu Kota Atra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893029
+    m_Localized: Gerbang Ibu Kota Atra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893030
+    m_Localized: Garis Pertahanan Terakhir Atra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893031
+    m_Localized: Pemeliharaan Tembok Sebelum Pertempuran Terakhir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236039893032
+    m_Localized: Alun-Alun Tengah Atra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496586240000
+    m_Localized: Arsip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988736
+    m_Localized: Cerita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087296
+    m_Localized: Stage Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087297
+    m_Localized: Stage Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087298
+    m_Localized: Stage Event
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087299
+    m_Localized: Stage Boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087300
+    m_Localized: Stage Perawatan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087301
+    m_Localized: '{0} menemukan sesuatu!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087302
+    m_Localized: Hadiah dari {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087303
+    m_Localized: Hanya bisa memilih 1.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087304
+    m_Localized: HP Tembok Saat Ini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087305
+    m_Localized: Pulihkan HP Tembok 30%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087306
+    m_Localized: Dapatkan 1 Relik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087308
+    m_Localized: Boss Berikutnya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988737
+    m_Localized: Otomatis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988738
+    m_Localized: Sembunyikan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988739
+    m_Localized: Riwayat Dialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988740
+    m_Localized: Lewati
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087309
+    m_Localized: Tonton iklan untuk reroll 1 kali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087310
+    m_Localized: Ya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087311
+    m_Localized: Tidak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087312
+    m_Localized: Konfirmasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087313
+    m_Localized: Berangkat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8695236044087314
+    m_Localized: Kembali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988741
+    m_Localized: Suara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988742
+    m_Localized: Musik Latar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988743
+    m_Localized: Efek Suara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988744
+    m_Localized: Getaran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988745
+    m_Localized: Intensitas Getaran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9819496623988746
+    m_Localized: Bahasa
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

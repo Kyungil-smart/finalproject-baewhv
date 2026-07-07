@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceManager : BaseManager<ResourceManager>
+public class ResourcesManager : BaseManager<ResourcesManager>
 {
     private Dictionary<string, Sprite> DefaultSprite;
     public Sprite GetSprite(string name)

@@ -469,12 +469,7 @@ public class SortManager : BaseManager<SortManager>
             initialBlockBag[randomIndex] = temp;
         }
 
-        for (int i = 0; i < maxColumns * 2; i++)
-        {
-            SpawnInitialBlock();
-        }
-
-        PlayerInputLock(false);
+        StartCoroutine(StartRail());
     }
 
     public void TutorialBlocks(List<int> blockSequence)
@@ -498,10 +493,29 @@ public class SortManager : BaseManager<SortManager>
             }
         }
 
+        StartCoroutine(StartRail());
+    }
+
+    private IEnumerator StartRail()
+    {
+        isAnimating = true;
+        PlayerInputLock(true);
+
         int spawnCount = Mathf.Min(initialBlockBag.Count, maxColumns * 2);
         for (int i = 0; i < spawnCount; i++)
         {
             SpawnInitialBlock();
+            yield return new WaitForSecondsRealtime(0.08f);
+        }
+
+        isAnimating = false;
+
+        ComboAnimation(railABlocks);
+        ComboAnimation(railBBlocks);
+
+        if (!isAnimating)
+        {
+            PlayerInputLock(false);
         }
     }
 
@@ -604,7 +618,16 @@ public class SortManager : BaseManager<SortManager>
     {
         GameObject newBlock = Instantiate(prefab, targetSlot);
         RectTransform blockRect = newBlock.GetComponent<RectTransform>() ?? newBlock.AddComponent<RectTransform>();
-        blockRect.anchoredPosition = Vector2.zero;
+        
+        if (isAnimating)
+        {
+            blockRect.anchoredPosition = new Vector2(-80f, 0f);
+            blockRect.DOAnchorPos(Vector2.zero, 0.15f).SetEase(Ease.OutQuad).SetUpdate(true);
+        }
+        else
+        {
+            blockRect.anchoredPosition = Vector2.zero;
+        }
 
         DragAndDrop dndScript = newBlock.GetComponent<DragAndDrop>();
         targetList.Add(dndScript);
