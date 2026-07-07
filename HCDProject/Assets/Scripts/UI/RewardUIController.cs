@@ -4,15 +4,16 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class RewardUIController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI contentText;
+    [SerializeField] private LocalizeStringEvent titleText;
+    [SerializeField] private LocalizeStringEvent contentText;
     [SerializeField] private RewardButtonUI[] buttonList;
     [SerializeField] private Button reRollButton;
-    //private int selectedIndex = -1;
+    private int selectedIndex = -1;
 
     private UnityAction CloseCallback;
     private UnityAction RewardAction;
@@ -48,16 +49,17 @@ public class RewardUIController : MonoBehaviour
                 button.IsSelected = false;
             }
         }
-    }
+    } 
 
     private void StartPopup(string title, string content, bool isReRoll)
     {
         gameObject.SetActive(true);
+        selectedIndex = -1;
         if(!isReRoll)
             Service.Get<AdsManager>()?.ResetAdChance();
         isOpenRewardPopup.Value = true;
-        if(titleText) titleText.text = title;
-        if(contentText) contentText.text = content;
+        if(titleText) titleText.SetEntry(title);
+        if(contentText) contentText.SetEntry(content);
         if (!isReRoll)
             Service.Get<TimeManager>()?.SaveTimeScale();
     }
@@ -65,7 +67,7 @@ public class RewardUIController : MonoBehaviour
 
     public void SetLevelUpReward(UnityAction action, bool isReRoll = false)
     {
-        StartPopup("Level UP!", "강화 효과를 선택하세요.\n해당 효과는 이번 노드에서만 적용됩니다.", isReRoll);
+        StartPopup("UI_LVU_TITLE", "UI_LVU_DESC", isReRoll);
         CloseCallback = action;
         var CurrentReward = Service.Get<PlayerManager>()?.GetLevelUpRewards();
         for (int i = 0; i < buttonList.Length; i++)
@@ -97,25 +99,25 @@ public class RewardUIController : MonoBehaviour
     private IEnumerator KeepTimeScaleRoutine(Action action)
     {
         yield return null;
-
-        Time.timeScale = 0;
+        if(Service.Get<TimeManager>() && Service.Get<TimeManager>().IsPaused)
+            Time.timeScale = 0;
 
         action?.Invoke();
     }
 
-    private void OnShowAds(UnityAction action)
-    {
-        Service.Get<AdsManager>()?.ShowRewardedAd(() => { SetLevelUpReward(action); });
-    }
 
     public void SetRelicReward(UnityAction action, bool isReRoll = false)
     {
-        StartPopup("Stage Clear!", "강화 효과를 선택하세요.\n해당 효과는 <color=red>영구적</color>으로 적용됩니다.", isReRoll);
+        StartPopup("UI_RW_TITLE", "UI_RW_DESC", isReRoll);
         CloseCallback = action;
         var CurrentReward = Service.Get<RelicManager>()?.GetStageRandomRewards();
         for (int i = 0; i < buttonList.Length; i++)
         {
-            buttonList[i].SetReward(CurrentReward[i], Service.Get<RelicManager>().OnSelectRelicReward, i);
+            buttonList[i].SetReward(CurrentReward[i], index =>
+            {
+                Service.Get<RelicManager>().OnSelectRelicReward(index);
+                selectedIndex = index;
+            }, i);
         }
 
         if (!Service.Get<AdsManager>().IsAdUsed)
@@ -137,6 +139,12 @@ public class RewardUIController : MonoBehaviour
         {
             reRollButton.interactable = false;
         }
+    }
+
+    public void CopyElement(RewardButtonUI ui)
+    {
+        if (selectedIndex == -1) return;
+        buttonList[selectedIndex].CopyElement(ui);
     }
 
     public void AddListener(UnityAction<bool> action)
