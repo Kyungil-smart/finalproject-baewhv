@@ -8,6 +8,8 @@ public class TimeManager : BaseManager<TimeManager>
     
     private float saveTimeScale = 1;
     private int pauseCount = 0;
+    
+    public bool IsPaused => pauseCount > 0;
 
     public int ChangeSpeed()
     {
