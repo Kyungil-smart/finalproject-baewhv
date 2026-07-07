@@ -62,13 +62,6 @@ public class SortManager : BaseManager<SortManager>
         AutoSetupUISlots();
         AutoSetupRailSlots();
 
-        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
-        if (bottomUI != null)
-        {
-            RemainingSorts.AddListener((val) => bottomUI.SetLeftSortCountText(val, maxSortTime));
-            CurrentCombo.AddListener(bottomUI.SetComboText);
-        }
-
         if (Service.Get<TutorialManager>() != null)
         {
             Debug.Log("튜토리얼");
@@ -310,14 +303,25 @@ public class SortManager : BaseManager<SortManager>
             if (mapData != null)
             {
                 maxSortTime = mapData.SORT_TIME;
-                RemainingSorts.Value = mapData.SORT_TIME;
-                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 시간: {mapData.SORT_TIME}초");
             }
         }
 
         BuffsBox.Clear();
+        
+        var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+        
+        if (bottomUI != null)
+        {
+            bottomUI?.SetSortPhase();
 
-        Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.SetSortPhase();
+            RemainingSorts = new ObserveValue<float>();
+            CurrentCombo = new ObserveValue<int>();
+            
+            RemainingSorts.AddListener((val) => bottomUI.SetLeftSortCountText(val, maxSortTime));
+            CurrentCombo.AddListener(bottomUI.SetComboText);
+        }
+        
+        RemainingSorts.Value = maxSortTime;
 
         InitializeRail();
     }

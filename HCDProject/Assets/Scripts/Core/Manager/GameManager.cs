@@ -7,6 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.SceneManagement;
 
 public class GameManager : BaseManager<GameManager>
 {
@@ -384,8 +385,8 @@ public class GameManager : BaseManager<GameManager>
         if (_wall != null)
         {
             _currentWallHp = _wall.CurrentHp.Value;
-
-            Addressables.ReleaseInstance(_wall.gameObject);
+            
+            Destroy(_wall.gameObject);
             _wall = null;
         }
 
@@ -407,7 +408,21 @@ public class GameManager : BaseManager<GameManager>
                 plsWaitUpdate.SetOneButtonPopup("다음 노드는 개발중에 있습니다", "플레이 해주셔서 감사합니다", () =>
                 {
                     Service.Get<TimeManager>()?.ResetTimeScale();
-                    Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
+
+                    GameObject breakDDol = new GameObject();
+                    DontDestroyOnLoad(breakDDol);
+
+                    var ddolScene = breakDDol.scene;
+
+                    var activeScene = SceneManager.GetActiveScene();
+                    foreach (var moveObj in ddolScene.GetRootGameObjects())
+                    {
+                        if (moveObj != breakDDol)
+                        {
+                            SceneManager.MoveGameObjectToScene(moveObj, activeScene);
+                        }
+                    }
+                    SceneManager.LoadScene("TitleScene");
                 });
             }
 

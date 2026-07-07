@@ -87,6 +87,9 @@ public class LoadManager : BaseManager<LoadManager>
 
         if (targetScene == SceneType.InGame || targetScene == SceneType.Tutorial)
         {
+            var gameManager = Service.Get<GameManager>();
+            if (gameManager != null) gameManager.SpawnWall(); 
+            
             var playerManager = Service.Get<PlayerManager>();
             if (playerManager != null) playerManager.SpawnAllCharacters();
         }
