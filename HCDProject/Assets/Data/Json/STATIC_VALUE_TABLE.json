@@ -44,6 +44,11 @@
       "VARIABLE_NAME": "CASTLE_HP_RECOVERY",
       "VARIABLE_TYPE": "INT",
       "VARIABLE_VALUE": "150"
+    },
+    {
+      "VARIABLE_NAME": "COMBO_TIME",
+      "VARIABLE_TYPE": "FLOAT",
+      "VARIABLE_VALUE": "2"
     }
   ]
 }

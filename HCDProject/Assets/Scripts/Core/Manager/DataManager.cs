@@ -16,7 +16,6 @@ public class DataManager : BaseManager<DataManager>
     public StageClearRewardTable StageClearRewardTable {get; private set;}
     public ObjectTable ObjectTable {get; private set;}
     public SkillTable SkillTable {get; private set;}
-    public ProjectileTable ProjectileTable {get; private set;}
     public LocalizingTable LocalizingTable {get; private set;}
     public StoryLocalizingTable StoryLocalizingTable {get; private set;}
     public StaticValueTable StaticValueTable {get; private set;}
@@ -55,7 +54,6 @@ public class DataManager : BaseManager<DataManager>
             ("STAGE_CLEAR_REWARD_TABLE", json => StageClearRewardTable = JsonUtility.FromJson<StageClearRewardTable>(json)),
             ("OBJECT_TABLE", json => ObjectTable = JsonUtility.FromJson<ObjectTable>(json)),
             ("SKILL_TABLE", json => SkillTable = JsonUtility.FromJson<SkillTable>(json)),
-            ("PROJECTILE_TABLE", json => ProjectileTable = JsonUtility.FromJson<ProjectileTable>(json)),
             ("LOCALIZING_TABLE", json => LocalizingTable = JsonUtility.FromJson<LocalizingTable>(json)),
             ("STORY_LOCALIZING_TABLE", json => StoryLocalizingTable = JsonUtility.FromJson<StoryLocalizingTable>(json)),
             ("STATIC_VALUE_TABLE", json => StaticValueTable = JsonUtility.FromJson<StaticValueTable>(json)),
