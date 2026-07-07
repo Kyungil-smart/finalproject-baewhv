@@ -8,12 +8,57 @@ public class RelicManager : BaseManager<RelicManager>
 
     private List<StageClearRewardRawData> currentRandomRewards;
 
+    private Rampart _activeWall;
+    private int _buffMaxHp = 0;
+    private int _buffRepair = 0;
+
     protected override void Awake()
     {
         base.Awake();
         MyRelics.Clear();
         currentRandomRewards = null;
     }
+
+    private void Update()
+    {
+        var gamemanager = Service.Get<GameManager>();
+        if (gamemanager == null) return;
+
+        var currentWall = gamemanager._wall;
+
+        if (currentWall != null && currentWall != _activeWall)
+        {
+            _activeWall = currentWall;
+            ApplyWallRelics();
+        }
+        else if (currentWall == null && _activeWall != null)
+        {
+            _activeWall = null;
+        }
+    }
+
+    private void ApplyWallRelics()
+    {
+        if (_buffMaxHp > 0 || _buffRepair > 0)
+        {
+            int currentHp = _activeWall.CurrentHp.Value;
+
+            int finalHp = currentHp + _buffMaxHp;
+
+            if (_buffRepair > 0)
+            {
+                int maxCapacity = _activeWall.CurrentHp.MaxValue + _buffMaxHp;
+                finalHp += _buffRepair;
+                finalHp = Mathf.Min(finalHp, maxCapacity);
+            }
+
+            _activeWall.SetHp(finalHp);
+
+            _buffMaxHp = 0;
+            _buffRepair = 0;
+        }
+    }
+
     public List<StageClearRewardRawData> GetStageRandomRewards()
     {
         // 랜덤한 3개의 스테이지 클리어 리워드 데이터를 반환해줍니다
@@ -71,17 +116,34 @@ public class RelicManager : BaseManager<RelicManager>
 
                     int applyValue = (currentStack == 1) ? (int)baseValue : (int)stackValue;
 
-                    if (effectType == "REPAIR")
+                    if (gameManager != null)
                     {
-                        int repairedHp = Mathf.Min(gameManager._wall.CurrentHp.Value + applyValue, gameManager._wall.CurrentHp.MaxValue);
-                        gameManager._wall.SetHp(repairedHp);
-                        Debug.Log($"성벽 HP {applyValue} 수리");
-                    }
-                    else if (effectType == "MAX_HP")
-                    {
-                        int nextHp = gameManager._wall.CurrentHp.Value + applyValue;
-                        gameManager._wall.SetHp(nextHp);
-                        Debug.Log($"성벽 최대 HP {applyValue} 증가");
+                        if (gameManager._wall != null)
+                        {
+                            if (effectType == "REPAIR")
+                            {
+                                int repairedHp = Mathf.Min(gameManager._wall.CurrentHp.Value + applyValue, gameManager._wall.CurrentHp.MaxValue);
+                                gameManager._wall.SetHp(repairedHp);
+                                Debug.Log($"성벽 HP {applyValue} 수리");
+                            }
+                            else if (effectType == "MAX_HP")
+                            {
+                                int nextHp = gameManager._wall.CurrentHp.Value + applyValue;
+                                gameManager._wall.SetHp(nextHp);
+                                Debug.Log($"성벽 최대 HP {applyValue} 증가");
+                            }
+                        }
+                        else
+                        {
+                            if (effectType == "REPAIR")
+                            {
+                                _buffRepair += applyValue;
+                            }
+                            else if (effectType == "MAX_HP")
+                            {
+                                _buffMaxHp += applyValue;
+                            }
+                        }
                     }
                 }
             }
