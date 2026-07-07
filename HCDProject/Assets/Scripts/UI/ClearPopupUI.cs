@@ -35,7 +35,7 @@ public class ClearPopupUI : MonoBehaviour
     [SerializeField] private Button positiveButton;
 
 
-    public void SetClearPopup(bool hidePosButton)
+    public void SetClearPopup(bool showPositiveButton)
     {
         gameObject.SetActive(true);
         popupTitle.SetEntry("UI_RESULT_WIN");
@@ -49,14 +49,16 @@ public class ClearPopupUI : MonoBehaviour
         SetTime();
         Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.GetRewardPopup.CopyElement(selectedRelic);
 
-        if (!hidePosButton)
+        if (showPositiveButton)
         {
+            Debug.Log("showUI");
             positiveButton.gameObject.SetActive(true);
             positiveButton.onClick.RemoveAllListeners();
             positiveButton.onClick.AddListener(Service.Get<GameManager>().NextBattle);
         }
         else
         {
+            Debug.Log("hideUI");
             positiveButton.gameObject.SetActive(false);
         }
     }
