@@ -6203,6 +6203,46 @@ MonoBehaviour:
     m_Key: UI_NAR_SKIP
     m_Metadata:
       m_Items: []
+  - m_Id: 9940110521229312
+    m_Key: UI_LVU_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589440
+    m_Key: UI_LVU_DESC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589441
+    m_Key: UI_RW_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589442
+    m_Key: UI_RW_DESC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10143141099560960
+    m_Key: UI_RESULT_WIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10143141137309696
+    m_Key: UI_RESULT_LOSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589443
+    m_Key: UI_RESULT_DESC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10143141137309697
+    m_Key: UI_RESULT_TIME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10143141137309698
+    m_Key: UI_RESULT_SORT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10143141137309699
+    m_Key: UI_RESULT_COMBO
+    m_Metadata:
+      m_Items: []
   - m_Id: 8695236044087309
     m_Key: UI_ADS_REROLL
     m_Metadata:
@@ -6225,6 +6265,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8695236044087314
     m_Key: UI_POPUP_BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589444
+    m_Key: UI_POPUP_SS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589445
+    m_Key: UI_POPUP_NEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589446
+    m_Key: UI_POPUP_RETREAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9940110550589447
+    m_Key: UI_POPUP_RETRY
     m_Metadata:
       m_Items: []
   - m_Id: 9819496623988741
