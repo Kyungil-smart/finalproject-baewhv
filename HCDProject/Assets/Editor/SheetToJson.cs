@@ -22,7 +22,6 @@ public class SheetToJson : EditorWindow
         {"1698007139", "STAGE_CLEAR_REWARD_TABLE"},
         {"2033933741", "OBJECT_TABLE"},
         {"1428489825", "MAP_TABLE"},
-        {"1779569419", "PROJECTILE_TABLE"},
         {"2083529388", "LOCALIZING_TABLE"},
         {"606265452", "STORY_LOCALIZING_TABLE"},
         {"1174224199", "STATIC_VALUE_TABLE"},

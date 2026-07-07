@@ -2107,7 +2107,7 @@
     {
       "TEXT_ID": "TST_114",
       "Korean": "[선택한 강화가 이후 전투에도 유지됨을 표시한다]",
-      "English": "Right. And you just said\"yet.\"",
+      "English": "Right. And you just said "yet."",
       "Thai": "อืม แล้วเมื่อกี้เธอก็พูดว่า “ยัง” แล้วไง",
       "Vietnamese": "Ừ. Và cậu vừa nói “chưa” rồi đấy.",
       "Indonesian": "Ya. Dan barusan kau bilang “belum.”"
@@ -2346,7 +2346,7 @@
     },
     {
       "TEXT_ID": "TST_144",
-      "Korean": "응. 그리고 방금 \"아직\"이라고 했잖아.",
+      "Korean": "응. 그리고 방금 "아직"이라고 했잖아.",
       "English": "If you stay quiet and endure it, it will hurt more...",
       "Thai": "ถ้าไม่พูดแล้วฝืนไว้ พวกเธอก็จะเจ็บกว่าเดิม...",
       "Vietnamese": "Nếu im lặng chịu đựng thì sẽ càng đau hơn...",
@@ -7419,7 +7419,7 @@
     {
       "TEXT_ID": "TST_778",
       "Korean": "확인할 게 남아 있다는 말이 점점 무섭게 들리네.",
-      "English": "The phrase \"something left to check\" is starting to sound scarier and scarier.",
+      "English": "The phrase "something left to check" is starting to sound scarier and scarier.",
       "Thai": "คำว่ายังมีเรื่องให้ตรวจสอบนี่ฟังดูน่ากลัวขึ้นเรื่อย ๆ เลย",
       "Vietnamese": "",
       "Indonesian": ""
@@ -12233,96 +12233,224 @@
       "Indonesian": "Ancient Armor diperoleh. Relik yang dipilih telah terdaftar di daftar milikmu. Efeknya tetap berlaku di stage berikutnya."
     },
     {
+      "TEXT_ID": "UI_MS_ARCHIVE",
+      "Korean": "아카이브",
+      "English": "Archive",
+      "Thai": "อาร์ไคฟ์",
+      "Vietnamese": "Lưu trữ",
+      "Indonesian": "Arsip"
+    },
+    {
+      "TEXT_ID": "UI_MS_STORY",
+      "Korean": "스토리",
+      "English": "Story",
+      "Thai": "เนื้อเรื่อง",
+      "Vietnamese": "Cốt truyện",
+      "Indonesian": "Cerita"
+    },
+    {
       "TEXT_ID": "UI_SS_TYPE_TUTORIAL",
       "Korean": "튜토리얼 스테이지",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Tutorial Stage",
+      "Thai": "ด่านสอนเล่น",
+      "Vietnamese": "Màn hướng dẫn",
+      "Indonesian": "Stage Tutorial"
     },
     {
       "TEXT_ID": "UI_SS_TYPE_NORMAL_F",
       "Korean": "일반 스테이지",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Normal Stage",
+      "Thai": "ด่านปกติ",
+      "Vietnamese": "Màn thường",
+      "Indonesian": "Stage Normal"
     },
     {
       "TEXT_ID": "UI_SS_TYPE_EVENT",
       "Korean": "이벤트 스테이지",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Event Stage",
+      "Thai": "ด่านอีเวนต์",
+      "Vietnamese": "Màn sự kiện",
+      "Indonesian": "Stage Event"
     },
     {
       "TEXT_ID": "UI_SS_TYPE_BOSS_F",
       "Korean": "보스 스테이지",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Boss Stage",
+      "Thai": "ด่านบอส",
+      "Vietnamese": "Màn boss",
+      "Indonesian": "Stage Boss"
     },
     {
       "TEXT_ID": "UI_SS_TYPE_MAINTENANCE",
       "Korean": "정비 스테이지",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Maintenance Stage",
+      "Thai": "ด่านซ่อมบำรุง",
+      "Vietnamese": "Màn bảo trì",
+      "Indonesian": "Stage Perawatan"
     },
     {
       "TEXT_ID": "UI_SS_LOOT",
-      "Korean": "{0}가 무언가를 주워왔습니다!",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "Korean": "{0} 무언가를 주워왔습니다!",
+      "English": "{0} found something!",
+      "Thai": "{0} เก็บอะไรบางอย่างมาได้!",
+      "Vietnamese": "{0} đã nhặt được thứ gì đó!",
+      "Indonesian": "{0} menemukan sesuatu!"
     },
     {
       "TEXT_ID": "UI_SS_PRESENT",
       "Korean": "{0}의 선물",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "{0}'s Gift",
+      "Thai": "ของขวัญจาก {0}",
+      "Vietnamese": "Quà của {0}",
+      "Indonesian": "Hadiah dari {0}"
     },
     {
       "TEXT_ID": "UI_SS_SELECTWARNING",
       "Korean": "1가지만 선택할 수 있습니다.",
-      "English": "you can choose only one",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "You can choose only one.",
+      "Thai": "เลือกได้เพียง 1 อย่างเท่านั้น",
+      "Vietnamese": "Chỉ có thể chọn 1.",
+      "Indonesian": "Hanya bisa memilih 1."
     },
     {
       "TEXT_ID": "UI_SS_WALL_HP",
       "Korean": "현재 성벽 체력",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Current Wall HP",
+      "Thai": "HP กำแพงปัจจุบัน",
+      "Vietnamese": "HP tường hiện tại",
+      "Indonesian": "HP Tembok Saat Ini"
     },
     {
       "TEXT_ID": "UI_SS_MAINTENANCE_REPAIR",
       "Korean": "성벽 체력 30% 회복",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Restore Wall HP by 30%",
+      "Thai": "ฟื้นฟู HP กำแพง 30%",
+      "Vietnamese": "Hồi 30% HP tường",
+      "Indonesian": "Pulihkan HP Tembok 30%"
     },
     {
       "TEXT_ID": "UI_SS_MAINTENANCE_RELIC",
       "Korean": "유물 1개 획득",
+      "English": "Obtain 1 Relic",
+      "Thai": "ได้รับวัตถุโบราณ 1 ชิ้น",
+      "Vietnamese": "Nhận 1 di vật",
+      "Indonesian": "Dapatkan 1 Relik"
+    },
+    {
+      "TEXT_ID": "UI_SS_BOSS_INCOUNT",
+      "Korean": "다음 보스",
+      "English": "Next Boss",
+      "Thai": "บอสตัวถัดไป",
+      "Vietnamese": "Boss tiếp theo",
+      "Indonesian": "Boss Berikutnya"
+    },
+    {
+      "TEXT_ID": "UI_NAR_AUTO",
+      "Korean": "자동 진행",
+      "English": "Auto Advance",
+      "Thai": "ดำเนินเรื่องอัตโนมัติ",
+      "Vietnamese": "Tự động",
+      "Indonesian": "Otomatis"
+    },
+    {
+      "TEXT_ID": "UI_NAR_HIDE",
+      "Korean": "숨기기",
+      "English": "Hide",
+      "Thai": "ซ่อน",
+      "Vietnamese": "Ẩn",
+      "Indonesian": "Sembunyikan"
+    },
+    {
+      "TEXT_ID": "UI_NAR_LOG",
+      "Korean": "대화 내역",
+      "English": "Dialogue Log",
+      "Thai": "ประวัติบทสนทนา",
+      "Vietnamese": "Lịch sử hội thoại",
+      "Indonesian": "Riwayat Dialog"
+    },
+    {
+      "TEXT_ID": "UI_NAR_SKIP",
+      "Korean": "스킵",
+      "English": "Skip",
+      "Thai": "ข้าม",
+      "Vietnamese": "Bỏ qua",
+      "Indonesian": "Lewati"
+    },
+    {
+      "TEXT_ID": "UI_LVU_TITLE",
+      "Korean": "Level Up!",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "UI_SS_BOSS_INCOUNT",
-      "Korean": "다음 보스",
+      "TEXT_ID": "UI_LVU_DESC",
+      "Korean": "강화 효과를 선택하세요.<br>해당 효과는 이번 노드에서만 적용됩니다.",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RW_TITLE",
+      "Korean": "Stage Clear!",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RW_DESC",
+      "Korean": "강화 효과를 선택하세요.<br>해당 효과는 <color=red>영구적</color>으로 적용됩니다.",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RESULT_WIN",
+      "Korean": "전투 승리!",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RESULT_LOSE",
+      "Korean": "전투 패배!",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RESULT_DESC",
+      "Korean": "스테이지 결과",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RESULT_TIME",
+      "Korean": "총 플레이 시간 : {0:D2} : {1:D2}",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RESULT_SORT",
+      "Korean": "누적 Sort 수 : {0}",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_RESULT_COMBO",
+      "Korean": "최대 콤보 수 : {0}",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
@@ -12331,50 +12459,130 @@
     {
       "TEXT_ID": "UI_ADS_REROLL",
       "Korean": "광고를 시청하고 1회 리롤",
-      "English": "",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Watch an ad to reroll once",
+      "Thai": "ดูโฆษณาเพื่อสุ่มใหม่ 1 ครั้ง",
+      "Vietnamese": "Xem quảng cáo để làm mới 1 lần",
+      "Indonesian": "Tonton iklan untuk reroll 1 kali"
     },
     {
       "TEXT_ID": "UI_POPUP_YES",
       "Korean": "예",
-      "English": "YES",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "Yes",
+      "Thai": "ใช่",
+      "Vietnamese": "Có",
+      "Indonesian": "Ya"
     },
     {
       "TEXT_ID": "UI_POPUP_NO",
       "Korean": "아니오",
-      "English": "NO",
-      "Thai": "",
-      "Vietnamese": "",
-      "Indonesian": ""
+      "English": "No",
+      "Thai": "ไม่ใช่",
+      "Vietnamese": "Không",
+      "Indonesian": "Tidak"
     },
     {
       "TEXT_ID": "UI_POPUP_CHECK",
       "Korean": "확인하기",
+      "English": "Confirm",
+      "Thai": "ยืนยัน",
+      "Vietnamese": "Xác nhận",
+      "Indonesian": "Konfirmasi"
+    },
+    {
+      "TEXT_ID": "UI_POPUP_START",
+      "Korean": "출격",
+      "English": "Start",
+      "Thai": "เริ่ม",
+      "Vietnamese": "Xuất kích",
+      "Indonesian": "Berangkat"
+    },
+    {
+      "TEXT_ID": "UI_POPUP_BACK",
+      "Korean": "뒤로가기",
+      "English": "Back",
+      "Thai": "กลับ",
+      "Vietnamese": "Quay lại",
+      "Indonesian": "Kembali"
+    },
+    {
+      "TEXT_ID": "UI_POPUP_SS",
+      "Korean": "노드 선택 화면으로",
       "English": "",
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "UI_POPUP_START",
-      "Korean": "출격",
-      "English": "START",
+      "TEXT_ID": "UI_POPUP_NEXT",
+      "Korean": "다음 노드로",
+      "English": "",
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
     },
     {
-      "TEXT_ID": "UI_POPUP_BACK",
-      "Korean": "뒤로가기",
-      "English": "BACK",
+      "TEXT_ID": "UI_POPUP_RETREAT",
+      "Korean": "퇴각하기",
+      "English": "",
       "Thai": "",
       "Vietnamese": "",
       "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_POPUP_RETRY",
+      "Korean": "재도전",
+      "English": "",
+      "Thai": "",
+      "Vietnamese": "",
+      "Indonesian": ""
+    },
+    {
+      "TEXT_ID": "UI_OPT_SOUND",
+      "Korean": "사운드",
+      "English": "Sound",
+      "Thai": "เสียง",
+      "Vietnamese": "Âm thanh",
+      "Indonesian": "Suara"
+    },
+    {
+      "TEXT_ID": "UI_OPT_BGM",
+      "Korean": "배경음",
+      "English": "BGM",
+      "Thai": "BGM",
+      "Vietnamese": "Nhạc nền",
+      "Indonesian": "Musik Latar"
+    },
+    {
+      "TEXT_ID": "UI_OPT_SFX",
+      "Korean": "효과음",
+      "English": "SFX",
+      "Thai": "SFX",
+      "Vietnamese": "Hiệu ứng âm thanh",
+      "Indonesian": "Efek Suara"
+    },
+    {
+      "TEXT_ID": "UI_OPT_VIBRATION",
+      "Korean": "진동",
+      "English": "Vibration",
+      "Thai": "การสั่น",
+      "Vietnamese": "Rung",
+      "Indonesian": "Getaran"
+    },
+    {
+      "TEXT_ID": "UI_OPT_INTENCITY",
+      "Korean": "진동 세기",
+      "English": "Vibration Intensity",
+      "Thai": "ระดับการสั่น",
+      "Vietnamese": "Cường độ rung",
+      "Indonesian": "Intensitas Getaran"
+    },
+    {
+      "TEXT_ID": "UI_OPT_LANGUAGE",
+      "Korean": "언어",
+      "English": "Language",
+      "Thai": "ภาษา",
+      "Vietnamese": "Ngôn ngữ",
+      "Indonesian": "Bahasa"
     }
   ]
 }
