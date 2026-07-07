@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
@@ -9,7 +10,9 @@ public class RewardButtonUI : MonoBehaviour
 {
     [SerializeField] private Image icon;
     [SerializeField] private LocalizeStringEvent RewardName;
+    [SerializeField] private TextMeshProUGUI RewardNameText;
     [SerializeField] private LocalizeStringEvent RewardDesc;
+    [SerializeField] private TextMeshProUGUI RewardDescText;
     [SerializeField] private Sprite defaultImage;
     [SerializeField] private Color SelectedColor;
     [SerializeField] private Color DefalutColor = Color.white;
@@ -70,5 +73,12 @@ public class RewardButtonUI : MonoBehaviour
     public void OnButtonInvoke()
     {
         buttonAction(GetIndex);
+    }
+
+    public void CopyElement(RewardButtonUI ui)
+    {
+        ui.RewardNameText.text = RewardNameText.text;
+        ui.RewardDescText.text = RewardDescText.text;
+        ui.icon.sprite = icon.sprite;
     }
 }
