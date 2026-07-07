@@ -1,352 +1,62 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.Serialization;
 
 public class StageSelectUIController : BaseUIController<StageSelectUIController>
 {
-    [SerializeField] private List<Button> _stageButtons = new();
+    [SerializeField] private List<StageNodeUI> stageNodes = new();
+    public int GetNodesCount => stageNodes.Count;
+
     [SerializeField] private List<Sprite> stageSprites;
-    [SerializeField] private GameObject popupObject;
-    [SerializeField] private RewardUIController rewardPopup;
-    [SerializeField] private TMP_Text popupText;
-    [SerializeField] private TMP_Text popupTypeText;
-    [SerializeField] private Button continuePopup;
-    [SerializeField] private Text continueText;
-    [SerializeField] private Button cancelPopup;
-    [SerializeField] private Color LockColor;
-    [FormerlySerializedAs("OpenColor")] [SerializeField] private Color ClearColor;
+    [SerializeField] private Sprite lockStageSprites;
+    [SerializeField] private Sprite clearStageSprites;
+    [SerializeField] private StagePopUpUI stagePopUpUI;
+    [SerializeField] private Color clearColor;
 
     private int _currentChapter;
 
-    private void Start()
+    public void SetStageNode(int index, StoryStageRawData data, EStageType type, EStageState state)
     {
-        _currentChapter = Service.Get<GameManager>().CurrentChapter;
-        
-        if (popupObject != null) popupObject.SetActive(false);
-        
-        if (cancelPopup != null)
+        if (data == null)
         {
-            cancelPopup.onClick.RemoveAllListeners();
-            cancelPopup.onClick.AddListener(() => { popupObject.SetActive(false); });
+            stageNodes[index].SetActive(false);
+            return;
         }
-        
-        StageMap();
-        Service.Get<SceneController>().OnLoadingComplete += LoadChapterDesign;
-        
-    }
 
-    private void OnDisable()
-    {
-        if(Service.Get<SceneController>())
-            Service.Get<SceneController>().OnLoadingComplete -= LoadChapterDesign;
-    }
-
-    public void StageMap()
-    {
-        var stageData = Service.Get<GameManager>()?.GetStageDataList(_currentChapter);
-       
-        if (stageData == null) return;
-        
-        int loopCount = Mathf.Min(_stageButtons.Count, stageData.Count);
-
-        for (int i = 0; i < loopCount; i++)
+        Sprite sp;
+        switch (state)
         {
-            var data = stageData[i];
-            Button stageButton = _stageButtons[i];
-            Image stageImage = stageButton.GetComponent<Image>();
-            TextMeshProUGUI stageText = stageButton.GetComponentInChildren<TextMeshProUGUI>();
-
-            if (stageText != null) stageText.text = $"{_currentChapter} - {data.Stage}";
-            
-            stageButton.interactable = data.State == StageState.Current || data.State == StageState.OpenBoss || data.State == StageState.OpenSpecial;
-
-            if (stageImage != null)
-            {
-                stageImage.sprite = stageSprites[(int)data.State];
-                if (data.State == StageState.Clear)
-                    stageImage.color = ClearColor;
-                    
-            }
-            stageButton.onClick.RemoveAllListeners();
-            stageButton.onClick.AddListener(() => OnClickStageButton(_currentChapter, data.Stage, data.type));
+            case EStageState.Clear:
+                sp = clearStageSprites;
+                break;
+            case EStageState.Lock:
+                sp = lockStageSprites;
+                break;
+            default:
+                sp = stageSprites[(int)type];
+                break;
         }
+
+        stageNodes[index].SetActive(true)
+            .SetImage(sp)
+            .SetColor(state == EStageState.Clear ? clearColor : Color.white)
+            .SetButtonAction(state != EStageState.Clear ? () => { stagePopUpUI.OpenStagePopup(data, type); } : null)
+            .SetText(data.CHAPTER, data.STAGE);
     }
 
-    private void LoadChapterDesign()
+    public void SetClearNode(int index)
     {
-        Addressables.LoadAssetAsync<GameObject>($"Grid/Chapter{_currentChapter}").Completed += asset =>
-        {
-            if (asset.Status == AsyncOperationStatus.Succeeded)
-            {
-                GameObject Map = Instantiate(asset.Result);
-                GridData gd = Map.GetComponent<GridData>();
-                Camera.main.transform.position = gd.GetCameraPos;
-                Camera.main.orthographicSize = gd.GetOrthographicSize;
-            }
-        };
+        stageNodes[index-1].SetImage(clearStageSprites).SetColor(clearColor);
     }
 
-
-    private void OnClickStageButton(int chapter, int stage, StageType type)
+    public void SetOpenNode(int index, EStageType type)
     {
-        if (type == StageType.Normal || type == StageType.Boss)
-        {
-            if (popupObject != null)
-            {
-                popupObject.SetActive(true);
-                
-                if (popupTypeText != null) popupTypeText.text = $"{type.ToString()}";
-
-                if (cancelPopup != null) cancelPopup.gameObject.SetActive(true);
-
-                if (continuePopup != null)
-                {
-                    if (continueText != null) continueText.text = "start";
-                }
-                
-                if (popupText != null) popupText.text = $"{chapter} - {stage} start?";
-
-                if (continuePopup != null)
-                {
-                    continuePopup.onClick.RemoveAllListeners();
-                    continuePopup.onClick.AddListener(() =>
-                    {
-                        popupObject.SetActive(false);
-                        Service.Get<GameManager>()?.EnterStage(chapter, stage);
-                    });
-                }
-            }
-        }
-        else
-        {
-            if (popupTypeText != null) popupTypeText.text = $"{type.ToString()}";
-            
-            Service.Get<GameManager>()?.EnterStage(chapter, stage);
-
-            if (type == StageType.Event)
-            {
-                if (rewardPopup != null)
-                {
-                    rewardPopup.SetRelicReward(OnRewardSelect);
-                }
-            }
-            else if (type == StageType.Maintenance)
-            {
-                if (rewardPopup != null)
-                {
-                     rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
-                }
-            }
-        }
+        stageNodes[index-1].SetImage(stageSprites[(int)type]);
     }
 
-    private void RepairRampart()
-    {
-        if (popupObject != null)
-        {
-            popupObject.SetActive(true);
-            if (popupText != null) popupText.text = "성벽 체력 회복";
-            
-            if (cancelPopup != null) cancelPopup.gameObject.SetActive(false);
-
-            if (continuePopup != null)
-            {
-                if (continueText != null) continueText.text = "continue";
-                
-                continuePopup.onClick.RemoveAllListeners();
-                continuePopup.onClick.AddListener(() =>
-                {
-                    popupObject.SetActive(false);
-                    Service.Get<GameManager>()?.RepairRampart();
-                    Service.Get<GameManager>()?.ClearStage();
-                    StageMap();
-                });
-            }
-        }
-    }
-
-    private void RandomReward()
-    {
-        if (rewardPopup != null)
-        {
-            rewardPopup.SetRelicReward(OnRewardSelect);
-        }
-    }
-    
-    public void OnRewardSelect()
-    {
-        if (popupObject != null)
-        {
-            popupObject.SetActive(true)
-                ;
-            if (popupText != null) popupText.text = "유물 획득";
-
-            if (cancelPopup != null) cancelPopup.gameObject.SetActive(false);
-            
-            if (continuePopup != null)
-            {
-                if (continueText != null) continueText.text = "continue";
-                
-                continuePopup.onClick.RemoveAllListeners();
-                continuePopup.onClick.AddListener(() => 
-                {
-                    popupObject.SetActive(false);
-                    Service.Get<GameManager>()?.ClearStage();
-                    StageMap();
-                });
-            }
-        }
-    }
-
-    public void ShowReward(StageType type)
-    {
-        if (popupTypeText != null) popupTypeText.text = type == StageType.Event ? "EVENT" : "MAINTENANCE";
-
-        if (rewardPopup != null)
-        {
-            if (type == StageType.Event) rewardPopup.SetRelicReward(OnRewardSelect);
-            // else if (type == StageType.Maintenance) rewardPopup.SetMaintenanceReward(RepairRampart, RandomReward);
-        }
-    }
-    
     public void OnOpenSettingUI()
     {
         Service.Get<UIManager>()?.OpenOption();
     }
-    
-    // 추후 무한모드 제작시 이용 가능성 정도는 있음
-    #region  챕터
-
-    
-    // [Header("챕터 설정")]
-    // [SerializeField] private GameObject chapterSelectPrefab;
-    // [SerializeField] private Transform chapterSelect;
-    //
-    // [Header("스테이지 설정")]
-    // [SerializeField] private GameObject stageSelectPrefab;
-    // [SerializeField] private Transform stageSelect;
-    
-    // public void ChapterButtons()
-    // {
-    //     if (chapterSelect != null) chapterSelect.gameObject.SetActive(true);
-    //     if (stageSelect != null) stageSelect.gameObject.SetActive(false);
-    //     
-    //     foreach (Transform chapter in chapterSelect) DestroyImmediate(chapter.gameObject);
-    //     
-    //     var chapterList = Service.Get<DataManager>()?.MapTable.data.Select(x => x.CHAPTER).Distinct().OrderBy(chapter => chapter).ToList();
-    //
-    //     foreach (var chapter in chapterList)
-    //     {
-    //         GameObject chapterButtonObj = Instantiate(chapterSelectPrefab, chapterSelect);
-    //         
-    //         Button chapterButton = chapterButtonObj.GetComponent<Button>();
-    //         Image chapterImage = chapterButtonObj.GetComponent<Image>();
-    //         TextMeshProUGUI chapterText = chapterButtonObj.GetComponentInChildren<TextMeshProUGUI>();
-    //
-    //         if (chapterText != null) chapterText.text = $"{chapter} Chapter";
-    //
-    //         if (chapter > _currentChapter)
-    //         {
-    //             if (chapterButton != null) chapterButton.interactable = false;
-    //             if (chapterImage != null) chapterImage.color = new Color(0.6f, 0f, 0f);
-    //         }
-    //         else if (chapter < _currentChapter)
-    //         {
-    //             if (chapterButton != null) chapterButton.interactable = true;
-    //             if (chapterImage != null) chapterImage.color = Color.blue;
-    //         }
-    //         else
-    //         {
-    //             if (chapterButton != null) chapterButton.interactable = true;
-    //             if (chapterImage != null) chapterImage.color = new Color(0.3f, 1f, 0.3f);
-    //         }
-    //         if (chapterButton != null)
-    //         {
-    //             chapterButton.onClick.RemoveAllListeners();
-    //             chapterButton.onClick.AddListener(() => ShowStages(chapter));
-    //         }
-    //     }
-    // }
-
-    #endregion
-    #region 스테이지
-
-    // public void ShowStages(int chapter)
-    // {
-    //     _selectChapter = chapter;
-    //     
-    //     if (chapterSelect != null) chapterSelect.gameObject.SetActive(false);
-    //     if (stageSelect != null) stageSelect.gameObject.SetActive(true);
-    //     
-    //     foreach (Transform stage in stageSelect) DestroyImmediate(stage.gameObject);
-    //     
-    //     var stageList = Service.Get<DataManager>()?.MapTable.data.Where(x => x.CHAPTER == chapter).Select(x => x.STAGE).Distinct().OrderBy(stage => stage).ToList();
-    //
-    //     int bossStageInChapter = 0;
-    //     if (stageList != null &&  stageList.Count > 0)
-    //     {
-    //         bossStageInChapter = stageList.Max();
-    //     }
-    //
-    //     foreach (var stage in stageList)
-    //     {
-    //         GameObject stageButtonObj = Instantiate(stageSelectPrefab, stageSelect);
-    //         
-    //         Button stageButton = stageButtonObj.GetComponent<Button>();
-    //         Image stageImage = stageButtonObj.GetComponent<Image>();
-    //         TextMeshProUGUI stageText = stageButtonObj.GetComponentInChildren<TextMeshProUGUI>();
-    //         
-    //         StageState state = CurrentStageState(chapter, stage, bossStageInChapter);
-    //         
-    //         if (stageText != null) stageText.text = $"{_selectChapter} - {stage} Stage";
-    //
-    //         if (stageButton != null)
-    //         {
-    //             stageButton.interactable = state != StageState.Lock;
-    //
-    //             if (stageImage != null)
-    //             {
-    //                 switch (state)
-    //                 {
-    //                     case StageState.Lock:
-    //                         stageImage.color = new Color(0.6f, 0f, 0f);
-    //                         break;
-    //                     case StageState.Clear:
-    //                         stageImage.color = Color.blue;
-    //                         break;
-    //                     case StageState.Current:
-    //                         stageImage.color = new Color(0.3f, 1f, 0.3f);
-    //                         break;
-    //                     case StageState.Special:
-    //                         stageImage.color = Color.yellow;
-    //                         break;
-    //                     case StageState.Boss:
-    //                         stageImage.color = new Color(0.86f, 0.63f, 0.86f);
-    //                         break;
-    //                 }
-    //             }
-    //             
-    //             stageButton.onClick.RemoveAllListeners();
-    //             stageButton.onClick.AddListener(() => { _selectStage = stage; OnNextScene();});
-    //         }
-    //     }
-    // }
-    //
-    // private StageState CurrentStageState(int chapter, int stage, int bossStage)
-    // {
-    //     if (chapter > _currentChapter || (chapter == _currentChapter && stage > _currentStage)) return StageState.Lock;
-    //     else if (chapter < _currentChapter || (chapter == _currentChapter && stage < _currentStage)) return StageState.Clear;
-    //     else if (stage == bossStage) return StageState.Boss;
-    //     
-    //     return StageState.Current;
-    // }
-
-    #endregion
 }
 
 public enum StageState
@@ -360,11 +70,18 @@ public enum StageState
     OpenBoss
 }
 
-public enum StageType
+public enum EStageState
 {
-    Tutorial,
-    Normal,
-    Event,
-    Maintenance,
-    Boss
+    Current,
+    Lock,
+    Clear
+}
+
+public enum EStageType
+{
+    TUTORIAL,
+    NORMAL_F,
+    EVENT,
+    MAINTENANCE,
+    BOSS_F
 }
