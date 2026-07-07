@@ -11,6 +11,29 @@ public class TimeManager : BaseManager<TimeManager>
     
     public bool IsPaused => pauseCount > 0;
 
+    private float _battleTime = 0f;
+    public float BattleTime => _battleTime;
+
+    private void Update()
+    {
+        var gameManager = Service.Get<GameManager>();
+        if (gameManager != null && gameManager.CurrentState.Value == GameState.Wave)
+        {
+            UpdateBattleTime();
+        }
+    }
+
+    private void UpdateBattleTime()
+    {
+        _battleTime += Time.deltaTime;
+        
+        int min = (int)BattleTime / 60;
+        int sec = (int)BattleTime % 60;
+        string time = string.Format("{0:D2}:{1:D2}", min, sec);
+        
+        Debug.Log($"{time}");
+    }
+
     public int ChangeSpeed()
     {
         if (pauseCount == 0)
@@ -59,5 +82,6 @@ public class TimeManager : BaseManager<TimeManager>
         saveTimeScale = timeScaleSpeeds[0];
         pauseCount = 0;
         Time.timeScale = timeScaleSpeeds[0];
+        _battleTime = 0f;
     }
 }
