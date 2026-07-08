@@ -73,6 +73,8 @@ namespace UI
 
         public void OnOpenSettingUI()
         {
+            if (Service.Get<GameManager>().CurrentState.Value == GameState.Clear
+                || Service.Get<GameManager>().CurrentState.Value == GameState.GameOver) return;
             Service.Get<UIManager>()?.OpenOption(ESettingPopupType.Battle);
         }
 

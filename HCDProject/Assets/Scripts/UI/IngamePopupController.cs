@@ -17,8 +17,11 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
 
     public void OnSetDangerBorder(float ratio)
     {
-        if (ratio < 0.2f)
+        if (ratio < 0.3f)
+        {
+            Service.Get<VibrationManager>()?.TriggerVibration();
             DangerBorder.SetActive(true);
+        }
         else
             DangerBorder.SetActive(false);
     }
@@ -27,7 +30,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     {
         StartCoroutine(ShowLogo(ClearLogo, () =>
         {
-            var currentStageData = Service.Get<GameManager>().currentStageData;
+            var currentStageData = Service.Get<GameManager>().beforeStageData;
             Service.Get<GameManager>().CheckAndStartNarrative(currentStageData, false, ()=>OnRewardPopup(OnClearPopup));
         }));
     }

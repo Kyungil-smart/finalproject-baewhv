@@ -707,14 +707,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -465
       objectReference: {fileID: 0}
-    - target: {fileID: 3355807629820368893, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-      propertyPath: bgmVolumeSlider
-      value: 
-      objectReference: {fileID: 248910783314067609}
-    - target: {fileID: 3355807629820368893, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-      propertyPath: sfxVolumeSlider
-      value: 
-      objectReference: {fileID: 7990878835938829823}
     - target: {fileID: 3623177599523280899, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -791,10 +783,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -115
       objectReference: {fileID: 0}
-    - target: {fileID: 8849529797426181237, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 8993362197314009043, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -822,17 +810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a80dc25714a8d941bba8a7ea5c819e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingPopupUi
---- !u!114 &248910783314067609 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3412568179321999330, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-  m_PrefabInstance: {fileID: 3183956581833838459}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!224 &372366944007438407 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2955846140510097212, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}

@@ -82,7 +82,11 @@ public class ClearPopupUI : MonoBehaviour
         Service.Get<UIManager>()?.GetUI<InGameTopUIController>()?.GetCurrentKill(killCountText);
 
         positiveButton.onClick.RemoveAllListeners();
-        positiveButton.onClick.AddListener(Service.Get<GameManager>().RestartStage);
+        positiveButton.onClick.AddListener(()=>
+        {
+            gameObject.SetActive(false);    
+            Service.Get<GameManager>().RestartStage();
+        });
     }
 
     private void SetTime()
