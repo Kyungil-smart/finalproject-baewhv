@@ -16,7 +16,7 @@ public class HP : BaseEffect
             if (skill.SKILL_AT == ETargetType.ALLY)
             {
                 // 사제 힐 로직
-                target.SetHeal((int)(user.Stats._attackPower * skill.SKILL_AB_02));
+                target.SetHeal((int)(user.CurrentStats._attackPower * skill.SKILL_AB_02));
             }
 
             return;
