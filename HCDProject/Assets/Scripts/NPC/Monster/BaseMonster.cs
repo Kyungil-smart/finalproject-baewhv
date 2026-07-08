@@ -45,10 +45,10 @@ public class BaseMonster : BaseController
         gameObject.name = Stat.MONSTER_NAME;
         CurrentHp.MaxValue = Stat.HP;
         CurrentHp.Value = CurrentHp.MaxValue;
-        _stats._maxHp = Stat.HP;
-        _stats._attackPower = Stat.ATK;
-        _stats._defense = Stat.DEF;
-        _stats._moveSpeed = Stat.MOVE_SPEED;
+        _currentStats._maxHp = Stat.HP;
+        _currentStats._attackPower = Stat.ATK;
+        _currentStats._defense = Stat.DEF;
+        _currentStats._moveSpeed = Stat.MOVE_SPEED;
         Movement.Agent.speed = Stat.MOVE_SPEED;
     }
 
@@ -188,7 +188,7 @@ public class BaseMonster : BaseController
 
     private void OnAttacked(int value)
     {
-        if (value < _stats._maxHp)
+        if (value < _currentStats._maxHp)
         {
             if (!_isActive)
             {

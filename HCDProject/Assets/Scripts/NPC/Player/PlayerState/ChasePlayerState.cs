@@ -31,7 +31,7 @@ public class ChasePlayerState : PlayerBaseState
             _owner.GetCurrentTarget.GetTargetObject.transform.position)
             - _owner.GetRadius() - _owner.GetCurrentTarget.GetRadius();
 
-        if (dist > _owner.Stats._chaseRange)
+        if (dist > _owner.CurrentStats._chaseRange)
         {
             _owner.SetCurrentTarget(null);
             _owner.Movement.Stop();
