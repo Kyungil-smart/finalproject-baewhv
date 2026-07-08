@@ -473,6 +473,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         int index = Array.IndexOf(_characters, character);
         if (_coroutines[index] != null)
             StopCoroutine(_coroutines[index]);
+        _slot[index].SetDeathCount(0, _revaivalTime);
         character.gameObject.SetActive(true);
         character.state.ChangeState(character.spawn);
     }
