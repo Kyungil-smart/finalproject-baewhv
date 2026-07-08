@@ -21,8 +21,6 @@ public class BaseSkill : MonoBehaviour
     public bool isIgnoreDef = false;
     public bool isReduction = false;
 
-    private CharacterStats _originStats;
-
     #region skillList
     
     private ATTACK_BASE _attackBase;
@@ -49,7 +47,6 @@ public class BaseSkill : MonoBehaviour
 
         isDurationActive = false;
         count = 0;
-        _originStats = new CharacterStats();
 
         #region skillListInit
 
@@ -313,7 +310,7 @@ public class BaseSkill : MonoBehaviour
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
 
-        var stat = targetObject.Stats;
+        var stat = targetObject.CurrentStats;
         
         while (_durateTimer <= skill.SKILL_DURATION)
         {
@@ -327,33 +324,27 @@ public class BaseSkill : MonoBehaviour
     }
     private IEnumerator SpeedDebuffCor(ITargetable target, Skill skill, float value)
     {
+        Debug.Log("이동속도 공격속도 디버프 스킬 발동");
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
         
-        var stat = targetObject.Stats;
-
-        _originStats = stat;
+        var stat = targetObject.CurrentStats;
         
         stat._attackSpeed *= (1f - value / 100f);
         stat._moveSpeed *= (1f - value / 100f);
 
-        targetObject.Stats = stat;
+        targetObject.CurrentStats = stat;
         targetObject.Movement.Agent.speed = stat._moveSpeed;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
         
-        stat = _originStats;
-        
-        targetObject.Stats = stat;
-        targetObject.Movement.Agent.speed = _originStats._moveSpeed;
+        targetObject.CurrentStats = targetObject.BaseStats;
+        targetObject.Movement.Agent.speed = targetObject.BaseStats._moveSpeed;
     }
     private IEnumerator SetCcCor(ITargetable target, Skill skill)
     {
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
-
-        
-        _originStats._moveSpeed = targetObject.Movement.Agent.speed;
         
         targetObject.TryGetComponent(out BaseCharacter player);
         
@@ -365,35 +356,43 @@ public class BaseSkill : MonoBehaviour
         
         player.isCC = false;
         isDurationActive = false;
-        targetObject.Movement.Agent.speed = _originStats._moveSpeed;
+        targetObject.Movement.Agent.speed = targetObject.BaseStats._moveSpeed;
     }
     private IEnumerator InvisibleCor(ITargetable target, Skill skill)
     {
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
 
-        var targetSprite = target.GetTargetObject.GetComponentInChildren<SpriteRenderer>().color;
-        targetSprite.a = 0.5f;
-        // targetObject.isInvincible = true;
+        SpriteRenderer targetSprite = target.GetTargetObject.GetComponentInChildren<SpriteRenderer>();
+        
+        var color = targetSprite.color;
+
+        color.a = 0.5f;
+        
+        targetSprite.color = color;
+        targetObject.isInvincible = true;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
 
-        targetSprite.a = 1f;
-        // targetObject.isInvincible = false;
+        color.a = 1f;
+        
+        targetSprite.color = color;
+        targetObject.isInvincible = false;
     }
     private IEnumerator ArcherActiveCor(ITargetable target, Skill skill, float value)
     {
-        target.GetTargetObject.TryGetComponent(out BaseCharacter targetObject);
+        target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
         
-        var stat = targetObject.Stats;
-
-        _originStats._attackSpeed = stat._attackSpeed;
+        var stat = targetObject.CurrentStats;
+        
         stat._attackSpeed *= (1f - value / 100f);
         attackHitCount = 3;
+
+        targetObject.CurrentStats = stat;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
 
-        stat._attackSpeed = _originStats._attackSpeed;
+        targetObject.CurrentStats = targetObject.BaseStats;
         attackHitCount = 1;
     }
     
