@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 7572410551627901178}
   - component: {fileID: 446121578665036204}
   - component: {fileID: 1433877098299586977}
+  - component: {fileID: 5903048169829920149}
+  - component: {fileID: 6592365115084561272}
+  - component: {fileID: 5963775640274734573}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -54,34 +57,6 @@ MonoBehaviour:
   - {fileID: 5412839248815489019}
   - {fileID: 7572410551627901178}
   sfx: {fileID: 446121578665036204}
-  _bgmClip:
-  - {fileID: 8300000, guid: 6443b59dbdd92f14e8f911ff88e9c9f1, type: 3}
-  - {fileID: 8300000, guid: 028c1527a9a69bb4599d77ddfc1430f7, type: 3}
-  - {fileID: 8300000, guid: ad1fc2f88eb194749962edba865e4e63, type: 3}
-  - {fileID: 8300000, guid: d62e56ec2ba99c249baae13e434db9d9, type: 3}
-  - {fileID: 8300000, guid: 9e7726e27e59a9a4d9dcb8bb9eca220d, type: 3}
-  - {fileID: 8300000, guid: 19a9c5591b0986448b7c0d9c97b1bf05, type: 3}
-  - {fileID: 8300000, guid: 23533cae2fad7e842a57e0e275fbeab7, type: 3}
-  _sfxClip:
-  - {fileID: 8300000, guid: 3130f1fcb3c77d54786d54bfc18c7b2e, type: 3}
-  - {fileID: 8300000, guid: 01c002dd652d911459155071f9be155f, type: 3}
-  - {fileID: 8300000, guid: 137dc51853b982e48a9b96050df74b2a, type: 3}
-  - {fileID: 8300000, guid: 3d7b024ce58e9ac4284014853bf98101, type: 3}
-  - {fileID: 8300000, guid: 1bcc0343b1b46624599488387d20b896, type: 3}
-  - {fileID: 8300000, guid: bbbca0f2d1e649c43b909ed705f0b49c, type: 3}
-  - {fileID: 8300000, guid: 4bbb2e7e8d6c2b74daefad48a5e68734, type: 3}
-  - {fileID: 8300000, guid: 81f7a96bd16260447ae58cc3803d3129, type: 3}
-  - {fileID: 8300000, guid: 6dc3576d51837494da8274bc4dc7114b, type: 3}
-  - {fileID: 8300000, guid: e7557f207bcf193458c64815b5956519, type: 3}
-  - {fileID: 8300000, guid: e90e842958d160b43bcd55843dc8f767, type: 3}
-  - {fileID: 8300000, guid: 638c8e41857e5ee43850c73a82c9aa08, type: 3}
-  - {fileID: 8300000, guid: 71ee11f0ef321a5498984e567a256306, type: 3}
-  - {fileID: 8300000, guid: 9a9ad5e97b1558348bbd719a516bd74d, type: 3}
-  - {fileID: 8300000, guid: a9ee871432fb4214fbd898bbcd6a319d, type: 3}
-  - {fileID: 8300000, guid: 84714878d9ebf33428a4d2b71207ea04, type: 3}
-  - {fileID: 8300000, guid: 8b49a5cf23005e34fbcac7b9f82237b4, type: 3}
-  - {fileID: 8300000, guid: 215ce01a17a7d2c418632dbf29f2d89b, type: 3}
-  - {fileID: 8300000, guid: a1df186b50877d347833182d92c75f93, type: 3}
 --- !u!82 &5412839248815489019
 AudioSource:
   m_ObjectHideFlags: 0
@@ -470,3 +445,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5903048169829920149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279058726698747068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d339852c1759ae74698abadb4deadcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TouchSound
+  _playerInput: {fileID: 6592365115084561272}
+  _audioSource: {fileID: 446121578665036204}
+--- !u!114 &6592365115084561272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279058726698747068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 7ca74c15a8606f245a353122efa8adbe, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: TouchPanel
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &5963775640274734573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279058726698747068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74e1718860e1d5498b5b6c8c51b365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VibrationManager
+  _eManager: 0
