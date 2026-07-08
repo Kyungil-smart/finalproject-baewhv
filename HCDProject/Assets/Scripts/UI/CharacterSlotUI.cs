@@ -104,6 +104,7 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     /// <param name="value"></param>
     public void SetDeathCount(float current, float max)
     {
+        DeathCountImage.gameObject.SetActive(true);
         DeathCountImage.fillAmount = Mathf.Clamp01(current / max);
         deathTimerText.text = $"{current:F1} s";
     }
@@ -111,6 +112,7 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void SetAlive(bool isAlive)
     {
         deathTimerText.gameObject.SetActive(!isAlive);
+        DeathCountImage.gameObject.SetActive(false);
         hpText.gameObject.SetActive(isAlive);
     }
 
