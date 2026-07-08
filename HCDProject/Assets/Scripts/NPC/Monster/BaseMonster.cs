@@ -144,8 +144,13 @@ public class BaseMonster : BaseController
 
     private ITargetable FindTarget()
     {
-        ITargetable target = Service.Get<GameManager>()._wall;
+        ITargetable target = null;
 
+        if (Service.Get<GameManager>()?._wall != null && !Service.Get<GameManager>()._wall.isBroken)
+        {
+            target = Service.Get<GameManager>()._wall;
+        }
+        
         float minDistance = float.MaxValue;
 
         foreach (BaseCharacter player in _characters)

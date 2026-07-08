@@ -20,6 +20,8 @@ public class MonsterChaseState : IState
 
     public void Update()
     {
+        if (_controller.GetCurrentTarget == null) return;
+        
         if (Vector3.Distance(_controller.transform.position, _controller.Target)
               <= _controller.BaseSkill.skills[0].SKILL_IS + _controller.GetRadius() 
                                                           + _controller.GetCurrentTarget.GetRadius())

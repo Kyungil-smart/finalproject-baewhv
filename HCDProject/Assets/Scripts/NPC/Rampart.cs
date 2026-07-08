@@ -7,6 +7,8 @@ public class Rampart : MonoBehaviour, ITargetable
     public GameObject GetTargetObject { get; set; }
     
     [field: SerializeField] public RatioIntValue CurrentHp { get; set; }
+
+    public bool isBroken;
     
     public void Awake()
     {
@@ -27,6 +29,7 @@ public class Rampart : MonoBehaviour, ITargetable
         if (CurrentHp == null) return;
         
         CurrentHp.AddListener(WallDestroy);
+        isBroken = false;
 
         var popup = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
         if (popup != null) CurrentHp.AddRatioListener(popup.OnSetDangerBorder);
@@ -73,6 +76,7 @@ public class Rampart : MonoBehaviour, ITargetable
     {
         if (value <= 0)
         {
+            isBroken = true;
             Service.Get<GameManager>().EndStage();
         }
     }
