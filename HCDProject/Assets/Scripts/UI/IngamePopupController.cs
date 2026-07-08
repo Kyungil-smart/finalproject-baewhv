@@ -30,7 +30,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     {
         StartCoroutine(ShowLogo(ClearLogo, () =>
         {
-            var currentStageData = Service.Get<GameManager>().currentStageData;
+            var currentStageData = Service.Get<GameManager>().beforeStageData;
             Service.Get<GameManager>().CheckAndStartNarrative(currentStageData, false, ()=>OnRewardPopup(OnClearPopup));
         }));
     }
