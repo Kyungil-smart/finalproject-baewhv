@@ -236,7 +236,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     private void OnGameStateChanged(GameState state) // 게임 상태 변화 감지 → 상태별 처리
     {
         if (state == GameState.Sort) ResetSortBuffs();
-
+        if (state == GameState.GameOver) StopAllReviveCoroutines();
         SetCharacterBattleState(state != GameState.Sort);
     }
 
@@ -462,14 +462,28 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         }
     }
 
+    public void StopAllReviveCoroutines() // 게임오버 시 부활중단
+    {
+        for (int i = 0; i < _coroutines.Length; i++)
+        {
+            if (_coroutines[i] != null)
+            {
+                StopCoroutine(_coroutines[i]);
+                _coroutines[i] = null;
+            }
+        }
+    }
+
     public void StartRevive(BaseCharacter character)
     {
+        if (Service.Get<GameManager>().CurrentState.Value == GameState.GameOver) return;
         int index = Array.IndexOf(_characters, character);
         _coroutines[index] = StartCoroutine(ReviveCoroutine(character, index));
     }
 
     public void ImmediateRevive(BaseCharacter character) // 플레이어 부활실행
     {
+        if (Service.Get<GameManager>().CurrentState.Value == GameState.GameOver) return;
         int index = Array.IndexOf(_characters, character);
         if (_coroutines[index] != null)
             StopCoroutine(_coroutines[index]);
