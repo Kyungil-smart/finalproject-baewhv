@@ -49,5 +49,6 @@ public class ChasePlayerState : PlayerBaseState
         {
             _owner.Movement.Move(_owner.GetCurrentTarget.GetTargetObject.transform.position);
         }
+        _owner.FaceTarget();
     }
 }

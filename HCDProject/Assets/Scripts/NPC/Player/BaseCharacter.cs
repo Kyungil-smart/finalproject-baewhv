@@ -195,6 +195,12 @@ public class BaseCharacter : BaseController
         if (_activeSkillCoolValue == null) return;
         _activeSkillCoolValue.Value = result;
     }
+    public void FaceTarget()
+    {
+        if (GetCurrentTarget == null || !GetCurrentTarget.IsAlive()) return;
+        Vector2 target = (GetCurrentTarget.GetTargetObject.transform.position - transform.position).normalized;
+        Movement.LastDir = target;
+    }
     public void BindHpUI(UnityAction<int, int> action) // 슬롯 HP, 캐릭터 HP바 UI 구독
     {
         int maxValue = _currentStats._maxHp;
