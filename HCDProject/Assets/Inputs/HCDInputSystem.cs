@@ -85,15 +85,48 @@ public partial class @HCDInputSystem: IInputActionCollection2, IDisposable
     public @HCDInputSystem()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""version"": 0,
+    ""version"": 1,
     ""name"": ""HCDInputSystem"",
-    ""maps"": [],
+    ""maps"": [
+        {
+            ""name"": ""TouchPanel"",
+            ""id"": ""418dd7e0-7e4b-4da9-9fbd-51772b8c445e"",
+            ""actions"": [
+                {
+                    ""name"": ""Touch"",
+                    ""type"": ""Button"",
+                    ""id"": ""1eb2aac9-7518-40b3-aec7-6e2eb9efaf0f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fd83babd-87b5-4f83-9d54-a9acffcd090a"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Touch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        }
+    ],
     ""controlSchemes"": []
 }");
+        // TouchPanel
+        m_TouchPanel = asset.FindActionMap("TouchPanel", throwIfNotFound: true);
+        m_TouchPanel_Touch = m_TouchPanel.FindAction("Touch", throwIfNotFound: true);
     }
 
     ~@HCDInputSystem()
     {
+        UnityEngine.Debug.Assert(!m_TouchPanel.enabled, "This will cause a leak and performance issues, HCDInputSystem.TouchPanel.Disable() has not been called.");
     }
 
     /// <summary>
@@ -164,5 +197,116 @@ public partial class @HCDInputSystem: IInputActionCollection2, IDisposable
     public int FindBinding(InputBinding bindingMask, out InputAction action)
     {
         return asset.FindBinding(bindingMask, out action);
+    }
+
+    // TouchPanel
+    private readonly InputActionMap m_TouchPanel;
+    private List<ITouchPanelActions> m_TouchPanelActionsCallbackInterfaces = new List<ITouchPanelActions>();
+    private readonly InputAction m_TouchPanel_Touch;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "TouchPanel".
+    /// </summary>
+    public struct TouchPanelActions
+    {
+        private @HCDInputSystem m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public TouchPanelActions(@HCDInputSystem wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "TouchPanel/Touch".
+        /// </summary>
+        public InputAction @Touch => m_Wrapper.m_TouchPanel_Touch;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_TouchPanel; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="TouchPanelActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(TouchPanelActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="TouchPanelActions" />
+        public void AddCallbacks(ITouchPanelActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TouchPanelActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TouchPanelActionsCallbackInterfaces.Add(instance);
+            @Touch.started += instance.OnTouch;
+            @Touch.performed += instance.OnTouch;
+            @Touch.canceled += instance.OnTouch;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="TouchPanelActions" />
+        private void UnregisterCallbacks(ITouchPanelActions instance)
+        {
+            @Touch.started -= instance.OnTouch;
+            @Touch.performed -= instance.OnTouch;
+            @Touch.canceled -= instance.OnTouch;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="TouchPanelActions.UnregisterCallbacks(ITouchPanelActions)" />.
+        /// </summary>
+        /// <seealso cref="TouchPanelActions.UnregisterCallbacks(ITouchPanelActions)" />
+        public void RemoveCallbacks(ITouchPanelActions instance)
+        {
+            if (m_Wrapper.m_TouchPanelActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="TouchPanelActions.AddCallbacks(ITouchPanelActions)" />
+        /// <seealso cref="TouchPanelActions.RemoveCallbacks(ITouchPanelActions)" />
+        /// <seealso cref="TouchPanelActions.UnregisterCallbacks(ITouchPanelActions)" />
+        public void SetCallbacks(ITouchPanelActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TouchPanelActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TouchPanelActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="TouchPanelActions" /> instance referencing this action map.
+    /// </summary>
+    public TouchPanelActions @TouchPanel => new TouchPanelActions(this);
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "TouchPanel" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="TouchPanelActions.AddCallbacks(ITouchPanelActions)" />
+    /// <seealso cref="TouchPanelActions.RemoveCallbacks(ITouchPanelActions)" />
+    public interface ITouchPanelActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Touch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTouch(InputAction.CallbackContext context);
     }
 }
