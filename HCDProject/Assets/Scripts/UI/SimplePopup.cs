@@ -37,7 +37,7 @@ public class SimplePopup : MonoBehaviour
         negativeButton.onClick.AddListener(() =>
         {
             gameObject.SetActive(false);
-            negative.Invoke();
+            negative?.Invoke();
         });
     }
 }

@@ -75,5 +75,16 @@ namespace UI
         {
             Service.Get<UIManager>()?.OpenOption(ESettingPopupType.Battle);
         }
+
+        public void GetCurrentWave(Slider slider, TextMeshProUGUI stage, TextMeshProUGUI wave)
+        {
+            slider.value = waveSlider.value;
+            stage.text = stageText.text;
+            wave.text = waveText.text;
+        }
+        public void GetCurrentKill(TextMeshProUGUI text)
+        {
+            text.text = monsterCountText.text;
+        }
     }
 }
