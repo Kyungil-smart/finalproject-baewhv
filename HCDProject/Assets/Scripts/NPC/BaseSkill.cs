@@ -75,7 +75,7 @@ public class BaseSkill : MonoBehaviour
 
     public void UseSkill(int index)
     {
-        if (_controller.GetCurrentTarget == null) return;
+        if (_controller.GetCurrentTarget == null && skills[index].SKILL_ABT_01 != ESkillAbilityType.MAX_HP_P) return;
 
         // ABT_01이 NONE이면 실행할 효과 없음
         if (skills[index].SKILL_ABT_01 == ESkillAbilityType.NONE) return;
