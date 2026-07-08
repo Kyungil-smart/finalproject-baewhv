@@ -66,5 +66,6 @@ public class AttackPlayerState : PlayerBaseState
                 _owner.SetCurrentTarget(newTarget);  // 새 타겟으로 교체
             }
         }
+        _owner.FaceTarget();
     }
 }

@@ -10,6 +10,12 @@ public class CharacterMovement : MonoBehaviour
     private Animator _anim;
     private Vector2 _lastDir;
 
+    public Vector2 LastDir
+    {
+        get => _lastDir;
+        set => _lastDir = value;
+    }
+
     private bool _isMove = true;
     public bool IsMove => _isMove;
     
