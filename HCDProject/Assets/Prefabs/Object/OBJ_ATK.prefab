@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: -355603341973847790}
   - component: {fileID: 2588605017424034424}
   - component: {fileID: 8645989559676124500}
+  - component: {fileID: 1780487268439833798}
   m_Layer: 5
   m_Name: OBJ_ATK
   m_TagString: Untagged
@@ -178,3 +179,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIGlow
   glowImage: {fileID: 495702075868719453}
+--- !u!114 &1780487268439833798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8570466454123474244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33c19fec9a8332418d86fc77a0a6e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OtherSoundButton
+  _buttonType: 2
