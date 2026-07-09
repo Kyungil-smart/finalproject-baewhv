@@ -243,7 +243,7 @@ public class DataManager : BaseManager<DataManager>
             }
         }
 
-        if (Service.Get<RelicManager>() != null) Service.Get<RelicManager>().SetRelic(rewardDict);
+        // if (Service.Get<RelicManager>() != null) Service.Get<RelicManager>().SetRelic(rewardDict);
     }
 
     public Dictionary<string, int> GetSaveRewardData()
