@@ -16,6 +16,7 @@ public class GameManager : BaseManager<GameManager>
     [field: SerializeField] public ObserveValue<GameState> CurrentState { get; private set; }
 
     private UnityAction _endNarrativeAction;
+    public StoryStageRawData beforeStageData { get; private set; }
     public StoryStageRawData currentStageData { get; private set; }
 
     public ReadyState ReadyState { get; protected set; }
@@ -372,7 +373,7 @@ public class GameManager : BaseManager<GameManager>
 
     public void ClearStage()
     {
-        currentStageData = Service.Get<DataManager>()?.StoryStageTable.data
+        beforeStageData = Service.Get<DataManager>()?.StoryStageTable.data
             .FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
 
         if (_wall != null)
@@ -408,18 +409,18 @@ public class GameManager : BaseManager<GameManager>
         //     return;
         // }
 
-        bool isEndChapter = (currentStageData != null && CheckStageType(currentStageData) == EStageType.BOSS_F);
+        bool isEndChapter = (beforeStageData != null && CheckStageType(beforeStageData) == EStageType.BOSS_F);
 
         NextStage();
 
-        var nextStageData = Service.Get<DataManager>()?.StoryStageTable.data
+        currentStageData = Service.Get<DataManager>()?.StoryStageTable.data
             .FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
 
         bool isBattle = true;
 
-        if (nextStageData != null)
+        if (currentStageData != null)
         {
-            EStageType nextEStageType = CheckStageType(nextStageData);
+            EStageType nextEStageType = CheckStageType(currentStageData);
             if (nextEStageType == EStageType.EVENT || nextEStageType == EStageType.MAINTENANCE) isBattle = false;
         }
 

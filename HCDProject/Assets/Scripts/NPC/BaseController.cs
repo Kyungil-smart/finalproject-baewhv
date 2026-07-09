@@ -5,16 +5,25 @@ using DG.Tweening;
 
 public abstract class BaseController : MonoBehaviour, ITargetable
 {
-    [SerializeField] protected CharacterStats _stats;
+    [SerializeField] protected CharacterStats _currentStats;
+    [SerializeField] protected CharacterStats _baseStats;
 
     public bool isInvincible = false; // 무적 판별변수
 
-    public CharacterStats Stats
+    public CharacterStats CurrentStats
     {
-        get => _stats;
+        get => _currentStats;
         set
         {
-            _stats = value;
+            _currentStats = value;
+        }
+    }
+    public CharacterStats BaseStats
+    {
+        get => _baseStats;
+        set
+        {
+            _baseStats = value;
         }
     }
 
@@ -63,7 +72,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     protected virtual void OnEnable()
     {
-        CurrentHp.Value = _stats._maxHp;
+        CurrentHp.Value = _currentStats._maxHp;
     }
 
     public virtual void UseSkill(int index)
@@ -101,7 +110,7 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         if (isInvincible) return;
         if (BaseSkill.isNormalImmunity && (skill.SKILL_ID == "6500" || skill.SKILL_ID == "6502")) return;
         
-        int def = Mathf.Max(damage - _stats._defense, 0);
+        int def = Mathf.Max(damage - _currentStats._defense, 0);
         
         if (BaseSkill.isReduction)
         {
@@ -120,14 +129,14 @@ public abstract class BaseController : MonoBehaviour, ITargetable
 
     public void SetHeal(int heal)
     {
-        int overHp = Mathf.Min(_stats._maxHp, CurrentHp.Value + heal);
+        int overHp = Mathf.Min(_currentStats._maxHp, CurrentHp.Value + heal);
 
         CurrentHp.Value = overHp;
     }
 
     public void SetBuff(float buff)
     {
-        _stats._attackSpeed = buff;
+        _currentStats._attackSpeed = buff;
     }
 
     private void HitFlash()
@@ -153,9 +162,9 @@ public abstract class BaseController : MonoBehaviour, ITargetable
     protected void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, Stats._chaseRange);
+        Gizmos.DrawWireSphere(transform.position, CurrentStats._chaseRange);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Stats._attackRange);
+        Gizmos.DrawWireSphere(transform.position, CurrentStats._attackRange);
     }
 
 }

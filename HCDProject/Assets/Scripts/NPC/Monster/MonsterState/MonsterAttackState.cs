@@ -3,8 +3,6 @@
 public class MonsterAttackState : IState
 {
     private BaseMonster _controller;
-    private float _timer;
-    private float _bossSkillTimer;
 
     public MonsterAttackState(BaseMonster controller)
     {
@@ -13,8 +11,7 @@ public class MonsterAttackState : IState
     
     public void Enter()
     {
-        _timer = _controller.BaseSkill.skills[0].ATK_TYPE == EAtkType.NORMAL ? _controller.Stat.ATK_SPEED : _controller.BaseSkill.skills[0].SKILL_TIME;
-        if(_controller.BaseSkill.skills.Count > 1) _bossSkillTimer = _controller.BaseSkill.skills[1].SKILL_TIME;
+        
     }
 
     public void Update()
@@ -33,22 +30,22 @@ public class MonsterAttackState : IState
             return;
         }
         
-        _timer += Time.deltaTime;
-        if (_controller.BaseSkill.skills.Count > 1) _bossSkillTimer += Time.deltaTime;
+        _controller.timer += Time.deltaTime;
+        if (_controller.BaseSkill.skills.Count > 1) _controller.bossSkillTimer += Time.deltaTime;
 
         if (_controller.BaseSkill.skills[0].ATK_TYPE == EAtkType.NORMAL)
         {
-            if (_timer >= _controller.Stat.ATK_SPEED)
+            if (_controller.timer >= _controller.Stat.ATK_SPEED)
             {
-                _timer = 0f;
+                _controller.timer = 0f;
                 _controller.BaseSkill.UseSkill(0);
             }
         }
         else
         {
-            if (_timer >= _controller.BaseSkill.skills[0].SKILL_TIME)
+            if (_controller.timer >= _controller.BaseSkill.skills[0].SKILL_TIME)
             {
-                _timer = 0f;
+                _controller.timer = 0f;
                 _controller.BaseSkill.UseSkill(0);
             }
         }
@@ -57,9 +54,9 @@ public class MonsterAttackState : IState
         {
             if (_controller.BaseSkill.skills[1].SKILL_TIME < 0f) return;
             
-            if (_bossSkillTimer >= _controller.BaseSkill.skills[1].SKILL_TIME)
+            if (_controller.bossSkillTimer >= _controller.BaseSkill.skills[1].SKILL_TIME)
             {
-                _bossSkillTimer = 0f;
+                _controller.bossSkillTimer = 0f;
                 _controller.BaseSkill.UseSkill(1);
             }
         }

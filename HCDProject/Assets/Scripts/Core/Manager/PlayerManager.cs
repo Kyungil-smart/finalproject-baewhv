@@ -179,28 +179,33 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     public void ApplyBuff(int index, string objType, float bonus) // Sort 적용 함수
     {
-        var stats = _characters[index].Stats;
+        var stats = _characters[index].CurrentStats;
+        var baseStats = _characters[index].BaseStats;
         var sortBuff = _sortBuffStats[index];
         switch (objType)
         {
             case "OBJ_ATK":
                 stats._attackPower += (int)bonus;
+                baseStats._attackPower += (int)bonus;
                 sortBuff._attackPower += (int)bonus;
                 break;
             case "OBJ_DEF":
                 stats._defense += (int)bonus;
+                baseStats._defense += (int)bonus;
                 sortBuff._defense += (int)bonus;
                 break;
             case "OBJ_AS":
                 stats._attackSpeed += bonus;
+                baseStats._attackSpeed += bonus;
                 sortBuff._attackSpeed += bonus;
                 break;
             case "OBJ_HP":
                 stats._maxHp += (int)bonus;
+                baseStats._maxHp += (int)bonus;
                 sortBuff._maxHp += (int)bonus;
                 break;
         }
-        _characters[index].UpdateStats(stats);
+        _characters[index].UpdateStats(stats, baseStats);
         _sortBuffStats[index] = sortBuff;
     }
 
@@ -208,12 +213,13 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     {
         for (int i = 0; i < _characters.Length; i++)
         {
-            var stats = _characters[i].Stats;
+            var stats = _characters[i].CurrentStats;
             stats._attackPower -= _sortBuffStats[i]._attackPower;
             stats._defense -= _sortBuffStats[i]._defense;
             stats._attackSpeed -= _sortBuffStats[i]._attackSpeed;
             stats._maxHp -= _sortBuffStats[i]._maxHp;
-            _characters[i].UpdateStats(stats);
+            _characters[i].BaseStats = stats;
+            _characters[i].UpdateStats(stats, _characters[i].BaseStats);
             _characters[i].SetHeal(0);
             _sortBuffStats[i] = new CharacterStats();
         }
@@ -230,7 +236,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     private void OnGameStateChanged(GameState state) // 게임 상태 변화 감지 → 상태별 처리
     {
         if (state == GameState.Sort) ResetSortBuffs();
-
+        if (state == GameState.GameOver) StopAllReviveCoroutines();
         SetCharacterBattleState(state != GameState.Sort);
     }
 
@@ -246,35 +252,43 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         foreach (BaseCharacter chr in _characters)
         {
             if (chr == null) continue;
-            var stats = chr.Stats;
+            var stats = chr.CurrentStats;
+            var baseStats = chr.BaseStats;
             switch (rewardType)
             {
                 case "ATK":
                     stats._attackPower += (int)bonus;
+                    baseStats._attackPower += (int)bonus;
                     break;
                 case "DEF":
                     stats._defense += (int)bonus;
+                    baseStats._defense += (int)bonus;
                     break;
                 case "ATK_SPEED":
                     stats._attackSpeed += bonus;
+                    baseStats._attackSpeed += bonus;
                     break;
                 case "MAX_HP":
                     stats._maxHp += (int)bonus;
+                    baseStats._maxHp += (int)bonus;
                     break;
                 case "HP":
                     chr.SetHeal(Mathf.CeilToInt(bonus));
                     break;
                 case "MOVE_SPEED":
                     stats._moveSpeed += bonus;
+                    baseStats._moveSpeed += bonus;
                     break;
                 case "CRITICAL_RATE":
                     stats._critRate += bonus;
+                    baseStats._critRate += bonus;
                     break;
                 case "CRITICAL_DAMAGE":
                     stats._critDamage += bonus;
+                    baseStats._critDamage += bonus;
                     break;
             }
-            chr.UpdateStats(stats);
+            chr.UpdateStats(stats, baseStats);
         }
     }
 
@@ -304,7 +318,8 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             float critRatePercent = 0f;
             float critDamagePercent = 0f;
             _characters[i].GetComponent<PlayerRelics>()?.Init(jobTypes[i]);
-            var stats = _characters[i].Stats;
+            var stats = _characters[i].CurrentStats;
+            var baseStats = _characters[i].BaseStats;
             foreach (string effectType in effectTypes)
             {
                 float jobBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobTypes[i], effectType) ?? 0f;
@@ -328,6 +343,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                         break;
                     case "MOVE_SPEED":
                         stats._moveSpeed += totalBonus;
+                        baseStats._moveSpeed += totalBonus;
                         break;
                     case "MOVE_SPEED_P":
                         moveSpeedPercent += totalBonus;
@@ -363,8 +379,9 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             stats._moveSpeed += stats._moveSpeed * moveSpeedPercent / 100f;
             stats._critRate += stats._critRate * critRatePercent / 100f;
             stats._critDamage += stats._critDamage * critDamagePercent / 100f;
-            _characters[i].UpdateStats(stats);
-            _characters[i].Movement.Agent.speed = _characters[i].Stats._moveSpeed;
+            baseStats = stats;
+            _characters[i].UpdateStats(stats, baseStats);
+            _characters[i].Movement.Agent.speed = _characters[i].CurrentStats._moveSpeed;
 
             float healBonus = Service.Get<RelicManager>()?
                 .GetTotalRelicBonus(jobTypes[i], "MAX_HP_RECOVERY_P") ?? 0f;
@@ -417,7 +434,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
           $"타겟: {character.GetCurrentTarget.GetTargetObject.name} / " +
           $"DAMAGE_P: {jobBonus} / SKILL_CD: {skillCdValue}");*/
             character.FireRainOfArrows(character.GetCurrentTarget.GetTargetObject.transform.position,
-                Mathf.CeilToInt(character.Stats._attackPower * character.BaseSkill.skills[2].SKILL_AB_01
+                Mathf.CeilToInt(character.CurrentStats._attackPower * character.BaseSkill.skills[2].SKILL_AB_01
                 * (jobBonus / 100f)));
         }
     }
@@ -429,7 +446,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             float jobBonus = Service.Get<RelicManager>()?.GetTotalRelicBonus(jobType, "MAX_HP_RECOVERY_P") ?? 0f;
             yield return YieldContainer.WaitForSeconds(1f);
             if (character._isDead) continue;
-            character.SetHeal(Mathf.CeilToInt(character.Stats._maxHp * jobBonus / 100f));
+            character.SetHeal(Mathf.CeilToInt(character.CurrentStats._maxHp * jobBonus / 100f));
         }
     }
 
@@ -445,14 +462,28 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         }
     }
 
+    public void StopAllReviveCoroutines() // 게임오버 시 부활중단
+    {
+        for (int i = 0; i < _coroutines.Length; i++)
+        {
+            if (_coroutines[i] != null)
+            {
+                StopCoroutine(_coroutines[i]);
+                _coroutines[i] = null;
+            }
+        }
+    }
+
     public void StartRevive(BaseCharacter character)
     {
+        if (Service.Get<GameManager>().CurrentState.Value == GameState.GameOver) return;
         int index = Array.IndexOf(_characters, character);
         _coroutines[index] = StartCoroutine(ReviveCoroutine(character, index));
     }
 
     public void ImmediateRevive(BaseCharacter character) // 플레이어 부활실행
     {
+        if (Service.Get<GameManager>().CurrentState.Value == GameState.GameOver) return;
         int index = Array.IndexOf(_characters, character);
         if (_coroutines[index] != null)
             StopCoroutine(_coroutines[index]);

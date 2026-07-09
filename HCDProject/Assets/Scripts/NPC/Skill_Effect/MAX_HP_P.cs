@@ -9,13 +9,13 @@ public class MAX_HP_P : BaseEffect
 
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        if (user as BaseCharacter)
+        if (user is BaseCharacter)
         {
             var characters = Service.Get<PlayerManager>()?.Characters;
             foreach (BaseCharacter chr in characters)
             {
                 if (!chr._isDead)
-                    chr.SetHeal((int)(chr.Stats._maxHp * skill.SKILL_AB_01 / 100));
+                    chr.SetHeal((int)(chr.CurrentStats._maxHp * skill.SKILL_AB_01 / 100));
                 else
                 {
                     Service.Get<PlayerManager>()?.ImmediateRevive(chr);
@@ -23,9 +23,9 @@ public class MAX_HP_P : BaseEffect
                 }
             } 
         }
-        else if (user as BaseMonster)
+        else if (user is BaseMonster)
         {
-            target.SetHeal((int)(user.Stats._maxHp * skill.SKILL_AB_01));
+            user.SetHeal((int)(user.CurrentStats._maxHp * skill.SKILL_AB_01));
         }
     }
 }

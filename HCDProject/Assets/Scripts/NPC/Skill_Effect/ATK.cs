@@ -9,7 +9,7 @@ public class ATK : BaseEffect
 
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        var stats = user.Stats;
+        var stats = user.CurrentStats;
         
         Service.Get<EffectManager>().SpawnEffect(skill.SKILL_FX, target.GetTargetObject.transform.position, Quaternion.identity);
 

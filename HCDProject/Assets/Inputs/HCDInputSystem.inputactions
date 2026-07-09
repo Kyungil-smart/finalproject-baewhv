@@ -1,6 +1,35 @@
 {
-    "version": 0,
+    "version": 1,
     "name": "HCDInputSystem",
-    "maps": [],
+    "maps": [
+        {
+            "name": "TouchPanel",
+            "id": "418dd7e0-7e4b-4da9-9fbd-51772b8c445e",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "Button",
+                    "id": "1eb2aac9-7518-40b3-aec7-6e2eb9efaf0f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fd83babd-87b5-4f83-9d54-a9acffcd090a",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
     "controlSchemes": []
 }

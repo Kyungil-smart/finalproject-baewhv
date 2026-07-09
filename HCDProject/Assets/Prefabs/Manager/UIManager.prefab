@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 8221738986215784712}
   - component: {fileID: 2761233485260448716}
   - component: {fileID: 2421265793237166826}
-  - component: {fileID: 1544435912604858571}
   m_Layer: 5
   m_Name: DDOLUI
   m_TagString: Untagged
@@ -308,18 +307,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1544435912604858571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8069015681653261020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806744a763f49f34a8923fc04d99bd0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TouchPanel
 --- !u!1 &8857286053262930773
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,14 +707,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -465
       objectReference: {fileID: 0}
-    - target: {fileID: 3355807629820368893, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-      propertyPath: bgmVolumeSlider
-      value: 
-      objectReference: {fileID: 248910783314067609}
-    - target: {fileID: 3355807629820368893, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-      propertyPath: sfxVolumeSlider
-      value: 
-      objectReference: {fileID: 7990878835938829823}
     - target: {fileID: 3623177599523280899, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -804,10 +783,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -115
       objectReference: {fileID: 0}
-    - target: {fileID: 8849529797426181237, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 8993362197314009043, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -819,7 +794,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6929869492045146272, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1763853805570554576}
   m_SourcePrefab: {fileID: 100100000, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
 --- !u!114 &197479874292881542 stripped
 MonoBehaviour:
@@ -832,22 +810,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a80dc25714a8d941bba8a7ea5c819e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingPopupUi
---- !u!114 &248910783314067609 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3412568179321999330, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
-  m_PrefabInstance: {fileID: 3183956581833838459}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!224 &372366944007438407 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2955846140510097212, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
   m_PrefabInstance: {fileID: 3183956581833838459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5477635203290884059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6929869492045146272, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
+  m_PrefabInstance: {fileID: 3183956581833838459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763853805570554576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477635203290884059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db16727c6e0bc5448a00260e2c2df138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VibrationUI
+  on: {fileID: 6401905373409290539}
+  off: {fileID: 6130026717423560736}
+  active: {r: 0, g: 1, b: 0, a: 1}
+  deactive: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6130026717423560736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8736303188016523099, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
+  m_PrefabInstance: {fileID: 3183956581833838459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!114 &6401905373409290539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8428359850290882128, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
+  m_PrefabInstance: {fileID: 3183956581833838459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &7990878835938829823 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4812907997559466628, guid: 778ba1015e88e01479b2b55f85d79dbe, type: 3}
