@@ -161,6 +161,11 @@ public class StagePopUpUI : MonoBehaviour
         negativeText.SetEntry("UI_POPUP_BACK");
     }
 
+    public void SetWallHP(int current, int value)
+    {
+        
+    }
+
     public void OnRepairWall()
     {
         Service.Get<GameManager>().CheckAndStartNarrative(
