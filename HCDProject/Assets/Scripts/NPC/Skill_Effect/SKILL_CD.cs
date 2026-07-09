@@ -9,12 +9,13 @@ public class SKILL_CD : BaseEffect
 
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        target.GetTargetObject.TryGetComponent(out BaseCharacter character);
-
-        character.AttackTimer -= skill.SKILL_AB_01;
-        if (character.AttackTimer < 0f)
+        if (target.GetTargetObject.TryGetComponent(out BaseCharacter character))
         {
-            character.AttackTimer = 0f;
+            character.ActiveSkillCoolCount -= skill.SKILL_AB_01;
+            if (character.ActiveSkillCoolCount < 0f)
+            {
+                character.ActiveSkillCoolCount = 0f;
+            }
         }
     }
 }
