@@ -65,6 +65,12 @@ public class BaseCharacter : BaseController
 
     public string PlayerSfx => _playerSfx; // 플레이어 공격 사운드 프로퍼티
 
+    public float ActiveSkillCoolCount
+    {
+        get => _activeSkillCoolCount;
+        set => _activeSkillCoolCount = value;
+    }
+
     public float AttackTimer // 누적 카운트 프로퍼티
     {
         get => _attackTimer;
