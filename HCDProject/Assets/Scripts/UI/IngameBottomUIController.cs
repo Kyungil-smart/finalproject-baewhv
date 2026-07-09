@@ -33,6 +33,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     private List<CharacterSlotUI> characterSlots = new();
 
 
+
     //687
     public CharacterSlotUI[] GetSlots => characterSlots.ToArray();
 
@@ -50,6 +51,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
     public ObserveValue<bool> isSortMode = new();
 
+    [SerializeField] private GameObject[] SkillEffect;
     private void Start()
     {
         comboText.gameObject.SetActive(false);
@@ -190,24 +192,24 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         var slot = Instantiate(characterSlotPrefab, characterSlot).GetComponent<CharacterSlotUI>();
         if (order != -1)
             slot.transform.SetSiblingIndex(order);
-        string address;
         switch (data.CHARACTER_ID) //TODO : HardCoding
         {
             case "3000":
-                address = "Player/Serah[Serah_BattlePortrait]";
+                slot.SkillEffect = Instantiate(SkillEffect[0], slot.SkillArea.transform);
                 break;
             case "3001":
-                address = "Player/Noah[Noah_BattlePortrait]";
+                slot.SkillEffect = Instantiate(SkillEffect[1], slot.SkillArea.transform);
                 break;
             case "3002":
-                address = "Player/Alice[Alice_BattlePortrait]";
+                slot.SkillEffect = Instantiate(SkillEffect[2], slot.SkillArea.transform);
                 break;
-            default:
-                address = "Player/Spayin[Spayin_BattlePortrait]";
+            case "3003":
+                slot.SkillEffect = Instantiate(SkillEffect[3], slot.SkillArea.transform);
                 break;
         }
+        slot.SkillEffect?.SetActive(false);
 
-        Addressables.LoadAssetAsync<Sprite>(address).Completed += handle =>
+        Addressables.LoadAssetAsync<Sprite>(data.CHARACTER_IMG).Completed += handle =>
         {
             if (!slot) return;
             if (handle.Status == AsyncOperationStatus.Succeeded)
