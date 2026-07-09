@@ -5,7 +5,7 @@ using GoogleMobileAds.Common;
 
 public class AdsManager : BaseManager<AdsManager>
 {
-    private string adId = "ca-app-pub-3940256099942544/5224354917";
+    private string adId = "ca-app-pub-1383807403426958/8900861406";
 
     private RewardedAd _rewardedAd;
 
