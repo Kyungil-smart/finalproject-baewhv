@@ -19,7 +19,7 @@ public class MAX_HP_P : BaseEffect
                 else
                 {
                     Service.Get<PlayerManager>()?.ImmediateRevive(chr);
-                    Debug.Log($"[부활] {chr.gameObject.name} 즉시 부활!");
+                    
                 }
             } 
         }

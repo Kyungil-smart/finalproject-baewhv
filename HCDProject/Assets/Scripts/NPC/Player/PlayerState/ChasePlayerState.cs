@@ -8,7 +8,7 @@ public class ChasePlayerState : PlayerBaseState
     }
     public override void Enter()
     {
-        Debug.Log("상태: Chase 진입");
+        
         _owner.SetNavMeshActive(true);
         _owner.Movement.Move(_owner.GetCurrentTarget.GetTargetObject.transform.position);
     }
@@ -22,7 +22,7 @@ public class ChasePlayerState : PlayerBaseState
 
         if (_owner.GetCurrentTarget == null)
         {
-            Debug.Log("타겟이 없음");
+            
             _owner.Movement.Stop();
             _owner.state.ChangeState(_owner.idle);
             return;

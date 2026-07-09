@@ -116,7 +116,6 @@ public class BaseCharacter : BaseController
         if (!_isFirstCombat) return;
         _isFirstCombat = false;
         _findType = EFindType.Nearest;
-        Debug.Log($"[전환] {gameObject.name} 첫 전투 완료 → FindType: {_findType}");
     }
 
     [field: SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
@@ -228,11 +227,17 @@ public class BaseCharacter : BaseController
     }
     public void UpdateStats(CharacterStats currentStats, CharacterStats baseStats)
     {
+        int previousMaxHp = _currentStats._maxHp;
         _currentStats = currentStats;
         _baseStats = baseStats;
 
         CurrentHp.MaxValue = _currentStats._maxHp;
 
+        int hpDelta = _currentStats._maxHp - previousMaxHp;
+        if (hpDelta > 0 && !_isDead)
+        {
+            CurrentHp.Value += hpDelta;
+        }
         
         if (CurrentHp.Value > _currentStats._maxHp)
         {
@@ -335,7 +340,6 @@ public class BaseCharacter : BaseController
         _previousHp = CurrentHp.Value;
         Movement.Agent.speed = _currentStats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
-        Debug.Log($"[캐릭터초기화] {gameObject.name} / FindType: {_findType}");
     }
     #endregion
 
@@ -364,7 +368,7 @@ public class BaseCharacter : BaseController
 
         if (BaseSkill.skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
 
-        Debug.Log($"[액티브 스킬] {gameObject.name} 발동!");
+        
         switch (_playerStats._activeSkillBehavior)
         {
             case EActiveSkillBehavior.DotField:
@@ -390,28 +394,25 @@ public class BaseCharacter : BaseController
 
     public void FireRainOfArrows(Vector2 center, int damage) // 궁수 화살비 데미지호출
     {
-        Debug.Log($"[화살비 발사] 중심: {center} / 데미지: {damage} / 반경: {BaseSkill.skills[2].SKILL_RANGE_X}");
+        
         int count = Physics2D.OverlapCircle(center, BaseSkill.skills[2].SKILL_RANGE_X, EnemyFilter, Colliders);
         for (int i = 0; i < count; i++)
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
                 target.SetDamage(damage, BaseSkill.skills[2]);
-                Debug.Log($"[화살비 적중] {target.GetTargetObject.name}");
             }
         }
     }
 
     public void FireEarthquake(int damage) // 마법사 유물 지진마법
     {
-        Debug.Log($"[지진 마법 발동]데미지 : {damage}");
         int count = Physics2D.OverlapCircle(transform.position, 100f, EnemyFilter, Colliders);
         for (int i = 0; i < count; i++)
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
                 target.SetDamage(damage, BaseSkill.skills[2]);
-                Debug.Log($"[지진 적중] {target.GetTargetObject.name}");
             }
         }
     }
@@ -498,7 +499,6 @@ public class BaseCharacter : BaseController
             _isDead = true;
             StopHitFlicker();
             if (IsAlived != null) IsAlived.Value = false;
-            Debug.Log($"[사망] {gameObject.name} | HP: {value}");
             this.state.ChangeState(this.die);
         }
     }

@@ -23,7 +23,7 @@ public class SpawnPlayerState : PlayerBaseState
         _owner.Movement.Agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
         _owner.transform.position = _owner.homePosition;
         Service.Get<PlayerManager>().IsAllSpawnPlayer();
-        Debug.Log($"플레이어 도착 :{_owner.gameObject.name} / {_owner.homePosition} / {_owner.transform.position}");
+        
         _owner.SetNavMeshActive(false);
     }
     public override void Update()
