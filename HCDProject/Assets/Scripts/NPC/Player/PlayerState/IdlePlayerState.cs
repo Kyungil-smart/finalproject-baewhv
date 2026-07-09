@@ -10,7 +10,7 @@ public class IdlePlayerState : PlayerBaseState
     public override void Enter()
     {
         // TODO : 대기 애니메이션(있다면)
-        Debug.Log("상태: Idle 진입");
+        
     }
     public override void Exit()
     {

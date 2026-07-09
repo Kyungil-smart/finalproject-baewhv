@@ -54,7 +54,6 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
                 _loadedPrefab = handle.Result;
-                Debug.Log("플레이어 프리팹 로드 성공");
 
                 SpawnAllCharacters();
                 /*if (!Service.Get<TutorialManager>())
@@ -406,17 +405,17 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
             float earthquakeBonus = Service.Get<RelicManager>()?
                 .GetTotalRelicBonus(jobTypes[i], "EARTHQUAKE_DAMAGE_P") ?? 0f;
-            Debug.Log($"[지진 체크] i={i} / job={jobTypes[i]} / earthquakeBonus={earthquakeBonus}");
+            
             if (earthquakeBonus > 0 && jobTypes[i] == "WIZARD") // 지진마법 적용
             {
                 var skillTable = Service.Get<DataManager>().SkillTable.data;
                 var skillData = skillTable.Find(s => s.SKILL_ID == "6509");
-                Debug.Log($"[지진 추적1] skillData null? {skillData == null}");
+                
                 if (skillData != null)
                 {
                     if (_characters[i].BaseSkill.skills.Find(s => s.SKILL_ID == "6509") == null)
                         _characters[i].BaseSkill.skills.Add(new Skill(skillData));
-                    Debug.Log($"[지진 추적2] skills.Add 완료! Count={_characters[i].BaseSkill.skills.Count}");
+                    
                 }
             }
         }
@@ -505,6 +504,6 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
         // SpawnState로 전환 (Exit()에서 Revive() 호출됨)
         character.state.ChangeState(character.spawn);
-        Debug.Log($"{character.gameObject.name} 부활 완료");
+        
     }
 }
