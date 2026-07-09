@@ -21,8 +21,6 @@ public class BaseSkill : MonoBehaviour
     public bool isIgnoreDef = false;
     public bool isReduction = false;
 
-    private CharacterStats _originStats;
-
     #region skillList
     
     private ATTACK_BASE _attackBase;
@@ -39,6 +37,7 @@ public class BaseSkill : MonoBehaviour
     private NORMAL_ATK_IMMUNITY _normalAtkImmunity;
     private IGNORE_DEF _ignoreDef;
     private DAMAGE_REDUCTION_P _damageReductionP;
+    private SKILL_CD _skillCd;
     
     #endregion
     
@@ -49,7 +48,6 @@ public class BaseSkill : MonoBehaviour
 
         isDurationActive = false;
         count = 0;
-        _originStats = new CharacterStats();
 
         #region skillListInit
 
@@ -67,6 +65,7 @@ public class BaseSkill : MonoBehaviour
         _normalAtkImmunity = new NORMAL_ATK_IMMUNITY(this);
         _ignoreDef = new IGNORE_DEF(this);
         _damageReductionP = new DAMAGE_REDUCTION_P(this);
+        _skillCd = new SKILL_CD(this);
 
         #endregion
     }
@@ -78,7 +77,7 @@ public class BaseSkill : MonoBehaviour
 
     public void UseSkill(int index)
     {
-        if (_controller.GetCurrentTarget == null) return;
+        if (_controller.GetCurrentTarget == null && skills[index].SKILL_ABT_01 != ESkillAbilityType.MAX_HP_P) return;
 
         // ABT_01이 NONE이면 실행할 효과 없음
         if (skills[index].SKILL_ABT_01 == ESkillAbilityType.NONE) return;
@@ -192,6 +191,9 @@ public class BaseSkill : MonoBehaviour
                 break;
             case ESkillAbilityType.DAMAGE_REDUCTION_P:
                 _effects.Add(type, _damageReductionP);
+                break;
+            case ESkillAbilityType.SKILL_CD:
+                _effects.Add(type, _skillCd);
                 break;
         }
     }
@@ -313,7 +315,7 @@ public class BaseSkill : MonoBehaviour
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
 
-        var stat = targetObject.Stats;
+        var stat = targetObject.CurrentStats;
         
         while (_durateTimer <= skill.SKILL_DURATION)
         {
@@ -327,70 +329,75 @@ public class BaseSkill : MonoBehaviour
     }
     private IEnumerator SpeedDebuffCor(ITargetable target, Skill skill, float value)
     {
+        Debug.Log("이동속도 공격속도 디버프 스킬 발동");
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
-
-        var stat = targetObject.Stats;
         
-        _originStats._attackSpeed = stat._attackSpeed;
-        _originStats._moveSpeed = stat._moveSpeed;
+        var stat = targetObject.CurrentStats;
         
         stat._attackSpeed *= (1f - value / 100f);
         stat._moveSpeed *= (1f - value / 100f);
+
+        targetObject.CurrentStats = stat;
+        targetObject.Movement.Agent.speed = stat._moveSpeed;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
         
-        stat._attackSpeed = _originStats._attackSpeed;
-        stat._moveSpeed = _originStats._moveSpeed;
+        targetObject.CurrentStats = targetObject.BaseStats;
+        targetObject.Movement.Agent.speed = targetObject.BaseStats._moveSpeed;
     }
     private IEnumerator SetCcCor(ITargetable target, Skill skill)
     {
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
-
-        var stat = targetObject.Stats;
-        
-        _originStats._moveSpeed = stat._moveSpeed;
         
         targetObject.TryGetComponent(out BaseCharacter player);
         
         player.isCC = true;
         isDurationActive = true;
-        stat._moveSpeed = 0f;
+        targetObject.Movement.Agent.speed = 0f;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
         
         player.isCC = false;
         isDurationActive = false;
-        stat._moveSpeed = _originStats._moveSpeed;
+        targetObject.Movement.Agent.speed = targetObject.BaseStats._moveSpeed;
     }
     private IEnumerator InvisibleCor(ITargetable target, Skill skill)
     {
         target.GetTargetObject.TryGetComponent(out BaseController targetObject);
 
-        var targetSprite = target.GetTargetObject.GetComponentInChildren<SpriteRenderer>().color;
-        targetSprite.a = 0.5f;
-        // targetObject.isInvincible = true;
+        SpriteRenderer targetSprite = target.GetTargetObject.GetComponentInChildren<SpriteRenderer>();
+        
+        var color = targetSprite.color;
+
+        color.a = 0.5f;
+        
+        targetSprite.color = color;
+        targetObject.isInvincible = true;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
 
-        targetSprite.a = 1f;
-        // targetObject.isInvincible = false;
+        color.a = 1f;
+        
+        targetSprite.color = color;
+        targetObject.isInvincible = false;
     }
     private IEnumerator ArcherActiveCor(ITargetable target, Skill skill, float value)
     {
-        target.GetTargetObject.TryGetComponent(out BaseCharacter targetObject);
+        target.GetTargetObject.TryGetComponent(out BaseController targetObject);
         if (targetObject == null) yield break;
         
-        var stat = targetObject.Stats;
-
-        _originStats._attackSpeed = stat._attackSpeed;
+        var stat = targetObject.CurrentStats;
+        
         stat._attackSpeed *= (1f - value / 100f);
         attackHitCount = 3;
+
+        targetObject.CurrentStats = stat;
         
         yield return new WaitForSeconds(skill.SKILL_DURATION);
 
-        stat._attackSpeed = _originStats._attackSpeed;
+        targetObject.CurrentStats = targetObject.BaseStats;
         attackHitCount = 1;
     }
     

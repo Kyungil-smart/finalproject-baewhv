@@ -65,6 +65,12 @@ public class BaseCharacter : BaseController
 
     public string PlayerSfx => _playerSfx; // 플레이어 공격 사운드 프로퍼티
 
+    public float ActiveSkillCoolCount
+    {
+        get => _activeSkillCoolCount;
+        set => _activeSkillCoolCount = value;
+    }
+
     public float AttackTimer // 누적 카운트 프로퍼티
     {
         get => _attackTimer;
@@ -80,7 +86,7 @@ public class BaseCharacter : BaseController
     private EFindType _findType;
 
     public float SkillCoolTime => BaseSkill.skills[_skillTargetIndex].SKILL_TIME > 0 ?
-        BaseSkill.skills[_skillTargetIndex].SKILL_TIME : _stats._attackSpeed; // 노말공격 쿨타임
+        BaseSkill.skills[_skillTargetIndex].SKILL_TIME : _currentStats._attackSpeed; // 노말공격 쿨타임
     public float ActiveSkillCoolTime => BaseSkill.skills.Count > 1 ? BaseSkill.skills[1].SKILL_TIME : 0f; // 액티브 쿨타임
     public float CurrentSkillRange => BaseSkill.skills[_skillTargetIndex].SKILL_IS;
 
@@ -116,7 +122,6 @@ public class BaseCharacter : BaseController
         if (!_isFirstCombat) return;
         _isFirstCombat = false;
         _findType = EFindType.Nearest;
-        Debug.Log($"[전환] {gameObject.name} 첫 전투 완료 → FindType: {_findType}");
     }
 
     [field: SerializeField] public ObserveValue<EStateType> CurrentState { get; private set; }
@@ -195,9 +200,15 @@ public class BaseCharacter : BaseController
         if (_activeSkillCoolValue == null) return;
         _activeSkillCoolValue.Value = result;
     }
+    public void FaceTarget()
+    {
+        if (GetCurrentTarget == null || !GetCurrentTarget.IsAlive()) return;
+        Vector2 target = (GetCurrentTarget.GetTargetObject.transform.position - transform.position).normalized;
+        Movement.LastDir = target;
+    }
     public void BindHpUI(UnityAction<int, int> action) // 슬롯 HP, 캐릭터 HP바 UI 구독
     {
-        int maxValue = _stats._maxHp;
+        int maxValue = _currentStats._maxHp;
         CurrentHp = new RatioIntValue(maxValue);
         CurrentHp.AddValuesListener(action);
         CurrentHp.AddListener(CheckDeath);
@@ -220,16 +231,23 @@ public class BaseCharacter : BaseController
         IsAlived.AddListener(action);
         IsAlived.Value = true;
     }
-    public void UpdateStats(CharacterStats newStats)
+    public void UpdateStats(CharacterStats currentStats, CharacterStats baseStats)
     {
-        _stats = newStats;
+        int previousMaxHp = _currentStats._maxHp;
+        _currentStats = currentStats;
+        _baseStats = baseStats;
 
-        CurrentHp.MaxValue = _stats._maxHp;
+        CurrentHp.MaxValue = _currentStats._maxHp;
 
-        
-        if (CurrentHp.Value > _stats._maxHp)
+        int hpDelta = _currentStats._maxHp - previousMaxHp;
+        if (hpDelta > 0 && !_isDead)
         {
-            CurrentHp.Value = _stats._maxHp;
+            CurrentHp.Value += hpDelta;
+        }
+        
+        if (CurrentHp.Value > _currentStats._maxHp)
+        {
+            CurrentHp.Value = _currentStats._maxHp;
         }
     }
     private void OnHpChanged(int newHp)
@@ -298,7 +316,7 @@ public class BaseCharacter : BaseController
             }
         }
 
-        _stats = new CharacterStats
+        _baseStats = new CharacterStats
         {
             _maxHp = data.HP,
             _attackPower = data.ATK,
@@ -309,6 +327,8 @@ public class BaseCharacter : BaseController
             _critDamage = data.CRI_DMAGE,
             _chaseRange = data.ACCESS_AREA
         };
+        
+        _currentStats = _baseStats;
 
         BaseSkill.skills.Clear();
         var skillTable = Service.Get<DataManager>().SkillTable.data;
@@ -322,11 +342,10 @@ public class BaseCharacter : BaseController
         _isFirstCombat = _playerStats._hasFirstCombat;
         _findType = _playerStats._initFindType;
         _playerStats._doubleAtkRate = data.DOUBLE_ATK_RATE;
-        CurrentHp.Value = _stats._maxHp;
+        CurrentHp.Value = _currentStats._maxHp;
         _previousHp = CurrentHp.Value;
-        Movement.Agent.speed = _stats._moveSpeed;
+        Movement.Agent.speed = _currentStats._moveSpeed;
         _stateMachine.ChangeState(_spawnPlayerState);
-        Debug.Log($"[캐릭터초기화] {gameObject.name} / FindType: {_findType}");
     }
     #endregion
 
@@ -334,9 +353,9 @@ public class BaseCharacter : BaseController
     {
         float critValue = UnityEngine.Random.value;
 
-        int finalCrit = Mathf.CeilToInt(baseDamage * Stats._critDamage);
+        int finalCrit = Mathf.CeilToInt(baseDamage * CurrentStats._critDamage);
 
-        if (Stats._critRate >= critValue)
+        if (CurrentStats._critRate >= critValue)
         {
             return finalCrit;
         }
@@ -355,14 +374,14 @@ public class BaseCharacter : BaseController
 
         if (BaseSkill.skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
 
-        Debug.Log($"[액티브 스킬] {gameObject.name} 발동!");
+        
         switch (_playerStats._activeSkillBehavior)
         {
             case EActiveSkillBehavior.DotField:
                 UseSkill(1);
                 if (BaseSkill.skills.Find(s => s.SKILL_ID == "6509") != null)
                 {
-                    int skillDamage = (int)(_stats._attackPower * BaseSkill.skills[1].SKILL_AB_02);
+                    int skillDamage = (int)(_currentStats._attackPower * BaseSkill.skills[1].SKILL_AB_02);
                     float earthquakeBonus = Service.Get<RelicManager>()?
                     .GetTotalRelicBonus("WIZARD", "EARTHQUAKE_DAMAGE_P") ?? 0f;
                     FireEarthquake(Mathf.CeilToInt(skillDamage * earthquakeBonus / 100f));
@@ -381,28 +400,25 @@ public class BaseCharacter : BaseController
 
     public void FireRainOfArrows(Vector2 center, int damage) // 궁수 화살비 데미지호출
     {
-        Debug.Log($"[화살비 발사] 중심: {center} / 데미지: {damage} / 반경: {BaseSkill.skills[2].SKILL_RANGE_X}");
+        
         int count = Physics2D.OverlapCircle(center, BaseSkill.skills[2].SKILL_RANGE_X, EnemyFilter, Colliders);
         for (int i = 0; i < count; i++)
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
                 target.SetDamage(damage, BaseSkill.skills[2]);
-                Debug.Log($"[화살비 적중] {target.GetTargetObject.name}");
             }
         }
     }
 
     public void FireEarthquake(int damage) // 마법사 유물 지진마법
     {
-        Debug.Log($"[지진 마법 발동]데미지 : {damage}");
         int count = Physics2D.OverlapCircle(transform.position, 100f, EnemyFilter, Colliders);
         for (int i = 0; i < count; i++)
         {
             if (Colliders[i].TryGetComponent(out ITargetable target))
             {
                 target.SetDamage(damage, BaseSkill.skills[2]);
-                Debug.Log($"[지진 적중] {target.GetTargetObject.name}");
             }
         }
     }
@@ -415,7 +431,7 @@ public class BaseCharacter : BaseController
         switch (targetType)
         {
             case ETargetType.ENEMY:
-                targets = Detect(_stats._chaseRange + GetRadius(), BaseSkill.skills[index].SKILL_AT);
+                targets = Detect(_currentStats._chaseRange + GetRadius(), BaseSkill.skills[index].SKILL_AT);
                 float nearestDis = float.MaxValue;
                 float fartDis = float.MinValue;
 
@@ -463,7 +479,7 @@ public class BaseCharacter : BaseController
                         if (!this.Movement.CanReach(t.GetTargetObject.transform.position)) continue;
                         if (t is BaseCharacter ally)
                         {
-                            float ratio = (float)ally.CurrentHp.Value / ally.Stats._maxHp;
+                            float ratio = (float)ally.CurrentHp.Value / ally.CurrentStats._maxHp;
                             if (ratio < lowestRatio && ratio < 1.0f)
                             {
                                 lowestRatio = ratio;
@@ -489,7 +505,6 @@ public class BaseCharacter : BaseController
             _isDead = true;
             StopHitFlicker();
             if (IsAlived != null) IsAlived.Value = false;
-            Debug.Log($"[사망] {gameObject.name} | HP: {value}");
             this.state.ChangeState(this.die);
         }
     }
@@ -501,7 +516,7 @@ public class BaseCharacter : BaseController
         _isSpawning = true;
         Movement.Agent.enabled = true;
         this.Movement.Agent.Warp(spawnPosition);
-        CurrentHp.Value = Stats._maxHp;
+        CurrentHp.Value = CurrentStats._maxHp;
         _previousHp = CurrentHp.Value;
 
         _isFirstCombat = _playerStats._hasFirstCombat;

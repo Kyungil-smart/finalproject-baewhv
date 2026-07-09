@@ -9,6 +9,6 @@ public class ATK_MULT : BaseEffect
 
     public override void ApplyEffect(BaseController user, ITargetable target, Skill skill)
     {
-        target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01), skill);
+        target.SetDamage((int)(user.CurrentStats._attackPower * skill.SKILL_AB_01), skill);
     }
 }

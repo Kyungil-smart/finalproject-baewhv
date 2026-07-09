@@ -7,6 +7,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     [SerializeField] private GameObject DangerBorder;
     [SerializeField] private GameObject ClearLogo;
     [SerializeField] private GameObject FailLogo;
+    [SerializeField] private GameObject WaveClearLogo;
     
     [SerializeField] private RewardUIController RewardPopup;
     public RewardUIController GetRewardPopup => RewardPopup;
@@ -14,38 +15,42 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     public ClearPopupUI GetClearPopup => ClearPopup;
     [SerializeField] private GameObject SortWarningPopup;
 
-    
     public void OnSetDangerBorder(float ratio)
     {
-        if (ratio < 0.2f)
+        if (ratio < 0.3f)
+        {
+            Service.Get<VibrationManager>()?.TriggerVibration();
             DangerBorder.SetActive(true);
+        }
         else
             DangerBorder.SetActive(false);
     }
 
     public void OnGameClear()
     {
-        StartCoroutine(ShowEndLogo(true));
+        StartCoroutine(ShowLogo(ClearLogo, () =>
+        {
+            var currentStageData = Service.Get<GameManager>().beforeStageData;
+            Service.Get<GameManager>().CheckAndStartNarrative(currentStageData, false, ()=>OnRewardPopup(OnClearPopup));
+        }));
     }
     public void OnGameDefeat()
     {
-        StartCoroutine(ShowEndLogo(false));
+        StartCoroutine(ShowLogo(FailLogo, ClearPopup.SetDefeatPopup));
     }
 
-    public IEnumerator ShowEndLogo(bool isClear)
+    public void OnWaveClear(UnityAction action)
     {
-        if (isClear) ClearLogo.SetActive(true);
-        else FailLogo.SetActive(true);
-        yield return new WaitForSecondsRealtime(2.0f);
-        ClearLogo.SetActive(false);
-        FailLogo.SetActive(false);
+        StartCoroutine(ShowLogo(WaveClearLogo, action));
+    }
 
-        if (isClear)
-        {
-            var currentStageData = Service.Get<GameManager>().currentStageData;
-            Service.Get<GameManager>().CheckAndStartNarrative(currentStageData, false, ()=>OnRewardPopup(OnClearPopup));
-        }
-        else OnFailPopup();
+    public IEnumerator ShowLogo(GameObject logo, UnityAction afterAction)
+    {
+        logo.SetActive(true);
+        yield return new WaitForSecondsRealtime(2.0f);
+        logo.SetActive(false);
+        
+        afterAction?.Invoke();
     }
 
     public void OnRewardPopup(UnityAction action = null)
@@ -59,13 +64,7 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
 
     public void OnClearPopup()
     {
-        ClearPopup.gameObject.SetActive(true);
-        ClearPopup.SetNextButton(showNextButton);
-        //TODO : reward Popup은 보상과 연결할 것.
-    }
-    public void OnFailPopup()
-    {
-        ClearPopup.gameObject.SetActive(true);
+        ClearPopup.SetClearPopup(showNextButton);
     }
 
     public void OnReturnToStageSelect()
@@ -87,7 +86,6 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     {
         SortWarningPopup.SetActive(false);
         Service.Get<SortManager>()?.FinishSortPhase();
-        //Service.Get<SceneController>()?
     }
     public void OnShowSortWarningPopup()
     {
@@ -97,4 +95,6 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     {
         SortWarningPopup.SetActive(false);
     }
+
+
 }

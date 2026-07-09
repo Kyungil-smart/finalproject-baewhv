@@ -10,6 +10,7 @@ public class GameOverState : IState
     {
         Service.Get<MonsterSpawnManager>()?.StopAllCoroutines();
         Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnGameDefeat();
+        Service.Get<SoundManager>()?.PlaySfxSound("Defeat");
     }
 
     public void Update()

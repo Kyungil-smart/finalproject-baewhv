@@ -8,15 +8,69 @@ public class RelicManager : BaseManager<RelicManager>
 
     private List<StageClearRewardRawData> currentRandomRewards;
 
+    private Rampart _activeWall;
+    private int _buffMaxHp = 0;
+    private int _buffRepair = 0;
+
     protected override void Awake()
     {
         base.Awake();
         MyRelics.Clear();
         currentRandomRewards = null;
     }
+
+    private void Update()
+    {
+        var gamemanager = Service.Get<GameManager>();
+        if (gamemanager == null) return;
+
+        var currentWall = gamemanager._wall;
+
+        if (currentWall != null && currentWall != _activeWall)
+        {
+            _activeWall = currentWall;
+            ApplyWallRelics();
+        }
+        else if (currentWall == null && _activeWall != null)
+        {
+            _activeWall = null;
+        }
+    }
+
+    private void ApplyWallRelics()
+    {
+        int totalMaxHpBonus = (int)GetTotalRelicBonus("CASTLE", "CASTLE_MAX_HP");
+        if (totalMaxHpBonus > 0)
+        {
+            _activeWall.CurrentHp.MaxValue += totalMaxHpBonus;
+        }
+
+        if (_buffMaxHp > 0 || _buffRepair > 0)
+        {
+            if (_buffMaxHp > 0)
+            {
+                _activeWall.SetHp(_activeWall.CurrentHp.Value + _buffMaxHp);
+            }
+
+            if (_buffRepair > 0)
+            {
+                int currentHp = _activeWall.CurrentHp.Value;
+                int maxCapacity = _activeWall.CurrentHp.MaxValue;
+
+                if (currentHp < maxCapacity)
+                {
+                    int finalHp = Mathf.Min(currentHp + _buffRepair, maxCapacity);
+                    _activeWall.SetHp(finalHp);
+                }
+            }
+
+            _buffMaxHp = 0;
+            _buffRepair = 0;
+        }
+    }
+
     public List<StageClearRewardRawData> GetStageRandomRewards()
     {
-        // 랜덤한 3개의 스테이지 클리어 리워드 데이터를 반환해줍니다
         var rawRewards = Service.Get<DataManager>()?.GetStageRandomRewards();
 
         if (rawRewards != null)
@@ -31,11 +85,9 @@ public class RelicManager : BaseManager<RelicManager>
     {
         if (currentRandomRewards == null || selectedIndex >= currentRandomRewards.Count)
         {
-            Debug.Log("데이터가 없습니다");
             return;
         }
-        
-        // 이후 선택된 데이터의 정보를 다시 데이터 매니저에게 알려주면 추후 선택사항에서 max치를 넘을 시 더이상 등장하지 않게 제한 됩니다
+
         Service.Get<DataManager>()?.SelectStageReward(currentRandomRewards[selectedIndex].CLEAR_REWARD_ID);
 
         string rewardId = currentRandomRewards[selectedIndex].CLEAR_REWARD_ID;
@@ -51,37 +103,52 @@ public class RelicManager : BaseManager<RelicManager>
         }
 
         var currentStack = MyRelics[rewardId];
-        Debug.Log($"유물 {rewardId} | 중첩치: {currentStack}");
 
         if (rewardData.CLEAR_REWARD_TARGET.ToString() == "CASTLE")
         {
             var gameManager = Service.Get<GameManager>();
-            if (gameManager != null && gameManager._wall != null)
+
+            var typeField = rewardData.GetType().GetField("CLEAR_REWARD_TYPE_01");
+            var effectType = typeField?.GetValue(rewardData)?.ToString();
+
+            if (!string.IsNullOrEmpty(effectType))
             {
-                var typeField = rewardData.GetType().GetField("CLEAR_REWARD_TYPE_01");
-                var effectType = typeField?.GetValue(rewardData)?.ToString();
+                var bField = rewardData.GetType().GetField("CLEAR_REWARD_F_01");
+                var sField = rewardData.GetType().GetField("CLEAR_REWARD_S_01");
 
-                if (!string.IsNullOrEmpty(effectType))
+                float baseValue = bField != null ? Convert.ToSingle(bField.GetValue(rewardData)) : 0f;
+                float stackValue = sField != null ? Convert.ToSingle(sField.GetValue(rewardData)) : 0f;
+
+                int applyValue = (currentStack == 1) ? (int)baseValue : (int)stackValue;
+
+                if (gameManager != null)
                 {
-                    var bField = rewardData.GetType().GetField("CLEAR_REWARD_F_01"); // 최초 수치
-                    var sField = rewardData.GetType().GetField("CLEAR_REWARD_S_01"); // 중첩 수치
-
-                    float baseValue = bField != null ? Convert.ToSingle(bField.GetValue(rewardData)) : 0f;
-                    float stackValue = sField != null ? Convert.ToSingle(sField.GetValue(rewardData)) : 0f;
-
-                    int applyValue = (currentStack == 1) ? (int)baseValue : (int)stackValue;
-
-                    if (effectType == "REPAIR")
+                    if (gameManager._wall != null)
                     {
-                        int repairedHp = Mathf.Min(gameManager._wall.CurrentHp.Value + applyValue, gameManager._wall.CurrentHp.MaxValue);
-                        gameManager._wall.SetHp(repairedHp);
-                        Debug.Log($"성벽 HP {applyValue} 수리");
+                        if (effectType == "CASTLE_HP")
+                        {
+                            if (gameManager._wall.CurrentHp.Value < gameManager._wall.CurrentHp.MaxValue)
+                            {
+                                int repairedHp = Mathf.Min(gameManager._wall.CurrentHp.Value + applyValue, gameManager._wall.CurrentHp.MaxValue);
+                                gameManager._wall.SetHp(repairedHp);
+                            }
+                        }
+                        else if (effectType == "CASTLE_MAX_HP")
+                        {
+                            gameManager._wall.CurrentHp.MaxValue += applyValue;
+                            gameManager._wall.SetHp(gameManager._wall.CurrentHp.Value + applyValue);
+                        }
                     }
-                    else if (effectType == "MAX_HP")
+                    else
                     {
-                        int nextHp = gameManager._wall.CurrentHp.Value + applyValue;
-                        gameManager._wall.SetHp(nextHp);
-                        Debug.Log($"성벽 최대 HP {applyValue} 증가");
+                        if (effectType == "CASTLE_HP")
+                        {
+                            _buffRepair += applyValue;
+                        }
+                        else if (effectType == "CASTLE_MAX_HP")
+                        {
+                            _buffMaxHp += applyValue;
+                        }
                     }
                 }
             }

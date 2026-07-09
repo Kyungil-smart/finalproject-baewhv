@@ -17,7 +17,7 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": ""
+      "CHARACTER_IMG": "Player/Serah[Serah_BattlePortrait]"
     },
     {
       "CHARACTER_ID": "3001",
@@ -36,7 +36,7 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": ""
+      "CHARACTER_IMG": "Player/Noah[Noah_BattlePortrait]"
     },
     {
       "CHARACTER_ID": "3002",
@@ -55,7 +55,7 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": ""
+      "CHARACTER_IMG": "Player/Alice[Alice_BattlePortrait]"
     },
     {
       "CHARACTER_ID": "3003",
@@ -74,7 +74,7 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": ""
+      "CHARACTER_IMG": "Player/Spayin[Spayin_BattlePortrait]"
     }
   ]
 }

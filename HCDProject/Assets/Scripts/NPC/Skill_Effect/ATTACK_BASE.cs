@@ -20,15 +20,15 @@ public class ATTACK_BASE : BaseEffect
             target.GetTargetObject.TryGetComponent(out BaseController targetObject);
             if (targetObject == null) return;
 
-            var stat = targetObject.Stats;
+            var stat = targetObject.CurrentStats;
             
-            target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01) + stat._defense, skill);
+            target.SetDamage((int)(user.CurrentStats._attackPower * skill.SKILL_AB_01) + stat._defense, skill);
         }
         else
         {
             for (int i = 0; i < BaseSkill.attackHitCount; i++)
             {
-                target.SetDamage((int)(user.Stats._attackPower * skill.SKILL_AB_01), skill);
+                target.SetDamage((int)(user.CurrentStats._attackPower * skill.SKILL_AB_01), skill);
             }
         }
     }

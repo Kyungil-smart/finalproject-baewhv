@@ -10,6 +10,7 @@ public class ClearState : IState
     {
         
         Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnGameClear();
+        Service.Get<SoundManager>()?.PlaySfxSound("Victory");
     }
 
     public void Update()

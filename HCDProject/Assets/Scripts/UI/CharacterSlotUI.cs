@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class CharacterSlotUI : MonoBehaviour, IDropHandler
@@ -25,8 +26,9 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     [SerializeField] private Image DeathCountImage;
     public RectTransform GetBorderRect => borderRect;
 
-    [SerializeField] private GameObject SkillArea;
-
+    [SerializeField] private GameObject skillArea;
+    public GameObject SkillArea => skillArea;
+    public GameObject SkillEffect;
     private BaseCharacter _character;
     
     //private readonly Vector2 battlePhaseSlotRect = new Vector2(245, 361);
@@ -90,6 +92,10 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void SetSkillBar(float value)
     {
         skillBar.value = value;
+        if(skillBar.value >= 1.0f)
+            SkillEffect.SetActive(true);
+        else
+            SkillEffect.SetActive(false);
     }
 
     public void OnUseSkill()
@@ -104,6 +110,7 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     /// <param name="value"></param>
     public void SetDeathCount(float current, float max)
     {
+        DeathCountImage.gameObject.SetActive(true);
         DeathCountImage.fillAmount = Mathf.Clamp01(current / max);
         deathTimerText.text = $"{current:F1} s";
     }
@@ -111,6 +118,7 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void SetAlive(bool isAlive)
     {
         deathTimerText.gameObject.SetActive(!isAlive);
+        DeathCountImage.gameObject.SetActive(false);
         hpText.gameObject.SetActive(isAlive);
     }
 

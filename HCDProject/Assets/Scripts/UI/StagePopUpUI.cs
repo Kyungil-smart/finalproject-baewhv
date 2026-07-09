@@ -53,14 +53,13 @@ public class StagePopUpUI : MonoBehaviour
     {
         int currChapter = Service.Get<GameManager>().CurrentChapter;
         int currStage = Service.Get<GameManager>().CurrentStage;
-        Debug.Log($"click <current = {currChapter}-{currStage}> <node = {_data.CHAPTER}-{_data.STAGE}> ");
         if (currStage != _data.STAGE || currChapter != _data.CHAPTER) return;
 
         data = _data;
 
         InitLayout();
         stageText.text = $"Stage {_data.CHAPTER} - {_data.STAGE}";
-        stageTypeText.SetEntry($"UI_STAGE_{_data.STAGE_TYPE}");
+        stageTypeText.SetEntry($"UI_SS_TYPE_{_data.STAGE_TYPE}");
 
         switch (type)
         {
@@ -85,9 +84,19 @@ public class StagePopUpUI : MonoBehaviour
     private void SetEvent()
     {
         imageLayout.SetActive(true);
+        eventTopText.gameObject.SetActive(true);
+        eventTopText.text = string.Format(eventTopText.text, "세라");
+        eventBottomText.gameObject.SetActive(true);
+        eventBottomText.text = string.Format(eventBottomText.text, "세라");
         stageImage.sprite = tempCharacterImage;
-        SetBottomButton(EStageType.NORMAL_F, 
-            () => { SetRelic(true); },
+        stageImage.SetNativeSize();
+        SetBottomButton(EStageType.EVENT,
+            () =>
+            {
+                Service.Get<GameManager>().CheckAndStartNarrative(
+                    Service.Get<GameManager>().currentStageData,
+                    true, SetRelic);
+            },
             () => { gameObject.SetActive(false); });
     }
 
@@ -95,6 +104,7 @@ public class StagePopUpUI : MonoBehaviour
     {
         maintenanceLayout.SetActive(true);
         bossInfoLayout.SetActive(true);
+        hpGaugeLayout.SetActive(true);
         var subData = Service.Get<DataManager>().StoryStageTable.data
             .Find(x => x.CHAPTER == data.CHAPTER && x.STAGE == data.STAGE + 1);
         Addressables.LoadAssetAsync<Sprite>(subData.BOSS_MONSTER_IMG_ID).Completed += (handle) =>
@@ -110,8 +120,9 @@ public class StagePopUpUI : MonoBehaviour
     {
         imageLayout.SetActive(true);
         stageImage.sprite = tempStageImage;
+        stageImage.SetNativeSize();
         hpGaugeLayout.SetActive(true);
-        SetBottomButton(EStageType.NORMAL_F, 
+        SetBottomButton(EStageType.NORMAL_F,
             () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
             () => { gameObject.SetActive(false); });
     }
@@ -120,25 +131,23 @@ public class StagePopUpUI : MonoBehaviour
     {
         imageLayout.SetActive(true);
         stageImage.sprite = tempBossImage;
+        stageImage.SetNativeSize();
         hpGaugeLayout.SetActive(true);
-        SetBottomButton(EStageType.BOSS_F, 
+        SetBottomButton(EStageType.BOSS_F,
             () => { Service.Get<GameManager>().EnterStage(data.CHAPTER, data.STAGE); },
             () => { gameObject.SetActive(false); });
     }
 
-    private void SetRelic(bool isPresent)
+    private void SetRelic()
     {
         maintenanceLayout.SetActive(false);
         bossInfoLayout.SetActive(false);
         imageLayout.SetActive(false);
         buttonLayout.SetActive(false);
+        relicLayout.SetActive(true);
+        eventBottomText.gameObject.SetActive(false);
         reward.SetRelicReward(
-            () =>
-            {
-                Service.Get<GameManager>()?.ClearStage();
-                if(gameObject.activeSelf)
-                    gameObject.SetActive(false);
-            });  
+            () => { Service.Get<GameManager>()?.ClearStage(); });
     }
 
     private void SetBottomButton(EStageType type, UnityAction positive, UnityAction negative)
@@ -154,13 +163,20 @@ public class StagePopUpUI : MonoBehaviour
 
     public void OnRepairWall()
     {
-        Service.Get<GameManager>()?.RepairRampart();
-        Service.Get<GameManager>()?.ClearStage();
-        gameObject.SetActive(false);
+        Service.Get<GameManager>().CheckAndStartNarrative(
+            Service.Get<GameManager>().currentStageData,
+            true, () =>
+            {
+                Service.Get<GameManager>()?.RepairRampart();
+                Service.Get<GameManager>()?.ClearStage();
+                gameObject.SetActive(false);                
+            });
     }
 
     public void OnSelectRelic()
     {
-        SetRelic(false);
+        Service.Get<GameManager>().CheckAndStartNarrative(
+            Service.Get<GameManager>().currentStageData,
+            true, SetRelic);
     }
 }

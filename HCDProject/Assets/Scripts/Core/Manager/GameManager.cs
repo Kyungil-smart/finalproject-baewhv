@@ -16,6 +16,7 @@ public class GameManager : BaseManager<GameManager>
     [field: SerializeField] public ObserveValue<GameState> CurrentState { get; private set; }
 
     private UnityAction _endNarrativeAction;
+    public StoryStageRawData beforeStageData { get; private set; }
     public StoryStageRawData currentStageData { get; private set; }
 
     public ReadyState ReadyState { get; protected set; }
@@ -79,6 +80,8 @@ public class GameManager : BaseManager<GameManager>
         NarrativeState = new(this);
 
         _currentWallHp = -1;
+
+        LoadSaveGame();
     }
 
     private void OnEnable()
@@ -106,7 +109,7 @@ public class GameManager : BaseManager<GameManager>
 
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
-            Service.Get<NarrativeManager>().EndNarrative();
+            Service.Get<DataManager>()?.DeleteSaveData();
         }
 
         if (Keyboard.current.uKey.wasPressedThisFrame)
@@ -145,32 +148,6 @@ public class GameManager : BaseManager<GameManager>
         int gameSpeed = Service.Get<TimeManager>().ChangeSpeed();
         return gameSpeed;
     }
-
-    public List<StageData> GetStageDataList(int currentChapter)
-    {
-        var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data.Where(x => x.CHAPTER == currentChapter)
-            .OrderBy(x => x.STAGE).ToList();
-
-        List<StageData> uiList = new();
-
-        if (stageStoryData != null)
-        {
-            foreach (var data in stageStoryData)
-            {
-                var type = CheckStageType(data);
-
-                uiList.Add(new StageData
-                {
-                    Stage = data.STAGE,
-                    State = CurrentStageState(currentChapter, data.STAGE, type),
-                    type = type
-                });
-            }
-        }
-
-        return uiList;
-    }
-
 
     private EStageType CheckStageType(StoryStageRawData data)
     {
@@ -222,6 +199,29 @@ public class GameManager : BaseManager<GameManager>
         {
             CurrentState.Value = GameState.GameOver;
         }
+    }
+
+    private void LoadSaveGame()
+    {
+        var dataManager = Service.Get<DataManager>();
+        if (dataManager == null) return;
+
+        var saveData = dataManager.LoadSaveData;
+
+        if (saveData == null)
+        {
+            CurrentChapter = 1;
+            CurrentStage = 1;
+            return;
+        }
+
+        CurrentChapter = saveData.chapter;
+        CurrentStage = saveData.stage;
+    }
+
+    public void SaveGame(Dictionary<string, int> rewardDatas)
+    {
+        Service.Get<DataManager>()?.SaveGameData(CurrentChapter, CurrentStage, rewardDatas);
     }
 
     public void EnterStage(int chapter, int stage)
@@ -337,6 +337,12 @@ public class GameManager : BaseManager<GameManager>
                 {
                     _wall = wall;
 
+                    if (Service.Get<RelicManager>() != null)
+                    {
+                        float maxHpPlus = Service.Get<RelicManager>().GetTotalRelicBonus("CASTEL", "MAX_HP");
+                        _wall.CurrentHp.MaxValue += (int)maxHpPlus;
+                    }
+
                     if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
                     else _currentWallHp = _wall.CurrentHp.MaxValue;
 
@@ -372,7 +378,7 @@ public class GameManager : BaseManager<GameManager>
 
     public void ClearStage()
     {
-        currentStageData = Service.Get<DataManager>()?.StoryStageTable.data
+        beforeStageData = Service.Get<DataManager>()?.StoryStageTable.data
             .FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
 
         if (_wall != null)
@@ -383,43 +389,43 @@ public class GameManager : BaseManager<GameManager>
             _wall = null;
         }
 
-        if (_currentChapter == 4 && _currentStage == 7)
-        {
-            CurrentState.Value = GameState.Clear;
+        // if (_currentChapter == 4 && _currentStage == 7)
+        // {
+        //     CurrentState.Value = GameState.Clear;
+        //
+        //     var inGamePopUp = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
+        //
+        //     if (inGamePopUp != null)
+        //     {
+        //         inGamePopUp.gameObject.SetActive(false);
+        //     }
+        //
+        //     var plsWaitUpdate = Service.Get<UIManager>()?.SimplePopup;
+        //
+        //     if (plsWaitUpdate != null)
+        //     {
+        //         plsWaitUpdate.SetOneButtonPopup("다음 노드는 개발중에 있습니다", "플레이 해주셔서 감사합니다", () =>
+        //         {
+        //             Service.Get<TimeManager>()?.ResetTimeScale();
+        //             Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
+        //         });
+        //     }
+        //
+        //     return;
+        // }
 
-            var inGamePopUp = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
-
-            if (inGamePopUp != null)
-            {
-                inGamePopUp.gameObject.SetActive(false);
-            }
-
-            var plsWaitUpdate = Service.Get<UIManager>()?.SimplePopup;
-
-            if (plsWaitUpdate != null)
-            {
-                plsWaitUpdate.SetOneButtonPopup("다음 노드는 개발중에 있습니다", "플레이 해주셔서 감사합니다", () =>
-                {
-                    Service.Get<TimeManager>()?.ResetTimeScale();
-                    Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
-                });
-            }
-
-            return;
-        }
-
-        bool isEndChapter = (currentStageData != null && CheckStageType(currentStageData) == EStageType.BOSS_F);
+        bool isEndChapter = (beforeStageData != null && CheckStageType(beforeStageData) == EStageType.BOSS_F);
 
         NextStage();
 
-        var nextStageData = Service.Get<DataManager>()?.StoryStageTable.data
+        currentStageData = Service.Get<DataManager>()?.StoryStageTable.data
             .FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
 
         bool isBattle = true;
 
-        if (nextStageData != null)
+        if (currentStageData != null)
         {
-            EStageType nextEStageType = CheckStageType(nextStageData);
+            EStageType nextEStageType = CheckStageType(currentStageData);
             if (nextEStageType == EStageType.EVENT || nextEStageType == EStageType.MAINTENANCE) isBattle = false;
         }
 

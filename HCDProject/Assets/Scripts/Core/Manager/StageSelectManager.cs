@@ -17,6 +17,7 @@ public class StageSelectManager : BaseManager<StageSelectManager>
         currentChapter = Service.Get<GameManager>().CurrentChapter;
         stageData = Service.Get<DataManager>()?.StoryStageTable.data.FindAll(x => x.CHAPTER == currentChapter);
         LoadStage();
+        Service.Get<UIManager>().GetUI<StageSelectUIController>().SetChapter(currentChapter);
     }
     private void OnDisable()
     {
@@ -67,29 +68,5 @@ public class StageSelectManager : BaseManager<StageSelectManager>
             }
         };
     }
-    //
-    // private void RepairRampart()
-    // {
-    //     if (popupObject != null)
-    //     {
-    //         popupObject.SetActive(true);
-    //         if (popupText != null) popupText.text = "성벽 체력 회복";
-    //
-    //         if (cancelPopup != null) cancelPopup.gameObject.SetActive(false);
-    //
-    //         if (continuePopup != null)
-    //         {
-    //             if (continueText != null) continueText.text = "continue";
-    //
-    //             continuePopup.onClick.RemoveAllListeners();
-    //             continuePopup.onClick.AddListener(() =>
-    //             {
-    //                 popupObject.SetActive(false);
-    //                 Service.Get<GameManager>()?.RepairRampart();
-    //                 Service.Get<GameManager>()?.ClearStage();
-    //                 //StageMap();
-    //             });
-    //         }
-    //     }
-    // }
+
 }

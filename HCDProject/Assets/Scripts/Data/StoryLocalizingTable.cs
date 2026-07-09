@@ -14,7 +14,9 @@ public class StoryLocalizingRawData
     public string BACKGROUND;
     public string BGM;
     public string SFX;
-    public string PORTRAIT;
+    public string PORTRAIT_H;
+    public string PORTRAIT_L;
+    public string PORTRAIT_R;
     public string NAME;
     public string TEXT_ID;
 }

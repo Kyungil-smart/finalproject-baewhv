@@ -6,6 +6,9 @@ using UnityEngine.Video;
 public class VideoManager : BaseManager<VideoManager>
 {
     [SerializeField] private VideoPlayer videoPlayer;
+
+    [SerializeField] private GameObject videoPlay;
+
     public bool IsPlaying { get; private set; } = false;
 
     protected override void Awake()
@@ -22,6 +25,16 @@ public class VideoManager : BaseManager<VideoManager>
             videoPlayer.playOnAwake = false;
             videoPlayer.waitForFirstFrame = true;
         }
+
+        if (videoPlay != null)
+        {
+            videoPlay.SetActive(false);
+        }
+    }
+
+    public void PlayVideoFromButton(VideoClip clip)
+    {
+        PlayVideo(clip, null);
     }
 
     public void PlayVideo(VideoClip clip, Action finishedVideo)
@@ -56,6 +69,11 @@ public class VideoManager : BaseManager<VideoManager>
 
         Service.Get<TimeManager>()?.SaveTimeScale();
 
+        if (videoPlay != null)
+        {
+            videoPlay.SetActive(true);
+        }
+
         videoPlayer.Play();
         Debug.Log("궁극기 시작");
 
@@ -67,6 +85,11 @@ public class VideoManager : BaseManager<VideoManager>
         videoPlayer.Stop();
         IsPlaying = false;
         Debug.Log("재생 끝");
+
+        if (videoPlay != null)
+        {
+            videoPlay.SetActive(false);
+        }
 
         Service.Get<TimeManager>()?.LoadTimeScale();
 
