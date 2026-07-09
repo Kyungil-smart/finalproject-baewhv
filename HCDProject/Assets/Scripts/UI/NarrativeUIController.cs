@@ -1,12 +1,9 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
-using ColorUtility = UnityEngine.ColorUtility;
 
 public class NarrativeUIController : BaseUIController<NarrativeUIController>
 {
@@ -23,6 +20,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     [SerializeField] private Image rightPortrait;
     [SerializeField] private Image ColorLine;
 
+
     //Auto
     [SerializeField] private GameObject autoStatusText;
     [SerializeField] private TextMeshProUGUI autoText;
@@ -31,7 +29,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     [SerializeField] private Color autoColor;
     Color defaultColor = Color.white;
     private Coroutine autoRoutine;
-
+    
     //Queue
     [SerializeField] private NarrativeUIQueue queue;
 
@@ -55,13 +53,13 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
 
     private void OnEnable()
     {
-        descText.OnUpdateString.AddListener(SetText);
+        descText.OnUpdateString.AddListener(SetTextAction);
         Certain.color = Color.black;
     }
 
     private void OnDisable()
     {
-        descText.OnUpdateString.RemoveListener(SetText);
+        descText.OnUpdateString.RemoveListener(SetTextAction);
     }
 
     public void SetNarrative(StoryLocalizingRawData data)
@@ -74,55 +72,57 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         }
 
         currentdata = data;
-        if (string.IsNullOrEmpty(data.NAME))
-            nameTMP.text = "";
-        else
-            nameText.SetEntry(data.NAME);
-        if (string.IsNullOrEmpty(data.NAME))
-            descTMP.text = "";
-        else
-            descText.SetEntry(data.TEXT_ID);
-
-        Color temp;
-        switch (data.NAME)
-        {
-            case "C_001":
-                ColorUtility.TryParseHtmlString("#BC3F3F", out temp);
-                break;
-            case "C_002":
-                ColorUtility.TryParseHtmlString("#A25FA6", out temp);
-                break;
-            case "C_003":
-                ColorUtility.TryParseHtmlString("#EEE83B", out temp);
-                break;
-            case "C_004":
-                ColorUtility.TryParseHtmlString("#59C8FF", out temp);
-                break;
-            default:
-                temp = Color.white;
-                break;
-        }
-        ColorLine.color = temp;
-
         
-        
+        SetText(nameTMP, nameText, data.NAME);
+        SetText(descTMP, descText, data.TEXT_ID);
+
+        if (Service.Get<NarrativeManager>().ColorPicker.ContainsKey(data.NAME))
+            ColorLine.color = Service.Get<NarrativeManager>().ColorPicker[data.NAME];
+        else
+            ColorLine.color = defaultColor;
+
+        SetPortrait(leftPortrait, data.PORTRAIT_L);
+        SetPortrait(rightPortrait, data.PORTRAIT_R);
+
+
         switch (data.CATEGORY)
         {
             case "FADEIN":
-                decsTweener = Certain.DOFade(0.0f, 1.0f).SetUpdate(true);
+                decsTweener = Certain.DOFade(0.0f, 0.5f).SetUpdate(true);
                 decsTweener.onComplete += SetEndText;
                 break;
             case "FADEOUT":
-                decsTweener = Certain.DOFade(1.0f, 1.0f).SetUpdate(true);
+                decsTweener = Certain.DOFade(1.0f, 0.5f).SetUpdate(true);
                 decsTweener.onComplete += SetEndText;
                 break;
         }
     }
 
-    private void SetText(string text)
+    private void SetPortrait(Image portrait, string data)
+    {
+        if (string.IsNullOrEmpty(data))
+            portrait.gameObject.SetActive(false);
+        else
+        {
+            portrait.gameObject.SetActive(true);
+            Service.Get<ResourcesManager>().LoadSpriteToImage(data, portrait);
+        }
+    }
+
+    public void SetText(TextMeshProUGUI tmp, LocalizeStringEvent txt, string name)
+    {
+        if (string.IsNullOrEmpty(name))
+            tmp.text = "";
+        else
+            txt.SetEntry(name);
+    }
+
+
+    private void SetTextAction(string text)
     {
         descTMP.maxVisibleCharacters = 0;
-        decsTweener = DOTween.To(x => descTMP.maxVisibleCharacters = (int)x, 0f, descTMP.text.Length, 1f).SetUpdate(true);
+        decsTweener = DOTween.To(x => descTMP.maxVisibleCharacters = (int)x, 0f, descTMP.text.Length, 1f)
+            .SetUpdate(true);
         if (isAuto)
             decsTweener.onComplete += SetAuto;
         decsTweener.onComplete += SetEndText;

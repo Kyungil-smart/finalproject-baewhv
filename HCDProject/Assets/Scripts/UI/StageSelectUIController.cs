@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StageSelectUIController : BaseUIController<StageSelectUIController>
 {
     [SerializeField] private List<StageNodeUI> stageNodes = new();
+    [SerializeField] private TextMeshProUGUI stageText;
     public int GetNodesCount => stageNodes.Count;
 
     [SerializeField] private List<Sprite> stageSprites;
@@ -12,8 +14,6 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     [SerializeField] private StagePopUpUI stagePopUpUI;
     [SerializeField] private Color clearColor;
 
-    private int _currentChapter;
-
     public void SetStageNode(int index, StoryStageRawData data, EStageType type, EStageState state)
     {
         if (data == null)
@@ -21,6 +21,8 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             stageNodes[index].SetActive(false);
             return;
         }
+
+        Debug.Log($"SetNode {data.CHAPTER} - {data.STAGE}");
 
         Sprite sp;
         switch (state)
@@ -43,19 +45,29 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             .SetText(data.CHAPTER, data.STAGE);
     }
 
+    public void SetChapter(int chapter)
+    {
+        stageText.text = $"chapter. {chapter}";
+    }
+
     public void SetClearNode(int index)
     {
-        stageNodes[index-1].SetImage(clearStageSprites).SetColor(clearColor);
+        stageNodes[index - 1].SetImage(clearStageSprites).SetColor(clearColor);
     }
 
     public void SetOpenNode(int index, EStageType type)
     {
-        stageNodes[index-1].SetImage(stageSprites[(int)type]);
+        stageNodes[index - 1].SetImage(stageSprites[(int)type]);
     }
 
     public void OnOpenSettingUI()
     {
         Service.Get<UIManager>()?.OpenOption();
+    }
+
+    public void OnBackToLobby()
+    {
+        Service.Get<SceneController>().ChangeScene(SceneType.ModeSelect);
     }
 }
 

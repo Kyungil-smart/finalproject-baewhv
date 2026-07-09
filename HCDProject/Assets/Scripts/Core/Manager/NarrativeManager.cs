@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using ColorUtility = UnityEngine.ColorUtility;
 
 public class NarrativeManager : BaseManager<NarrativeManager>
 {
@@ -12,12 +13,46 @@ public class NarrativeManager : BaseManager<NarrativeManager>
     private int currentChapter = -1;
     private int currentStage = -1;
     private int currentIndex = 0;
+    public Dictionary<string, Color> ColorPicker { get; private set; } = new();
 
     protected override void Awake()
     {
         base.Awake();
         if (IsManagerDestroy) return;
         SetNarrativeUI();
+    }
+
+    private void Start()
+    {
+        foreach (var d in Service.Get<DataManager>().StaticValueTable.data)
+        {
+            if (d.VARIABLE_TYPE == "COLOR")
+            {
+                string name = "";
+                switch (d.VARIABLE_NAME)
+                {
+                    case "COLOR_SERAH":
+                        name = "C_001"; 
+                        break;
+                    case "COLOR_NOAH":
+                        name = "C_002";
+                        break;
+                    case "COLOR_ALICE":
+                        name = "C_003";
+                        break;
+                    case "COLOR_SPAYNE":
+                        name = "C_004";
+                        break;
+                    case "COLOR_COMMANDER":
+                        name = "C_008";
+                        break;
+                }
+                if (string.IsNullOrEmpty(name)) continue;
+                Color pickedColor = Color.white;
+                ColorUtility.TryParseHtmlString(d.VARIABLE_VALUE, out pickedColor);
+                ColorPicker[name] = pickedColor;
+            }
+        }
     }
 
     private void OnEnable()
@@ -27,7 +62,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 
     private void OnDisable()
     {
-        if(Service.Get<SceneController>())
+        if (Service.Get<SceneController>())
             Service.Get<SceneController>().OnLoadingComplete -= SetNarrativeUI;
     }
 
