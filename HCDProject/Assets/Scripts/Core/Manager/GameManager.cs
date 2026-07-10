@@ -58,24 +58,31 @@ public class GameManager : BaseManager<GameManager>
 
     public Rampart _wall;
     private string _wallAddress = "Rampart";
-    [SerializeField] private int _currentWallHp = -1;
+    [field: SerializeField] public RatioIntValue CurrentHp { get; set; }
 
     public HashSet<string> ids = new HashSet<string>();
 
     private void Awake()
     {
-        if (Service.Get<GameManager>() != null && Service.Get<GameManager>() != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        base.Awake();
+
+        if (IsManagerDestroy) return;
 
         isReady = true;
 
-        base.Awake();
-
         _state = new();
         CurrentState = new();
+        CurrentHp = new RatioIntValue(-1);
+        
+        var rampartData = Service.Get<DataManager>()?.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "CASTLE_HP");
+        if (rampartData != null)
+        {
+            if (int.TryParse(rampartData.VARIABLE_VALUE, out int value))
+            {
+                CurrentHp = new RatioIntValue(value);
+                CurrentHp.Value = CurrentHp.MaxValue;
+            }
+        }
 
         ReadyState = new(this);
         SortState = new(this);
@@ -84,8 +91,6 @@ public class GameManager : BaseManager<GameManager>
         GameOverState = new(this);
         NarrativeState = new(this);
 
-        _currentWallHp = -1;
-
         LoadSaveGame();
 
         CheckMaxStage();
@@ -93,7 +98,7 @@ public class GameManager : BaseManager<GameManager>
 
     private void OnEnable()
     {
-        if (isReady)
+        if (isReady && !IsManagerDestroy)
         {
             CurrentState.AddListener(ChangeState);
         }
@@ -101,8 +106,11 @@ public class GameManager : BaseManager<GameManager>
 
     private void OnDisable()
     {
-        CurrentState.RemoveListener(ChangeState);
-        if (_wall != null && _wall.CurrentHp != null) _wall.CurrentHp.RemoveListener(WallHpChange);
+        if (isReady && !IsManagerDestroy)
+        {
+            CurrentState?.RemoveListener(ChangeState);
+            CurrentHp?.RemoveListener(WallHpChange);
+        }
     }
     
     private void Update()
@@ -200,20 +208,32 @@ public class GameManager : BaseManager<GameManager>
 
         var saveData = dataManager.LoadSaveData;
 
+        var rampartData = dataManager.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "CASTLE_HP");
+        if (rampartData != null && int.TryParse(rampartData.VARIABLE_VALUE, out var hp))
+        {
+            CurrentHp.MaxValue = hp;
+        }
+        
         if (saveData == null)
         {
             CurrentChapter = 1;
             CurrentStage = 1;
+            CurrentHp.Value = CurrentHp.MaxValue;
             return;
         }
 
         CurrentChapter = saveData.chapter;
         CurrentStage = saveData.stage;
+
+        if (saveData.wallMaxHp > 0) CurrentHp.MaxValue = saveData.wallMaxHp;
+        if (saveData.wallHp > 0) CurrentHp.Value = saveData.wallHp;
+        
+        CurrentHp.Value = saveData.wallHp;
     }
 
     public void SaveGame(Dictionary<string, int> rewardDatas)
     {
-        Service.Get<DataManager>()?.SaveGameData(CurrentChapter, CurrentStage, rewardDatas);
+        Service.Get<DataManager>()?.SaveGameData(CurrentChapter, CurrentStage, CurrentHp.Value, CurrentHp.MaxValue, rewardDatas);
     }
 
     public void EnterStage(int chapter, int stage)
@@ -350,22 +370,20 @@ public class GameManager : BaseManager<GameManager>
 
                     if (Service.Get<RelicManager>() != null)
                     {
-                        float maxHpPlus = Service.Get<RelicManager>().GetTotalRelicBonus("CASTEL", "MAX_HP");
-                        _wall.CurrentHp.MaxValue += (int)maxHpPlus;
+                        float maxHpPlus = Service.Get<RelicManager>().GetTotalRelicBonus("CASTLE", "MAX_HP");
+                        CurrentHp.MaxValue += (int)maxHpPlus;
                     }
 
-                    if (_currentWallHp != -1) _wall.SetHp(_currentWallHp);
-                    else _currentWallHp = _wall.CurrentHp.MaxValue;
-
-                    if (_wall.CurrentHp != null) _wall.CurrentHp.AddListener(WallHpChange);
+                    _wall.SetHp(CurrentHp);
+                    
+                    CurrentHp.RemoveListener(WallHpChange);
+                    CurrentHp.AddListener(WallHpChange);
 
                     var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
 
-                    if (wallHpUi != null && _wall != null)
+                    if (wallHpUi != null)
                     {
-                        wallHpUi.SetWallHP(_wall.CurrentHp.Value);
-                        _wall.CurrentHp.AddRatioListener(wallHpUi.SetWallHP);
-                        _wall.CurrentHp.Value = _wall.CurrentHp.Value;
+                        wallHpUi.SetWallHP((float)CurrentHp.Value / CurrentHp.MaxValue);
                     }
                 }
             }
@@ -374,16 +392,14 @@ public class GameManager : BaseManager<GameManager>
 
     public void RepairRampart()
     {
-        var repairData = Service.Get<DataManager>()?.StageClearRewardTable.data.Find(x => x.CLEAR_REWARD_ID == "4012");
+        var repairData = Service.Get<DataManager>()?.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "CASTLE_HP_RECOVERY");
 
         if (repairData != null)
         {
-            float value = repairData.CLEAR_REWARD_F_01;
-
-            if (_currentWallHp != -1)
-            {
-                _currentWallHp += (int)value;
-            }
+            string value = repairData.VARIABLE_VALUE;
+            
+            CurrentHp.Value += int.Parse(value);
+            if (CurrentHp.Value > CurrentHp.MaxValue) CurrentHp.Value = CurrentHp.MaxValue;
         }
     }
 
@@ -394,8 +410,6 @@ public class GameManager : BaseManager<GameManager>
 
         if (_wall != null)
         {
-            _currentWallHp = _wall.CurrentHp.Value;
-
             Addressables.ReleaseInstance(_wall.gameObject);
             _wall = null;
         }
@@ -483,6 +497,14 @@ public class GameManager : BaseManager<GameManager>
         }
 
         Service.Get<TimeManager>()?.ResetTimeScale();
+
+        int targetChapter = _currentChapter;
+        int targetStage = _currentStage;
+        
+        LoadSaveGame();
+        
+        _currentChapter = targetChapter;
+        _currentStage = targetStage;
 
         EnterStage(_currentChapter, _currentStage);
     }
