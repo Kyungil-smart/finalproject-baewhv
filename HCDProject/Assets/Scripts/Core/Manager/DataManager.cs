@@ -107,7 +107,7 @@ public class DataManager : BaseManager<DataManager>
         Debug.Log($"게임 진행상황 로딩 완료");
     }
 
-    public void SaveGameData(int chapter, int stage, Dictionary<string, int> rewards)
+    public void SaveGameData(int chapter, int stage, int wallHp, int wallMaxHp, Dictionary<string, int> rewards)
     {
         Dictionary<string,int> mergeRewards = new Dictionary<string, int>();
 
@@ -129,6 +129,8 @@ public class DataManager : BaseManager<DataManager>
         {
             chapter = chapter,
             stage = stage,
+            wallHp = wallHp,
+            wallMaxHp = wallMaxHp,
             saveRewardDatas = new List<SaveRewardData>()
         };
 
