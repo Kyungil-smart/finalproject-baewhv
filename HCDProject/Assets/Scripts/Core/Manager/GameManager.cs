@@ -104,6 +104,11 @@ public class GameManager : BaseManager<GameManager>
         CurrentState.RemoveListener(ChangeState);
         if (_wall != null && _wall.CurrentHp != null) _wall.CurrentHp.RemoveListener(WallHpChange);
     }
+    
+    private void Update()
+    {
+        _state?.Update();
+    }
 
     private void ChangeState(GameState state)
     {
@@ -485,6 +490,8 @@ public class GameManager : BaseManager<GameManager>
     {
         if (_isGameAllClear)
         {
+            SaveGame(Service.Get<RelicManager>()?.MyRelics);
+            
             _isGameAllClear = false;
             _endNarrativeAction = null;
 
