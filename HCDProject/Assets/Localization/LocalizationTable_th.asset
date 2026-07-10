@@ -4256,8 +4256,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087305
-    m_Localized: "\u0E1F\u0E37\u0E49\u0E19\u0E1F\u0E39 HP \u0E01\u0E33\u0E41\u0E1E\u0E07
-      30%"
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087306

@@ -6798,7 +6798,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087305
-    m_Localized: "\uC131\uBCBD \uCCB4\uB825 30% \uD68C\uBCF5"
+    m_Localized: "\uC131\uBCBD \uCCB4\uB825 150 \uD68C\uBCF5"
     m_Metadata:
       m_Items: []
   - m_Id: 8695236044087306
@@ -12208,8 +12208,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 11184535750664193
     m_Localized: "\uC2A4\uD1A0\uB9AC \uC9C4\uD589\uB3C4\uB97C <color=red>\uCD08\uAE30\uD654</color>\uD569\uB2C8\uB2E4.<br><br>\uCD08\uAE30\uD654
-      \uC9C4\uD589 \uC2DC \uB85C\uB529 \uD654\uBA74\uC73C\uB85C \uB3CC\uC544\uAC00\uBA70
-      \uC9C4\uD589\uC911\uC778 \uB370\uC774\uD130\uAC00 <color=red>\uBAA8\uB450 \uCD08\uAE30\uD654</color>
+      \uC9C4\uD589 \uC2DC \uB85C\uB529 \uD654\uBA74\uC73C\uB85C \uB3CC\uC544\uAC00\uBA70<br>\uC9C4\uD589\uC911\uC778
+      \uB370\uC774\uD130\uAC00 <color=red>\uBAA8\uB450 \uCD08\uAE30\uD654</color>
       \uB429\uB2C8\uB2E4.<br><br>\uC9C4\uD589\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
     m_Metadata:
       m_Items: []
