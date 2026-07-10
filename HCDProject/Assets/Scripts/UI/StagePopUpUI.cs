@@ -147,7 +147,10 @@ public class StagePopUpUI : MonoBehaviour
         relicLayout.SetActive(true);
         eventBottomText.gameObject.SetActive(false);
         reward.SetRelicReward(
-            () => { Service.Get<GameManager>()?.ClearStage(); });
+            () =>
+            {
+                Service.Get<GameManager>()?.ClearStage();
+            });
     }
 
     private void SetBottomButton(EStageType type, UnityAction positive, UnityAction negative)
@@ -174,6 +177,7 @@ public class StagePopUpUI : MonoBehaviour
             {
                 Service.Get<GameManager>()?.RepairRampart();
                 Service.Get<GameManager>()?.ClearStage();
+                Service.Get<GameManager>()?.SaveGame(Service.Get<RelicManager>()?.MyRelics);
                 gameObject.SetActive(false);                
             });
     }

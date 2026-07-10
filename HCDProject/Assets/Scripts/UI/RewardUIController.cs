@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -62,6 +63,8 @@ public class RewardUIController : MonoBehaviour
         if(contentText) contentText.SetEntry(content);
         if (!isReRoll)
             Service.Get<TimeManager>()?.SaveTimeScale();
+        RectTransform rt = (RectTransform)transform;
+        rt.DOScale(Vector3.zero, 0.5f).From();
     }
 
 
@@ -115,7 +118,8 @@ public class RewardUIController : MonoBehaviour
         {
             buttonList[i].SetReward(CurrentReward[i], index =>
             {
-                Service.Get<RelicManager>().OnSelectRelicReward(index);
+                Service.Get<RelicManager>()?.OnSelectRelicReward(index);
+                Service.Get<GameManager>()?.SaveGame(Service.Get<RelicManager>()?.MyRelics);
                 selectedIndex = index;
             }, i);
         }

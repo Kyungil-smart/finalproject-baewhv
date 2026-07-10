@@ -117,6 +117,8 @@ public class SortManager : BaseManager<SortManager>
     {
         CurrentCombo.Value += amount;
 
+        Service.Get<VibrationManager>()?.TriggerVibration();
+
         if (CurrentCombo.Value > MaxComboCount)
         {
             MaxComboCount = CurrentCombo.Value;
