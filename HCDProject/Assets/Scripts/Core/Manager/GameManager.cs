@@ -407,6 +407,7 @@ public class GameManager : BaseManager<GameManager>
         if (_currentChapter == MaxChapter && _currentStage == MaxStage)
         {
             Service.Get<ResourcesManager>()?.LoadVideo("Player/HCD_Staffroll");
+            SaveGame(Service.Get<RelicManager>()?.MyRelics);
             _isGameAllClear = true;
         }
 
@@ -490,8 +491,6 @@ public class GameManager : BaseManager<GameManager>
     {
         if (_isGameAllClear)
         {
-            SaveGame(Service.Get<RelicManager>()?.MyRelics);
-            
             _isGameAllClear = false;
             _endNarrativeAction = null;
 
