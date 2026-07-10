@@ -13,6 +13,8 @@ public class UIManager : BaseManager<UIManager>
     [SerializeField] private SettingPopupUI OptionPopup;
     [SerializeField] private LoadingBarUI loadingBar;
     [SerializeField] private SimplePopup simplePopup;
+    [SerializeField] private RawImage videoPlay;
+    public RawImage VideoPlay => videoPlay;
     public LoadingBarUI LoadingBar => loadingBar;
     public SimplePopup SimplePopup => simplePopup;
     public Image GetFader => fader;
