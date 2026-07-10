@@ -64,15 +64,11 @@ public class GameManager : BaseManager<GameManager>
 
     private void Awake()
     {
-        if (Service.Get<GameManager>() != null && Service.Get<GameManager>() != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        base.Awake();
+
+        if (IsManagerDestroy) return;
 
         isReady = true;
-
-        base.Awake();
 
         _state = new();
         CurrentState = new();
@@ -102,7 +98,7 @@ public class GameManager : BaseManager<GameManager>
 
     private void OnEnable()
     {
-        if (isReady)
+        if (isReady && !IsManagerDestroy)
         {
             CurrentState.AddListener(ChangeState);
         }
@@ -110,8 +106,11 @@ public class GameManager : BaseManager<GameManager>
 
     private void OnDisable()
     {
-        CurrentState?.RemoveListener(ChangeState);
-        CurrentHp?.RemoveListener(WallHpChange);
+        if (isReady && !IsManagerDestroy)
+        {
+            CurrentState?.RemoveListener(ChangeState);
+            CurrentHp?.RemoveListener(WallHpChange);
+        }
     }
     
     private void Update()
@@ -498,6 +497,14 @@ public class GameManager : BaseManager<GameManager>
         }
 
         Service.Get<TimeManager>()?.ResetTimeScale();
+
+        int targetChapter = _currentChapter;
+        int targetStage = _currentStage;
+        
+        LoadSaveGame();
+        
+        _currentChapter = targetChapter;
+        _currentStage = targetStage;
 
         EnterStage(_currentChapter, _currentStage);
     }
