@@ -14,13 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Localization-Asset-Tables-Indonesian (id)
   m_GUID: c53117ab13a0dd14b8f12892b61662d9
-  m_SerializeEntries:
-  - m_GUID: f7f6d817d16499e4eaf37379b7cb0135
-    m_Address: FontTable_id
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-id
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 659786fb8861e664a8a88334390f8666, type: 2}
   m_SchemaSet:
