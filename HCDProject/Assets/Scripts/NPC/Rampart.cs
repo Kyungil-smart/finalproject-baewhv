@@ -34,7 +34,7 @@ public class Rampart : MonoBehaviour, ITargetable
             if (popup != null) CurrentHp.AddRatioListener(popup.OnSetDangerBorder);
             
             var bottomUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
-            if (bottomUi != null) CurrentHp.AddRatioListener(bottomUi.SetWallHP);
+            if (bottomUi != null) CurrentHp.AddValuesListener(bottomUi.SetWallHP);
         }
     }
 
