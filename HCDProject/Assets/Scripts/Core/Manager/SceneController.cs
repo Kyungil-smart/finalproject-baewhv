@@ -40,7 +40,7 @@ public class SceneController : BaseManager<SceneController>
             Service.Get<TimeManager>()?.ResetTimeScale();
         }
         
-        LoadSceneMode sceneMode = (scene == SceneType.Title || scene == SceneType.ModeSelect) ? LoadSceneMode.Single : LoadSceneMode.Additive;
+        LoadSceneMode sceneMode = (scene == SceneType.Title || scene == SceneType.ModeSelect || scene == SceneType.Archive) ? LoadSceneMode.Single : LoadSceneMode.Additive;
 
         StartCoroutine(LoadSceneRoutine(scene, sceneMode));
     }
@@ -159,5 +159,6 @@ public enum SceneType
     ModeSelect = 1,
     StageSelect = 2,
     InGame = 3,
-    Tutorial = 4
+    Tutorial = 4,
+    Archive = 5
 }
