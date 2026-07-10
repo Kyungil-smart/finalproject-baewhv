@@ -17,7 +17,8 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": "Player/Serah[Serah_BattlePortrait]"
+      "CHARACTER_IMG": "Player/Serah[Serah_BattlePortrait]",
+      "SKILL_CUTSCENE": "Player/Serah_Skill"
     },
     {
       "CHARACTER_ID": "3001",
@@ -36,7 +37,8 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": "Player/Noah[Noah_BattlePortrait]"
+      "CHARACTER_IMG": "Player/Noah[Noah_BattlePortrait]",
+      "SKILL_CUTSCENE": "Player/Noah_Skill"
     },
     {
       "CHARACTER_ID": "3002",
@@ -55,7 +57,8 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": "Player/Alice[Alice_BattlePortrait]"
+      "CHARACTER_IMG": "Player/Alice[Alice_BattlePortrait]",
+      "SKILL_CUTSCENE": "Player/Alice_Skill"
     },
     {
       "CHARACTER_ID": "3003",
@@ -74,7 +77,8 @@
       "CHARACTER_HIT_SFX": "",
       "CHARACTER_HIT_FX": "",
       "ATK_FX": "",
-      "CHARACTER_IMG": "Player/Spayin[Spayin_BattlePortrait]"
+      "CHARACTER_IMG": "Player/Spayin[Spayin_BattlePortrait]",
+      "SKILL_CUTSCENE": "Player/Spayin_Skill"
     }
   ]
 }
