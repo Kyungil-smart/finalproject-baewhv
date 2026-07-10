@@ -64,7 +64,8 @@ public class RewardUIController : MonoBehaviour
         if(contentText) contentText.SetEntry(content);
         if (!isReRoll)
             Service.Get<TimeManager>()?.SaveTimeScale();
-        actionUI?.DOScale(Vector3.zero, 0.5f).From().SetUpdate(true);
+        if(actionUI)
+            actionUI.DOScale(Vector3.zero, 0.5f).From().SetUpdate(true);
     }
 
 
