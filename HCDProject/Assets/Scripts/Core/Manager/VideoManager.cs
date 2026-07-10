@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class VideoManager : BaseManager<VideoManager>
 {
     [SerializeField] private VideoPlayer videoPlayer;
 
-    [SerializeField] private GameObject videoPlay;
+    private RawImage videoPlay;
 
     public bool IsPlaying { get; private set; } = false;
 
@@ -26,9 +27,15 @@ public class VideoManager : BaseManager<VideoManager>
             videoPlayer.waitForFirstFrame = true;
         }
 
+        var uiManager = Service.Get<UIManager>();
+        if (uiManager != null)
+        {
+            videoPlay = uiManager.VideoPlay;
+        }
+
         if (videoPlay != null)
         {
-            videoPlay.SetActive(false);
+            videoPlay.gameObject.SetActive(false);
         }
     }
 
@@ -71,7 +78,7 @@ public class VideoManager : BaseManager<VideoManager>
 
         if (videoPlay != null)
         {
-            videoPlay.SetActive(true);
+            videoPlay.gameObject.SetActive(true);
         }
 
         videoPlayer.Play();
@@ -88,7 +95,7 @@ public class VideoManager : BaseManager<VideoManager>
 
         if (videoPlay != null)
         {
-            videoPlay.SetActive(false);
+            videoPlay.gameObject.SetActive(false);
         }
 
         Service.Get<TimeManager>()?.LoadTimeScale();
