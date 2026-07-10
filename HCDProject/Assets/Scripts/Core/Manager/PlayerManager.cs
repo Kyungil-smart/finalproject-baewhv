@@ -128,6 +128,10 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         LoadStaticValues();
         for (int i = 0; i < data.Count; i++)
         {
+            if (!string.IsNullOrEmpty(data[i].SKILL_CUTSCENE))
+            {
+                Service.Get<ResourcesManager>().LoadVideo(data[i].SKILL_CUTSCENE);
+            }
             GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[i].position, Quaternion.identity);
 
             BaseCharacter chr = obj.GetComponent<BaseCharacter>();
