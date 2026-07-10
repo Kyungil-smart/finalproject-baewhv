@@ -12,6 +12,7 @@ public class ModeUIController : BaseUIController<ModeUIController>
     
     public void OnNextScene()
     {
+        Service.Get<DataManager>()?.StageSelectWithLoadGame();
         Service.Get<SceneController>()?.ChangeScene(SceneType.StageSelect);
     }
 
