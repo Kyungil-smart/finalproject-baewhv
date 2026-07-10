@@ -71,6 +71,12 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         wallHp.value = value;
         wallHpText.text = $"{value:p0}";
     }
+    
+    public void SetWallHP(int current, int max)
+    {
+        wallHp.value = Mathf.Clamp01((float)current/max);
+        wallHpText.text = $"{current} / {max}";
+    }
 
     public void SetBattlePhase()
     {
