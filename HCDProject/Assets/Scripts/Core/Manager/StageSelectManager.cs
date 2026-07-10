@@ -17,7 +17,6 @@ public class StageSelectManager : BaseManager<StageSelectManager>
         currentChapter = Service.Get<GameManager>().CurrentChapter;
         stageData = Service.Get<DataManager>()?.StoryStageTable.data.FindAll(x => x.CHAPTER == currentChapter);
         LoadStage();
-        Service.Get<UIManager>().GetUI<StageSelectUIController>().SetChapter(currentChapter);
     }
     private void OnDisable()
     {

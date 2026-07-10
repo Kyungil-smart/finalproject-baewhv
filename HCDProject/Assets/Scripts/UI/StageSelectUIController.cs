@@ -5,7 +5,6 @@ using UnityEngine;
 public class StageSelectUIController : BaseUIController<StageSelectUIController>
 {
     [SerializeField] private List<StageNodeUI> stageNodes = new();
-    [SerializeField] private TextMeshProUGUI stageText;
     public int GetNodesCount => stageNodes.Count;
 
     [SerializeField] private List<Sprite> stageSprites;
@@ -45,11 +44,6 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             .SetText(data.CHAPTER, data.STAGE);
     }
 
-    public void SetChapter(int chapter)
-    {
-        stageText.text = $"chapter. {chapter}";
-    }
-
     public void SetClearNode(int index)
     {
         stageNodes[index - 1].SetImage(clearStageSprites).SetColor(clearColor);
@@ -68,6 +62,17 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
     public void OnBackToLobby()
     {
         Service.Get<SceneController>().ChangeScene(SceneType.ModeSelect);
+    }
+
+    public void OnReset()
+    {
+        Service.Get<UIManager>().SimplePopup.SetTwoButtonWarningPopup(
+            "UI_RESET_TITLE","UI_RESET_DESC", null,
+            ()=>
+            {
+                Service.Get<DataManager>()?.DeleteSaveData();
+                Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
+            });
     }
 }
 

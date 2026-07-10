@@ -8,7 +8,7 @@ public abstract class BaseManager<T> : MonoBehaviour where T : MonoBehaviour
     protected virtual void Awake()
     {
         T temp = this as T;
-        if (!Service.Register(temp, EManagerType.dontDestroyOnLoad))
+        if (!Service.Register(temp, _eManager))
         {
             Destroy(gameObject);
             IsManagerDestroy = true;
@@ -30,6 +30,8 @@ public abstract class BaseManager<T> : MonoBehaviour where T : MonoBehaviour
 
     protected void OnDestroy()
     {
+        if (IsManagerDestroy) return;
+        
         T temp = this as T;
         Service.UnRegister(temp);
     }

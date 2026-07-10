@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class ResourcesManager : BaseManager<ResourcesManager>
 {
     private Dictionary<string, Sprite> DefaultSprite = new ();
     private Dictionary<string, Sprite> LoadedSprites = new ();
+    private Dictionary<string, VideoClip> LoadedVideos = new ();
 
     private void Start()
     {
@@ -24,9 +26,13 @@ public class ResourcesManager : BaseManager<ResourcesManager>
 
     public void LoadSpriteToImage(string name, Image image)
     {
-        if (LoadedSprites.TryGetValue(name, out var sprite))
+        if (DefaultSprite.TryGetValue(name, out var defSprite))
         { 
-            image.sprite = sprite;
+            image.sprite = defSprite;
+        }
+        if (LoadedSprites.TryGetValue(name, out var loadSprite))
+        { 
+            image.sprite = loadSprite;
         }
         else
         {
@@ -40,8 +46,35 @@ public class ResourcesManager : BaseManager<ResourcesManager>
             };
         }
     }
+
+    public void LoadVideo(string address)
+    {
+        Addressables.LoadAssetAsync<VideoClip>(address).Completed += result =>
+        {
+            if (result.Status == AsyncOperationStatus.Succeeded)
+            {
+                LoadedVideos[address] = result.Result;
+            }
+        };
+        
+    }
+
+    public VideoClip GetVideo(string address)
+    {
+        return LoadedVideos.GetValueOrDefault(address);
+    }
+    
     private void OnChangeScene(float value)
     {
+        foreach (var v in LoadedVideos.Values)
+        {
+            Addressables.Release(v);
+        }
+        foreach (var s in LoadedSprites.Values)
+        {
+            Addressables.Release(s);
+        }
+        LoadedVideos.Clear();
         LoadedSprites.Clear();
     }
 

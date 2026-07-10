@@ -1,11 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class IngameBottomUIController : BaseUIController<IngameBottomUIController>
@@ -70,6 +68,13 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     {
         wallHp.value = value;
         wallHpText.text = $"{value:p0}";
+    }
+    
+    public void SetWallHP(int current, int max)
+    {
+        wallHp.value = Mathf.Clamp01((float)current/max);
+        if (current < 0) current = 0;
+        wallHpText.text = $"{current} / {max}";
     }
 
     public void SetBattlePhase()

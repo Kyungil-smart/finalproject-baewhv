@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class RewardUIController : MonoBehaviour
     [SerializeField] private LocalizeStringEvent contentText;
     [SerializeField] private RewardButtonUI[] buttonList;
     [SerializeField] private Button reRollButton;
+    [SerializeField] private RectTransform actionUI;
     private int selectedIndex = -1;
 
     private UnityAction CloseCallback;
@@ -62,6 +64,8 @@ public class RewardUIController : MonoBehaviour
         if(contentText) contentText.SetEntry(content);
         if (!isReRoll)
             Service.Get<TimeManager>()?.SaveTimeScale();
+        if(actionUI)
+            actionUI.DOScale(Vector3.zero, 0.5f).From().SetUpdate(true);
     }
 
 
@@ -115,7 +119,8 @@ public class RewardUIController : MonoBehaviour
         {
             buttonList[i].SetReward(CurrentReward[i], index =>
             {
-                Service.Get<RelicManager>().OnSelectRelicReward(index);
+                Service.Get<RelicManager>()?.OnSelectRelicReward(index);
+                Service.Get<GameManager>()?.SaveGame(Service.Get<RelicManager>()?.MyRelics);
                 selectedIndex = index;
             }, i);
         }

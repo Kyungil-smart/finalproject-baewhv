@@ -88,12 +88,17 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
 
     public void OnReturnMenu()
     {
-        Service.Get<UIManager>().SimplePopup.SetTwoButtonPopup("경고", "퇴각할 경우 현재 스테이지는 초기화됩니다.\n\n퇴각하시겠습니까?", 
+        Service.Get<UIManager>().SimplePopup.SetTwoButtonPopup(
+            "UI_RETIRE_TITLE",
+            "UI_RETIRE_DESC", 
             () =>
             {
                 gameObject.SetActive(false);    
                 Service.Get<SceneController>().ChangeScene(SceneType.StageSelect);
-            },null);
+            },null,
+            "UI_POPUP_RETREAT",
+            "UI_POPUP_BACK"
+            );
     }
 }
 

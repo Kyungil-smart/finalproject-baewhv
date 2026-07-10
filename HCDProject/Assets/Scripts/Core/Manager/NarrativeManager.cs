@@ -78,7 +78,6 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 
     public void StartNarrative(StoryStageRawData data, bool isBefore)
     {
-        ui.GameObject().SetActive(false);
         currentStage = data.STAGE;
         currentChapter = data.CHAPTER;
         currentIndex = 0;

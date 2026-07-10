@@ -22,6 +22,7 @@ public class CharacterRawData
     public string CHARACTER_HIT_FX;
     public string ATK_FX;
     public string CHARACTER_IMG;
+    public string SKILL_CUTSCENE;
 }
 
 [Serializable]

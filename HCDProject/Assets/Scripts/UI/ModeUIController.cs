@@ -12,6 +12,7 @@ public class ModeUIController : BaseUIController<ModeUIController>
     
     public void OnNextScene()
     {
+        Service.Get<DataManager>()?.StageSelectWithLoadGame();
         Service.Get<SceneController>()?.ChangeScene(SceneType.StageSelect);
     }
 
@@ -32,5 +33,10 @@ public class ModeUIController : BaseUIController<ModeUIController>
     public void OnOpenSettingUI()
     {
         Service.Get<UIManager>()?.OpenOption();
+    }
+
+    public void OnOpenArchive()
+    {
+        Service.Get<SceneController>()?.ChangeScene(SceneType.Archive);
     }
 }

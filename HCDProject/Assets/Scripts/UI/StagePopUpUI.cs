@@ -26,6 +26,8 @@ public class StagePopUpUI : MonoBehaviour
     [SerializeField] private GameObject relicLayout;
     [SerializeField] private RewardUIController reward;
     [SerializeField] private GameObject hpGaugeLayout;
+    [SerializeField] private Slider wallHp;
+    [SerializeField] private TextMeshProUGUI wallHpText;
 
     [SerializeField] private GameObject buttonLayout;
     [SerializeField] private Button positiveButton;
@@ -56,7 +58,9 @@ public class StagePopUpUI : MonoBehaviour
         if (currStage != _data.STAGE || currChapter != _data.CHAPTER) return;
 
         data = _data;
-
+        var hp = Service.Get<GameManager>().CurrentHp;
+        wallHp.value = Mathf.Clamp01((float)hp.Value / hp.MaxValue);
+        wallHpText.text = $"{hp.Value} / {hp.MaxValue}";
         InitLayout();
         stageText.text = $"Stage {_data.CHAPTER} - {_data.STAGE}";
         stageTypeText.SetEntry($"UI_SS_TYPE_{_data.STAGE_TYPE}");
@@ -147,7 +151,10 @@ public class StagePopUpUI : MonoBehaviour
         relicLayout.SetActive(true);
         eventBottomText.gameObject.SetActive(false);
         reward.SetRelicReward(
-            () => { Service.Get<GameManager>()?.ClearStage(); });
+            () =>
+            {
+                Service.Get<GameManager>()?.ClearStage();
+            });
     }
 
     private void SetBottomButton(EStageType type, UnityAction positive, UnityAction negative)
@@ -169,6 +176,7 @@ public class StagePopUpUI : MonoBehaviour
             {
                 Service.Get<GameManager>()?.RepairRampart();
                 Service.Get<GameManager>()?.ClearStage();
+                Service.Get<GameManager>()?.SaveGame(Service.Get<RelicManager>()?.MyRelics);
                 gameObject.SetActive(false);                
             });
     }

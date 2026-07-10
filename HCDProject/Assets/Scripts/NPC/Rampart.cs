@@ -12,32 +12,30 @@ public class Rampart : MonoBehaviour, ITargetable
     
     public void Awake()
     {
-        var rampartData = Service.Get<DataManager>()?.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "CASTLE_HP");
-        if (rampartData != null)
-        {
-            if (int.TryParse(rampartData.VARIABLE_VALUE, out int value))
-            {
-                CurrentHp = new RatioIntValue(value);
-                CurrentHp.Value = CurrentHp.MaxValue;
-            }
-        }
         GetTargetObject = gameObject;
-    }
-
-    private void OnEnable()
-    {
-        if (CurrentHp == null) return;
-        
-        CurrentHp.AddListener(WallDestroy);
-        isBroken = false;
-
-        var popup = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
-        if (popup != null) CurrentHp.AddRatioListener(popup.OnSetDangerBorder);
     }
 
     private void OnDisable()
     {
         CurrentHp.RemoveListener(WallDestroy);
+    }
+    
+    public void SetHp(RatioIntValue hp)
+    {
+        CurrentHp = hp;
+
+        if (CurrentHp != null)
+        {
+            CurrentHp.RemoveListener(WallDestroy);
+            CurrentHp.AddListener(WallDestroy);
+            isBroken = false;
+            
+            var popup = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
+            if (popup != null) CurrentHp.AddRatioListener(popup.OnSetDangerBorder);
+            
+            var bottomUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
+            if (bottomUi != null) CurrentHp.AddValuesListener(bottomUi.SetWallHP);
+        }
     }
 
     public void SetHp(int hp)

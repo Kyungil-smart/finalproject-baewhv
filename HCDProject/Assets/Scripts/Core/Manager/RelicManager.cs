@@ -19,6 +19,15 @@ public class RelicManager : BaseManager<RelicManager>
         currentRandomRewards = null;
     }
 
+    public void SetRelic(Dictionary<string, int> rewards)
+    {
+        MyRelics.Clear();
+        foreach (var reward in rewards)
+        {
+            MyRelics.Add(reward.Key, reward.Value);
+        }
+    }
+
     private void Update()
     {
         var gamemanager = Service.Get<GameManager>();

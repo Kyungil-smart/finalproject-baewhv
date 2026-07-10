@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class VideoManager : BaseManager<VideoManager>
 {
     [SerializeField] private VideoPlayer videoPlayer;
+
+    private RawImage videoPlay;
+
     public bool IsPlaying { get; private set; } = false;
 
     protected override void Awake()
@@ -22,6 +26,22 @@ public class VideoManager : BaseManager<VideoManager>
             videoPlayer.playOnAwake = false;
             videoPlayer.waitForFirstFrame = true;
         }
+
+        var uiManager = Service.Get<UIManager>();
+        if (uiManager != null)
+        {
+            videoPlay = uiManager.VideoPlay;
+        }
+
+        if (videoPlay != null)
+        {
+            videoPlay.gameObject.SetActive(false);
+        }
+    }
+
+    public void PlayVideoFromButton(VideoClip clip)
+    {
+        PlayVideo(clip, null);
     }
 
     public void PlayVideo(VideoClip clip, Action finishedVideo)
@@ -56,6 +76,11 @@ public class VideoManager : BaseManager<VideoManager>
 
         Service.Get<TimeManager>()?.SaveTimeScale();
 
+        if (videoPlay != null)
+        {
+            videoPlay.gameObject.SetActive(true);
+        }
+
         videoPlayer.Play();
         Debug.Log("궁극기 시작");
 
@@ -67,6 +92,11 @@ public class VideoManager : BaseManager<VideoManager>
         videoPlayer.Stop();
         IsPlaying = false;
         Debug.Log("재생 끝");
+
+        if (videoPlay != null)
+        {
+            videoPlay.gameObject.SetActive(false);
+        }
 
         Service.Get<TimeManager>()?.LoadTimeScale();
 

@@ -7,6 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 // 모든 직업군이 공통으로 가질 클래스
 public class BaseCharacter : BaseController
@@ -50,6 +51,7 @@ public class BaseCharacter : BaseController
     private float _attackTimer; // 누적 카운트
 
     private string _playerSfx; // 플레이어 공격 효과음
+    private string _skillCutsceneAddress; // 스킬 컷신 주소
 
     [SerializeField] private float _flickerInterval = 0.05f;
     [SerializeField] private int _flickerCycleCount = 3;
@@ -64,6 +66,12 @@ public class BaseCharacter : BaseController
     public bool isBattle = false; // 배틀 중이면 스킬게이지 안오르게
 
     public string PlayerSfx => _playerSfx; // 플레이어 공격 사운드 프로퍼티
+
+    public float ActiveSkillCoolCount
+    {
+        get => _activeSkillCoolCount;
+        set => _activeSkillCoolCount = value;
+    }
 
     public float AttackTimer // 누적 카운트 프로퍼티
     {
@@ -310,6 +318,8 @@ public class BaseCharacter : BaseController
             }
         }
 
+        _skillCutsceneAddress = data.SKILL_CUTSCENE; // 스킬컷신 데이터 초기화
+
         _baseStats = new CharacterStats
         {
             _maxHp = data.HP,
@@ -361,14 +371,19 @@ public class BaseCharacter : BaseController
         _baseSkillData.UseSkill(index);
     }
     
-    public void TryUseActiveSkill() // 액티브 스킬 발동
+    public void TryUseActiveSkill() // 액티브 스킬 검증
     {
         if (this.isCC) return;
         if (_activeSkillCoolCount < ActiveSkillCoolTime) return;
-
         if (BaseSkill.skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
 
-        
+        VideoClip clip = Service.Get<ResourcesManager>()?.GetVideo(_skillCutsceneAddress);
+        if (clip != null) Service.Get<VideoManager>()?.PlayVideo(clip, () => { ExecuteActiveSkill(); });
+        else ExecuteActiveSkill();
+    }
+
+    public void ExecuteActiveSkill() // 액티브 스킬 실행
+    {
         switch (_playerStats._activeSkillBehavior)
         {
             case EActiveSkillBehavior.DotField:

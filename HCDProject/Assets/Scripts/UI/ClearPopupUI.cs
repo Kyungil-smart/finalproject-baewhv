@@ -45,8 +45,8 @@ public class ClearPopupUI : MonoBehaviour
         selectedRelicLayer.SetActive(true);
         currentWaveLayer.SetActive(false);
         killCountLayer.SetActive(false);
-        
-        SetTime();
+
+        SetDesc();
         Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.GetRewardPopup.CopyElement(selectedRelic);
 
         if (showPositiveButton)
@@ -74,7 +74,7 @@ public class ClearPopupUI : MonoBehaviour
         currentWaveLayer.SetActive(true);
         killCountLayer.SetActive(true);
 
-        SetTime();
+        SetDesc();
 
 
         Service.Get<UIManager>()?.GetUI<InGameTopUIController>()
@@ -82,18 +82,19 @@ public class ClearPopupUI : MonoBehaviour
         Service.Get<UIManager>()?.GetUI<InGameTopUIController>()?.GetCurrentKill(killCountText);
 
         positiveButton.onClick.RemoveAllListeners();
-        positiveButton.onClick.AddListener(()=>
+        positiveButton.onClick.AddListener(() =>
         {
-            gameObject.SetActive(false);    
+            gameObject.SetActive(false);
             Service.Get<GameManager>().RestartStage();
         });
     }
 
-    private void SetTime()
+    private void SetDesc()
     {
         float currentTime = Service.Get<TimeManager>().BattleTime;
         leftTimeText.text = string.Format(leftTimeText.text, (int)(currentTime / 60), (int)(currentTime % 60));
-        Debug.Log(leftTimeText.text);
+        accrueSortText.text = string.Format(accrueSortText.text, Service.Get<SortManager>().TotalSortCount);
+        maxComboText.text = string.Format(maxComboText.text, Service.Get<SortManager>().MaxComboCount);
     }
 
     public void AddListener(UnityAction<bool> action)

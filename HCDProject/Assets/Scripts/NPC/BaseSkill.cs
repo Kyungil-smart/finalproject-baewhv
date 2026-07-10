@@ -37,6 +37,7 @@ public class BaseSkill : MonoBehaviour
     private NORMAL_ATK_IMMUNITY _normalAtkImmunity;
     private IGNORE_DEF _ignoreDef;
     private DAMAGE_REDUCTION_P _damageReductionP;
+    private SKILL_CD _skillCd;
     
     #endregion
     
@@ -64,6 +65,7 @@ public class BaseSkill : MonoBehaviour
         _normalAtkImmunity = new NORMAL_ATK_IMMUNITY(this);
         _ignoreDef = new IGNORE_DEF(this);
         _damageReductionP = new DAMAGE_REDUCTION_P(this);
+        _skillCd = new SKILL_CD(this);
 
         #endregion
     }
@@ -189,6 +191,9 @@ public class BaseSkill : MonoBehaviour
                 break;
             case ESkillAbilityType.DAMAGE_REDUCTION_P:
                 _effects.Add(type, _damageReductionP);
+                break;
+            case ESkillAbilityType.SKILL_CD:
+                _effects.Add(type, _skillCd);
                 break;
         }
     }
