@@ -34,4 +34,9 @@ public class ModeUIController : BaseUIController<ModeUIController>
     {
         Service.Get<UIManager>()?.OpenOption();
     }
+
+    public void OnOpenArchive()
+    {
+        Service.Get<SceneController>()?.ChangeScene(SceneType.Archive);
+    }
 }
