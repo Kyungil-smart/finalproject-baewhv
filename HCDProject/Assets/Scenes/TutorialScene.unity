@@ -1172,9 +1172,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1445258567935259158, guid: ffbbe8ce4e4c6d84897f8cfd674f575e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4969461704358673173, guid: ffbbe8ce4e4c6d84897f8cfd674f575e, type: 3}
       propertyPath: m_Name
       value: IngameTutorialCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838306081293970164, guid: ffbbe8ce4e4c6d84897f8cfd674f575e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8609740162803042295, guid: ffbbe8ce4e4c6d84897f8cfd674f575e, type: 3}
       propertyPath: m_Pivot.x
