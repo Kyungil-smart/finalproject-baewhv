@@ -14,6 +14,7 @@ public class RewardUIController : MonoBehaviour
     [SerializeField] private LocalizeStringEvent contentText;
     [SerializeField] private RewardButtonUI[] buttonList;
     [SerializeField] private Button reRollButton;
+    [SerializeField] private RectTransform actionUI;
     private int selectedIndex = -1;
 
     private UnityAction CloseCallback;
@@ -63,8 +64,7 @@ public class RewardUIController : MonoBehaviour
         if(contentText) contentText.SetEntry(content);
         if (!isReRoll)
             Service.Get<TimeManager>()?.SaveTimeScale();
-        RectTransform rt = (RectTransform)transform;
-        rt.DOScale(Vector3.zero, 0.5f).From();
+        actionUI?.DOScale(Vector3.zero, 0.5f).From().SetUpdate(true);
     }
 
 
