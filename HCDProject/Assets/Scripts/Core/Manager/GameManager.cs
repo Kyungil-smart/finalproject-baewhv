@@ -107,7 +107,7 @@ public class GameManager : BaseManager<GameManager>
 
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
-            Service.Get<NarrativeManager>().EndNarrative();
+            Service.Get<DataManager>()?.LoadBestStage();
         }
 
         if (Keyboard.current.uKey.wasPressedThisFrame)
@@ -323,6 +323,11 @@ public class GameManager : BaseManager<GameManager>
         else NarrativeEnd();
     }
 
+    public void CheckAndSaveBestStage()
+    {
+        Service.Get<DataManager>()?.CheckAndSaveBestStage(CurrentChapter, CurrentStage);
+    }
+
     public void SpawnWall()
     {
         if (_wall != null) return;
@@ -410,6 +415,8 @@ public class GameManager : BaseManager<GameManager>
         // }
 
         bool isEndChapter = (beforeStageData != null && CheckStageType(beforeStageData) == EStageType.BOSS_F);
+        
+        CheckAndSaveBestStage();
 
         NextStage();
 

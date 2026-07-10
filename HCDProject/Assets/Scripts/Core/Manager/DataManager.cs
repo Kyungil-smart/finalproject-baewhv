@@ -26,6 +26,9 @@ public class DataManager : BaseManager<DataManager>
     
     private Dictionary<string, int> _stageRewardCounts = new Dictionary<string, int>();
     private Dictionary<string, int> _levelRewardCounts = new Dictionary<string, int>();
+    
+    private const string BestChapter = "BestChapter";
+    private const string BestStage = "BestStage";
 
     protected override void Awake()
     {
@@ -190,4 +193,31 @@ public class DataManager : BaseManager<DataManager>
     
 
     #endregion
+    
+    public void CheckAndSaveBestStage(int chapter, int stage)
+    {
+        int saveBestChapter = PlayerPrefs.GetInt(BestChapter, 1);
+        int saveBestStage = PlayerPrefs.GetInt(BestStage, 1);
+
+        bool isNewBest = false;
+
+        if (chapter > saveBestChapter) isNewBest = true;
+        else if (chapter == saveBestChapter && stage > saveBestStage) isNewBest = true;
+
+        if (isNewBest)
+        {
+            PlayerPrefs.SetInt(BestChapter, chapter);
+            PlayerPrefs.SetInt(BestStage, stage);
+            PlayerPrefs.Save();
+        }
+    }
+    
+    public (int chapter, int stage) LoadBestStage()
+    {
+        int bestChapter = PlayerPrefs.GetInt(BestChapter, 1);
+        int bestStage = PlayerPrefs.GetInt(BestStage, 1);
+        Debug.Log($"{bestChapter} - {bestStage} 가 최고점이야");
+        
+        return  (bestChapter, bestStage);
+    }
 }
