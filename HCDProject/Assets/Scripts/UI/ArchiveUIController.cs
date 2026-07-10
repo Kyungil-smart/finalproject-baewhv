@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ArchiveUIController : BaseUIController<ArchiveUIController>
 {
