@@ -21,6 +21,9 @@ public class SortManager : BaseManager<SortManager>
     public ObserveValue<float> RemainingSorts { get; private set; } = new ObserveValue<float>();
     public ObserveValue<int> CurrentCombo { get; private set; } = new ObserveValue<int>();
 
+    public int TotalSortCount { get; private set; } = 0;
+    public int MaxComboCount { get; private set; } = 0;
+
     private float maxSortTime = 60.0f;
 
     public ObserveValue<bool> isEndSort = new();
@@ -71,7 +74,6 @@ public class SortManager : BaseManager<SortManager>
 
         if (Service.Get<TutorialManager>() != null)
         {
-            Debug.Log("튜토리얼");
             PlayerInputLock(false);
             return;
         }
@@ -101,7 +103,6 @@ public class SortManager : BaseManager<SortManager>
         if (!isTimeStart)
         {
             isTimeStart = true;
-            Debug.Log("SORT 시작");
         }
     }
 
@@ -109,7 +110,6 @@ public class SortManager : BaseManager<SortManager>
     public void AutoSetupUISlots()
     {
         characterSlots = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>()?.GetSlots;
-        Debug.Log($"AutoSetupUISlots 실행 시점 | 슬롯 수: {characterSlots?.Length}");
     }
 
     // 콤보 증가
@@ -117,18 +117,21 @@ public class SortManager : BaseManager<SortManager>
     {
         CurrentCombo.Value += amount;
 
+        if (CurrentCombo.Value > MaxComboCount)
+        {
+            MaxComboCount = CurrentCombo.Value;
+        }
+
         float addedTime = 0f;
         if (CurrentCombo.Value >= 6)
         {
             addedTime = 1.5f;
             RemainingSorts.Value += 1.5f;
-            Debug.Log($"{CurrentCombo.Value}콤보 +1.5초");
         }
         else
         {
             addedTime = 1.0f;
             RemainingSorts.Value += 1.0f;
-            Debug.Log($"{CurrentCombo.Value}콤보 +1.0초");
         }
 
         var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
@@ -245,6 +248,8 @@ public class SortManager : BaseManager<SortManager>
 
     public void SortCount(CharacterSlotUI slot, string buffName)
     {
+        TotalSortCount++;
+
         var index = Array.IndexOf(characterSlots, slot);
 
         BuffsBox.Add(new SortBuffData
@@ -253,8 +258,6 @@ public class SortManager : BaseManager<SortManager>
             objType = buffName,
             BuffValue = 0f
         });
-
-        Debug.Log($"{index}번 | {buffName} (현재 총 누적: {BuffsBox.Count}개)");
     }
 
     // 정렬 시작
@@ -262,6 +265,9 @@ public class SortManager : BaseManager<SortManager>
     {
         isEndSort.Value = false;
         CurrentCombo.Value = 0;
+
+        TotalSortCount = 0;
+        MaxComboCount = 0;
 
         isTimeStart = false;
 
@@ -311,7 +317,6 @@ public class SortManager : BaseManager<SortManager>
             {
                 maxSortTime = mapData.SORT_TIME;
                 RemainingSorts.Value = mapData.SORT_TIME;
-                Debug.Log($"{CC}-{CS} [{CW}웨이브] -> 시간: {mapData.SORT_TIME}초");
             }
         }
 
@@ -343,7 +348,6 @@ public class SortManager : BaseManager<SortManager>
         PlayerInputLock(true);
 
         int finalCombo = CurrentCombo.Value;
-        Debug.Log($"최종 콤보: {finalCombo}회");
 
         var dataManager = Service.Get<DataManager>();
         if (dataManager == null || BuffsBox.Count == 0)
@@ -388,8 +392,6 @@ public class SortManager : BaseManager<SortManager>
                 BuffValue = (objAbility * totalSortCount) + (objAbility * (finalCombo * objWeight));
             }
 
-            Debug.Log($"{slotIndex} | {buffName} | 공식: ({objAbility} * {totalSortCount}) + {{{objAbility} * ({finalCombo} * {objWeight})}} = 예상 적용치: {BuffValue}");
-
             finalCalculatedBuffs.Add(new SortBuffData
             {
                 index = slotIndex,
@@ -405,18 +407,15 @@ public class SortManager : BaseManager<SortManager>
             {
                 if (data.objType == "OBJ_AS")
                 {
-                    Debug.Log($"index:{data.index} | {data.objType} | {data.BuffValue}");
                     playerManager.ApplyBuff(data.index, data.objType, data.BuffValue);
                 }
                 else
                 {
                     int ceiledBuffValue = Mathf.CeilToInt(data.BuffValue);
 
-                    Debug.Log($"index:{data.index} | {data.objType} | {data.BuffValue} -> int:{ceiledBuffValue}");
                     playerManager.ApplyBuff(data.index, data.objType, ceiledBuffValue);
                 }
             }
-            Debug.Log("전송 완료");
         }
 
     }
