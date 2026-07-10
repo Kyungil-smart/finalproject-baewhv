@@ -7,6 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Video;
 
 public class GameManager : BaseManager<GameManager>
 {
@@ -31,6 +32,10 @@ public class GameManager : BaseManager<GameManager>
     private int _currentChapter = 1;
     private int _currentStage = 1;
 
+    public int MaxChapter { get; private set; }
+    public int MaxStage { get; private set; }
+    private bool _isGameAllClear; 
+    
     public int CurrentChapter
     {
         get => _currentChapter;
@@ -82,6 +87,8 @@ public class GameManager : BaseManager<GameManager>
         _currentWallHp = -1;
 
         LoadSaveGame();
+
+        CheckMaxStage();
     }
 
     private void OnEnable()
@@ -97,25 +104,10 @@ public class GameManager : BaseManager<GameManager>
         CurrentState.RemoveListener(ChangeState);
         if (_wall != null && _wall.CurrentHp != null) _wall.CurrentHp.RemoveListener(WallHpChange);
     }
-
+    
     private void Update()
     {
         _state?.Update();
-
-        if (Keyboard.current.oKey.wasPressedThisFrame)
-        {
-            ClearStage();
-        }
-
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            Service.Get<DataManager>()?.DeleteSaveData();
-        }
-
-        if (Keyboard.current.uKey.wasPressedThisFrame)
-        {
-            Debug.Log(Time.timeScale);
-        }
     }
 
     private void ChangeState(GameState state)
@@ -229,6 +221,11 @@ public class GameManager : BaseManager<GameManager>
         _currentChapter = chapter;
         _currentStage = stage;
 
+        if (_currentChapter == MaxChapter && _currentStage == MaxStage)
+        {
+            Service.Get<ResourcesManager>()?.LoadVideo("Player/HCD_Staffroll");
+        }
+
         isLoading = true;
 
         CurrentState.Value = GameState.Ready;
@@ -327,6 +324,15 @@ public class GameManager : BaseManager<GameManager>
         Service.Get<DataManager>()?.CheckAndSaveBestStage(CurrentChapter, CurrentStage);
     }
 
+    private void CheckMaxStage()
+    {
+        var stages = Service.Get<DataManager>()?.StoryStageTable.data;
+        if (stages == null || stages.Count == 0) return;
+        
+        MaxChapter = stages.Max(x => x.CHAPTER);
+        MaxStage = stages.Where(x => x.CHAPTER == MaxChapter).Max(x => x.STAGE);
+    }
+
     public void SpawnWall()
     {
         if (_wall != null) return;
@@ -394,34 +400,16 @@ public class GameManager : BaseManager<GameManager>
             _wall = null;
         }
 
-        // if (_currentChapter == 4 && _currentStage == 7)
-        // {
-        //     CurrentState.Value = GameState.Clear;
-        //
-        //     var inGamePopUp = Service.Get<UIManager>()?.GetUI<IngamePopupController>();
-        //
-        //     if (inGamePopUp != null)
-        //     {
-        //         inGamePopUp.gameObject.SetActive(false);
-        //     }
-        //
-        //     var plsWaitUpdate = Service.Get<UIManager>()?.SimplePopup;
-        //
-        //     if (plsWaitUpdate != null)
-        //     {
-        //         plsWaitUpdate.SetOneButtonPopup("다음 노드는 개발중에 있습니다", "플레이 해주셔서 감사합니다", () =>
-        //         {
-        //             Service.Get<TimeManager>()?.ResetTimeScale();
-        //             Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
-        //         });
-        //     }
-        //
-        //     return;
-        // }
-
         bool isEndChapter = (beforeStageData != null && CheckStageType(beforeStageData) == EStageType.BOSS_F);
         
         CheckAndSaveBestStage();
+
+        if (_currentChapter == MaxChapter && _currentStage == MaxStage)
+        {
+            Service.Get<ResourcesManager>()?.LoadVideo("Player/HCD_Staffroll");
+            SaveGame(Service.Get<RelicManager>()?.MyRelics);
+            _isGameAllClear = true;
+        }
 
         NextStage();
 
@@ -436,6 +424,7 @@ public class GameManager : BaseManager<GameManager>
             if (nextEStageType == EStageType.EVENT || nextEStageType == EStageType.MAINTENANCE) isBattle = false;
         }
 
+        if (_isGameAllClear) Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(false);
         if (isEndChapter) Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(false);
         else Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.OnNextButton(isBattle);
 
@@ -500,8 +489,28 @@ public class GameManager : BaseManager<GameManager>
 
     public void NarrativeEnd()
     {
+        if (_isGameAllClear)
+        {
+            _isGameAllClear = false;
+            _endNarrativeAction = null;
+
+            StaffRollPlay();
+            return;
+        }
+        
         _endNarrativeAction?.Invoke();
         _endNarrativeAction = null;
+    }
+
+    private void StaffRollPlay()
+    {
+        VideoClip staffRoll = Service.Get<ResourcesManager>()?.GetVideo("Player/HCD_Staffroll");
+        
+        Service.Get<VideoManager>().PlayVideo(staffRoll, () =>
+        {
+            Service.Get<TimeManager>()?.ResetTimeScale();
+            Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
+        });
     }
 }
 
