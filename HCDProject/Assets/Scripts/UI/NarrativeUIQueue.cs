@@ -8,23 +8,22 @@ using UnityEngine.UI;
 
 public class NarrativeUIQueue : MonoBehaviour
 {
-    private Queue<(GameObject, NarrativeQueueData)> queue;
+    private Queue<NarrativeQueuePart> queue = new();
     [SerializeField] private GameObject NarrativeQueueRawData;
 
-    public void AddQueue()
+    public void AddQueue(string nameS, string desc, Color color)
     {
+        NarrativeQueuePart part;
         if (queue.Count >= 50)
         {
-            queue.Dequeue();
+            part = queue.Dequeue();
         }
-        //else new Game
-        
+        else
+        {
+            part = Instantiate(NarrativeQueueRawData, transform).GetComponent<NarrativeQueuePart>();
+        }
+        part.SetPart(nameS,desc,color);
+        part.transform.SetSiblingIndex(transform.childCount);
+        queue.Enqueue(part);
     }
-}
-
-public struct NarrativeQueueData
-{
-    public string name;
-    public string desc;
-    public Color Color;
 }

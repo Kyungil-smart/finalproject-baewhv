@@ -112,9 +112,9 @@ public abstract class BaseController : MonoBehaviour, ITargetable
         
         int def = Mathf.Max(damage - _currentStats._defense, 0);
         
-        if (BaseSkill.isReduction)
+        if (BaseSkill.isReduction && BaseSkill.skills.Count > 1)
         {
-            def -= (int)(def * (skill.SKILL_AB_01 / 100f));
+            def -= (int)(def * (BaseSkill.skills[1].SKILL_AB_01 / 100f));
         }
         
         CurrentHp.Value -= def;

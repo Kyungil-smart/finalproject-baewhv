@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Components;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class NarrativeUIController : BaseUIController<NarrativeUIController>
@@ -28,10 +30,12 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     private bool isAuto;
     [SerializeField] private Color autoColor;
     Color defaultColor = Color.white;
+    Color backColor = Color.gray;
     private Coroutine autoRoutine;
-    
+
     //Queue
-    [SerializeField] private NarrativeUIQueue queue;
+    [SerializeField] private GameObject LogLayer;
+    [SerializeField] private NarrativeUIQueue LogUI;
 
     //Region
     [SerializeField] private TextMeshProUGUI StageNumber;
@@ -72,7 +76,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         }
 
         currentdata = data;
-        
+
         SetText(nameTMP, nameText, data.NAME);
         SetText(descTMP, descText, data.TEXT_ID);
 
@@ -84,6 +88,12 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         SetPortrait(leftPortrait, data.PORTRAIT_L);
         SetPortrait(rightPortrait, data.PORTRAIT_R);
 
+        if(!string.IsNullOrEmpty(data.PORTRAIT_H)) 
+            SetSpotlight(Enum.Parse<EPortraitHighlight>(data.PORTRAIT_H));
+        SetBGM(data.BGM);
+        
+        if(!string.IsNullOrEmpty(data.NAME))
+            LogUI.AddQueue(data.NAME, data.TEXT_ID, ColorLine.color);
 
         switch (data.CATEGORY)
         {
@@ -98,6 +108,12 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         }
     }
 
+    private void SetBGM(string data)
+    {
+        if (string.IsNullOrEmpty(data)) return;
+        Service.Get<SoundManager>().PlayBgmSound(data);
+    }
+
     private void SetPortrait(Image portrait, string data)
     {
         if (string.IsNullOrEmpty(data))
@@ -106,6 +122,32 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         {
             portrait.gameObject.SetActive(true);
             Service.Get<ResourcesManager>().LoadSpriteToImage(data, portrait);
+        }
+    }
+
+    private void SetSpotlight(EPortraitHighlight type)
+    {
+        switch (type)
+        {
+            case EPortraitHighlight.L:
+                leftPortrait.DOColor(defaultColor, 0.5f);
+                rightPortrait.DOColor(backColor, 0.5f);
+                leftPortrait.transform.SetSiblingIndex(1);
+                break;
+            case EPortraitHighlight.R:
+                leftPortrait.DOColor(backColor, 0.5f);
+                rightPortrait.DOColor(defaultColor, 0.5f);
+                rightPortrait.transform.SetSiblingIndex(1);
+                break;
+            case EPortraitHighlight.A:
+                leftPortrait.DOColor(defaultColor, 0.5f);
+                rightPortrait.DOColor(defaultColor, 0.5f);
+                break;
+            default:
+            case EPortraitHighlight.N:
+                leftPortrait.DOColor(backColor, 0.5f);
+                rightPortrait.DOColor(backColor, 0.5f);
+                break;
         }
     }
 
@@ -127,6 +169,16 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
             decsTweener.onComplete += SetAuto;
         decsTweener.onComplete += SetEndText;
     }
+
+    public void OnOpenLog()
+    {
+        LogLayer.SetActive(true);
+    }
+    public void OnCloseLog()
+    {
+        LogLayer.SetActive(false);
+    }
+    
 
     public void OnNextButton()
     {
@@ -196,4 +248,12 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         yield return new WaitForSecondsRealtime(2.0f);
         OnNextButton();
     }
+}
+
+public enum EPortraitHighlight
+{
+    L = 0,
+    R = 1,
+    A = 2,
+    N = 3
 }

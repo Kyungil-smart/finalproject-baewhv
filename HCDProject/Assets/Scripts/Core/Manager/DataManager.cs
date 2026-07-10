@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -29,6 +30,9 @@ public class DataManager : BaseManager<DataManager>
     
     private const string BestChapter = "BestChapter";
     private const string BestStage = "BestStage";
+    
+    private string SaveFilePath => Path.Combine(Application.persistentDataPath, "saveData.json");
+    public SaveData LoadSaveData { get; private set; }
 
     protected override void Awake()
     {
@@ -36,12 +40,13 @@ public class DataManager : BaseManager<DataManager>
         
         if (IsManagerDestroy) return;
         
-        dataValue = new RatioIntValue(14, 0);
+        dataValue = new RatioIntValue(12, 0);
         
         InitData(() =>
         {
             Debug.Log("초기 데이터 받기 성공");
-            ResetStageRewardData();
+
+            LoadGameData();
         });
     }
     
@@ -87,6 +92,85 @@ public class DataManager : BaseManager<DataManager>
                 if (currentLoadCount >= maxLoadCount) OnDataLoaded?.Invoke();
             };
         }
+    }
+
+    public void LoadGameData()
+    {
+        if (!File.Exists(SaveFilePath))
+        {
+            LoadSaveData = null;
+            return;
+        }
+        
+        string json = File.ReadAllText(SaveFilePath);
+        LoadSaveData = JsonUtility.FromJson<SaveData>(json);
+        Debug.Log($"게임 진행상황 로딩 완료");
+    }
+
+    public void SaveGameData(int chapter, int stage, Dictionary<string, int> rewards)
+    {
+        Dictionary<string,int> mergeRewards = new Dictionary<string, int>();
+
+        if (LoadSaveData != null && LoadSaveData.saveRewardDatas != null)
+        {
+            foreach (var saveRewardData in LoadSaveData.saveRewardDatas)
+            {
+                mergeRewards[saveRewardData.rewardName] = saveRewardData.count;
+            }
+        }
+
+        foreach (var reward in rewards)
+        {
+            if (mergeRewards.ContainsKey(reward.Key)) mergeRewards[reward.Key] = reward.Value;
+            else  mergeRewards.Add(reward.Key, reward.Value);
+        }
+        
+        SaveData saveData = new SaveData()
+        {
+            chapter = chapter,
+            stage = stage,
+            saveRewardDatas = new List<SaveRewardData>()
+        };
+
+        foreach (var reward in mergeRewards)
+        {
+            saveData.saveRewardDatas.Add(new SaveRewardData()
+            {
+                rewardName = reward.Key,
+                count = reward.Value,
+            });
+        }
+        
+        string json = JsonUtility.ToJson(saveData, true);
+        File.WriteAllText(SaveFilePath, json);
+
+        LoadSaveData = saveData;
+        
+        Debug.Log($"{chapter}, {stage}, {rewards.Count} 저장 완료");
+    }
+
+    public void DeleteSaveData()
+    {
+        if (File.Exists(SaveFilePath))
+        {
+            File.Delete(SaveFilePath);
+        }
+        
+        LoadSaveData = null;
+        ResetStageRewardData();
+    }
+    
+    public void StageSelectWithLoadGame()
+    {
+        LoadGameData();
+
+        if (LoadSaveData == null)
+        {
+            ResetStageRewardData();
+            return;
+        }
+        
+        SetSaveRewardData(LoadSaveData.saveRewardDatas);
     }
 
     #region 스테이지 랜덤 리워드
@@ -136,14 +220,38 @@ public class DataManager : BaseManager<DataManager>
             }
         }
     }
-    
-    public int CurrentStageRewardCount(string rewardId)
+
+    public void SetSaveRewardData(List<SaveRewardData> loadRewards)
     {
-        if (_stageRewardCounts.ContainsKey(rewardId))
+        ResetStageRewardData();
+
+        if (loadRewards == null) return;
+        
+        Dictionary<string, int> rewardDict = new Dictionary<string, int>();
+
+        foreach (var rewardData in loadRewards)
         {
-            return _stageRewardCounts[rewardId];
+            if (_stageRewardCounts.ContainsKey(rewardData.rewardName))
+            {
+                _stageRewardCounts[rewardData.rewardName] = rewardData.count;
+                rewardDict.Add(rewardData.rewardName, rewardData.count);
+                
+                var reward = StageClearRewardTable.data.Find(x => x.CLEAR_REWARD_ID == rewardData.rewardName);
+                if (reward != null && reward.MAX_CLEAR_REWARD_COUNT <= rewardData.count)
+                {
+                    _stageRewardCounts[rewardData.rewardName] = reward.MAX_CLEAR_REWARD_COUNT;
+                    rewardDict[rewardData.rewardName] = reward.MAX_CLEAR_REWARD_COUNT;
+                    Debug.Log($"이제 {rewardData.rewardName} 는 등장 안할거야!");
+                }
+            }
         }
-        return 0;
+
+        // if (Service.Get<RelicManager>() != null) Service.Get<RelicManager>().SetRelic(rewardDict);
+    }
+
+    public Dictionary<string, int> GetSaveRewardData()
+    {
+        return _stageRewardCounts;
     }
     
     #endregion
