@@ -322,6 +322,11 @@ public class GameManager : BaseManager<GameManager>
         else NarrativeEnd();
     }
 
+    public void CheckAndSaveBestStage()
+    {
+        Service.Get<DataManager>()?.CheckAndSaveBestStage(CurrentChapter, CurrentStage);
+    }
+
     public void SpawnWall()
     {
         if (_wall != null) return;
@@ -415,6 +420,8 @@ public class GameManager : BaseManager<GameManager>
         // }
 
         bool isEndChapter = (beforeStageData != null && CheckStageType(beforeStageData) == EStageType.BOSS_F);
+        
+        CheckAndSaveBestStage();
 
         NextStage();
 
