@@ -105,26 +105,6 @@ public class GameManager : BaseManager<GameManager>
         if (_wall != null && _wall.CurrentHp != null) _wall.CurrentHp.RemoveListener(WallHpChange);
     }
 
-    private void Update()
-    {
-        _state?.Update();
-
-        if (Keyboard.current.oKey.wasPressedThisFrame)
-        {
-            ClearStage();
-        }
-
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            Service.Get<DataManager>()?.DeleteSaveData();
-        }
-
-        if (Keyboard.current.uKey.wasPressedThisFrame)
-        {
-            Debug.Log(Time.timeScale);
-        }
-    }
-
     private void ChangeState(GameState state)
     {
         switch (state)
