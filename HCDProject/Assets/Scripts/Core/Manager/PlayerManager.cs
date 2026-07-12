@@ -54,12 +54,16 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
                 _loadedPrefab = handle.Result;
-
-                SpawnAllCharacters();
-                /*if (!Service.Get<TutorialManager>())
+                if (!Service.Get<TutorialManager>())
                 {
-                    
-                }*/
+                    SpawnAllCharacters();    
+                }
+                else
+                {
+                    SpawnSingleCharacter(0);
+                    SpawnSingleCharacter(2);
+                }
+                
             }
 
             else
@@ -172,7 +176,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     {
         foreach (BaseCharacter chr in _characters)
         {
-            if (chr.IsSpawning)
+            if (chr && chr.IsSpawning)
             {
                 return;
             }
