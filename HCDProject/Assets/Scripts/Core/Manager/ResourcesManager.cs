@@ -1,32 +1,44 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class ResourcesManager : BaseManager<ResourcesManager>
 {
-    private Dictionary<string, Sprite> DefaultSprite = new ();
+    private Dictionary<string, Sprite> defaultSprite = new ();
     private Dictionary<string, Sprite> LoadedSprites = new ();
     private Dictionary<string, VideoClip> LoadedVideos = new ();
 
     private void Start()
     {
         Service.Get<SceneController>().OnLoading += OnChangeScene;
+        LoadSprites("Player/Alice", defaultSprite);
+        LoadSprites("Player/Serah", defaultSprite);
+        LoadSprites("Player/Noah", defaultSprite);
+        LoadSprites("Player/Spine", defaultSprite);
+        LoadSprites("Player/Spine", defaultSprite);
+        LoadSprites("Icon/Icons", defaultSprite);
     }
 
-    public Sprite GetSprite(string name)
+    public Sprite GetSprite(string name, UnityAction<Sprite> bind)
     {
-        if (DefaultSprite.ContainsKey(name))
-            return DefaultSprite[name];
+        if (defaultSprite.ContainsKey(name))
+            return defaultSprite[name];
+        if (LoadedSprites.ContainsKey(name))
+            return LoadedSprites[name];
+        LoadSprite(name, bind);
+            
         return null;
     }
 
     public void LoadSpriteToImage(string name, Image image)
     {
-        if (DefaultSprite.TryGetValue(name, out var defSprite))
+        if (defaultSprite.TryGetValue(name, out var defSprite))
         { 
             image.sprite = defSprite;
         }
@@ -76,6 +88,33 @@ public class ResourcesManager : BaseManager<ResourcesManager>
         }
         LoadedVideos.Clear();
         LoadedSprites.Clear();
+    }
+
+    private void LoadSprites(string address, Dictionary<string, Sprite> dict)
+    {
+        Addressables.LoadAssetAsync<IList<Sprite>>(address).Completed += result =>
+        {
+            if (result.Status == AsyncOperationStatus.Succeeded)
+            {
+                foreach (Sprite sp in result.Result)
+                {
+                    dict[$"{address}[{sp.name}]"] = sp;
+                }
+            }
+        };
+        
+    }
+
+    private void LoadSprite(string address, UnityAction<Sprite> action)
+    {
+        Addressables.LoadAssetAsync<Sprite>(address).Completed += result =>
+        {
+            if (result.Status == AsyncOperationStatus.Succeeded)
+            {
+                LoadedSprites[address] = result.Result;
+                action(result.Result);
+            }
+        };
     }
 
 }
