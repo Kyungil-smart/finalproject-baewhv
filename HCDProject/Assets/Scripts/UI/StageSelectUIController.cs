@@ -21,8 +21,6 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             return;
         }
 
-        Debug.Log($"SetNode {data.CHAPTER} - {data.STAGE}");
-
         Sprite sp;
         switch (state)
         {
