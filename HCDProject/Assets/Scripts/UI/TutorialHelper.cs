@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIGlow : MonoBehaviour
+public class TutorialHelper : MonoBehaviour
 {
     [SerializeField]private Image glowImage;
 
