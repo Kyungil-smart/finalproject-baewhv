@@ -373,6 +373,7 @@ public class BaseCharacter : BaseController
     
     public void TryUseActiveSkill() // 액티브 스킬 검증
     {
+        if (this._isDead) return;
         if (this.isCC) return;
         if (_activeSkillCoolCount < ActiveSkillCoolTime) return;
         if (BaseSkill.skills[1].SKILL_AT == ETargetType.ENEMY && GetCurrentTarget == null) return;
@@ -384,6 +385,7 @@ public class BaseCharacter : BaseController
 
     public void ExecuteActiveSkill() // 액티브 스킬 실행
     {
+        if (this._isDead) return;
         switch (_playerStats._activeSkillBehavior)
         {
             case EActiveSkillBehavior.DotField:
