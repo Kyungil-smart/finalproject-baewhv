@@ -248,7 +248,7 @@ public class DataManager : BaseManager<DataManager>
             }
         }
 
-        // if (Service.Get<RelicManager>() != null) Service.Get<RelicManager>().SetRelic(rewardDict);
+        if (Service.Get<RelicManager>() != null) Service.Get<RelicManager>().SetRelic(rewardDict);
     }
 
     public Dictionary<string, int> GetSaveRewardData()
@@ -306,8 +306,8 @@ public class DataManager : BaseManager<DataManager>
     
     public void CheckAndSaveBestStage(int chapter, int stage)
     {
-        int saveBestChapter = PlayerPrefs.GetInt(BestChapter, 1);
-        int saveBestStage = PlayerPrefs.GetInt(BestStage, 1);
+        int saveBestChapter = PlayerPrefs.GetInt(BestChapter, 0);
+        int saveBestStage = PlayerPrefs.GetInt(BestStage, 0);
 
         bool isNewBest = false;
 
