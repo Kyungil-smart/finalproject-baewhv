@@ -56,16 +56,19 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                 _loadedPrefab = handle.Result;
                 if (!Service.Get<TutorialManager>())
                 {
-                    SpawnAllCharacters();    
+                    SpawnAllCharacters();
                 }
                 else
                 {
                     SpawnSingleCharacter(0);
                     SpawnSingleCharacter(2);
-                }
-                
-            }
 
+                    // 추가: 튜토리얼 스폰 완료 후 초기화
+                    ApplyRelicStats();
+                    Service.Get<SortManager>()?.AutoSetupUISlots();
+                    Service.Get<GameManager>().CurrentState.AddListener(OnGameStateChanged);
+                }
+            }
             else
             {
                 Debug.LogError($"로드 실패 : {_characterAddress}");
@@ -98,6 +101,12 @@ public partial class PlayerManager : BaseManager<PlayerManager>
             _arrowCoroutines = new Coroutine[data.Count];
             _sortBuffStats = new CharacterStats[data.Count];
             _slot = new CharacterSlotUI[data.Count];
+            LoadStaticValues();
+        }
+
+        if (!string.IsNullOrEmpty(data[index].SKILL_CUTSCENE)) // 튜토리얼 시 스킬영상 로딩
+        {
+            Service.Get<ResourcesManager>().LoadVideo(data[index].SKILL_CUTSCENE);
         }
         GameObject obj = Instantiate(_loadedPrefab, _spawnPoints[index].position, Quaternion.identity);
         BaseCharacter chr = obj.GetComponent<BaseCharacter>();
@@ -111,12 +120,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         _characters[index].BindHpUI(_slot[index].SetHPBar);
         _characters[index].BindSkillUI(_slot[index].SetSkillBar);
         _characters[index].BindDeathUI(_slot[index].SetAlive);
-        if (index == data.Count - 1)
-        {
-            ApplyRelicStats();
-            Service.Get<SortManager>()?.AutoSetupUISlots();
-            Service.Get<GameManager>().CurrentState.AddListener(OnGameStateChanged);
-        }
+        Service.Get<SortManager>()?.AutoSetupUISlots();
     }
 
     private void SpawnAllCharacters()
@@ -186,6 +190,17 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
     public void ApplyBuff(int index, string objType, float bonus) // Sort 적용 함수
     {
+        if (index < 0 || index >= _characters.Length) // index 범위 체크 - 배열 밖이면 종료
+        {
+            Debug.LogWarning($"[ApplyBuff] 유효하지 않은 index: {index} (배열 크기: {_characters.Length})");
+            return;
+        }
+
+        if (_characters[index] == null) // 튜토리얼에서 스폰 안 된 인덱스 방어
+        {
+            Debug.LogWarning($"[ApplyBuff] _characters[{index}]가 null입니다. 스킵합니다.");
+            return;
+        }
         var stats = _characters[index].CurrentStats;
         var baseStats = _characters[index].BaseStats;
         var sortBuff = _sortBuffStats[index];
@@ -220,6 +235,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     {
         for (int i = 0; i < _characters.Length; i++)
         {
+            if (_characters[i] == null) continue;
             var stats = _characters[i].CurrentStats;
             stats._attackPower -= _sortBuffStats[i]._attackPower;
             stats._defense -= _sortBuffStats[i]._defense;
@@ -236,6 +252,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
     {
         for (int i = 0; i < _characters.Length; i++)
         {
+            if (_characters[i] == null) continue;
             _characters[i].isBattle = battle;
         }
     }
@@ -317,6 +334,7 @@ public partial class PlayerManager : BaseManager<PlayerManager>
         };
         for (int i = 0; i < _characters.Length; i++)
         {
+            if (_characters[i] == null) continue;
             float hpPercent = 0f;
             float atkPercent = 0f;
             float defPercent = 0f;
@@ -407,23 +425,23 @@ public partial class PlayerManager : BaseManager<PlayerManager>
                 {
                     if (_characters[i].BaseSkill.skills.Find(s => s.SKILL_ID == "6508") == null)
                         _characters[i].BaseSkill.skills.Add(new Skill(skillData));
-                } 
+                }
                 _arrowCoroutines[i] = StartCoroutine(RainOfArrows(_characters[i], jobTypes[i]));
             }
 
             float earthquakeBonus = Service.Get<RelicManager>()?
                 .GetTotalRelicBonus(jobTypes[i], "EARTHQUAKE_DAMAGE_P") ?? 0f;
-            
+
             if (earthquakeBonus > 0 && jobTypes[i] == "WIZARD") // 지진마법 적용
             {
                 var skillTable = Service.Get<DataManager>().SkillTable.data;
                 var skillData = skillTable.Find(s => s.SKILL_ID == "6509");
-                
+
                 if (skillData != null)
                 {
                     if (_characters[i].BaseSkill.skills.Find(s => s.SKILL_ID == "6509") == null)
                         _characters[i].BaseSkill.skills.Add(new Skill(skillData));
-                    
+
                 }
             }
         }
@@ -512,6 +530,6 @@ public partial class PlayerManager : BaseManager<PlayerManager>
 
         // SpawnState로 전환 (Exit()에서 Revive() 호출됨)
         character.state.ChangeState(character.spawn);
-        
+
     }
 }

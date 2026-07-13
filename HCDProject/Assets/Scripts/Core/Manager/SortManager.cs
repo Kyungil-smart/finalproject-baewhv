@@ -151,6 +151,11 @@ public class SortManager : BaseManager<SortManager>
     // 블록 드랍 -> 슬롯 안착
     public void ObjectDrop(CharacterSlotUI targetSlot, DragAndDrop draggedobject)
     {
+        if (characterSlots == null || characterSlots.Length == 0)
+        {
+            AutoSetupUISlots();
+        }
+
         if (targetSlot == null || draggedobject == null) return;
 
         if (isEndSort.Value)
@@ -262,6 +267,11 @@ public class SortManager : BaseManager<SortManager>
         TotalSortCount++;
 
         var index = Array.IndexOf(characterSlots, slot);
+
+        if (index == -1)
+        {
+            return;
+        }
 
         BuffsBox.Add(new SortBuffData
         {
@@ -413,6 +423,8 @@ public class SortManager : BaseManager<SortManager>
         {
             foreach (var data in finalCalculatedBuffs)
             {
+                if (data.index < 0) continue;
+
                 if (data.objType == "OBJ_AS")
                 {
                     playerManager.ApplyBuff(data.index, data.objType, data.BuffValue);
@@ -624,7 +636,7 @@ public class SortManager : BaseManager<SortManager>
     {
         GameObject newBlock = Instantiate(prefab, targetSlot);
         RectTransform blockRect = newBlock.GetComponent<RectTransform>() ?? newBlock.AddComponent<RectTransform>();
-        
+
         if (isAnimating)
         {
             blockRect.anchoredPosition = new Vector2(-80f, 0f);
