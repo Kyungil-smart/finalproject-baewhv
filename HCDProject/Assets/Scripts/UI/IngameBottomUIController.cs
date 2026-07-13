@@ -237,14 +237,12 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
         slot.SkillEffect?.SetActive(false);
 
-        Addressables.LoadAssetAsync<Sprite>(data.CHARACTER_IMG).Completed += handle =>
+        Sprite sp = Service.Get<ResourcesManager>().GetSprite(data.CHARACTER_IMG, handle =>
         {
-            if (!slot) return;
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                slot.InitPortrait(handle.Result);
-            }
-        };
+            slot.InitPortrait(handle);
+        });
+        if(sp)
+            slot.InitPortrait(sp);
         slot.InitSlot(character);
         characterSlots.Add(slot);
         return slot;

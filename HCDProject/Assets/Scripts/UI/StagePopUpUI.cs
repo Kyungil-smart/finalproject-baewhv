@@ -111,13 +111,10 @@ public class StagePopUpUI : MonoBehaviour
         hpGaugeLayout.SetActive(true);
         var subData = Service.Get<DataManager>().StoryStageTable.data
             .Find(x => x.CHAPTER == data.CHAPTER && x.STAGE == data.STAGE + 1);
-        Addressables.LoadAssetAsync<Sprite>(subData.BOSS_MONSTER_IMG_ID).Completed += (handle) =>
+        Service.Get<ResourcesManager>().GetSprite(subData.BOSS_MONSTER_IMG_ID, handle =>
         {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                bossSprite.sprite = handle.Result;
-            }
-        };
+            bossSprite.sprite = handle;
+        });
     }
 
     private void SetNormal()
@@ -154,6 +151,7 @@ public class StagePopUpUI : MonoBehaviour
             () =>
             {
                 Service.Get<GameManager>()?.ClearStage();
+                Service.Get<GameManager>()?.SaveGame(Service.Get<RelicManager>()?.MyRelics);
             });
     }
 
