@@ -13,6 +13,7 @@ public class ResourcesManager : BaseManager<ResourcesManager>
     private Dictionary<string, Sprite> defaultSprite = new ();
     private Dictionary<string, Sprite> LoadedSprites = new ();
     private Dictionary<string, VideoClip> LoadedVideos = new ();
+    private Dictionary<string, UnityEvent<Sprite>> spriteQueue = new();
 
     private void Start()
     {
@@ -20,13 +21,13 @@ public class ResourcesManager : BaseManager<ResourcesManager>
         LoadSprites("Player/Alice", defaultSprite);
         LoadSprites("Player/Serah", defaultSprite);
         LoadSprites("Player/Noah", defaultSprite);
-        LoadSprites("Player/Spine", defaultSprite);
-        LoadSprites("Player/Spine", defaultSprite);
+        LoadSprites("Player/Spayin", defaultSprite);
         LoadSprites("Icon/Icons", defaultSprite);
     }
 
     public Sprite GetSprite(string name, UnityAction<Sprite> bind)
     {
+        if (string.IsNullOrEmpty(name)) return null;
         if (defaultSprite.ContainsKey(name))
             return defaultSprite[name];
         if (LoadedSprites.ContainsKey(name))
@@ -107,12 +108,25 @@ public class ResourcesManager : BaseManager<ResourcesManager>
 
     private void LoadSprite(string address, UnityAction<Sprite> action)
     {
+        if(spriteQueue.ContainsKey(address))
+        {
+            spriteQueue[address].AddListener(action);
+            return;
+        }
+        spriteQueue[address] = new UnityEvent<Sprite>();
+        spriteQueue[address].AddListener(action);
+        
         Addressables.LoadAssetAsync<Sprite>(address).Completed += result =>
         {
             if (result.Status == AsyncOperationStatus.Succeeded)
             {
                 LoadedSprites[address] = result.Result;
-                action(result.Result);
+                spriteQueue[address].Invoke(result.Result);
+                spriteQueue.Remove(address);
+            }
+            else if (result.Status == AsyncOperationStatus.Failed)
+            {
+                Debug.Log($"AssetLoadFail : {address}");
             }
         };
     }
