@@ -49,7 +49,10 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
         logo.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         logo.SetActive(false);
-        
+        while (Service.Get<TutorialManager>() && Service.Get<TutorialManager>().pauseClear)
+        {
+            yield return YieldContainer.WaitForSeconds(0.5f);
+        }
         afterAction?.Invoke();
     }
 

@@ -7,11 +7,14 @@ public class TutorialRawData
 {
     public string TUTORIAL_ID;
     public string NEXT_ID;
-    public string NEXT_TYPE;
-    public string ACTION_TYPE;
     public string OCCUR;
+    public int OCCUR_VALUE;
+    public string NEXT_TYPE;
+    public string NEXT_TYPE_VALUE;
     public string CATEGORY;
-    public string PORTRAIT;
+    public string CATEGORY_VALUE;
+    public string HIGHLIGHT;
+    public string MESSAGE_TYPE;
     public string NAME_ID;
     public string TEXT_ID;
     public string SFX;

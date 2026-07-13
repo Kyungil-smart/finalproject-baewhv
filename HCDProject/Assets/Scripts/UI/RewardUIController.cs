@@ -21,6 +21,7 @@ public class RewardUIController : MonoBehaviour
     private UnityAction RewardAction;
 
     public ObserveValue<bool> isOpenRewardPopup = new();
+    public RewardButtonUI GetButtonUI => buttonList[0];
 
     private void OnDisable()
     {
@@ -143,6 +144,15 @@ public class RewardUIController : MonoBehaviour
         else
         {
             reRollButton.interactable = false;
+        }
+    }
+
+    public void SetLevelUpRewardSingle()
+    {
+        var CurrentReward = Service.Get<PlayerManager>()?.GetLevelUpRewards();
+        for (int i = 0; i < buttonList.Length; i++)
+        {
+            buttonList[i].SetReward(CurrentReward[i], Service.Get<PlayerManager>().OnSelectLevelUpReward, i);
         }
     }
 
