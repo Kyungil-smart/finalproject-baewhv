@@ -14,6 +14,9 @@ public class StoryStageRawData
     public string TYPE_OF_ID;
     public string STORY_ID;
     public string BOSS_MONSTER_IMG_ID;
+    public string NARRATIVE_B_THUBNAIL;
+    public string NARRATIVE_A_THUBNAIL;
+    public string NARRATIVE_BG_THUBNAIL;
 }
 
 [Serializable]
