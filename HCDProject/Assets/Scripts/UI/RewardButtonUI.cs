@@ -60,14 +60,10 @@ public class RewardButtonUI : MonoBehaviour
     {
         icon.sprite = defaultImage;
         if (string.IsNullOrEmpty(address)) return;
-        Addressables.LoadAssetAsync<Sprite>(address).Completed += (handle) =>
+        icon.sprite = Service.Get<ResourcesManager>().GetSprite(address, sp =>
         {
-            //if(!icon) return;
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                icon.sprite = handle.Result;
-            }
-        };
+            icon.sprite = sp;
+        });
     }
 
     public void OnButtonInvoke()

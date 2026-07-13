@@ -121,7 +121,6 @@ public class RewardUIController : MonoBehaviour
             buttonList[i].SetReward(CurrentReward[i], index =>
             {
                 Service.Get<RelicManager>()?.OnSelectRelicReward(index);
-                Service.Get<GameManager>()?.SaveGame(Service.Get<RelicManager>()?.MyRelics);
                 selectedIndex = index;
             }, i);
         }

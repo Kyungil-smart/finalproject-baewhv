@@ -42,6 +42,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     [SerializeField] private LocalizeStringEvent StageText;
 
     [SerializeField] private Image Background;
+    private string backgroundAddress;
     [SerializeField] private Image Certain;
 
     private StoryLocalizingRawData currentdata;
@@ -52,6 +53,7 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         isEnd = false;
         StageNumber.text = $"stage {data.CHAPTER}-{data.STAGE}";
         StageText.SetEntry(data.STAGE_NAME_ID);
+        Background.color = Color.black;
     }
 
 
@@ -85,14 +87,16 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
         else
             ColorLine.color = defaultColor;
 
+        SetBackground(data.BACKGROUND);
+
         SetPortrait(leftPortrait, data.PORTRAIT_L);
         SetPortrait(rightPortrait, data.PORTRAIT_R);
 
-        if(!string.IsNullOrEmpty(data.PORTRAIT_H)) 
+        if (!string.IsNullOrEmpty(data.PORTRAIT_H))
             SetSpotlight(Enum.Parse<EPortraitHighlight>(data.PORTRAIT_H));
         SetBGM(data.BGM);
-        
-        if(!string.IsNullOrEmpty(data.NAME))
+
+        if (!string.IsNullOrEmpty(data.NAME))
             LogUI.AddQueue(data.NAME, data.TEXT_ID, ColorLine.color);
 
         switch (data.CATEGORY)
@@ -106,6 +110,21 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
                 decsTweener.onComplete += SetEndText;
                 break;
         }
+    }
+
+    private void SetBackground(string address)
+    {
+        if (string.IsNullOrEmpty(address)) return;
+        backgroundAddress = address;
+        Background.sprite = Service.Get<ResourcesManager>().GetSprite(address, arg0 =>
+        {
+            if (address == backgroundAddress)
+                Background.sprite = arg0;
+            if(Background.color == Color.black)
+                Background.DOColor(Color.white, 0.5f);
+        });
+        if (Background.sprite)
+            Background.DOColor(Color.white, 0.5f);
     }
 
     private void SetBGM(string data)
@@ -174,11 +193,12 @@ public class NarrativeUIController : BaseUIController<NarrativeUIController>
     {
         LogLayer.SetActive(true);
     }
+
     public void OnCloseLog()
     {
         LogLayer.SetActive(false);
     }
-    
+
 
     public void OnNextButton()
     {

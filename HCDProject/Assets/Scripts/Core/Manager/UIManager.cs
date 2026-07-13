@@ -35,14 +35,12 @@ public class UIManager : BaseManager<UIManager>
     {
         if (_uiControllers.ContainsKey(typeof(T))) return false;
         _uiControllers[typeof(T)] = service;
-        Debug.Log($"AddUI{service.name}");
 
         return true;
     }
 
     public void UnRegister<T>(T service) where T : MonoBehaviour
     {
-        Debug.Log($"RemoveUI{service.name}");
         if (_uiControllers.ContainsKey(typeof(T)) && (T)_uiControllers[typeof(T)] == service)
             _uiControllers.Remove(typeof(T));
     }
