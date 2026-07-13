@@ -127,16 +127,19 @@ public class SortManager : BaseManager<SortManager>
         }
 
         float addedTime = 0f;
-        if (CurrentCombo.Value >= 6)
+
+        var dataManager = Service.Get<DataManager>();
+        if (dataManager != null)
         {
-            addedTime = 1.5f;
-            RemainingSorts.Value += 1.5f;
+            var comboTime = dataManager.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "COMBO_TIME");
+
+            if (comboTime != null)
+            {
+                addedTime = float.Parse(comboTime.VARIABLE_VALUE);
+            }
         }
-        else
-        {
-            addedTime = 1.0f;
-            RemainingSorts.Value += 1.0f;
-        }
+
+        RemainingSorts.Value += addedTime;
 
         var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
         if (bottomUI != null && !bottomUI.Equals(null))
