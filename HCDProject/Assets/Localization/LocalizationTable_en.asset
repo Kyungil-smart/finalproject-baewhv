@@ -10876,6 +10876,195 @@ MonoBehaviour:
     m_Localized: The waves from the reed wetland pass beneath the bridge.
     m_Metadata:
       m_Items: []
+  - m_Id: 12273840598376448
+    m_Localized: Story Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12273840598376449
+    m_Localized: Character Profile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12273840598376450
+    m_Localized: Serah's Age <br> Occupation <br> Other Details
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12273840598376451
+    m_Localized: Noah's Age <br> Occupation <br> Other Details
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12273840598376452
+    m_Localized: Alice's Age <br> Occupation <br> Other Details
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12273840598376453
+    m_Localized: Spayne's Age <br> Occupation <br> Other Details
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12276361995837440
+    m_Localized: No stages have been cleared yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742272
+    m_Localized: 3-Sort Guide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742273
+    m_Localized: Level Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742274
+    m_Localized: Skill Guide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742275
+    m_Localized: Relic Acquired
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742276
+    m_Localized: Battle Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742277
+    m_Localized: Sorting Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742278
+    m_Localized: Controls Guide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742279
+    m_Localized: Combo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742280
+    m_Localized: Wave 1 is ready. Sort the enhancement blocks within the time limit
+      to strengthen your heroes before battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742281
+    m_Localized: Drag the attack block on the rail to Serah's slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742282
+    m_Localized: A combo occurs when three enhancement blocks are placed consecutively
+      on the rail.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742283
+    m_Localized: Attack Block Placed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742284
+    m_Localized: Placing three matching blocks on a character increases the corresponding
+      stat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742285
+    m_Localized: Preparation is complete. Continue sorting or press BATTLE START.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742286
+    m_Localized: They're coming out in droves! I'll hold the front line!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742287
+    m_Localized: I'll handle them when they gather in one place.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742288
+    m_Localized: When you level up, you can obtain one card that strengthens your
+      stats.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742289
+    m_Localized: '[Sharp Senses] Attack +8 Acquired'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742290
+    m_Localized: Sorry I'm late.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742291
+    m_Localized: I got here as fast as I could...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742292
+    m_Localized: Noah and Spayne have joined!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742293
+    m_Localized: Commander, a big one's coming.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742294
+    m_Localized: This group is moving around that one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742295
+    m_Localized: Then we just need to stop that big one. I'll take it down!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742296
+    m_Localized: Serah's ultimate gauge is full. Tap her portrait to use her ultimate
+      skill.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742297
+    m_Localized: Is everyone okay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742298
+    m_Localized: I'm fine. My attacks were landing, too!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742299
+    m_Localized: It was good that we stopped them before they could push us back
+      to the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792802742300
+    m_Localized: Hey, I see a light.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936576
+    m_Localized: You're right. Something's shining!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936577
+    m_Localized: Alice, could you check it out?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936578
+    m_Localized: Yeah. I checked it, and it doesn't seem to be a problem.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936579
+    m_Localized: Just as I thought. The reaction I noticed earlier was from a relic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936580
+    m_Localized: Then we should choose carefully.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936581
+    m_Localized: After winning a battle, you can choose one relic that lasts until
+      the end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936582
+    m_Localized: Then something related to Serah would be good, so she can hold the
+      front line longer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936583
+    m_Localized: The forest path has limited visibility. If Serah holds the front,
+      it'll be easier for everyone to move.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265792806936584
+    m_Localized: It's selected. This effect will carry over to the next battle.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
