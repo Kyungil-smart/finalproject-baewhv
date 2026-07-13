@@ -236,7 +236,8 @@ public class SortManager : BaseManager<SortManager>
             if (data.index == slotIdx && data.objType == buffType) currentCount++;
         }
 
-        //Service.Get<SoundManager>()?.PlaySfxSound($"sort {soundLevel}");
+        int soundLevel = Mathf.Min(currentCount, 3);
+        Service.Get<SoundManager>()?.PlaySfxSound($"Sort_{soundLevel}");
 
         string enumName = buffType.Replace("OBJ_", "");
         if (Enum.TryParse(enumName, out EStoneType stoneType))
