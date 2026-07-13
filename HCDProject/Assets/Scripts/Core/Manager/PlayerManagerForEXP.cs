@@ -8,6 +8,7 @@ public partial class PlayerManager
 {
     private RatioIntValue exp;
     private ObserveValue<int> level = new();
+    public int GetLevel => level.Value;
     private List<StoryExpRawData> LevelData;
     private Dictionary<string, int> LevelUpRewards = new();
     private List<LevelRewardRawData> currentRandomRewards;
@@ -17,6 +18,7 @@ public partial class PlayerManager
     private void Start()
     {
         StartEXP();
+        Service.Get<DataManager>().ResetLevelRewardData();
     }
 
     private void FixedUpdate()

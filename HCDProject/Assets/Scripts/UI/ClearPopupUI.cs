@@ -33,11 +33,22 @@ public class ClearPopupUI : MonoBehaviour
 
     private ObserveValue<bool> isOpenClearPopup = new();
     [SerializeField] private Button positiveButton;
+    public RewardButtonUI GetSelectedRelic => selectedRelic; 
 
+    private void Awake()
+    {
+        isOpenClearPopup.Value = false;  
+    }
+
+    private void OnDisable()
+    {
+        isOpenClearPopup.Value = false; 
+    }
 
     public void SetClearPopup(bool showPositiveButton)
     {
         gameObject.SetActive(true);
+        isOpenClearPopup.Value = true;  
         popupTitle.SetEntry("UI_RESULT_WIN");
         positiveButtonText.SetEntry("UI_POPUP_NEXT");
         negativeButtonText.SetEntry("UI_POPUP_SS");
@@ -47,7 +58,8 @@ public class ClearPopupUI : MonoBehaviour
         killCountLayer.SetActive(false);
 
         SetDesc();
-        Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.GetRewardPopup.CopyElement(selectedRelic);
+        if(!Service.Get<TutorialManager>())
+            Service.Get<UIManager>()?.GetUI<IngamePopupController>()?.GetRewardPopup.CopyElement(selectedRelic);
 
         if (showPositiveButton)
         {
