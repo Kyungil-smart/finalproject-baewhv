@@ -9,8 +9,6 @@ public class RelicManager : BaseManager<RelicManager>
     private List<StageClearRewardRawData> currentRandomRewards;
 
     private Rampart _activeWall;
-    private int _buffMaxHp = 0;
-    private int _buffRepair = 0;
 
     protected override void Awake()
     {
@@ -38,43 +36,10 @@ public class RelicManager : BaseManager<RelicManager>
         if (currentWall != null && currentWall != _activeWall)
         {
             _activeWall = currentWall;
-            ApplyWallRelics();
         }
         else if (currentWall == null && _activeWall != null)
         {
             _activeWall = null;
-        }
-    }
-
-    private void ApplyWallRelics()
-    {
-        int totalMaxHpBonus = (int)GetTotalRelicBonus("CASTLE", "CASTLE_MAX_HP");
-        if (totalMaxHpBonus > 0)
-        {
-            _activeWall.CurrentHp.MaxValue += totalMaxHpBonus;
-        }
-
-        if (_buffMaxHp > 0 || _buffRepair > 0)
-        {
-            if (_buffMaxHp > 0)
-            {
-                _activeWall.SetHp(_activeWall.CurrentHp.Value + _buffMaxHp);
-            }
-
-            if (_buffRepair > 0)
-            {
-                int currentHp = _activeWall.CurrentHp.Value;
-                int maxCapacity = _activeWall.CurrentHp.MaxValue;
-
-                if (currentHp < maxCapacity)
-                {
-                    int finalHp = Mathf.Min(currentHp + _buffRepair, maxCapacity);
-                    _activeWall.SetHp(finalHp);
-                }
-            }
-
-            _buffMaxHp = 0;
-            _buffRepair = 0;
         }
     }
 
@@ -152,11 +117,15 @@ public class RelicManager : BaseManager<RelicManager>
                     {
                         if (effectType == "CASTLE_HP")
                         {
-                            _buffRepair += applyValue;
+                            if (gameManager.CurrentHp.Value < gameManager.CurrentHp.MaxValue)
+                            {
+                                gameManager.CurrentHp.Value = Mathf.Min(gameManager.CurrentHp.Value + applyValue, gameManager.CurrentHp.MaxValue);
+                            }
                         }
                         else if (effectType == "CASTLE_MAX_HP")
                         {
-                            _buffMaxHp += applyValue;
+                            gameManager.CurrentHp.MaxValue += applyValue;
+                            gameManager.CurrentHp.Value += applyValue;
                         }
                     }
                 }
