@@ -38,6 +38,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Service.Get<SoundManager>()?.PlaySfxSound("ObjectSelect");
+
         Service.Get<SortManager>()?.StartTimer();
         IsGrab = true;
 

@@ -117,6 +117,8 @@ public class SortManager : BaseManager<SortManager>
     {
         CurrentCombo.Value += amount;
 
+        Service.Get<SoundManager>()?.PlaySfxSound("Combo");
+
         Service.Get<VibrationManager>()?.TriggerVibration();
 
         if (CurrentCombo.Value > MaxComboCount)
@@ -188,6 +190,8 @@ public class SortManager : BaseManager<SortManager>
 
                 RemoveBlockFromRail(draggedobject);
 
+                Service.Get<SoundManager>()?.PlaySfxSound("Sorting");
+
                 CheckSlotState(targetSlot);
                 return;
             }
@@ -228,6 +232,8 @@ public class SortManager : BaseManager<SortManager>
         {
             if (data.index == slotIdx && data.objType == buffType) currentCount++;
         }
+
+        //Service.Get<SoundManager>()?.PlaySfxSound($"sort {soundLevel}");
 
         string enumName = buffType.Replace("OBJ_", "");
         if (Enum.TryParse(enumName, out EStoneType stoneType))
