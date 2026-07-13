@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Components;
+using UnityEngine.ResourceManagement;
+using UnityEngine.Serialization;
+using ColorUtility = UnityEngine.ColorUtility;
 
 public class ArchiveUIController : BaseUIController<ArchiveUIController>
 {
@@ -15,11 +19,19 @@ public class ArchiveUIController : BaseUIController<ArchiveUIController>
     [SerializeField] private Transform narrativeContents;
 
     [SerializeField] private GameObject characterGroup;
+    [SerializeField] private Transform characterContents;
+    
+    [SerializeField] private GameObject detailGroup;
+    private CharacterDetailUI detail;
 
     [SerializeField] private GameObject chapterButtonObject;
     [SerializeField] private GameObject narrativeButtonObject;
+    [SerializeField] private GameObject characterCardObject;
+
+    [FormerlySerializedAs("so")] [SerializeField] private CharacterDetailSO[] characterSO;
 
     private List<StoryButtonUI> narrativeButtons = new List<StoryButtonUI>();
+    private int narrIndex = 0;
 
     private List<StoryStageRawData> data;
     private EArchiveUIType type;
@@ -29,6 +41,13 @@ public class ArchiveUIController : BaseUIController<ArchiveUIController>
     private void Start()
     {
         SwitchUI(EArchiveUIType.Lobby);
+        detail = detailGroup.GetComponent<CharacterDetailUI>();
+        SetStory();
+        SetCharacter();
+    }
+
+    public void SetStory()
+    {
         data = Service.Get<DataManager>().StoryStageTable.data;
         
         (int chapter, int stage) bestStageRaw =  Service.Get<DataManager>().LoadBestStage();
@@ -51,6 +70,25 @@ public class ArchiveUIController : BaseUIController<ArchiveUIController>
         }
     }
 
+    public void SetCharacter()
+    {
+        foreach (var so in characterSO)
+        {
+            CharacterCardUI go = Instantiate(characterCardObject, characterContents).GetComponent<CharacterCardUI>();
+            string colorValue = Service.Get<DataManager>().StaticValueTable.data.Find(x => x.VARIABLE_NAME == so.color).VARIABLE_VALUE;
+            Color pickedColor = Color.white;
+            ColorUtility.TryParseHtmlString(colorValue, out pickedColor);
+            Sprite portrait = Service.Get<ResourcesManager>().GetSprite(so.address , temp => { });
+            go.SetCard(pickedColor, portrait, () =>
+            {
+                SwitchUI(EArchiveUIType.Detail);
+                detail.OpenUI()
+                    .SetPortrait(portrait)
+                    .SetText(so.charName, so.desc)
+                    .SetBGColor(pickedColor);
+            });
+        }
+    }
 
     public void OnBackButton()
     {
@@ -69,6 +107,9 @@ public class ArchiveUIController : BaseUIController<ArchiveUIController>
             case EArchiveUIType.Character:
                 SwitchUI(EArchiveUIType.Lobby);
                 break;
+            case EArchiveUIType.Detail:
+                SwitchUI(EArchiveUIType.Character);
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -81,6 +122,7 @@ public class ArchiveUIController : BaseUIController<ArchiveUIController>
         chapterGroup.SetActive(type == EArchiveUIType.Story);
         narrativeGroup.SetActive(type == EArchiveUIType.Chapter);
         characterGroup.SetActive(type == EArchiveUIType.Character);
+        detailGroup.SetActive(type == EArchiveUIType.Detail);
     }
 
     public void OnChangeUI(int inType)
@@ -107,7 +149,7 @@ public class ArchiveUIController : BaseUIController<ArchiveUIController>
         }
     }
 
-    private int narrIndex = 0;
+    
 
     private void AddChapterUI(int chapter, int stage, bool isBefore)
     {
@@ -147,5 +189,6 @@ public enum EArchiveUIType
     Lobby,
     Story,
     Chapter,
-    Character
+    Character,
+    Detail,
 }
