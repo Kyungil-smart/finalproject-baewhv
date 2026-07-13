@@ -103,8 +103,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     {
         sortTopObject.SetActive(false);
         sortBottomObject.SetActive(false);
-        charactersSlotUI.DOAnchorPosY(-786.5f, 0).SetUpdate(true);
-        charactersSlotUI.DOSizeDelta(battleModeCharactersSlot, 0).SetUpdate(true);
+        charactersSlotUI.anchoredPosition = new Vector2(charactersSlotUI.anchoredPosition.x, -786.5f);
+        //charactersSlotUI.DOAnchorPosY(-786.5f, 0).SetUpdate(true);
+        charactersSlotUI.sizeDelta = battleModeCharactersSlot;
+        //charactersSlotUI.DOSizeDelta(battleModeCharactersSlot, 0).SetUpdate(true);
         foreach (CharacterSlotUI slot in characterSlots)
         {
             slot.ChangeMode(false);
@@ -119,8 +121,10 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     {
         sortTopObject.SetActive(true);
         sortBottomObject.SetActive(true);
-        charactersSlotUI.DOAnchorPosY(262.0f, 0).SetUpdate(true);
-        charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0).SetUpdate(true);
+        charactersSlotUI.anchoredPosition = new Vector2(charactersSlotUI.anchoredPosition.x, 262.0f);
+        //charactersSlotUI.DOAnchorPosY(262.0f, 0).SetUpdate(true);
+        charactersSlotUI.sizeDelta = sortModeCharactersSlot;
+        //charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0).SetUpdate(true);
         foreach (CharacterSlotUI slot in characterSlots)
         {
             slot.ChangeMode(true);
@@ -157,19 +161,6 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
             }
 
             comboText.gameObject.SetActive(true);
-        }
-    }
-
-    public void SetLeftSortCountText(float value)
-    {
-        if (value < 0)
-        {
-            leftTimeText.text = "0 s";
-            StartBattleButton.SetSortDone();
-        }
-        else
-        {
-            leftTimeText.text = $"{value:F1} s";
         }
     }
 
