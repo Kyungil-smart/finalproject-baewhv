@@ -32,7 +32,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
                 switch (d.VARIABLE_NAME)
                 {
                     case "COLOR_SERAH":
-                        name = "C_001"; 
+                        name = "C_001";
                         break;
                     case "COLOR_NOAH":
                         name = "C_002";
@@ -47,6 +47,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
                         name = "C_008";
                         break;
                 }
+
                 if (string.IsNullOrEmpty(name)) continue;
                 Color pickedColor = Color.white;
                 ColorUtility.TryParseHtmlString(d.VARIABLE_VALUE, out pickedColor);
@@ -84,10 +85,19 @@ public class NarrativeManager : BaseManager<NarrativeManager>
 
         storyData = Service.Get<DataManager>().StoryLocalizingTable.data
             .FindAll(x =>
-                x.STAGE == currentStage &&
-                x.CHAPTER == currentChapter &&
-                x.STAGE_DIALOGUE_EVENT_TYPE == (isBefore ? "BEFORE_STAGE" : "AFTER_STAGE"));
-        Debug.Log($"NarrativeManager: StartNarrative {storyData.Count}");
+                {
+                    bool success = x.STAGE == currentStage &&
+                        x.CHAPTER == currentChapter &&
+                        x.STAGE_DIALOGUE_EVENT_TYPE == (isBefore ? "BEFORE_STAGE" : "AFTER_STAGE");
+                    if (success)
+                    {
+                        Service.Get<ResourcesManager>().GetSprite(x.PORTRAIT_L,bind=>{});
+                        Service.Get<ResourcesManager>().GetSprite(x.PORTRAIT_R,bind=>{});
+                        Service.Get<ResourcesManager>().GetSprite(x.BACKGROUND,bind=>{});
+                    }
+                    return success;
+                }
+            );
         ui = Service.Get<UIManager>().GetUI<NarrativeUIController>();
 
         ui.GameObject().SetActive(true);

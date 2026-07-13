@@ -117,6 +117,8 @@ public class SortManager : BaseManager<SortManager>
     {
         CurrentCombo.Value += amount;
 
+        Service.Get<SoundManager>()?.PlaySfxSound("Combo");
+
         Service.Get<VibrationManager>()?.TriggerVibration();
 
         if (CurrentCombo.Value > MaxComboCount)
@@ -125,16 +127,19 @@ public class SortManager : BaseManager<SortManager>
         }
 
         float addedTime = 0f;
-        if (CurrentCombo.Value >= 6)
+
+        var dataManager = Service.Get<DataManager>();
+        if (dataManager != null)
         {
-            addedTime = 1.5f;
-            RemainingSorts.Value += 1.5f;
+            var comboTime = dataManager.StaticValueTable.data.Find(x => x.VARIABLE_NAME == "COMBO_TIME");
+
+            if (comboTime != null)
+            {
+                addedTime = float.Parse(comboTime.VARIABLE_VALUE);
+            }
         }
-        else
-        {
-            addedTime = 1.0f;
-            RemainingSorts.Value += 1.0f;
-        }
+
+        RemainingSorts.Value += addedTime;
 
         var bottomUI = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
         if (bottomUI != null && !bottomUI.Equals(null))
@@ -188,6 +193,8 @@ public class SortManager : BaseManager<SortManager>
 
                 RemoveBlockFromRail(draggedobject);
 
+                Service.Get<SoundManager>()?.PlaySfxSound("Sorting");
+
                 CheckSlotState(targetSlot);
                 return;
             }
@@ -228,6 +235,8 @@ public class SortManager : BaseManager<SortManager>
         {
             if (data.index == slotIdx && data.objType == buffType) currentCount++;
         }
+
+        //Service.Get<SoundManager>()?.PlaySfxSound($"sort {soundLevel}");
 
         string enumName = buffType.Replace("OBJ_", "");
         if (Enum.TryParse(enumName, out EStoneType stoneType))

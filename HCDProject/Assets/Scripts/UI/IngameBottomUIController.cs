@@ -31,7 +31,6 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     private List<CharacterSlotUI> characterSlots = new();
 
 
-
     //687
     public CharacterSlotUI[] GetSlots => characterSlots.ToArray();
 
@@ -41,6 +40,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public StoneRail GetLowerRail => lowerRail;
 
     [SerializeField] private TextMeshProUGUI comboText;
+    public GameObject GetComboText => comboText.gameObject;
     [SerializeField] private TextMeshProUGUI leftTimeText;
     [SerializeField] private TextMeshProUGUI addTimeText;
     [SerializeField] private Slider LeftTimeGauge;
@@ -50,6 +50,7 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
     public ObserveValue<bool> isSortMode = new();
 
     [SerializeField] private GameObject[] SkillEffect;
+
     private void Start()
     {
         comboText.gameObject.SetActive(false);
@@ -57,7 +58,12 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
 
     public void OnEndSort()
     {
-        Service.Get<SortManager>()?.CheckSortEnd();
+        if (Service.Get<TutorialManager>() && Service.Get<TutorialManager>().pauseWave)
+        {
+            SetBattlePhase();
+        }
+        else
+            Service.Get<SortManager>()?.CheckSortEnd();
     }
 
     /// <summary>
@@ -69,44 +75,63 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         wallHp.value = value;
         wallHpText.text = $"{value:p0}";
     }
-    
+
     public void SetWallHP(int current, int max)
     {
-        wallHp.value = Mathf.Clamp01((float)current/max);
+        wallHp.value = Mathf.Clamp01((float)current / max);
         if (current < 0) current = 0;
         wallHpText.text = $"{current} / {max}";
+    }
+
+    public void HideSkill()
+    {
+        foreach (var slot in characterSlots)
+        {
+            slot.HideSkill();
+        }
+    }
+
+    public void ShowSkill()
+    {
+        foreach (var slot in characterSlots)
+        {
+            slot.ShowSkill();
+        }
     }
 
     public void SetBattlePhase()
     {
         sortTopObject.SetActive(false);
         sortBottomObject.SetActive(false);
-        //ComboView.DOAnchorPosY(206.0f, 0);
-        charactersSlotUI.DOAnchorPosY(-786.5f, 0);
-        charactersSlotUI.DOSizeDelta(battleModeCharactersSlot, 0);
+        charactersSlotUI.anchoredPosition = new Vector2(charactersSlotUI.anchoredPosition.x, -786.5f);
+        //charactersSlotUI.DOAnchorPosY(-786.5f, 0).SetUpdate(true);
+        charactersSlotUI.sizeDelta = battleModeCharactersSlot;
+        //charactersSlotUI.DOSizeDelta(battleModeCharactersSlot, 0).SetUpdate(true);
         foreach (CharacterSlotUI slot in characterSlots)
         {
             slot.ChangeMode(false);
         }
 
-        isSortMode.Value = false;
+        if(isSortMode.Value)
+            isSortMode.Value = false;
         Service.Get<TimeManager>().LoadTimeScale();
-        
     }
 
     public void SetSortPhase()
     {
         sortTopObject.SetActive(true);
         sortBottomObject.SetActive(true);
-        //ComboView.DOAnchorPosY(419.0f, 0).SetUpdate(true);
-        charactersSlotUI.DOAnchorPosY(262.0f, 0).SetUpdate(true);
-        charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0).SetUpdate(true);
+        charactersSlotUI.anchoredPosition = new Vector2(charactersSlotUI.anchoredPosition.x, 262.0f);
+        //charactersSlotUI.DOAnchorPosY(262.0f, 0).SetUpdate(true);
+        charactersSlotUI.sizeDelta = sortModeCharactersSlot;
+        //charactersSlotUI.DOSizeDelta(sortModeCharactersSlot, 0).SetUpdate(true);
         foreach (CharacterSlotUI slot in characterSlots)
         {
             slot.ChangeMode(true);
         }
 
-        isSortMode.Value = true;
+        if(!isSortMode.Value)
+            isSortMode.Value = true;
         StartBattleButton.SetSortStart();
         Service.Get<TimeManager>().SaveTimeScale();
     }
@@ -139,18 +164,6 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         }
     }
 
-    public void SetLeftSortCountText(float value)
-    {
-        if (value < 0)
-        {
-            leftTimeText.text = "0 s";
-            StartBattleButton.SetSortDone();
-        }
-        else
-        {
-            leftTimeText.text = $"{value:F1} s";
-        }
-    }
     public void SetLeftSortCountText(float value, float max)
     {
         if (value < 0)
@@ -212,16 +225,15 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
                 slot.SkillEffect = Instantiate(SkillEffect[3], slot.SkillArea.transform);
                 break;
         }
+
         slot.SkillEffect?.SetActive(false);
 
-        Addressables.LoadAssetAsync<Sprite>(data.CHARACTER_IMG).Completed += handle =>
+        Sprite sp = Service.Get<ResourcesManager>().GetSprite(data.CHARACTER_IMG, handle =>
         {
-            if (!slot) return;
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                slot.InitPortrait(handle.Result);
-            }
-        };
+            slot.InitPortrait(handle);
+        });
+        if(sp)
+            slot.InitPortrait(sp);
         slot.InitSlot(character);
         characterSlots.Add(slot);
         return slot;

@@ -19,6 +19,7 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     [SerializeField] private Slider hpBar;
     [SerializeField] private TextMeshProUGUI hpText;
     [SerializeField] private TextMeshProUGUI deathTimerText;
+    [SerializeField] private GameObject skillBarArea;
     [SerializeField] private Slider skillBar;
 
     [SerializeField] private RectTransform borderRect;
@@ -29,13 +30,10 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     [SerializeField] private GameObject skillArea;
     public GameObject SkillArea => skillArea;
     public GameObject SkillEffect;
+    public GameObject GetStones => StoneLayout;
     private BaseCharacter _character;
-    
-    //private readonly Vector2 battlePhaseSlotRect = new Vector2(245, 361);
-    //private readonly Vector2 sortPhaseSlotRect = new Vector2(245, 1000);
-    
-    private readonly Vector2 battlePhasePortraitRect = new Vector2(-12, 300);
-    private readonly Vector2 sortPhasePortraitRect = new Vector2(-12, 700);
+
+    private bool isTutorial = false;
 
     public void InitSlot(BaseCharacter character)
     {
@@ -64,8 +62,14 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
         GaugeLayout.SetActive(!isSort);
         StoneLayout.transform.SetSiblingIndex(isSort ? 0 : 3);
         SocketLayout.SetActive(isSort);
-        //borderRect.DOSizeDelta(isSort ? sortPhasePortraitRect : battlePhasePortraitRect, 0).SetUpdate(true);
-        
+        if (isSort)
+        {
+            DeathCountImage.gameObject.SetActive(false);
+        }
+        else if (deathTimerText.gameObject.activeSelf)
+        {
+            DeathCountImage.gameObject.SetActive(true);
+        }
     }
 
 
@@ -92,7 +96,7 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void SetSkillBar(float value)
     {
         skillBar.value = value;
-        if(skillBar.value >= 1.0f)
+        if(skillBar.value >= 1.0f && isTutorial)
             SkillEffect.SetActive(true);
         else
             SkillEffect.SetActive(false);
@@ -131,6 +135,20 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void SetStoneCount(EStoneType type, int value)
     {
         stoneText[(int)type].text = $"X{value}";
+    }
+
+    public void HideSkill()
+    {
+        skillArea.GetComponent<Button>().interactable = false;
+        skillBarArea.gameObject.SetActive(false);
+        isTutorial = true;
+    }
+    public void ShowSkill()
+    {
+        skillArea.GetComponent<Button>().interactable = true;
+        skillBarArea.gameObject.SetActive(true);
+        isTutorial = false;
+        
     }
 }
 

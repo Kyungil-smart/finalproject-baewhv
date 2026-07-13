@@ -155,7 +155,7 @@ public class BaseMonster : BaseController
 
         foreach (BaseCharacter player in _characters)
         {
-            if (player._isDead) continue;
+            if (!player || player._isDead) continue;
 
             float dis = (transform.position - player.transform.position).sqrMagnitude;
 

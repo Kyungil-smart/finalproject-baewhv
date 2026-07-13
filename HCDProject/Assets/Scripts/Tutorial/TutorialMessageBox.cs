@@ -29,6 +29,6 @@ public class TutorialMessageBox : MonoBehaviour
             descText.SetEntry(desc);
         else
             rawDescText.text = desc;
-        rt.DOAnchorPosY(isTopPos ? 775.0f: -305.0f , 0);
+        rt.DOAnchorPosY(isTopPos ? 775.0f: -305.0f , 0).SetUpdate(true);
     }
 }

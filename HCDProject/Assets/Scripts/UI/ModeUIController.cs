@@ -1,15 +1,25 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ModeUIController : BaseUIController<ModeUIController>
 {
-    [SerializeField] private Sprite[] images;
+    private List<Sprite> images = new();
     [SerializeField] private Image portrait;
     private int index = 0;
     private Tweener imageChanger;
-    
-    
+
+    private void Start()
+    {
+        images.Add(Service.Get<ResourcesManager>().GetSprite("Player/Serah[Serah_Standard]", x => { }));
+        images.Add(Service.Get<ResourcesManager>().GetSprite("Player/Noah[Noah_Standard]", x => { }));
+        images.Add(Service.Get<ResourcesManager>().GetSprite("Player/Alice[Alice_Standard]", x => { }));
+        images.Add(Service.Get<ResourcesManager>().GetSprite("Player/Spayin[Spayin_Standard]", x => { }));
+        portrait.sprite = images[0];
+    }
+
+
     public void OnNextScene()
     {
         Service.Get<DataManager>()?.StageSelectWithLoadGame();

@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragAndDropTutorial : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
@@ -15,6 +15,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private Transform canvasTransform;
     public bool IsGrab { get; private set; } = false;
 
+    private string startKey;
+
+    public void SetStartKey(string key)
+    {
+        startKey = key;
+    }
+    
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -31,6 +38,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        Debug.Log("OnPointerDown");
         originalParent = transform.parent;
         originalAnchoredPosition = rectTransform.anchoredPosition;
         originalLocalZ = transform.localPosition.z;
@@ -38,18 +46,12 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Service.Get<SoundManager>()?.PlaySfxSound("ObjectSelect");
-
-        Service.Get<SortManager>()?.StartTimer();
+        Debug.Log("OnBeginDrag");
         IsGrab = true;
-
-        Service.Get<SortManager>()?.PlayerInputLock(true);
-
         if (canvasGroup != null)
         {
             canvasGroup.blocksRaycasts = false;
         }
-
         if (canvasTransform != null)
         {
             transform.SetParent(canvasTransform);
@@ -59,6 +61,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        Debug.Log("OnDrag");
         if (canvas == null) return;
 
         Vector2 pointerScreenPos = eventData.position;
@@ -76,6 +79,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        Debug.Log("OnEndDrag");
         IsGrab = false;
 
         if (canvasGroup != null)
@@ -83,10 +87,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             canvasGroup.blocksRaycasts = true;
         }
 
-        var sortManager = Service.Get<SortManager>();
-        if (sortManager != null && sortManager.RemainingSorts.Value > 0)
+        DropTarget target = eventData.pointerCurrentRaycast.gameObject.GetComponent<DropTarget>();
+        if (target)
         {
-            sortManager.PlayerInputLock(false);
+            Debug.Log(eventData.pointerCurrentRaycast.gameObject.name);
+            target.GetTutorialHelper.OnStone(startKey);
         }
 
         if (transform.parent == canvasTransform || transform.parent == originalParent)
