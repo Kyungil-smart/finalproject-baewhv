@@ -27,6 +27,8 @@
   - 게임의 몰입감 향상을 위한 스토리 페이지.
 
 # 기술 스택
+|||
+|---|---|
 | 분류 | 사용 기술 |
 | 엔진 및 그래픽 | Unity6, URP, UIParticle |
 | 연출 | DOTween |
@@ -50,15 +52,10 @@
 Assets/
 ├─_Shared/ -> 리소스 서브모듈 레포지토리
 ├─Data/    -> SheetToJson으로 직렬화한 데이터 모음
-├─Prefabs/ ->
-│ ├─Manager/ -> BaseManager 컴포넌트를 포함한 프리펩
-│ ├─MonsterPrefab/ -> 몬스터
-│ ├─Object/ -> Sort에 사용되는 오브젝트 UI
-│ ├─PlayerPrefab/ -> 플레이어
-│ ├─SO/ -> 스크립터블 오브젝트
-│ ├─Stage/ -> 스테이지를 구성한 프리펩
+├─Prefabs/ -> 게임에 동적으로 불러올 오브젝트나 작업단위의 프리펩 모음
 ├─Scenes/ -> 씬 구성 참조
-
+├─Script/
+│ ├─
 
 │ ├ └ ─
 ```
@@ -68,6 +65,7 @@ Assets/
 |---|---|
 |TitleScene| 타이틀 씬|
 |ModeScene| 스토리 혹은 아카이브씬을 선택하는 씬|
-|StageSelectScene| 현재 진행중인 스테이지를 확인하고 스테이지로 진입할 수 있는 선택씬|
+|StageSelectScene| 스테이지 선택씬|
 |StageScene| 전투 스테이지 |
+|ArhciveScene| 아카이브 씬 |
 
