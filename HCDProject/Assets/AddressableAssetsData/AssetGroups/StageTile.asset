@@ -730,6 +730,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0576e8f6b38523f408ccbf2b7475d83e
+    m_Address: Grid/Chapter1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - chapter1
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 05ab8b1ef81aad747bc4cadce0d06f7a
     m_Address: unity_full_tilepalette_v2_4760
     m_ReadOnly: 0
@@ -842,6 +848,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 06663d3ce8bdd694d9b1a30f905594b2
     m_Address: stacked_trees_485
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 066aa941354bfa3439e8d5b7f4fd654e
+    m_Address: HCD_BG_Combat_Ch02_Stage2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1309,6 +1320,12 @@ MonoBehaviour:
     m_Address: unity_full_tilepalette_v2_5082
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09ff68b77b2327a41a26871476b0decb
+    m_Address: Grid/Chapter4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - chapter4
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0a126fc6d55ce044d862b490631b064e
     m_Address: unity_full_tilepalette_v2_4380
@@ -7450,6 +7467,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3adc2b93a1bfbf446953457ee1598a96
+    m_Address: HCD_BG_Combat_Ch02_Stage3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3aeba6994680dc6468e27480b1a2015a
     m_Address: unity_full_tilepalette_v2_1371
     m_ReadOnly: 0
@@ -11159,6 +11181,12 @@ MonoBehaviour:
     m_Address: unity_full_tilepalette_v2_3437
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58be9defb2aa2aa4e981ebddb7fa0a02
+    m_Address: Grid/Chapter3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - chapter3
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 58d95b65da0f64a44a6c17444085d32f
     m_Address: unity_full_tilepalette_v2_4822
@@ -15270,6 +15298,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b0f1c8202ba3524abfe0b318a58f5ef
+    m_Address: HCD_BG_Combat_Ch01_Stage4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b0f310a8e86d8c43a178d79e8455f8b
     m_Address: unity_full_tilepalette_v2_5125
     m_ReadOnly: 0
@@ -15579,6 +15612,12 @@ MonoBehaviour:
     m_Address: stacked_trees_152
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d474a0a2bc264944bdf7b170711d397
+    m_Address: Grid/Chapter2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - chapter2
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d5b548b3bf28384fa4a49324e3ddeb2
     m_Address: unity_full_tilepalette_v2_3378
@@ -19375,6 +19414,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c0b06856f8364d4fbedf21003d9af00
+    m_Address: HCD_BG_Combat_Ch02_Stage1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c0c203398500dd4ebbf6c214410e6ce
     m_Address: stacked_trees_170
     m_ReadOnly: 0
@@ -21255,6 +21299,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa811ed1d15404941b0ef2404c6d2aaa
+    m_Address: HCD_BG_Combat_Ch02_Stage4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: aa83a77d64b53964884ba4089ce1b058
     m_Address: unity_full_tilepalette_v2_4796
     m_ReadOnly: 0
@@ -21875,6 +21924,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afe038eb0dea458bb4dba9137308fa10
+    m_Address: HCD_BG_Combat_Ch01_Stage1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: afe6dbeeee268724ea072269050fd3a3
     m_Address: unity_full_tilepalette_v2_5658
     m_ReadOnly: 0
@@ -22260,6 +22314,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b37351a512ae94c4bb5fa049fbeccc9d
+    m_Address: Grid/Chapter5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - chapter5
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b37fb02c706782a4481233fec01f162f
     m_Address: unity_full_tilepalette_v2_3331
     m_ReadOnly: 0
@@ -22327,6 +22387,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3fa24a7cfb34e5498e59af40f00ceb3
     m_Address: unity_full_tilepalette_v2_4074
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3fba7062fb86c245bc36de4535e8942
+    m_Address: HCD_BG_Combat_Ch01_Stage3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -25350,6 +25415,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cdb710461a77696478b7d2f4ef8761ba
+    m_Address: Assets/_Shared/Gif/Super_Retro_Collection/_Resources/Environments/stacked_trees.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cdbb6a412ac9db74ebc7ec37bd0815e1
     m_Address: stacked_trees_338
     m_ReadOnly: 0
@@ -26559,6 +26629,12 @@ MonoBehaviour:
     m_Address: unity_full_tilepalette_v2_5436
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d82e2775a98b45d4b047909486498f1a
+    m_Address: Grid/Chapter8
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - chapter8
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d8433939368e109459017b2d92bd7a81
     m_Address: unity_full_tilepalette_v2_2476
@@ -29475,6 +29551,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1660c274e9182a4da86c45387aaeb70
+    m_Address: HCD_BG_Combat_Ch01_Stage5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f166eeb393de16b40adf647d20772ec7
     m_Address: unity_full_tilepalette_v2_5191
     m_ReadOnly: 0
@@ -29722,6 +29803,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f301febda39f5434cb319be000146b9d
     m_Address: unity_full_tilepalette_v2_4356
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f30aedc64c990394b837c1f10d4ee2f5
+    m_Address: HCD_BG_Combat_Ch02_Stage5
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -30737,6 +30823,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fc4079fc3174bb3488f7c45396f4bcf6
     m_Address: unity_full_tilepalette_v2_1376
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc42fa5150954ff4182c12349b8a7579
+    m_Address: HCD_BG_Combat_Ch01_Stage2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
