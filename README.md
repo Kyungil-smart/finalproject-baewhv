@@ -14,7 +14,7 @@
 # 주요 기능
 - 전투 시스템
   - 상태 패턴을 사용한 AI 전투.
-  - Navimesh+ 를 이용한 길찾기 로직.
+  - NaviMeshPlus 를 이용한 탐색 로직.
 - 3Sort 시스템
   - 레일의 기물을 옮겨 캐릭터에 배치해 스테이터스를 높이는 Sort
   - 레일 내 연속한 3개의 오브젝트를 체크하여 Sort를 강화하는 Combo
@@ -38,14 +38,24 @@
 # 아키텍쳐
 |이름|설명|관련 자료|
 |---|---|---|
-| ServiceLocater | ServiceLocater를 기반으로 한 각종 매니저 관리. |[관리 다이어그램](https://github.com/Kyungil-smart/finalproject-baewhv/wiki/Manager%EA%B5%AC%EC%84%B1)|
-| BaseManager | 서비스 로케이터에 등록 가능한 매니저클래스. 씬 타입을 지정해 항시유지, 세션유지, 씬 유지 선택 ||
-| SceneController | DDOL 기능을 활용하여 SessionScene을 만들고 해당 씬에만 존재하는 매니저 배치 ||
-| GameManager | 스테이지 선택 및 전투 스테이지에 배치되어 주요 규칙을 상태 패턴으로 관리  ||
-| PlayerManager | 데이터 드리븐을 통해 캐릭터 리소스, 스테이터스, 스킬을 초기화하고 UI와 연동. 생성 후 맵에 배치.||
+| ServiceLocator | ServiceLocator 패턴을 기반으로 각종 매니저 객체의 라이프 사이클 관리. |[관리 다이어그램](https://github.com/Kyungil-smart/finalproject-baewhv/wiki/Manager%EA%B5%AC%EC%84%B1)|
+| BaseManager | 서비스 로케이터에 등록되는 핵심 매니저 클래스. 항시유지(DontDestroyOnLoad), 세션유지(Session), 씬 유지(Scene)중 택해 자체적으로 라이플 사이클을 제어. ||
+| GameManager | 게임 루프 관리. 스테이지 선택 및 전투 스테이지의 주요 규칙을 상태 패턴으로 제어. ||
+| PlayerManager | 데이터 드리븐을 통해 캐릭터 리소스, 스테이터스, 스킬 정보를 초기화하고 UI와 연동 후 맵에 배치.||
 | MonsterManager | 데이터 드리븐을 통해 몬스터 풀링 리소스를 제작. 웨이브 시작 시 웨이브 규칙에 맞는 몬스터 배치. ||
-| BaseCharacter | BaseController를 상속받아 플레이어 캐릭터 및 몬스터 구현. ||
-| ObjectPooling | 몬스터 및 이펙트 풀링. ||
+| BaseController | 플레이어 캐릭터 및 몬스터의 상위 클래스. 이를 상속받아 이동 및 공격을 구현. ||
+| ObjectPooling | 대량으로 사용되는 몬스터 및 이펙트 오브젝트를 풀링하고 재활용  하여 가비지 컬렉션 스파이크 방지 및 성능 최적화. ||
+
+| **ServiceLocator** | 전역/로컬 서비스 로케이터 패턴을 기반으로 각종 매니저 객체의 라이프사이클 관리. | [관리 다이어그램](https://github.com/Kyungil-smart/finalproject-baewhv/wiki/Manager%EA%B5%AC%EC%84%B1) |
+| **BaseManager** | 서비스 로케이터에 등록되는 핵심 매니저의 최상위 클래스. 씬 타입에 따라 **항시 유지(Persistent), 세션 유지(Session), 씬 유지(Scene)** 생명주기 선택 가능. | |
+| **SceneController** | `DontDestroyOnLoad`를 활용한 전역 세션(SessionScene)을 생성하고, 해당 세션 범위에서 유지될 매니저들을 오케스트레이션. | |
+| **GameManager** | 전체 게임 루프 관리. 스테이지 선택 및 인게임 전투 규칙을 상태 패턴(State Pattern)으로 제어. | |
+| **PlayerManager** | 데이터 드리븐 방식을 통해 캐릭터 리소스, 스테이터스, 스킬 정보를 파싱 및 초기화하고 UI와 실시간 연동 후 맵에 배치. | |
+| **MonsterManager** | 데이터 드리븐 기반 오브젝트 풀링 시스템. 웨이브 시작 시 기획 규칙에 맞는 몬스터를 풀에서 꺼내 전장에 배치. | |
+| **BaseCharacter** | 플레이어 및 몬스터의 공통 조상 클래스. `BaseController`를 상속받아 이동, 공격 등 핵심 전투 메커니즘 공유. | |
+| **ObjectPooling** | 대량의 몬스터, 사운드, 이펙트 리소스를 재사용하여 가비지 컬렉션(GC) 스파이크 방지 및 성능 최적화. | |
+
+---
 
 # 프로젝트 구조
 ```
@@ -57,7 +67,7 @@ Assets/
 ├─Scenes/ -> 씬 구성 참조
 └─Script/
   ├─3-sort/ -> 3-Sort에 사용되는 오브젝트의 드래그 앤 드랍을 지원하는 스크립트
-  ├─Core/ -> ServiceLocater 및 BaseManager 등 코어기능 스크립트
+  ├─Core/ -> ServiceLocator 및 BaseManager 등 코어기능 스크립트
   │ └─Manager/ -> BaseManager를 상속받는 코어 기능
   ├─Data/ -> 역직렬화 데이터 관리
   ├─Interface/ -> 인터페이스 스크립트
@@ -78,5 +88,5 @@ Assets/
 |ModeScene| 스토리 혹은 아카이브씬을 선택하는 씬|
 |StageSelectScene| 스테이지 선택씬|
 |StageScene| 전투 스테이지 |
-|ArhciveScene| 아카이브 씬 |
+|ArchiveScene| 아카이브 씬 |
 
