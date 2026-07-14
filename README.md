@@ -46,14 +46,6 @@
 | BaseController | 플레이어 캐릭터 및 몬스터의 상위 클래스. 이를 상속받아 이동 및 공격을 구현. ||
 | ObjectPooling | 대량으로 사용되는 몬스터 및 이펙트 오브젝트를 풀링하고 재활용  하여 가비지 컬렉션 스파이크 방지 및 성능 최적화. ||
 
-| **ServiceLocator** | 전역/로컬 서비스 로케이터 패턴을 기반으로 각종 매니저 객체의 라이프사이클 관리. | [관리 다이어그램](https://github.com/Kyungil-smart/finalproject-baewhv/wiki/Manager%EA%B5%AC%EC%84%B1) |
-| **BaseManager** | 서비스 로케이터에 등록되는 핵심 매니저의 최상위 클래스. 씬 타입에 따라 **항시 유지(Persistent), 세션 유지(Session), 씬 유지(Scene)** 생명주기 선택 가능. | |
-| **SceneController** | `DontDestroyOnLoad`를 활용한 전역 세션(SessionScene)을 생성하고, 해당 세션 범위에서 유지될 매니저들을 오케스트레이션. | |
-| **GameManager** | 전체 게임 루프 관리. 스테이지 선택 및 인게임 전투 규칙을 상태 패턴(State Pattern)으로 제어. | |
-| **PlayerManager** | 데이터 드리븐 방식을 통해 캐릭터 리소스, 스테이터스, 스킬 정보를 파싱 및 초기화하고 UI와 실시간 연동 후 맵에 배치. | |
-| **MonsterManager** | 데이터 드리븐 기반 오브젝트 풀링 시스템. 웨이브 시작 시 기획 규칙에 맞는 몬스터를 풀에서 꺼내 전장에 배치. | |
-| **BaseCharacter** | 플레이어 및 몬스터의 공통 조상 클래스. `BaseController`를 상속받아 이동, 공격 등 핵심 전투 메커니즘 공유. | |
-| **ObjectPooling** | 대량의 몬스터, 사운드, 이펙트 리소스를 재사용하여 가비지 컬렉션(GC) 스파이크 방지 및 성능 최적화. | |
 
 ---
 
