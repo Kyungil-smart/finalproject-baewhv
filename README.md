@@ -38,7 +38,7 @@
 # 아키텍쳐
 |이름|설명|관련 자료|
 |---|---|---|
-| ServiceLocater | ServiceLocater를 기반으로 한 각종 매니저 관리. |[클래스 다이어그램](https://github.com/Kyungil-smart/finalproject-baewhv/wiki/Manager%EA%B5%AC%EC%84%B1)|
+| ServiceLocater | ServiceLocater를 기반으로 한 각종 매니저 관리. |[관리 다이어그램](https://github.com/Kyungil-smart/finalproject-baewhv/wiki/Manager%EA%B5%AC%EC%84%B1)|
 | BaseManager | 서비스 로케이터에 등록 가능한 매니저클래스. 씬 타입을 지정해 항시유지, 세션유지, 씬 유지 선택 ||
 | SceneController | DDOL 기능을 활용하여 SessionScene을 만들고 해당 씬에만 존재하는 매니저 배치 ||
 | GameManager | 스테이지 선택 및 전투 스테이지에 배치되어 주요 규칙을 상태 패턴으로 관리  ||
