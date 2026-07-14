@@ -24,7 +24,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7001",
@@ -50,7 +50,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7002",
@@ -76,7 +76,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7003",
@@ -102,7 +102,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7004",
@@ -128,7 +128,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7005",
@@ -154,7 +154,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7006",
@@ -180,7 +180,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7007",
@@ -206,7 +206,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7008",
@@ -232,7 +232,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7009",
@@ -258,7 +258,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7010",
@@ -284,7 +284,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7011",
@@ -310,7 +310,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7012",
@@ -336,7 +336,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7013",
@@ -362,7 +362,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7014",
@@ -388,7 +388,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch01"
     },
     {
       "MAP_ID": "7015",
@@ -414,7 +414,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7016",
@@ -440,7 +440,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7017",
@@ -466,7 +466,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7018",
@@ -492,7 +492,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7019",
@@ -518,7 +518,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7020",
@@ -544,7 +544,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7021",
@@ -570,7 +570,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7022",
@@ -596,7 +596,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7023",
@@ -622,7 +622,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7024",
@@ -648,7 +648,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7025",
@@ -674,7 +674,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7026",
@@ -700,7 +700,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7027",
@@ -726,7 +726,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7028",
@@ -752,7 +752,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7029",
@@ -778,7 +778,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch02"
     },
     {
       "MAP_ID": "7030",
@@ -804,7 +804,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7031",
@@ -830,7 +830,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7032",
@@ -856,7 +856,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7033",
@@ -882,7 +882,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7034",
@@ -908,7 +908,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7035",
@@ -934,7 +934,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7036",
@@ -960,7 +960,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7037",
@@ -986,7 +986,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7038",
@@ -1012,7 +1012,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7039",
@@ -1038,7 +1038,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7040",
@@ -1064,7 +1064,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7041",
@@ -1090,7 +1090,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7042",
@@ -1116,7 +1116,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7043",
@@ -1142,7 +1142,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7044",
@@ -1168,7 +1168,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_1",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch03"
     },
     {
       "MAP_ID": "7045",
@@ -1194,7 +1194,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7046",
@@ -1220,7 +1220,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7047",
@@ -1246,7 +1246,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7048",
@@ -1272,7 +1272,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7049",
@@ -1298,7 +1298,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7050",
@@ -1324,7 +1324,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7051",
@@ -1350,7 +1350,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7052",
@@ -1376,7 +1376,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7053",
@@ -1402,7 +1402,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7054",
@@ -1428,7 +1428,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7055",
@@ -1454,7 +1454,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7056",
@@ -1480,7 +1480,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7057",
@@ -1506,7 +1506,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7058",
@@ -1532,7 +1532,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7059",
@@ -1558,7 +1558,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch04"
     },
     {
       "MAP_ID": "7060",
@@ -1584,7 +1584,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7061",
@@ -1610,7 +1610,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7062",
@@ -1636,7 +1636,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7063",
@@ -1662,7 +1662,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7064",
@@ -1688,7 +1688,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7065",
@@ -1714,7 +1714,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7066",
@@ -1740,7 +1740,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7067",
@@ -1766,7 +1766,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7068",
@@ -1792,7 +1792,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7069",
@@ -1818,7 +1818,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7070",
@@ -1844,7 +1844,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7071",
@@ -1870,7 +1870,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7072",
@@ -1896,7 +1896,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7073",
@@ -1922,7 +1922,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7074",
@@ -1948,7 +1948,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_2",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch05"
     },
     {
       "MAP_ID": "7075",
@@ -1974,7 +1974,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7076",
@@ -2000,7 +2000,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7077",
@@ -2026,7 +2026,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7078",
@@ -2052,7 +2052,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7079",
@@ -2078,7 +2078,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7080",
@@ -2104,7 +2104,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7081",
@@ -2130,7 +2130,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7082",
@@ -2156,7 +2156,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7083",
@@ -2182,7 +2182,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7084",
@@ -2208,7 +2208,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7085",
@@ -2234,7 +2234,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7086",
@@ -2260,7 +2260,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7087",
@@ -2286,7 +2286,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7088",
@@ -2312,7 +2312,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7089",
@@ -2338,7 +2338,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch06"
     },
     {
       "MAP_ID": "7090",
@@ -2364,7 +2364,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7091",
@@ -2390,7 +2390,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7092",
@@ -2416,7 +2416,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7093",
@@ -2442,7 +2442,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7094",
@@ -2468,7 +2468,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7095",
@@ -2494,7 +2494,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7096",
@@ -2520,7 +2520,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7097",
@@ -2546,7 +2546,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7098",
@@ -2572,7 +2572,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7099",
@@ -2598,7 +2598,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7100",
@@ -2624,7 +2624,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7101",
@@ -2650,7 +2650,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7102",
@@ -2676,7 +2676,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7103",
@@ -2702,7 +2702,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     },
     {
       "MAP_ID": "7104",
@@ -2728,7 +2728,7 @@
       "SPAWN_MONSTER_ID_07": "NONE",
       "SPAWN_MONSTER_COUNT_07": 0,
       "BGM": "Battle_3",
-      "BG_IMG": ""
+      "BG_IMG": "HCD_BG_Combat_Ch07"
     }
   ]
 }
