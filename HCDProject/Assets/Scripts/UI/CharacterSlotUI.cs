@@ -96,10 +96,21 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
     public void SetSkillBar(float value)
     {
         skillBar.value = value;
-        if(skillBar.value >= 1.0f && isTutorial)
-            SkillEffect.SetActive(true);
+
+        if (Service.Get<TutorialManager>())
+        {
+            if (skillBar.value >= 1.0f && isTutorial)
+                SkillEffect.SetActive(true);
+            else
+                SkillEffect.SetActive(false);
+        }
         else
-            SkillEffect.SetActive(false);
+        {
+            if (skillBar.value >= 1.0f)
+                SkillEffect.SetActive(true);
+            else
+                SkillEffect.SetActive(false);
+        }
     }
 
     public void OnUseSkill()
@@ -148,7 +159,8 @@ public class CharacterSlotUI : MonoBehaviour, IDropHandler
         skillArea.GetComponent<Button>().interactable = true;
         skillBarArea.gameObject.SetActive(true);
         isTutorial = false;
-        
+        if (skillBar.value >= 1.0f)
+            SkillEffect.SetActive(true);
     }
 }
 
