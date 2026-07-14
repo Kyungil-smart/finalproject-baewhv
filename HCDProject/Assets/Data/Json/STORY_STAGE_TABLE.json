@@ -12,7 +12,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Stage1Before[HCD_BG_Stage1Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_002",
@@ -26,7 +26,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Stage2Before[HCD_BG_Stage2Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_003",
@@ -40,7 +40,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Stage3Before[HCD_BG_Stage3Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_004",
@@ -54,7 +54,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Stage4Before[HCD_BG_Stage4Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_005",
@@ -68,7 +68,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "NPC/Demian[Demian_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Spayin[Spayin_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Stage5Before[HCD_BG_Stage5Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_006",
@@ -82,7 +82,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Stage6Maintenance[HCD_BG_Stage6Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_007",
@@ -96,7 +96,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "NPC/Demian[Demian_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Stage7Before[HCD_BG_Stage7Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_008",
@@ -110,7 +110,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "NPC/ZeppelGuard[ZeppelGuard_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch02_Stage1Before[HCD_BG_Ch02_Stage1Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_009",
@@ -124,7 +124,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch02_Stage2Before[HCD_BG_Ch02_Stage2Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_010",
@@ -138,7 +138,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch02_Stage3Before[HCD_BG_Ch02_Stage3Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_011",
@@ -152,7 +152,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch02_Stage4Before[HCD_BG_Ch02_Stage4Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_012",
@@ -166,7 +166,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "NPC/ZeppelManager[ZeppelManager_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch02_Stage5Before[HCD_BG_Ch02_Stage5Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_013",
@@ -180,7 +180,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch02_Stage6Maintenance[HCD_BG_Ch02_Stage6Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_014",
@@ -194,7 +194,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch02_Stage7Before[HCD_BG_Ch02_Stage7Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_015",
@@ -208,7 +208,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch03_Stage1Before[HCD_BG_Ch03_Stage1Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_016",
@@ -222,7 +222,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch03_Stage2Before[HCD_BG_Ch03_Stage2Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_017",
@@ -236,7 +236,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Spayin[Spayin_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch03_Stage3Before[HCD_BG_Ch03_Stage3Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_018",
@@ -250,7 +250,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch03_Stage4Before[HCD_BG_Ch03_Stage4Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_019",
@@ -264,7 +264,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch03_Stage5Before[HCD_BG_Ch03_Stage5Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_020",
@@ -278,7 +278,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch03_Stage6Maintenance[HCD_BG_Ch03_Stage6Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_021",
@@ -292,7 +292,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch03_Stage7Before[HCD_BG_Ch03_Stage7Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_022",
@@ -306,7 +306,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "NPC/VerdinMineManager[VerdinMineManager_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch04_Stage1Before[HCD_BG_Ch04_Stage1Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_023",
@@ -320,7 +320,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Spayin[Spayin_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch04_Stage2Before[HCD_BG_Ch04_Stage2Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_024",
@@ -334,7 +334,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch04_Stage3Before[HCD_BG_Ch04_Stage3Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_025",
@@ -348,7 +348,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch04_Stage4Before[HCD_BG_Ch04_Stage4Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_026",
@@ -362,7 +362,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch04_Stage5Before[HCD_BG_Ch04_Stage5Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_027",
@@ -376,7 +376,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch04_Stage6Maintenance[HCD_BG_Ch04_Stage6Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_028",
@@ -390,7 +390,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch04_Stage7Before[HCD_BG_Ch04_Stage7Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_029",
@@ -404,7 +404,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch05_Stage1Before[HCD_BG_Ch05_Stage1Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_030",
@@ -418,7 +418,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch05_Stage2Maintenance[HCD_BG_Ch05_Stage2Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_031",
@@ -432,7 +432,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch05_Stage3Before[HCD_BG_Ch05_Stage3Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_032",
@@ -446,7 +446,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch05_Stage4Before[HCD_BG_Ch05_Stage4Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_033",
@@ -460,7 +460,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "NPC/MilenPierManager[MilenPierManager_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch05_Stage5Before[HCD_BG_Ch05_Stage5Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_034",
@@ -474,7 +474,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Spayin[Spayin_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch05_Stage6Maintenance[HCD_BG_Ch05_Stage6Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_035",
@@ -488,7 +488,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch05_Stage7Before[HCD_BG_Ch05_Stage7Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_036",
@@ -502,7 +502,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch06_Stage1Before[HCD_BG_Ch06_Stage1Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_037",
@@ -516,7 +516,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch06_Stage2Maintenance[HCD_BG_Ch06_Stage2Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_038",
@@ -530,7 +530,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch06_Stage3Before[HCD_BG_Ch06_Stage3Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_039",
@@ -544,7 +544,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch06_Stage4Before[HCD_BG_Ch06_Stage4Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_040",
@@ -558,7 +558,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch06_Stage5Before[HCD_BG_Ch06_Stage5Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_041",
@@ -572,7 +572,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch06_Stage6Maintenance[HCD_BG_Ch06_Stage6Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_042",
@@ -586,7 +586,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch06_Stage7Before[HCD_BG_Ch06_Stage7Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_043",
@@ -600,7 +600,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch07_Stage1Before[HCD_BG_Ch07_Stage1Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_044",
@@ -614,7 +614,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch07_Stage2Maintenance[HCD_BG_Ch07_Stage2Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_045",
@@ -628,7 +628,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch07_Stage3Before[HCD_BG_Ch07_Stage3Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_046",
@@ -642,7 +642,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch07_Stage4Before[HCD_BG_Ch07_Stage4Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_047",
@@ -656,7 +656,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Noah[Noah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch07_Stage5Before[HCD_BG_Ch07_Stage5Before_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_048",
@@ -670,7 +670,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch07_Stage6Maintenance[HCD_BG_Ch07_Stage6Maintenance_ArchiveThumbnail]"
     },
     {
       "STAGE_ID": "CH01_NODE_049",
@@ -684,7 +684,7 @@
       "BOSS_MONSTER_IMG_ID": "",
       "NARRATIVE_B_THUBNAIL": "Player/Alice[Alice_Thumbnail]",
       "NARRATIVE_A_THUBNAIL": "Player/Serah[Serah_Thumbnail]",
-      "NARRATIVE_BG_THUBNAIL": ""
+      "NARRATIVE_BG_THUBNAIL": "HCD_BG_Ch07_Stage7Before[HCD_BG_Ch07_Stage7Before_ArchiveThumbnail]"
     }
   ]
 }
