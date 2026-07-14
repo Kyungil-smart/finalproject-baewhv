@@ -378,13 +378,6 @@ public class GameManager : BaseManager<GameManager>
                     
                     CurrentHp.RemoveListener(WallHpChange);
                     CurrentHp.AddListener(WallHpChange);
-
-                    var wallHpUi = Service.Get<UIManager>()?.GetUI<IngameBottomUIController>();
-
-                    if (wallHpUi != null)
-                    {
-                        wallHpUi.SetWallHP((float)CurrentHp.Value / CurrentHp.MaxValue);
-                    }
                 }
             }
         };
