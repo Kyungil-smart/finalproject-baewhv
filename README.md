@@ -52,12 +52,23 @@
 Assets/
 ├─_Shared/ -> 리소스 서브모듈 레포지토리
 ├─Data/    -> SheetToJson으로 직렬화한 데이터 모음
+├─Editor/    -> UnityEditor를 이용한 직렬화 스크립트
 ├─Prefabs/ -> 게임에 동적으로 불러올 오브젝트나 작업단위의 프리펩 모음
 ├─Scenes/ -> 씬 구성 참조
-├─Script/
-│ ├─
-
-│ ├ └ ─
+└─Script/
+  ├─3-sort/ -> 3-Sort에 사용되는 오브젝트의 드래그 앤 드랍을 지원하는 스크립트
+  ├─Core/ -> ServiceLocater 및 BaseManager 등 코어기능 스크립트
+  │ └─Manager/ -> BaseManager를 상속받는 코어 기능
+  ├─Data/ -> 역직렬화 데이터 관리
+  ├─Interface/ -> 인터페이스 스크립트
+  ├─NPC/ BaseController, Status 등 캐릭터의 기본 
+  │ ├─Monster/ -> BaseController를 상속받은 몬스터 스크립트 및 상태 머신
+  │ ├─Player/ -> BaseController를 상속받은 플레이어 스크립트 및 상태 머신
+  │ └─Skill_Effect/ -> 스킬 사용시 효과 스크립트
+  ├─Sound/ -> 사운드 관련 스크립트
+  ├─Tutorial/ -> 튜토리얼 진행에 필요한 UI 연동 스크립트
+  ├─UI/ -> 전체적인 씬에 배치될 UI 와 팝업 제어 스크립트
+  └─Util/ -> 범용으로 사용할 유틸 스크립트
 ```
 
 # 씬 구성
