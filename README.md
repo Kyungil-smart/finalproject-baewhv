@@ -44,7 +44,7 @@
 | GameManager | 스테이지 선택 및 전투 스테이지에 배치되어 주요 규칙을 상태 패턴으로 관리  ||
 | PlayerManager | 데이터 드리븐을 통해 캐릭터 리소스, 스테이터스, 스킬을 초기화하고 UI와 연동. 생성 후 맵에 배치.||
 | MonsterManager | 데이터 드리븐을 통해 몬스터 풀링 리소스를 제작. 웨이브 시작 시 웨이브 규칙에 맞는 몬스터 배치. ||
-| BaseCharacter | BaseCharacter 를 상속받아 PlayerCharacter, Monster 구현. ||
+| BaseCharacter | BaseController를 상속받아 플레이어 캐릭터 및 몬스터 구현. ||
 | ObjectPooling | 몬스터 및 이펙트 풀링. ||
 
 # 프로젝트 구조
