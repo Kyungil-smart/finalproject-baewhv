@@ -260,7 +260,13 @@ public class TutorialManager : BaseManager<TutorialManager>
             };
         }
         else nextActions = () => StartTutorial(next);
-        string[] key = value.Split(',');  
+        StartCoroutine(TouchDelay(next, type, value));
+    }
+
+    IEnumerator TouchDelay(string next, ETutorialNextType type, string value)
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        string[] key = value.Split(',');
         switch (type)
         {
             case ETutorialNextType.TOUCH:
@@ -271,8 +277,8 @@ public class TutorialManager : BaseManager<TutorialManager>
                 HighLightUIList[key[1]].GetComponent<TutorialHelper>().SetTargetKey(key[0]);
                 break;
             case ETutorialNextType.TOUCH_HIGHLIGHT:
-                var reward = HighLightUIList[value].GetComponent<RewardButtonUI>();
-                reward.GetComponent<Button>().onClick.AddListener(() =>
+                var reward = HighLightUIList[value]?.GetComponent<RewardButtonUI>();
+                reward?.GetComponent<Button>().onClick.AddListener(() =>
                 {
                     if (!reward.IsSelected)
                         reward.IsSelected = true;
@@ -285,7 +291,6 @@ public class TutorialManager : BaseManager<TutorialManager>
                 touchShield.SetActive(false);   
                 DeleteAllGlow(null);
                 HideMessage();
-                Debug.Log("NONE");
                 break;
         }
     }

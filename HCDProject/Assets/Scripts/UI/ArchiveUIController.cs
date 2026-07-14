@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
-using ColorUtility = UnityEngine.ColorUtility;
 
 public class ArchiveUIController : BaseUIController<ArchiveUIController>
 {
