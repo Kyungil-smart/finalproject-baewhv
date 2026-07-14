@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Player
+  m_Name: Shader
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Player
-  m_GUID: fb5e060132c59e944b3ec6b36ac2af0d
+  m_GroupName: Shader
+  m_GUID: 9f2abe477d0b9dd48b49cec3cd7ada61
   m_SerializeEntries:
-  - m_GUID: 3c4b488501f01f144af8e83c37b3a9ee
-    m_Address: Player/AliceOverride
+  - m_GUID: 13c02b14c4d048fa9653293d54f6e0e1
+    m_Address: Sprite-Unlit-Default
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a7d7b69989acea640922c6a736e29fe8
-    m_Address: Player/SpayneOverride
+  - m_GUID: 9dfc825aed78fcd4ba02077103263b40
+    m_Address: Sprite-Unlit-Default
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b8e8945a44679594289fc6e3ee287a44
-    m_Address: Player/NoahOverride
+  - m_GUID: a97c105638bdf8b4a8650670310a4cd3
+    m_Address: Sprite-Lit-Default
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: de9b399442887294686a52032705d7a6
-    m_Address: Player/PlayerPrefab
+  - m_GUID: e260cfa7296ee7642b167f1eb5be5023
+    m_Address: Sprite-Lit-Default
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -39,5 +39,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 659786fb8861e664a8a88334390f8666, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 72ef8064277bad44ab6b06c0694d85ab, type: 2}
-    - {fileID: 11400000, guid: 608553c6be2aa2e47a399a5712b27667, type: 2}
+    - {fileID: 11400000, guid: 7b18f627ef07ac849a176e29a409eb82, type: 2}
+    - {fileID: 11400000, guid: 1721da6db13c32a48bf89a3b4edc783e, type: 2}

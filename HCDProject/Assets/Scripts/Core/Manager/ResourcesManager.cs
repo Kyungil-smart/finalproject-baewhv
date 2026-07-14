@@ -42,10 +42,12 @@ public class ResourcesManager : BaseManager<ResourcesManager>
         if (defaultSprite.TryGetValue(name, out var defSprite))
         { 
             image.sprite = defSprite;
+            return;
         }
         if (LoadedSprites.TryGetValue(name, out var loadSprite))
         { 
             image.sprite = loadSprite;
+            return;
         }
         else
         {

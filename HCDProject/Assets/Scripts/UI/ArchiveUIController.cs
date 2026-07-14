@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Localization.Components;
-using UnityEngine.ResourceManagement;
 using UnityEngine.Serialization;
 using ColorUtility = UnityEngine.ColorUtility;
 

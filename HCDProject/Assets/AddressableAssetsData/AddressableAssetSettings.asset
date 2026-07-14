@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 0174584177829b04ea56168d28a97eb3
   m_currentHash:
     serializedVersion: 2
-    Hash: e6acc605afddcc0c1c005d969a383382
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -62,6 +62,7 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: 379d0b270780ae4408a7bbf5130b8d65, type: 2}
   - {fileID: 11400000, guid: a4e4df0441649e142bf6f8e1abe343c4, type: 2}
+  - {fileID: 11400000, guid: a80ea1f088d413548871a08a19af3322, type: 2}
   - {fileID: 11400000, guid: 91a9d2796f471294bb7b05712b240d61, type: 2}
   - {fileID: 11400000, guid: 729f074da58cbe9499dd8a3c3605135f, type: 2}
   - {fileID: 11400000, guid: 7de8a35d2a9f292438518c6ec94e80f8, type: 2}
@@ -78,6 +79,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c3e152efd488ba4fa5f8286cbede3c7, type: 2}
   - {fileID: 11400000, guid: b7ed9d5a78cc8e644adf82bba2d74165, type: 2}
   - {fileID: 11400000, guid: fb9d9be9cb016744abd63f0e4bc76d4d, type: 2}
+  - {fileID: 11400000, guid: da62944be567c7d439f72f5aff49fbdd, type: 2}
   - {fileID: 11400000, guid: 5062b858208b3a945ab6132981cf83a3, type: 2}
   - {fileID: 11400000, guid: 0d0d23d76ade0204d875047cc33f7beb, type: 2}
   - {fileID: 11400000, guid: 25d44ca9895202241a6d645d5ce26a75, type: 2}
@@ -137,6 +139,66 @@ MonoBehaviour:
     - Locale-vi
     - Locale-id
     - Preload
+    - chapter1
+    - chapter2
+    - chapter3
+    - chapter4
+    - chapter5
+    - chapter8
+    - chapter1-1
+    - chapter1-2
+    - chapter1-3
+    - chapter1-4
+    - chapter1-5
+    - chapter1-6
+    - chapter1-7
+    - chapter2-1
+    - chapter2-2
+    - chapter2-3
+    - chapter2-4
+    - chapter2-5
+    - chapter2-6
+    - chapter2-7
+    - chapter3-1
+    - chapter3-2
+    - chapter3-3
+    - chapter3-4
+    - chapter3-5
+    - chapter3-6
+    - chapter3-7
+    - chapter4-1
+    - chapter4-2
+    - chapter4-3
+    - chapter4-4
+    - chapter4-5
+    - chapter4-6
+    - chapter4-7
+    - chapter5-
+    - chapter5-1
+    - chapter5-2
+    - chapter5-3
+    - chapter5-4
+    - chapter5-5
+    - chapter5-6
+    - chapter5-7
+    - chapter6-
+    - chapter6-1
+    - chapter6-2
+    - chapter6-3
+    - chapter6-4
+    - chapter6-5
+    - chapter6-6
+    - chapter6-7
+    - chapter7-1
+    - chapter7-2
+    - chapter7-3
+    - chapter7-4
+    - 7-5
+    - chapter7-5
+    - chapter7-6
+    - chapter7-7
+    - staffroll
+    - player_skill
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: b7f90d2c3946366488aeb6bb5ee02e7f, type: 2}
