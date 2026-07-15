@@ -5719,7 +5719,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711266
-    m_Localized: Movement Speed increases by {0:P0}.
+    m_Localized: Movement Speed increases by {0}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711267
@@ -5734,7 +5734,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 863262239711269
     m_Localized: Max HP increases by {0}, and Movement Speed <color=#FF4A4A>decreases</color>
-      by {1:P0}.
+      by {1}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711270

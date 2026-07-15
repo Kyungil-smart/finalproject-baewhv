@@ -3633,7 +3633,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711266
-    m_Localized: Kecepatan gerak meningkat {0:P0}.
+    m_Localized: Kecepatan gerak meningkat {0}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711267
@@ -3648,7 +3648,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 863262239711269
     m_Localized: HP maksimum meningkat {0}, dan Kecepatan gerak <color=#FF4A4A>berkurang</color>
-      {1:P0}.
+      {1}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711270

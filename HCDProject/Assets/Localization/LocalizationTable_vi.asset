@@ -4150,7 +4150,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711266
-    m_Localized: "T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n t\u0103ng {0:P0}."
+    m_Localized: "T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n t\u0103ng {0}%."
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711267
@@ -4165,7 +4165,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 863262239711269
     m_Localized: "HP t\u1ED1i \u0111a t\u0103ng {0}, v\xE0 T\u1ED1c \u0111\u1ED9
-      di chuy\u1EC3n <color=#FF4A4A>gi\u1EA3m</color> {1:P0}."
+      di chuy\u1EC3n <color=#FF4A4A>gi\u1EA3m</color> {1}%."
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711270
