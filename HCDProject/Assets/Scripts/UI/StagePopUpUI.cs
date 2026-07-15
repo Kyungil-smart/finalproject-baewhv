@@ -82,7 +82,12 @@ public class StagePopUpUI : MonoBehaviour
                 SetBoss();
                 break;
         }
+        
+        
+        
     }
+    
+    
 
 
     private void SetEvent()
@@ -184,5 +189,47 @@ public class StagePopUpUI : MonoBehaviour
         Service.Get<GameManager>().CheckAndStartNarrative(
             Service.Get<GameManager>().currentStageData,
             true, SetRelic);
+    }
+
+    public StagePopUpUI SetEventMessage(string topText, string bottomText)
+    {
+        eventTopText.gameObject.SetActive(true);
+        eventBottomText.gameObject.SetActive(true);
+        eventTopText.text = string.Format(eventTopText.text, topText);
+        eventBottomText.text = string.Format(eventBottomText.text, bottomText);
+        return this;
+    }
+    
+    public StagePopUpUI SetImage(Sprite image)
+    {
+        imageLayout.SetActive(true);
+        stageImage.sprite = image;
+        stageImage.SetNativeSize();
+        return this;
+    }
+
+    public StagePopUpUI SetStageInfo(StoryStageRawData _data)
+    {
+        int currChapter = Service.Get<GameManager>().CurrentChapter;
+        int currStage = Service.Get<GameManager>().CurrentStage;
+        if (currStage != _data.STAGE || currChapter != _data.CHAPTER) return null;
+        stageText.text = $"Stage {_data.CHAPTER} - {_data.STAGE}";
+        stageTypeText.SetEntry($"UI_SS_TYPE_{_data.STAGE_TYPE}");
+        data = _data;
+        return this;
+    }
+
+    public StagePopUpUI SetWallHP()
+    {
+        hpGaugeLayout.SetActive(true);
+        var hp = Service.Get<GameManager>().CurrentHp;
+        wallHp.value = Mathf.Clamp01((float)hp.Value / hp.MaxValue);
+        wallHpText.text = $"{hp.Value} / {hp.MaxValue}";
+        return this;
+    }
+    
+    public void OnOpenRewardView()
+    {
+        Service.Get<UIManager>()?.RewardViewPopupUI.OpenUI();
     }
 }

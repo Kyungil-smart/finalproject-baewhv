@@ -9967,78 +9967,6 @@ MonoBehaviour:
     m_Key: TST_2327
     m_Metadata:
       m_Items: []
-  - m_Id: 12352846207213568
-    m_Key: New Entry 18
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846240768000
-    m_Key: New Entry 19
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846240768001
-    m_Key: New Entry 20
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846240768002
-    m_Key: New Entry 21
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846240768003
-    m_Key: New Entry 22
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846240768004
-    m_Key: New Entry 23
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846240768005
-    m_Key: New Entry 24
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962304
-    m_Key: New Entry 25
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962305
-    m_Key: New Entry 26
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962306
-    m_Key: New Entry 27
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962307
-    m_Key: New Entry 28
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962308
-    m_Key: New Entry 29
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962309
-    m_Key: New Entry 30
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962310
-    m_Key: New Entry 31
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962311
-    m_Key: New Entry 32
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962312
-    m_Key: New Entry 33
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962313
-    m_Key: New Entry 34
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12352846244962314
-    m_Key: New Entry 35
-    m_Metadata:
-      m_Items: []
   - m_Id: 863262239711259
     m_Key: LRT_001
     m_Metadata:
@@ -10669,6 +10597,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 9940110550589447
     m_Key: UI_POPUP_RETRY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12986810110402560
+    m_Key: UI_INVEN_RELIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12986810143956992
+    m_Key: UI_INVEN_LEVEL
     m_Metadata:
       m_Items: []
   - m_Id: 11184535750664192

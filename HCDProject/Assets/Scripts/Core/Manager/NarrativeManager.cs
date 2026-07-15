@@ -82,6 +82,7 @@ public class NarrativeManager : BaseManager<NarrativeManager>
         currentStage = data.STAGE;
         currentChapter = data.CHAPTER;
         currentIndex = 0;
+        Debug.Log($"StartNarrative{currentChapter}-{currentStage} {(isBefore? "before":"after")}");
 
         storyData = Service.Get<DataManager>().StoryLocalizingTable.data
             .FindAll(x =>

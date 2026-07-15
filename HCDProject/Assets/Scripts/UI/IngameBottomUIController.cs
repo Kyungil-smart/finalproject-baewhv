@@ -238,4 +238,8 @@ public class IngameBottomUIController : BaseUIController<IngameBottomUIControlle
         characterSlots.Add(slot);
         return slot;
     }
+    public void OnOpenRewardView()
+    {
+        Service.Get<UIManager>()?.RewardViewPopupUI.OpenUI(true);
+    }
 }

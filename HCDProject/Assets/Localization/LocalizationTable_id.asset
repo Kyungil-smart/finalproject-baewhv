@@ -3605,192 +3605,193 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711259
-    m_Localized: Serangan meningkat 8.
+    m_Localized: Serangan meningkat {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711260
-    m_Localized: Kecepatan serang meningkat 7%.
+    m_Localized: Kecepatan serang meningkat {0:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711261
-    m_Localized: Peluang kritikal meningkat 2%.
+    m_Localized: Peluang kritikal meningkat {0:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711262
-    m_Localized: Kerusakan kritikal meningkat 20%.
+    m_Localized: Kerusakan kritikal meningkat {0:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711263
-    m_Localized: HP maksimum meningkat 30.
+    m_Localized: HP maksimum meningkat {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711264
-    m_Localized: HP saat ini pulih 15.
+    m_Localized: HP saat ini pulih {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711265
-    m_Localized: Pertahanan meningkat 2.
+    m_Localized: Pertahanan meningkat {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711266
-    m_Localized: Kecepatan gerak meningkat 6.
+    m_Localized: Kecepatan gerak meningkat {0}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711267
-    m_Localized: Serangan meningkat 14, dan Kecepatan serang <color=#FF4A4A>berkurang</color>
-      40%.
+    m_Localized: Serangan meningkat {0}, dan Kecepatan serang <color=#FF4A4A>berkurang</color>
+      {1:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711268
-    m_Localized: Kecepatan serang meningkat 3%, dan Peluang kritikal meningkat 1%.
+    m_Localized: Kecepatan serang meningkat {0:P0}, dan Peluang kritikal meningkat
+      {1:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711269
-    m_Localized: HP maksimum meningkat 20, dan Kecepatan gerak <color=#FF4A4A>berkurang</color>
-      20%.
+    m_Localized: HP maksimum meningkat {0}, dan Kecepatan gerak <color=#FF4A4A>berkurang</color>
+      {1}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711270
-    m_Localized: Serangan meningkat 20, dan HP maksimum <color=#FF4A4A>berkurang</color>
-      22.
+    m_Localized: Serangan meningkat {0}, dan HP maksimum <color=#FF4A4A>berkurang</color>
+      {1}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711271
-    m_Localized: Pertahanan meningkat 1, dan HP maksimum meningkat 22.
+    m_Localized: Pertahanan meningkat {0}, dan HP maksimum meningkat {1}.
     m_Metadata:
       m_Items: []
   - m_Id: 8336625686110208
-    m_Localized: HP maksimum Serah meningkat 5%<br>Pertahanan Serah meningkat 5%<br>Kecepatan
-      gerak Serah <color=#FF4A4A>berkurang</color> 20%
+    m_Localized: HP maksimum Serah meningkat {0}%<br>Pertahanan Serah meningkat {1}%<br>Kecepatan
+      gerak Serah <color=#FF4A4A>berkurang</color> {2:P0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858944
-    m_Localized: Serah memulihkan 1% HP maksimum setiap detik
+    m_Localized: Serah memulihkan {0}% HP maksimum setiap detik
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858945
-    m_Localized: HP maksimum Serah meningkat 2%<br>Serangan Serah meningkat 2%<br>Pertahanan
-      Serah meningkat 2%
+    m_Localized: HP maksimum Serah meningkat {0}%<br>Serangan Serah meningkat {1}%<br>Pertahanan
+      Serah meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858946
-    m_Localized: Peluang serangan ganda Noah meningkat 50%
+    m_Localized: Peluang serangan ganda Noah meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858947
-    m_Localized: Noah memperoleh Hujan Panah<br>Kerusakan Hujan Panah meningkat 100%<br>Hujan
-      Panah aktif setiap 25 detik
+    m_Localized: Noah memperoleh Hujan Panah<br>Kerusakan Hujan Panah meningkat {1}%<br>Hujan
+      Panah aktif setiap {2} detik
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858948
-    m_Localized: HP maksimum Noah meningkat 2%<br>Serangan Noah meningkat 2%<br>Pertahanan
-      Noah meningkat 2%
+    m_Localized: HP maksimum Noah meningkat {0}%<br>Serangan Noah meningkat {1}%<br>Pertahanan
+      Noah meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858949
-    m_Localized: Jangkauan skill Alice meningkat 10%
+    m_Localized: Jangkauan skill Alice meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858950
     m_Localized: Alice memperoleh Sihir Gempa<br>Kerusakan Sihir Gempa meningkat
-      12%
+      {1}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858951
-    m_Localized: HP maksimum Alice meningkat 2%<br>Serangan Alice meningkat 2%<br>Pertahanan
-      Alice meningkat 2%
+    m_Localized: HP maksimum Alice meningkat {0}%<br>Serangan Alice meningkat {1}%<br>Pertahanan
+      Alice meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858952
-    m_Localized: Pemulihan Spayne meningkat 10%
+    m_Localized: Pemulihan Spayne meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858953
     m_Localized: Spayne memperoleh Sihir Perisai<br>Durasi Sihir Perisai meningkat
-      3 detik
+      {1} detik
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858954
-    m_Localized: HP maksimum Spayne meningkat 2%<br>Serangan Spayne meningkat 2%<br>Pertahanan
-      Spayne meningkat 2%
+    m_Localized: HP maksimum Spayne meningkat {0}%<br>Serangan Spayne meningkat {1}%<br>Pertahanan
+      Spayne meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858955
-    m_Localized: HP Tembok pulih 150
+    m_Localized: HP Tembok pulih {0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858956
-    m_Localized: HP maksimum Tembok meningkat 150
+    m_Localized: HP maksimum Tembok meningkat {0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858957
-    m_Localized: Stat semua hero meningkat 2%
+    m_Localized: Stat semua hero meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858958
-    m_Localized: HP maksimum Serah meningkat 5%<br>Pertahanan Serah meningkat 5%<br>Kecepatan
-      gerak Serah <color=#FF4A4A>berkurang</color> 20%
+    m_Localized: HP maksimum Serah meningkat {0}%<br>Pertahanan Serah meningkat {1}%<br>Kecepatan
+      gerak Serah <color=#FF4A4A>berkurang</color> {2:P0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858959
-    m_Localized: Serah memulihkan 1% HP maksimum setiap detik
+    m_Localized: Serah memulihkan {0}% HP maksimum setiap detik
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858960
-    m_Localized: HP maksimum Serah meningkat 2%<br>Serangan Serah meningkat 2%<br>Pertahanan
-      Serah meningkat 2%
+    m_Localized: HP maksimum Serah meningkat {0}%<br>Serangan Serah meningkat {1}%<br>Pertahanan
+      Serah meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858961
-    m_Localized: Peluang serangan ganda Noah meningkat 10%
+    m_Localized: Peluang serangan ganda Noah meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858962
-    m_Localized: Kerusakan Hujan Panah meningkat 10%<br>Interval aktif Hujan Panah
-      <color=#FF4A4A>berkurang</color> 3 detik
+    m_Localized: Kerusakan Hujan Panah meningkat {1}%<br>Interval aktif Hujan Panah
+      <color=#FF4A4A>berkurang</color> {2} detik
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858963
-    m_Localized: HP maksimum Noah meningkat 2%<br>Serangan Noah meningkat 2%<br>Pertahanan
-      Noah meningkat 2%
+    m_Localized: HP maksimum Noah meningkat {0}%<br>Serangan Noah meningkat {1}%<br>Pertahanan
+      Noah meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858964
-    m_Localized: Jangkauan skill Alice meningkat 10%
+    m_Localized: Jangkauan skill Alice meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858965
-    m_Localized: Kerusakan Sihir Gempa meningkat 2%
+    m_Localized: Kerusakan Sihir Gempa meningkat {1}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858966
-    m_Localized: HP maksimum Alice meningkat 2%<br>Serangan Alice meningkat 2%<br>Pertahanan
-      Alice meningkat 2%
+    m_Localized: HP maksimum Alice meningkat {0}%<br>Serangan Alice meningkat {1}%<br>Pertahanan
+      Alice meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858967
-    m_Localized: Pemulihan Spayne meningkat 2%
+    m_Localized: Pemulihan Spayne meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858968
-    m_Localized: Durasi Sihir Perisai meningkat 1 detik
+    m_Localized: Durasi Sihir Perisai meningkat {1} detik
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858969
-    m_Localized: HP maksimum Spayne meningkat 2%<br>Serangan Spayne meningkat 2%<br>Pertahanan
-      Spayne meningkat 2%
+    m_Localized: HP maksimum Spayne meningkat {0}%<br>Serangan Spayne meningkat {1}%<br>Pertahanan
+      Spayne meningkat {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858970
-    m_Localized: HP Tembok pulih 150
+    m_Localized: HP Tembok pulih {0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858971
-    m_Localized: HP maksimum Tembok meningkat 150
+    m_Localized: HP maksimum Tembok meningkat {0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858972
-    m_Localized: Stat semua hero meningkat 2%
+    m_Localized: Stat semua hero meningkat {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8695235997949952
@@ -10936,19 +10937,33 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376450
-    m_Localized: Usia Serah <br> Pekerjaan <br> Detail Lainnya
+    m_Localized: 'Usia: 21<br>Afiliasi: Penjaga<br>Peran: Pendekar Depan<br><br>Mantan
+      rekrut pos perbatasan yang berlatih pedang untuk menghindari tugas dapur. Bakat
+      dan resonansi batu sinyalnya membuatnya terpilih sebagai Penjaga.<br><br>Percaya
+      diri dan cepat bertindak, ia agak ceroboh namun andal serta selalu menjaga
+      garis depan.'
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376451
-    m_Localized: Usia Noah <br> Pekerjaan <br> Detail Lainnya
+    m_Localized: 'Usia: 27<br>Afiliasi: Penjaga<br>Peran: Pemanah Belakang<br><br>Mantan
+      pemandu di hutan dan gunung perbatasan. Kepekaannya pada jejak dan bahaya membuatnya
+      terpilih sebagai Penjaga.<br><br>Kecelakaan di hutan membuatnya mudah terkejut,
+      tetapi ia selalu memperingatkan bahaya dan menjaga rekan seperti seorang kakak.'
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376452
-    m_Localized: Usia Alice <br> Pekerjaan <br> Detail Lainnya
+    m_Localized: 'Usia: 23<br>Afiliasi: Penjaga<br>Peran: Penyihir Jarak Jauh<br><br>Penyihir
+      tempur lulusan akademi sihir. Ia tampil cerah dan glamor agar orang tidak segan
+      mendekati penyihir.<br><br>Di balik penampilannya, ia adalah pengatur tim yang
+      rasional dan bertanggung jawab, mengubah situasi rumit menjadi langkah jelas.'
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376453
-    m_Localized: Usia Spayne <br> Pekerjaan <br> Detail Lainnya
+    m_Localized: 'Usia: 25<br>Afiliasi: Penjaga<br>Peran: Pendukung<br><br>Mantan
+      petugas medis lapangan Tentara Kerajaan. Setelah menghabiskan sumber daya terlalu
+      dini, ia belajar menyimpannya untuk keadaan darurat.<br><br>Ia tampak mengantuk
+      dan enggan bergerak, tetapi menghitung waktu dan biaya dengan tepat untuk mengurangi
+      kerugian tim.'
     m_Metadata:
       m_Items: []
   - m_Id: 12276361995837440
@@ -11172,6 +11187,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 12265792806936584
     m_Localized: Dipilih. Efek ini juga akan bertahan di pertempuran berikutnya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12986810110402560
+    m_Localized: Efek relik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12986810143956992
+    m_Localized: Efek penguatan
     m_Metadata:
       m_Items: []
   references:

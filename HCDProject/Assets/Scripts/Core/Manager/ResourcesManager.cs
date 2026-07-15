@@ -23,6 +23,9 @@ public class ResourcesManager : BaseManager<ResourcesManager>
         LoadSprites("Player/Noah", defaultSprite);
         LoadSprites("Player/Spayin", defaultSprite);
         LoadSprites("Icon/Icons", defaultSprite);
+        LoadSprites("Icon/Icons", defaultSprite);
+        LoadSprites("legacy_atlas", defaultSprite);
+        LoadSprites("original_atlas", defaultSprite);
     }
 
     public Sprite GetSprite(string name, UnityAction<Sprite> bind)

@@ -5691,192 +5691,193 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711259
-    m_Localized: Attack increases by 8.
+    m_Localized: Attack increases by {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711260
-    m_Localized: Attack Speed increases by 7%.
+    m_Localized: Attack Speed increases by {0:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711261
-    m_Localized: Critical Rate increases by 2%.
+    m_Localized: Critical Rate increases by {0:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711262
-    m_Localized: Critical Damage increases by 20%.
+    m_Localized: Critical Damage increases by {0:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711263
-    m_Localized: Max HP increases by 30.
+    m_Localized: Max HP increases by {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711264
-    m_Localized: Restores 15 HP.
+    m_Localized: Restores {0} HP.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711265
-    m_Localized: Defense increases by 2.
+    m_Localized: Defense increases by {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711266
-    m_Localized: Movement Speed increases by 6.
+    m_Localized: Movement Speed increases by {0}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711267
-    m_Localized: Attack increases by 14, and Attack Speed <color=#FF4A4A>decreases</color>
-      by 40%.
+    m_Localized: Attack increases by {0}, and Attack Speed <color=#FF4A4A>decreases</color>
+      by {1:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711268
-    m_Localized: Attack Speed increases by 3%, and Critical Rate increases by 1%.
+    m_Localized: Attack Speed increases by {0:P0}, and Critical Rate increases by
+      {1:P0}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711269
-    m_Localized: Max HP increases by 20, and Movement Speed <color=#FF4A4A>decreases</color>
-      by 20%.
+    m_Localized: Max HP increases by {0}, and Movement Speed <color=#FF4A4A>decreases</color>
+      by {1}%.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711270
-    m_Localized: Attack increases by 20, and Max HP <color=#FF4A4A>decreases</color>
-      by 22.
+    m_Localized: Attack increases by {0}, and Max HP <color=#FF4A4A>decreases</color>
+      by {1}.
     m_Metadata:
       m_Items: []
   - m_Id: 863262239711271
-    m_Localized: Defense increases by 1, and Max HP increases by 22.
+    m_Localized: Defense increases by {0}, and Max HP increases by {1}.
     m_Metadata:
       m_Items: []
   - m_Id: 8336625686110208
-    m_Localized: Serah's Max HP increases by 5%<br>Serah's Defense increases by 5%<br>Serah's
-      Movement Speed <color=#FF4A4A>decreases</color> by 20%
+    m_Localized: Serah's Max HP increases by {0}%<br>Serah's Defense increases by
+      {1}%<br>Serah's Movement Speed <color=#FF4A4A>decreases</color> by {2:P0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858944
-    m_Localized: Serah recovers 1% of Max HP every second
+    m_Localized: Serah recovers {0}% of Max HP every second
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858945
-    m_Localized: Serah's Max HP increases by 2%<br>Serah's Attack increases by 2%<br>Serah's
-      Defense increases by 2%
+    m_Localized: Serah's Max HP increases by {0}%<br>Serah's Attack increases by
+      {1}%<br>Serah's Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858946
-    m_Localized: Noah's Double Attack Rate increases by 50%
+    m_Localized: Noah's Double Attack Rate increases by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858947
     m_Localized: Noah gains Rain of Arrows<br>Rain of Arrows damage increases by
-      100%<br>Rain of Arrows triggers every 25 sec
+      {1}%<br>Rain of Arrows triggers every {2} sec
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858948
-    m_Localized: Noah's Max HP increases by 2%<br>Noah's Attack increases by 2%<br>Noah's
-      Defense increases by 2%
+    m_Localized: Noah's Max HP increases by {0}%<br>Noah's Attack increases by {1}%<br>Noah's
+      Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858949
-    m_Localized: Alice's Skill Range increases by 10%
+    m_Localized: Alice's Skill Range increases by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858950
     m_Localized: Alice gains Earthquake Magic<br>Earthquake Magic damage increases
-      by 12%
+      by {1}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858951
-    m_Localized: Alice's Max HP increases by 2%<br>Alice's Attack increases by 2%<br>Alice's
-      Defense increases by 2%
+    m_Localized: Alice's Max HP increases by {0}%<br>Alice's Attack increases by
+      {1}%<br>Alice's Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858952
-    m_Localized: Spayne's healing increases by 10%
+    m_Localized: Spayne's healing increases by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858953
     m_Localized: Spayne gains Barrier Magic<br>Barrier Magic duration increases by
-      3 sec
+      {1} sec
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858954
-    m_Localized: Spayne's Max HP increases by 2%<br>Spayne's Attack increases by
-      2%<br>Spayne's Defense increases by 2%
+    m_Localized: Spayne's Max HP increases by {0}%<br>Spayne's Attack increases by
+      {1}%<br>Spayne's Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858955
-    m_Localized: Restores 150 Wall HP
+    m_Localized: Restores {0} Wall HP
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858956
-    m_Localized: Wall Max HP increases by 150
+    m_Localized: Wall Max HP increases by {0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858957
-    m_Localized: All heroes' stats increase by 2%
+    m_Localized: All heroes' stats increase by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858958
-    m_Localized: Serah's Max HP increases by 5%<br>Serah's Defense increases by 5%<br>Serah's
-      Movement Speed <color=#FF4A4A>decreases</color> by 20%
+    m_Localized: Serah's Max HP increases by {0}%<br>Serah's Defense increases by
+      {1}%<br>Serah's Movement Speed <color=#FF4A4A>decreases</color> by {2:P0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858959
-    m_Localized: Serah recovers 1% of Max HP every second
+    m_Localized: Serah recovers {0}% of Max HP every second
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858960
-    m_Localized: Serah's Max HP increases by 2%<br>Serah's Attack increases by 2%<br>Serah's
-      Defense increases by 2%
+    m_Localized: Serah's Max HP increases by {0}%<br>Serah's Attack increases by
+      {1}%<br>Serah's Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858961
-    m_Localized: Noah's Double Attack Rate increases by 10%
+    m_Localized: Noah's Double Attack Rate increases by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858962
-    m_Localized: Rain of Arrows damage increases by 10%<br>Rain of Arrows interval
-      <color=#FF4A4A>decreases</color> by 3 sec
+    m_Localized: Rain of Arrows damage increases by {1}%<br>Rain of Arrows interval
+      <color=#FF4A4A>decreases</color> by {2} sec
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858963
-    m_Localized: Noah's Max HP increases by 2%<br>Noah's Attack increases by 2%<br>Noah's
-      Defense increases by 2%
+    m_Localized: Noah's Max HP increases by {0}%<br>Noah's Attack increases by {1}%<br>Noah's
+      Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858964
-    m_Localized: Alice's Skill Range increases by 10%
+    m_Localized: Alice's Skill Range increases by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858965
-    m_Localized: Earthquake Magic damage increases by 2%
+    m_Localized: Earthquake Magic damage increases by {1}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858966
-    m_Localized: Alice's Max HP increases by 2%<br>Alice's Attack increases by 2%<br>Alice's
-      Defense increases by 2%
+    m_Localized: Alice's Max HP increases by {0}%<br>Alice's Attack increases by
+      {1}%<br>Alice's Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858967
-    m_Localized: Spayne's healing increases by 2%
+    m_Localized: Spayne's healing increases by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858968
-    m_Localized: Barrier Magic duration increases by 1 sec
+    m_Localized: Barrier Magic duration increases by {1} sec
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858969
-    m_Localized: Spayne's Max HP increases by 2%<br>Spayne's Attack increases by
-      2%<br>Spayne's Defense increases by 2%
+    m_Localized: Spayne's Max HP increases by {0}%<br>Spayne's Attack increases by
+      {1}%<br>Spayne's Defense increases by {2}%
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858970
-    m_Localized: Restores 150 Wall HP
+    m_Localized: Restores {0} Wall HP
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858971
-    m_Localized: Wall Max HP increases by 150
+    m_Localized: Wall Max HP increases by {0}
     m_Metadata:
       m_Items: []
   - m_Id: 8336625723858972
-    m_Localized: All heroes' stats increase by 2%
+    m_Localized: All heroes' stats increase by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8695235997949952
@@ -10885,19 +10886,34 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376450
-    m_Localized: Serah's Age <br> Occupation <br> Other Details
+    m_Localized: 'Age: 21<br>Affiliation: Guardians<br>Role: Frontline Swordswoman<br><br>A
+      border-outpost recruit who trained with the sword to avoid kitchen duty. Her
+      talent and signal stone affinity earned her a place among the Guardians.<br><br>Confident
+      and quick to act, this reliable klutz always takes the front for her companions.'
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376451
-    m_Localized: Noah's Age <br> Occupation <br> Other Details
+    m_Localized: 'Age: 27<br>Affiliation: Guardians<br>Role: Backline Archer<br><br>A
+      former guide on remote forest and mountain roads. Her keen eye for subtle clues
+      and danger earned her a place among the Guardians.<br><br>A past forest accident
+      left her easily startled, but she always warns of danger and looks after her
+      companions like a caring big sister.'
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376452
-    m_Localized: Alice's Age <br> Occupation <br> Other Details
+    m_Localized: 'Age: 23<br>Affiliation: Guardians<br>Role: Ranged Mage<br><br>A
+      practical mage trained at an academy of magic. She chose a bright, lavish style
+      so people would feel comfortable approaching a mage.<br><br>Despite her appearance,
+      she is the team''s sensible and responsible organizer, turning complex situations
+      into clear next steps.'
     m_Metadata:
       m_Items: []
   - m_Id: 12273840598376453
-    m_Localized: Spayne's Age <br> Occupation <br> Other Details
+    m_Localized: 'Age: 25<br>Affiliation: Guardians<br>Role: Backline Support<br><br>A
+      former Royal Army field medic. After spending healing supplies too early in
+      a past battle, she learned to save resources for the final crisis.<br><br>She
+      may seem sleepy and reluctant, but she judges timing and cost precisely, minimizing
+      the team''s losses with the least effort.'
     m_Metadata:
       m_Items: []
   - m_Id: 12276361995837440
@@ -11063,6 +11079,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 12265792806936584
     m_Localized: It's selected. This effect will carry over to the next battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12986810110402560
+    m_Localized: Relic Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12986810143956992
+    m_Localized: Enhancement Effects
     m_Metadata:
       m_Items: []
   references:
