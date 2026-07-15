@@ -81,12 +81,8 @@ public class RewardViewPopupUI : MonoBehaviour
                 levelSimpleData.Clear();
                 levelDataList.Clear();
                 break;
-            case SceneType.Tutorial:
-                break;
-            case SceneType.Archive:
-                break;
             default:
-                throw new ArgumentOutOfRangeException();
+                break;
         }
     }
 
