@@ -8,6 +8,7 @@ public class SceneController : BaseManager<SceneController>
 {
     private Scene _sessionScene;
     private SceneType _currentScene = SceneType.Title;
+    public SceneType GetSceneType => _currentScene;
 
     public event Action<float> OnLoading;
     public event Action OnLoadingComplete;

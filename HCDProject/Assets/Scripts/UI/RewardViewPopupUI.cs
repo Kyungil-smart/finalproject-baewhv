@@ -55,7 +55,39 @@ public class RewardViewPopupUI : MonoBehaviour
             levelRawData[data.LEVEL_ID] = data;
         }
 
+        Service.Get<SceneController>().OnLoadingComplete += SceneChange;
         SetRelicData();
+    }
+
+    public void OnDestroy()
+    {
+        if (Service.Get<SceneController>())
+            Service.Get<SceneController>().OnLoadingComplete -= SceneChange;
+    }
+
+    private void SceneChange()
+    {
+        switch (Service.Get<SceneController>().GetSceneType)
+        {
+            case SceneType.ModeSelect:
+                relicSimpleData.Clear();
+                relicDataList.Clear();
+                break;
+            case SceneType.StageSelect:
+                levelSimpleData.Clear();
+                levelDataList.Clear();
+                break;
+            case SceneType.InGame:
+                levelSimpleData.Clear();
+                levelDataList.Clear();
+                break;
+            case SceneType.Tutorial:
+                break;
+            case SceneType.Archive:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     private void SetRelicData()
@@ -73,18 +105,18 @@ public class RewardViewPopupUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         toggleLayer.gameObject.SetActive(isStage);
-        
+
         OpenRelicTap();
     }
 
     private int index = 0;
+
     private void OpenRelicTap()
     {
         titleText.SetEntry("UI_INVEN_RELIC");
         index = 0;
         while (true)
         {
-            
             if (relicDataList.Count > index)
             {
                 SetResource(relicSimpleData[relicDataList[index]]);
@@ -95,7 +127,7 @@ public class RewardViewPopupUI : MonoBehaviour
             }
             else
             {
-                icons[index].gameObject.SetActive(false);   
+                icons[index].gameObject.SetActive(false);
             }
 
             index++;
@@ -118,7 +150,7 @@ public class RewardViewPopupUI : MonoBehaviour
             }
             else
             {
-                icons[index].gameObject.SetActive(false);   
+                icons[index].gameObject.SetActive(false);
             }
 
             index++;
@@ -162,8 +194,8 @@ public class RewardViewPopupUI : MonoBehaviour
         }
 
         icons[index].SetResource(data.Icon, data.Name, data.Desc);
-        icons[index].SetCount(data.GetDesc1, data.GetDesc2,data.GetDesc3);
-        icons[index].gameObject.SetActive(true);    
+        icons[index].SetCount(data.GetDesc1, data.GetDesc2, data.GetDesc3);
+        icons[index].gameObject.SetActive(true);
     }
 
     public struct RewardSimpleData
@@ -187,11 +219,13 @@ public class RewardViewPopupUI : MonoBehaviour
             {
                 if (isRelic)
                 {
-                    return  f1 + (s1 * Count);
+                    return f1 + (s1 * Count);
                 }
-                return f1*Count;
+
+                return f1 * Count;
             }
         }
+
         public float GetDesc2
         {
             get
@@ -200,9 +234,11 @@ public class RewardViewPopupUI : MonoBehaviour
                 {
                     return f2 + (s2 * Count);
                 }
-                return f2*Count;
+
+                return f2 * Count;
             }
         }
+
         public float GetDesc3
         {
             get
@@ -211,10 +247,11 @@ public class RewardViewPopupUI : MonoBehaviour
                 {
                     return f3 + (s3 * Count);
                 }
-                return f3*Count;
+
+                return f3 * Count;
             }
         }
-        
+
 
         public void AddCount() => Count++;
 
