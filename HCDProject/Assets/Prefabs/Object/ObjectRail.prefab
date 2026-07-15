@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4900336538998445154}
-  - component: {fileID: 4783790309136089819}
   m_Layer: 0
   m_Name: ObjectRail
   m_TagString: Untagged
@@ -32,22 +31,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4783790309136089819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6677736247207894840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f09ca0e7650e654691766e59c69a6d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectRail
-  blockPrefabs:
-  - {fileID: 6064258119921155046, guid: f9ccc4ff6bcfcb44ab238c8fa35c8e1c, type: 3}
-  - {fileID: 6910069291293792682, guid: d0cd2d11824d4964caed490868458c6c, type: 3}
-  - {fileID: 5216417183687107228, guid: c5db49fada1351f418d2cc4c1ecc7e1b, type: 3}
-  - {fileID: 8570466454123474244, guid: 49772096e7b1c2946810b5c09b71a787, type: 3}
-  blockSize: {x: 100, y: 100}
-  blockSpacing: {x: 15, y: 15}

@@ -30,9 +30,19 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     {
         StartCoroutine(ShowLogo(ClearLogo, () =>
         {
+            
             var currentStageData = Service.Get<GameManager>().beforeStageData;
-            Service.Get<GameManager>().CheckAndStartNarrative(currentStageData, false, ()=>OnRewardPopup(OnClearPopup));
+            Service.Get<GameManager>().CheckAndStartNarrative(currentStageData, false,
+                () =>
+                {
+                    OnRewardPopup(() =>
+                    {
+                        Service.Get<GameManager>()?.SaveGame(Service.Get<RelicManager>()?.MyRelics);
+                        OnClearPopup();
+                    });
+                });
         }));
+        
     }
     public void OnGameDefeat()
     {
