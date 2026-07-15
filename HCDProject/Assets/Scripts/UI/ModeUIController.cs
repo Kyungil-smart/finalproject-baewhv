@@ -24,6 +24,7 @@ public class ModeUIController : BaseUIController<ModeUIController>
     {
         Service.Get<DataManager>()?.StageSelectWithLoadGame();
         Service.Get<SceneController>()?.ChangeScene(SceneType.StageSelect);
+        Service.Get<UIManager>().RewardViewPopupUI.Init();
     }
 
     public void RotateCharacters()

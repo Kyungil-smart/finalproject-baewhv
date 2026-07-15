@@ -333,6 +333,7 @@ public class GameManager : BaseManager<GameManager>
         _endNarrativeAction = action;
         if (stageStoryData != null && !string.IsNullOrEmpty(stageStoryData.STORY_ID))
         {
+            Debug.Log("SetNarrative");
             CurrentState.Value = GameState.Narrative;
             Service.Get<NarrativeManager>()?.StartNarrative(stageStoryData, isBefore);
         }

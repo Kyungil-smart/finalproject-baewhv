@@ -40,6 +40,13 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
             .SetColor(state == EStageState.Clear ? clearColor : Color.white)
             .SetButtonAction(state != EStageState.Clear ? () => { stagePopUpUI.OpenStagePopup(data, type); } : null)
             .SetText(data.CHAPTER, data.STAGE);
+
+        // stagePopUpUI.SetStageInfo(data)?
+        //     .SetEventMessage("세라", "세라")
+        //     .SetImage(lockStageSprites)
+        //     .SetWallHP();
+        
+        
     }
 
     public void SetClearNode(int index)
@@ -71,6 +78,11 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
                 Service.Get<DataManager>()?.DeleteSaveData();
                 Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
             });
+    }
+
+    public void OnOpenRewardView()
+    {
+        Service.Get<UIManager>()?.RewardViewPopupUI.OpenUI();
     }
 }
 

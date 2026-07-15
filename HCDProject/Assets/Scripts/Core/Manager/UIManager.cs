@@ -15,6 +15,9 @@ public class UIManager : BaseManager<UIManager>
     [SerializeField] private SimplePopup simplePopup;
     [SerializeField] private RawImage videoPlay;
     public RawImage VideoPlay => videoPlay;
+
+    [SerializeField] private RewardViewPopupUI rewardViewPopupUI;
+    public RewardViewPopupUI RewardViewPopupUI => rewardViewPopupUI;
     public LoadingBarUI LoadingBar => loadingBar;
     public SimplePopup SimplePopup => simplePopup;
     public Image GetFader => fader;
@@ -29,6 +32,7 @@ public class UIManager : BaseManager<UIManager>
     private void Start()
     {
         loadingBar.Init();
+        Service.Get<SceneController>().OnLoadingComplete += () => { };
     }
 
     public bool Register<T>(T service) where T : MonoBehaviour

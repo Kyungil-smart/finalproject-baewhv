@@ -27,6 +27,8 @@ public class DataManager : BaseManager<DataManager>
     
     private Dictionary<string, int> _stageRewardCounts = new Dictionary<string, int>();
     private Dictionary<string, int> _levelRewardCounts = new Dictionary<string, int>();
+
+    public bool CheckRewardCounts(string id) => _stageRewardCounts.ContainsKey(id);
     
     private const string BestChapter = "BestChapter";
     private const string BestStage = "BestStage";

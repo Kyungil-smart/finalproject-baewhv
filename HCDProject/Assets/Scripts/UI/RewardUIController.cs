@@ -77,7 +77,11 @@ public class RewardUIController : MonoBehaviour
         var CurrentReward = Service.Get<PlayerManager>()?.GetLevelUpRewards();
         for (int i = 0; i < buttonList.Length; i++)
         {
-            buttonList[i].SetReward(CurrentReward[i], Service.Get<PlayerManager>().OnSelectLevelUpReward, i);
+            buttonList[i].SetReward(CurrentReward[i],index =>
+            {
+                Service.Get<PlayerManager>().OnSelectLevelUpReward(index);
+                Service.Get<UIManager>().RewardViewPopupUI.AddLevel(CurrentReward[index]);
+            }, i);
         }
 
         if (!Service.Get<AdsManager>().IsAdUsed)
@@ -118,11 +122,13 @@ public class RewardUIController : MonoBehaviour
         var CurrentReward = Service.Get<RelicManager>()?.GetStageRandomRewards();
         for (int i = 0; i < buttonList.Length; i++)
         {
+            bool has = Service.Get<DataManager>().CheckRewardCounts(CurrentReward[i].CLEAR_REWARD_ID);
             buttonList[i].SetReward(CurrentReward[i], index =>
             {
                 Service.Get<RelicManager>()?.OnSelectRelicReward(index);
+                Service.Get<UIManager>().RewardViewPopupUI.AddRelic(CurrentReward[index]);
                 selectedIndex = index;
-            }, i);
+            }, i, has);
         }
 
         if (!Service.Get<AdsManager>().IsAdUsed)

@@ -98,6 +98,9 @@ public class IngamePopupController : BaseUIController<IngamePopupController>
     {
         SortWarningPopup.SetActive(false);
     }
-
+    public void OnOpenRewardView()
+    {
+        Service.Get<UIManager>()?.RewardViewPopupUI.OpenUI(true);
+    }
 
 }
