@@ -92,7 +92,6 @@ public class RewardViewPopupUI : MonoBehaviour
         {
             relicSimpleData[relic.rewardName] = new RewardSimpleData(relicRawData[relic.rewardName], relic.count);
             relicDataList.Add(relic.rewardName);
-            Debug.Log(relic.rewardName);
         }
     }
 
@@ -110,23 +109,13 @@ public class RewardViewPopupUI : MonoBehaviour
     private void OpenRelicTap()
     {
         titleText.SetEntry("UI_INVEN_RELIC");
-        index = 0;
-        while (true)
+        for (index = 0; index < relicDataList.Count; index++)
         {
-            if (relicDataList.Count > index)
-            {
-                SetResource(relicSimpleData[relicDataList[index]]);
-            }
-            else if (relicDataList.Count <= index && icons.Count <= index)
-            {
-                break;
-            }
-            else
-            {
-                icons[index].gameObject.SetActive(false);
-            }
-
-            index++;
+            SetResource(relicSimpleData[relicDataList[index]]);
+        }
+        for (int i = index; i < icons.Count; i++)
+        {
+            icons[index].gameObject.SetActive(false);    
         }
     }
 
@@ -183,14 +172,12 @@ public class RewardViewPopupUI : MonoBehaviour
 
     private void SetResource(RewardSimpleData data)
     {
-        if (icons.Count >= index)
+        if (icons.Count <= index)
         {
             RewardIconUI ui = Instantiate(slot, slotContent).GetComponent<RewardIconUI>();
             icons.Add(ui);
         }
-
-        icons[index].SetResource(data.Icon, data.Name, data.Desc);
-        icons[index].SetCount(data.GetDesc1, data.GetDesc2, data.GetDesc3);
+        icons[index].SetResource(data.Icon, data.Name, data.Desc, data.GetDesc1, data.GetDesc2, data.GetDesc3);
         icons[index].gameObject.SetActive(true);
     }
 
