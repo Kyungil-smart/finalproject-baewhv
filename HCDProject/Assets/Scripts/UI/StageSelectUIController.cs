@@ -71,13 +71,16 @@ public class StageSelectUIController : BaseUIController<StageSelectUIController>
 
     public void OnReset()
     {
-        Service.Get<UIManager>().SimplePopup.SetTwoButtonWarningPopup(
-            "UI_RESET_TITLE","UI_RESET_DESC", null,
-            ()=>
+        Service.Get<UIManager>().SimplePopup
+            .SetOpenPopup()
+            .SetText("UI_RESET_TITLE", "UI_RESET_DESC")
+            .SetButtonText("UI_POPUP_NO", "UI_POPUP_YES")
+            .SetButtons(null, () =>
             {
                 Service.Get<DataManager>()?.DeleteSaveData();
                 Service.Get<SceneController>()?.ChangeScene(SceneType.Title);
-            });
+            }).SetButtonsPosSwap(false);    
+
     }
 
     public void OnOpenRewardView()

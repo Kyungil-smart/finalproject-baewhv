@@ -88,17 +88,15 @@ public class SettingPopupUI : BaseUIController<SettingPopupUI>
 
     public void OnReturnMenu()
     {
-        Service.Get<UIManager>().SimplePopup.SetTwoButtonPopup(
-            "UI_RETIRE_TITLE",
-            "UI_RETIRE_DESC", 
-            () =>
+        Service.Get<UIManager>().SimplePopup
+            .SetOpenPopup()
+            .SetText("UI_RETIRE_TITLE","UI_RETIRE_DESC")
+            .SetButtonText("UI_POPUP_RETREAT", "UI_POPUP_BACK")
+            .SetButtons(() =>
             {
                 gameObject.SetActive(false);    
                 Service.Get<SceneController>().ChangeScene(SceneType.StageSelect);
-            },null,
-            "UI_POPUP_RETREAT",
-            "UI_POPUP_BACK"
-            );
+            },null);
     }
 }
 
