@@ -460,12 +460,14 @@ public class GameManager : BaseManager<GameManager>
     {
         var stageStoryData = Service.Get<DataManager>()?.StoryStageTable.data
             .FirstOrDefault(x => x.CHAPTER == _currentChapter && x.STAGE == _currentStage);
-
+        
         if (stageStoryData != null)
         {
             var type = CheckStageType(stageStoryData);
-
-            NextStageScene(stageStoryData, type);
+            if (type == EStageType.NORMAL_F || type == EStageType.BOSS_F)
+                CheckAndStartNarrative(stageStoryData, false, () => { NextStageScene(stageStoryData, type); });
+            else
+                NextStageScene(stageStoryData, type);
         }
     }
 
